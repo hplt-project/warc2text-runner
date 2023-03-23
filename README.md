@@ -2,8 +2,9 @@
 Scripts for parallelized extraction of plain texts from WARC archives. Aiming at common and reproducible extraction approach.
 
 ## Install
-* Install warc2text from https://github.com/bitextor/warc2text (later will move to Easybuild)
-* To use filters from ParaCrawl clone https://github.com/paracrawl/cirrus-scripts
+* Install warc2text from https://github.com/bitextor/warc2text
+	* later will move to Easybuild
+	* for CESNET currently using [this recipe](https://github.com/jelmervdl/warc2text/blob/build-cesnet/Dockerfile)
 
 ## Run
 ```sh

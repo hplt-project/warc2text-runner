@@ -24,7 +24,7 @@ sort |
 parallel --will-cite --eta \
     --joblog ${LOG_DIR}/joblog \
     --max-args ${BATCH_SIZE} --jobs=${NJOBS} \
-    "warc2text -o ${OUTPUT_DIR}/{#} {} ${FILTERS} &> ${LOG_DIR}/{#}.log"
+    "warc2text -o ${OUTPUT_DIR}/{#} {} ${FILTERS} >${LOG_DIR}/{#}.stdout 2>${LOG_DIR}/{#}.stderr"
 
 JOBS_SUCCESS=`cat ${LOG_DIR}/joblog |cut -f 7|tail -n +2|python -c "import sys; l=list(map(bool,map(int,sys.stdin))); print(len(l)-sum(l),'/',len(l))"`
 echo "$JOBS_SUCCESS jobs finished successfully, see ${LOG_DIR}/joblog for details. Run the following command to rerun failed jobs if any:"

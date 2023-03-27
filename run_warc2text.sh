@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 WARCS_DIR=$1  # directory with input WARC files
 OUTPUT_DIR=$2  # directory to write extracted texts and urls to
@@ -16,6 +17,7 @@ if [[ -d $FILTER_DIR ]]; then
     FILTERS="--tag-filters ${FILTER_DIR}/mt-filter-list.annotated  --url-filters ${FILTER_DIR}/url-filter-list.optimised"
     echo "Using filters: ${FILTERS}"
 else
+    FILTERS=""
     echo "WARNING: FILTER_DIR is not specified: using no filters!"	
 fi
 

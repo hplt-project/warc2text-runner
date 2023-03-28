@@ -16,4 +16,4 @@ sq
 sr
 ta
 th
-zh-Han
+zh-Hant

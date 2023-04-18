@@ -20,6 +20,7 @@ def load_stats(stats_dir):
 
     df = tdf.merge(ddf[['path','doc_newlines']], on='path', how='left', validate="1:1")
     df = df.rename(columns={'doc_newlines':'docs'})
+    df = df.drop(columns=['path'])
     return df
 
 def reduce_stats(stats_dir):

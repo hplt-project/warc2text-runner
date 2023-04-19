@@ -1,4 +1,4 @@
-	WARCsize,TB 	Approx. Time to download,days	text size,TB	size reduction after warc2text	warc2text time,h
-CC40	83	2.5	8.4	9.88095238095238	23
-wide15	358	40	19	18.8421052631579	38
-wide17	641	28	18	35.6111111111111	48
+	WARCsize,TB 	Approx. Time to download,days	Download speed,TB/day	download threads	download tool	text size,TB	size reduction after warc2text	warc2text time,h	warc2text threads
+CC40	83	2.5	33.2	20	aria2c	8.4	9.88095238095238	23	245
+wide15	358	40	8.95	?	ia-download.py	19	18.8421052631579	38	245
+wide17	641	28	22.8928571428571	2000	ia-download.py	18	35.6111111111111	48	245

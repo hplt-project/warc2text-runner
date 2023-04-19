@@ -16,3 +16,9 @@ To run without filters:
 ```sh
 ./run_warc2text.sh ../wide15-sample300/ test_filtered 250
 ```
+
+## Collect statistics
+```cd stats
+bash text_stats.sh ../test_filtered ../test_filtered_stats 240
+```
+calculates statistics for texts in **../test_filtered** extracted by warc2text (number of bytes, words as reported by wc, newlines and documents for each language) and saves it to **../test_filtered_stats** in .tsv format. Additionally generates basic plots for some of these metrics and saves to the same folder.

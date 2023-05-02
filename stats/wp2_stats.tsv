@@ -1,5 +1,7 @@
 	CC40	wide15	wide17
-WARCsize,TB 	83	358	641
+WARCsize,TB	83	358	641
+#WARC folders	-	38782	69386
+#WARC files	80000	361431	662381
 Approx. Time to download,days	2.5	40	28
 Download speed,TB/day	33.2	8.95	22.8928571428571
 download threads	20	?	2000
@@ -7,5 +9,7 @@ download tool	aria2c	ia-download.py	ia-download.py
 compressed text size,TB	8.4	19	18
 size reduction after warc2text	9.88	18.84	35.61
 uncompressed text size, TB	18.04	38.15	43.65
+#text.gz files	127853	495512	798811
+#files after warc2text	384360	1490152	2403058
 warc2text time,h	23	38	48
 warc2text threads	245	245	245

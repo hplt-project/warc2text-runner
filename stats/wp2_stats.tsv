@@ -4,8 +4,8 @@ Approx. Time to download,days	2.5	40	28
 Download speed,TB/day	33.2	8.95	22.8928571428571
 download threads	20	?	2000
 download tool	aria2c	ia-download.py	ia-download.py
-archieved text size,TB	8.4	19	18
+compressed text size,TB	8.4	19	18
 size reduction after warc2text	9.88	18.84	35.61
-extracted text size, TB	18.04	38.15	43.65
+uncompressed text size, TB	18.04	38.15	43.65
 warc2text time,h	23	38	48
 warc2text threads	245	245	245

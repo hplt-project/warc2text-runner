@@ -14,7 +14,7 @@ def set_file_overlap(set1, file2, url_preprocess=lambda url: url.strip):
     return overlap
 
 
-def read_portion1(iterator, mem_limit, batch_size=10**6, debug=False, url_preprocess=lambda url: url.strip):
+def read_portion1(iterator, mem_limit, batch_size=10**8, debug=False, url_preprocess=lambda url: url.strip):
     """
     From iterator reads items into a set while there are items available and
     the memory consumption of the process stays within mem_limit.

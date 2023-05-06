@@ -16,12 +16,12 @@ def set_file_intersection(set1, file2, url_preprocess=lambda url: url.strip()):
     return intersection
 
 
-def read_portion1(iterator, mem_limit, batch_size=10**8, debug=False, url_preprocess=lambda url: url.strip()):
+def read_portion1(iterator, mem_limit, batch_size=10**6, debug=False, url_preprocess=lambda url: url.strip()):
     """
     From iterator reads items into a set while there are items available and
     the memory consumption of the process stays within mem_limit.
     Preprocesses items with url_preprocess.
-    Returns a set of items read.
+    Returns a set of items read, number of lines processed, is iterator fully read.
     """
     set1, l = set(), 0
     while batch := tuple(islice(iterator, batch_size)):
@@ -30,9 +30,8 @@ def read_portion1(iterator, mem_limit, batch_size=10**8, debug=False, url_prepro
         mem = psutil.Process().memory_info().rss
         if debug: print(mem / 2**30, len(set1)/10**6, file=sys.stderr)
         if mem > mem_limit:
-            return set1, l
-    return set1, l
-
+            return set1, l, False
+    return set1, l, True
 
 def read_portion(iterator, mem_limit, batch_size=10**6, debug=False):
     """

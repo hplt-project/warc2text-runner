@@ -1,0 +1,8 @@
+lines	wide00015_filtered_urls.txt part0	-	3021000000
+unique lines	wide00015_filtered_urls.txt part0	-	3005688661
+intersection	wide00015_filtered_urls.txt part0	wide00017_filtered_urls.txt	247313844
+lines	wide00015_filtered_urls.txt part1	-	2102281749
+unique lines	wide00015_filtered_urls.txt part1	-	2093265680
+intersection	wide00015_filtered_urls.txt part1	wide00017_filtered_urls.txt	173798508
+intersection	wide00015_filtered_urls.txt	wide00017_filtered_urls.txt	419256658
+unique lines estimate	wide00015_filtered_urls.txt	-	(5091020033.771985, 5094677490.228015)

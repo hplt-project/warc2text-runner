@@ -1,0 +1,14 @@
+lines	wide00017_filtered_urls.txt part0	-	3087000000
+unique lines	wide00017_filtered_urls.txt part0	-	3048900953
+intersection	wide00017_filtered_urls.txt part0	cc40_urls.txt	14369950
+lines	wide00017_filtered_urls.txt part1	-	2745000000
+unique lines	wide00017_filtered_urls.txt part1	-	2714902321
+intersection	wide00017_filtered_urls.txt part1	cc40_urls.txt	12696972
+lines	wide00017_filtered_urls.txt part2	-	2607000000
+unique lines	wide00017_filtered_urls.txt part2	-	2577088243
+intersection	wide00017_filtered_urls.txt part2	cc40_urls.txt	11714843
+lines	wide00017_filtered_urls.txt part3	-	1923122798
+unique lines	wide00017_filtered_urls.txt part3	-	1897769932
+intersection	wide00017_filtered_urls.txt part3	cc40_urls.txt	9167385
+intersection	wide00017_filtered_urls.txt	cc40_urls.txt	47250295
+unique lines estimate	wide00017_filtered_urls.txt	-	(10194373640.242697, 10201697413.757303)

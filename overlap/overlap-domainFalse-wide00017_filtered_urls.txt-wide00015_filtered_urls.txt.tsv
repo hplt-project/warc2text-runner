@@ -4,3 +4,11 @@ intersection	wide00017_filtered_urls.txt part0	wide00015_filtered_urls.txt	12604
 lines	wide00017_filtered_urls.txt part1	-	2606000000
 unique lines	wide00017_filtered_urls.txt part1	-	2577165043
 intersection	wide00017_filtered_urls.txt part1	wide00015_filtered_urls.txt	107116990
+lines	wide00017_filtered_urls.txt part2	-	2607000000
+unique lines	wide00017_filtered_urls.txt part2	-	2577719212
+intersection	wide00017_filtered_urls.txt part2	wide00015_filtered_urls.txt	102640371
+lines	wide00017_filtered_urls.txt part3	-	2062122798
+unique lines	wide00017_filtered_urls.txt part3	-	2034649189
+intersection	wide00017_filtered_urls.txt part3	wide00015_filtered_urls.txt	85665775
+intersection	wide00017_filtered_urls.txt	wide00015_filtered_urls.txt	419256658
+unique lines estimate	wide00017_filtered_urls.txt	-	(10194373640.242697, 10201697413.757303)

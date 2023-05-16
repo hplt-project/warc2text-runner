@@ -27,3 +27,29 @@ calculates statistics for texts in **../test_filtered** extracted by warc2text (
 ## Collected statistics and plots
 Language statistics was calculated for [cc40](stats/cc40_filtered_stats), [wide00015](stats/wide00015_filtered_stats) and [wide00017](stats/wide00017_filtered_stats)
 For generating custom plots comparing different statistics for several languages and datasets you may want start with [this notebook](stats/lang-stats-comparison.ipynb ).
+
+## Compiling giashard
+
+```bash
+git clone git@github.com:paracrawl/giashard.git
+
+CGO_ENABLED=0 go build \
+  -o giashard-static \
+  -a -ldflags '-extldflags "-static"' \
+  github.com/paracrawl/giashard/cmd/giashard
+
+CGO_ENABLED=0 go build \
+  -o giamerge-static \
+  -a -ldflags '-extldflags "-static"' \
+  github.com/paracrawl/giashard/cmd/giamerge
+```
+
+Running giashard:
+
+```bash
+cd path/to/data
+
+./giashard.sh wide00016 mt
+```
+
+That will create a `wide00016-shards/mt` folder in theory.

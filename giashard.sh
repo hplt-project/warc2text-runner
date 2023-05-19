@@ -27,7 +27,7 @@ mkdir -p $1-shards/
 test ! -d $1-shards/$2
 
 # Find all directories for a single language ($2), batch it into groups of $BATCHSIZE, and pivot it
-find $1-text -mindepth 2 -maxdepth 2 -type d -name $2 |
+find $1 -mindepth 2 -maxdepth 2 -type d -name $2 |
 	sort |
 	batch $BATCHSIZE |
 	parallel \

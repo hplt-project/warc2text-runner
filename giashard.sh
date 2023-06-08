@@ -2,7 +2,7 @@
 set -euo pipefail
 ulimit -n 16348
 
-BATCHSIZE=128
+BATCHSIZE=8
 
 function batch {
 	count=0
@@ -35,9 +35,9 @@ find $1 -mindepth 2 -maxdepth 2 -type d -name $2 |
 	--colsep ' ' \
 	--halt now,fail=1 \
 	--tagstring '[{#}]' \
-	--group \
+	--group --eta \
 	giashard-static \
-		-d $HOME/domain-suffixes.txt \
+		-d $(dirname $0)/domain-suffixes.txt \
 		-f text,url \
 		-b 8192 \
 		-o "$1-shards/$2.$$.{#}" \
@@ -46,11 +46,14 @@ find $1 -mindepth 2 -maxdepth 2 -type d -name $2 |
 # Combine parallel runs
 mkdir -p $1-shards/$2.$$
 
-parallel \
+find $1-shards/$2.$$.* -maxdepth 1 -mindepth 1 -path "*/$2.$$.*/*" | sed 's!.*/!!' | sort | uniq
+# We have to specify directories starting with the language under consideration as starting points for find, otherwise it will traverse all directories and throw errors when some of them are removed by parallel processes for other languages.
+# Starting points correspond to shards, there are at most 256 such starting points, so hopefuly will not hit problems due to the length of the argument string.
+find $1-shards/$2.$$.* -maxdepth 1 -mindepth 1 -path "*/$2.$$.*/*" | sed 's!.*/!!' | sort | uniq |
+	parallel \
 	--verbose \
 	-N1 \
-	"giamerge-static -f text,url,source -b $(( 3 * 8192 )) -o $1-shards/$2.$$/{}/ $1-shards/$2.$$.*/{}/*/" \
-	::: {0..255}
+	"giamerge-static -f text,url,source -b $(( 3 * 8192 )) -o $1-shards/$2.$$/{}/ $1-shards/$2.$$.*/{}/*/" 
 
 # Fix filenames
 for batch in $1-shards/$2.$$/*/*/; do

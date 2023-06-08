@@ -7,7 +7,7 @@ NJOBS=$3  # number of parallel processes to fork
 FILTER_DIR=$4  # directory to take filter files from, if empty then no filtering is applied
 
 LOG_DIR=${OUTPUT_DIR%/}_logs # ${VAR%/} removes trailing slash if there is any
-BATCH_SIZE=100  # each run of warc2text processes BATCH_SIZE WARCs, too small batch will result in too many files generated which may lead to inodes exhaustion
+BATCH_SIZE=1000  # each run of warc2text processes BATCH_SIZE WARCs, too small batch will result in too many files generated which may lead to inodes exhaustion
 
 echo "Extracting texts from WARCs in ${WARCS_DIR} in ${NJOBS} parallel processes in batches of ${BATCH_SIZE} WARCs each. Saving texts to ${OUTPUT_DIR} and logs to ${LOG_DIR}."
 

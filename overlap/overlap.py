@@ -5,7 +5,7 @@ import sys
 import fire
 from HLL import HyperLogLog
 from math import sqrt
-
+import sys
 
 def set_file_intersection(set1, file2, url_preprocess=lambda url: url.strip()):
     """
@@ -77,7 +77,7 @@ def intersect(file1, file2, mem_limit=5 * 2 ** 30, domain_level=False, debug=Fal
     if p > 0: hll = HyperLogLog(p, sparse=False)
     intersection = set()
     part = -1
-    with gzip.open(file1, 'rt', encoding='utf-8') if file1.endswith('gz') else open(file1, 'rt',
+    with sys.stdin if file1=='-' else gzip.open(file1, 'rt', encoding='utf-8') if file1.endswith('gz') else open(file1, 'rt',
                                                                                     encoding='utf-8') as inp:
         while True:
             set1, l, finished = read_portion1(inp, mem_limit, url_preprocess=url_preprocess, debug=debug)

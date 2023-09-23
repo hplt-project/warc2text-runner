@@ -3,7 +3,8 @@ from math import sqrt
 
 from fire import Fire
 import sys
-import sketch
+from sketch_ds import setsketch
+import mmh3
 
 def buildsketch(outpath, fpath='-', domain_level=False, p=18, debug=False):
     """
@@ -24,7 +25,7 @@ def buildsketch(outpath, fpath='-', domain_level=False, p=18, debug=False):
         url_preprocess = lambda url: url.strip()
 
     m = 2**p  # number of registers
-    sk = sketch.setsketch.CSetSketch(m)
+    sk = setsketch.CSetSketch(m)
     if debug: ss = set()
 
     cnt = 0
@@ -32,7 +33,8 @@ def buildsketch(outpath, fpath='-', domain_level=False, p=18, debug=False):
         # ss = {url_preprocess(s) for s in inp}
         for s in inp:
             item = url_preprocess(s)
-            sk.addh(item)
+            h,_ = mmh3.hash64(item, seed=0, signed=False,)
+            sk.add(h)
             if debug: ss.add(item)
             cnt += 1
 

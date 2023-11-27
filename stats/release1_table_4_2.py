@@ -5,7 +5,13 @@ from pathlib import Path
 
 merged_df = None
 
-release_1 = ['cc40', 'wide00006', 'wide00015', 'wide00016', 'wide00017']
+release_1 = [
+    'cc40',
+    # 'wide00006', # wasn't used for this release
+    'wide00015',
+    'wide00016',
+    'wide00017'
+]
 
 
 with ExitStack() as ctx:

@@ -8,11 +8,11 @@ Approx. Time to download,days	2.5		4	39	6	4	42	19	40	26	28	This includes time to
 Download speed,TB/day	33.2			12	16.4		15.6	34.6	17.6		22.8928571428571	WARCsize / Approx. time to download
 download threads	20		1000	512		1000	512	256	128	256	2000	experiments with wide17 have shown that it is beneficial to use much more threads than there are actual cpu cores, downloading doesn't utilize CPU significantly
 download tool	aria2c	cc-download.py		ia-download.py	ParaCrawl		ia-download.py	ia-download.py	ia-download.py	ia-download.py	ia-download.py	TODO: for the future downloads we shall probably switch from aria2c to our home-made downloading script
-#files after warc2text	384360								1490152	1955584	2403058	Each task runs warc2text on 100 WARCs and creates a new folder for this task with one subfolder per detected language (about 120-160 in total) and 2 files (url.gz, text.gz) in each subfolder.
-compressed text size,TB	8.4								19	42	18	total size after warc2text
+#files after warc2text	384360				566444				1490152	1955584	2403058	Each task runs warc2text on 100 WARCs and creates a new folder for this task with one subfolder per detected language (about 120-160 in total) and 2 files (url.gz, text.gz) in each subfolder.
+compressed text size,TB	8.4				13.436				19	42	18	total size after warc2text
 size reduction after warc2text	9.88								18.84	18.29	35.61	WARCsize / compressed text size
-#text.gz files	127853								495512	977792	798811	The number of fies with raw text
-uncompressed text size, TB	18.04								38.15	130.82	43.65	raw text size after warc2text
-uncompressed text size for 77 languages, TB	18								38.12	103.44	43.62	raw text size for 77 languages from the proposal after warc2text, for wide16 this large size reduction is due to filtering out examples classified as UNK (FastText langid for wide16, CLD2 for others)
+#text.gz files	127853				283222				495512	977792	798811	The number of files with raw text
+uncompressed text size, TB	18.04				28.25				38.15	107.85	43.65	raw text size after warc2text
+uncompressed text size for 77 languages, TB	18				24.75				38.12	85.28	43.62	raw text size for 77 languages from the proposal after warc2text, for wide16 this large size reduction is due to filtering out examples classified as UNK (FastText langid for wide16, CLD2 for others)
 warc2text time,h	23								38	500	48	Wall clock time of warc2texting, depends on the number of threads
 warc2text threads	245								245	60	245	The number of threads used for warc2texting

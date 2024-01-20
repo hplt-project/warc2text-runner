@@ -1,0 +1,21 @@
+
+Reading url, date from url.gz and date.gz
+ 270747  541494 28101057
+
+real	0m0.151s
+user	0m0.195s
+sys	0m0.016s
+
+Reading url, date from singlejson.gz
+ 270747  541494 28101057
+
+real	0m19.821s
+user	0m32.630s
+sys	0m1.220s
+
+Reading url, date from metajson.gz:
+ 270747  541494 28101057
+
+real	0m1.276s
+user	0m1.609s
+sys	0m0.042s

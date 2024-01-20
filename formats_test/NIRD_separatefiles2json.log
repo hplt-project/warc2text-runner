@@ -1,0 +1,27 @@
+
+Separate files:
+7.8M	url.gz
+576K	date.gz
+843M	text.gz
+851M	total
+
+real	1m23.413s
+user	2m22.174s
+sys	0m3.592s
+
+Single gziped json:
+640M	singlejson.gz
+640M	total
+
+real	0m0.969s
+user	0m1.927s
+sys	0m0.051s
+
+real	1m21.629s
+user	2m25.451s
+sys	0m2.668s
+
+Text and meta gziped jsons:
+9.2M	metajson.gz
+640M	textjson.gz
+650M	total

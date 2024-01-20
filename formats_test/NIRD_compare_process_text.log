@@ -1,0 +1,21 @@
+
+Read text from text.gz, this requires decoding from base64:
+123277984 329679229 2439893838
+
+real	0m17.399s
+user	0m43.695s
+sys	0m2.234s
+
+Read text from single json:
+123277984 329679229 2439893838
+
+real	0m23.575s
+user	0m46.318s
+sys	0m2.322s
+
+Read text from text json:
+123277984 329679229 2439893838
+
+real	0m23.668s
+user	0m46.667s
+sys	0m2.133s

@@ -1,0 +1,18 @@
+Reading url, text from separate files url.gz, text.gz and passing to stdin as TSV (requires separate base64 decoding):
+ 270747  541494 3276222709
+
+real	0m17.477s
+user	0m21.185s
+sys	0m1.981s
+Reading url, text from separate files url.gz, text.gz and passing to stdin as jsonlines:
+ 270747 208486609 2593014326
+
+real	1m3.871s
+user	1m23.085s
+sys	0m3.780s
+Reading url, text from singlejson.gz
+ 270747 208486609 2593014326
+
+real	0m59.543s
+user	1m26.546s
+sys	0m2.377s

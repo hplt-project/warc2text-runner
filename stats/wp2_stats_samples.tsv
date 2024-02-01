@@ -1,0 +1,11 @@
+	83 CC crawls (all excapt for 10 fully downloaded and 3 unavailable)	archive_bot	Comments
+	1% from each	7%
+randomization	random sample on WARC level	random sample on item level
+Iteration	-	-	Comments
+years	2013-2023	2013-2023	crawling years
+location	NIRD	NIRD	download location
+WARCsize,TB	46	271	total size of downloaded WARCs
+WARC folders	-	2942	CC provides a single list of URLs to download files from, aria2c was used to download all files to a single folder.
+WARC files	18019	124167	number of warc.gz files
+Approx. Time to download,days	3	7.5	This includes time to fix issues popping up and restart downloading.
+download tool	aria2c	ia-download.py	TODO: for the future downloads we shall probably switch from aria2c to our home-made downloading script

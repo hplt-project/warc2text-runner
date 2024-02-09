@@ -3,7 +3,7 @@ set -euo pipefail
 
 NJOBS=$1  # number of parallel processes to fork
 LOG_DIR=$2
-FILTER_DIR=$(dirname $0)  # directory to take filter files from, if empty then no filtering is applied
+FILTER_DIR=$(dirname $0)/..  # directory to take filter files from, if empty then no filtering is applied
 mkdir -p ${LOG_DIR}
 echo "Extracting HTML from WARCs in stdin in ${NJOBS} parallel processes, logging to ${LOG_DIR}"
 

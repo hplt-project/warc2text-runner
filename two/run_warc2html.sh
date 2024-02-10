@@ -12,7 +12,7 @@ echo "Extracting HTML from WARCs in stdin in ${NJOBS} parallel processes, loggin
 parallel --colsep ':' \
     --joblog ${LOG_DIR}/joblog \
     --jobs=${NJOBS} \
-    "mkdir -p {2}_log {2}/{1} || exit 1; eval warc2text --robotspass {2}/{1}/robotstxt -f html,metadata --jsonl --compress zstd --compress-level 9 --skip-text-extraction --classifier skip --url-filters ${FILTER_DIR}/url-filter-list.optimised -o {2}/{1} {3} >{2}_log/{1}.stdout 2>{2}_log/{1}.stderr"
+    "mkdir -p {2}_log {2}/{1} || exit 1; cd {3}; eval echo warc2text --robotspass {2}/{1}/robotstxt -f html,metadata --jsonl --compress zstd --compress-level 9 --skip-text-extraction --classifier skip --url-filters ${FILTER_DIR}/url-filter-list.optimised -o {2}/{1} {4} >{2}_log/{1}.stdout 2>{2}_log/{1}.stderr"
 
 JOBS_SUCCESS=`cat ${LOG_DIR}/joblog |cut -f 7|tail -n +2|python -c "import sys; l=list(map(bool,map(int,sys.stdin))); print(len(l)-sum(l),'/',len(l))"`
 

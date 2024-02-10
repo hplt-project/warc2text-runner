@@ -1,9 +1,13 @@
 #!/bin/bash
 set -euo pipefail
 
-RUNDIR='cesnet'
-NJOBS=60
-REMOTECONFIG="--sshlogin 1/mon3,1/mon4,1/mon6"
+RUNDIR=$1
+NJOBS=$2
+REMOTECONFIG=$3
+
+#RUNDIR='cesnet'
+#NJOBS=60
+#REMOTECONFIG="--sshlogin 1/mon3,1/mon4,1/mon6"
 
 #RUNDIR='nirdl'
 #NJOBS=250

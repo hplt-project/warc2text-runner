@@ -30,10 +30,12 @@ def traf(instream, fast_mode):
             d = json.loads(line.strip())
             html = d['h']
             text = trafilatura.extract(html, **trafilatura_options)
-            print(json.dumps({'t': text}))
             # print(text)
         except Exception as e:
             print(f'ERROR while reading line {cnt+1}', e, file=sys.stderr)
+            text = None
+
+        print(json.dumps({'t': text}))
 
 
 def main(fpath='-', fast_mode=True, decoding_errors='ignore'):

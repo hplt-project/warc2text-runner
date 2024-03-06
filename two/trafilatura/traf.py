@@ -5,6 +5,7 @@ import trafilatura
 import fire
 import zstandard
 import codecs
+import traceback
 
 def traf(instream, fast_mode):
     trafilatura_options = {"include_comments": False, "include_tables": False, "no_fallback": True} if fast_mode \
@@ -12,19 +13,19 @@ def traf(instream, fast_mode):
     unicode_error = False
     cnt = 0
     while True:
+        errmsg = None
         try:
             line = instream.readline()
             if unicode_error:
                 unicode_error = False
                 continue  # recovering after UnicodeDecodeError: reading the rest of line and skipping it
         except UnicodeDecodeError as e:
-            print(f'ERROR while reading line {cnt + 1}', e, file=sys.stderr)
+            errmsg = 'UnicodeDecodeError'
             unicode_error = True
             continue
 
         if line == '':
             break
-        cnt += 1
 
         try:
             d = json.loads(line.strip())
@@ -32,10 +33,12 @@ def traf(instream, fast_mode):
             text = trafilatura.extract(html, **trafilatura_options)
             # print(text)
         except Exception as e:
-            print(f'ERROR while reading line {cnt+1}', e, file=sys.stderr)
+#            import pdb; pdb.set_trace()
+            errmsg = traceback.format_exc()
             text = None
 
-        print(json.dumps({'t': text}))
+        print(json.dumps({'t': text, 'e': errmsg}))
+        cnt += 1
 
 
 def main(fpath='-', fast_mode=True, decoding_errors='ignore'):

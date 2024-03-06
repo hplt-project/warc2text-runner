@@ -1,3 +1,4 @@
+import io
 import os
 import sys
 import ujson as json
@@ -7,22 +8,18 @@ import zstandard
 import codecs
 import traceback
 
-def traf(instream, fast_mode):
+def traf(instream, fast_mode, decoding_errors):
     trafilatura_options = {"include_comments": False, "include_tables": False, "no_fallback": True} if fast_mode \
         else {}
-    unicode_error = False
-    cnt = 0
-    while True:
-        errmsg = None
+
+    for byteline in instream:
+        errors = []
+
         try:
-            line = instream.readline()
-            if unicode_error:
-                unicode_error = False
-                continue  # recovering after UnicodeDecodeError: reading the rest of line and skipping it
+            line = byteline.decode('utf-8', errors='strict')
         except UnicodeDecodeError as e:
-            errmsg = 'UnicodeDecodeError'
-            unicode_error = True
-            continue
+            errors.append('UnicodeDecodeError')
+            line = None if decoding_errors == 'strict' else byteline.decode('utf-8', errors=decoding_errors)
 
         if line == '':
             break
@@ -34,11 +31,10 @@ def traf(instream, fast_mode):
             # print(text)
         except Exception as e:
 #            import pdb; pdb.set_trace()
-            errmsg = traceback.format_exc()
+            errors.append(traceback.format_exc())
             text = None
 
-        print(json.dumps({'t': text, 'e': errmsg}))
-        cnt += 1
+        print(json.dumps({'t': text, 'e': errors}))
 
 
 def main(fpath='-', fast_mode=True, decoding_errors='ignore'):
@@ -49,10 +45,8 @@ def main(fpath='-', fast_mode=True, decoding_errors='ignore'):
     :param decoding_errors: how to handle utf-8 decoding errors, see https://docs.python.org/3/library/functions.html#open for options
     :return:
     """
-
-    with (open(os.dup(sys.stdin.fileno()), 'rt', encoding='utf-8', errors=decoding_errors) if fpath == '-' else
-        zstandard.open(fpath, 'rt', encoding='utf-8', errors=decoding_errors)) as text_inp:
-        traf(text_inp, fast_mode)
+    with sys.stdin.buffer if fpath == '-' else io.BufferedReader(zstandard.open(fpath, 'rb')) as inp:
+        traf(inp, fast_mode, decoding_errors)
 
 
 fire.Fire(main)

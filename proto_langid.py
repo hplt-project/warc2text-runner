@@ -3,7 +3,6 @@ import sys
 import fasttext
 import fileinput
 import argparse
-import json
 
 
 from typing import TYPE_CHECKING
@@ -14,7 +13,16 @@ if TYPE_CHECKING:
 
 class FastTextLangId:
     def __init__(self, model_path: str | Path):
-        """Initializes the FastText model."""
+        """Initializes the FastText model.
+
+        To download the model, run the following commands:
+        wget https://data.statmt.org/lid/lid201-model.bin.gz
+        pigz -d lid201-model.bin.gz
+
+        Expected usage  python proto_langid.py --model_path $MODEL_PATH --mode stdin < $YOUR_FILE
+
+        """
+
         print(f"Loading model from: {model_path}")
         self.model = fasttext.load_model(model_path)
 

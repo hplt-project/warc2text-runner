@@ -1,0 +1,51 @@
+[tool.ruff]
+include = ["*.py", "*.pyi", "**/pyproject.toml", "*.ipynb"]
+lint.select = [
+    "A",    # flake8-builtins (A)
+    "ANN",  # flake8-annotations (ANN)
+    "ARG",  # flake8-unused-arguments (ARG)
+    "B",    # flake8-bugbear (B)
+    "C4",   # flake8-comprehensions (C4)
+    "D",    # pydocstyle (D)
+    "E",    # pycodestyle (E)
+    "EM",   # flake8-errmsg (EM)
+    "EXE",  # flake8-executable (EXE)
+    "F",    # Pyflakes (F)
+    "FA",   # future-required-type-annotation (FA)
+    "FBT",  # flake8-boolean-trap (FBT)
+    "G",    # flake8-logging-format (G)
+    "I",    # isort (I)
+    "LOG",  # flake8-logging (LOG)
+    "N",    # pep8-naming (N)
+    "NPY",  # NumPy-specific rules (NPY)
+    "PERF", # Perflint (PERF)
+    "PIE",  # flake8-pie (PIE)
+    "PL",   # Pylint (PL)
+    "PT",   # flake8-pytest-style (PT)
+    "PTH",  # flake8-use-pathlib (PTH)
+    "PYI",  # flake8-pyi (PYI)
+    "RSE",  # flake8-raise (RSE)
+    "RET",  # flake8-return (RET)
+    "RUF",  # Ruff-specific rules (RUF)
+    "SIM",  # flake8-simplify (SIM)
+    "TCH",  # flake8-type-checking (TCH)
+    "TD",   # flake8-todos (TD)
+    "TID",  # flake8-tidy-imports (TID)
+    "TRY",  # tryceratops (TRY)
+    "UP",   # pyupgrade (UP)
+    "W",    # pycodestyle (W)
+]
+
+
+lint.ignore = [
+    "E501",    # line too long, handled by black
+    "B008",    # do not perform function calls in argument defaults
+    "PLR0913", # too many arguments in function call
+    "ANN101",  # missing type annotation for self in method
+    "D212",    # multi-line docstring summary should start at the second line
+    "D203",    # one-blank-line-before-class
+    "PLR1711", # useless-return
+    "RET501",  # unnecessary-return-none
+]
+
+line-length = 100

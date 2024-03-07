@@ -20,11 +20,3 @@
 
     c. Laurie will release a new model soon and it also uses clean data.
     https://github.com/laurieburchell/cs-lid-harder-than-you-think
-
-
-
-
-
-
-
-

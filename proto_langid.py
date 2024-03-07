@@ -3,6 +3,7 @@ import sys
 import fasttext
 import fileinput
 import argparse
+import json
 
 
 from typing import TYPE_CHECKING
@@ -19,7 +20,11 @@ class FastTextLangId:
         wget https://data.statmt.org/lid/lid201-model.bin.gz
         pigz -d lid201-model.bin.gz
 
-        Expected usage  python proto_langid.py --model_path $MODEL_PATH --mode stdin < $YOUR_FILE
+        Expected usage (stdin):
+        python proto_langid.py --model_path $MODEL_PATH --mode stdin < $YOUR_FILE
+
+        Expected usage (stdin jsonlines):
+        python proto_langid.py --model_path $MODEL_PATH --mode stdin_jsonlines < $YOUR_FILE
 
         """
 
@@ -47,6 +52,27 @@ class FastTextLangId:
 
         return None
 
+    def predict_language_from_stdin_jsonlines(self) -> None:
+        """Reads line by line from standard input (expected jsonlines format {"t":"Your text"})
+        and writes the predicted language to standard output.
+
+        """
+
+        with fileinput.input(files=("-",), encoding="utf-8") as f:
+            for fileinput_line in f:
+                json_line = json.loads(fileinput_line)
+
+                if json_line["t"] is None:
+                    sys.stdout.write("None\n")
+
+                else:
+                    prediction = self.model.predict(
+                        self._preproccess_text(json_line["t"]), k=1
+                    )
+                    sys.stdout.write(self._postprocess_prediction(prediction))
+
+        return None
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -60,8 +86,8 @@ if __name__ == "__main__":
 
     parser.add_argument(
         "--mode",
-        default="stdin",
-        choices=["stdin"],
+        default="stdin_jsonlines",
+        choices=["stdin", "stdin_jsonlines"],
         help="Mode of input",
     )
 
@@ -75,5 +101,11 @@ if __name__ == "__main__":
         print(f"Reading from standard input! --mode is {args.mode}")
         loaded_model.predict_language_from_stdin()
 
+    elif args.mode == "stdin_jsonlines":
+        print(f"Reading from standard input (jsonlines)! --mode is {args.mode}")
+        loaded_model.predict_language_from_stdin_jsonlines()
+
     else:
         raise NotImplementedError("Other input methods not implemented yet!")
+
+    print("Finished processing")

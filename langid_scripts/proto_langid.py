@@ -6,18 +6,14 @@ import argparse
 import fileinput
 import json
 import sys
-from typing import TYPE_CHECKING
 
 import fasttext
-
-if TYPE_CHECKING:
-    from pathlib import Path
 
 
 class FastTextLangId:
     """The FastText language identification model."""
 
-    def __init__(self, model_path: str | Path) -> None:
+    def __init__(self, model_path: str) -> None:
         """
         Init the FastText model.
 
@@ -46,19 +42,27 @@ class FastTextLangId:
         Expected input: {"t":"text"}
         Expected output: {"lang":"en", "prob":0.9}
 
+        Expected output(if None/null it "t" field): {"lang":null}
+        Expected output(if empty string in "t" field): {"lang":"unk"}
+
         """
         with fileinput.input(files=("-",), encoding="utf-8") as f:
             for fileinput_line in f:
                 json_line = json.loads(fileinput_line)
 
                 if json_line["t"] is None:
-                    sys.stdout.write('{"lang":null, "prob":null}\n')
+                    sys.stdout.write('{"lang":null}\n')
 
                 elif json_line["t"] == "":
-                    sys.stdout.write('{"lang":"unk", "prob":null}\n')
+                    sys.stdout.write('{"lang":"unk"}\n')
 
                 else:
-                    prediction = self.model.predict(self._preproccess_text(json_line["t"]), k=1)
+                    prediction = self.model.predict(
+                        text=self._preproccess_text(json_line["t"]),
+                        k=1,
+                        threshold=0.0,
+                        on_unicode_error="strict",
+                    )
 
                     res = f'{{"lang":"{self._postprocess_prediction(prediction)}", "prob":{round(prediction[1][0], 4)}}}\n'
 

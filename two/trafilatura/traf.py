@@ -21,18 +21,16 @@ def traf(instream, fast_mode, decoding_errors):
             errors.append('UnicodeDecodeError')
             line = None if decoding_errors == 'strict' else byteline.decode('utf-8', errors=decoding_errors)
 
-        if line == '':
-            break
-
-        try:
-            d = json.loads(line.strip())
-            html = d['h']
-            text = trafilatura.extract(html, **trafilatura_options)
-            # print(text)
-        except Exception as e:
-#            import pdb; pdb.set_trace()
-            errors.append(traceback.format_exc())
+        if line is None:
             text = None
+        else:
+            try:
+                d = json.loads(line.strip())
+                html = d['h']
+                text = trafilatura.extract(html, **trafilatura_options)
+            except Exception as e:
+                errors.append(traceback.format_exc())
+                text = None
 
         print(json.dumps({'t': text, 'e': errors}))
 

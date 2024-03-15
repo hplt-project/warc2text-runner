@@ -1,7 +1,7 @@
 import io
 import os
 import sys
-import ujson as json
+import orjson as json
 import trafilatura
 import fire
 import zstandard

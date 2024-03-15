@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import argparse
 import fileinput
-import json
+import orjson as json
 import sys
 
 import fasttext
@@ -51,11 +51,11 @@ class FastTextLangId:
                 json_line = json.loads(fileinput_line)
 
                 if json_line["t"] is None:
-                    sys.stdout.write('{"lang":null}\n')
+                    print(json.dumps({'lang': None}))
+                    sys.stdout.write('{"lang": null}\n')
 
                 elif json_line["t"] == "":
-                    sys.stdout.write('{"lang":"unk"}\n')
-
+                    print(json.dumps({'lang': '_unk'}))
                 else:
                     prediction = self.model.predict(
                         text=self._preproccess_text(json_line["t"]),
@@ -64,9 +64,7 @@ class FastTextLangId:
                         on_unicode_error="strict",
                     )
 
-                    res = f'{{"lang":"{self._postprocess_prediction(prediction)}", "prob":{round(prediction[1][0], 4)}}}\n'
-
-                    sys.stdout.write(res)
+                    print(json.dumps({'lang': self._postprocess_prediction(prediction), 'prob': round(prediction[1][0], 4)}))
 
         return None
 

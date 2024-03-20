@@ -1,7 +1,7 @@
 import io
 import os
 import sys
-import orjson as json
+import ujson as json
 import trafilatura
 import fire
 import zstandard
@@ -39,7 +39,7 @@ def main(fpath='-', fast_mode=True, decoding_errors='ignore'):
     """
 
     :param fpath:
-    :param fast_mode:
+    :param fast_mode:n
     :param decoding_errors: how to handle utf-8 decoding errors, see https://docs.python.org/3/library/functions.html#open for options
     :return:
     """

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import argparse
 import fileinput
-import orjson as json
+import ujson as json
 import sys
 
 import fasttext

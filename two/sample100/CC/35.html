@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://mercortecresa.com/xmlrpc.php">
+<script>var et_site_url='https://mercortecresa.com';var et_post_id='33362';function et_core_page_resource_fallback(a,b){"undefined"===typeof b&&(b=a.sheet.cssRules&&0===a.sheet.cssRules.length);b&&(a.onerror=null,a.onload=null,a.href?a.href=et_site_url+"/?et_core_page_resource="+a.id+et_post_id:a.src&&(a.src=et_site_url+"/?et_core_page_resource="+a.id+et_post_id))}
+</script><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<link rel="alternate" hreflang="es-es" href="https://mercortecresa.com/blog/euroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion" />
+<link rel="alternate" hreflang="en-us" href="https://mercortecresa.com/en/blog/euroclasses-european-reaction-fire-classification" />
+<link rel="alternate" hreflang="fr-fr" href="https://mercortecresa.com/fr/blog/euroclases-classification-europeenne-de-la-reaction-au-feu" />
+<link rel="alternate" hreflang="x-default" href="https://mercortecresa.com/blog/euroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion" />
+
+	<!-- This site is optimized with the Yoast SEO plugin v19.7.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Euroclases - Clasificación europea de reacción al fuego de materiales</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?display=swap&family=Open%20Sans%3A400%2C700%7CMontserrat%3A400%2C700%7COpen%20Sans%3A300%2C300italic%2C400%2C400italic%2C600%2C600italic%7CRaleway" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?display=swap&family=Open%20Sans%3A400%2C700%7CMontserrat%3A400%2C700%7COpen%20Sans%3A300%2C300italic%2C400%2C400italic%2C600%2C600italic%7CRaleway" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?display=swap&family=Open%20Sans%3A400%2C700%7CMontserrat%3A400%2C700%7COpen%20Sans%3A300%2C300italic%2C400%2C400italic%2C600%2C600italic%7CRaleway" /></noscript><style id="rocket-critical-css">h1,h2{overflow-wrap:break-word}ul{overflow-wrap:break-word}p{overflow-wrap:break-word}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.aligncenter{clear:both}.wpcf7 .screen-reader-response{position:absolute;overflow:hidden;clip:rect(1px,1px,1px,1px);clip-path:inset(50%);height:1px;width:1px;margin:-1px;padding:0;border:0;word-wrap:normal!important}.wpcf7 form .wpcf7-response-output{margin:2em 0.5em 1em;padding:0.2em 1em;border:2px solid #00a0d2}.wpcf7 form.resetting .wpcf7-response-output{display:none}.wpcf7-form-control-wrap{position:relative}.wpml-ls-menu-item .wpml-ls-flag{display:inline;vertical-align:baseline}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}article,header{display:block}a{background:transparent}strong{font-weight:bold}h1{margin:.67em 0;font-size:2em}sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}sup{top:-.5em}img{border:0}button,input{margin:0;font:inherit;color:inherit}button{overflow:visible}button{text-transform:none}button,input[type="submit"]{-webkit-appearance:button}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}input{line-height:normal}input[type="search"]{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;-webkit-appearance:textfield}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-size:62.5%}body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857143;color:#333;background-color:#fff}input,button{font-family:inherit;font-size:inherit;line-height:inherit}a{color:#428bca;text-decoration:none}img{vertical-align:middle}h1,h2{font-family:inherit;font-weight:500;line-height:1.1;color:inherit}h1,h2{margin-top:20px;margin-bottom:10px}h1{font-size:36px}h2{font-size:30px}p{margin:0 0 10px}.text-center{text-align:center}ul{margin-top:0;margin-bottom:10px}ul ul{margin-bottom:0}.container{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:768px){.container{width:750px}}@media (min-width:992px){.container{width:970px}}@media (min-width:1200px){.container{width:1170px}}.container-fluid{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}.row{margin-right:-15px;margin-left:-15px}.col-md-3,.col-md-9,.col-md-12{position:relative;min-height:1px;padding-right:15px;padding-left:15px}@media (min-width:992px){.col-md-3,.col-md-9,.col-md-12{float:left}.col-md-12{width:100%}.col-md-9{width:75%}.col-md-3{width:25%}}input[type="search"]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}input[type="search"]{-webkit-appearance:none}.btn{display:inline-block;padding:6px 12px;margin-bottom:0;font-size:14px;font-weight:normal;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;background-image:none;border:1px solid transparent;border-radius:4px}.collapse{display:none}.nav{padding-left:0;margin-bottom:0;list-style:none}.nav>li{position:relative;display:block}.nav>li>a{position:relative;display:block;padding:10px 15px}.navbar{position:relative;min-height:50px;margin-bottom:20px;border:1px solid transparent}@media (min-width:768px){.navbar{border-radius:4px}}.navbar-collapse{max-height:340px;padding-right:15px;padding-left:15px;overflow-x:visible;-webkit-overflow-scrolling:touch;border-top:1px solid transparent;box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}@media (min-width:768px){.navbar-collapse{width:auto;border-top:0;box-shadow:none}.navbar-collapse.collapse{display:block!important;height:auto!important;padding-bottom:0;overflow:visible!important}}.navbar-toggle{position:relative;float:right;padding:9px 10px;margin-top:8px;margin-right:15px;margin-bottom:8px;background-color:transparent;background-image:none;border:1px solid transparent;border-radius:4px}@media (min-width:768px){.navbar-toggle{display:none}}.navbar-default{background-color:#f8f8f8;border-color:#e7e7e7}.navbar-default .navbar-toggle{border-color:#ddd}.navbar-default .navbar-collapse{border-color:#e7e7e7}.clearfix:before,.clearfix:after,.container:before,.container:after,.container-fluid:before,.container-fluid:after,.row:before,.row:after,.nav:before,.nav:after,.navbar:before,.navbar:after,.navbar-collapse:before,.navbar-collapse:after{display:table;content:" "}.clearfix:after,.container:after,.container-fluid:after,.row:after,.nav:after,.navbar:after,.navbar-collapse:after{clear:both}@-ms-viewport{width:device-width}html{overflow-x:hidden}body{font-family:Arial,sans-serif;margin-top:0!important;background:#ffffff;font-size:14px;color:#2A2F35;line-height:1.7}a{color:#FBBE3F;text-decoration:none}h1,h2{margin-top:0;margin-bottom:15px}h1{font-size:28px}h2{font-size:24px}input[type="text"],input[type="search"]{box-shadow:none;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}input[type="text"],input[type="search"]{height:46px}input{border:1px solid #f3f3f3;background-color:#f3f3f3;padding:14px;color:#2A2F35;font-size:14px;vertical-align:middle;box-shadow:none;border-radius:0;line-height:15px;font-weight:400}input::-webkit-input-placeholder,input:-moz-placeholder{font-size:13px!important}input:-moz-placeholder,input:-ms-input-placeholder,input::-webkit-input-placeholder{color:#b8b8b8;font-size:18px}.btn,input[type="submit"]{padding:16px 30px;line-height:1;color:#2A2F35;text-align:left;text-shadow:none;text-decoration:none;vertical-align:middle;background:#FBBE3F;border:none;border-radius:0;filter:none;box-shadow:none;text-align:center;font-size:14px;font-weight:normal;height:46px;text-transform:uppercase}.clear{clear:both}.container-bg{background:#f4f4f4;margin-bottom:30px}.container-bg .col-md-12{padding:0}.content-block>.container{padding:0}header>.container-fluid{padding-left:150px;padding-right:150px}header.main-header{background:#ffffff}header .logo-link img{max-width:100%}header .light-logo{display:none}header .col-md-12{display:table;height:120px}header .header-left.logo{height:100%;display:table-cell;vertical-align:middle;text-align:left;min-width:115px}header .header-left.logo a{max-width:216px}header .header-center{display:table-cell;vertical-align:middle;min-width:650px}header .header-right{display:table-cell;vertical-align:middle;min-width:115px}header .header-right ul.header-nav{white-space:nowrap;float:right;margin-bottom:0;font-size:18px}header .header-right ul.header-nav>li{display:inline-block;margin-left:15px}header .header-right ul.header-nav a{color:#2A2F35}.navbar{border-radius:0;-webkit-border-radius:0;border:none;margin:0;line-height:1.42857;position:static}.navbar-inner{display:table;margin:0 auto}.navbar .nav>li:nth-child(1){border-left:none}.navbar .nav>li{float:left}.navbar .nav>li>a{color:#000000;display:block;font-weight:bold;font-size:14px;padding:10px 20px;text-decoration:none;background:transparent}.navbar .nav>li.menu-item-has-children>a:after{display:inline-block;font-family:"fontawesome";content:"";font-style:normal;font-weight:normal;margin-left:10px;margin-right:0;margin-bottom:-1px}.navbar{background:none;min-height:0}.navbar-collapse{padding:0;max-height:inherit;clear:both}.navbar .nav ul{list-style:none}.navbar .navbar-toggle{background:#FBBE3F;color:#ffffff;border:none;border-radius:0;-webkit-border-radius:0;padding:14px 40px;text-transform:uppercase;font-weight:bold;display:none;margin:0 auto 20px;float:none}.navbar .navbar-toggle:after{display:inline-block;font-family:"fontawesome";content:"";margin-left:5px;font-weight:normal}.nav .sub-menu{display:none;position:absolute;margin:0;text-align:left;z-index:0;padding:0}.nav>li>.sub-menu{left:0}.nav>li .sub-menu{background:#ffffff;box-shadow:0 5px 10px rgba(0,0,0,0.1)}.navbar .nav .sub-menu li{float:none}.nav .sub-menu li.menu-item>a{display:block;background:transparent;color:#2a2f35;font-size:14px;font-weight:normal;min-width:250px;width:250px;text-transform:none;text-decoration:none;padding:10px 25px;line-height:20px}.navbar-default .navbar-collapse{border:none}.header-menu-bg{z-index:10001;background:#F5F5F5}.header-menu{overflow:visible;color:#828282;font-size:14px}.header-menu ul{margin:0;padding:0}.header-menu li{position:relative;display:block;float:left}.header-menu .col-md-12{padding:0}.header-menu .header-info-text{display:inline-block;padding:12px 0}.header-menu .social-icons-top{float:right}.header-menu .social-icons-top .fa{font-size:14px}.header-menu .social-icons-top a{color:#828282;padding-top:12px;padding-bottom:12px;padding-left:10px;padding-right:10px;display:inline-block}.header-menu .social-icons-top li:last-child a{padding-right:0}.header-menu .top-menu{display:inline-block;float:right}.header-menu .top-menu-container{display:inline-block;float:right}.header-menu .top-menu li a{color:#828282;display:block;padding-right:15px;padding-left:15px;padding-top:12px;padding-bottom:12px;text-decoration:none}.header-menu .menu-top-menu-container-toggle{float:right;display:none;color:#828282;padding:12px;padding-left:0}.header-menu .menu-top-menu-container-toggle:after{content:"";display:inline-block;font-family:"fontawesome";font-weight:normal;font-size:14px}.blog-post{padding:0 0 30px;margin-bottom:30px;clear:both;border-bottom:1px solid #eeeeee}.blog-post.blog-post-single{margin-bottom:20px;padding-bottom:0;border-bottom:0}.blog-post-single .post-content-wrapper{width:100%;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid #eeeeee}.blog-post-single .post-info{line-height:1em}.blog-post.blog-post-single .post-content{margin-left:0}.blog-post .post-content{background:transparent;padding:0}.blog-post .post-content img{max-width:100%;height:auto}.blog-post .post-header-title{margin-top:0;margin-bottom:10px;font-size:18px;text-transform:uppercase;font-weight:bold;word-wrap:break-word}.blog-post .post-info{color:#828282;margin-bottom:15px;padding:0}.blog-post .post-info span{margin-right:10px;margin-left:0}.blog-post.blog-post-single .post-info{margin-bottom:20px}.blog-post .post-info span i{margin-right:5px}.blog-post .post-info span:first-child{margin-left:0}.blog-post .blog-post-thumb{margin-bottom:30px;position:relative}.blog-post .blog-post-thumb img{width:100%;height:auto}.post-social{font-size:14px;margin-bottom:0;display:inline-block}.post-social-wrapper>span .fa{margin-right:5px}.post-social-wrapper{display:inline-block}.post-social-wrapper span{display:inline-block;text-transform:uppercase;margin-right:5px}.blog-post.blog-post-single .post-social-wrapper{margin-top:10px}.post-social a{color:#ACACAC;font-size:16px;margin-right:5px;text-decoration:none;width:20px;display:inline-block;text-align:center;vertical-align:middle;display:inline-block}footer a{text-decoration:none;color:#ffffff}#top-link{display:block;color:#2A2F35;bottom:-60px;position:fixed;right:40px;width:50px;height:50px;z-index:999;text-align:center;background-color:#FBBE3F}#top-link:before{font-family:"FontAwesome";display:block;content:"";font-size:20px;margin-top:2px}#top-link span{position:absolute;bottom:7px;display:block;text-align:center;width:100%;font-size:12px;font-weight:bold;text-transform:uppercase}.sidebar{margin-top:40px}.content-block .sidebar{margin-top:0}.sidebar ul{list-style:none;margin:0;padding:0}.sidebar>ul>li{margin-bottom:40px}.sidebar .widgettitle{color:#2A2F35;font-size:16px;position:static;margin-bottom:20px;margin-top:0;display:block;font-weight:normal;text-transform:uppercase}.sidebar .widget input[type="text"]{width:100%}.sidebar .widget input[type="text"]{margin-bottom:10px}.sidebar .widget.widget_categories li{margin-top:5px;margin-bottom:5px}.content-block .widget_categories ul li a{text-decoration:none;font-size:15px;font-weight:bold;color:#000000}.content-block .widget_categories ul li{color:#828282}.widget img{max-width:100%;height:auto}.entry-content{overflow:visible}.aligncenter{text-align:center;margin:auto}.wpcf7-form input[type="text"]{width:100%}.wpcf7-form p{font-weight:bold}.search-close-btn{position:absolute;top:50px;right:50px}.search-close-btn .fa{font-size:40px;color:#000000}.search-fullscreen-wrapper{position:fixed;background:rgba(255,255,255,0.95);left:0;right:0;top:0;bottom:0;color:#ffffff;z-index:20000;display:none}.search-fullscreen-wrapper .search-fullscreen-form{margin:0 auto;margin-top:300px;display:table}.search-fullscreen-wrapper .search-fullscreen-form input[type="search"]{font-size:30px;line-height:35px;height:auto;color:#000000;background:none;border:none;border-bottom:3px solid #000000;padding-left:0;padding-right:0;width:700px}.search-fullscreen-wrapper .search-fullscreen-form .submit.btn{display:none}img.aligncenter{display:block;margin-bottom:5px;margin-top:5px}.aligncenter{text-align:center;margin:auto}@media (max-width:1440px){header>.container-fluid{padding-left:30px;padding-right:30px}}@media (max-width:1200px){header .header-center{min-width:0}}@media (max-width:1024px){header .header-left.logo,header .header-center,header .header-right{display:block}header .header-left.logo{text-align:center;margin:20px 0}header .header-right ul.header-nav{float:none;margin:0 auto;padding:0;display:table;margin-top:20px;margin-bottom:30px}header .header-right ul.header-nav>li:first-child{margin-left:0}header .col-md-12{height:auto!important;display:block}header>.container-fluid{padding-left:15px;padding-right:15px}}@media (max-width:767px){.container-bg .col-md-12{padding-left:15px;padding-right:15px}.content-block>.container>.row{margin-left:0;margin-right:0}.nav .sub-menu{z-index:0}.nav .sub-menu li.menu-item>a{color:#000000!important}.nav>li .sub-menu{background:none}.navbar .navbar-toggle{display:table}.navbar .nav>li.menu-item-has-children>a:after{float:right;content:""}.nav>li .sub-menu{box-shadow:none}header .header-right ul.header-nav{margin-top:10px}.navbar .nav>li:not(.menu-item-has-children)>a:after{display:none}.nav .sub-menu,.navbar .nav .sub-menu li{border:0}.navbar-collapse{padding-right:0}.nav .sub-menu{box-shadow:none}.navbar{padding-bottom:0;margin:0}.navbar-inner{width:100%}header .navbar{padding-bottom:0;margin:0}.nav .sub-menu li.menu-item>a{font-size:15px}.navbar .nav>li>a{font-size:15px}.nav>li>.sub-menu{left:0!important;padding-top:5px;padding-bottom:5px}.navbar-collapse{padding:0}.nav .sub-menu li a{background:none!important}.nav a:before{background:none!important}.navbar .nav li{display:block;width:100%}.nav .sub-menu{padding:0;position:relative;margin-left:0}.nav .sub-menu li.menu-item>a{background:none;padding:5px 10px;display:block;width:auto}.navbar .nav li .sub-menu li.menu-item>a{padding-top:5px!important;padding-bottom:5px!important;padding-left:15px!important;padding-right:15px!important}.navbar .nav li.menu-item>a{padding:5px 14px}.navbar .nav>li>a{font-weight:bold}.blog-post .post-content{margin-left:0}.blog-post .post-content-wrapper{width:100%;float:none}body{padding-left:0;padding-right:0}.search-fullscreen-wrapper .search-fullscreen-form{margin-top:200px}.search-fullscreen-wrapper .search-fullscreen-form input[type="search"]{width:300px;font-size:18px}.header-menu .menu-top-menu-container-toggle+div{display:none}.header-menu .menu-top-menu-container-toggle{display:block}.header-menu .menu-top-menu-container-toggle+div{float:none;position:absolute;top:50px;width:100%;z-index:10;background:#eeeeee;margin-left:-15px;margin-right:-15px;padding-top:10px;padding-bottom:10px}.header-menu .menu-top-menu-container-toggle+div li{float:none}.header-menu .menu-top-menu-container-toggle+div li a{width:100%;padding:6px 25px!important;margin-bottom:0}.header-menu .top-menu{float:none;width:100%}.header-menu .col-md-12{padding-left:15px;padding-right:15px}.search-close-btn{right:30px;top:30px}}@media (max-width:568px){header .logo{float:none;text-align:center;margin:10px 0}.wpcf7-form-control{width:100%}}@media (max-width:480px){header .col-md-12{display:block}.content-block>.container{padding:0}.blog-post .post-info{line-height:1.7em}}@media (max-width:400px){.header-menu .menu-top-menu-container-toggle+div{top:95px}.header-menu .header-info-text{display:block;text-align:center}.header-menu .menu-top-menu-container-toggle{float:left}.header-menu .menu-top-menu-container-toggle+div{top:95px}}@media (min-width:768px){.nav .sub-menu{display:block;margin:0;opacity:0;visibility:hidden;z-index:-1;-webkit-transform:translateZ(0)}}@media (max-width:767px){.nav>li>.sub-menu{z-index:10000}.nav>li>.sub-menu{width:100%!important;left:0;position:relative!important}.nav .sub-menu{margin-left:0}.nav .sub-menu li.menu-item>a{padding:10px 15px}.nav>li>.sub-menu>li{width:100%!important}.sidebar .widgettitle{font-size:14px;font-weight:bold}}*,*:after,*::before{-moz-box-sizing:border-box;box-sizing:border-box}html,body{height:auto}.post-info{display:none}.navbar-inner{font-family:montserrat}.header-info-text{color:white}.nav .sub-menu li.menu-item>a{font-size:13px}header .logo-link img{width:168px!important}a#top-link{display:none}h2.widgettitle{font-weight:600!important}input[type="submit"]{color:white}@media (max-width:1024px){header .header-left.logo{margin:60px 0;margin-bottom:3%}}h1.entry-title.post-header-title{font-size:2.3rem;margin-bottom:4%}.post-social-wrapper{padding:1em;border:solid #2a2f35}.post-social-wrapper{display:none}span.post-comments-count{display:none}.blog-post .blog-post-thumb img{width:100%;height:auto;margin-right:48%}div.container-bg-overlay{display:none}.clearfix:after{content:"";display:table;clear:both}@media screen and (max-width:992px){.blog-post .blog-post-thumb img{width:50%!important;height:auto!important;margin-right:auto!important}}@media screen and (max-width:735px){.blog-post .blog-post-thumb img{display:none!important;width:50%!important;height:auto!important;margin-right:auto!important}}#breadcrumbs{margin-left:10%}header .col-md-12{height:110px}header .logo-link img{width:200px}h1,h2{font-family:'Montserrat'}.btn,input[type="submit"],.post-social-wrapper span{font-family:'Montserrat'}h1{font-size:35px}body{font-family:'Open Sans';font-size:14px}body{background-color:#ffffff;color:#222222}.btn,input[type="submit"],.navbar .navbar-toggle,#top-link{background-color:#e42413}a{color:#e42413}header.main-header{background-color:#ffffff}.header-menu-bg{background-color:#F5F5F5}.header-menu,.header-menu .social-icons-top a,.header-menu .top-menu li a,.header-menu .menu-top-menu-container-toggle{color:#2a2f35}.pea_cook_wrapper{position:fixed;padding:8px 21px;margin:0;border-radius:5px;z-index:10000;text-align:center}.pea_cook_wrapper.pea_cook_bottomright{bottom:30px;right:30px;margin-left:5%}.pea_cook_wrapper p{bottom:30px;font-family:"helvetica neue",helvetica,arial,sans-serif;font-size:11px;margin:0;font-weight:bold}.pea_cook_wrapper a{border-bottom:dotted thin #eee;text-decoration:none}a#fom,a#pea_close{border-bottom:1px dotted}a#pea_close{padding-top:20px;display:block}button.pea_cook_btn{background:#e3e3e3;border:1px solid #bbb;border-radius:5px;box-shadow:inset 0 0 1px 1px #f6f6f6;color:#333;font:bold 12px "helvetica neue",helvetica,arial,sans-serif;line-height:1;padding:5px 0;text-align:center;text-shadow:0 1px 0 #fff;width:100px;margin-left:20px}.pea_cook_more_info_popover{display:none;position:absolute;top:0;z-index:1000000;height:80%;width:100%;left:0}.pea_cook_more_info_popover_inner{margin:40px auto;min-width:50%;min-height:200px;padding:50px;max-width:60%;background-color:rgba(0,0,0,0.75);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc000000, endColorstr=#cc000000);-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc000000, endColorstr=#cc000000)"}.pea_cook_more_info_popover_inner a{border-bottom:dotted thin #eee;text-decoration:none}</style><link rel="preload" href="https://mercortecresa.com/wp-content/cache/min/1/e9669ce90688153ea34da752f395b7bf.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  media="all" data-minify="1" />
+	<meta name="description" content="Desde el año 2004 se han unificado los criterios europeos de clasificación en la Reacción al Fuego de los materiales de .. (euroclases)" />
+	<link rel="canonical" href="https://mercortecresa.com/blog/euroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion" />
+	<meta property="og:locale" content="es_ES" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Euroclases - Clasificación europea de reacción al fuego de materiales" />
+	<meta property="og:description" content="Desde el año 2004 se han unificado los criterios europeos de clasificación en la Reacción al Fuego de los materiales de .. (euroclases)" />
+	<meta property="og:url" content="https://mercortecresa.com/blog/euroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion" />
+	<meta property="og:site_name" content="Mercor Tecresa" />
+	<meta property="article:publisher" content="https://www.facebook.com/MercortecresaPPCI/" />
+	<meta property="article:published_time" content="2020-11-10T11:52:56+00:00" />
+	<meta property="og:image" content="https://mercortecresa.com/wp-content/uploads/2020/11/Euroclases-1.jpg" />
+	<meta property="og:image:width" content="1280" />
+	<meta property="og:image:height" content="800" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="author" content="Roberto Perez Salillas" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@mercortecresa" />
+	<meta name="twitter:site" content="@mercortecresa" />
+	<meta name="twitter:label1" content="Escrito por" />
+	<meta name="twitter:data1" content="Roberto Perez Salillas" />
+	<meta name="twitter:label2" content="Tiempo de lectura" />
+	<meta name="twitter:data2" content="5 minutos" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://mercortecresa.com/blog/euroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion#article","isPartOf":{"@id":"https://mercortecresa.com/blog/euroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion"},"author":{"name":"Roberto Perez Salillas","@id":"https://mercortecresa.com/#/schema/person/275eebae54c4cf671d6c26d83abd4b3a"},"headline":"Euroclases &#8211; Clasificación Europea de Reacción al Fuego de Materiales de Construcción","datePublished":"2020-11-10T11:52:56+00:00","dateModified":"2020-11-10T11:52:56+00:00","mainEntityOfPage":{"@id":"https://mercortecresa.com/blog/euroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion"},"wordCount":1001,"publisher":{"@id":"https://mercortecresa.com/#organization"},"image":{"@id":"https://mercortecresa.com/blog/euroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion#primaryimage"},"thumbnailUrl":"https://mercortecresa.com/wp-content/uploads/2020/11/Euroclases-1.jpg","articleSection":["Mercor Tecresa"],"inLanguage":"es"},{"@type":"WebPage","@id":"https://mercortecresa.com/blog/euroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion","url":"https://mercortecresa.com/blog/euroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion","name":"Euroclases - Clasificación europea de reacción al fuego de materiales","isPartOf":{"@id":"https://mercortecresa.com/#website"},"primaryImageOfPage":{"@id":"https://mercortecresa.com/blog/euroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion#primaryimage"},"image":{"@id":"https://mercortecresa.com/blog/euroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion#primaryimage"},"thumbnailUrl":"https://mercortecresa.com/wp-content/uploads/2020/11/Euroclases-1.jpg","datePublished":"2020-11-10T11:52:56+00:00","dateModified":"2020-11-10T11:52:56+00:00","description":"Desde el año 2004 se han unificado los criterios europeos de clasificación en la Reacción al Fuego de los materiales de .. (euroclases)","breadcrumb":{"@id":"https://mercortecresa.com/blog/euroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion#breadcrumb"},"inLanguage":"es","potentialAction":[{"@type":"ReadAction","target":["https://mercortecresa.com/blog/euroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion"]}]},{"@type":"ImageObject","inLanguage":"es","@id":"https://mercortecresa.com/blog/euroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion#primaryimage","url":"https://mercortecresa.com/wp-content/uploads/2020/11/Euroclases-1.jpg","contentUrl":"https://mercortecresa.com/wp-content/uploads/2020/11/Euroclases-1.jpg","width":1280,"height":800,"caption":"Euroclases"},{"@type":"BreadcrumbList","@id":"https://mercortecresa.com/blog/euroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"mercor tecresa®","item":"https://mercortecresa.com/"},{"@type":"ListItem","position":2,"name":"Mercor Tecresa","item":"https://mercortecresa.com/blog/category/mercor-tecresa"},{"@type":"ListItem","position":3,"name":"Euroclases &#8211; Clasificación Europea de Reacción al Fuego de Materiales de Construcción"}]},{"@type":"WebSite","@id":"https://mercortecresa.com/#website","url":"https://mercortecresa.com/","name":"Mercor Tecresa","description":"Empresa líder en protección pasiva contra incendios","publisher":{"@id":"https://mercortecresa.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://mercortecresa.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"es"},{"@type":"Organization","@id":"https://mercortecresa.com/#organization","name":"mercortecresa®","url":"https://mercortecresa.com/","sameAs":["https://es.linkedin.com/company/mercortecresa","https://www.youtube.com/user/Tecresapp","https://www.facebook.com/MercortecresaPPCI/","https://twitter.com/mercortecresa"],"logo":{"@type":"ImageObject","inLanguage":"es","@id":"https://mercortecresa.com/#/schema/logo/image/","url":"https://mercortecresa.com/wp-content/uploads/2019/02/cropped-Logo_150cm_rojo-e1550135846591.png","contentUrl":"https://mercortecresa.com/wp-content/uploads/2019/02/cropped-Logo_150cm_rojo-e1550135846591.png","width":450,"height":121,"caption":"mercortecresa®"},"image":{"@id":"https://mercortecresa.com/#/schema/logo/image/"}},{"@type":"Person","@id":"https://mercortecresa.com/#/schema/person/275eebae54c4cf671d6c26d83abd4b3a","name":"Roberto Perez Salillas","sameAs":["https://www.mercortecresa.com"],"url":"https://mercortecresa.com/blog/author/salillas"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//maxcdn.bootstrapcdn.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//netdna.bootstrapcdn.com' />
+<link rel='dns-prefetch' href='//www.mercortecresa.com' />
+<link rel='dns-prefetch' href='//mercortecresa.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	
+
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+
+<style id='contact-form-7-inline-css' type='text/css'>
+.wpcf7 .wpcf7-recaptcha iframe {margin-bottom: 0;}.wpcf7 .wpcf7-recaptcha[data-align="center"] > div {margin: 0 auto;}.wpcf7 .wpcf7-recaptcha[data-align="right"] > div {margin: 0 0 0 auto;}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--[if IE 7]>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css?ver=1.3.9">
+<![endif]-->
+
+
+
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://mercortecresa.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+		<style>
+			/* Accessible for screen readers but hidden from view */
+			.fa-hidden { position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden; }
+			.rtl .fa-hidden { left:10000px; }
+			.fa-showtext { margin-right: 5px; }
+		</style>
+		<script src="https://mercortecresa.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+<script data-minify="1" src="https://mercortecresa.com/wp-content/cache/min/1/wp-content/uploads/js-cache-.js?ver=1664351344" id="js-cache--js" defer></script>
+<link rel="https://api.w.org/" href="https://mercortecresa.com/wp-json/" /><link rel="alternate" type="application/json" href="https://mercortecresa.com/wp-json/wp/v2/posts/33362" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://mercortecresa.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://mercortecresa.com/wp-includes/wlwmanifest.xml" /> 
+
+<link rel='shortlink' href='https://mercortecresa.com/?p=33362' />
+<link rel="alternate" type="application/json+oembed" href="https://mercortecresa.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmercortecresa.com%2Fblog%2Feuroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion" />
+<link rel="alternate" type="text/xml+oembed" href="https://mercortecresa.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmercortecresa.com%2Fblog%2Feuroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion&#038;format=xml" />
+<meta name="generator" content="WPML ver:4.5.11 stt:1,4,64,2;" />
+        
+        <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+            var jQueryMigrateHelperHasSentDowngrade = false;
+
+			window.onerror = function( msg, url, line, col, error ) {
+				// Break out early, do not processing if a downgrade reqeust was already sent.
+				if ( jQueryMigrateHelperHasSentDowngrade ) {
+					return true;
+                }
+
+				var xhr = new XMLHttpRequest();
+				var nonce = 'bd0a8354da';
+				var jQueryFunctions = [
+					'andSelf',
+					'browser',
+					'live',
+					'boxModel',
+					'support.boxModel',
+					'size',
+					'swap',
+					'clean',
+					'sub',
+                ];
+				var match_pattern = /\)\.(.+?) is not a function/;
+                var erroredFunction = msg.match( match_pattern );
+
+                // If there was no matching functions, do not try to downgrade.
+                if ( typeof erroredFunction !== 'object' || typeof erroredFunction[1] === "undefined" || -1 === jQueryFunctions.indexOf( erroredFunction[1] ) ) {
+                    return true;
+                }
+
+                // Set that we've now attempted a downgrade request.
+                jQueryMigrateHelperHasSentDowngrade = true;
+
+				xhr.open( 'POST', 'https://mercortecresa.com/wp-admin/admin-ajax.php' );
+				xhr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
+				xhr.onload = function () {
+					var response,
+                        reload = false;
+
+					if ( 200 === xhr.status ) {
+                        try {
+                        	response = JSON.parse( xhr.response );
+
+                        	reload = response.data.reload;
+                        } catch ( e ) {
+                        	reload = false;
+                        }
+                    }
+
+					// Automatically reload the page if a deprecation caused an automatic downgrade, ensure visitors get the best possible experience.
+					if ( reload ) {
+						location.reload();
+                    }
+				};
+
+				xhr.send( encodeURI( 'action=jquery-migrate-downgrade-version&_wpnonce=' + nonce ) );
+
+				// Suppress error alerts in older browsers
+				return true;
+			}
+        </script>
+
+		<style type="text/css" id="et-social-custom-css">
+				 
+			</style><link rel="preload" href="https://mercortecresa.com/wp-content/plugins/monarch/core/admin/fonts/modules.ttf" as="font" crossorigin="anonymous"><meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
+<meta name="generator" content="Powered by Slider Revolution 6.5.24 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="rocketlazyloadscript" async src=https://www.googletagmanager.com/gtag/js?id=UA-47854037-1></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-47854037-1');
+</script>
+<link rel="icon" href="https://mercortecresa.com/wp-content/uploads/2018/02/cropped-favicon-mercortecresa-40x40.png" sizes="32x32" />
+<link rel="icon" href="https://mercortecresa.com/wp-content/uploads/2018/02/cropped-favicon-mercortecresa-300x300.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://mercortecresa.com/wp-content/uploads/2018/02/cropped-favicon-mercortecresa-300x300.png" />
+<meta name="msapplication-TileImage" content="https://mercortecresa.com/wp-content/uploads/2018/02/cropped-favicon-mercortecresa-300x300.png" />
+<script type="rocketlazyloadscript">function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;
+				try {
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) || (e.l=="fullwidth" || e.layout=="fullwidth") ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);
+					if(e.layout==="fullscreen" || e.l==="fullscreen")
+						newh = Math.max(e.mh,window.RSIH);
+					else{
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,
+							sl;
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}
+					var el = document.getElementById(e.c);
+					if (el!==null && el) el.style.height = newh+"px";
+					el = document.getElementById(e.c+"_wrapper");
+					if (el!==null && el) {
+						el.style.height = newh+"px";
+						el.style.display = "block";
+					}
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}
+			//});
+		  };</script>
+<style id="sccss">.classhid {
+ display: none;
+}
+
+iframe[src*=youtube] {
+    max-width: 100%;
+    height: 456px;
+}
+
+.vc_tta-title-text {
+    text-transform: capitalize;
+}
+
+.mgt-button.mgt-text-size-small {
+    font-size: 9px !important;
+    height: auto;
+}
+
+.post-info {
+    display: none;
+}
+
+.cq-homeslider.lavender .cq-homeslider-contentcontainer {
+    background: rgba(227, 24, 24, 0.38) !important;
+}
+
+h4.cq-homeslider-title {
+    color: white !important;
+    font-size: 24px !Important;
+    font-weight: 600;
+}
+
+.cq-homeslider-navigation.btn-medium {
+    display: none;
+}
+
+.classvis {
+  display: inherit;
+}
+
+.hotspot1 {
+  display: inherit !important;
+  animation: fadein 2s !important;
+  -moz-animation: fadein 2s; /* Firefox */
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -o-animation: fadein 2s; /* Opera */
+}
+
+.navbar-inner {
+    font-family: montserrat;
+}
+
+.vc_icon_element.vc_icon_element-outer .vc_icon_element-inner.vc_icon_element-color-blue .vc_icon_element-icon {
+    color: #ed1c24 !important;
+}
+
+.vc_icon_element.vc_icon_element-outer .vc_icon_element-inner.vc_icon_element-color-sky .vc_icon_element-icon {
+    color: #ed1c24;
+}
+
+span.vc_icon_element-icon.vc-mono.vc-mono-linkedin {
+    color: #ed1c24 !important;
+}
+
+.project-container.container.portfolio-item-details.portfolio-layout-0.portfolio-title-position-default {
+    background-color: #f4f4f4;
+    padding-top: 2em;
+}
+
+.material-card-content {
+    border-top-color: rgb(255, 255, 255) !important;
+}
+
+header.transparent-header .navbar .nav > li > a {
+    color: #ffffff;
+}
+
+.wpml-ls-slot-33.wpml-ls-current-language a {
+    color: grey !Important;
+}
+
+.header-info-text {
+    color: white;
+}
+
+table.alignleft {
+    width: 100% !important;
+}
+
+table td {
+    padding: 14px 5px !important;
+}
+
+.header-menu-bg.transparent-header .header-menu .top-menu li a {
+    color: #ffffff;
+}
+
+i.Defaults-angle-right {
+    display: none;
+}
+
+a.btn.btn-black.margin-top-10 {
+    color: white;
+}
+
+a.ultb3-btn.ult-responsive {
+    font-size: 14px !important;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    padding: 6% !important;
+}
+
+a.ultb3-btn.ult-responsive:hover {
+    font-size: 14px;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    padding: 6%;
+}
+
+.nav .sub-menu li.menu-item > a {
+  font-size: 13px;
+}
+
+header .logo-link img {
+    width: 168px !important;
+}
+
+.page-header h2.seo {
+    font-family: montserrat !important;
+}
+
+a#mostrar-tutorial {
+    color: white;
+}
+
+a#top-link {
+    display: none;
+}
+
+.footer-container h2.widgettitle {
+    font-weight: 600;
+    font-family: raleway;
+}
+
+h2.widgettitle {
+    font-weight: 600 !important;
+}
+
+.mgt-promo-block.animated.black-text.cover-image.text-size-normal.darken.mgt-promo-block-79290018663.wpb_content_element {
+    background-color: #f9f9f9 !important;
+}
+
+.widget-download-title {
+    font-weight: 600;
+}
+
+.mgt-promo-block-79290018663.mgt-promo-block.darken .mgt-promo-block-content {
+    background-color: #f9f9f9 !important;
+}
+
+h5 {
+    font-family: raleway;
+    font-size: 18px !important;
+    line-height: 2.2rem;
+}
+
+h2.mgt-header-block-title {
+    font-weight: 600 !important;
+    font-size: 28px;
+}
+
+h1.mgt-header-block-title {
+    font-weight: 600 !important;
+    font-size: 28px;
+}
+
+a.vc_general.vc_btn3.vc_btn3-size-md.vc_btn3-shape-rounded.vc_btn3-style-classic.vc_btn3-color-white {
+    border-color: #e41c1c;
+    border-width: 2px;
+    color: black;
+    font-family: raleway;
+    font-weight: 600;
+}
+
+h3.mgt-header-block-title {
+    font-weight: 600 !important;
+}
+
+.mgt-button.mgt-style-solid-invert:hover {
+    background: #FBBE3F;
+    color: #ffffff;
+}
+
+.mgt-button.mgt-style-textwhite {
+    color: #ffffff;
+}
+
+a.btn.hvr-icon-wobble-horizontal.mgt-button.mgt-style-textwhite.mgt-size-normal.mgt-align-left.mgt-display-newline.mgt-text-size-small.mgt-button-icon-position-right.mgt-text-transform-uppercase {
+    color: white;
+  font-family: montserrat;
+    font-weight: 600;
+}
+
+a.btn.hvr-icon-wobble-horizontal.mgt-button.mgt-style-solid-invert.mgt-size-normal.mgt-align-left.mgt-display-newline.mgt-text-size-small.mgt-button-icon-position-right.mgt-text-transform-uppercase {
+    background-color: #b42c2c;
+}
+
+a.btn.hvr-default.mgt-button.mgt-style-solid.mgt-size-normal.mgt-align-center.mgt-display-inline.mgt-text-size-normal.mgt-button-icon-position-left.mgt-text-transform-none {
+  background-color: #b42c2c;
+  color: white;
+}
+
+.widget-download-link-wrapper {
+    border-color: #e41919;
+    border-width: 2px;
+    box-shadow: 2px 3px 7px 0px #00000038;
+}
+
+.mgt-promo-block.animated.white-text.text-size-normal.no-darken.mgt-promo-block-79292048663.wpb_content_element.wpb_animate_when_almost_visible.wpb_top-to-bottom.wpb_start_animation {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.wpb-js-composer .vc_tta-color-black.vc_tta-style-outline .vc_tta-tab>a:hover {
+    background-color: #2a2f35;
+    color: #fff;
+}
+
+.wpb-js-composer .vc_tta-color-black.vc_tta-style-classic.vc_tta-tabs .vc_tta-panels {
+    background-color: #ffffff !important;
+}
+
+pre {
+    border: 1px solid #fff !important;
+}
+
+.nav .sub-menu li.menu-item > a:hover {
+  color: white !important;
+}
+
+input[type="submit"] {
+  color: white;
+}
+
+body .social-icon:after {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.icon-2x {
+    font-size: 1.4em !important;
+}
+
+footer .footer-menu ul li {
+    font-size: 14px;
+  margin-right: 14px;
+}
+
+.mgt-promo-block .mgt-promo-block-content {
+    padding: 7px !important;
+}
+
+header.fixed.sticky-header-elements-headerandmenu {
+    padding-bottom: 2em;
+}
+
+.imagefooter {
+background-image: url(https://mercortecresa.com/wp-content/uploads/2019/02/LOGO-MERCORTECRESA-BLANCO-ROJO.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 2px;
+    padding: 0.5em;
+}
+
+.bordersolution {
+    border: solid #e31b1b !important;
+    border-radius: 6px;
+}
+
+.vc_tta-panel-heading {
+    background-color: #e31818 !important;
+}
+
+span.vc_tta-title-text {
+    font-weight: 700;
+  font-size: 20px;
+}
+
+.wpb-js-composer .vc_tta-color-grey.vc_tta-style-classic .vc_active .vc_tta-panel-heading .vc_tta-controls-icon::after, .wpb-js-composer .vc_tta-color-grey.vc_tta-style-classic .vc_active .vc_tta-panel-heading .vc_tta-controls-icon::before, .wpb-js-composer .vc_tta-color-grey.vc_tta-style-classic .vc_tta-controls-icon::after, .wpb-js-composer .vc_tta-color-grey.vc_tta-style-classic .vc_tta-controls-icon::before {
+    border-color: #fff !important;
+}
+
+p.mgt-header-block-subtitle {
+    color: grey;
+    font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+header .header-left.logo {
+    margin: 60px 0;
+    margin-bottom: 3%;
+  }}
+
+h1.entry-title.post-header-title {
+    font-size: 2.3rem;
+    margin-bottom: 4%;
+}
+
+.post-social-wrapper {
+    padding: 1em;
+    border: solid #2a2f35;
+}
+
+a#blog_show_comment_form {
+    display: none;
+}
+
+h2.comments-title {
+    display: none;
+}
+
+.portfolio-item-block .project-description {
+    font-size: 15px;
+}
+
+tr {
+    vertical-align: top;
+}
+
+.post-social-wrapper {
+    display: none;
+}
+
+.mgt-post-categories {
+    display: none !important;
+}
+
+span.post-comments-count {
+    display: none;
+}
+
+.blog-post .blog-post-thumb img {
+    width: 100%;
+    height: auto;
+    margin-right: 48%;
+}
+
+div.container-bg-overlay {
+    display: none;
+}
+
+li.ljoptimizer.menu-item.menu-item-type-custom.menu-item-object-custom span strong {
+    color: #ffffff;
+    text-align: justify
+}
+
+/*
+Formulario CF7 a 2 columnas responsive
+*/
+#responsive-form{
+	max-width:600px /*-- change this to get your desired form width --*/;
+	margin:0 auto;
+        width:100%;
+}
+.form-row{
+	width: 100%;
+}
+.column-half, .column-full{
+	float: left;
+	position: relative;
+	padding: 0.65rem;
+	width:100%;
+	-webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box
+}
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/**---------------- Media query ----------------**/
+@media only screen and (min-width: 48em) { 
+	.column-half{
+		width: 50%;
+	}
+}
+
+	
+/**---------------- Reducir imagen destacada blog al 50% para max 992 px ----------------**/
+@media screen and (max-width: 992px) {
+	 .blog-post .blog-post-thumb img {
+    width: 50% !important;
+    height: auto !important;
+    margin-right: auto !important;
+		}
+}
+
+/**---------------- Reducir tamaño imagen blog para moviles y tablets al 50% ----------------**/
+@media screen and (max-width: 735px) {
+.blog-post .blog-post-thumb img {
+display: none !important;
+width: 50% !important;
+height: auto !important;
+margin-right: auto !important;
+    }
+}
+
+.ultima-actualizacion {
+font-size: 12px;
+text-transform: uppercase;
+color: #666666 !important;
+}
+/* desafioarea. Cuadrar diseño con el de páginas según tarea Mapi */
+#breadcrumbs {
+    margin-left: 10%;
+}
+</style><noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript">
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script></head>
+
+<body data-rsssl=1 class="post-template-default single single-post postid-33362 single-format-standard et_monarch wpb-js-composer js-comp-ver-6.9.0 vc_responsive">
+
+
+        <div class="header-menu-bg top-menu-position-default">
+      <div class="header-menu">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+
+            <div class="header-info-text">
+                        </div>
+            <div class="social-icons-top"><ul><li><a href="https://www.facebook.com/MercortecresaPPCI/" target="_blank" class="a-facebook"><i class="fa fa-facebook"></i></a></li><li><a href="https://twitter.com/mercortecresa" target="_blank" class="a-twitter"><i class="fa fa-twitter"></i></a></li><li><a href="https://es.linkedin.com/company/mercortecresa" target="_blank" class="a-linkedin"><i class="fa fa-linkedin"></i></a></li><li><a href="https://www.youtube.com/user/Tecresapp" target="_blank" class="a-youtube"><i class="fa fa-youtube"></i></a></li></ul></div>            <div class="menu-top-menu-container-toggle"></div>
+            <div class="top-menu-container"><ul id="menu-top" class="top-menu"><li id="menu-item-3461" class="ljoptimizer menu-item menu-item-type-post_type menu-item-object-page menu-item-3461"><span data-loc="aHR0cHM6Ly9tZXJjb3J0ZWNyZXNhLmNvbS9lbXByZXNh">Empresa</span></li>
+<li id="menu-item-12370" class="ljoptimizer menu-item menu-item-type-post_type menu-item-object-page menu-item-12370"><span data-loc="aHR0cHM6Ly9tZXJjb3J0ZWNyZXNhLmNvbS9jb21wcm9taXNvcw">Compromisos</span></li>
+<li id="menu-item-wpml-ls-33-en" class="menu-item wpml-ls-slot-33 wpml-ls-item wpml-ls-item-en wpml-ls-menu-item wpml-ls-first-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-33-en"><a title="Inglés" href="https://mercortecresa.com/en/blog/euroclasses-european-reaction-fire-classification"><img width="18" height="12"
+            class="wpml-ls-flag"
+            src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2012'%3E%3C/svg%3E"
+            alt=""
+            
+            
+    data-lazy-src="https://mercortecresa.com/wp-content/plugins/sitepress-multilingual-cms/res/flags/en.png" /><noscript><img width="18" height="12"
+            class="wpml-ls-flag"
+            src="https://mercortecresa.com/wp-content/plugins/sitepress-multilingual-cms/res/flags/en.png"
+            alt=""
+            
+            
+    /></noscript><span class="wpml-ls-display">Inglés</span></a></li>
+<li id="menu-item-wpml-ls-33-fr" class="menu-item wpml-ls-slot-33 wpml-ls-item wpml-ls-item-fr wpml-ls-menu-item wpml-ls-last-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-33-fr"><a title="Francés" href="https://mercortecresa.com/fr/blog/euroclases-classification-europeenne-de-la-reaction-au-feu"><img width="18" height="12"
+            class="wpml-ls-flag"
+            src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2012'%3E%3C/svg%3E"
+            alt=""
+            
+            
+    data-lazy-src="https://mercortecresa.com/wp-content/plugins/sitepress-multilingual-cms/res/flags/fr.png" /><noscript><img width="18" height="12"
+            class="wpml-ls-flag"
+            src="https://mercortecresa.com/wp-content/plugins/sitepress-multilingual-cms/res/flags/fr.png"
+            alt=""
+            
+            
+    /></noscript><span class="wpml-ls-display">Francés</span></a></li>
+</ul></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="sticky-header main-header sticky-header-elements-headeronly">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="header-left logo">
+                      <a class="logo-link" href="https://mercortecresa.com"><img width="168" height="45" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20168%2045'%3E%3C/svg%3E" alt="Mercor Tecresa" class="regular-logo" data-lazy-src="https://mercortecresa.com/wp-content/uploads/2019/02/Logo_150cm_rojo-e1616495278827.png"><noscript><img width="168" height="45" src="https://mercortecresa.com/wp-content/uploads/2019/02/Logo_150cm_rojo-e1616495278827.png" alt="Mercor Tecresa" class="regular-logo"></noscript><img width="168" height="46" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20168%2046'%3E%3C/svg%3E" alt="Mercor Tecresa" class="light-logo" data-lazy-src="https://mercortecresa.com/wp-content/uploads/2019/02/LOGO-MERCORTECRESA-BLANCO-ROJO-e1616495292724.png"><noscript><img width="168" height="46" src="https://mercortecresa.com/wp-content/uploads/2019/02/LOGO-MERCORTECRESA-BLANCO-ROJO-e1616495292724.png" alt="Mercor Tecresa" class="light-logo"></noscript></a>
+                  </div>
+
+      <div class="header-center">
+                              <div id="navbar" class="navbar navbar-default clearfix mgt-mega-menu">
+          <div class="navbar-inner">
+
+              <div class="navbar-toggle" data-toggle="collapse" data-target=".collapse">
+                Menu              </div>
+
+              <div class="navbar-collapse collapse"><ul id="menu-home-menu-1" class="nav"><li id="mgt-menu-item-3107" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="#"><strong>Productos</strong></a>
+<ul class="sub-menu  megamenu-column-1 level-0" >
+	<li id="mgt-menu-item-13103" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://mercortecresa.com/evacuacion-de-humos">Evacuación de humos</a></li>	<li id="mgt-menu-item-27780" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://mercortecresa.com/compuertas-cortafuego">Compuertas Cortafuego</a></li>	<li id="mgt-menu-item-3430" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://mercortecresa.com/servicio-asistencia-tecnica-mantenimiento">Servicio Asistencia Técnica</a></li>	<li id="mgt-menu-item-3332" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://mercortecresa.com/morteros-tecwool">Morteros Tecwool®</a></li>	<li id="mgt-menu-item-5281" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://mercortecresa.com/morteros-tecplaster">Mortero Tecplaster®</a></li>	<li id="mgt-menu-item-5300" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://mercortecresa.com/tecfill-aislamiento-termico-y-acustico">Tecfill® Aislamiento Térmico y Acústico</a></li>	<li id="mgt-menu-item-4383" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://mercortecresa.com/paneles-tecbor">Paneles Tecbor®</a></li>	<li id="mgt-menu-item-3833" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://mercortecresa.com/panel-tecbor-y">Paneles Tecbor® Y</a></li>	<li id="mgt-menu-item-22532" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://mercortecresa.com/alveoltec">Paneles de Yeso Ignífugo AlveolTec®</a></li>	<li id="mgt-menu-item-5407" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://mercortecresa.com/sistemas-de-sellado-tecsel">Sistemas de Sellados Tecsel®</a></li>	<li id="mgt-menu-item-5289" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://mercortecresa.com/pintura-ignifuga-teclack-w">Pintura Ignífuga Teclack-W®</a></li></ul>
+</li><li id="mgt-menu-item-3108" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://mercortecresa.com/soluciones-constructivas"><strong>Sol. Constructivas</strong></a></li><li id="mgt-menu-item-24541" class="ljoptimizer header_menu_ljoptimizer menu-item menu-item-type-custom menu-item-object-custom menu-item-multicolumn"><span data-loc="aHR0cHM6Ly9tZXJjb3J0ZWNyZXNhLmNvbS9hcmVhLWNlcnRpZmljYWRvcw"><strong>Certificados Suministro</strong></span></li><li id="mgt-menu-item-3111" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://mercortecresa.com/documentacion-y-descargas"><strong>Doc. y Descargas</strong></a></li><li id="mgt-menu-item-3133" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://mercortecresa.com/contacto"><strong>Contacto</strong></a></li><li id="mgt-menu-item-23183" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://mercortecresa.com/blog"><strong>Blog</strong></a></li></ul></div>
+          </div>
+        </div>
+
+                  </div>
+
+      <div class="header-right">
+            <ul class="header-nav">
+                <li class="search-toggle"><div id="trigger-search"><a class="search-toggle-btn"><i class="fa fa-search"></i></a></div></li>
+                
+
+      </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+</header>
+
+<p id="breadcrumbs"><span><span><a href="https://mercortecresa.com/">mercor tecresa®</a> » <span><a href="https://mercortecresa.com/blog/category/mercor-tecresa">Mercor Tecresa</a> » <strong class="breadcrumb_last" aria-current="page">Euroclases &#8211; Clasificación Europea de Reacción al Fuego de Materiales de Construcción</strong></span></span></span></p>
+
+	
+<div class="content-block">
+<div class="container-bg with-bgcolor" data-style="background-color: #F4F4F4">
+	<div class="container-bg-overlay">
+	  <div class="container">
+	    <div class="row">
+	      <div class="col-md-12">
+	        <div class="page-item-title">
+	          <p>
+								<span>Mercor Tecresa</span>
+				
+	          </p>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+    </div>
+  </div>
+<div class="post-container container">
+	<div class="row">
+		<div class="col-md-9">
+			<div class="blog-post blog-post-single">
+				<article id="post-33362" class="post-33362 post type-post status-publish format-standard has-post-thumbnail hentry category-mercor-tecresa">
+							<div class="post-content-wrapper">
+
+								<div class="post-content">
+																		<div class="blog-post-thumb text-center">
+
+									<img width="1280" height="800" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201280%20800'%3E%3C/svg%3E" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Euroclases" data-lazy-srcset="https://mercortecresa.com/wp-content/uploads/2020/11/Euroclases-1.jpg 1280w, https://mercortecresa.com/wp-content/uploads/2020/11/Euroclases-1-300x188.jpg 300w, https://mercortecresa.com/wp-content/uploads/2020/11/Euroclases-1-1024x640.jpg 1024w, https://mercortecresa.com/wp-content/uploads/2020/11/Euroclases-1-768x480.jpg 768w, https://mercortecresa.com/wp-content/uploads/2020/11/Euroclases-1-370x230.jpg 370w" data-lazy-sizes="(max-width: 1280px) 100vw, 1280px" data-lazy-src="https://mercortecresa.com/wp-content/uploads/2020/11/Euroclases-1.jpg" /><noscript><img width="1280" height="800" src="https://mercortecresa.com/wp-content/uploads/2020/11/Euroclases-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Euroclases" srcset="https://mercortecresa.com/wp-content/uploads/2020/11/Euroclases-1.jpg 1280w, https://mercortecresa.com/wp-content/uploads/2020/11/Euroclases-1-300x188.jpg 300w, https://mercortecresa.com/wp-content/uploads/2020/11/Euroclases-1-1024x640.jpg 1024w, https://mercortecresa.com/wp-content/uploads/2020/11/Euroclases-1-768x480.jpg 768w, https://mercortecresa.com/wp-content/uploads/2020/11/Euroclases-1-370x230.jpg 370w" sizes="(max-width: 1280px) 100vw, 1280px" /></noscript>
+									</div>
+									
+									<h1 class="entry-title post-header-title">Euroclases &#8211; Clasificación Europea de Reacción al Fuego de Materiales de Construcción</h1>
+									<div class="post-info">
+									<span><i class="fa fa-file-text-o"></i>10 noviembre, 2020</span><span class="post-comments-count"><i class="fa fa-comment"></i>0</span>									</div>
+
+																		<div class="entry-content">
+										<p style="text-align: justify;">Desde el año 2004 se han unificado los criterios europeos de clasificación en la <strong>Reacción al Fuego</strong> de los materiales de construcción y además se ha implementado al concepto de combustibilidad otros parámetros, como son la <strong>emisión de humo</strong> y la <strong>caída de gotas inflamadas</strong>.</p>
+<p style="text-align: justify;">Hoy en día esta clasificación cobra especial relevancia por la cantidad de nuevos materiales y sistemas constructivos que han surgido gracias al movimiento que impulsa que nuestros edificios sean más eficientes energéticamente y tengan un aislamiento mucho mayor. Hemos visto en recientes incendios que en ocasiones esa elección de nuevos materiales, muy eficientes térmicamente, nos pueden dar muchos problemas ante un pequeño incendio sobre todo si se trata de aislamiento exterior de fachadas como ha ocurrido en:</p>
+<p><img class="aligncenter" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20846%20288'%3E%3C/svg%3E" alt="" width="846" height="288" data-lazy-src="https://mercortecresa.com/wp-content/uploads/2020/11/Euroclases.jpg" /><noscript><img class="aligncenter" src="https://mercortecresa.com/wp-content/uploads/2020/11/Euroclases.jpg" alt="" width="846" height="288" /></noscript></p>
+<p style="text-align: justify;">De hecho, estos incendios han provocado varios <strong>cambios normativos</strong> en lo referente a la <strong>Reacción al Fuego</strong> que deben tener los materiales de construcción que forman parte de <strong>fachadas</strong>, como puede ser Inglaterra o España. También es muy importante la elección de materiales adecuados por su reacción al fuego tanto en <strong>cubiertas</strong>, como <strong>falsos techos</strong> y <strong>suelos</strong>.</p>
+<p style="text-align: justify;">Para medir la combustibilidad de un material de construcción, es muy importante conocer el <strong>uso final</strong> de ese material, donde y como va a estar colocado en obra y examinar su comportamiento al fuego como tal.</p>
+<p style="text-align: justify;">Para medir el grado de combustibilidad en un ensayo vamos a usar algunos conceptos que nos van a ayudar a diferenciar entre una <strong>Euroclase</strong> de otra:</p>
+<p><img class="aligncenter" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201008%20203'%3E%3C/svg%3E" alt="" width="1008" height="203" data-lazy-src="https://mercortecresa.com/wp-content/uploads/2020/11/Cuadro-euroclaes.jpg" /><noscript><img class="aligncenter" src="https://mercortecresa.com/wp-content/uploads/2020/11/Cuadro-euroclaes.jpg" alt="" width="1008" height="203" /></noscript></p>
+<p>En el siguiente gráfico en el que se definen las <strong>Euroclases</strong> y sus diferencias podemos ver de una manera gráfica y más intuitiva el comportamiento de un material de construcción en contacto con el fuego:</p>
+<p><img class="aligncenter" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20626%20766'%3E%3C/svg%3E" alt="" width="626" height="766" data-lazy-src="https://mercortecresa.com/wp-content/uploads/2020/11/euroclases-reaccion-al-fuego.jpg" /><noscript><img class="aligncenter" src="https://mercortecresa.com/wp-content/uploads/2020/11/euroclases-reaccion-al-fuego.jpg" alt="" width="626" height="766" /></noscript></p>
+<p style="text-align: justify;">La novedad respecto a la anterior clasificación M0, M1, M2 … es que medimos también otros dos parámetros como son <strong>la emisión de humo “S” del inglés Smoke (Humo) </strong>y <strong>caída de gotas inflamadas “d” del inglés drop (gota)</strong>, de obligatorio ensayo a excepción de los materiales <strong>Euroclase A1</strong> que <strong>no precisan</strong> de esta clasificación por ser S1 y d0 obligatoriamente.</p>
+<p style="text-align: justify;">La <strong>emisión de humo</strong> se mide en dos parámetros que son la velocidad de propagación de humo <strong>SMOGRA</strong> y la producción total de Humo en 10 minutos <strong>TSP<sub>600s</sub></strong> como vemos en el siguiente gráfico en el que se establece la clasificación.</p>
+<p><img class="aligncenter" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20802%20452'%3E%3C/svg%3E" alt="" width="802" height="452" data-lazy-src="https://mercortecresa.com/wp-content/uploads/2020/11/clasificacion-en-funcion-emision-humo.jpg" /><noscript><img class="aligncenter" src="https://mercortecresa.com/wp-content/uploads/2020/11/clasificacion-en-funcion-emision-humo.jpg" alt="" width="802" height="452" /></noscript></p>
+<p style="text-align: justify;">Por último, nos queda por definir la clasificación en función de la <strong>Caída de Gotas Inflamadas</strong>. La medición se realiza en función del tiempo en el que estas gotas están cayendo en un plazo de tiempo total de 10 min.</p>
+<p><img class="aligncenter" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20453'%3E%3C/svg%3E" alt="" width="800" height="453" data-lazy-src="https://mercortecresa.com/wp-content/uploads/2020/11/clasificacion-en-funcion-caida-de-gotas.jpg" /><noscript><img class="aligncenter" src="https://mercortecresa.com/wp-content/uploads/2020/11/clasificacion-en-funcion-caida-de-gotas.jpg" alt="" width="800" height="453" /></noscript></p>
+<p style="text-align: justify;">Así cuando veamos una ficha técnica de un material de construcción y nos aparezca por ejemplo el termino “<strong>B S2 d1</strong>” podremos valorar si cumple con lo que marca la normativa al respecto de la Reacción al Fuego colocado en el uso previsto del mismo. Así mismo el <strong>RD 842/2013</strong> establece también una serie de materiales como pueden ser el yeso, el ladrillo, el hormigón, etc, que obtienen directamente la clasificación <strong>Euroclase A1</strong> y no precisan de ningún tipo de ensayo.</p>
+<p style="text-align: justify;">Hay algunas gamas de productos que requieren una clasificación especial por su uso en la construcción como son:</p>
+<ul>
+<li style="text-align: justify;"><strong><u>Revestimientos para suelos</u></strong> que tienen una clasificación especial similar a la anterior, pero con <strong>el subíndice “FL”</strong> que viene del inglés Floor (suelo). Aquí no es necesario ensayar la caída de gotas inflamadas, pero si son necesarios ensayos distintos para distinguir una clase de otra como es por ejemplo, el <strong>Flujo Crítico</strong>.</li>
+<li style="text-align: justify;"><strong><u>Productos Lineales para aislamiento de tuberías,</u> </strong>de clasificación similar al caso genérico con alguna particularidad en el caso de la caída de gotas inflamadas, esta clasificación va acompañada por <strong>el subíndice “L” </strong></li>
+<li style="text-align: justify;"><strong><u>Cables eléctricos</u>, </strong>se miden con el <strong>subíndice “CA”</strong> y entre otras particularidades se mide la emisión de humo y la <strong>Acidez</strong> de este que se define como incapacidad que puede provocar para actuar con eficacia y poder escapar, que no es sinónimo de su toxicidad.</li>
+</ul>
+<p>Hay otra clasificación que merece un trato especial por su particularidad:</p>
+<ul>
+<li style="text-align: justify;"><strong><u>Clasificación de cubiertas y de materiales de revestimientos de cubiertas según su reacción ante un Fuego Exterior</u></strong>. Aquí en este caso se mide el comportamiento de una cubierta sometido a un ensayo especifico con una <strong>Pavesa en llamas</strong> colocada encima de la misma. Su denominación le sigue el Subíndice <strong>“ROOF”</strong> (techo en inglés), seguido del término<strong> (tx) </strong>que nos indica que tipo de ensayo se ha realizado:</li>
+</ul>
+<table width="520">
+<tbody>
+<tr>
+<td width="83"><strong>(t1)</strong></td>
+<td width="437">Pavesa en llamas</td>
+</tr>
+<tr>
+<td width="83"><strong>(t2)</strong></td>
+<td width="437">Pavesa en llamas + viento</td>
+</tr>
+<tr>
+<td width="83"><strong>(t3)</strong></td>
+<td width="437">Pavesa en llamas + viento+ radiación térmica</td>
+</tr>
+<tr>
+<td width="83"><strong>(t4)</strong></td>
+<td width="437">Pavesa en llamas + viento+ radiación térmica (ensayo en dos etapas)</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">En España solo es obligado el ensayo <strong>(t1) </strong>y se obtiene la clasificación <strong>B<sub>ROOF</sub> (t1)</strong> si se consigue pasar el ensayo con éxito y <strong>F<sub>ROOF</sub> (t1)</strong> si no se ha realizado el ensayo o no cumple con el mismo.</p>
+<p style="text-align: justify;">Esta clasificación supone un incremento de solicitudes de ensayo de los materiales de construcción con el fin de poderlos comercializar para un uso particular en el que la normativa nos obligue a una Reacción al Fuego determinada como, por ejemplo: fachadas, materiales de aislamiento o revestimiento interior, cables, etc. A mi juicio faltaría por realizar una clasificación también por<strong> la toxicidad de los humos emitidos </strong>y los daños en el cuerpo humano que puedan producir, ya que no es lo mismo el humo que emite la madera o el papel al arder, que algunas sustancias químias presentes en los aislamientos plásticos que son altamente nocivas.</p>
+<div class="et_social_inline et_social_mobile_on et_social_inline_bottom">
+				<div class="et_social_networks et_social_4col et_social_slide et_social_rounded et_social_left et_social_no_animation et_social_withnetworknames et_social_outer_dark">
+					
+					<ul class="et_social_icons_container"><li class="et_social_facebook">
+									<a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fmercortecresa.com%2Fblog%2Feuroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion&#038;t=Euroclases%20%E2%80%93%20Clasificaci%C3%B3n%20Europea%20de%20Reacci%C3%B3n%20al%20Fuego%20de%20Materiales%20de%20Construcci%C3%B3n" class="et_social_share" rel="nofollow" data-social_name="facebook" data-post_id="33362" data-social_type="share" data-location="inline">
+										<i class="et_social_icon et_social_icon_facebook"></i><div class="et_social_network_label"><div class="et_social_networkname">Facebook</div></div><span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_twitter">
+									<a href="http://twitter.com/share?text=Euroclases%20%E2%80%93%20Clasificaci%C3%B3n%20Europea%20de%20Reacci%C3%B3n%20al%20Fuego%20de%20Materiales%20de%20Construcci%C3%B3n&#038;url=https%3A%2F%2Fmercortecresa.com%2Fblog%2Feuroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion&#038;via=mercortecresa" class="et_social_share" rel="nofollow" data-social_name="twitter" data-post_id="33362" data-social_type="share" data-location="inline">
+										<i class="et_social_icon et_social_icon_twitter"></i><div class="et_social_network_label"><div class="et_social_networkname">Twitter</div></div><span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_linkedin">
+									<a href="http://www.linkedin.com/shareArticle?mini=true&#038;url=https%3A%2F%2Fmercortecresa.com%2Fblog%2Feuroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion&#038;title=Euroclases%20%E2%80%93%20Clasificaci%C3%B3n%20Europea%20de%20Reacci%C3%B3n%20al%20Fuego%20de%20Materiales%20de%20Construcci%C3%B3n" class="et_social_share" rel="nofollow" data-social_name="linkedin" data-post_id="33362" data-social_type="share" data-location="inline">
+										<i class="et_social_icon et_social_icon_linkedin"></i><div class="et_social_network_label"><div class="et_social_networkname">LinkedIn</div></div><span class="et_social_overlay"></span>
+									</a>
+								</li></ul>
+				</div>
+			</div>																			</div><!-- .entry-content -->
+									
+								</div>
+
+							</div>
+
+				
+										<div class="post-social-wrapper"><span><i class="fa fa-share-alt"></i>
+	Share:</span>
+		<div class="post-social">
+			<a title="Share this" href="#" class="facebook-share"> <i class="fa fa-facebook"></i></a>
+			<a title="Tweet this" href="#" class="twitter-share"> <i class="fa fa-twitter"></i></a>
+			<a title="Share with Google Plus" href="#" class="googleplus-share"> <i class="fa fa-google-plus"></i></a>
+			<a title="Pin this" href="#" class="pinterest-share"> <i class="fa fa-pinterest"></i></a>
+		</div>
+		<div class="clear"></div>
+	</div>
+					
+				</article>
+
+			</div>
+
+							<nav role="navigation" id="nav-below" class="navigation-post navigation-paging">
+	
+		<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+		<div class="nav-previous"><a href="https://mercortecresa.com/blog/barreras-divisorias-y-canalizadoras-de-humo" rel="prev">Entrada anterior</a></div>		
+		<div class="nav-next"><a href="https://mercortecresa.com/blog/mercor-tecresa-participa-en-la-construccion-del-nuevo-hospital-de-toledo" rel="next">Siguiente post</a></div>		</div>
+	</div>
+	</div>
+	
+	</nav><!-- #nav-below -->
+				
+		</div>
+				<div class="col-md-3 main-sidebar sidebar">
+		<ul id="main-sidebar">
+		  <li id="categories-4" class="widget widget_categories"><h2 class="widgettitle">Categorias</h2>
+
+			<ul>
+					<li class="cat-item cat-item-1"><a href="https://mercortecresa.com/blog/category/mercor-tecresa">Mercor Tecresa</a> (79)
+</li>
+	<li class="cat-item cat-item-172"><a href="https://mercortecresa.com/blog/category/normativas-y-guias">Normativas y guías</a> (71)
+</li>
+	<li class="cat-item cat-item-175"><a href="https://mercortecresa.com/blog/category/noticias-sobre-incendios">Noticias sobre Incendios</a> (154)
+</li>
+	<li class="cat-item cat-item-169"><a href="https://mercortecresa.com/blog/category/productos-y-servicios">Productos y servicios</a> (90)
+</li>
+			</ul>
+
+			</li>
+<li id="custom_html-4" class="widget_text widget widget_custom_html"><h2 class="widgettitle">Nuestro Top 5 de post más leídos</h2>
+<div class="textwidget custom-html-widget"><ul> <li><a
+href="https://mercortecresa.com/blog/claraboyas-de-acceso-a-cubierta"> Claraboyas de acceso a cubierta.</a>
+</li> <li><a						href="https://mercortecresa.com/blog/como-ignifugar-nuestra-estructura-metalica"> Cómo ignifugar nuestra estructra metálica.</a>
+</li> <li><a href="https://mercortecresa.com/blog/franjas-cortafuego-para-la-sectorizacion-de-naves-industriales">Franjas cortafuegos para la sectorización de naves industriales.</a>
+</li> <li><a href="https://mercortecresa.com/blog/proteccion-al-fuego-de-escaleras-metalicas-de-evacuacion"> Protección al fuego de escaleras metálicas de evacuación.</a>
+</li> <li><a href="https://mercortecresa.com/blog/nuevo-mortero-ignifugo-tecplaster">Mortero ignífugo de Perlita y Vermiculita Tecplaster®.</a></li> </ul></div></li>
+<li id="custom_html-5" class="widget_text widget widget_custom_html"><h2 class="widgettitle">Suscríbete a nuestro Blog</h2>
+<div class="textwidget custom-html-widget"><script type="rocketlazyloadscript">(function() {
+	window.mc4wp = window.mc4wp || {
+		listeners: [],
+		forms: {
+			on: function(evt, cb) {
+				window.mc4wp.listeners.push(
+					{
+						event   : evt,
+						callback: cb
+					}
+				);
+			}
+		}
+	}
+})();
+</script><!-- Mailchimp for WordPress v4.8.10 - https://wordpress.org/plugins/mailchimp-for-wp/ --><form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-26675" method="post" data-id="26675" data-name="Suscripción al Blog" ><div class="mc4wp-form-fields"><p>
+	<label>Correo electrónico: </label>
+	<input type="email" name="EMAIL" placeholder="Tu dirección de correo electrónico" required />
+</p>
+<p>
+        <label>
+        <input name="PRIVACIDAD" type="radio" value="He leído y acepto la política de privacidad"
+        required=""> <span>Acepto la <a href="https://mercortecresa.com/politica-de-privacidad"target="_blank">Política de privacidad</a></span>
+    </label>
+</p>
+
+<p>
+	<input type="submit" value="Registro" />
+</p></div><label style="display: none !important;">Deja vacío este campo si eres humano: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></label><input type="hidden" name="_mc4wp_timestamp" value="1664915675" /><input type="hidden" name="_mc4wp_form_id" value="26675" /><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" /><div class="mc4wp-response"></div></form><!-- / Mailchimp for WordPress Plugin --></div></li>
+<li id="custom_html-12" class="widget_text widget widget_custom_html"><h2 class="widgettitle">Mercortecresa te recomienda ver&#8230;</h2>
+<div class="textwidget custom-html-widget"><ul> <li><a
+href="https://mercortecresa.com/morteros-tecwool/tecwool-f">Mortero Tecwool® F.</a>
+</li> <li><a						href="https://mercortecresa.com/evacuacion-de-humos/barreras-sectorizadoras">Barreras Sectorizadoras</a>
+</li> <li><a href="https://mercortecresa.com/sistemas-de-sellado-tecsel/pasta-de-juntas-preparada">Pasta de juntas Tecbor® preparada.</a>
+</li> <li><a href="https://mercortecresa.com/paneles-tecbor/proteccion-de-estructura-metalica">Protección de elementos de acero con paneles Tecbor®.</a>
+</li> <li><a href="https://mercortecresa.com/pintura-ignifuga-teclack-w/proteccion-de-elementos-de-acero">Protección de estructura metálica con Pintura ignífuga Teclack-W®.</a></li> </ul></div></li>
+<li id="custom_html-6" class="widget_text widget widget_custom_html"><h2 class="widgettitle">Formulario de Contacto</h2>
+<div class="textwidget custom-html-widget"><p style="text-align: justify;">Si desea más información, puede rellenar el siguiente formulario y nuestro responsable de área, se pondrá en contacto con Ud, lo antes posible.</p>
+<div role="form" class="wpcf7" id="wpcf7-f26686-p33362-o1" lang="es-ES" dir="ltr">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/blog/euroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion#wpcf7-f26686-p33362-o1" method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="26686" />
+<input type="hidden" name="_wpcf7_version" value="5.6.3" />
+<input type="hidden" name="_wpcf7_locale" value="es_ES" />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f26686-p33362-o1" />
+<input type="hidden" name="_wpcf7_container_post" value="33362" />
+<input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+<input type="hidden" name="_wpcf7_recaptcha_response" value="" />
+</div>
+<div id="responsive-form" class="clearfix">
+<div class="form-row">
+<label> Nombre <span class="wpcf7-form-control-wrap" data-name="your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span> </label><br />
+<label> Email <span class="wpcf7-form-control-wrap" data-name="your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" /></span> </label>
+</div>
+<div class="form-row">
+<div class="column-full">Mensaje  <span class="wpcf7-form-control-wrap" data-name="your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false"></textarea></span></div>
+</div>
+<p><span class="wpcf7-form-control-wrap" data-name="acceptance-332"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><input type="checkbox" name="acceptance-332" value="1" aria-invalid="false" /></span></span></span> Acepto la <a href="https://mercortecresa.com/politica-de-privacidad"target="_blank"> política de privacidad.</a></p>
+<p><label><input type="submit" value="Enviar" class="wpcf7-form-control has-spinner wpcf7-submit" /></div>
+<span class="wpcf7-form-control-wrap recaptcha" data-name="recaptcha"><span data-sitekey="6Lc4ltseAAAAALMzE5QwvYeq24W9Y93UauNL1zMA" class="wpcf7-form-control g-recaptcha wpcf7-recaptcha"></span>
+<noscript>
+	<div class="grecaptcha-noscript">
+		<iframe src="https://www.google.com/recaptcha/api/fallback?k=6Lc4ltseAAAAALMzE5QwvYeq24W9Y93UauNL1zMA" frameborder="0" scrolling="no" width="310" height="430">
+		</iframe>
+		<textarea name="g-recaptcha-response" rows="3" cols="40" placeholder="Aquí la respuesta de reCAPTCHA">
+		</textarea>
+	</div>
+</noscript>
+</span>
+</div>
+<p><!--end responsive-form--></p>
+<input type='hidden' class='wpcf7-pum' value='{"closepopup":false,"closedelay":0,"openpopup":false,"openpopup_id":0}' /><div class="wpcf7-response-output" aria-hidden="true"></div></form></div></div></li>
+		</ul>
+		</div>
+			</div>
+	</div>
+</div>
+
+
+
+<div class="container-fluid container-fluid-footer">
+<div class="row">
+
+<footer>
+<div class="container">
+<div class="row">
+    <div class="col-md-6 footer-copyright">
+    <span class="imagefooter" style="font-size: 10pt;color: #ffffff;padding-left: 11em"> Tecresa Protección Pasiva, S.L. Copyright 2021©</span>    </div>
+    <div class="col-md-6 footer-menu">
+    <div class="menu-footer-container"><ul id="menu-footer" class="footer-menu"><li id="menu-item-30214" class="ljoptimizer menu-item menu-item-type-post_type menu-item-object-page menu-item-30214"><span data-loc="aHR0cHM6Ly9tZXJjb3J0ZWNyZXNhLmNvbS9lbXByZXNh">Empresa</span></li>
+<li id="menu-item-17426" class="ljoptimizer menu-item menu-item-type-post_type menu-item-object-page menu-item-17426"><span data-loc="aHR0cHM6Ly9tZXJjb3J0ZWNyZXNhLmNvbS9hdmlzby1sZWdhbA">Aviso Legal</span></li>
+<li id="menu-item-3115" class="ljoptimizer menu-item menu-item-type-custom menu-item-object-custom menu-item-3115"><span data-loc="aHR0cHM6Ly9tZXJjb3J0ZWNyZXNhLmNvbS9wb2xpdGljYS1kZS1wcml2YWNpZGFk">Política de privacidad</span></li>
+<li id="menu-item-3550" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3550"><a href="https://mercortecresa.com/contacto">Contacto</a></li>
+<li id="menu-item-3546" class="ljoptimizer menu-item menu-item-type-custom menu-item-object-custom social-icon twitter menu-item-3546"><span data-loc="aHR0cHM6Ly90d2l0dGVyLmNvbS9tZXJjb3J0ZWNyZXNh"><i class='icon-2x icon-twitter '></i><span class='fa-hidden'>Twitter</span></span></li>
+<li id="menu-item-3547" class="ljoptimizer menu-item menu-item-type-custom menu-item-object-custom social-icon facebook menu-item-3547"><span data-loc="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL01lcmNvcnRlY3Jlc2FQUENJ"><i class='icon-2x icon-facebook '></i><span class='fa-hidden'>Facebook</span></span></li>
+<li id="menu-item-3548" class="ljoptimizer menu-item menu-item-type-custom menu-item-object-custom social-icon linkedin menu-item-3548"><span data-loc="aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2NvbXBhbnkvbWVyY29ydGVjcmVzYT90cms9dG9wX25hdl9ob21l"><i class='icon-2x icon-linkedin '></i><span class='fa-hidden'>LinkedIn</span></span></li>
+<li id="menu-item-3545" class="ljoptimizer menu-item menu-item-type-custom menu-item-object-custom social-icon youtube menu-item-3545"><span data-loc="aHR0cHM6Ly93d3cueW91dHViZS5jb20vdXNlci9UZWNyZXNhcHA"><i class='icon-2x icon-youtube '></i><span class='fa-hidden'>YouTube</span></span></li>
+</ul></div>    </div>
+</div>
+</div>
+<a id="top-link" href="#top"><span>Top</span></a>
+</footer>
+
+</div>
+</div>
+<div class="search-fullscreen-wrapper">
+  <div class="search-fullscreen-form">
+    <div class="search-close-btn"><i class="fa fa-times"></i></div>
+    	<form method="get" id="searchform_p" class="searchform" action="https://mercortecresa.com/">
+		<input type="search" class="field" name="s" value="" id="s_p" placeholder="Escriba aquí" />
+		<input type="submit" class="submit btn" id="searchsubmit_p" value="Buscar" />
+	</form>
+  </div>
+</div>
+
+		<script type="rocketlazyloadscript">
+			window.RS_MODULES = window.RS_MODULES || {};
+			window.RS_MODULES.modules = window.RS_MODULES.modules || {};
+			window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
+			window.RS_MODULES.defered = true;
+			window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
+			window.RS_MODULES.type = 'compiled';
+		</script>
+		<script type="rocketlazyloadscript">(function() {function maybePrefixUrlField() {
+	if (this.value.trim() !== '' && this.value.indexOf('http') !== 0) {
+		this.value = "http://" + this.value;
+	}
+}
+
+var urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]');
+if (urlFields) {
+	for (var j=0; j < urlFields.length; j++) {
+		urlFields[j].addEventListener('blur', maybePrefixUrlField);
+	}
+}
+})();</script>
+
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+#rs-demo-id {}
+</style>
+<script data-minify="1" src="https://mercortecresa.com/wp-content/cache/min/1/wp-content/plugins/auto-image-alt/js/auto_image_alt.js?ver=1664351344" id="auto_image_alt-js" defer></script>
+<script data-minify="1" src="https://mercortecresa.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=1664351344" id="swv-js" defer></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/mercortecresa.com\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script data-minify="1" src="https://mercortecresa.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1664351344" id="contact-form-7-js" defer></script>
+<script data-minify="1" src="https://mercortecresa.com/wp-content/cache/min/1/wp-content/plugins/link-juice-optimizer-master/ljo_helpers.js?ver=1664351344" id="ljoptimizer-js" defer></script>
+<script src="https://mercortecresa.com/wp-content/plugins/revslider/public/assets/js/rbtools.min.js?ver=6.5.18" defer async id="tp-tools-js"></script>
+<script src="https://mercortecresa.com/wp-content/plugins/revslider/public/assets/js/rs6.min.js?ver=6.5.24" defer async id="revmin-js"></script>
+<script type='text/javascript' id='wpcf7-redirect-script-js-extra'>
+/* <![CDATA[ */
+var wpcf7r = {"ajax_url":"https:\/\/mercortecresa.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script data-minify="1" src="https://mercortecresa.com/wp-content/cache/min/1/wp-content/plugins/wpcf7-redirect/build/js/wpcf7r-fe.js?ver=1664351344" id="wpcf7-redirect-script-js" defer></script>
+<script src="https://mercortecresa.com/wp-content/plugins/monarch/js/idle-timer.min.js?ver=1.4.14" id="et_monarch-idle-js" defer></script>
+<script type='text/javascript' id='et_monarch-custom-js-js-extra'>
+/* <![CDATA[ */
+var monarchSettings = {"ajaxurl":"https:\/\/mercortecresa.com\/wp-admin\/admin-ajax.php","pageurl":"https:\/\/mercortecresa.com\/blog\/euroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion","stats_nonce":"c9fe609b71","share_counts":"8b11cbb4f9","follow_counts":"d61aa4d8d3","total_counts":"51711b8fc4","media_single":"0cac30fba8","media_total":"5b8efbd1af","generate_all_window_nonce":"ee17f2186b","no_img_message":"No images available for sharing on this page"};
+/* ]]> */
+</script>
+<script data-minify="1" src="https://mercortecresa.com/wp-content/cache/min/1/wp-content/plugins/monarch/js/custom.js?ver=1664351344" id="et_monarch-custom-js-js" defer></script>
+<script type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/mercortecresa.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type='text/javascript' id='thickbox-js-extra'>
+/* <![CDATA[ */
+var thickboxL10n = {"next":"Siguiente >","prev":"< Anterior","image":"Imagen","of":"de","close":"Cerrar","noiframes":"Esta funci\u00f3n necesita frames integrados. Tienes los iframes desactivados o tu navegador no es compatible.","loadingAnimation":"https:\/\/mercortecresa.com\/wp-includes\/js\/thickbox\/loadingAnimation.gif"};
+/* ]]> */
+</script>
+<script data-minify="1" src="https://mercortecresa.com/wp-content/cache/min/1/wp-includes/js/thickbox/thickbox.js?ver=1664351344" id="thickbox-js" defer></script>
+<script src="https://mercortecresa.com/wp-content/themes/thebuilt/js/bootstrap.min.js?ver=3.1.1" id="bootstrap-js" defer></script>
+<script data-minify="1" src="https://mercortecresa.com/wp-content/cache/min/1/wp-content/themes/thebuilt/js/easing.js?ver=1664351344" id="easing-js" defer></script>
+<script data-minify="1" src="https://mercortecresa.com/wp-content/cache/min/1/wp-content/themes/thebuilt/js/jquery.parallax.js?ver=1664351344" id="thebuilt-parallax-js"></script>
+<script src="https://mercortecresa.com/wp-content/themes/thebuilt/js/select2/select2.min.js?ver=3.5.1" id="thebuilt-select2-js" defer></script>
+<script src="https://mercortecresa.com/wp-content/themes/thebuilt/js/owl-carousel/owl.carousel.min.js?ver=1.3.3" id="owl-carousel-js" defer></script>
+<script src="https://mercortecresa.com/wp-content/themes/thebuilt/js/jquery.nanoscroller.min.js?ver=3.4.0" id="nanoscroller-js" defer></script>
+<script src="https://mercortecresa.com/wp-content/themes/thebuilt/js/jquery.mixitup.min.js?ver=2.1.7" id="mixitup-js" defer></script>
+<script src="https://mercortecresa.com/wp-content/themes/thebuilt/js/TweenMax.min.js?ver=1.0" id="tweenmax-js" defer></script>
+<script data-minify="1" src="https://mercortecresa.com/wp-content/cache/min/1/wp-content/themes/thebuilt/js/jquery.superscrollorama.js?ver=1664351344" id="scrollorama-js"></script>
+<script data-minify="1" src="https://mercortecresa.com/wp-content/cache/min/1/wp-content/themes/thebuilt/js/template.js?ver=1664351344" id="thebuilt-script-js" defer></script>
+<script type='text/javascript' id='q2w3_fixed_widget-js-extra'>
+/* <![CDATA[ */
+var q2w3_sidebar_options = [{"sidebar":"main-sidebar","use_sticky_position":false,"margin_top":0,"margin_bottom":0,"stop_elements_selectors":"","screen_max_width":0,"screen_max_height":0,"widgets":["#custom_html-19","#custom_html-8","#custom_html-10","#custom_html-20"]}];
+/* ]]> */
+</script>
+<script src="https://mercortecresa.com/wp-content/plugins/q2w3-fixed-widget/js/frontend.min.js?ver=6.1.1" id="q2w3_fixed_widget-js" defer></script>
+<script data-minify="1" src="https://mercortecresa.com/wp-content/cache/min/1/wp-content/plugins/monarch/core/admin/js/common.js?ver=1664351344" id="et-core-common-js" defer></script>
+<script type='text/javascript' id='eucookielaw-scripts-js-extra'>
+/* <![CDATA[ */
+var eucookielaw_data = {"euCookieSet":"","autoBlock":"0","expireTimer":"360","scrollConsent":"0","networkShareURL":"","isCookiePage":"","isRefererWebsite":""};
+/* ]]> */
+</script>
+<script data-minify="1" src="https://mercortecresa.com/wp-content/cache/min/1/wp-content/plugins/eu-cookie-law/js/scripts.js?ver=1664351344" id="eucookielaw-scripts-js" defer></script>
+<script data-minify="1" src="https://mercortecresa.com/wp-content/cache/min/1/wp-content/plugins/wpcf7-recaptcha/assets/js/wpcf7-recaptcha-controls.js?ver=1664351366" id="wpcf7-recaptcha-controls-js" defer></script>
+<script type='text/javascript' id='google-recaptcha-js-extra'>
+/* <![CDATA[ */
+var wpcf7iqfix = {"recaptcha_empty":"Por favor, verifica que no eres un robot.","response_err":"wpcf7-recaptcha: No se ha podido verificar la respuesta de reCAPTCHA."};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" src="https://www.google.com/recaptcha/api.js?hl=es_ES&#038;onload=recaptchaCallback&#038;render=explicit&#038;ver=2.0" id="google-recaptcha-js"></script>
+<script data-minify="1" defer src="https://mercortecresa.com/wp-content/cache/min/1/wp-content/plugins/mailchimp-for-wp/assets/js/forms.js?ver=1664351381" id="mc4wp-forms-api-js"></script>
+<!-- Eu Cookie Law 3.1.6 --><div class="pea_cook_wrapper pea_cook_bottomright" style="color:#FFFFFF;background:rgb(221,51,51);background: rgba(221,51,51,0.85);"><p>Si continuas utilizando este sitio aceptas el uso de cookies.  <a style="color:#FFFFFF;" href="https://mercortecresa.com/politica-de-cookies" id="fom">Más información</a> <button id="pea_cook_btn" class="pea_cook_btn">Aceptar</button></p></div><div class="pea_cook_more_info_popover"><div class="pea_cook_more_info_popover_inner" style="color:#FFFFFF;background-color: rgba(221,51,51,0.9);"><p>Los ajustes de cookies de esta web están configurados para "permitir cookies" y así ofrecerte la mejor experiencia de navegación posible.  Si sigues utilizando esta web sin cambiar tus ajustes de cookies o haces clic en "Aceptar" estarás dando tu consentimiento a esto. </p><p><a style="color:#FFFFFF;" href="#" id="pea_close">Cerrar</a></p></div></div><script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://mercortecresa.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script><script data-minify="1" src="https://mercortecresa.com/wp-content/cache/min/1/wp-content/themes/thebuilt/js/customlinks.js?ver=1664351344" defer></script>
+<script>"use strict";function wprRemoveCPCSS(){var preload_stylesheets=document.querySelectorAll('link[data-rocket-async="style"][rel="preload"]');if(preload_stylesheets&&0<preload_stylesheets.length)for(var stylesheet_index=0;stylesheet_index<preload_stylesheets.length;stylesheet_index++){var media=preload_stylesheets[stylesheet_index].getAttribute("media")||"all";if(window.matchMedia(media).matches)return void setTimeout(wprRemoveCPCSS,200)}var elem=document.getElementById("rocket-critical-css");elem&&"remove"in elem&&elem.remove()}window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link rel="stylesheet" href="https://mercortecresa.com/wp-content/cache/min/1/e9669ce90688153ea34da752f395b7bf.css" media="all" data-minify="1" /></noscript></body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1664915675 -->

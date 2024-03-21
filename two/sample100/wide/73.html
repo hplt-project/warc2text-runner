@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>丹阳北到铁力时刻表,丹阳北到铁力时刻查询 - 火车网</title>
+    <link href="http://css.huoche.com/comm/ui.css" rel="stylesheet" type="text/css"/>
+    <link href="http://css.huoche.com/comm/style.css" rel="stylesheet" type="text/css"/>
+    <script src="http://js.huoche.com/comm/jquery-1.8.2.min.js"></script>
+    <script src="http://js.huoche.com/comm/jquery.cookie.js"></script>
+    <script src="http://js.huoche.com/comm/huoche.js"></script>
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?e2025397e57f605ebb4812bd52bd363b";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+</head>
+<body>
+<!--头部开始-->
+<div id="header">
+    <div class="container headerTop clearfix">
+        <div class="logo">
+            <a href="http://www.huoche.com">
+                <img src="http://img.huoche.com/comm/logo.png"/>
+            </a>
+        </div>
+        <div class="topBar clearfix">
+            <a href="http://www.huoche.com/infor/about" target="_blank">关于我们</a>
+            <span>|</span>
+            <a href="javascript:void(0);" onclick="javascript:try{ window.external.AddFavorite('http://www.butao.com','步淘'); } catch(e){
+            (window.sidebar)?window.sidebar.addPanel('火车网','http://www.huoche.com/',''):alert('请使用按键 Ctrl+d，收藏火车网')
+            ; }">收藏本站</a>
+            <span>|</span>
+            <a href="http://wap.huoche.com/"><i class="wap"></i>手机wap站</a>
+            <span>|</span>
+            <a href="http://www.elong.com/promotion/web/elongiphone/index.html" target="_blank"><i class="wap"></i>艺龙客户端</a>
+        </div>
+    </div>
+    <div class="navBar">
+        <div class="container">
+            <ul>
+                <li class="">
+                    <a href="http://www.huoche.com">首页</a>
+                </li>
+                <li class="">
+                    <a href="http://www.huoche.com/daigou">火车票预定</a>
+                </li>
+                <li class="active">
+                    <a href="http://www.huoche.com/shikebiao">火车时刻</a>
+                </li>
+                <li class="">
+                    <a href="http://www.huoche.com/daishoudian">售票点查询</a>
+                </li>
+                <li>
+                    <a href="http://hotel.huoche.com/" target="_blank">酒店预定</a>
+                </li>
+                <li>
+                    <a href="http://www.huoche.com/changtu/" target="_blank">长途汽车站查询</a>
+                </li>
+                <li>
+                    <a href="http://www.huoche.com/bus" target="_blank">公交车查询</a>
+                </li>
+                <li class="">
+                    <a href="http://news.huoche.com/" target="_blank">铁路资讯</a>
+                </li>
+                <li>
+                    <a href="http://trip.huoche.com/" target="_blank">旅游景点</a>
+                </li>
+                <li>
+                    <a href="http://www.huoche.com/jipiao/" target="_blank">打折机票</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--头部结束-->
+<!--水平搜索框开始  -->
+<div class="container mt15">
+    <div class="searchBox">
+        <form action="/redirect.php" class="form-inline hform">
+            <div class="group">
+                <div class="label">出发站</div>
+                <div class="item">
+                    <input type="text" class="input-normal tf"  name='train_from' id="train_from" onblur="hideCity();"
+                           onclick="showCity('train_from');"
+                           value="丹阳北"><input type="hidden"  name="redirect_type" value='search_shikebiao' >
+                </div>
+                <div class="label">&nbsp;&nbsp;</div>
+                <div class="item">
+                    <div class="rhuan rhuan_list">换</div>
+                </div>
+                <div class="label">到达站</div>
+
+                <div class="item">
+                    <input type="text" class="input-normal tt" name= 'train_to' id="train_to" onblur="hideCity();"
+                           onclick="showCity('train_to');"
+                           value="铁力">
+                </div>
+
+                <div class="label">出发日期</div>
+                <div class="item">
+                    <input type="text" class="input-normal trainCalendar" name="datehome" id="datehome" readonly
+                           value="2015-07-01" onclick="$(this).focus();">
+                </div>
+                <div class="label">&nbsp;&nbsp;</div>
+                <div class="item">
+                    <button class="btn btn-yellow">搜 索</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--水平搜索框结束-->
+
+<!--内容部分开始-->
+<div id="box" class="clearfix">
+	
+<div class="boxLeft">
+
+
+<div class="searchList">
+
+<div class="condition">
+    <p>
+        <font color="red">*</font><span>查询结果仅供参考，请您以客服确认结果为准</span>
+        <span class="pull-right">共筛选出<font color="red">0</font>趟列车</span>
+    </p>
+</div>
+
+<div class="slist">
+<table class="table table-hover table-striped">
+<thead>
+<tr class="slistTitle">
+    <th>车次</th>
+    <th>发时/到时</th>
+    <th>发站/到站</th>
+    <th>运行时间</th>
+    <th>参考票价</th>
+    <th>余票</th>
+    <th width="100">&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+	
+	
+	</tbody>
+</table>
+</div>
+
+
+</div>
+
+<!--
+<div class="tabCard mt15 tc_green">
+    <div class="tcTitle clearfix">
+        <div class="tclTitleL pull-left">
+            相关火车票查询
+        </div>
+        <div class="tclTitleC pull-left clearfix">
+            <li class="active" data-tar="1"><a href="javascript:;">上海到北京火车票查询</a></li>
+            <li data-tar="2"><a href="javascript:;">上海到北京高铁查询</a></li>
+        </div>
+        <div class="tclTitleR pull-right">
+            <a href="#">更多>></a>
+        </div>
+    </div>
+    <div class="tcContent xgchepiao">
+        <div class="tcc tcc1 clearfix" style="display: block;">
+            <a href="#">上海到北京火车时刻</a>
+            <a href="#">上海到北京火车票预定</a>
+            <a href="#">上海到北京火车时刻</a>
+            <a href="#">上海到北京火车票预定</a>
+            <a href="#">上海到北京火车时刻</a>
+            <a href="#">上海到北京火车时刻</a>
+            <a href="#">上海到北京火车时刻</a>
+            <a href="#">上海到北京火车票预定</a>
+            <a href="#">上海到北京火车时刻</a>
+            <a href="#">上海到北京火车票预定</a>
+            <a href="#">上海到北京火车时刻</a>
+            <a href="#">上海到北京火车时刻</a>
+        </div>
+        <div class="tcc tcc2 clearfix">
+            <a href="#">上海到北京火车票预定</a>
+            <a href="#">上海到北京火车时刻</a>
+            <a href="#">上海到北京火车时刻</a>
+            <a href="#">上海到北京火车票预定</a>
+            <a href="#">上海到北京火车时刻</a>
+            <a href="#">上海到北京火车时刻</a>
+            <a href="#">上海到北京火车票预定</a>
+            <a href="#">上海到北京火车时刻</a>
+            <a href="#">上海到北京火车时刻</a>
+            <a href="#">上海到北京火车票预定</a>
+            <a href="#">上海到北京火车时刻</a>
+            <a href="#">上海到北京火车时刻</a>
+        </div>
+    </div>
+
+</div>
+<div class="tabCard mt15 tc_yellow">
+    <div class="tcTitle clearfix">
+        <div class="tclTitleL pull-left">
+            相关铁路资讯
+        </div>
+        <div class="tclTitleC pull-left clearfix">
+            <li class="active" data-tar="1"><a href="javascript:;">全国铁路资讯</a></li>
+            <li data-tar="2"><a href="javascript:;">上海铁路资讯</a></li>
+            <li data-tar="2"><a href="javascript:;">北京铁路资讯</a></li>
+        </div>
+        <div class="tclTitleR pull-right">
+            <a href="#">更多>></a>
+        </div>
+    </div>
+    <div class="tcContent xgzixun clearfix">
+        <div class="tcc tcc1 clearfix" style="display: block;">
+            <li><a href="#">北京铁路局元旦将开行海口到哈尔滨列车…</a></li>
+            <li><a href="#">北京铁路局元旦将开行海口到哈尔滨列车…</a></li>
+            <li><a href="#">北京铁路局元旦将开行海口到哈尔滨列车…</a></li>
+            <li><a href="#">北京铁路局元旦将开行海口到哈尔滨列车…</a></li>
+            <li><a href="#">北京铁路局元旦将开行海口到哈尔滨列车…</a></li>
+            <li><a href="#">北京铁路局元旦将开行海口到哈尔滨列车</a></li>
+            <li><a href="#">北京铁路局元旦将开行海口到哈尔滨列车…</a></li>
+            <li><a href="#">北京铁路局元旦将开行海口到哈尔滨列车…</a></li>
+            <li><a href="#">北京铁路局元旦将开行海口到哈尔滨列车…</a></li>
+            <li><a href="#">北京铁路局元旦将开行海口到哈尔滨列车…</a></li>
+        </div>
+        <div class="tcc tcc2 clearfix">
+            <li><a href="#">北京铁路局元旦将开行海口到哈尔滨列车…</a></li>
+            <li><a href="#">北京铁路局元旦将开行海口到哈尔滨列车…</a></li>
+            <li><a href="#">北京铁路局元旦将开行海口到哈尔滨列车…</a></li>
+            <li><a href="#">北京铁路局元旦将开行海口到哈尔滨列车…</a></li>
+            <li><a href="#">北京铁路局元旦将开行海口到哈尔滨列车…</a></li>
+            <li><a href="#">北京铁路局元旦将开行海口到哈尔滨列车</a></li>
+            <li><a href="#">北京铁路局元旦将开行海口到哈尔滨列车…</a></li>
+            <li><a href="#">北京铁路局元旦将开行海口到哈尔滨列车…</a></li>
+            <li><a href="#">北京铁路局元旦将开行海口到哈尔滨列车…</a></li>
+            <li><a href="#">北京铁路局元旦将开行海口到哈尔滨列车…</a></li>
+        </div>
+
+    </div>
+
+</div>-->
+</div>
+
+
+<div class="boxRight">
+	<div class="">
+        <a href="http://bus.elong.com" target="_blank">
+            <img src="http://img.huoche.com/img/right_banner.jpg"/>
+        </a>
+    </div>
+	<!--承诺开始-->
+        <div class="rcredit mt15">
+            <h2>火车网郑重承诺</h2>
+            <p>代购服务100%由合法的代售点提供</p>
+            <p>票款100%安全</p>
+        </div>
+        <!--承诺结束-->	<div class="rightCard mt15">
+            <h3 class="h3">
+                实用工具
+            </h3>
+            <div class="content tools clearfix">
+                <li class="hc"><a href="/shikebiao" target="_blank">列车时刻表</a></li>
+                <li class="ds"><a href="/daishoudian" target="_blank">全国代售点</a></li>
+                <li class="ys"><a href="/daigou" target="_blank">火车票预订</a></li>
+                <li class="sj"><a href="http://www.elong.com/promotion/web/elongiphone/index.html#down1" target="_blank">手机客户端</a></li>
+                <li class="ct"><a href="http://www.huoche.com/changtu/" target="_blank">长途车查询</a></li>
+                <li class="jd"><a href="http://hotel.huoche.com/" target="_blank">酒店预订</a></li>
+            </div>
+        </div>   <!--广告开始-->
+        <div class="adr mt15">
+            <a href="http://mp.elong.com/h5hongbao/GetH5TrainPacket?activityId=14102801&sign=14102801&hongbaosign=1" target="_blank">
+                <img src="http://img.huoche.com/comm/elongload.jpg"/>
+            </a>
+        </div>
+        <!--广告结束--></div>
+</div>
+<!--内容部分结束-->
+<div class="container mt15">
+    <div class="credit">
+        <img src="http://img.huoche.com/comm/credit.png" />
+    </div>
+</div>
+<div class="footer mt15">
+    <div class="container">
+        <div class="about">
+            <p>
+                <a href="http://www.huoche.com/infor/about" target="_blank">关于火车网</a>
+                <span>|</span>
+                <a href="http://www.elong.com/" target="_blank">酒店</a>
+                <span>|</span>
+                <a href="http://flight.elong.com/" target="_blank">机票查询</a>
+                <span>|</span>
+                <a href="http://www.huoche.com/link/" target="_blank">友情链接</a>
+                <span>|</span>
+                <a href="http://www.huoche.com/daishoudian/" target="_blank">电话订票</a>
+                <span>|</span>
+                <a href="http://www.huoche.com/infor/policy" target="_blank">隐私原则</a>
+				<!--
+                <span>|</span>
+                <a href="http://www.huoche.com/map.htm" target="_blank">网站地图</a>-->
+            </p>
+            <p>
+                <span>版权所有 Copyright©2004-2012 huoche.com　京ICP备11013966号 京公网安备110105005206号</span>
+            </p>
+        </div>
+        <div class="safe">
+            <img src="http://img.huoche.com/comm/safe.png" alt=""/>
+        </div>
+		<!--
+        <div class="quickLink mt15 clearfix">
+            <div class="qlL">
+                <b>快捷导航</b>
+            </div>
+            <div class="qlR">
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+                <a href="#">火车票</a>
+            </div>
+        </div>
+		-->
+        <div class="quickLink mt15 clearfix">
+            <div class="qlL">
+                <b>友情链接</b>
+            </div>
+            <div class="qlR">
+                <a href="http://www.114piaowu.com/" target=_blank>火车票</a>
+	<a href="http://www.laidingba.com/" target=_blank>来订吧</a>
+	<a href="http://www.keyunzhan.com/" target=_blank>客运站</a>
+	<a href="http://www.huoche.net/" target=_blank>火车网</a>
+	<a href="http://www.okmk.com/" target=_blank>特价酒店</a>
+	<a href="http://bj.tuniu.com/" target=_blank>途牛北京旅游</a>
+	<a href="http://www.kuyiso.com/" target=_blank>分类信息</a>
+	<a href="http://www.tianqi.com" target=_blank>天气预报查询</a>
+	<a href="http://www.gaotie.cn" target=_blank>高铁网</a>
+	<a href="http://www.tianqi.com" target=_blank>天气预报查询</a>
+	<a href="http://www.17u.com/" target=_blank>同程旅游网</a>
+	<a href="http://huoche.com/urljump.php?url=http://q.sohu.com" target=_blank>搜狐圈子</a>	    
+	<a href="http://www.meilele.com"                 target="_blank">家具网</a>
+	    <a href="http://www.liepin.com"                  target="_blank">招聘网</a>
+	    <a href="http://www.tuanche.com/"              target="_blank">汽车团购</a>
+		<a href="http://tuanche.com/c3/xiaoliang/"        target="_blank">迈腾销量        </a>
+		<a href="http://www.ganji.com/huochepiao/"       target="_blank">火车票查询 </a>
+		<a href="http://www.ganji.com/lieche/"           target="_blank">火车票查询</a>
+		<a href="http://www.mipang.com/"                 target="_blank">米胖旅游网</a>
+		<a href="http://www.fenzhi.com/"                 target="_blank">分智网</a>
+		<a href="http://www.uzai.com/"                   target="_blank">悠哉旅游网</a>
+		<a href="http://huoche.kuxun.cn/"                target="_blank">火车票网上订票官网 </a>
+		<a href="http://www.taoche.com/"                 target="_blank">二手车交易 </a>
+		<a href="http://www.yangshitianqi.com/"          target="_blank">天气预报查询 </a>
+		<a href="http://www.zxdyw.com/"                  target="_blank">装修网 </a>
+		<a href="http://www.jobui.com/"                  target="_blank">找工作 </a>
+		<a href="http://tj.focus.cn/"                  target="_blank">天津房地产 </a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script>
+    $(function(){
+        // 搜索
+        $('.ltabs li').on('click', function(){
+            $(this).addClass('active').siblings().removeClass('active');
+            $('.rform').hide();
+            $('.rform' + $(this).data('tar')).show();
+        });
+
+
+        $('.tabCard .tclTitleC li').on('click', function(){
+            $(this).addClass('active').siblings('li').removeClass('active');
+            var pr = $(this).parents('.tabCard');
+            $('.tcContent .tcc'+$(this).data('tar'), pr).show().siblings().hide();
+        });
+
+
+    });
+</script>
+
+<!--新版导流 列表页面二维码js 开始-->
+<script>
+    st = '';
+    $('.kbtn').bind({
+        'mouseenter':function(){
+            if(st) {
+                clearTimeout(st);
+            }
+            $('.QrCodeWrap').hide();
+            $('.QrCodeWrap', $(this)).show();
+        },
+        'mouseleave':function(){
+            var cb = $('.QrCodeWrap', $(this));
+            st = setTimeout(function(){
+                cb.hide();
+            },300);
+        }
+    });
+
+    $('.QrCodeWrap').bind({
+        'mouseenter':function(){
+            if(st) {
+                clearTimeout(st);
+            }
+            $(this).show();
+        },
+        'mouseleave':function(){
+            var cc = $(this);
+            st = setTimeout(function(){
+                cc.hide();
+            },300);
+        }
+    });
+
+</script>
+<!--新版导流 列表页面二维码js 结束-->
+
+<!--
+<div id="QRcode" style="background: #fff; top: 250px; right: 50%; position: fixed; width: 131px; height: 168px; cursor: pointer; z-index:99; margin-right: 500px;">
+    <img src="http://piao.huoche.com/img/QRcode.jpg" alt="" width="131px" height="168px">
+</div>
+-->
+</body>
+</html>

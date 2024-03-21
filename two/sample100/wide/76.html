@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link href="http://www.3dprintmakers.com/shop/crazy" rel="canonical" />
+        <title>Crazy - 3D Printer Shop | MakerShop</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="CrashPrint 3D printer designs shop. Download 3D models for your 3D printer." />
+        <meta name="abstract" content="3D print objects or 3D print clothes using our website. Designers can upload their own 3D models to distribute." />
+		<meta name="author" content="3D Print Makers" />
+		<meta name="distribution" content="Global" />
+		<meta name="revisit-after" content="1 days" />
+		<meta name="robots" content="follow,index" />
+        <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+                    <script src="//makershopbundles.azureedge.net/modernizr"></script>
+            <script src="//makershopbundles.azureedge.net/jquery"></script>
+                
+<script src="/scripts/ShopPage.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () { ShopPageView.initialize("crazy", "Crazy", "42023"); });
+</script>
+        <style>
+            #ShoppingCart {
+                display:none;
+            }
+        </style>
+        <script>
+
+            //Render using responsive design for WinPhone8
+            (function() {
+                if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                    var msViewportStyle = document.createElement("style");
+                    msViewportStyle.appendChild(
+                        document.createTextNode("@-ms-viewport{width:auto!important}")
+                    );
+                    document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+                }
+            })();
+
+            $(document).ready(function () {
+            });
+
+            function GetShoppingCart() {
+                jQuery.support.cors = true;
+
+                //var shoppingCartDiv = $("#ShoppingCart #Contents");
+                //shoppingCartDiv.html("");
+
+                $.ajax({
+                    url: "/api/shoppingcart/vd1prlyoddpef0hlkfhdacpl/1/1",
+                    type: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data != null &&
+                            data != "") {
+                            $("#ShowShoppingCartButton").html("<span class=\"glyphicon glyphicon-shopping-cart\"></span> Cart {0}".replace("{0}", data.length.toString()));
+                        }
+                    },
+                    error: function (x, y, z) {
+                        alert(x + '\n' + y + '\n' + z);
+                    }
+                });
+
+            }
+
+            var botChatWindowIsVisible = false;
+            var botChatWindowAlreadyInitialized = false;
+
+            function showBotInput() {
+                var botDiv = $("#bot");
+                var botLink = $("#askBotTextSpan");
+                if (botChatWindowIsVisible) {
+                    botDiv.hide();
+                    botLink.html("Ask Bot");
+                    botChatWindowIsVisible = false;
+                    ga('send', 'event', 'HideBotChatWindow', 'Close bot chat window.');
+                }
+                else {
+                    if (botChatWindowAlreadyInitialized) {
+                        botLink.html("Hide Bot");
+                        botDiv.show();
+                    }
+                    else {
+                        var chatContainerDiv = $("#chatContainer");
+                        chatContainerDiv.html("<iframe src='https://webchat.botframework.com/embed/3DBot?s=usvkSd_Q4Uw.cwA.SuU.L3bvTB10UsqxoDlLFlmDz5niWWci7wRCGk-vZPnH8M4'></iframe>");
+                        botDiv.show();
+                        botLink.html("Hide Bot");
+                        botChatWindowAlreadyInitialized = true;
+                    }
+                    botChatWindowIsVisible = true;
+                    ga('send', 'event', 'ShowBotChatWindow', 'Display bot chat window.');
+                }
+            }
+        </script>
+
+        <link rel="stylesheet" href="/content/Site-20170409-dark.css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+    </head>
+    <body>
+        <div class="navbar-default navbar-fixed-top" style="height:60px;">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-brand">
+                    <a class="header-logo" href="/" style="height:40px;line-height:40px;display:inline-block;padding-top:0px;"><img src="https://makershop.blob.core.windows.net/images/3d print maker logo white green 192x46 transparent.png" /></a>
+                </div>
+            </div>
+            <div class="navbar-collapse collapse" style="margin-top:8px;height:67px;">
+                <ul class="nav navbar-nav" style="font-size:1.2em">
+                    <li><a href="/blog/crazy">Blog</a></li>
+                    <li><a href="/checkout" id="ShowShoppingCartButton" rel="nofollow">Cart</a></li>
+                    <li style="width:180px;margin-left:8px;" class="navbar-input-padding-top">
+                        <div id="searchTextBoxDiv">
+                            <input id="searchTextBox" type="text" maxlength="50" onkeyup="search(this, event)" placeholder="search" />
+                            <input id="searchButton" type="button" onclick="window.location = '/search/' + $('#searchTextBox').val();" />
+                            <div id="imageSearchButtonContainer">
+                                <input id="imageSearchButton" type="button" onclick="window.location='/search/?showImageSearch=true'" />
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#" onclick="showBotInput(); return false;"><span id="askBotTextSpan" style="padding-right:4px">Ask Bot</span></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                        <li class="navbar-input-padding-top-button hidden-xs"><button id="uploadButton" class="btn btn-default" style="margin-right:4px" type="button" onclick="window.location.href='/account/login'">Upload</button></li>
+    <li class="navbar-input-padding-top-button"><button class="btn btn-success" type="button" onclick="window.location.href='/account/login'">Sign In</button></li>
+
+                </ul>
+            </div>
+        </div>
+        <div style="height:60px;min-height:60px;max-height:60px;"></div>
+        
+    <div class="jumbotron" style=" ">
+        <div class="container">
+            <h2>Crazy</h2>
+            <p>3D printer designs to download. <a href="/shop/crazy/blog">Read our blog</a></p>   
+                <button id="ContactShopOwnerButton" value="Contact Shop Owner" class="btn btn-link" style="padding:0px;margin-top:-20px;">Contact Shop Owner</button>
+        </div>
+    </div>
+
+        <div class="container">
+            
+
+
+<div class="mainShopPageContact">
+    <div id="ContactShopOwnerContainer" style="display:none">
+        <h3>Contact Shop Owner</h3>
+        <input type="text" id="ContactShopOwnerEmailTextBox" placeholder="Email" style="display:block" />
+        <textarea id="ContactShopOwnerTextArea" placeholder="Message" style="padding-top:4px"></textarea>
+        <div style="padding-top:4px;">
+            <button id="SendShopOwnerButton" value="Send" class="btn btn-primary">Send</button>
+        </div>
+        <div id="WorkingMessage" style="display:none"><img src="/images/spinner.gif" alt="Working Spinner" /></div>
+        <div id="SuccessMessage" style="display:none">Thank you :)</div>
+        <div id="ErrorMessage" style="display:none;color:red">Error</div>
+        <hr />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8">
+        <div class="row">
+        </div>
+        <div class="clear"></div>
+        <div style="padding-top:20px;padding-bottom:24px;">
+                    </div>
+    </div>
+    <div class="col-md-4">
+        <div class="shop-right-side">
+                <div class="subscribe">
+                    <p>Don't miss a thing.<br />Enter your email to be updated about Crazy.</p>
+                    <input id="ShopEmailSubscribersInput" type="text" maxlength="250" placeholder="me@email.com" style="width:120px" />
+                    <button id="ShopEmailSubscribersButton" class="btn btn-default">Subscribe</button>
+                    <div id="ShopEmailSubscribersWorkingMessage" style="display:none"><img src="/images/spinner.gif" alt="Working Spinner" /></div>
+                    <div id="ShopEmailSubscribersSuccessMessage" style="display:none">
+                        You're now signed up!
+                    </div>
+                </div>
+                <div class="offers">
+                                    </div>
+            <div class="blogPosts">
+                <a href="/shop/crazy/blog"><h2 class="padSides">Blog Posts</h2></a>
+                    <p>No blog posts.</p>
+            </div>
+            <p>
+                <h2>About</h2>
+                Crazy was created by <a href="/user/42023">CrashPrint</a> on 5/21/2017.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="ad">
+    <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-3138783240917071";
+        /* MakerShop Shop Page Bottom */
+        google_ad_slot = "6985858674";
+        google_ad_width = 728;
+        google_ad_height = 90;
+        //-->
+    </script>
+    <script type="text/javascript"
+    src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+</div>
+<script>
+    function nav(index) {
+        var urls = new Array();
+        window.location.href = urls[index];
+    }
+</script>
+        </div>
+        
+        
+        <div id="bot" style="display:none">
+            <div id="chatContainer"></div>
+            <div id="links" style="padding:8px">
+                <p>You can also chat with this bot directly, without this web page. Click a link below and add us to your friend list.</p>
+                <ul style="list-style:none">
+                    <li><a href="mailto:info@3dprintmakers.com" target="_blank"><img src="https://email.botframework.com/content/icon.png" style="width:24px" /> Email info@3dprintmakers.com</a></li>
+                    <li><a href="https://www.messenger.com/t/166544627161463" target="_blank"><img src="https://email.botframework.com/content/icon.png" style="width:24px" /> Facebook Messenger @3DPrintMakers</a></li>
+                    <li><a href="https://join.skype.com/bot/40381a62-d422-4d55-9b21-8939731c4fd5" target="_blank"><img src="https://email.botframework.com/content/icon.png" style="width:24px" /> Skype @3D</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4>3D Print Makers</h4>
+                        <ul>
+                            <li><a href="/home/about">About</a></li>
+                            <li><a href="/home/browse-shops">All Shops</a></li>
+                            <li><a href="/user">All Users</a></li>
+                            <li><a href="/pricing">Pricing</a></li>
+                            <li><a href="/home/contact">Contact</a></li>
+                            <li><a href="/home/terms">Terms &amp; Conditions</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="/press">Press</a></li>
+                            <li><a href="/blog/crazy">3D Print Makers Blog</a></li>
+                            <li><a href="http://www.3dprintmakers.com/blog/2013/2/6/how-to-make-3d-designs">3D Design Apps</a></li>
+                            <li>
+<a href="/account/login">Start 3D Printer Shop</a>                            </li>
+                            <li><a href="https://www.microsoft.com/store/apps/9nblggh6jj95" target="_blank">3D Objects Windows 10 App</a></li>
+                                                    </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>APIs</h4>
+                        <ul>
+                            <li><a href="/developer">Developer API</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="copyright">&copy; 2017 SpiveyWorks Corporation. All rights reserved. <img src="https://makershop.blob.core.windows.net/images/3d print maker logo green 192x46 transparent.png" /> TM is a trademark of SpiveyWorks Corporation.</p>
+            </div>
+        </div>
+
+        
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-1535364-35', 'auto');
+  ga('send', 'pageview');
+
+    </script>
+    <script type="text/javascript">
+
+    function expandMenu() {
+        $("#menu").children().show();
+        //$("#menu").first().show();
+    }
+
+            
+    function search(inField, e) {
+
+        var charCode;
+
+        if(e && e.which){
+            charCode = e.which;
+        }else if(window.event){
+            e = window.event;
+            charCode = e.keyCode;
+        }
+
+        if(charCode == 13) {
+            window.location = '/search/' + removeSpecialCharacters($('#searchTextBox').val());
+        }
+    }
+
+    function removeSpecialCharacters(value) {
+        var changedValue = value.replace(".", "").replace("?", "").replace("&", "");
+        return changedValue;
+    }
+
+        </script>
+    </body>
+</html>

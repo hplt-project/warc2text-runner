@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+<head>
+	
+												<title>Omada Identity Manager 6.1 | KuppingerCole</title>
+	<meta name="description" content="Over the past 2 years the Danish software company Omada has reached the position as Microsoft's most important technology partner in the field of MIIS and ILM. In cooperation with Microsoft the..."/>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+	<meta name="theme-color" content="#33383f" />
+
+	<meta property="og:locale" content="en_US">
+	<meta property="og:site_name" content="KuppingerCole"/>
+	<meta property="og:title" content="Omada Identity Manager 6.1"/>
+	<meta property="og:description" content="Over the past 2 years the Danish software company Omada has reached the position as Microsoft's most important technology partner in the field of MIIS and ILM. In cooperation with Microsoft the..."/>
+	<meta property="og:image" content="https://www.kuppingercole.com/pics/kcblog.jpg"/>
+	<meta property="og:image:type" content="image/jpeg"/>
+	<meta property="og:image:width" content="1000"/>
+	<meta property="og:image:height" content="563"/>
+	<meta property="og:type" content="website">
+
+	<meta name="twitter:card" content="summary"/>
+	<meta name="twitter:site" content="@kuppingercole"/>
+	<meta name="twitter:url" content="https://www.kuppingercole.com/blog/kuppinger/omada_070508"/>
+	<meta name="twitter:title" content="Omada Identity Manager 6.1"/>
+	<meta name="twitter:description" content="Over the past 2 years the Danish software company Omada has reached the position as Microsoft's most important technology partner in the field of MIIS and ILM. In cooperation with Microsoft the..."/>
+	<meta name="twitter:image" content="https://www.kuppingercole.com/pics/kcblog.jpg"/>
+	<meta name="twitter:creator" content="@kuppingercole"/>
+
+	<link rel="search" href="/opensearch.xml" type="application/opensearchdescription+xml" title="KuppingerCole"/>
+	<link rel="alternate" href="https://feeds.feedburner.com/kuppingercole" type="application/rss+xml" title="KuppingerCole Analysts News"/>
+	<link rel="alternate" href="https://media.kuppingercole.com/audio.xml" type="application/rss+xml" title="KuppingerCole Analysts Podcast" />
+	<link rel="alternate" href="https://media.kuppingercole.com/video.xml" type="application/rss+xml" title="KuppingerCole Analysts Videos" />
+
+	<link rel="icon" type="image/png" href="/favicon.png" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<link rel="canonical" href="https://www.kuppingercole.com/blog/kuppinger/omada_070508" />
+
+
+	<link href="/assets/plugins/fontawesome/css/all.css" rel="stylesheet" type="text/css" />
+	<link href="/assets/plugins/merriweather/merriweather.css" rel="stylesheet" type="text/css" />
+	<link href="/assets/style.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="/assets/custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+
+<!-- custom CSS for this page -->
+<style>
+	a.topic_button:hover { color: #e2003b; }
+
+	.kc-big h1 { font-size: 32px; margin-top: 0px;}
+	.kc-big h2 { font-size: 23px; font-weight: bold; }
+	.kc-big h3 { font-size: 18px; font-weight: bold; }
+	.kc-big span { font-size: 18px; line-height: 32px; }
+
+	.kc-big video { width: 80%; display: block; margin: 10px auto; }
+
+	.kc-big img {
+        max-width: 100%;
+        display: block;
+        margin: 10px auto;
+    }
+
+	.kc-big table td { padding: 5px; }
+
+	.kc-big blockquote {
+		font-size: 18px; line-height: 32px; 
+		border-left: 10px solid #ccc;
+		margin: 1.5em 24px;
+		padding: 0.5em 24px;
+	}
+
+	ul.graph
+	{
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+
+	ul.graph li
+	{
+		margin-bottom: .5em;
+		padding: .2em;
+		background: #666;
+		/*color: #fff;*/
+	}
+
+	ul.graph li.percent
+	{
+		background: url("/images/lightgreybar.jpg");
+		background-repeat: no-repeat;
+	}
+
+	ul.graph li.percentmax
+	{
+		background: url("/images/redbar.jpg");
+		background-repeat: no-repeat;
+		color: #fff;
+	}
+
+	.kc-header .blogtype {
+		font-size: 18px;
+		line-height: 30px;
+		margin-top: 0px;
+		margin-bottom: 10px;
+		color: #e4003a;
+	}
+</style>
+
+<!-- custom CSS for this page end -->
+
+	<script src="/scripts/jquery-3.6.0.min.js"></script>
+	<script src="/assets/plugins/bootstrap/js/responsive-tabs.js"></script>
+	<script src="/assets/plugins/bootstrap/js/bootstrap.js"></script>
+	<script src="/scripts/application.js"></script>
+	
+	<!-- OneTrust Cookies Consent Notice start for kuppingercole.com -->
+	<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" defer type="text/javascript" charset="UTF-8" data-domain-script="27596a78-818c-476d-88aa-6213c4214830"></script>
+	<script type="text/javascript" defer>
+		function OptanonWrapper() { }
+	</script>
+	<!-- OneTrust Cookies Consent Notice end for kuppingercole.com -->
+
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+	'brand': 'KuppingerCole',
+	'googleAccount': 'UA-275923-6',
+	'pageName': 'Omada Identity Manager 6.1 | KuppingerCole',
+	'pageType': 'Blog Page',
+	});
+	</script>
+
+</head>
+ <body >
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+
+            "@type": "ListItem",
+            "position": 1,
+            "item": "https://www.kuppingercole.com/blog",
+            "name": "Blog"
+        },
+        {
+
+            "@type": "ListItem",
+            "position": 2,
+            "item": "https://www.kuppingercole.com/blog/kuppinger",
+            "name": "Martin Kuppinger"
+        },
+        {
+
+            "@type": "ListItem",
+            "position": 3,
+            "item": "https://www.kuppingercole.com/blog/kuppinger/omada_070508",
+            "name": "Omada Identity Manager 6.1"
+        }    ]
+}
+</script>
+<script type="application/ld+json">
+        {"@context":"https://schema.org/","@type":"BlogPosting","headline":"TriCipher myOneLogin","image":"https://www.kuppingercole.com/pics/kcblog.jpg","keywords":"","url":"/blog/kuppinger/tricipher","datePublished":"2008-05-07","dateCreated":"2008-05-07","dateModified":"2015-03-08","articleBody":"<p>Over the past 2 years the Danish software company Omada has reached the position as Microsoft's most important technology partner in the field of MIIS and ILM. In cooperation with Microsoft the vendor was able to win several major clients.</p> <p>Omada has been extending the Microsoft technology ","author":{"@type":"Person","name":"Martin Kuppinger"}}
+</script>
+<HEADER class="kc-global-header shrink" id="start-of-page">
+	<div class="kc-global-header-container">
+
+		<div class="kc-logo" >
+			<div class="container">
+				<div class="kc-logo-meta ">
+											<a href="/login" class="btn btn-default btn-lg kc-theme-bg hidden-xs hidden-sm"><i class="kc-icon fa fa-user"></i> Login</a>
+						<a href="/subscriptions" class="btn btn-default btn-lg kc-theme-bg hidden-xs hidden-sm"><I class="kc-icon fa fa-edit"></I> Become a Client</a>
+									</div>
+										<a href="/" style="border: none">
+							<div class="kc-logo-frame">
+								KuppingerCole Analysts
+							</div>
+													</a>
+			</div>
+		</div>
+
+		<NAV class="kc-nav-main kc-mega-menu navbar navbar-default" role="navigation" >
+			<div class="container">
+
+				<DIV class="navbar-header">
+					<BUTTON class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#kc-main-menu">
+						<SPAN class="sr-only">Toggle navigation</SPAN>
+						<SPAN class="icon-bar"></SPAN>
+						<SPAN class="icon-bar"></SPAN>
+						<SPAN class="icon-bar"></SPAN>
+					</BUTTON>
+					<A class="navbar-brand visible-xs visible-sm" href="/">Menu</A>
+				</DIV><!-- Collect the nav links, forms, and other content for toggling -->
+
+				<DIV class="collapse navbar-collapse" id="kc-main-menu">
+					<UL class="nav navbar-nav">
+
+
+																										
+																																	
+																																								<LI class="dropdown kc-mega-menu-fullwidth kc-mega-menu-framed">
+												<A class="dropdown-toggle" href="/" data-toggle="dropdown" >Insights<I class="kc-icon fa fa-angle-down"></I></A>
+												<DIV class="dropdown-menu" role="menu">
+													<DIV class="kc-mega-menu-container container">
+														<DIV class="row">
+																																																																<DIV class="col-md-4">
+																																																								<UL class="list-group kc-list-group-pull-left-icon">
+																																																																																				<LI class="list-group-item">
+																							<A href="/insights/identity-and-access-management" ><SPAN class="pull-left"><I class="kc-icon fa fa-caret-right"></I></SPAN>Identity&nbsp;&&nbsp;Access&nbsp;Management</A>
+																						</LI>
+																																																																																																									<LI class="list-group-item">
+																							<A href="/insights/decentralized-identity" ><SPAN class="pull-left"><I class="kc-icon fa fa-caret-right"></I></SPAN>Decentralized&nbsp;Identity</A>
+																						</LI>
+																																																																																																									<LI class="list-group-item">
+																							<A href="/insights/cloud-security" ><SPAN class="pull-left"><I class="kc-icon fa fa-caret-right"></I></SPAN>Cloud&nbsp;Security</A>
+																						</LI>
+																																																																																																									<LI class="list-group-item">
+																							<A href="/insights/artificial-intelligence" ><SPAN class="pull-left"><I class="kc-icon fa fa-caret-right"></I></SPAN>Artificial&nbsp;Intelligence</A>
+																						</LI>
+																																																												</UL>
+																																			</DIV>
+																																																																																<DIV class="col-md-4">
+																																																								<UL class="list-group kc-list-group-pull-left-icon">
+																																																																																				<LI class="list-group-item">
+																							<A href="/insights/privileged-access-management" ><SPAN class="pull-left"><I class="kc-icon fa fa-caret-right"></I></SPAN>Privileged&nbsp;Access&nbsp;Management</A>
+																						</LI>
+																																																																																																									<LI class="list-group-item">
+																							<A href="/insights/zero-trust" ><SPAN class="pull-left"><I class="kc-icon fa fa-caret-right"></I></SPAN>Zero&nbsp;Trust</A>
+																						</LI>
+																																																																																																									<LI class="list-group-item">
+																							<A href="/insights/business-resilience" ><SPAN class="pull-left"><I class="kc-icon fa fa-caret-right"></I></SPAN>Business&nbsp;Resilience&nbsp;Management</A>
+																						</LI>
+																																																																																																									<LI class="list-group-item">
+																							<A href="/insights/ot-ics-scada" ><SPAN class="pull-left"><I class="kc-icon fa fa-caret-right"></I></SPAN>OT,&nbsp;ICS,&nbsp;SCADA</A>
+																						</LI>
+																																																												</UL>
+																																			</DIV>
+																																																																																<DIV class="col-md-4">
+																																																								<UL class="list-group kc-list-group-pull-left-icon">
+																																							</UL>
+																																			</DIV>
+																																														
+														</DIV>
+													</DIV>
+												</DIV>
+											</LI>
+																																		
+																																	
+																	<LI class="dropdown">
+										<A href="/events"  >Events</A>
+									</LI>
+															
+																																	
+																	<LI class="dropdown">
+										<A href="/advisory"  >Advisory</A>
+									</LI>
+															
+																																	
+																	<LI class="dropdown">
+										<A href="/research"  >Research</A>
+									</LI>
+															
+																																	
+																	<LI class="dropdown">
+										<A href="/tools-choice"  >Tools Choice</A>
+									</LI>
+															
+																																	
+																	<LI class="dropdown">
+										<A href="/virtualacademy"  >Virtual Academy</A>
+									</LI>
+															
+																																	
+																	<LI class="dropdown">
+										<A href="/blog" style = "background-color: rgb(200, 0, 40);" >Blog</A>
+									</LI>
+															
+																																	
+																	<LI class="dropdown">
+										<A href="/videos"  >Videos</A>
+									</LI>
+																					
+													<LI class="dropdown kc-mega-menu-fullwidth kc-mega-menu-framed">
+																	<A class="dropdown-toggle" href="/" data-toggle="dropdown" >Company<I class="kc-icon fa fa-angle-down"></I></A>
+																<DIV class="dropdown-menu" role="menu">
+									<DIV class="kc-mega-menu-container container">
+										<DIV class="row">
+
+											<DIV class="col-md-4">
+												<DIV class="dropdown-header" role="presentation">
+													<p class="kc-mega-menu-heading"><SPAN class="kc-kicker">KUPPINGERCOLE</SPAN></p></DIV>
+												<UL class="list-group kc-list-group-pull-left-icon">
+													<LI class="list-group-item">
+														<A href="/about"><SPAN class="pull-left"><I class="kc-icon fa fa-caret-right"></I></SPAN>About us</A></LI>
+													<LI class="list-group-item">
+														<A href="/analysts"><SPAN class="pull-left"><I class="kc-icon fa fa-caret-right"></I></SPAN>Analysts&nbsp;&&nbsp;Advisors</A></LI>
+													<LI class="list-group-item">
+														<A href="/businessteam"><SPAN class="pull-left"><I class="kc-icon fa fa-caret-right"></I></SPAN>Business Team</A></LI>
+													<LI class="list-group-item">
+														<A href="/cybersecurity-council"><SPAN class="pull-left"><I class="kc-icon fa fa-caret-right"></I></SPAN>Cybersecurity&nbsp;Council</A></LI>
+													<LI class="list-group-item">
+														<A href="/contact"><SPAN class="pull-left"><I class="kc-icon fa fa-caret-right"></I></SPAN>Contact</A></LI>
+													<LI class="list-group-item">
+														<A href="/jobs"><SPAN class="pull-left"><I class="kc-icon fa fa-caret-right"></I></SPAN>Jobs</A></LI>
+												</UL>
+											</DIV>
+
+											<DIV class="col-md-4">
+												<DIV class="dropdown-header" role="presentation">
+													<p class="kc-mega-menu-heading"><SPAN class="kc-kicker">NEWS</SPAN></p></DIV>
+												<UL class="list-group kc-list-group-pull-left-icon">
+													<LI class="list-group-item">
+														<A href="/pressreleases"><SPAN class="pull-left"><I class="kc-icon fa fa-caret-right"></I></SPAN>Press Releases</A></LI>
+													<LI class="list-group-item">
+														<A href="/press"><SPAN class="pull-left"><I class="kc-icon fa fa-caret-right"></I></SPAN>Media Coverage</A></LI>
+													<LI class="list-group-item">
+														<A href="/press/contact"><SPAN class="pull-left"><I class="kc-icon fa fa-caret-right"></I></SPAN>Press Contact</A></LI>
+
+												</UL>
+											</DIV>
+
+											<DIV class="col-md-4">
+												<DIV class="dropdown-header" role="presentation">
+													<p class="kc-mega-menu-heading"><SPAN class="kc-kicker">CUSTOMERS</SPAN></p></DIV>
+												<UL class="list-group kc-list-group-pull-left-icon">
+													<LI class="list-group-item">
+														<A href="/subscriptions"><SPAN class="pull-left"><I class="kc-icon fa fa-caret-right"></I></SPAN>Become a Client</A></LI>
+													<LI class="list-group-item">
+														<A href="/info-sponsor"><SPAN class="pull-left"><I class="kc-icon fa fa-caret-right"></I></SPAN>Become a Sponsor</A></LI>
+													<LI class="list-group-item">
+														<A href="/inquiry"><SPAN class="pull-left"><I class="kc-icon fa fa-caret-right"></I></SPAN>Inquiry Form</A></LI>
+												</UL>
+											</DIV>
+
+										</DIV>
+									</DIV>
+								</DIV>
+							</LI>
+						
+						
+													<LI class="pull-right hidden-xs hidden-sm" style="border-left: 0px none; width: 215px;">
+								<FORM class="navbar-form" role="search" method="get" name="searchform" action="/search" >
+									<DIV class="form-group">
+										<INPUT class="kc-form-iconified kc-is-empty form-control" type="text"
+											   placeholder ="&#xF002;" id="search" name="q" value="" data-value=""
+											   onkeydown="if (event.keyCode == 13) { document.searchform.submit(); return false; }"  style="width: 100%;">
+									</DIV>
+								</FORM>
+							</LI>
+						
+													<LI class="visible-xs visible-sm"><A href="/login"><I class="kc-icon fa fa-user"></I> Login</A></LI>
+							<LI class="visible-xs visible-sm"><A href="/subscriptions"><I class="kc-icon fa fa-edit"></I> Become a Client</A></LI>
+						
+						<LI class="visible-xs visible-sm"><A href="/inquiry">Contact</A></LI>
+
+						<LI class="visible-xs visible-sm">
+							<FORM role="search" method="get" name="searchform_sm" action="/search">
+								<div class="input-group input-group-sm">
+									<span class="input-group-addon kc-bg-lighter"><i class="fa fa-search"></i></span>
+									<input id="search_sm" type="text" name="q"
+										   class="form-control input-sm" value="" data-value=""
+										   onkeydown="if (event.keyCode == 13) { document.searchform_sm.submit(); return false; }">
+								</div>
+							</FORM>
+						</LI>
+					</UL>
+				</DIV><!-- /.navbar-collapse -->
+			</DIV><!-- /.container-fluid -->
+		</NAV>
+	</DIV>
+</HEADER>
+
+<SECTION class="kc-page-content">
+<DIV class="container">
+<DIV class="row">
+	<DIV class="col-md-8">
+
+<ol class="breadcrumb">
+	<li><a href="/">Home</a></li>
+	<li><a href="/blog">Blog</a></li>
+	<li><a href="/blog/kuppinger">Martin Kuppinger</a></li>
+	<li class="active">Omada Identity Manager 6.1</li>
+</ol>
+
+<article class="kc-article kc-big">
+	<header class="kc-header">
+	
+		<div class="blogtype">Blog		<span class="pull-right">
+		<div style="justify-self: flex-end; height: 100%; display: flex; width: 110px; align-items: center; justify-content: space-between;">
+			<button title="Share this page" class="share-button" data-title="Omada Identity Manager 6.1">
+			<button title="Bookmark this page" class="bookmarking-button" data-objectid="1433" data-objecttype="blog" data-bookmarked="" data-textfield="true" data-nologin="true">
+		</div>
+		</span>
+		</div>
+
+		<h1>Omada Identity Manager 6.1</h1>
+		<div class="kc-byline-dateline">
+			<span class="kc-byline">by <a href="/blog/kuppinger"><strong>Martin Kuppinger</strong></a></span><time class="kc-date" datetime="2008-05-07 09:07:05">Posted on May 07, 2008</time>
+		</div>
+
+						
+		
+	</header>
+
+	<hr>
+
+			
+			<div class="kc-body">
+			<span><p>Over the past 2 years the Danish software company Omada has reached the position as Microsoft's most important technology partner in the field of MIIS and ILM. In cooperation with Microsoft the vendor was able to win several major clients.</p> <p>Omada has been extending the Microsoft technology that currently and primarily is focused on the technical synchronisation of identity information by further reaching functions for role-based access control and workflows, self-service interfaces and increasingly also by extended GRC functions for compliance monitoring, attestation and other tasks. </p></span>
+		</div>
+	
+	<br/>
+
+	
+	
+</article>
+
+	
+	
+	
+	
+<ul class="pager">
+			<li class="next">
+			<p>
+				<a href="/blog/kuppinger/tricipher" style="text-decoration: none">Previous<i class="kc-icon-right fa fa-angle-right"></i>
+				<br/>TriCipher myOneLogin</a>
+			</p>
+		</li>
+				<li class="previous">
+			<p>
+				<a href="/blog/gaehtgens/federation-and-auto-provisioning" style="text-decoration: none"><i class="kc-icon-right fa fa-angle-left"></i> Next
+				<br/>Federation and auto-provisioning</a>
+			</p>
+		</li>
+	</ul>
+
+
+
+</DIV>
+<DIV class="col-md-4" style="padding-top: 20px;">
+<!--right column -->
+		
+						<p class="kc-heading-box">Stay Connected</p>
+<!-- external links box -->
+<div class="kc-cta-list">
+	<div class="list-group kc-list-group-pull-left-icon">
+        <div class="list-group-item">
+            <span class="pull-left"><i class="kc-icon fas fa-share-alt"></i></span>
+            <p class="list-group-item-text">KuppingerCole on social media</p>
+        </div>
+        <div class="btn-group btn-group-justified kc-utility-bar kc-utility-bar-bordered">
+            <a class="btn btn-link kc-utility-bar-item kc-theme-color" href="https://www.facebook.com/kuppingercole" target="_blank" title="Facebook"><i class="kc-icon fab fa-facebook"></i></a>
+            <a class="btn btn-link kc-utility-bar-item kc-theme-color" href="https://twitter.com/kuppingercole" target="_blank" title="Twitter"><i class="kc-icon fab fa-twitter"></i></a>
+            <a class="btn btn-link kc-utility-bar-item kc-theme-color" href="https://www.linkedin.com/company/kuppingercole" target="_blank" title="LinkedIn"><i class="kc-icon fab fa-linkedin"></i></a>
+            <a class="btn btn-link kc-utility-bar-item kc-theme-color" href="https://www.xing.com/companies/kuppingercole/updates" target="_blank" title="Xing"><i class="kc-icon fab fa-xing"></i></a>
+			<a class="btn btn-link kc-utility-bar-item kc-theme-color" href="https://youtube.com/user/kuppingercole" target="_blank" title="Youtube"><i class="kc-icon fab fa-youtube-square"></i></a>
+        </div>
+    </div>
+</div>
+<!-- links box end -->
+										<p class="kc-heading-box">Subscribe to our Podcasts</p>
+<!-- podcast links box -->
+<div class="kc-cta-list">
+    <div class="list-group kc-list-group-pull-left-icon">
+        <div class="list-group-item">
+            <span class="pull-left"><i class="kc-icon fas fa-microphone-alt"></i></span>
+            <p class="list-group-item-text">KuppingerCole Podcasts - listen anywhere</p>
+        </div>
+        <div class="btn-group btn-group-justified kc-utility-bar kc-utility-bar-bordered">
+            <a class="btn btn-link kc-utility-bar-item kc-theme-color" href="https://podcasts.apple.com/podcast/kuppingercole-analysts/id1505659521" target="_blank" title="Apple Podcasts"><i class="kc-icon fab fa-itunes"></i></a>
+            <a class="btn btn-link kc-utility-bar-item kc-theme-color" href="https://open.spotify.com/show/3leKXJ9ezk9ws4MAPq4Ato" target="_blank" title="Spotify"><i class="kc-icon fab fa-spotify"></i></a>
+            <a class="btn btn-link kc-utility-bar-item kc-theme-color" href="https://www.deezer.com/us/show/1848172" target="_blank" title="Deezer"><i class="kc-icon fab fa-deezer"></i></a>
+            <a class="btn btn-link kc-utility-bar-item kc-theme-color" href="https://www.google.com/podcasts?feed=aHR0cHM6Ly9tZWRpYS5rdXBwaW5nZXJjb2xlLmNvbS9hdWRpby54bWw%3D" target="_blank" title="Google Podcasts"><i class="kc-icon fab fa-google"></i></a>
+            <a class="btn btn-link kc-utility-bar-item kc-theme-color" href="https://tunein.com/podcasts/Technology-Podcasts/KuppingerCole-Analysts-p1311561/" target="_blank" title="TuneIn"><i class="kc-icon fas fa-broadcast-tower"></i></a>
+        </div>
+    </div>
+</div>
+<!-- podcast box end -->
+										<br>
+<!-- blogs -->
+						<article class="kc-topic-teaser" style="border: none; ">
+				<header class="kc-header">
+					<h2 class="kc-heading">Author info</h2>
+				</header>
+
+			<div class="kc-teaser-small-list">
+				<div class="list-group" style="margin-bottom: 0px;">
+					<a class="list-group-item" href="/team/kuppinger" style="outline:none;">
+						<img src="https://www.kuppingercole.com/pics/kuppinger.npr11_sm.jpg" title="Martin Kuppinger" class="img-responsive">
+						<hr style="margin-top: 6px; margin-bottom: 0px; color: transparent; border: none"/>
+						<h3 class="list-group-item-heading">Martin Kuppinger</h3>
+						<p class="list-group-item-text">Member of the Board</p>
+					</a>
+				</div>
+			</div>
+				<footer class="kc-footer">
+											<div class="btn-group btn-group-justified">
+							<a class="btn btn-default" href="/team/kuppinger" role="button" ><i class="kc-icon fa fa-user"></i>Profile</a>
+							<a class="btn btn-default" href="/blog/kuppinger" role="button" style="border-left: 1px solid white;"><i class="kc-icon fa fa-align-justify"></i>All posts</a>
+						</div>
+									</footer>
+			</article>
+													<p style="font-size: 18px;">How can we help you</p>
+
+<div class="kc-cta-list">
+    <div class="list-group kc-list-group-pull-left-icon">
+        <a class="list-group-item" href="/inquiry">
+            <span class="pull-right"><i class="kc-icon fa fa-angle-right"></i></span>
+            <span class="pull-left"><i class="kc-icon fa fa-envelope"></i></span>
+            <p class="list-group-item-text">Send an inquiry</p>
+        </a>
+        <div class="list-group-item">
+            <span class="pull-left"><i class="kc-icon fa fa-phone"></i></span>
+            <p class="list-group-item-text">Call Us +49 211 2370770</p>
+            <p class="list-group-item-text">Mo – Fr 8:00 – 17:00</p>
+        </div>
+    </div>
+</div>
+					
+	<!--right column end -->
+</DIV>
+
+</DIV>
+
+
+</DIV>
+</SECTION>
+
+ <FOOTER class="kc-global-footer">
+<DIV class="container">
+<A class="kc-top-link" id="top" href="#"><I class="kc-icon fa fa-angle-up"></I> top</A>
+</DIV>
+<SECTION class="kc-footer-section" >
+	<DIV class="container">
+	<DIV class="row">
+	<DIV class="col-md-4">
+		<p class="kc-mega-menu-heading" style="padding-bottom:3px;border-bottom:1px solid #a9acb0; "><span  class="kc-kicker" style="font-weight: normal">KuppingerCole Analysts</span></p>
+		<A href="/about">
+		<P>KuppingerCole Analysts, founded in 2004, is an international and independent analyst organization headquartered in Europe. The company specializes in offering neutral advice, expertise, thought leadership and practical relevance in Information Security, IAM, IAG, GRC as well as all areas concerning the Digital Transformation.</P>
+		</a>
+
+		<FORM role="search" method="get" name="searchform_ft" action="/search" style="margin-bottom: 2px">
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon kc-bg-lighter"><i class="fa fa-search"></i></span>
+				<input id="search_ft" type="text" name="q"
+					   class="form-control input-sm" value=""
+					   onkeydown="if (event.keyCode == 13) { document.searchform_ft.submit(); return false; }">
+			</div>
+		</FORM>
+
+	</DIV>
+	<DIV class="col-md-5">
+		<p class="kc-mega-menu-heading" style="padding-bottom:3px;border-bottom:1px solid #a9acb0; "><span  class="kc-kicker" style="font-weight: normal">Navigate</span></p>
+		<DIV class="row">
+		<DIV class="col-md-6">
+			<NAV class="kc-menu">
+			<UL class="kc-has-list-style">
+				<LI><A href="/events">Events</A></LI>
+				<LI><A href="/advisory">Advisory</A></LI>
+				<LI><A href="/research">Research</A></LI>
+				<LI><A href="/videos">Videos</A></LI>
+				<LI><A href="/blog">Blog</A></LI>
+			</UL>
+			</NAV>
+		</DIV>
+		<DIV class="col-md-6">
+			<NAV class="kc-menu">
+			<UL class="kc-has-list-style">
+				<LI><A href="/about">About us</A></LI>
+				<LI><A href="/contact">Contact Information</A></LI>
+				<LI><A href="/inquiry">Contact / Inquiry Form</A></LI>
+
+																					<LI><A href="/login?back=/blog/kuppinger/omada_070508">Login / Sign Up</A></LI>
+								<LI><a href="https://app-eu.onetrust.com/app/#/webform/bf6fb04b-ccb6-4635-beae-86079a551a3f" target="blank">Data Subject Request</a></LI>
+			</UL>
+			</NAV>
+		</DIV>
+		</DIV>
+	</DIV>
+	<DIV class="col-md-3">
+		<p class="kc-mega-menu-heading" style="padding-bottom:3px;border-bottom:1px solid #a9acb0; "><span  class="kc-kicker" style="font-weight: normal">Follow Us</span></p>
+		<NAV class="kc-menu">
+		<UL class="list-unstyled">
+			<LI><A href="https://www.facebook.com/kuppingercole" target="_blank"><I class="kc-icon fab fa-facebook-square"></I>Facebook</A></LI>
+			<LI><A href="https://twitter.com/kuppingercole" target="_blank"><I class="kc-icon fab fa-twitter-square"></I>Twitter</A></LI>
+			<LI><A href="https://youtube.com/user/kuppingercole" target="_blank"><I class="kc-icon fab fa-youtube-square"></I>YouTube</A></LI>
+			<LI><A href="https://www.xing.com/companies/kuppingercole/updates" target="_blank"><I class="kc-icon fab fa-xing-square"></I>Xing</A></LI>
+			<LI><A href="https://www.linkedin.com/company/kuppingercole" target="_blank"><I class="kc-icon fab fa-linkedin"></I>LinkedIn</A></LI>
+			<LI><A href="https://www.linkedin.com/groups?gid=3480266" target="_blank"><I class="kc-icon fab fa-linkedin"></I>Our Group at LinkedIn</A></LI>
+		</UL>
+		</NAV>
+	</DIV>
+	</DIV>
+	</DIV>
+</SECTION>
+	<SECTION class="kc-footer-section" >
+	<DIV class="container">
+	<DIV class="row">
+	<DIV class="col-md-6">
+		<P class="kc-copyright" ><SPAN class="hidden-xs">Copyright</SPAN> <i class="fa fa-copyright"></i> 2004 - 2022 KuppingerCole Analysts AG</P></DIV>
+	<DIV class="col-md-6">
+		<NAV class="kc-nav-terms">
+		<UL class="list-inline text-right kc-piped">
+			<LI><A href="/contact" >Contact Information</A></LI>
+			<LI><A href="/imprint" >Imprint</A></LI>
+			<LI><A href="/gtc" >General Terms and Conditions</A></LI>
+			<LI><A href="/privacy" >Privacy policy</A></LI>
+		</UL>
+		</NAV>
+	</DIV>
+	</DIV>
+	</DIV>
+</SECTION>
+</FOOTER>
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stat.kuppingercole.com/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){ w[l]=w[l]||[];w[l].push({ 'gtm.start':
+new Date().getTime(),event:'gtm.js' });var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MMDZJZQ');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMDZJZQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript"> 
+	_linkedin_partner_id = "2159625"; 
+	window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || []; 
+	window._linkedin_data_partner_ids.push(_linkedin_partner_id); 
+</script>
+<script type="text/javascript"> (function(l) { if (!l){
+	window.lintrk = function(a,b){window.lintrk.q.push([a,b])}; 
+	window.lintrk.q=[]} 
+	var s = document.getElementsByTagName("script")[0]; 
+	var b = document.createElement("script"); 
+	b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; 
+	s.parentNode.insertBefore(b, s);})(window.lintrk); 
+</script>
+ 
+<noscript> 
+	<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=2159625&fmt=gif" /> 
+</noscript>
+
+<script>
+	piAId = '899881';
+	piCId = '4811';
+	piHostname = 'pi.pardot.com';
+
+	(function() {
+		function async_load(){
+			var s = document.createElement('script'); s.type = 'text/javascript';
+			s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+			var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+		}
+		if(window.attachEvent) { window.attachEvent('onload', async_load); }
+		else { window.addEventListener('load', async_load, false); }
+	})();
+</script>
+
+<script src="/scripts/bookmarking.js?ver=040422"></script>
+<script src="/scripts/share-button.js?ver=040422"></script>
+
+</body>
+</html>

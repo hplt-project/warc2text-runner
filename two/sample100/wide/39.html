@@ -1,0 +1,1680 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="花朵," />
+    <meta name="description" content="将最美的一面展现出来就是成功的设计" />
+    <title>花朵</title>
+	<link rel="stylesheet" href="/css/communitypages/common/base1.2.css" type="text/css"></link>
+	<link href="/css/communitypages/homepage/homepage.css" rel="stylesheet" type="text/css"></link>
+	<script type="text/javascript" src="/js/common/jquery.js"></script>
+	<script type="text/javascript" src="/js/common/common.js"></script>
+	<script type="text/javascript" src="/js/communitypages/jquery.pager.js"></script>
+	<script type="text/javascript" src="/js/common/swfobject.js"></script>
+	<script type="text/javascript" src="/js/common/jquery.uploadify.v2.1.4.js"></script>
+
+<script type="text/javascript">
+	function lifeEvent(){
+		var d=$(this);
+		var rid=$("#regId").val();
+		if(d.data("loading")){
+			$(".life div:last a").text("没有更多生活点滴了 ▲");return;
+		}
+		d.data("loading",true);
+		$(".life div:last a").text("数据加载中...");
+		var offset=d.data("broadcast") || 2;
+		 if($('#no_life').val()!=undefined){$('#life').remove();}
+		 if($('#no_life').val()==''){$('#no_life').remove();$('#life').remove();}
+		$.post("/broadcast/broadcast_broadcast.action",{flag:"life",regId:rid,offset:offset},function(html){
+			d.data("broadcast",++offset);
+			var pa=$($.trim(html));
+			$("#clear").before(pa);
+			d.removeData("loading");
+			if(html.indexOf("div")>50){
+				d.data("loading",true);
+				$(".life div:last a").text("没有更多生活点滴了 ▲");return;
+			}else{
+				$(".life div:last a").text("更多生活点滴 ▼");
+			}
+		});
+	}
+
+	function myLifeEvent(){
+		var d=$(this);
+		var rid=$("#regId").val();
+		if(d.data("loading")){
+			$(".life div:last a").text("没有更多生活点滴了 ▲");return;
+		}
+		d.data("loading",true);
+		$(".life div:last a").text("数据加载中...");
+		var offset=d.data("broad") || 2;
+		$.post("/broadcast/broadcast_aboutMyReleaseLifeTrack.action",{flag:"life",regId:rid,offset:offset},function(html){
+			d.data("broad",++offset);
+			var pa=$($.trim(html));
+			$("#clear").before(pa);
+			d.removeData("loading");
+			if(html.indexOf("div")>50){
+				d.data("loading",true);
+				$(".life div:last a").text("没有更多生活点滴了 ▲");return;
+			}else{
+				$(".life div:last a").text("更多生活点滴 ▼");
+			}
+		});
+	}
+   </script>
+   
+   <script type="text/javascript">
+   $(document).ready(function(){
+	   if($('#no_life').text()!=''){$('#life').remove();}
+   });
+	$(".life h3 span a:first").live('click',function(){
+		var d=$(this);
+		var rid=$("#regId").val();
+		if(d.data("loading")){
+			$(".life div:last a").text("没有更多生活点滴了 ▲");return;
+		}
+		d.data("loading",true);
+		 if($('#no_life').val()==undefined){$('#life').remove();}
+		 if($('#no_life').val()==''){$('#no_life').remove();$('#life').remove();}
+		$(".life div:last a").text("数据加载中...");
+
+		$.post("/broadcast/broadcast_broadcast.action",{flag:"life",regId:rid,offset:1},function(html){
+
+			var pa=$($.trim(html));
+
+			$('.life h3').siblings('div.shq_con').remove();
+			var div="<div class=\"viewmore\" id=\"life\"><a href=\"javascript:void(0);\" onclick=\"lifeEvent();return false;\">更多生活点滴 ▼</a></div>";
+			if($('#no_life').text()!=''){$("#clear").before(pa);$('#life').remove();}else{
+						$("#clear").before(pa).after(div);
+				}
+			d.removeData("loading");
+			if(html.indexOf("div")>50){
+				d.data("loading",true);
+				$(".life div:last a").text("没有更多生活点滴了 ▲");return;
+			}else{
+				$(".life div:last a").text("更多生活点滴 ▼");
+			}
+			//$(".life div:last a").attr("onclick","lifeEvent();return false;");
+			
+			$(".life div:last a").attr("href","javascript:lifeEvent(this)");
+		});
+	});
+
+	$(".life h3 span a:last").live('click',function(){
+		var d=$(this);
+		var rid=$("#regId").val();
+		if(d.data("loading")){
+			$(".life div:last a").text("没有更多生活点滴了 ▲");return;
+		}
+		d.data("loading",true);
+		if($('#no_life').val()!=undefined){$('#life').remove();}
+		if($('#no_life').val()==''){$('#no_life').remove();$('#life').remove();}
+		$(".life div").last().find('a').text("数据加载中...");
+		$.post("/broadcast/broadcast_aboutMyReleaseLifeTrack.action",{flag:"life",regId:rid,offset:1},function(html){
+			var pa=$($.trim(html));
+
+			$('.life h3').siblings('div.shq_con').remove();
+			$("#clear").before(pa);
+			d.removeData("loading");
+			if(html.indexOf("div")>50){
+				d.data("loading",true);
+				$(".life div:last a").text("没有更多生活点滴了 ▲");return;
+			}else{
+				$(".life div:last a").text("更多生活点滴 ▼");
+			}
+		
+			//$(".life div:last a").attr("onclick","myLifeEvent();return false;");
+			
+			$(".life div:last a").attr("href","javascript:myLifeEvent(this)");
+	
+		});
+	});
+   </script>
+   
+</head>
+
+<!--header-->
+
+
+
+
+
+
+
+<script type="text/javascript" src="/js/jobpool/dutilogin.js"></script>
+<script type="text/javascript" src="/js/common/popWin.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+            $.ajax({
+					url: "/dutiejson/json_countMess.action",
+					type: "post",
+					async: false,
+					dataType : "json",
+					success: function(json) {
+
+					    //返回值标示符
+					    if(json.mcount != "nologin") {
+					    $("#messcount").html(""+json.mcount+"");
+					    if(json.mcount>0){
+					   $("#newp").html("新");  
+					   }
+					    }else{
+					      $("#meli").html("");
+					    }
+				
+					}
+			});
+
+    if(""=="" || ""==null){
+        $("div.nav ul li a").attr("href","javascript:;").attr("onclick","$('#popWarp1').popWin('#closeBtn',true);");
+    }else{
+        $("div.nav ul li a:eq(1)").attr("href","/people/");
+        $("div.nav ul li a:eq(2)").attr("href","/group/");
+        if(""==2){
+            $("div.nav ul li a:eq(1)").attr("href","/");
+        }
+    }
+
+
+});
+
+</script>
+<div id="popWarp1" style="display:none;">
+	<div class="login">
+        <div class="title">
+            <span class="close"><a style="cursor:pointer;" id="closeBtn">关闭</a></span> 
+            <h3>登录六月蜂网</h3>
+        </div>
+        <div class="cont">
+            <div class="leftbox">
+            	<form id="login_form" name="login_form" action="/talent/talent_talentCenter.action" method="post" >
+	            	<p class="tit" id="sgsss">已有六月蜂网账户，可以直接登录</p>
+               
+	                <p class="input1"><input id="user_email" name="user.email" type="text" value="邮箱" onfocus="if(this.value=='邮箱')this.value='';"  onblur="if(this.value=='')this.value='邮箱'" /></p>
+	                <p class="input1"><input id="user_pas"  name="user.passWord" type="password" /></p>
+	               	<p class="btnbox"><input type="button" id="login_btn" value="登录" class="input3" onclick="login();" /><span class="input4">
+	                <input type="checkbox" name="savePwd" value="1" id="checkbox"  /><b>记住我</b></span><a href="/login/Com_findpass.action">忘记密码</a>
+	                </p>
+	                <!--
+	              	<p class="conlog">
+	                	<a href="/weibo/xina.jsp" class="conlogsina">新浪</a>
+	                    <a href="/weibo/tenxun.html" class="conlogqq">QQ</a>
+	                    <a href="/weibo/douban.jsp" class="conlogdb">豆瓣</a>
+	                    <a href="/weibo/renren.jsp" class="conlogrr">人人网</a>
+	                </p>
+	               	-->
+	                <div class="clear"></div>
+	             
+            	</form>
+            </div>
+            <div class="rightbox">
+            	<p class="tit">还未开通？赶快免费注册一个吧</p>
+                <p class="btn">  <input name="" type="button" onclick="location.href='/applyRegister/reg_loadRegister.action'"  />  </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="header">
+	<div class="topbar clearfix">
+    	<p class="quick_nav">
+	    	<a href="/" class="cur">六月蜂社区</a>
+	    	<a href="http://zhanpin.liuyuefeng.com/">六月蜂展品</a>
+	    	<a href="http://wenda.liuyuefeng.com">六月蜂问答</a>
+	    	<a href="http://zhanting.liuyuefeng.com/">六月蜂艺术空间</a>
+	    	<a href="http://weike.liuyuefeng.com/">六月蜂威客</a>
+    	</p>
+        <ul class="infor">
+	    
+	    
+	   	
+	   		<li class="login"><a href="javascript:;" onclick="$('#popWarp1').popWin('#closeBtn',true);">登录</a></li>
+            <li class="sign"><a href="/applyRegister/reg_loadRegister.action">注册</a></li>
+	   	
+	    
+            <li class="help"><a href="/help/0/">帮助？</a></li>
+        </ul>
+    </div>
+    <div class="topnav clearfix">
+    	<div class="logo"><a href="/"><img src="/images/common/header/logo.jpg" alt="六月蜂" title="六月蜂"></a></div>
+        <div class="nav">
+        	<ul class="menu">
+                
+                    
+                    
+                    
+                        <li><a class="" href="/">社区首页</a></li>
+                        <li><a class="cur" href="/">我的主页</a></li>
+                        <li><a class="" href="/group/">我的小组</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                
+
+
+
+            </ul>
+            <form action="/stationSearch" method="post" id="searchForm">
+           <div class="search">
+               <p class="text"><input id="keyword" name="keyword" type="text" onfocus="if(this.value=='蜂友、小组、标签'){this.value='';this.style.color='#000000';}"  onblur="if(this.value==''){this.value='蜂友、小组、标签';this.style.color='#999999';}" value="蜂友、小组、标签"  /></p>
+               <p class="btn"><input id="btnsearch" type="button" /></p>
+           </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+    
+      
+    
+    
+    <div class="popWin" id="dialog1">
+    <div class="popbox">
+        <h3>
+            <b>提示信息</b>
+        </h3>
+        <ul>
+            <li>
+                <span id="sg"></span>
+            </li>
+            <li class="button">
+                <input name="" type="button" value="确定" class="closeWin" onclick="$('#dialog1').dialog('close');" />
+            </li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+	    $("#btnsearch").live("click",function(){
+	    	var $key=$("#keyword");
+	    	if($key.val().trim()=='' || $key.val()==$key[0].defaultValue){
+	    		$("#sg").html("请您输入要搜索的内容范围(蜂友、小组、标签)。");
+                $("#dialog1").dialog("open");
+	            return false;
+	    	}else{
+	    		$("#searchForm").submit();
+	    	}
+	    });
+    })
+</script>
+
+<!--//header-->
+<!--container-->
+<div id="container">
+	
+
+
+
+
+<!--我的主页次导航 开始-->
+
+
+
+<script>
+$(document).ready(function(){
+	$('.pagepublic .banner .change a').click(function(){
+		  $(this).toggleClass('on');
+		  $(this).parents().find('.changecont').toggle();
+		  return false;
+	  });
+	$('.pagepublic .banner .changecont .btn .close').click(function(){
+		  $('.pagepublic .banner .change a').removeClass('on');
+		  $(this).parents().find('.changecont').slideUp();
+	  });
+	$('.pagepublic .banner .part_me span').hover(function(){
+	  	$(this).find('i').toggle();
+	});
+})
+</script>
+<div class="pagepublic">
+	<input type="hidden" id="regId" name="regId" value="57884" />
+    	<div class="banner">
+        	<div class="bannerimg">
+        		
+	        	
+	        		<img id="usercoverid" src="/images/systemcover/sc01.jpg" width="1000" height="230">
+	        	
+	        	
+        	</div>
+        	
+        	 <div class="part_a clearfix">
+        		<span><img src="/uploads/userHead/1335319142204_h.jpg" onerror="avatar52Replacement(this)" width='100px' height='100px'></span>
+
+
+				<div class="home_nav_name" id="yhqm_bj">
+                        <b><a href="/people/57884/" target="_blank">花朵</a></b>
+                        <strong class="text_js"></strong>
+                </div>
+				<em><a class="guan" id="guanzhu" href="javascript:void(0);" onclick="return switchConcern('57884',this);">关 注</a>
+				<a href="javascript:void(0);" onclick="$('#popWarp1').popWin('#closeBtn',true);" class="faxing">发蜂信</a>
+                
+                </em>
+            </div>
+            
+            
+        </div>
+        <div class="myinfor">
+            <div class="part_b clearfix">
+            	<ul class="userinfor">
+                	<li title="设计师"><em>职业：</em>设计师</li>
+					<li title="辽宁师范大学"><em>院校：</em>辽宁师范大学</li>
+                    <li title="上海市"><em>现居：</em>上海市<a href="javascript:;" onclick="userinfo();">详细信息</a></li>
+                </ul>
+                <ul class="jump">
+                    <li><a href="/people/57884/wenda/" class="cur1">问答<br/><span id="qaCount"></span></a></li>
+                    <li><a href="/fengchao/57884/" class="cur2">蜂房<br/><span id="albumnCount"></span></a></li>
+                	<li><a href="/people/57884/gaojian/" class="cur3">稿件<br/><span id="manuCount"></span></a></li>
+                    <li><a href="/people/57884/renwu/" class="cur4">项目<br/><span id="needsCount"></span></a></li>
+                    <li><a href="/people/57884/news/" class="cur5">动态<br/><span id="activeCount"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+   
+ <div class="xiugailife popWin" id="savexiugailife">
+    <h3>记录生活点滴</h3>
+    <ul>
+        <li class="tex"><textarea id="savecontent" name="" cols="" rows="" onfocus="if(this.value=='')this.value='';"  onblur="if(this.value=='')this.value=''" onchange="$('#lifecount').text(140-($(this).val()||'').length)" onkeypress="$(this).change();" onkeyup="$(this).change();"></textarea></li>
+        <li class="addpho clearfix"><span class="upload clearfix"><b>上传生活点滴图片</b><a id="lifeupimg" href="javascript:;" >浏览图片</a><a href="javascript:;" onclick="uploadLifeupimg();" id="uploadlifeimgbtn">上传</a><i id="progress">已完成</i></span><span id="lookthumb" class="lookthumb"><a href="javascript:;" >查看</a><a href="javascript:;" onclick="deleteThumbimg();">删除</a><em></em></span>&nbsp;&nbsp;&nbsp;&nbsp;还可输入<strong id="lifecount">140</strong>字</li>
+        <li class="btn"><a href="javascript:void(0);" class="fabu" onclick="savel(this);return false;">发布</a><a href="#" class="quxiao closeWin">取消</a></li>
+    </ul>
+</div>
+
+<div class="popWin" id="dialog1">
+    <div class="popbox">
+        <h3>
+            <b>提示信息</b>
+        </h3>
+        <ul>
+            <li>
+                <span id="sg"></span>
+            </li>
+            <li class="button">
+                <input name="" type="button" value="确定" class="closeWin" onclick="$('#dialog1').dialog('close');" />
+            </li>
+        </ul>
+    </div>
+</div>
+
+ <form action="/issuepiece/issuepiece_saveMail.action" method="post" id="mail_from">
+<div class="popWin" id="fengxin">
+	<div class="popbox">
+		<h3><b>发蜂信</b><span class="closeWin" id="fengxinclose">关闭</span></h3>
+		 <p style="padding-left:10px;padding-top:10px;height:20px" id="sg1" ></p> 
+		<ul>
+	     <li><b>收信人：</b>花朵
+	     <input id="consignee" name="tIssuepieceeMail.consignee" type="hidden" value="wqqwqq06@163.com"/></li>
+	     <li><b>标&nbsp;&nbsp;题：</b><input id="mailTitle" name="tIssuepieceeMail.mailTitle"  type="text" style="width:200px"/></li>
+	     <li><b style="float: left;">内&nbsp;&nbsp;容：</b><textarea id="mailContent" name="tIssuepieceeMail.mailContent" cols="33" rows="5"></textarea></li>
+	     <li class="button"><span style="width:50px"></span><input name="ss" type="button" onclick="sub();" value="发送" /></li>
+        </ul>
+	</div>
+</div>
+</form>
+ 
+
+<div class="popWin" id="userinfo">
+    <div class="popbox">
+        <h3><b>用户信息</b><span class="closeWin" id="userinfoclose">关闭</span></h3>
+        <ul>
+            <li>昵称：<em>花朵</em></li>
+            <li>家乡：<em>山西省大同市</em></li>
+            <li>现居：<em>上海市</em></li>
+            <li>职业：<em>设计师</em></li>
+            <li>院校：<em>辽宁师范大学</em></li>
+            <li>专业：<em>平面设计</em></li>
+            <li>自我描述：<em>未填写</em></li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#lifecount').text(140-$('#savecontent').val().length).length;
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	var username="花朵",area="山西省大同市", address="上海市", companyDesc="";
+	var post="设计师",college="辽宁师范大学", major="平面设计", memo="";
+	if((username=='') && (area=='') && (address=='') && (post=='') && (college=='') && (major=='') && (memo=='') && (companyDesc=='')){
+			$('.userinfor a').last().hide();
+	}	
+})
+	function userinfo(){
+		$("#userinfo").dialog("open",{closeWin:"#userinfoclose"})
+	}
+</script>
+
+
+ <script type="text/javascript">
+	function bjText(kjId,textBjType){
+		var textCon = $.trim($(kjId).find('.text_js').text());
+		//$(kjId).find('.text_bj').find(textBjType).val(textCon);
+		$(kjId).find('.text_js').hide();
+		$(kjId).find('.text_bj').show();
+		$(kjId).find('.btn_action').find('a').hide();
+		$(".text_bj").find("input").val(textCon);
+		$(kjId).find('.btn_action').find('input').show();
+	}
+	
+	function bjSaveQM(kjId,textBjType,url){
+		var regid = $("#beConcernPeopleID").val();
+		var memoValue = $(".text_bj").find("input").val();
+		if(memoValue.length>30){
+			alert("签名长度不能大于30个字！");
+			return false;
+		} else {
+			$.ajax({
+				url:"/jsonUserProfile/jsonUserProfile_updateMemo.action?regId="+57884,
+				type:'post',
+		        dataType:'json',
+		        data : {memo:memoValue},
+		        success:function(data){
+					$(kjId).find('.text_js').html(data.memo);
+					$(kjId).find('.text_js').show();
+					$(kjId).find('.text_bj').hide();
+					$(kjId).find('.btn_action').find('a').show();
+					$(kjId).find('.btn_action').find('input').hide();
+		         },
+		         error:function(){
+		        	 bjCancel(kjId,textBjType);
+		         }
+			});
+		}
+	}
+	
+	function bjSaveIntro(kjId,textBjType,url){
+		var introduction=$("#grjj_bj textarea").val();
+			$.ajax({
+				url:"/jsonLifeTrack/jsonLifeTrack_modifyIdentitycard.action",
+				type:'post',
+		        dataType:'json',
+		        data : {introduction:introduction},
+		        success:function(data){
+		        	var msg=data.message;
+		        	if(msg=='1'){
+		        		$(kjId).find('.text_js').html(introduction.replace(/\n/ig,'<br/>'));
+		        		bjCancel(kjId,textBjType);
+					}
+		        	if(msg=='-1'){
+						$('#popWarp1').popWin('#closeBtn', true);
+						return false;
+					}
+		         },
+		         error:function(){
+		        	 bjCancel(kjId,textBjType);
+		         }
+			});
+	}
+	
+	function bjCancel(kjId,textBjType){
+		$(kjId).find('.text_js').show();
+		$(kjId).find('.text_bj').hide();
+		$(kjId).find('.btn_action').find('a').show();
+		$(kjId).find('.btn_action').find('input').hide();
+	}
+	function addLife(){
+		var winX=function(){return ($(window).width()- 428)/2 + "px";};
+		var winY=function(){//弹出窗口的CSS属性top的CallBack函数
+			if(428>=$(window).height()){
+				return $(window).scrollTop() + "px";
+			}
+			return ($(window).height()- 428)/2 + $(window).scrollTop() + "px";
+		};
+		$("#savexiugailife").dialog("open",{closeWin:"a.quxiao",close:function(){
+				window.imagepathforlife="";
+		},winY:function(){return winY();},winX:function(){return winX();},scroll:"off"});
+	}
+	
+	function savel(obj){
+		var $this=$(obj);
+		if($.data($this,"uploading")){
+			return;
+		}
+		var rid=$("#regId").val();
+		var content=$("#savecontent").val();
+		
+		if($.trim(content)==""){
+			$("#sg").html("录下生活，回忆点滴！");
+         	$("#dialog1").dialog("open",{zindex:10002});
+         	return false;
+		}
+
+		if($.trim(content).length>140){
+			$("#sg").html("点滴的长度不能超过<strong>140</strong>个字！");
+         	$("#dialog1").dialog("open",{zindex:10002});
+         	return false;
+		}
+		
+		$.ajax({
+			type:'post',
+            dataType:"json",
+            url:encodeURI('/jsonLifeTrack/jsonLifeTrack_saveOrUpdate.action'),
+            cacheable:true,
+            data:{trackcontent:content,trackthumb:imagepathforlife.thumbimg,trackImage:imagepathforlife.bigimg,trackoriginal:imagepathforlife.originimg,sessionId:"B824323B84AB1166-B00536A1-ADB1-4263-A664-AB9C988DD917"},
+            success:function (json) {
+            	$("#savexiugailife").dialog("close");
+            	document.getElementById("savecontent").value = "";
+            	window.location.href="/people/"+rid+"/";
+            },
+             error:function(result, status){
+            	 if(status=='errror'){
+	            	 $("#sg").html("异常错误！");
+	           		 $("#dialog1").dialog("open");
+	           		 return false;
+           		 }
+            }
+		});
+	}
+</script>
+
+<script type="text/javascript">
+function ffx(){
+	$("#fengxin").dialog("open",{closeWin:"#fengxinclose",zindex:800});
+}
+//去掉空格
+String.prototype.trim = function() {
+	return this.replace(/^\s+|\s+$/g, "");
+}
+
+function sub(){
+	var from = document.getElementById("mail_from");
+	var title = document.getElementById("mailTitle").value;
+	var consignee = document.getElementById("consignee").value;
+	var content = document.getElementById("mailContent").value;
+	if(title.trim() == '' || title.trim().length < 0){
+		$("#sg").html("请输入信息标题！");
+		$('#dialog1').dialog('open');
+		return false;
+	}
+	if(title.trim().length > 50){
+		$("#sg").html("您输入的信息标题过长,请控制在50字内！");
+		$('#dialog1').dialog('open');
+		return false;
+	}
+	if(consignee.trim() == '' || consignee.trim().length < 0){
+		$("#sg").html("请输入收件人！");
+		$('#dialog1').dialog('open');
+		return false;
+	}
+	if(consignee.trim().length > 50){
+		$("#sg").html("您输入的收件人过长,请控制在50字内！");
+		$('#dialog1').dialog('open');
+		return false;
+	}
+	if(content.trim() == '' || content.trim().length < 0){
+		$("#sg").html("请输入信息内容！");
+		$('#dialog1').dialog('open');
+		return false;
+	}
+	if(content.trim().length > 1000){
+		$("#sg").html("您输入信息过长,请控制在1000字内！");
+		$('#dialog1').dialog('open');
+		return false;
+	}
+	from.submit();
+}
+</script>
+
+<script type="text/javascript">
+$(function(){
+	$.post("/photo/photo_loadCount.action",{regId:57884},function(data){
+		try{
+		$("#albumnCount").text(data.counterMap.albumnCount);
+		$("#manuCount").text(data.counterMap.manuCount);
+		$("#qaCount").text(data.counterMap.qaCount);
+		$("#needsCount").text(data.counterMap.needsCount);
+		$("#activeCount").text(data.counterMap.activeCount);
+		}catch(e){}
+	},"json");
+});
+$(document).ready(function(){
+	chkConcern();
+});
+
+function switchConcern(regid,handle){
+		handle=$(handle);
+		var sending=handle.data('sending');
+		if(sending){
+			return false;	
+		}
+		var isConcern=handle.data('isConcern');
+		var url;
+		if(isConcern){
+			url="/concern/concern_remove.action?concernType=0";
+		}else{
+			url="/concern/concern_save.action?concernType=0";
+		}
+		handle.data('sending',0);
+		$.post(url,{conernId:regid},function(data){
+			handle.removeData('sending');
+			var fr = data.concernResult;
+			if(fr==1 || fr==0){ //成功关注
+				//console.info(handle)
+				handle.data('isConcern',true);
+				handle.removeClass('guan').addClass('quxiao');
+				handle.html('取消关注');
+			}else if(fr==2) { //取消关注
+				handle.removeData('isConcern');
+				handle.removeClass('quxiao').addClass('guan');
+				handle.html('关	注');
+			}else if(fr==0) { //重复关注
+				handle.data('isConcern',true);
+				$("#sg").html("您已经关注他了！");
+				$('#dialog1').dialog('open');
+				return false;
+			}else if(fr==-1000) { //nologin
+				$('#popWarp1').popWin('#closeBtn', true);
+				return false;
+			}
+		},'json');
+		return false;
+	}
+
+function chkConcern() {
+	var uid =$("#regId").val();
+	$.ajax( {
+		url : '/team/follow/check/' + uid,
+		type : 'post',
+		dataType : 'json',
+		success : function(data) {
+			var result = data.message;
+			var fr = data.concernResult;
+			if (fr == '0') {
+				$("#guanzhu").removeClass('guan').addClass('quxiao');
+				$("#guanzhu").html('取消关注');
+			} else {
+				$("#guanzhu").removeClass('quxiao').addClass('guan');
+				$("#guanzhu").html('关	注');
+			}
+		}
+	});
+}
+</script>
+<script type="text/javascript">
+
+	$(function(){
+		$("#pcoverform").submit(function(e){
+			var file = $('#pcustomecover').val();
+			 if(file){
+				 if(!/.gif|jpg|jpeg|png|gif|jpg|png$/i.test(file)){
+			            alert("图片类型必须是.gif,jpeg,jpg,png中的一种");
+			            return false;
+			     }
+			 }
+			 var img=new Image();
+			 img.src=file;
+			 if(img.fileSize>1024*1024){
+			 	  alert("图片不大于1024KB");
+				 return false;
+			 }
+		});
+	
+	})
+
+</script>
+<script type="text/javascript">
+
+	$(function() {
+		$("#pickfiles").uploadify({
+		    'uploader'  : '/js/common/uploadify.swf',
+		    'script'    : '/personal/personal_uploadCustomCover.action?regId='+57884,
+		    'cancelImg' : '/images/common/cancel.png',
+		    'sizeLimit' : 2097152,
+		    'auto'      : true,
+		    'wmode'       : 'transparent',
+		    'fileDataName'  : 'customCover',
+		    "scriptData":{
+		    	"sessionId":"B824323B84AB1166-B00536A1-ADB1-4263-A664-AB9C988DD917",
+		    	"save":'false',
+		        "regId":"57884"
+		    },
+		    "hideButton":true,
+			"height":20,
+			"width":40,
+		  	"fileExt"     : '*.jpg;*.gif;*.png',
+		    "fileDesc"    : 'Web Image Files (.JPG, .GIF, .PNG)',
+		    "simUploadLimit"  : 1, 
+			"displayData"     : 'percentage',
+			"removeCompleted" : true, 
+			"queueID" : 'queue-wrap',
+		    "onSWFReady" : function() {
+		    	//alert("onSWFReady");
+		     },
+		    "onComplete": function(event,queueId,fileObj,response,data){
+		    	// alert("onComplete");
+			   	  var path= eval("("+response+")");
+		    	  if(path.previewPath=="像素不符合要求(1000×230)"){
+		    		  alert(path.previewPath);
+		    		  $("#pickfiles").data("covermsg","stop");
+		    		  //window.covermsg="stop";
+		    	  }else{
+		    		  $("#pickfiles").data("covermsg",path.previewPath);
+		    		 // covermsg='';
+		    		  $("#usercoverid").attr("src",path.previewPath);
+		    	  }
+		    	 
+		     },
+		     "onError":function(event,queueId,fileObj,response,data){
+		    	 //alert("onError");
+		     },
+		     "onSelect": function(e, queueId, fileObj){
+		    	 // alert("onSelect");
+		    	  //window.covermsg="";
+		    	  $("#pickfiles").data("covermsg","");
+		          if(fileObj.size<23000){
+		       	   alert('封面图片尺寸:宽度不小于1000像素,高度小于230像素!');
+		       	   $(this).uploadifyCancel(queueId);
+		       	  // $("#uploadfiles").attr('href','#');   
+		       	  // alert( $("#uploadfiles").text());
+		       	   $("#pickfiles").click(function(e){
+		       		   e.preventDefault();
+		       	   })
+		       	   //clearQueue();
+		          };
+		     },
+		     "onClearQueue" : function() {
+			     //alert("onClearQueue");
+			     //return false;
+			  },
+		     "onSelectOnce":function(){
+		    	// alert("onSelectOnce");
+		     }
+		  });
+
+		  $("#uploadsavefiles").click(function(e){
+				//if(window.covermsg!="stop"){
+				if($("#pickfiles").data("covermsg")!="stop"){
+					var path=$("#usercoverid").attr("src");
+					var params={regId:"57884","savepath":path};
+					$.post("/personal/personal_saveCustomCover.action",params,function(data){
+						//console.dir(data);
+						//var msg=$.parseJson(data);
+						var msg=eval("("+data+")");
+						if(msg.result=="保存成功！"){
+							$("a").removeClass("cur");
+							var inner=$("#usesign").text();
+							$("#usesign").text(inner.substring(0,inner.length-5));
+						}
+						$('#show_image_div').hide();
+						alert(msg.result);
+						
+					})
+				}else{
+					alert("请重新上传合适的封面");
+					e.preventDefault();
+				}
+		  })
+		
+	});
+</script>
+
+<script type="text/javascript">
+
+	window.imagepathforlife="";
+    function deleteThumbimg(){
+    	imagepathforlife='';
+    	var $look=$("#lookthumb");
+    	var $em=$look.find("em");
+    	$em.empty();
+    	$look.hide();
+    }
+    function uploadLifeupimg(){
+  		var a=$("a.fabu");
+  		$.data(a,"uploading",true);
+  		$("#progress").text("正在上传...").show();
+  		$('#lifeupimg').uploadifyUpload();
+    }
+	$(function(){
+		$("#lifeupimg").uploadify({
+		    'uploader'  : '/js/common/uploadify.swf?var='+(new Date()).getTime(),
+		    'script'    : '/personal/personal_uploadLifePointImage.action?regId='+57884,
+		    'cancelImg'      : '/images/common/cancel.png',
+		    'sizeLimit'      : 2097152,
+		    'auto'      : false,
+		    'wmode'       : 'transparent',
+		    'fileDataName'   : 'customCover',
+		    "scriptData":{
+		    	"sessionId":"B824323B84AB1166-B00536A1-ADB1-4263-A664-AB9C988DD917",
+		    	"save":'false',
+		        "regId":"57884"
+		    },
+		  	"hideButton":true,
+		  	"height":19,
+		  	"width":60,
+		  	'fileExt'     : '*.jpg;*.gif;*.png',
+		    'fileDesc'    : 'Web Image Files (.JPG, .GIF, .PNG)',
+		    "onProgress" : function(e,id,fileObj,data) {
+		    	//$("#progress").text("已完成"+data.percentage+"%").show();
+		     },
+		    "onComplete": function(event,queueId,fileObj,response,data){
+		    		$("#progress").hide();
+		    		var a=$("a.fabu");
+		      		$.data(a,"uploading",false);
+		    		try{
+			    	  	imagepathforlife= $.parseJSON(response);
+			    	  	if(!imagepathforlife.state){
+			    	  		alert(imagepathforlife.uploadresult);
+			    	  		return ;
+			    	  	}
+		    	  	}
+		    	  	catch(ex){
+		    	  		$("#progress").text("服务器出错,请重新上传");
+		    	  		return;
+		    	  	}
+		    	  	$("#lookthumb").show().children(":first").hover(function(){
+		    			if($(this).is(":visible")){
+		    				var $em=$("#lookthumb").find("em");
+		    				if(!$em.has("img").length){
+		    					var img=$("<img/>");
+		    					img.attr("src",imagepathforlife.thumbimg);
+		    					$em.append(img);
+		    				}
+		    				$em.show();
+		    			}
+		    		},function(){
+		    			if($(this).is(":visible")){
+		    				var $em=$("#lookthumb").find("em").hide();
+		    			}
+		    		});
+		     },
+		     "onSelect": function(e, queueId, fileObj){
+		    	 if(fileObj.size>2097152){
+		    		 $("#progress").html("&nbsp;&nbsp;图片最大不能超过2M!").css("color","red").fadeIn("slow").fadeOut("slow");
+		    		 $("#uploadlifeimgbtn").hide();
+		    		 return false;
+			     }else{
+			    	 $("#uploadlifeimgbtn").show();
+			     }
+		    	 deleteThumbimg();
+		     }
+		  });
+	})
+
+</script>
+
+ 
+<script type="text/javascript">
+function checkform() {
+	var path = document.getElementById("sourcePath").value;
+	if (path == '' || path.length < 0) {
+		$("#sg").html("您还未上传头像！");
+		$('#dialog1').dialog('open');
+		return false;
+	}
+}
+</script>
+
+    <div class="homemain">
+ 		 <div class="life">
+        <h3 class="clearfix"><b>生活点滴...</b><span><a href="javascript:;">全部</a>/<a href="javascript:;">花朵的</a></span></h3>
+ 		 
+
+
+
+        	
+        	<div class="shq_con clearfix" id="no_life">
+        	 		&nbsp;&nbsp;&nbsp;&nbsp;暂无生活点滴...
+        	 </div>
+        	 <script type="text/javascript">
+				$("#life").remove();
+			</script>
+        	
+            
+
+	
+ <script type="text/javascript">
+	function bit(lid){
+		var d=$(this);
+		var message="";
+		if(d.data("loading")){	return;	}
+		d.data("loading",true);
+		var offset=d.data("broadcast") || 1;
+		$.post("/broadcast/broadcast_bit.action",{lifetrackId:lid,offset:offset},function(html){
+			d.data("broadcast",++offset);
+			var pa=$($.trim(html));
+			$("#bit").before(pa);
+			d.removeData("loading");
+		});
+	}
+   </script>    
+   
+   
+<script type="text/javascript">
+var lifetrackId;var forwardtrackid;var content;var $this;
+function onInitBroadcast(obj,offset,lid,fid){
+	$obj=$(obj);
+	forwardtrackid=fid;
+	content=$obj.closest("div.broad_discu").find("textarea").first().val();
+	$obj.closest("div.broad_discu").find("div.discu_con textarea").val(content);
+	initBroadcast(offset);
+}
+
+function onInit(obj,offset,lid,fid){
+	$this=$(obj);
+	lifetrackId=lid;
+	content=$this.closest("div.broad_discu").find("textarea").first().val();
+	$this.closest("div.broad_discu").find("div.discu_con textarea").val(content);
+	//document.getElementById('trackcontent_a'+lifetrackId).value =content;
+	init(offset);
+}
+//默认加载
+function init(pagenumber) {
+	var rid=$('#regId').val();
+	//向服务器发送请求，查询满足条件的记录
+	$.getJSON('/jsonBroadcast/jsonBroadcast_bit.action',{regId:rid,lifetrackId:lifetrackId,offset:pagenumber},function(data){
+		if(data.total <= 10){  $this.closest("div.broad_discu").find("div.discu_repeat").hide();$this.closest("div.broad_discu").find("div.page").hide();}
+	
+		//data 为返回json 对象 并包括(pagecount、totalcount)的key-value值;
+		$this.closest("div.broad_discu").find("div.discu_con").find("ul").empty()
+		$this.closest("div.broad_discu").find("div.discu_repeat").empty();
+		$.each(data.bit.datas,function(i,items){
+			if(i<10){
+			$this.closest("div.broad_discu").find("div.discu_con").find("ul").append("<li><a href=\"/people/"+items[1]+"\" target=\"_blank\">"+items[7]+"</a>："+items[2]+"<span>"+items[5]+"</span></li>");
+			}
+			if(i>=10){
+				$this.closest("div.broad_discu").find("div.discu_repeat").append("还有&nbsp;<a href=\"/people/"+items[1]+"\" target=\"_blank\">"+items[7]+"</a>&nbsp;等用户进行了转播");
+			}
+		});
+		if(!(data.bit.datas==null || data.bit.datas=='')){
+			$this.closest("div.broad_discu").find("div.page").pager({ pagenumber: pagenumber, pagecount:data.pagecount, buttonClickCallback: PageClick});
+			}
+		});
+	}
+	//回调函数
+	PageClick = function(pageclickednumber) {
+		init(pageclickednumber);
+	};
+	
+function initBroadcast(pagenumber) {
+	var rid=$('#regId').val();
+	//向服务器发送请求，查询满足条件的记录
+	$.getJSON('/jsonBroadcast/jsonBroadcast_bit.action',{regId:rid,forwardtrackid:forwardtrackid,offset:pagenumber},function(data){
+		if(data.total<=10){ $obj.closest("div.shq_relay").find("div.discu_repeat").hide();$obj.closest("div.shq_relay").find("div.page").hide();}
+		//data 为返回json 对象 并包括(pagecount、totalcount)的key-value值;
+		$obj.closest("div.broad_discu").find("div.discu_con").find("ul").empty()
+		$obj.closest("div.shq_relay").find("div.discu_repeat").empty();
+		$.each(data.bit.datas,function(i,items){
+			if(i<10){
+			$obj.closest("div.shq_relay").find("div.discu_con").find("ul").append("<li><a href=\"/people/"+items[1]+"\">"+items[7]+"</a>："+items[2]+"<span>"+items[5]+"</span></li>");
+			}
+			if(i>=10){
+				$obj.closest("div.shq_relay").find("div.discu_repeat").append("还有&nbsp;<a href=\"/people/"+items[1]+"\">"+items[7]+"</a>&nbsp;等用户进行了转播");
+			}
+		});
+		if(!(data.bit.datas==null || data.bit.datas=='')){
+			$obj.closest("div.shq_relay").find("div.page").pager({ pagenumber: pagenumber, pagecount:data.pagecount, buttonClickCallback: PageClickBroadcast});
+			}
+		});
+	}
+	//回调函数
+	PageClickBroadcast = function(pageclickednumber) {
+		initBroadcast(pageclickednumber);
+	};
+</script>
+
+<script type="text/javascript">
+function quxiao(obj){
+	$(obj).closest("div.shq_relay").find("div.broad_discu").find("div.discu_con").hide();
+}
+
+function qux(obj){
+	$(obj).closest("div.broad_discu").find("div.discu_con").hide();
+}
+
+function onBroadcast(obj,lid,fid){
+	var rid=$('#regId').val();
+	var connent=$(obj).closest("div.discu_textarea").find("textarea[id='trackcontent_b"+fid+"']").val();
+	var lifecontent=$(obj).closest("div.discu_textarea").find("textarea[id='trackcontent_a"+lid+"']").val();
+	var trackcon=$(obj).closest("div.discu_textarea").find("textarea[name='trackcon']").val();
+
+	if((undefined!=connent && content.length>140) || (undefined!=lifecontent && lifecontent.length>140) || (undefined!=trackcon && trackcon.length>140)){
+			$("#savexiugailife").dialog("close");
+			$("#sg").html("转播内容的长度不能超过140个字符！");
+        	$("#dialog1").dialog("open");
+        	return false;
+       }
+	
+	$.post("/jsonBroadcast/jsonBroadcast_save.action",{lifetrackcontent:lifecontent,trackcon:trackcon,trackcontent:connent,lifetrackId:lid,forwardtrackid:fid},function(data){
+		if(data.message=='-1'){
+			 $('#popWarp1').popWin('#closeBtn', true);
+             return false;
+		}
+		if(data.message=='1'){
+			window.location.href="/people/"+rid+"/";
+		}
+	},'json');
+}
+</script>
+
+<script type="text/javascript">
+function onDel(obj,lid){
+	var rid=$('#regId').val();
+	var content="";
+	content1=$(obj).closest("div.broad_discu").find("textarea").first().val();
+	content2=$(obj).closest("div.broad_discu").find("textarea").first().val();
+	if((content1!=null) || ($.trim(content1)!='')){
+		content1=content1.length>10?(content1.substring($.trim(content1).indexOf(" ")+2,20)+"..."):content1;
+	}else{
+		content2=content2.length>10?(content2.substring($.trim(content2).indexOf(" ")+2,20)+"..."):content2;
+	} 
+	content=((content1==null) || ($.trim(content1)==''))?content2:content1;
+	content=content.substring(content.indexOf(" ", 1)+1,20);
+	var result = window.confirm("您确定删除“"+content+"”吗？");
+	if(result){
+		$.post("/jsonBroadcast/jsonBroadcast_delete.action",{lifetrackId:lid},function(data){
+			if(data.message=='-1'){
+				 $('#popWarp1').popWin('#closeBtn', true);
+	             return false;
+			}
+			if(data.message=='1'){
+				window.location.href="/people/"+rid+"/";
+			}
+		},'json');
+	}
+}
+</script>
+   
+  			<div class="clear" id="clear"></div>
+            <div class="viewmore" id="life">
+            <a href="javascript:lifeEvent(this)">更多生活点滴 ▼</a>
+            </div>
+        </div>
+        <div class="asknews">
+        	<h3>Ta的问答动态...</h3>
+            <ul id="wendaActive">
+            </ul>
+            <div class="clear"></div>
+            <div class="viewmore"><a href="javascript:;" id="viewmore">更多问答动态 ▼</a></div>
+        </div>
+        <div class="newshow">
+        	<h3>最新展品...</h3>
+            <ul>
+            <li>&nbsp;&nbsp;暂无展品...</li> 
+            
+            </ul>
+            <div class="clear"></div>
+            
+        </div>
+    </div>
+    <div class="homeside">
+    
+	   <ul class="yhjj" id="grjj_bj">        	
+	            <li>
+	                <p class="text_js">将最美的一面展现出来就是成功的设计</p>
+	            </li>
+	            <li class="text_bj"><textarea name="" cols="" rows="">将最美的一面展现出来就是成功的设计</textarea></li>
+	            <li>
+	                <span class="btn_action">
+	                
+	                </span>
+	            </li>
+	        </ul>
+	     
+    	<div class="appraisal">
+        	<h3><b>认证用户评价...</b><a href="javascript:void(0);" class="ping" onclick="pingEvent();return false;">+我要评价</a><a href="/jsonauthUsercomAct/jsonac_commentDetail.action?regId=57884" class="all">全部(0)</a></h3>
+            <ul class="clearfix">
+            
+            
+            <li>
+                <p class="text">暂无评论内容</p>
+             </li>
+            
+            </ul>
+        </div>
+        <div class="attention">
+        	<h3><b>TA关注的人...</b><a href="/people/57884/following/">查看全部</a></h3>
+            <ul class="clearfix">
+             
+             
+            	<li><p class="photo"><a href="/people/58200/"><img src="" width="52" height="52" onerror="avatar52Replacement(this)"></a></p><p class="name"><a href="/people/58200/" title="DuJPing">DuJ..</a></p></li>
+             
+            	<li><p class="photo"><a href="/people/58199/"><img src="" width="52" height="52" onerror="avatar52Replacement(this)"></a></p><p class="name"><a href="/people/58199/" title="李城">李城</a></p></li>
+             
+            	<li><p class="photo"><a href="/people/58198/"><img src="" width="52" height="52" onerror="avatar52Replacement(this)"></a></p><p class="name"><a href="/people/58198/" title="ryl">ryl</a></p></li>
+             
+            	<li><p class="photo"><a href="/people/58197/"><img src="" width="52" height="52" onerror="avatar52Replacement(this)"></a></p><p class="name"><a href="/people/58197/" title="寂寞天使">寂寞天..</a></p></li>
+             
+            	<li><p class="photo"><a href="/people/58196/"><img src="" width="52" height="52" onerror="avatar52Replacement(this)"></a></p><p class="name"><a href="/people/58196/" title="木兰香遮住的伤">木兰香..</a></p></li>
+             
+            	<li><p class="photo"><a href="/people/58194/"><img src="" width="52" height="52" onerror="avatar52Replacement(this)"></a></p><p class="name"><a href="/people/58194/" title="空酒瓶">空酒瓶</a></p></li>
+             
+            	<li><p class="photo"><a href="/people/58193/"><img src="" width="52" height="52" onerror="avatar52Replacement(this)"></a></p><p class="name"><a href="/people/58193/" title="田飞腾">田飞腾</a></p></li>
+             
+            	<li><p class="photo"><a href="/people/58192/"><img src="" width="52" height="52" onerror="avatar52Replacement(this)"></a></p><p class="name"><a href="/people/58192/" title="Aurora">Aur..</a></p></li>
+             
+             
+              
+            </ul>
+            <p class="concerned"><a href="/people/57884/followers/">TA被<b>0</b>人关注</a></p>
+        </div>
+        <div class="myteam">
+        	<h3><b>TA的团队...</b></h3>
+            <ul>
+            
+             <li>暂无团队...</li>
+            
+            </ul>
+        </div>
+        <div class="newsmover">
+        	<h3><b>最新动态...</b><a href="/people/57884/news/">查看全部</a></h3>
+            <ul>
+             
+                    
+
+
+
+
+
+
+
+
+
+<li>2012年04月26日&nbsp;喜欢展品“<a href="/zhanpin/25361">多媒体网站布局设计</a>”</li>
+
+
+
+
+
+
+
+
+
+
+<li>2012年04月26日&nbsp;喜欢展品“<a href="/zhanpin/25362">画册设计</a>”</li>
+
+
+
+
+
+
+
+
+
+
+<li>2012年04月26日&nbsp;喜欢展品“<a href="/zhanpin/25371">水龙头</a>”</li>
+
+
+
+
+
+
+
+
+
+
+<li>2012年04月26日&nbsp;喜欢展品“<a href="/zhanpin/25916">猕猴桃</a>”</li>
+
+
+
+
+
+
+
+
+
+
+<li>2012年04月26日&nbsp;喜欢展品“<a href="/zhanpin/25917">灯泡蜡烛</a>”</li>
+
+
+
+
+
+
+
+
+
+
+<li>2012年04月26日&nbsp;喜欢展品“<a href="/zhanpin/25918">牛奶瓶</a>”</li>
+
+
+
+
+
+
+
+
+
+
+<li>2012年04月26日&nbsp;喜欢展品“<a href="/zhanpin/25380">花瓶</a>”</li>
+
+
+
+
+
+
+
+
+
+
+<li>2012年04月26日&nbsp;喜欢展品“<a href="/zhanpin/25822">别致的摇椅</a>”</li>
+
+
+
+
+
+
+
+
+
+
+<li>2012年04月26日&nbsp;喜欢展品“<a href="/zhanpin/25823">咖啡杯</a>”</li>
+
+
+
+
+
+
+
+
+
+
+<li>2012年04月26日&nbsp;喜欢展品“<a href="/zhanpin/25827">外包装设计</a>”</li>
+
+                
+                
+            </ul>
+        </div>
+    </div>	
+    <div class="clear"></div>
+</div>
+
+<div class="appraise popWin" id="addComment">
+    <form method="post">
+        <b>请输入评价内容</b>
+        <textarea rows="3" name="comment" id="comment"></textarea>
+        <p><input type="button" value="取消" class="cancel" onclick="cancelEvent();return false;"/><input type="button" value="确定" onclick="buttonEvent();return false;"/></p>
+    </form>
+</div>
+
+<div class="appraise popWin" id="shenfenrenzheng">
+    <form method="post">
+        <b>只有通过身份认证的用户才能评价</b>
+        <p class="status">
+            <a href="/attest/Att_callSarnismile.action?flag=1">去进行身份认证</a>
+            <a href="javascript:void(0);" class="close">关闭窗口</a>
+        </p>
+    </form>
+</div>
+
+<div class="appraise popWin" id="qiyerenzheng">
+    <form method="post">
+        <b>只有通过身份认证的用户才能评价</b>
+        <p class="status">
+            <a href="/attest/Att_callSarnismile.action?flag=2">去进行企业认证</a>
+            <a href="javascript:void(0);" class="close">关闭窗口</a>
+        </p>
+    </form>
+</div>
+
+<div class="popWin" id="dialog2">
+    <div class="popbox">
+        <h3>
+            <b>提示信息</b>
+        </h3>
+        <ul>
+            <li>
+                	操作成功！
+            </li>
+        </ul>
+    </div>
+</div>
+
+<span style="display:none;">
+<script src=" http://s22.cnzz.com/stat.php?id=3937533&web_id=3937533" language="JavaScript"></script>
+</span>
+<div id="footer">
+	<div class="links"><a href="/help/15/">关于我们</a> | <a href="/help/10/">支付方式</a> | <a href="/help/16/">联系方式</a><!-- | <a href="#">媒体中心</a>--> | <a href="/help/17/">客服中心</a><!-- | <a href="#">网站地图</a>--> | <a href="/help/18/">关于隐私</a> | <a href="/help/39/">加入我们</a> </div>
+    <div class="copyright">Copyright 2011-2021 www.liuyuefeng.com 版权所有  粤B2-20110565</div>
+	<br/>
+	<br/>
+	<br/>
+</div>
+
+ <script type="text/javascript">
+     var jihuobox =document.getElementById("jihuobox");
+     if(jihuobox!=null){
+ 	$('#jihuobox').dialog('open');
+ $('#jihuobox').css( "background","#fff");
+ }
+ </script>
+<script type="text/javascript">
+$(function(){
+	$('.broad_img').find('a').live("click",function(){
+		var p=$(this).parent('.broad_img');
+		p.hide();
+		p.siblings('.broad_bigimg').show();
+		p.next().removeClass("broad_text_img");
+	});
+	$('.broad_bigimg').find('a.largeimg').live("click",function(){
+		var p=$(this).parent('.broad_bigimg');
+		p.hide();
+		p.siblings('.broad_img').show();
+		p.prev().addClass("broad_text_img");
+	});
+    $('.rssAll').live("click", function () {
+        var p = $(this).closest("div.broad_discu");
+        p.find("div.discu_conRss").hide();
+        if (p.find("div.discu_con:visible").length) {
+            p.find("div.discu_con").hide();
+        } else {
+            p.find("div.discu_con").show();
+            p.find("div.discu_con").focus();
+        }
+    });
+    $('.rss').live("click", function () {
+        var p = $(this).closest("div.broad_discu");
+        p.find("div.discu_con").hide();
+        if (p.find("div.discu_conRss:visible").length) {
+            p.find("div.discu_conRss").hide();
+        } else {
+            p.find("div.discu_conRss").show();
+            p.find("div.discu_conRss").focus();
+        }
+    });
+});
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#addComment").hide();
+        $("#shenfenrenzheng").hide();
+        $("#qiyerenzheng").hide();
+        $("#answer_from").hide();
+    });
+
+    var rId="";
+    var regId=$("#regId").val(); // 评论对象的id
+    var ifRealNameAuth="-1";
+    var userType="0";
+    var isTeam="0";
+    document.getElementById("comment").value = "";
+
+ function pingEvent(){
+        if((null==rId) || (rId=='')){
+            $("#addComment").dialog("close");
+             $("#addComment").hide(); //如果dialog 未定义，就隐藏
+            $('#popWarp1').popWin('#closeBtn', true);
+            return false;
+        }
+        if('0'==ifRealNameAuth){
+
+            if(isTeam =='0' && userType=='1'){
+                $("#addComment").dialog("close");
+                 $("#addComment").hide(); //如果dialog 未定义，就隐藏
+                $("#shenfenrenzheng").dialog("open");
+                $("#shenfenrenzheng").find('a').last().click(function(){
+                    $("#shenfenrenzheng").dialog("close");
+                });
+                return false;
+            }
+            if(userType=='2' && isTeam =='0'){
+                $("#addComment").dialog("close");
+                 $("#addComment").hide(); //如果dialog 未定义，就隐藏
+                $("#qiyerenzheng").dialog("open");
+                $("#qiyerenzheng").find('a').last().click(function(){
+                    $("#qiyerenzheng").dialog("close");
+                });
+                return false;
+            }
+            if(userType=='0' && isTeam =='0'){
+                $("#addComment").hide();
+                $("#sg").html("初始账号，认证评论！");
+                $("#dialog1").dialog("open");
+                return false;
+            }
+            $("#addComment").hide();
+            $("#sg").html("账号异常，禁止评论！");
+            $("#dialog1").dialog("open");
+            return false;
+        }
+        $("#addComment").dialog("open");
+    }
+
+   function cancelEvent(){
+        $("#addComment").dialog("close");
+        $("#addComment").hide();
+    }
+
+	
+    var i=1; //认证评论数量的变量
+    function buttonEvent(){
+        var comment=document.getElementById("comment").value;
+
+        if($.trim(comment)==""){
+            $("#addComment").hide();
+            $("#sg").html("请输入评论的内容！");
+            $("#dialog1").dialog("open");
+            $("#dialog1").find('input').click(function(){
+                $("#addComment").show();
+            });
+            return false;
+        }
+        if(comment.length>250){
+            $("#addComment").hide();
+            $("#sg").html("您输入信息过长,请控制在250字内！");
+            $("#dialog1").dialog("open");
+            $("#dialog1").find('input').click(function(){
+                $("#addComment").show();
+            });
+            return false;
+        }
+
+        $.ajax({
+            type:'post',
+            dataType:"json",
+            url:encodeURI('/jsonauthUsercomAct/jsonac_addUserComment.action'),
+            cacheable:true,
+            data:{regId:regId,comment:comment},
+            success:function (json) {
+                var length=$(".appraisal").find('ul li:visible').length;
+                if(length>=4){
+                	$(".appraisal").find('ul li:visible').last().hide();
+                }
+            	$(".appraisal").find('ul li').first().before("<li><p class='text' style='color:#666666;'> " +
+            	""+comment+"" +
+            	"</p><p class='userimg'><a href='/people/0/'><img src='' width='30' height='30' onerror='avatar52Replacement(this)'></a></p></li>");
+            	var ii=0;
+            	ii=ii+i++;
+            	$(".all").html("全部("+ii+")");
+                document.getElementById("comment").value = "";
+                $("#addComment").dialog("close");
+                $("#addComment").hide(); //如果dialog 未定义，就隐藏
+            },
+            error:function (result, status) {
+                if (status == 'error') {
+                    $('#popWarp1').popWin('#closeBtn', true);
+                    return false;
+                }
+            }
+        });
+    }
+</script>
+
+<script type="text/javascript">
+	var ofs=8;
+	var num;
+	function photoEvent(){
+		var rid=$("#regId").val();
+		$(".newshow div:last a").text("数据加载中...");
+		
+		$.ajax({
+			type:'post',
+            dataType:"json",
+            url:encodeURI('/jsonLatestPhoto/jsonLatestPhoto_getLatestPhoto.action'),
+            cacheable:true,
+            data:{regId:rid,offset:ofs},
+            success:function (json) {
+            	if(""==json.latestPms.datas){
+            		$(".newshow div:last a").text("没有更多展品了 ▲");return;
+            	}
+            	$.each(json.latestPms.datas,function(i,is){
+            		num=json.latestPms.total-ofs-(i+1);
+            	
+            		$(".newshow").find("ul li").last().after("<li>"+
+		            	"<a href=\"/zhanpin/"+is.photoid+"\" target=\"_blank\"><img src=\""+is.filePath+is.thumb+"\" onerror=\"avatar52Replacement(this)\">"+
+		            	"</a></li>");
+            		
+       			if(num=='0'){
+            			$(".newshow div:last a").text("没有更多展品了 ▲");return;
+            	}else{
+            			$(".newshow div:last a").text("更多展品 ▼");
+            	 }
+            	});
+            		ofs+=4;
+             },
+            error:function(result, status){
+            	 if(status=='errror'){
+	            	 $("#sg").html("异常错误！");
+	           		 $("#dialog1").dialog("open");
+           		 }
+            }
+		});
+	}
+
+</script>
+
+
+<script type="text/javascript">
+	var lifetrackId;
+
+	function modLife(lid,trackcontent){
+		$("#modcontent").text(trackcontent);
+		$("#modxiugailife").dialog("open");
+		lifetrackId=lid;
+	}
+	
+	function modl(){
+		var rid=$("#regId").val();
+		var content=$("#modcontent").val();
+		
+		if($.trim(content)==""){
+			$("#modxiugailife").dialog("close");
+			$("#sg").html("点滴不能为空！");
+         	$("#dialog1").dialog("open");
+         	return false;
+		}
+	
+		if(content.length>140){
+			$("#modxiugailife").dialog("close");
+			$("#sg").html("点滴的长度不能超过<strong>140<strong>个字！");
+         	$("#dialog1").dialog("open");
+         	return false;
+		}
+			
+		$.ajax({
+			type:'post',
+            dataType:"json",
+            url:encodeURI('/jsonLifeTrack/jsonLifeTrack_saveOrUpdate.action'),
+            cacheable:true,
+            data:{lifetrackId:lifetrackId,trackcontent:content},
+            timeout:3000,
+            success:function (json) {
+            	$("#modxiugailife").dialog("close");
+            	document.getElementById("modcontent").value = "";
+            	window.location.href="/people/"+rid+"/";
+            },
+             error:function(result, status){
+            	 if(status=='errror'){
+	            	 $("#sg").html("异常错误！");
+	           		 $("#dialog1").dialog("open");
+	           		 return false;
+           		 }
+            	 if(status=='timeout'){
+            		 $("#sg").html("操作超时！");
+	           		 $("#dialog1").dialog("open");
+	           		 return false;
+            	 }
+            }
+		});
+	}
+	
+	function delLife(lid){
+		var rid=$("#regId").val();
+		$.post("/jsonLifeTrack/jsonLifeTrack_delete.action",{lifetrackId:lid},function(data){
+			var msg=data.message;
+			if(msg=='1') {window.location.href="/people/"+rid+"/";}
+			if(msg=='-1'){
+				 $("#sg").html("操作失败！");
+	           	 $("#dialog1").dialog("open");
+	           	 return false;
+			}
+		},'json');
+	}
+</script>
+
+
+<script type="text/javascript">
+function concernAnswer(handle,qid,isCon){
+		handle=$(handle);
+		var sending=handle.data('sending');
+		if(sending){
+			return false;	
+		}
+		var isConcern=handle.data('isConcern') || isCon;
+		var url;
+		if(isConcern==1){
+			url="/concern/concern_remove.action?concernType=3";
+		}else{
+			url="/concern/concern_saveDutysAndQuestions.action?concernType=3";
+		}
+		handle.data('sending',0);
+		$.post(url,{questionID:qid},function(data){
+			handle.removeData('sending');
+			var fr = data.concernResult;
+			if(fr==1){ //成功关注
+				//console.info(handle)
+				handle.data('isConcern',1);
+				//handle.removeClass('guan').addClass('quxiao');
+				handle.html('取消关注');
+			}else if(fr==2) { //取消关注
+				handle.data('isConcern',2);
+				//handle.removeClass('quxiao').addClass('guan');
+				handle.html('关注');
+			}else if(fr==0) { //重复关注
+				//handle.data('isConcern',true);
+				//concernAnswer(handle,qid);
+				//$("#sg").html("您已经关注了此问答！");
+				//$('#dialog1').dialog('open');
+				return false;
+			}else if(fr==-1000) { //nologin
+				$('#popWarp1').popWin('#closeBtn', true);
+				return false;
+			}
+		},'json');
+		return false;
+	}
+	
+$(function(){
+	$("#viewmore").click(function(){
+		var d=$(this);
+		var rid=$("#regId").val();
+		if(d.data("loading")){
+			return;
+		}
+		d.data("loading",true);
+		var page=d.data("feedpage") || 1;
+		var pageSize=(page==1?4:10);
+		$.post("/personal/wendaActive.action",{pageNo:page,regId:rid,pageSize:pageSize},function(html){
+			d.data("feedpage",++page);
+			var pa=$($.trim(html));
+			$("#wendaActive").append(pa);
+			d.removeData("loading");
+		});
+	}).click();
+});	
+</script>
+
+   </body>        
+</html>

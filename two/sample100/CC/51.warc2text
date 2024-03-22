@@ -1,0 +1,355 @@
+INFO-F Algorithmique 3 et Recherche Opérationnelle - PDF
+Entrer
+Enregistrement
+Chercher
+INFO-F Algorithmique 3 et Recherche Opérationnelle
+To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video
+SHARE
+HTML
+DOWNLOAD
+CLASSIC PLAYER
+Save this PDF as:
+&nbsp;WORD &nbsp;PNG &nbsp;TXT &nbsp;JPG
+Dimension: px
+Commencer à balayer dès la page:
+Download "INFO-F-310 - Algorithmique 3 et Recherche Opérationnelle"
+Erreur:
+Download Document
+Fernande Paquin
+il y a 2 ans
+Total affichages :
+Transcription
+1 INFO-F- - Algorithmique et Recherche Op&eacute;rationnelle Yves De Smet Bernard Fortz - Table des mati&egrave;res I Introduction Aide &agrave; la d&eacute;cision et mod&egrave;les math&eacute;matiques Quelques exemples de mod&egrave;les math&eacute;matiques Tour d horizon des techniques de recherche op&eacute;rationnelle II Programmation lin&eacute;aire 6 D&eacute;finition, exemples et m&eacute;thode de r&eacute;solution 6. Notions de bases Exemples de mod&egrave;les lin&eacute;aires Forme standard et forme canonique d un programme lin&eacute;aire R&eacute;solution de programmes lin&eacute;aires R&eacute;solution graphique La m&eacute;thode du simplexe La m&eacute;thode des deux phases Cas particuliers Dualit&eacute;. Le probl&egrave;me dual Relations primal/dual Interpr&eacute;tation &eacute;conomique de la dualit&eacute; M&eacute;thode simplexe duale Solveurs et langages de mod&eacute;lisation III Le probl&egrave;me de transport 7 D&eacute;finition et exemples 8 Algorithme pour le probl&egrave;me de transport 9 Le probl&egrave;me de transbordement IV Le flot maximum 6 Introduction 6 Formulation 6
+2 Coupe minimum 6 Algorithme de Ford-Fulkerson 6 V Flots de co&ucirc;t minimum 9 D&eacute;finitions et exemples 9 Algorithme de chemins augmentants 9 6 Extensions VI Couplages 6 7 Introduction 6 8 Affectations bipartites 7 9 Le probl&egrave;me des mariages stables VII La programmation dynamique Retour aux plus courts chemins Le probl&egrave;me de sac-&agrave;-dos D&eacute;termination de la taille des lots 6
+3 Premi&egrave;re partie Introduction Aide &agrave; la d&eacute;cision et mod&egrave;les math&eacute;matiques Un premier probl&egrave;me Exemple (Achat de billets d avion). Un homme d affaires doit effectuer voyages entre Fayetteville (FYV) &agrave; Denver (DEN), en partant le lundi de FYV et revenant le mercredi de DEN &agrave; FYV. Billet aller-retour : $. R&eacute;duction de % si un weekend est inclus. Aller simple : 7 % du prix aller-retour. Question Comment acheter les billets pour les semaines (&agrave; prix minimum)? Aide &agrave; la d&eacute;cision Probl&egrave;me d aide &agrave; la d&eacute;cision. Quelles sont les alternatives possibles?. Quelles sont les restrictions &agrave; cette d&eacute;cision?. Quel est l objectif utilis&eacute; pour &eacute;valuer les alternatives? Restrictions FYV-DEN le lundi et DEN-FYV le mercredi de la m&ecirc;me semaine. Evaluation des alternatives Alternatives Acheter FYV-DEN-FYV normaux. x $ = $ Acheter un FYV-DEN, DEN-FYV-DEN comprenant un weekend et un DEN-FYV..7 x $ + x.8 x $ +.7 x $ = $88 Acheter un FYV-DEN-FYV pour le lundi de la premi&egrave;re semaine et le mercredi de la derni&egrave;re semaine, et DEN-FYV-DEN comprenant un weekend pour les autres voyages. x.8 x $ = $6 La troisi&egrave;me alternative est la meilleure. Mod&egrave;le de recherche op&eacute;rationnelle Ingr&eacute;dients principaux Alternatives (variables, inconnues du probl&egrave;me). Restrictions (contraintes). Fonction objectif &agrave; optimiser (minimiser ou maximiser). D&eacute;finition (Solution admissible). Une solution admissible est un ensemble de valeurs donn&eacute;es aux variables qui satisfait toutes les contraintes. D&eacute;finition (Solution optimale). Une solution optimale est une solution admissible qui optimise la fonction objectif. D&eacute;finition (Mod&egrave;le de recherche op&eacute;rationnelle). Maximiser ou minimiser (fonction objectif) Sujet &agrave; { contraintes } Variables : continues (r&eacute;elles), enti&egrave;res, bool&eacute;ennes (/),... Objectif : lin&eacute;aire / non-lin&eacute;aire, concave / convexe,...
+4 Contraintes : lin&eacute;aire / non-lin&eacute;aire, concave / convexe, &eacute;galit&eacute;s / in&eacute;galit&eacute;s,... Param&egrave;tres : connus avec certitude (mod&egrave;les d&eacute;terministes) / incertains (mod&egrave;les stochastiques) Exemple (Maximisation de la surface d un rectangle). Supposons que l on veut plier un fil de fer de longueur L en rectangle de mani&egrave;re &agrave; maximiser la surface du rectangle. l w Formulation max A = lw s.t. l + w = L Solution A = ( L w) w = Lw w da dw = L w = Solution optimale : w = l = L M&eacute;thodes de r&eacute;solution Dans l exemple, solution analytique au probl&egrave;me. La plupart des probl&egrave;mes pratiques sont trop grands ou trop complexes pour &ecirc;tre r&eacute;solus analytiquement. M&eacute;thodes it&eacute;ratives D&eacute;placement de solution en solution pour atteindre l optimum (m&eacute;thodes exactes) ou une &quot;bonne&quot; solution (heuristiques). Importance des algorithmes et des solutions informatiques. Quelques exemples de mod&egrave;les math&eacute;matiques Un probl&egrave;me de placement Une entreprise veut placer un capital K. Six modalit&eacute;s de placement sont offertes sur le march&eacute;, les taux d int&eacute;r&ecirc;t &eacute;tant respectivement %,, %,, %, %, % et, %. Pour satisfaire aux contraintes l&eacute;gales, l entreprise doit placer au moins % de son capital suivant les deux premi&egrave;res modalit&eacute;s, au plus % suivant les deux suivantes et au plus % suivant les deux derni&egrave;res. Combien l entreprise doit-elle placer dans chaque modalit&eacute; de fa&ccedil;on &agrave; maximiser son int&eacute;r&ecirc;t total? Fabrication de cr&egrave;me glac&eacute;e Un fabriquant d&eacute;sire produire kg d une pr&eacute;paration de base pour cr&egrave;me glac&eacute;e. Cette pr&eacute;paration doit contenir, kg de mati&egrave;res grasses, kg de sucre,, kg d oeufs et 6, kg d eau. Les ingr&eacute;dients dont il dispose figurent ci-dessous, avec les pourcentages (en poids) de chaque constituant, et le co&ucirc;t au kg. Mati&egrave;res gr. Sucre Oeufs Eau Co&ucirc;t Cr&egrave;me 6 Jaune d oeuf frais Lait 88 Jaune d oeuf surgel&eacute; 6 Sirop 7,8 Eau Le fabriquant d&eacute;sire d&eacute;terminer la composition du m&eacute;lange de co&ucirc;t minimal.
+5 Localisation d &eacute;metteurs de t&eacute;l&eacute;vision Cinq sites ont &eacute;t&eacute; retenus pour construire des &eacute;metteurs de t&eacute;l&eacute;vision destin&eacute;s &agrave; desservir localit&eacute;s. Le tableau ci-dessous donne, pour chaque site, le co&ucirc;t de construction d un &eacute;metteur sur ce site et les localit&eacute;s desservies par cet &eacute;metteur. Site Co&ucirc;t Localit&eacute;s desservies,,, 7, 8, 7,, 6, 8, 9, 6,,, 8,,, 6, 7, 9 Un probl&egrave;me de localisation Une soci&eacute;t&eacute; de distribution d&eacute;sire construire un ou plusieurs entrep&ocirc;ts &agrave; partir desquels elle servira 6 clients importants. Quatre terrains appartenant &agrave; la soci&eacute;t&eacute; sont disponibles. Le tableau ci-dessous reprend, pour chacun d eux, la capacit&eacute; maximum de l entrep&ocirc;t qui pourrait y &ecirc;tre construit, le co&ucirc;t de construction et le co&ucirc;t unitaire de transport de cet &eacute;ventuel entrep&ocirc;t vers chaque client. Sachant que les quantit&eacute;s demand&eacute;es par les clients sont respectivement de,,,,, et 7, o&ugrave; faut-il construire un (des) entrep&ocirc;t(s) et comment faut-il organiser la distribution de fa&ccedil;on &agrave; minimiser le co&ucirc;t total de l op&eacute;ration? Clients 6 Capacit&eacute; Co&ucirc;t Entrep&ocirc;ts maximum construction Tour d horizon des techniques de recherche op&eacute;rationnelle Recherche op&eacute;rationnelle La recherche op&eacute;rationnelle est une technique d aide &agrave; la d&eacute;cision. Etapes pratiques. D&eacute;finition du probl&egrave;me. Construction d un mod&egrave;le. Solution du mod&egrave;le. Validation du mod&egrave;le. Impl&eacute;mentation de la solution M&eacute;thodologie Les &eacute;tapes les plus importantes sont la d&eacute;finition du probl&egrave;me (suppose un dialogue avec le d&eacute;cideur) et la construction du mod&egrave;le (prendre conscience des hypoth&egrave;ses simplificatrices et de leur impact). La phase de validation doit permettre de remettre en cause la validit&eacute; du mod&egrave;le. Une approche globale n&eacute;cessite donc un aller-retour constant entre le mod&egrave;le et les attentes du d&eacute;cideur. Techniques principales Programmation lin&eacute;aire Programmation en nombres entiers Optimisation dans les r&eacute;seaux Programmation non lin&eacute;aire &quot;Optimisation&quot; multi-crit&egrave;res Programmation dynamique Mod&egrave;les stochastiques Simulation
+6 Deuxi&egrave;me partie Programmation lin&eacute;aire D&eacute;finition, exemples et m&eacute;thode de r&eacute;solution. Notions de bases Programmation lin&eacute;aire D&eacute;finition (Programme lin&eacute;aire). Mod&egrave;le math&eacute;matique dans lequel la fonction objectif et les contraintes sont lin&eacute;aires en les variables. Applications Optimisation de l usage de ressources limit&eacute;es dans les domaines militaire, industriel, agricole, &eacute;conomique,... Existence d algorithmes tr&egrave;s efficaces pour r&eacute;soudre des probl&egrave;mes de tr&egrave;s grande taille (simplexe, points int&eacute;rieurs). Exemples de mod&egrave;les lin&eacute;aires Exemple (Production de peinture). Une soci&eacute;t&eacute; produit de la peinture d int&eacute;rieur et d ext&eacute;rieur &agrave; partir de deux produits de base M et M. Donn&eacute;es Quantit&eacute; utilis&eacute;e par tonne Quantit&eacute; disponible par jour Ext&eacute;rieure Int&eacute;rieure M 6 M 6 Profit par tonne Contraintes suppl&eacute;mentaires Demande maximum en peinture d int&eacute;rieur : tonnes / jour. La production en peinture d int&eacute;rieur ne d&eacute;passer que d une tonne celle d ext&eacute;rieur. Formulation (Production de peinture) Alternatives (variables, inconnues du probl&egrave;me) x = tonnes de peinture d ext&eacute;rieur produites par jour x = tonnes de peinture d int&eacute;rieur produites par jour Fonction objectif &agrave; optimiser max z = x + x Restrictions (contraintes) 6
+7 6x + x x + x 6 x x x x, x Solutions et m&eacute;thodes de r&eacute;solution Solution admissible : satisfait toutes les contraintes. x =, x = ( z = 9) Nous voulons trouver la solution (admissible) optimale. Infinit&eacute; de solutions admissibles! M&eacute;thodes pour trouver l optimum M&eacute;thode graphique Simplexe ( Ellipsoide, points int&eacute;rieurs ) Exemple (Diet problem). On d&eacute;sire d&eacute;terminer la composition, &agrave; co&ucirc;t minimal, d un aliment pour b&eacute;tail qui est obtenu en m&eacute;langeant au plus trois produits bruts : orge et arachide. La quantit&eacute; n&eacute;cessaire par portion est de g. L aliment ainsi fabriqu&eacute; devra comporter au moins % de prot&eacute;ines et au plus % de fibres. Donn&eacute;es Quantit&eacute; par gramme d aliment Co&ucirc;t Aliment Prot&eacute;ines Fibres (EUR / kg) Orge.9.. Arachide.6.6. Formulation (Diet problem) Variables x = grammes d orge par portion x = grammes d arachide par portion Objectif min z =.x +.x Contraintes Quantit&eacute; totale : x + x Prot&eacute;ines :.9x +.6x.(x + x ) Fibres :.x +.6x.(x + x ) Non-n&eacute;gativit&eacute; : x, x 7
+8 . Forme standard et forme canonique d un programme lin&eacute;aire Forme standard D&eacute;finition (Forme standard). Un programme lin&eacute;aire est sous forme standard lorsque toutes ses contraintes sont des &eacute;galit&eacute;s et toutes ses variables sont non-n&eacute;gatives. Repr&eacute;sentation matricielle max s.c. c T x Ax = b x n variables, m contraintes, m &lt; n, c, x R n, b R m, A R m n. Forme canonique D&eacute;finition 6 (Forme canonique). Un programme lin&eacute;aire est sous forme canonique lorsque toutes ses contraintes sont des in&eacute;galit&eacute;s et toutes ses variables sont non-n&eacute;gatives. Repr&eacute;sentation matricielle max s.t. c T x Ax b x n variables, m contraintes, c, x R n, b R m, A R m n. Th&eacute;or&egrave;me (Equivalence des formes standard et canonique). Tout programme lin&eacute;aire peut s &eacute;crire sous forme standard et sous forme canonique. D&eacute;monstration. Une containte d in&eacute;galit&eacute; a T x b peut &ecirc;tre transform&eacute;e en &eacute;galit&eacute; par l introduction d une variable d &eacute;cart : a T x + s = b, s. Une contrainte d &eacute;galit&eacute; a T x = b peut &ecirc;tre remplac&eacute;e par deux in&eacute;galit&eacute;s : a T x b a T x b a T x b a T x b. min c T x = max c T x. Variable x non restreinte : substitution par deux variables (partie positive et n&eacute;gative) x = x + x x +, x. Il existe toujours une solution optimale telle que x + = ou x =. 8
+9 Forme standard du probl&egrave;me de production de peinture max z = x + x s.c. 6x + x x + x 6 x x x x, x Forme standard max z = x +x s.c. 6x +x +s = x +x +s = 6 x +s = x +x +s = x, x, s, s, s, s Forme matricielle max s.t. c T x Ax = b x c =, x = x x s s s s, A = 6, b = 6 Variables pouvant prendre des valeurs n&eacute;gatives Exemple (Vente de hamburgers). Un fast-food vend des hamburgers et des cheeseburgers. Un hamburger utilise g. de viande alors qu un cheeseburger n en utilise que g. Le fast-food d&eacute;marre chaque journ&eacute;e avec kg de viande mais peut commander de la viande suppl&eacute;mentaire avec un co&ucirc;t additionnel de EUR par kg pour la livraison. Le profit est de. EUR pour un hamburger et. EUR pour un cheeseburger. La demande ne d&eacute;passe pas 9 sandwiches / jour, et les surplus de viande sont donn&eacute;s au Restos du Coeur. Combien le fast-food doit-il produire de sandwiches de chaque type par jour? Variables x = nombre de hamburgers / jour x = nombre de cheeseburgers / jour Contraintes Commande de viande suppl&eacute;mentaire : x + x + x =, x non restreint Le co&ucirc;t pour la viande suppl&eacute;mentaire appara&icirc;t seulement si x &lt;. 9
+10 Substitution de x par variables non-n&eacute;gatives : x = x + x, x+, x x + x + x + x = Borne sup&eacute;rieure sur les ventes : x + x 9. Mod&egrave;le complet max z =.x +.x.x s.c. x + x + x + x = x + x 9 x, x, x +, x Remarque : Il existe une solution optimale telle que x + = ou x =.. R&eacute;solution de programmes lin&eacute;aires.. R&eacute;solution graphique Repr&eacute;sentation graphique () () () () () (6) Production de peinture max z = x + x sous les contraintes : 6x + x () x + x 6 () x () x x () x () x (6)
+11 G&eacute;om&eacute;trie des solutions B A C D z= E F Ensemble des solutions admissibles Poly&egrave;dre (ABCDEF) Courbes de niveaux de l objectif Ensemble de solutions ayant un profit (valeur de l objectif) donn&eacute; : intersection entre une droite et le poly&egrave;dre. Am&eacute;lioration de la solution Recherche d une direction dans laquelle le profit z augmente. R&eacute;solution graphique (Production de peinture) z= B A C D E F Recherche de la solution optimale La droite mobile doit garder une intersection avec l ensemble des solutions admissibles. Solution optimale : x =, x =. (E) La solution optimale est un sommet du poly&egrave;dre. Cette observation est la base de l algorithme du simplexe.
+12 R&eacute;solution graphique (Diet problem) Diet problem min z =.x +.x sous les contraintes x + x.x.x.x.x x x Solution optimale x = 7. x = z = La m&eacute;thode du simplexe Id&eacute;es de base Solution optimale : sommet (point extr&ecirc;me). Id&eacute;e fondamentale du simplexe : d&eacute;placement de sommet en sommet adjacent de mani&egrave;re &agrave; am&eacute;liorer la fonction objectif. Transformation des in&eacute;galit&eacute;s en &eacute;galit&eacute;s : forme standard du programme lin&eacute;aire - syst&egrave;me de m &eacute;quations &agrave; n inconnues (m &lt; n). Identification alg&eacute;brique des sommets : correspondance avec les bases d un syst&egrave;me d &eacute;quations. Solutions de base Syst&egrave;me de m &eacute;quations lin&eacute;aires &agrave; n inconnues (m &lt; n) : infinit&eacute; de solutions. Si on fixe &agrave; z&eacute;ro n m variables : syst&egrave;me de m &eacute;quations &agrave; m inconnues poss&eacute;dant une solution unique (si la matrice est inversible). C est une solution de base. D&eacute;finition 7 (Solution de base). Une solution de base d un programme lin&eacute;aire est la solution unique du syst&egrave;me de m &eacute;quations &agrave; m inconnues obtenu en fixant &agrave; z&eacute;ro n m variables (pourvu que la matrice du syst&egrave;me soit inversible). Les variables fix&eacute;es &agrave; z&eacute;ro sont appel&eacute;es variables hors base et les autres variables en base.
+13 Exemple 6 (Production de peinture). Prenons B = {s, s, s, s }. z = +x +x s = 6x x s = 6 x x s = x s = +x x Si x = x =, alors s =, s = 6, s =, s =. Toutes ces valeurs sont non-n&eacute;gatives et la solution est r&eacute;alisable. D&eacute;finition 8 (Solution de base r&eacute;alisable). Une solution de base telle que toutes les variables prennent des valeurs non-n&eacute;gatives est appel&eacute;e solution de base r&eacute;alisable. G&eacute;om&eacute;trie des solutions de base B A C D E F Prenons B = {s, s, s, s } x = x =, s =, s = 6, s =, s =. Cette solution de base r&eacute;alisable correspond au sommet (, ). Base Solution Objectif Sommet {s, s, s, s } (, ) A {x, s, s, s } (, ) F {s, x, s, s } (6, ) Non r&eacute;alisable {x, x, s, s } (,.) E Th&eacute;or&egrave;me. Toute solution de base r&eacute;alisable correspond &agrave; un sommet du poly&egrave;dre. D&eacute;termination de la solution de base optimale n! Nombre maximum de solutions de base : m!(n m)! Algorithme &quot;b&ecirc;te et m&eacute;chant&quot; : &eacute;num&eacute;ration de toutes les bases. M&eacute;thode du simplexe : partir d une solution de base admissible et passer &agrave; une solution de base voisine qui am&eacute;liore la valeur de l objectif. Solution voisine : changement d une variable en base. etapes :. D&eacute;termination de la variable entrante.. D&eacute;termination de la variable sortante.. Pivotage. L algorithme du simplexe Variable entrante z = +x +x s = 6x x s = 6 x x s = x s = +x x Si x (ou x ) augmente (entre en base), la valeur de la fonction objectif z augmente. Quelle est la valeur maximale de x?
+14 Contraintes : les autres variables doivent rester positives. Variable sortante s = 6x x s = 6 x x 6 s = toujours! s = +x x toujours! x Pivotage Si x =, alors s =. x entre en base, s sort de la base. Substitution : x = 6 s x Nouveau syst&egrave;me : z = 6 s + x x = 6 s x s = + 6 s x s = x s = 6 s x Repr&eacute;sentation matricielle (dictionnaire) B = indices des variables en base, N = indices des variables hors base. D&eacute;composition des donn&eacute;es et variables (en r&eacute;arrangeant l ordre des variables) : A = ( ( ) ( ) ) xb cb A B A N, x =, c = x N c N avec x B, c B R m, x N, c N R n m, A B R m m, A N R m (m n). Equations du simplexe Si A B est inversible : Ax = b A B x B + A N x N = b x B + A B A N x N = A B b Notation : z = c T x = c T Bx B + CN T x N = c T B(A B b A B A Nx N ) + c T Nx N = c T BA B b + (ct N c T BA B A N) } {{ } co&ucirc;ts r&eacute;duits ou profits marginaux x l + k N a lk x k = b l l B x N z = z + k N c k x k
+15 R&egrave;gles de pivotage Variable entrante Choisir la variable k hors base avec le profit marginal maximum (max z) ou le co&ucirc;t r&eacute;duit minimum (min z). max z k = arg max i i N min z k = arg min i i N Si c k (max) ou c k (min) pour tout k N, solution optimale, STOP. z = +x +x s = 6x x s = 6 x x s = x s = +x x Variable sortante Choisir la variable l en base telle que l = arg Si a lk pour tout l B, probl&egrave;me non born&eacute;, STOP. min b j j B:a jk &gt; a jk z = +x +x s = 6x x s = 6 x x s = x s = +x x Pivotage a ij = b i = a lj a lk a ij a ika lj a lk b l a lk b i a ikb l a lk i = l i l i = l i l z = +x +x s = 6x x s = 6 x x s = x s = +x x z = 6 s + x x = 6 s x s = + 6 s x s = x s = 6 s x z = s s x = s + s x = + 8 s s s = 8 s + s s = 8 s + s
+16 Pr&eacute;sentation en tableau Pr&eacute;sentation compacte pour effectuer les calculs sans r&eacute;p&eacute;ter les syst&egrave;mes d &eacute;quations. It&eacute;ration Var. en base z x Solution z c T c T A B A = c ct B A x B A B A = a A B b B b Var. en base z x x s s s s Solution z s 6 s 6 s s It&eacute;ration Var. en base z x x s s s s Solution z 6 x 6 s 6 s s 6 It&eacute;ration Var. en base z x x s s s s Solution z x x 8 s 8 s 8.. La m&eacute;thode des deux phases Solution initiale artificielle Une solution de base admissible n est pas toujours connue a priori. Certains probl&egrave;mes n admettent pas de solution admissible, donc il est impossible de trouver une base de d&eacute;part. La m&eacute;thode des deux phases va permettre de d&eacute;terminer une base admissible ou prouver que le probl&egrave;me est impossible. Exemple 7 (M&eacute;thode des phases). min z = x +x s.c. x +x = x +x 6 x +x x, x 6
+17 Introduction des variables d &eacute;cart min z = x +x s.c. x +x = x +x x = 6 x +x +x = x, x, x, x Pas de base admissible &quot;triviale&quot;. On voudrait voir appara&icirc;tre une matrice identit&eacute;. Introduction de variables artificielles. Introduction des variables artificielles min z = x +x min r = R +R min r = 7x x +x +9 s.c. x +x +R = x +x x +R = 6 x +x +x = x, x, x, R, R, x R, R et x peuvent &ecirc;tre utilis&eacute;es comme base de d&eacute;part admissible. Base pour le syst&egrave;me de d&eacute;part si R = R = (hors base). R&eacute;&eacute;crire l objectif en fonction des variables hors base!.. Cas particuliers Bases d&eacute;g&eacute;n&eacute;r&eacute;es Si plusieurs choix sont possibles pour la variable sortante, une des variables en base sera nulle &agrave; l it&eacute;ration suivante. Base telle qu une variable en base est nulle : base d&eacute;g&eacute;n&eacute;r&eacute;e. Correspond &agrave; une contrainte redondante. Risque de cyclage! Exemple 8 (Bases d&eacute;g&eacute;n&eacute;r&eacute;es). max z = x +9x s.c. x +x 8 x +x x, x 7
+18 Var. en base z x x s s Solution z 9 s 8 s z 9 8 x s z 8 x x En pratique, le risque de cyclage est quasiment nul. M&eacute;thodes pour l &eacute;viter : perturbations, ordre lexicographique pour les variables entrant en base,... Une bonne analyse a priori pour &eacute;liminer les redondances est le meilleur moyen d &eacute;viter ces probl&egrave;mes! Solutions optimales multiples Si la fonction objectif est parall&egrave;le &agrave; une contrainte active pour la solution optimale, la m&ecirc;me valeur de l objectif peut &ecirc;tre prise par plusieurs solutions admissibles. Il y a une infinit&eacute; de solutions optimales dans ce cas (toutes les combinaisons convexes de sommets optimaux). Cela se traduit par un profit marginal nul pour une ou plusieurs variables hors base. Exemple 9 (Solutions optimales multiples). Solution optimale : max z = x +x s.c. x +x x +x x, x Var. en base z x x s s Solution z s s z x s z x x x = &alpha; + ( &alpha;) = &alpha; x = &alpha; + ( &alpha;) = + &alpha; ( &alpha; ) Probl&egrave;mes non born&eacute;s Certains probl&egrave;mes sont non born&eacute;s dans une direction donn&eacute;e. Si cette direction est une direction d am&eacute;lioration de la fonction objectif, celle-ci peut prendre une valeur arbitrairement grande! 8
+19 Exemple (Probl&egrave;mes non born&eacute;s). max z = x +x s.c. x x x x, x Var. en base z x x s s Solution z s s Tous les coefficients (sauf le profit maginal) dans la colonne de x sont n&eacute;gatifs ou nuls. Cela signifie que toutes les contraintes de non-n&eacute;gativit&eacute; sont satisfaites quelle que soit la valeur de x. L objectif peut donc augmenter ind&eacute;finiment. Probl&egrave;mes impossibles Le syst&egrave;me de contraintes peut n avoir aucune solution. M&eacute;thode des phases : termine avec des variables artificielles non nulles. G&eacute;n&eacute;ralement, provient d une mauvaise formulation du probl&egrave;me. Exemple (Probl&egrave;mes impossibles). max z = x +x s.c. x +x x +x x, x 9
+20 Dualit&eacute;. Le probl&egrave;me dual Probl&egrave;me primal et probl&egrave;me dual Probl&egrave;me primal max s.c. c T x Ax = b x n variables, m contraintes, m &lt; n, c, x R n, b R m, A R m n. Probl&egrave;me dual min s.c. b T y A T y c (y non restreint) m variables, n contraintes, m &lt; n, c R n, b, y R m, A R m n. Exemple (Probl&egrave;me primal et dual - forme standard). Probl&egrave;me primal : max z = x +x s.c. x +x = (y ) x x = 6 (y ) x, x Probl&egrave;me dual : min w = y +6y s.c y +y (x ) y y (x ) Propri&eacute;t&eacute;s et r&egrave;gles de construction du dual Th&eacute;or&egrave;me. Le probl&egrave;me dual du probl&egrave;me dual est le probl&egrave;me primal. R&egrave;gles de construction Exemple (Probl&egrave;me primal et dual - forme g&eacute;n&eacute;rale). Probl&egrave;me primal : Probl&egrave;me max Probl&egrave;me min Contrainte Variable = non restreinte Variable Contrainte non restreinte = max z = x +x +x s.c. x +x +x (y ) x x +x = 8 (y ) x, x, x
+21 Probl&egrave;me dual : min w = y +8y s.c y +y (x ) y y (x ) y +y (x ) y. Relations primal/dual Th&eacute;or&egrave;me (Dualit&eacute; faible). Consid&eacute;rons la paire primale-duale : max s.c. c T x Ax = b x min s.c. b T y A T y c Si x est une solution admissible du primal et y une solution admissible du dual, alors c T x b T y S il y a &eacute;galit&eacute;, alors x est une solution optimale du primal et y une solution optimale du dual. Th&eacute;or&egrave;me (Dualit&eacute; forte). Consid&eacute;rons la paire primale-duale : max s.c. c T x Ax = b x min s.c. b T y A T y c Si le primal et le dual admettent tous les deux une solution admissible, ils ont tous deux une solution optimale finie et la m&ecirc;me valeur objectif optimale. Si le primal (dual) est non born&eacute;, le dual (primal) n admet pas de solution admissible. Th&eacute;or&egrave;me 6 (Compl&eacute;mentarit&eacute;). Consid&eacute;rons la paire primale-duale : max s.c. c T x Ax = b x min s.c. b T y A T y c
+22 Si x est une solution optimale du primal et y une solution optimale du dual, alors x i (a T i y c i ) =. o&ugrave; a i est la i-&egrave;me colonne de A. En d autres termes : x i &gt; a T i y = c i, a T i y &gt; c i x i =. Exemple (R&eacute;solution du dual par les r&egrave;gles de compl&eacute;mentarit&eacute;). Primal (P ) : max z = x +x +x s.c. x +x +x (y ) x x +x = 8 (y ) x, x, x Dual (D) : Solution optimale de (P ) : min w = y +8y s.c y +y (x ) y y (x ) y +y (x ) y (x, x, x ) = z = 7 ( 6, ), Solution optimale de (D) : x &gt; y + y = x &gt; y y = ( ) 9 (y, y ) =, w = 7. Interpr&eacute;tation &eacute;conomique de la dualit&eacute; La forme canonique d un programme lin&eacute;aire peut &ecirc;tre interpr&eacute;t&eacute;e comme un probl&egrave;me d allocation de ressources. Paire primale-duale : max s.c. c T x Ax b x min s.c. b T y A T y c y
+23 Donn&eacute;es : c j : profit par unit&eacute; d activit&eacute; j. b i : disponibilit&eacute; de la ressource i. a ij : consommation de la ressource i par unit&eacute; d activit&eacute; j. Variables : x j : niveau de l activit&eacute; j. y i : valeur d une unit&eacute; de la ressource i. Interpr&eacute;tation de la dualit&eacute; faible z w : profit valeur des ressources Interpr&eacute;tation de la dualit&eacute; forte Le profit maximal est atteint si les ressources ont &eacute;t&eacute; exploit&eacute;es compl&egrave;tement, i.e. jusqu &agrave; &eacute;puisement de leur valeur. Exemple (Dualit&eacute; dans le probl&egrave;me de production de peinture). max z = x +x s.c 6x +x x +x 6 x x +x x, x min w = y +6y +y +y 6y +y y y +y +y +y y, y, y, y x =, x =., z = y =.7, y =., y = y =, w = Le profit augmente de.7 par augmentation d une tonne de M et de. par tonne de M. Les &quot;ressources&quot; et sont abondantes, augmenter ces ressources n apporte aucun profit suppl&eacute;mentaire.. M&eacute;thode simplexe duale Relations primal / dual dans le tableau du simplexe Tableau primal final Tableau dual final Var. en base z x x s s s s Solution z x x 8 s 8 s 8 Var. en base w t t y y y y Solution w y y
+24 Ici, toutes les contraintes dans le primal et dans le dual sont des in&eacute;galit&eacute;s correspondance entre variable originale du primal et variable d &eacute;cart du dual (et vice-versa). Primal x x s s s s Dual t t y y y y Observation : Les valeurs des variables duales sont &eacute;gales &agrave; l oppos&eacute; des profits marginaux des variables correspondantes du primal. Les valeurs des variables primales sont &eacute;gales aux co&ucirc;ts r&eacute;duits des variables correspondantes du dual. Cons&eacute;quence de la compl&eacute;mentarit&eacute; des solutions primale et duale. Th&eacute;or&egrave;me 7. Consid&eacute;rons la paire primale-duale : max s.c. c T x Ax = b x min s.c. b T y A T y c. Pour toute solution de base non d&eacute;g&eacute;n&eacute;r&eacute;e x du primal, il existe une et une seule solution y du dual compl&eacute;mentaire &agrave; x.. x est admissible si et seulement si y satisfait les conditions d optimalit&eacute; (co&ucirc;ts r&eacute;duits non n&eacute;gatifs).. y est admissible si et seulement si x satisfait les conditions d optimalit&eacute; (profits marginaux n&eacute;gatifs ou nuls). D&eacute;monstration. Le dual peut se r&eacute;&eacute;crire sous forme standard : min s.c. b T y A T y t = c t Consid&eacute;rons un ensemble de variables en base B et un ensemble de variables hors base N, tels que la base correspondante est non d&eacute;g&eacute;n&eacute;r&eacute;e : x B = A B b &gt; x N = Par compl&eacute;mentarit&eacute;, t B = et A T B y = c B. D&egrave;s lors, () et () sont des cons&eacute;quences directes. y T = c T BA B, tt B = t T N = (c T N c T BA B A N) Simplexe dual : motivation Il arrive souvent qu une solution en base non admissible, mais satisfaisant les contraintes d optimalit&eacute; soit identifiable facilement (par exemple, variables d &eacute;cart de contraintes ). Cette base correspond &agrave; une solution admissible du dual. Id&eacute;e de la m&eacute;thode simplexe duale : r&eacute;soudre (implicitement) le dual par la m&eacute;thode du simplexe (mais en travaillant sur le tableau primal!) Partir avec une solution de base satisfaisant les conditions d optimalit&eacute; (= base admissible pour le dual) et chercher &agrave; la rendre admissible (= dual optimale).
+25 R&egrave;gles de pivotage (simplexe dual) Variable sortante Choisir la variable l en base avec la valeur minimum (n&eacute;gative). Si b l pour tout l B, solution admissible, STOP. Variable entrante Choisir la variable k hors base telle que k = arg min c i i N:a li &lt; Si a li pour tout i N, probl&egrave;me non admissible, STOP. Exemple 6 (Simplexe dual). Forme standard avec les variables d &eacute;cart en base : a li min z = x +x s.c. x +x x +x 6 x +x x, x min z = x +x s.c. x x +s = x x +s = 6 x +x +s = x, x, s, s, s Var. en base z x x s s s Solution z s s 6 s Var. en base z x x s s s Solution z s x s Var. en base z x x s s s Solution z x x 6 s 6 6 Solveurs et langages de mod&eacute;lisation Exemple 7 (Production de jouets). Une soci&eacute;t&eacute; de jouets produit des trains, des camions et des voitures, en utilisant machines. Les disponibilit&eacute;s quotidiennes des machines sont, 6 et minutes, et les profits par train, camion et voiture sont respectivement EUR, EUR et EUR. Les temps n&eacute;cessaires sur chaque machine sont :
+26 Machine Train Camion Voiture Primal max z = x +x +x s.c. x +x +x x +x 6 x +x x, x, x x = x = x = z = Dual min w = y +6y +y s.c. y +y +y y +y y +y y, y, y y = y = y = Var. en base z x x x s s s Solution z x x s Base : B = {x, x, s }. Solveurs Logiciels pour r&eacute;soudre des programmes lin&eacute;aires : Ind&eacute;pendants : Commerciaux : CPLEX (IBM), XPRESS-MP (http ://www.fico.com/), Gurobi (http ://www.gurobi.com/),... Gratuits : PCx, lpsolve, glpk,... Tableurs : La plupart des tableurs int&egrave;grent un outil de r&eacute;solution de programmes lin&eacute;aires (Excel, Gnumeric,...) Langages de mod&eacute;lisation (ampl, GNU MathProg, mpl, OPL studio, mosel,...) : langages de haut niveau permettant la s&eacute;paration mod&egrave;le/donn&eacute;es, se chargeant de l interface avec un solveur. 6
+27 NAME toys ROWS L R L R L R N R COLUMNS C R C R C R C R C R C R C R C R C R C R RHS B R B R 6 B R ENDATA FIGURE Exemple de production de jouets au format MPS Solveurs ind&eacute;pendants Avantages Puissance, efficacit&eacute; Int&eacute;grables dans des applications via des librairies D&eacute;savantages Formats de fichiers (MPS) Pas de s&eacute;paration mod&egrave;le / donn&eacute;es R&eacute;-utilisation difficile des mod&egrave;les Solveurs int&eacute;gr&eacute;s aux tableurs Avantages Disponibles sur (quasi) tous les ordinateurs Interface facile d utilisation Pr&eacute;sentation des donn&eacute;es / r&eacute;sultats D&eacute;savantages Difficult&eacute; d impl&eacute;menter de grands mod&egrave;les S&eacute;paration mod&egrave;le / donn&eacute;es difficile Solveurs moins efficaces (en g&eacute;n&eacute;ral) Langages de mod&eacute;lisation Avantages S&eacute;paration mod&egrave;le / donn&eacute;es R&eacute;-utilisabilit&eacute; des mod&egrave;les Ind&eacute;pendance mod&egrave;le / solveur 7
+28 # # Data definition # set Toys; param nmachines; set Machines :=..nmachines; param profit {Toys}; param time {Machines,Toys}; param avail {Machines}; # # Variables # var prod {Toys} &gt;= ; # # Objective # maximize total_profit: sum{t in Toys} profit[t]*prod[t]; # # Constraints # subject to machine_usage {m in Machines}: sum{t in Toys} time[m,t] * prod[t] &lt;= avail[m]; FIGURE Exemple de production de jouets au format AMPL (mod&egrave;le) D&eacute;savantages Apprentissage du langage Prix des versions commerciales Limitation en taille des versions d essai gratuites Moindre efficacit&eacute; (actuellement) des solveurs gratuits 8
+29 # # Data # data; set Toys := Trains, Trucks, Cars ; param nmachines := ; param profit := Trains Trucks Cars ; param time : Trains Trucks Cars := ; param avail := 6 ; end; FIGURE Exemple de production de jouets au format AMPL (donn&eacute;es) 9
+30 Troisi&egrave;me partie Le probl&egrave;me de transport 7 D&eacute;finition et exemples Un produit doit &ecirc;tre transport&eacute; de sources (usines) vers des destinations (d&eacute;p&ocirc;ts, clients). Objectif : d&eacute;terminer la quantit&eacute; envoy&eacute;e de chaque source &agrave; chaque destination en minimisant les co&ucirc;ts de transport. Les co&ucirc;ts sont proportionnels aux quantit&eacute;s transport&eacute;es. Contraintes d offre limit&eacute;e aux sources et de demande &agrave; satisfaire au destinations. a Sources Destinations b a b a m m c m n x m n n b n Exemple 8 (Mod&egrave;le de transport). Une firme automobile a trois usines &agrave; Los Angeles, Detroit et New Orleans, et deux centres de distribution &agrave; Denver et Miami. Les capacit&eacute;s des trois usines sont de, et respectivement, et les demandes aux centres de distribution sont de et voitures. Co&ucirc;ts : Denver Miami Los Angeles 8 Detroit 8 New Orleans 68 Formulation min z = 8x +x +x +8x +x +68x s.c. (Los Angeles) x +x = (Detroit) x +x = (New Orleans) x +x = (Denver) x +x +x = (Miami) x +x +x = x, x, x, x, x, x Repr&eacute;sentation tableau
+Montrer encore
+Documents pareils
+Programmation linéaire
+Programmation linéaire DIDIER MAQUIN Ecole Nationale Supérieure d Electricité et de Mécanique Institut National Polytechnique de Lorraine Mathématiques discrètes cours de 2ème année Programmation linéaire
+Plus en détail
+Programmation Linéaire - Cours 2
+Programmation Linéaire - Cours 2 P. Pesneau pierre.pesneau@math.u-bordeaux1.fr Université Bordeaux 1 Bât A33 - Bur 265 Sommaire 1 2 3 Retournons dans le yaourt! Reprenons l exemple du 1er cours Forme normale
+Plus en détail
+La notion de dualité
+La notion de dualité Dual d un PL sous forme standard Un programme linéaire est caractérisé par le tableau simplexe [ ] A b. c Par définition, le problème dual est obtenu en transposant ce tableau. [ A
+Plus en détail
+Introduction. Première partie. 1 Aide à la décision et modèles mathématiques
+Première partie Introduction Aide à la décision et modèles mathématiques Un premier problème Exemple (Achat de billets d avion). Un homme d affaires doit effectuer 5 voyages entre Fayetteville (FYV) à
+Plus en détail
+Programmation linéaire
+1 Programmation linéaire 1. Le problème, un exemple. 2. Le cas b = 0 3. Théorème de dualité 4. L algorithme du simplexe 5. Problèmes équivalents 6. Complexité de l Algorithme 2 Position du problème Soit
+Plus en détail
+Recherche opérationnelle. Programmation linéaire et recherche opérationnelle. Programmation linéaire. Des problèmes de RO que vous savez résoudre
+Recherche opérationnelle Programmation linéaire et recherche opérationnelle Ioan Todinca Ioan.Todinca@univ-orleans.fr tél. 0 38 41 7 93 bureau : en bas à gauche Tentative de définition Ensemble de méthodes
+Plus en détail
+Programmation Linéaire Cours 1 : programmes linéaires, modélisation et résolution graphique
+Programmation Linéaire Cours 1 : programmes linéaires, modélisation et résolution graphique F. Clautiaux francois.clautiaux@math.u-bordeaux1.fr Université Bordeaux 1 Bât A33 Motivation et objectif du cours
+Plus en détail
+La programmation linéaire : une introduction. Qu est-ce qu un programme linéaire? Terminologie. Écriture mathématique
+La programmation linéaire : une introduction Qu est-ce qu un programme linéaire? Qu est-ce qu un programme linéaire? Exemples : allocation de ressources problème de recouvrement Hypothèses de la programmation
+Plus en détail
+Exercices théoriques
+École normale supérieure 2008-2009 Département d informatique Algorithmique et Programmation TD n 9 : Programmation Linéaire Avec Solutions Exercices théoriques Rappel : Dual d un programme linéaire cf.
+Plus en détail
+INFO-F-310 (MATH-H404) Algorithmique et Recherche Opérationnelle. Prof. Yves De Smet (co-titulaire Prof. Bernard Fortz)
+INFO-F-310 (MATH-H404) Algorithmique et Recherche Opérationnelle Prof. Yves De Smet (co-titulaire Prof. Bernard Fortz) Terminologie Recherche Opérationnelle Méthodes quantitatives de gestion Mathématiques
+Plus en détail
+Correction de l épreuve intermédiaire de mai 2009.
+Licence de Gestion. 3ème Année Année universitaire 8-9 Optimisation Appliquée C. Léonard Correction de l épreuve intermédiaire de mai 9. Exercice 1 Avec les notations du cours démontrer que la solution
+Plus en détail
+Souad EL Bernoussi. Groupe d Analyse Numérique et Optimisation Rabat http ://www.fsr.ac.ma/ano/
+Recherche opérationnelle Les démonstrations et les exemples seront traités en cours Souad EL Bernoussi Groupe d Analyse Numérique et Optimisation Rabat http ://www.fsr.ac.ma/ano/ Table des matières 1 Programmation
+Plus en détail
+Optimisation en nombres entiers
+Optimisation en nombres entiers p. 1/83 Optimisation en nombres entiers Michel Bierlaire michel.bierlaire@epfl.ch EPFL - Laboratoire Transport et Mobilité - ENAC Optimisation en nombres entiers p. 2/83
+Plus en détail
+Optimisation linéaire
+Optimisation linéaire Recherche opérationnelle GC-SIE Algorithme du simplexe Phase I 1 Introduction Algorithme du simplexe : Soit x 0 une solution de base admissible Comment déterminer x 0? Comment déterminer
+Plus en détail
+Programmation Linéaire - Cours 1
+Programmation Linéaire - Cours 1 P. Pesneau pierre.pesneau@math.u-bordeaux1.fr Université Bordeaux 1 Bât A33 - Bur 265 Ouvrages de référence V. Chvátal - Linear Programming, W.H.Freeman, New York, 1983.
+Plus en détail
+Plus courts et plus longs chemins
+Plus courts et plus longs chemins Complément au chapitre 8 «Une voiture nous attend» Soit I={1,2,,n} un ensemble de tâches à ordonnancer. La durée d exécution de chaque tâche i est connue et égale à p
+Plus en détail
+Cours de spécialité mathématiques en Terminale ES
+Cours de spécialité mathématiques en Terminale ES O. Lader 2014/2015 Lycée Jean Vilar Spé math terminale ES 2014/2015 1 / 51 Systèmes linéaires Deux exemples de systèmes linéaires à deux équations et deux
+Plus en détail
+INTRODUCTION A L OPTIMISATION
+INTRODUCTION A L OPTIMISATION Les domaines d application L optimisation est essentiellement un outil d aide à la décision au sein de l entreprise, mais aussi pour des individus. Le terme optimal est souvent
+Plus en détail
+Chapitre 5 : Flot maximal dans un graphe
+Graphes et RO TELECOM Nancy A Chapitre 5 : Flot maximal dans un graphe J.-F. Scheid 1 Plan du chapitre I. Définitions 1 Graphe Graphe valué 3 Représentation d un graphe (matrice d incidence, matrice d
+Plus en détail
+Fonctions homographiques
+Fonctions homographiques On donne ci-dessous deux définitions des fonctions homographiques, et on montre que ces deux définitions sont équivalentes. On décrit la courbe représentative d une fonction homographique.
+Plus en détail
+Introduction à la programmation en variables entières Cours 3
+Introduction à la programmation en variables entières Cours 3 F. Clautiaux francois.clautiaux@math.u-bordeaux1.fr Université Bordeaux 1 Bât A33 - Bur 272 Sommaire Notion d heuristique Les algorithmes gloutons
+Plus en détail
+Couplages et colorations d arêtes
+Couplages et colorations d arêtes Complément au chapitre 5 «Une employée mécontente» et au chapitre 9 «L apprentie sudokiste» Considérons n équipes de hockey qui doivent s affronter lors d un tournoi.
+Plus en détail
+Recherche Opérationnelle
+Chapitre 2 : Programmation linéaire (Introduction) Vendredi 06 Novembre 2015 Sommaire 1 Historique 2 3 4 5 Plan 1 Historique 2 3 4 5 La programmation linéaire est un cadre mathématique général permettant
+Plus en détail
+Les graphes d intervalles
+Les graphes d intervalles Complément au chapitre 3 «Vol aux archives cantonales» Considérons un ensemble de tâches ayant chacune une heure de début et une heure de fin bien précises. Supposons qu on demande
+Plus en détail
+Terminale ES Correction du bac blanc de Mathématiques (version spécialité).
+Terminale ES Correction du bac blanc de Mathématiques (version spécialité). Lycée Jacques Monod février 05 Exercice : Voici les graphiques des questions. et.. A 4 A Graphique Question. Graphique Question..
+Plus en détail
+Chapitre 6. Modélisation en P.L.I. 6.1 Lien entre PL et PLI. 6.1.1 Approximation de la PLI
+Chapitre 6 Modélisation en P.L.I. 6.1 Lien entre PL et PLI (P) problème de PL. On restreint les variables à être entières : on a un problème de PLI (ILP en anglais). On restreint certaines variables à
+Plus en détail
+Solutions optimales multiples. 3D.1 Unicité de la solution optimale du modèle (FRB)
+3D Solutions optimales multiples 3D.1 Unicité de la solution optimale du modèle (FRB) Le modèle (FRB) admet une solution optimale unique. En effet (voir page 182), l'algorithme du simplexe se termine par
+Plus en détail
+Le problème de transport
+Quatrième partie Le problème de transport 13 Définition et exemples Un produit doit être transporté de sources (usines) vers des destinations (dépôts, clients). Objectif : déterminer la quantité envoyée
+Plus en détail
+www.almohandiss.com Recherche opérationnelle EXERCICES DE Serveur d'exercices 1/16
+EXERCICES DE RECHERCHE OPERATIONNELLE Serveur d'exercices 1/16 EXERCICE 1. Niveau : Gymnase (Lycée) Auteur : Vincent Isoz (isozv@hotmail.com Mots-clés : recherche opérationnelle Enoncé : Supposons qu'une
+Plus en détail
+Problèmes de transport
+Problèmes de transport formulation des problèmes d affectation Hugues Talbot Laboratoire A2SI 31 mars 2009 Problèmes de Transport Introduction Distribution Théorie Équilibrage Modélisation Plan Solution
+Plus en détail
+Mathématique pour l informatique Examen durée : 3 heures. Question 1. Mettre ce problème en forme standard en introduisant des variables d écarts.
+Mathématique pour l informatique Examen durée : 3 heures. Université de Provence Licence Informatique Année 2001-2002 Exercice 1 (Simplexe : 10 points) On donne le problème de programmation linéaire (P)
+Plus en détail
+Utilisation d EXCEL pour résoudre des problèmes de programmation linéaire
+Utilisation d EXCEL pour résoudre des problèmes de programmation linéaire Introduction Le solveur d'excel est un outil puissance d'optimisation et d'allocation de ressources. Il peut vous aider à déterminer
+Plus en détail
+Cours de mathématiques - Alternance Gea
+Cours de mathématiques - Alternance Gea Anne Fredet 11 décembre 005 1 Calcul matriciel Une matrice n m est un tableau de nombres à n lignes( et m colonnes. 1 0 Par exemple, avec n = et m =, on peut considérer
+Plus en détail
+Points fixes de fonctions à domaine fini
+ÉCOLE POLYTECHNIQUE ÉCOLE NORMALE SUPÉRIEURE DE CACHAN ÉCOLE SUPÉRIEURE DE PHYSIQUE ET DE CHIMIE INDUSTRIELLES CONCOURS D ADMISSION 2013 FILIÈRE MP HORS SPÉCIALITÉ INFO FILIÈRE PC COMPOSITION D INFORMATIQUE
+Plus en détail
+LA PROGRAMMATION LINEAIRE : UN OUTIL DE MODELISATION
+LA PROGRAMMATION LINEAIRE : UN OUTIL DE MODELISATION Dans les leçons précédentes, nous avons modélisé des problèmes en utilisant des graphes. Nous abordons dans cette leçon un autre type de modélisation.
+Plus en détail
+Cours 02 : Problème général de la programmation linéaire
+Cours 02 : Problème général de la programmation linéaire Cours 02 : Problème général de la Programmation Linéaire. 5 . Introduction Un programme linéaire s'écrit sous la forme suivante. MinZ(ou maxw) =
+Plus en détail
+Chapitre 7 : Programmation dynamique
+Graphes et RO TELECOM Nancy 2A Chapitre 7 : Programmation dynamique J.-F. Scheid 1 Plan du chapitre I. Introduction et principe d optimalité de Bellman II. Programmation dynamique pour la programmation
+Plus en détail
+Exercices du Cours de la programmation linéaire donné par le Dr. Ali DERBALA
+75. Un plombier connaît la disposition de trois tuyaux sous des dalles ( voir figure ci dessous ) et il lui suffit de découvrir une partie de chacun d eux pour pouvoir y poser les robinets. Il cherche
+Plus en détail
+Projet informatique «Voyageur de commerce» Résolution approchée par algorithme génétique du problème du voyageur de commerce
+Année 2007-2008 Projet informatique «Voyageur de commerce» Résolution approchée par algorithme génétique du problème du voyageur de commerce B. Monsuez Projet informatique «Voyageur de commerce» Résolution
+Plus en détail
+Le problème des multiplications matricielles enchaînées peut être énoncé comme suit : étant
+Licence informatique - L Année 0/0 Conception d algorithmes et applications (LI) COURS Résumé. Dans cette cinquième séance, nous continuons l exploration des algorithmes de type Programmation Dynamique.
+Plus en détail
+Problèmes de transport et transbordement
+Problèmes de transport et transbordement Résolution Hugues Talbot Laboratoire A2SI 9 avril 2009 Plan Introduction Introduction Solution des problèmes de transport Solution de base initiale Le simplexe
+Plus en détail
+Problème combinatoire sur le réseau de transport de gaz. Nicolas Derhy, Aurélie Le Maitre, Nga Thanh CRIGEN Manuel Ruiz, Sylvain Mouret ARTELYS
+Problème combinatoire sur le réseau de transport de gaz Nicolas Derhy, Aurélie Le Maitre, Nga Thanh CRIGEN Manuel Ruiz, Sylvain Mouret ARTELYS Au programme Présentation du problème Un problème d optimisation
+Plus en détail
+RECHERCHE OPERATIONNELLE
+RECHERCHE OPERATIONNELLE PROBLEME DE L ARBRE RECOUVRANT MINIMAL I - INTRODUCTION (1) Définitions (2) Propriétés, Conditions d existence II ALGORITHMES (1) Algorithme de KRUSKAL (2) Algorithme de PRIM I
+Plus en détail
+LE PROBLEME DU FLOT MAXIMAL
+LE PROBLEME DU FLOT MAXIMAL I Exemple d introduction Deux châteaux d'eau alimentent 3 villes à travers un réseau de canalisations au sein duquel se trouvent également des stations de pompage. Les châteaux
+Plus en détail
+Résumé du chapitre 8 Ressources et interblocage
+Résumé du chapitre 8 Ressources et interblocage Jacques Mossière 12 août 2004 1 Introduction Ce chapitre est consacré à l étude d un problème classique dans les systèmes, l interblocage, c est à dire l
+Plus en détail
+M2 MPRO. Optimisation dans les Graphes 2014-2015
+M2 MPRO Optimisation dans les Graphes 2014-2015 Programmation linéaire et problèmes d'optimisation dans les graphes 1 Problèmes d'optimisation dans les graphes : quelles méthodes pour les résoudre? Théorie
+Plus en détail
+Chapitre 1 : Programmation linéaire
+Graphes et RO TELECOM Nancy 2A Chapitre 1 : Programmation linéaire J.-F. Scheid 1 I. Introduction 1) Modélisation En Recherche Opérationnelle (RO), modéliser un problème consiste à identifier: les variables
+Plus en détail
+Machine de Turing. Informatique II Algorithmique 1
+Machine de Turing Nous avons vu qu un programme peut être considéré comme la décomposition de la tâche à réaliser en une séquence d instructions élémentaires (manipulant des données élémentaires) compréhensibles
+Plus en détail
+(i) Le nombre de travailleurs commencant leur service est positif ou nul : x i 0 i = 1,...,7
+Chapitre 1 Modelisation 11 Exemples de Problèmes 111 La Cafétaria Cafétaria ouverte toute la semaine Statistique sur le personnel requis : Jour Lundi Mardi Mercredi Jeudi Vendredi Samedi Dimanche Nombre
+Plus en détail
+Programmation linéaire et Optimisation. Didier Smets
+Programmation linéaire et Optimisation Didier Smets Chapitre 1 Un problème d optimisation linéaire en dimension 2 On considère le cas d un fabricant d automobiles qui propose deux modèles à la vente, des
+Plus en détail
+Enveloppes convexes dans le plan
+ÉCOLE POLYTECHNIQUE ÉCOLES NORMALES SUPÉRIEURES ÉCOLE SUPÉRIEURE DE PHYSIQUE ET DE CHIMIE INDUSTRIELLES CONCOURS D ADMISSION FILIÈRE MP HORS SPÉCIALITÉ INFO FILIÈRE PC COMPOSITION D INFORMATIQUE B (XECLR)
+Plus en détail
+Fonctions de plusieurs variables
+Module : Analyse 03 Chapitre 00 : Fonctions de plusieurs variables Généralités et Rappels des notions topologiques dans : Qu est- ce que?: Mathématiquement, n étant un entier non nul, on définit comme
+Plus en détail
+TD 3 : Problème géométrique dual et méthode des moindres carrés
+Semestre, ENSIIE Optimisation mathématique 4 mars 04 TD 3 : Problème géométrique dual et méthode des moindres carrés lionel.rieg@ensiie.fr Exercice On considère le programme géométrique suivant : min x>0,y>0
+Plus en détail
+Niveau de production croissant
+En effet, la fonction de production définit : l ensemble de production l ensemble des paniers de facteurs qui permettent de produire un niveau donné de bien. Cette fonction permet de définir des courbes
+Plus en détail
+Projet CLANU en 3GE: Compléments d algèbre linéaire numérique
+Projet CLANU en 3GE: Compléments d algèbre linéaire numérique Année 2008/2009 1 Décomposition QR On rappelle que la multiplication avec une matrice unitaire Q C n n (c est-à-dire Q 1 = Q = Q T ) ne change
+Plus en détail
+Recherche opérationnelle
+Université dulittoral Côte d Opale Master 2 en Sciences Economiques et de Gestion Recherche opérationnelle Daniel DE WOLF Dunkerque, Septembre 2006 Table des matières 1 Laprogrammation linéaire. 7 1.1
+Plus en détail
+CHOIX OPTIMAL DU CONSOMMATEUR. A - Propriétés et détermination du choix optimal
+III CHOIX OPTIMAL DU CONSOMMATEUR A - Propriétés et détermination du choix optimal La demande du consommateur sur la droite de budget Résolution graphique Règle (d or) pour déterminer la demande quand
+Plus en détail
+Cours et applications
+MANAGEMENT SUP Cours et applications 3 e édition Farouk Hémici Mira Bounab Dunod, Paris, 2012 ISBN 978-2-10-058279-2 Table des matières Introduction 1 1 Les techniques de prévision : ajustements linéaires
+Plus en détail
+Programmation avancée
+Programmation avancée Chapitre 1 : Complexité et les ABR (arbres binaires de recherche) 1 1 IFSIC Université de Rennes-1 M2Crypto, octobre 2011 Plan du cours 1 2 3 4 5 6 7 8 9 10 Algorithmes Définition
+Plus en détail
+Chapitre 2 : Représentation des nombres en machine
+Chapitre 2 : Représentation des nombres en machine Introduction La mémoire des ordinateurs est constituée d une multitude de petits circuits électroniques qui ne peuvent être que dans deux états : sous
+Plus en détail
+Étapes du développement et de l utilisation d un modèle de simulation
+Étapes du développement et de l utilisation d un modèle de simulation Étapes du développement et de l utilisation d un modèle de simulation Formulation du problème Cueillette et analyse de données Conception
+Plus en détail
+Partie I Le consommateur et la demande
+Partie I Le consommateur et la demande Chapitre 1 La fonction d utilité 1 Plan du cours 1. Le consommateur. 2. La notion d utilité. 3. Les courbes d indifférence. 4. L optimum du consommateur. 5. Exercices.
+Plus en détail
+Épreuve d informatique 2011
+A 2011 INFO. MP ÉCOLE NATIONALE DES PONTS ET CHAUSSÉES, ÉCOLES NATIONALES SUPÉRIEURES DE L AÉRONAUTIQUE ET DE L ESPACE, DE TECHNIQUES AVANCÉES, DES TÉLÉCOMMUNICATIONS, DES MINES DE PARIS, DES MINES DE
+Plus en détail
+Heuristique et métaheuristique. 8. Optimisation combinatoire et métaheuristiques. Optimisation combinatoire. Problème du voyageur de commerce
+Heuristique et métaheuristique IFT1575 Modèles de recherche opérationnelle (RO) 8. Optimisation combinatoire et métaheuristiques Un algorithme heuristique permet d identifier au moins une solution réalisable
+Plus en détail
+Introduction à la RO
+1 Introduction à la RO Problèmes de flots dans les graphes Cédric BENTZ (CNAM) Christophe PICOULEAU (CNAM) 2 Capacité journalière d'un réseau ferroviaire (1/2) Sur le réseau ferroviaire, on a indiqué sur
+Plus en détail
+Placement de centres logistiques
+Master 1 - Spécialité Androide Année 2014/2015 Module RP Résolution de Problèmes Projet Placement de centres logistiques On considère dans ce projet la résolution du problème de placement de centres logistiques
+Plus en détail
+Sujet 2 : Programmation linéaire: applications et propriétés
+Sujet 2 : Programmation linéaire: applications et propriétés MHT 423 : Modèles et méthodes d optimisation Andrew J. Miller Dernière mise à jour: March 10, 2010 Dans ce sujet... 1 Application : problème
+Plus en détail
+Cours 1: Introduction à l algorithmique
+1 Cours 1: Introduction à l algorithmique Olivier Bournez bournez@lix.polytechnique.fr LIX, Ecole Polytechnique 2011-12 Algorithmique 2 Aujourd hui Calcul de x n Maximum Complexité d un problème Problème
+Plus en détail
+- 06 - LA GESTION DE LA PRODUCTION : PARTIE 1
+- 06 - LA GESTION DE LA PRODUCTION : PARTIE 1 Objectif(s) : o o Pré requis : o o o Contraintes de production, Optimisation de la gestion de la production. Coût de production, Production sous contraintes,
+Plus en détail
+Chapitre 4 : Dualité en programmation linéaire
+Graphes et RO TELECOM Nancy 2A Chapitre 4 : Dualité en programmation linéaire J.-F. Scheid 1 Plan du chapitre 1 Introduction et définitions 2 Propriétés et Théorèmes de dualité 3 Conditions d optimalité
+Plus en détail
+MATHÉMATIQUES FINANCIÈRES I
+MATHÉMATIQUES FINANCIÈRES I Cinquième cours Taux instantané constant Taux instantané constant Date de comparaison Taux instantané constant Date de comparaison Diagramme d entrées et sorties Taux instantané
+Plus en détail
+Patrick Morié, Bernard-Philippe Boyer
+Patrick Morié, Bernard-Philippe Boyer Tsoft et Groupe Eyrolles, 2004, ISBN : 2-212-11418-4 5 - ANALYSE ET SIMULATION 5 MODÈLE ITÉRATIF 1 - NOTION D ITÉRATION Dans certains modèles, il arrive qu une formule
+Plus en détail
+Rappels sur les tableaux et l algorithme du simplexe
+Rappels sur les tableaux et l algorithme du simplexe À tout tableau est associée non seulement une base du problème initial (primal) mais également une base du problème dual. Les valeurs des variables
+Plus en détail
+Le corps R des nombres réels
+Le corps R des nombres réels. Construction de R à l aide des suites de Cauchy de nombres rationnels On explique brièvement dans ce paragraphe comment construire le corps R des nombres réels à partir du
+Plus en détail
+Cours de Mathématiques Seconde. Généralités sur les fonctions
+Cours de Mathématiques Seconde Frédéric Demoulin 1 Dernière révision : 16 avril 007 Document diffusé via le site www.bacamaths.net de Gilles Costantini 1 frederic.demoulin (chez) voila.fr gilles.costantini
+Plus en détail
+Exemple d un modèle de PL. 2. Programmation linéaire a. modélisation. Programmation linéaire (PL) Exemple d un modèle de PL (suite)
+Exemple d un modèle de PL IFT1575 Modèles de recherche opérationnelle (RO). Programmation linéaire a. modélisation Données du problème (Wyndor Glass, sec..1 H&L): Deux types de produits (produit 1, produit
+Plus en détail
+1.1 Définitions... 2 1.2 Opérations élémentaires... 2 1.3 Systèmes échelonnés et triangulaires... 3
+Chapitre 5 Systèmes linéaires 1 Généralités sur les systèmes linéaires 2 11 Définitions 2 12 Opérations élémentaires 2 13 Systèmes échelonnés et triangulaires 3 2 Résolution des systèmes linéaires 3 21
+Plus en détail
+Procédure. Exemple OPÉRATIONS DANS UN SYSTÈME POSITIONNEL
+Opérations dans un système positionnel OPÉRATIONS DANS UN SYSTÈME POSITIONNEL INTRODUCTION Dans tout système de numération positionnel, les symboles sont utilisés de façon cyclique et la longueur du correspond
+Plus en détail
+Chapitre 1 : Évolution COURS
+Chapitre 1 : Évolution COURS OBJECTIFS DU CHAPITRE Savoir déterminer le taux d évolution, le coefficient multiplicateur et l indice en base d une évolution. Connaître les liens entre ces notions et savoir
+Plus en détail
+Mathématiques appliquées à l informatique
+Mathématiques appliquées à l informatique Jean-Etienne Poirrier 15 décembre 2005 Table des matières 1 Matrices 3 1.1 Définition......................................... 3 1.2 Les différents types de matrices.............................
+Plus en détail
+Travaux dirigés n 1. Programmation linéaire
+Université de Reims Champagne Ardenne U.F.R. de Sciences Exactes et Naturelles MASTER 1 Informatique - 2014/2015 Pierre Delisle Travaux dirigés n 1 Programmation linéaire Exercice 1 (Résolution d'un programme
+Plus en détail
+À propos des matrices échelonnées
+À propos des matrices échelonnées Antoine Ducros appendice au cours de Géométrie affine et euclidienne dispensé à l Université Paris 6 Année universitaire 2011-2012 Introduction Soit k un corps, soit E
+Plus en détail
+Systèmes linéaires. 1. Introduction aux systèmes d équations linéaires. Exo7. 1.1. Exemple : deux droites dans le plan
+Exo7 Systèmes linéaires Vidéo partie 1. Introduction aux systèmes d'équations linéaires Vidéo partie 2. Théorie des systèmes linéaires Vidéo partie 3. Résolution par la méthode du pivot de Gauss 1. Introduction
+Plus en détail
+1 Programmation linéaire
+UNIVERSITÉ PARIS OUEST NANTERRE LA DÉFENSE U.F.R. SEGMI Année universitaire 2012 2013 Master d économie Cours de M. Desgraupes Méthodes Numériques Document 4 : Corrigé des exercices d optimisation linéaire
+Plus en détail
+Recherche Opérationnelle Mercredi 06 Novembre 2013 - Contrôle Terminal - Session 1
+Master 2 LT, MPM, MIR Pôle Lamartine - ULCO Recherche Opérationnelle Mercredi 06 Novembre 2013 - Contrôle Terminal - Session 1 Durée de l épreuve : 2h00 Documents interdits. Calculatrice autorisée Exercice
+Plus en détail
+L enseignement de l algorithmique au Lycée
+L enseignement de l algorithmique au Lycée Sisteron 12 novembre 2009 Fernand Didier didier@irem.univ-mrs.fr Approche naïve C est une méthode, une façon systématique de procéder, pour faire quelque chose
+Plus en détail
+Définitions. Numéro à préciser. (Durée : )
+Numéro à préciser (Durée : ) On étudie dans ce problème l ordre lexicographique pour les mots sur un alphabet fini et plusieurs constructions des cycles de De Bruijn. Les trois parties sont largement indépendantes.
+Plus en détail
+Déclassement d'actifs et stock brut de capital
+Extrait de : La mesure du capital - Manuel de l'ocde 2009 Deuxième édition Accéder à cette publication : http://dx.doi.org/10.1787/9789264067752-fr Déclassement d'actifs et stock brut de capital Merci
+Plus en détail
+6.11 Bases de Lanczos bi-orthogonales pour des matrices non symétriques
+Chapitre 6 Méthodes de Krylov 611 Bases de Lanczos bi-orthogonales pour des matrices non symétriques Dans le cas où la matrice A n est pas symétrique, comment peut-on retrouver une matrice de corrélation
+Plus en détail
+Introduction à l étude des Corps Finis
+Introduction à l étude des Corps Finis Robert Rolland (Résumé) 1 Introduction La structure de corps fini intervient dans divers domaines des mathématiques, en particulier dans la théorie de Galois sur
+Plus en détail
+Support du cours de Probabilités IUT d Orléans, Département d informatique
+Support du cours de Probabilités IUT d Orléans, Département d informatique Pierre Andreoletti IUT d Orléans Laboratoire MAPMO (Bât. de Mathématiques UFR Sciences) - Bureau 126 email: pierre.andreoletti@univ-orleans.fr
+Plus en détail
+Licence STIC, Semestre 1 Algorithmique & Programmation 1
+Licence STIC, Semestre 1 Algorithmique & Programmation 1 Exercices Alexandre Tessier 1 Introduction 2 instruction de sortie 3 expressions 4 variable informatique 5 séquence d instructions, trace Exercice
+Plus en détail
+Master Modélisation Statistique M2 Finance - chapitre 1. Gestion optimale de portefeuille, l approche de Markowitz
+Master Modélisation Statistique M2 Finance - chapitre 1 Gestion optimale de portefeuille, l approche de Markowitz Clément Dombry, Laboratoire de Mathématiques de Besançon, Université de Franche-Comté.
+Plus en détail
+Structures de données non linéaires
+Structures de données non linéaires I. Graphes Définition Un graphe (simple) orienté G est un couple (S, A), où : S est un ensemble dont les éléments sont appelés les sommets. A est un ensemble de couples
+Plus en détail
+Plusieurs exercices de la douzième séance de TD
+Plusieurs exercices de la douzième séance de TD Décembre 2006 1 Offre du travail 1.1 énoncé On considère un ménage dont les préférences portent sur la consommation et le temps consacré aux activités non
+Plus en détail
+Théorie des graphes. Introduction. Programme de Terminale ES Spécialité. Résolution de problèmes à l aide de graphes. Préparation CAPES UCBL
+Introduction Ces quelques pages ont pour objectif de vous initier aux notions de théorie des graphes enseignées en Terminale ES. Le programme de Terminale (voir ci-après) est construit sur la résolution
+Plus en détail
+Deuxième partie II ALGORITHMES DANS LES GRAPHES
+Deuxième partie II ALGORITHMES DANS LES GRAPHES Représentation des graphes Représentation en mémoire : matrice d incidence / Matrice d incidence Soit G = (, E) graphe simple non orienté avec n = et m =
+Plus en détail
+PERT GANTT L ordonnancement du travail
+GDP-MEP1 PERT GNTT TYPE RESSOURCE COURS N VERSION 1 01 PERT GNTT L ordonnancement du travail Pour faciliter le suivi des opérations à entreprendre, éviter les oublis et les malentendus, l information doit
+Plus en détail
+Table des matières I La programmation linéaire en variables continues 1 Présentation 3 1 Les bases de la programmation linéaire 5 1.1 Formulation d'un problème de programmation linéaire........... 5 1.2
+Plus en détail
+Leçon N 11 Faire un Album de photo avec ALBELLI 2 ème partie
+Leçon N 11 Faire un Album de photo avec ALBELLI 2 ème partie Vous allez créer avec cette leçon un album de photo avec le logiciel «Albelli livre photo». 2 La préparation Le travail le plus important pour
+Plus en détail
+2018 © DocPlayer.fr Politique de confidentialité | Conditions de service | Feed-back
+To ensure the functioning of the site, we use cookies. We share information about your activities on the site with our partners and Google partners: social networks and companies engaged in advertising and web analytics. For more information, see the Privacy Policy and Google Privacy &amp Terms. Your consent to our cookies if you continue to use this website.
+Necessary cookie Accept

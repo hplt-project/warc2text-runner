@@ -8,5 +8,5 @@
 HTTP 错误 404 - 文件或目录未找到。
 Internet 信息服务 (IIS)
 技术信息（为技术支持人员提供）
-转到 Microsoft 产品支持服务并搜索包括&ldquo;HTTP&rdquo;和&ldquo;404&rdquo;的标题。
-打开&ldquo;IIS 帮助&rdquo;（可在 IIS 管理器 (inetmgr) 中访问），然后搜索标题为&ldquo;网站设置&rdquo;、&ldquo;常规管理任务&rdquo;和&ldquo;关于自定义错误消息&rdquo;的主题。
+转到 Microsoft 产品支持服务并搜索包括“HTTP”和“404”的标题。
+打开“IIS 帮助”（可在 IIS 管理器 (inetmgr) 中访问），然后搜索标题为“网站设置”、“常规管理任务”和“关于自定义错误消息”的主题。

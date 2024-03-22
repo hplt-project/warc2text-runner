@@ -5,10 +5,10 @@ summary | shortlog | log | commit | commitdiff | tree
 (parent: 4783626) | patch
 Add new probes for IPv6 (LeoNerd)
 author
-H.Merijn Brand &lt;merijn@lx09.procura.nl&gt;
+H.Merijn Brand <merijn@lx09.procura.nl>
 Thu, 16 Feb 2012 16:18:59 +0000 (17:18 +0100)
 committer
-H.Merijn Brand &lt;merijn@lx09.procura.nl&gt;
+H.Merijn Brand <merijn@lx09.procura.nl>
 Thu, 16 Feb 2012 16:18:59 +0000 (17:18 +0100)
 commit
 49732c7ecfb38eddaf7f1ec32b2d538376b28f34
@@ -18,7 +18,7 @@ tree | snapshot
 parent
 4783626708d8fcb2d3c34169d7e0fa68822a0942
 commit | diff
-Add&nbsp;new&nbsp;probes&nbsp;for&nbsp;IPv6&nbsp;(LeoNerd)
+Add new probes for IPv6 (LeoNerd)
 U/modified/d_socket.U
 diff | blob | blame | history
 perl5 metaconfig repository

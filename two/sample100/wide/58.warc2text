@@ -4,13 +4,13 @@ txt
 re
 knowing is obsolete :: regular expression generator
 (perl php python java javascript coldfusion c c++ ruby vb vbscript j# c# c++.net vb.net)
-&nbsp;
-&nbsp;
-&nbsp;
+ 
+ 
+ 
 Enter the string that you want to use a regular expression on:
 1
-&nbsp;&nbsp;&nbsp;
-&nbsp;
+   
+ 
 Select the elements that you want to extract to run regular expression generator:
 2
 0
@@ -99,10 +99,10 @@ c
 _
 ws
 _
-&quot;
+"
 c
 &nbsp
-&quot;
+"
 T
 c
 &nbsp
@@ -228,37 +228,37 @@ Example
 c
 &nbsp
 !
-&quot;
+"
 c
 &nbsp
-&quot;
+"
 string
-&quot;This_is_an_Example!&quot;
-&lt;&nbsp;Source&nbsp;String
-What to click?&nbsp;&nbsp;
+"This_is_an_Example!"
+< Source String
+What to click?  
 extract any integer in this position
 extract this integer (2006) in this position
-&nbsp;
+ 
 3
 Perl regular expression program that extracts the selected elements from the entered string:
-[Perl]&nbsp;
-PHP&nbsp;
-Python&nbsp;
-Java&nbsp;
-Javascript&nbsp;
-ColdFusion&nbsp;
-C&nbsp;
-C++&nbsp;
-Ruby&nbsp;
-VB&nbsp;
-VBScript&nbsp;
-J#.net&nbsp;
-C#.net&nbsp;
-C++.net&nbsp;
-VB.net&nbsp;
-&nbsp; #!/usr/bin/perl # URL that generated this code: # http://txt2re.com/index.php3?s=03:Jun:2017%20%22This%20is%20an%20Example!%22&-37&17&4 $txt='03:Jun:2017&nbsp;&quot;This&nbsp;is&nbsp;an&nbsp;Example!&quot;'; $re1='.*?'; # Non-greedy match on filler $re2='(s)'; # Any Single Word Character (Not Whitespace) 1 $re3='.*?'; # Non-greedy match on filler $re4='(?:[a-z][a-z0-9_]*)'; # Uninteresting: var $re5='.*?'; # Non-greedy match on filler $re6='((?:[a-z][a-z0-9_]*))'; # Variable Name 1 $re7='.*?'; # Non-greedy match on filler $re8='((?:[a-z][a-z0-9_]*))'; # Variable Name 2 $re=$re1.$re2.$re3.$re4.$re5.$re6.$re7.$re8; if ($txt =~ m/$re/is) { &nbsp;&nbsp;&nbsp;&nbsp;$w1=$1; &nbsp;&nbsp;&nbsp;&nbsp;$var1=$2; &nbsp;&nbsp;&nbsp;&nbsp;$var2=$3; &nbsp;&nbsp;&nbsp;&nbsp;print "($w1) ($var1) ($var2) \n"; } #----- # Paste the code into a new perl file. Then in Unix: # $ perl x.pl #-----
+[Perl] 
+PHP 
+Python 
+Java 
+Javascript 
+ColdFusion 
+C 
+C++ 
+Ruby 
+VB 
+VBScript 
+J#.net 
+C#.net 
+C++.net 
+VB.net 
+  #!/usr/bin/perl # URL that generated this code: # http://txt2re.com/index.php3?s=03:Jun:2017%20%22This%20is%20an%20Example!%22&-37&17&4 $txt='03:Jun:2017 "This is an Example!"'; $re1='.*?'; # Non-greedy match on filler $re2='(s)'; # Any Single Word Character (Not Whitespace) 1 $re3='.*?'; # Non-greedy match on filler $re4='(?:[a-z][a-z0-9_]*)'; # Uninteresting: var $re5='.*?'; # Non-greedy match on filler $re6='((?:[a-z][a-z0-9_]*))'; # Variable Name 1 $re7='.*?'; # Non-greedy match on filler $re8='((?:[a-z][a-z0-9_]*))'; # Variable Name 2 $re=$re1.$re2.$re3.$re4.$re5.$re6.$re7.$re8; if ($txt =~ m/$re/is) {     $w1=$1;     $var1=$2;     $var2=$3;     print "($w1) ($var1) ($var2) \n"; } #----- # Paste the code into a new perl file. Then in Unix: # $ perl x.pl #-----
 &nbsp
-&nbsp;
-&nbsp;&nbsp;home&nbsp;&nbsp;
-&nbsp;&nbsp;faq&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &copy;2006 mark james ennis&nbsp;&nbsp;
+ 
+  home  
+  faq  
+           ©2006 mark james ennis  

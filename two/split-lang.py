@@ -22,9 +22,9 @@ class LangWriter():
             pass
         self.compressor = zstandard.ZstdCompressor(level=9, threads=4)
         self.writer = None
-        self.new_batch()
+        self.new_split()
 
-    def new_batch(self):
+    def new_split(self):
         if self.writer:
             self.writer.close()
         self.bytes_written = 0
@@ -37,7 +37,7 @@ class LangWriter():
     # Write bytes to the shard, if max size is reached, open a new batch
     def write(self, text_bytes):
         if self.bytes_written >= self.MAX_SIZE:
-            self.new_batch()
+            self.new_split()
         self.writer.write(text_bytes)
         self.bytes_written += len(text_bytes)
 

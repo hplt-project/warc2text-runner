@@ -1,0 +1,195 @@
+-
+09-08-2013, 07:32 AM #1
+- Join Date
+- Dec 2012
+- Location
+- UK
+- Posts
+- 1,478
+- Likes
+- 704
+- Liked 575 Times in 438 Posts
+- Feedback Score
+- 0
+- Downloads
+- 1
+- Uploads
+- 0
+CFW Cheat PKG and EBOOT request thread.
+Post you requests for cheat eboots and PKGs here, may take time to get back to you as I'm busy with work.
+Game ID and Update version required in all requests.
+If anyone wants to have a go at editing their own EBOOTs for swapping with their game EBOOT or making into an update PKG, I've put together a pack with what you need and a guide here:
+http://www.mediafire.com/?i7gvhy2za1...ing_Cheats.zip
+-
+The Following 8 Users Like This Post:
+-
+09-08-2013, 08:01 AM #2
+- Join Date
+- Jun 2013
+- Location
+- High In the Clouds
+- Age
+- 13
+- Posts
+- 889
+- Likes
+- 562
+- Liked 268 Times in 188 Posts
+- Feedback Score
+- 0
+- Downloads
+- 16
+- Uploads
+- 0
+Is it possible to make one for Madden 25 I fail been tryn dnt know if possible just like max stats
+-
+09-08-2013, 10:10 AM #3
+- Join Date
+- Dec 2012
+- Location
+- UK
+- Posts
+- 1,478
+- Likes
+- 704
+- Liked 575 Times in 438 Posts
+- Feedback Score
+- 0
+- Downloads
+- 1
+- Uploads
+- 0
+-
+The Following User Likes This Post:
+-
+09-09-2013, 03:32 AM #4
+- Join Date
+- Dec 2012
+- Location
+- Tehran
+- Posts
+- 24
+- Likes
+- 3
+- Liked 0 Times in 0 Posts
+- Feedback Score
+- 0
+- Downloads
+- 0
+- Uploads
+- 0
+please dark souls BLES01765
+inf hp
+-
+09-09-2013, 04:42 AM #5
+- Join Date
+- Dec 2012
+- Location
+- UK
+- Posts
+- 1,478
+- Likes
+- 704
+- Liked 575 Times in 438 Posts
+- Feedback Score
+- 0
+- Downloads
+- 1
+- Uploads
+- 0
+-
+09-09-2013, 04:43 AM #6
+- Join Date
+- Aug 2011
+- Posts
+- 537
+- Likes
+- 431
+- Liked 284 Times in 179 Posts
+- Feedback Score
+- 0
+- Downloads
+- 5
+- Uploads
+- 0
+how about inf. health for mass effect 1 and 2? haven't been able to find that anywhere...
+blus30650 and blus31139
+Last edited by rednkecowboy; 09-09-2013 at 04:45 AM.
+-
+09-10-2013, 10:52 PM #7
+- Join Date
+- Feb 2012
+- Posts
+- 43
+- Likes
+- 14
+- Liked 4 Times in 4 Posts
+- Feedback Score
+- 0
+- Downloads
+- 1
+- Uploads
+- 0
+can you compile this to .pkg please
+Code:
+BLES01921 OGP 93C30008E80100C0 COP 4888D808E80100C0 OGP 3939000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 COP 393900003FC04C0093C300084B7728003B0000003B18F0007F1828502C18000E4182FFE42C18000F4182FFDC2C1800104182FFD42C1800114182FFCC2C1800404182FFC42C1800494182FFBC2C180037408200083BC000012C180038408200083BC000014BFFFFA4
+Last edited by vosszaa; 09-10-2013 at 10:55 PM.
+-
+09-11-2013, 12:14 AM #8
+- Join Date
+- Dec 2012
+- Location
+- UK
+- Posts
+- 1,478
+- Likes
+- 704
+- Liked 575 Times in 438 Posts
+- Feedback Score
+- 0
+- Downloads
+- 1
+- Uploads
+- 0
+vosszaa :
+http://rghost.net/48685638
+************* [ - Post Merged - ] *************
+rednkecowboy , will keep trying.
+-
+The Following 2 Users Like This Post:
+-
+09-11-2013, 12:53 AM #9
+- Join Date
+- Feb 2012
+- Posts
+- 43
+- Likes
+- 14
+- Liked 4 Times in 4 Posts
+- Feedback Score
+- 0
+- Downloads
+- 1
+- Uploads
+- 0
+-
+The Following User Likes This Post:
+-
+09-11-2013, 04:07 AM #10
+- Join Date
+- Feb 2012
+- Posts
+- 43
+- Likes
+- 14
+- Liked 4 Times in 4 Posts
+- Feedback Score
+- 0
+- Downloads
+- 1
+- Uploads
+- 0
+The last .pkg still missing one of the cheat option. Can you re-compile please =3
+Code:
+BLES01921 OGP 93C30008E80100C0 COP 4888D808E80100C0 OGP 3939000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 COP 393900003FC04C0093C300084B7728003B0000003B18F0007F1828502C18000E4182FFE42C18000F4182FFDC2C1800104182FFD42C1800114182FFCC2C1800404182FFC42C1800494182FFBC2C180037408200083BC000012C180038408200083BC000014BFFFFA4 OGP 93C30008E80100C0 COP 4888D824E80100C0 OGP 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006C000000 COP 8B0300072C180086408200083FC050004800002C2C1B7FFF408100242C1D020C4180000C2C1D021C4081FFD82C1D02004182FFD02C1D06284182FFD493C300084B7727B40000000000000000000000000000000000000000000000000000000000000000000000006C000000
+Last edited by vosszaa; 09-11-2013 at 06:55 AM.

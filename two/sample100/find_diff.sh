@@ -1,0 +1,1 @@
+for c in CC wide; do for x in `seq 1 100`; do echo -n $x; diff <(tr -d ' '<$c/$x.MIN_EXTRACTED_SIZE_0.txt) <(tr -d ' '<$c/$x.no_fallback_False.txt) |wc; done | grep -v "0$" |cut -f 1 -d ' ' >$c.MIN_EXTRACTED_SIZE_0_vs_.no_fallback_False.txt ; done

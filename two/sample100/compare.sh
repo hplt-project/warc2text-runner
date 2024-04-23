@@ -1,2 +1,4 @@
-export C=$1; 
-for X in `cat $C.MIN_EXTRACTED_SIZE_0_vs_.no_fallback_False.txt`; do open $C/$X.html; vimdiff $C/$X.MIN_EXTRACTED_SIZE_0.txt $C/$X.no_fallback_False.txt ; done
+C=$1
+S1=$2
+S2=$3
+for X in `cat $C.${S1}_vs_${S2}`; do open $C/$X.html; vimdiff $C/$X.${S1} $C/$X.${S2} ; done

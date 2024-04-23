@@ -9,9 +9,22 @@ import codecs
 import traceback
 from trafilatura.settings import use_config
 from timeit import default_timer as timer
+import signal
+from contextlib import contextmanager, nullcontext
+
+@contextmanager
+def time_limit(seconds):
+    def signal_handler(signum, frame):
+        raise TimeoutError("Timed out!")
+    signal.signal(signal.SIGALRM, signal_handler)
+    signal.setitimer(signal.ITIMER_REAL, seconds)
+    try:
+        yield
+    finally:
+        signal.setitimer(signal.ITIMER_REAL, 0)
 
 
-def traf(instream, fast_mode, decoding_errors, min_extracted_size=0):
+def traf(instream, fast_mode, decoding_errors, min_extracted_size=0, timelimit_perdoc=None):
     trafilatura_options = {"include_comments": False, "include_tables": False, "no_fallback": fast_mode}
     config = use_config()
     config.set("DEFAULT", "MIN_EXTRACTED_SIZE", str(min_extracted_size))
@@ -32,7 +45,11 @@ def traf(instream, fast_mode, decoding_errors, min_extracted_size=0):
             try:
                 d = json.loads(line.strip())
                 html = d['h']
-                text = trafilatura.extract(html, config=config, **trafilatura_options)
+                with time_limit(timelimit_perdoc) if timelimit_perdoc else nullcontext():
+                    text = trafilatura.extract(html, config=config, **trafilatura_options)
+            except TimeoutError as e:
+                errors.append(f'Trafilatura timed out: {timelimit_perdoc}s')
+                text = None
             except Exception as e:
                 errors.append(traceback.format_exc())
                 text = None
@@ -41,7 +58,8 @@ def traf(instream, fast_mode, decoding_errors, min_extracted_size=0):
         print(json.dumps({'t': text, 'e': errors, 'dur': f'{dur:.1e}'}))
 
 
-def main(fpath: str = '-', fast_mode: bool = False, decoding_errors: str = 'ignore', min_extracted_size: int = 0):
+def main(fpath: str = '-', fast_mode: bool = False, decoding_errors: str = 'ignore', min_extracted_size: int = 0,
+         timelimit_perdoc: float = None):
     """
     Extracts texts from HTMLs using Trafilatura library.
     Reads jsonlines with "h" field containing HTMLs from stdin or file. Writes jsonlines to stdout containing text
@@ -57,10 +75,11 @@ def main(fpath: str = '-', fast_mode: bool = False, decoding_errors: str = 'igno
     to a simple baseline extraction algorithm (that almost doesn't remove boilerplate and performs poorly according
     to the evaluation in the whitepaper). Recommended to keep the default value of 0 to keep boilerplate removed for
     short pages.
+    :param timelimit_perdoc: sets maximum time (in seconds) for processing 1 document with Trafilatura
     """
 
     with sys.stdin.buffer if fpath == '-' else io.BufferedReader(zstandard.open(fpath, 'rb')) as inp:
-        traf(inp, fast_mode, decoding_errors, min_extracted_size)
+        traf(inp, fast_mode, decoding_errors, min_extracted_size, timelimit_perdoc)
 
 
 fire.Fire(main)

@@ -9,6 +9,7 @@ import sys
 
 import fasttext
 import regex
+from patterns import nonword_replace_pattern  # saves recompiling
 
 
 class FastTextLangId:
@@ -28,10 +29,10 @@ class FastTextLangId:
         self.model = fasttext.load_model(model_path)
 
     def _preproccess_text(self, text: str) -> str:
-        """Preprocesses the text for lang ID."""
+        """Preprocesses a single line of text for lang ID."""
 
         text = text.replace("\n", " ").strip()
-        return regex.sub
+        return regex.sub(nonword_replace_pattern, '', text)
         
 
     def _postprocess_prediction(self, prediction: tuple) -> str:
@@ -76,7 +77,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Predict language using FastText model.")
     parser.add_argument(
         "--model_path",
-        default="models/lid201-model.bin",
+        default="models/lid193_merged_arabics.bin",
         help="Path to the FastText model file",
     )
 

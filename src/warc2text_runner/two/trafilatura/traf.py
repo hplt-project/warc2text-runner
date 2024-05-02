@@ -8,6 +8,7 @@ import zstandard
 import codecs
 import traceback
 from trafilatura.settings import use_config
+from trafilatura.utils import load_html
 from timeit import default_timer as timer
 import signal
 from contextlib import contextmanager, nullcontext
@@ -22,6 +23,16 @@ def time_limit(seconds):
         yield
     finally:
         signal.setitimer(signal.ITIMER_REAL, 0)
+
+
+def contains1(tree, tag, attr, value_regex):
+
+    tree.xpath(f".//{tag}[re:match(@{attr},'{value_regex}')]", namespaces={'re': "http://exslt.org/regular-expressions"})
+
+
+def contains2(tree, tag, attr, value_regex):
+
+    tree.iterfind(f".//{tag}[@{attr}]")
 
 
 def traf(instream, fast_mode, decoding_errors, min_extracted_size=0, timelimit_perdoc=None):
@@ -46,7 +57,9 @@ def traf(instream, fast_mode, decoding_errors, min_extracted_size=0, timelimit_p
                 d = json.loads(line.strip())
                 html = d['h']
                 with time_limit(timelimit_perdoc) if timelimit_perdoc else nullcontext():
-                    text = trafilatura.extract(html, config=config, **trafilatura_options)
+                    tree = load_html(html)
+                    text = trafilatura.extract(tree, config=config, **trafilatura_options)
+                    # contains1(tree)
             except TimeoutError as e:
                 errors.append(f'Trafilatura timed out: {timelimit_perdoc}s')
                 text = None
@@ -82,4 +95,5 @@ def main(fpath: str = '-', fast_mode: bool = False, decoding_errors: str = 'igno
         traf(inp, fast_mode, decoding_errors, min_extracted_size, timelimit_perdoc)
 
 
-fire.Fire(main)
+if __name__ == '__main__':
+    fire.Fire(main)

@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "warc2text-runner"
+version = "2.0.0"
+dependencies = [
+    "trafilatura==1.8.0",
+    "lxml==5.1.1",
+    "lxml-html-clean==0.1.0",
+    "ujson==5.4.0",
+    "zstandard==0.22.0",
+    'importlib-metadata; python_version>="3.10"',
+    "fire"
+]
+
+[tool.setuptools.packages.find]
+# All the following settings are optional:
+where = ["src"]  # ["."] by default
+
+[project.scripts]
+traf = "warc2text_runner.two.trafilatura.traf:main"
+
+[tool.setuptools]
+script-files = ["src/warc2text_runner/two/run_traf.sh", "src/warc2text_runner/two/run_stage2_local.sh","src/warc2text_runner/two/run_stage2_nodeparallel.sh"]
+

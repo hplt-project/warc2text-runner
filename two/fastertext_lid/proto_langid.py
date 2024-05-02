@@ -8,8 +8,7 @@ import ujson as json
 import sys
 
 import fasttext
-from unicodedata import normalize as unicode_normalize  # might not be needed
-from patterns import SMILEY_NUMS_PATTERN, EMOJIS_PATTERN
+import regex
 
 
 class FastTextLangId:
@@ -18,7 +17,6 @@ class FastTextLangId:
     def __init__(self, model_path: str) -> None:
         """
         Init the FastText model.
-        TODO: this needs to call the C++ version if you want Kenneth's fastertext improvements
 
         To download the model, run the following commands:
         wget https://data.statmt.org/lid/lid193_merged_arabics.bin
@@ -32,10 +30,9 @@ class FastTextLangId:
     def _preproccess_text(self, text: str) -> str:
         """Preprocesses the text for lang ID."""
 
-        #return text.replace("\n", " ").strip()
-        normed =  unicode_normalize("NFKC", text).replace("\n", " ").strip()
-        nomoji = EMOJIS_PATTERN.sub("", normed)
-        return SMILEY_NUMS_PATTERN.sub("", nomoji)
+        text = text.replace("\n", " ").strip()
+        return regex.sub
+        
 
     def _postprocess_prediction(self, prediction: tuple) -> str:
         """Postprocesses the prediction."""

@@ -1,0 +1,165 @@
+Poluarea si Protectia MediuluiCurs / Geografie
+- Punctele reprezinta moneda de schimb a site-lui.
+- Ai nevoie de ele ca sa downloadezi documente si le poti primi incarcand documente pe site.
+- Daca nu vrei sau nu poti face asta, punctele se pot cumpara foarte usor prin SMS, Card sau PayPal.
+- Click pentru mai multe detalii.
+Din cuprins:
+POLUAREA MEDIULUI
+1. GENERALITAŢI (etimologie, termeni, definiţie) 2
+1.1 Tipuri de poluare 4
+1.2 Praguri de toxicitate a poluanţilor 7
+1.3 Concentrarea poluanţilor în organismele vii şi la om 8
+2. POLUAREA ATMOSFEREI
+2.1 Poluarea fizică a atmosferei 10
+2.2. Poluarea chimică a atmosferei 15
+2.3 Poluarea biologică a aerului 21
+2.4 Poluarea aerului din interiorul construcţiilor 22
+2.5 Procese naturale de epurare a atmosferei 23
+2.6 Prevenirea poluării atmosferei 24
+2.7 Poluarea aerului în românia 24
+3. POLUAREA SOLULUI
+3.1 Poluarea cu pesticide 26
+3.2 Poluarea cu îngraşaminte chimice 28
+3.3 Poluarea cu metale grele şi ape reziduale 28
+3.4 Poluarea radioactivă 29
+3.5 Poluarea biologică 29
+3.6 Modalitati de evaluare a poluării solului 29
+4. POLUAREA APELOR
+4.1 Poluarea naturală 32
+4.2 Poluarea artificială 32
+4.2.1 Poluarea fizică 33
+4.2.2 Poluarea chimică 34
+4.2.3 Poluarea biologica a apelor 38
+4.2.4 Poluarea apelor subterane 38
+4.2.5 Autoepurarea apelor 41
+4.2.6 Tehnici de depoluare a apelor 41
+4.2.7 Poluarea apelor în România 42
+5. POLUAREA CU DEŞEURI
+5.1 Producerea deşeurilor 45
+5.1.1 Deşeuri industriale 46
+5.1.2 Deşeuri agricole 47
+5.2. Managementul Deşeurilor 47
+5.2.1. Depozitarea în gropi sanitare 47
+5.2.2. Incinerarea deşeurilor 48
+5.2.3. Injectări în litosferă 49
+2
+5.2.4. Depozitarea în ocean 49
+5.2.5. Reutilizarea sau reciclarea deşeurilor 49
+5.3 Deseuri radioactive 50
+5.3.1. Surse de deşeuri radioactive 51
+5.3.2. Tratarea şi reciclarea deşeurilor radioactive 51
+6. POLUAREA PRIN ACCIDENTE TEHNOLOGICE 52
+7. POLUAREA REGIONALĂ, TRANSFRONTALIERA SI GLOBALĂ 53
+8. FENOMENE METEOROLOGICE PROVOCATE DE POLUARE 53
+8.1 Deteriorarea stratulzui de ozon 54
+8.2 Smogul fotochimic 57
+8.3 Ploile acide 58
+8.4. Efectul de seră 60
+9. SISTEME DE SUPRAVEGHERE A POLUĂRII MEDIULUI 62
+10. IGIENA MEDIULUI 63
+11. IMPACTUL TURISMULUI ASUPRA MEDIULUI 65
+12PROTECTIA MEDIULUI 69
+Bibliografie
+Extras din document:
+INTRODUCERE
+Variabilitatea temporală şi spaţială a elementelor de mediu este o realitate. Apariţia
+componentei socio – umane a mediului înconjurător a introdus o noua dimensiune în cadrul
+acestuia, dimensiune care se dezvoltă pe măsura cresterii populaţiei şi a amplificării procesului
+industrial. Intervenţiile asupra geosistemelor au generat efecte uneori cunoscute şi previzibile,
+alteori nici măcar bănuite.
+Indicatorii de mediu demonstrează că majoritatea condiţiilor fizice ale Terrei se
+degradează permanent. Cel mai important indicator al sănătăţii planetei - scaderea numărului de
+specii de plante şi animale - este în regres. În continentul Nord American au dispărut 37,5 % din
+numărul de specii de peşti de apă dulce, fenomen care are la bază o dublă cauză: necesarul sporit
+de apă dulce preluată din râuri şi poluarea acestora.
+În ansamblul său starea planetei s-a degradat alarmant, iar procesul continuă. Cei mai
+mulţi dintre factorii care determinat această stare sunt cunoscuţi, în timp ce procesele complexe
+care o generează sunt doar în parte elucidate. Începând de la la jumătatea secolului trecut s-au
+intensificat exponenţial trei tendinţe distincte care au contribuit direct la intensificarea
+presiuniilor exercitate asupra mediilor naturale:
+• cresterea populaţiei;
+• cresterea explosivă a producţiei economice mondiale;
+• distribuţia veniturilor.
+Nici una dintre cauzele enumerate nu a avut o tendinţă constantă de evoluţie, deoarece
+nici una dintre ele nu poate evolua independent. Fiecare este nemijlocit legată de celelalte şi în
+primul rând de limitele naturii. Fiecare generează poluare, iar poluarea determină ieşirea
+factorilor de mediu din starea de echilibru dinamic şi stabilirea altor echilibre, cu efecte
+dăunătoare asupra vieţii.
+Din punct de vedere termodinamic, starea unui sistem poate fi descrisă de către o sumă
+de parametri fizico-chimici, variabili în timp şi spaţiu. Cu cât sistemul este mai complex, cu atât
+este nevoie de mai mulţi parametri pentru a-l putea defini. Mediul natural poate fi caracterizat cu
+ajutorul principiilor termodinamicii.
+Proprietăţile termodinamice ale unui sistem natural, care depind numai de starea lui la un
+moment dat, nu şi de drumul parcurs pentru atingerea acelei stări, poartă denumirea de funcţii de
+stare. Fiecare dintre geosfere este rezultatul unor procese complexe petrecute pe durata câtorva
+miliarde de ani. Proprietăţile termodinamice ale geosferelor pot fi intensive sau extensive.
+Proprietăţile extensive sunt proporţionale cu cantităţile de substanţe din sistem, iar
+aceasta înseamnă că sunt aditive, adică proprietăţile extensive totale ale sistemului se obţin prin
+însumarea proprietăţilor extensive ale constituenţilor individuali. Rezultă că proprietăţile
+extensive ale planetei sunt date de mărimile tipice ale fiecărei geosfere (masă, energie, volum).
+Pe de altă parte proprietăţile intensive precum temperatura sau presiunea, nu depind de
+cantitatea de substanţă din sistem. Într-un moment dat, proprietăţile intensive şi extensive ale
+unui sistem se află într-un echilibru care poate fi considerat stabil.
+Dacă starea sistemului se schimbă, se poate spune că a avut loc un proces termodinamic
+ca de exemplu producerea precipitaţiilor atmosferice, declanşarea unei alunecări de teren, un
+incendiu devastator, etc. Fiecare proces termodinamic se desfăsoară până la starea în care nu mai
+este posibilă nici o transformare, când toate mărimile termodinamice rămân constante. Această
+stare poartă denumirea de echilibru termodinamic. Un echilibru perfect poate fi atins numai în
+sistemele izolate.
+Într-un sistem deschis, aflat în echilibru termodinamic, o schimbare minoră a uneia dintre
+funcţiile de stare declanşează un proces termodinamic care se poate produce cu sens diferit.
+De ex., într-un sistem noros în care există un amestec de vapori de apă şi gheaţă, o
+4
+creştere a temperaturii aerului va determina transformarea gheţii în apă, iar o scădere a
+temperaturii va produce creşterea cantităţii de gheaţă.
+Starea de echilibru dinamic a factorilor de mediu este precară. Sensibilitatea factorilor de
+mediu la impulsuri naturale sau datorate activităţii antropice face ca starea de dezechilibru să se
+instaleze rapid. Omul sustrage permanent din natura cantitati tot mai mari de substanta şi energie
+pe care le transforma şi le utilizeaza în beneficiu propriu. Acest proces este lent, constant. şi se
+desvolta exponential. Reziduurile proceselor de prelucrare a substantelor sustrase din natura, sau
+chiar o parte din aceste produse sunt returnate sub diferite forme în mediu, poluîndu-l. Emisiile
+de poluanţi, indiferent de natura lor, acţionează ca impulsuri în mediu şi declanşează procese
+termodinamice în urma cărora sunt necesare noi echilibrări, care conduc la o altă stare de mediu,
+diferită de cea anterioară. Un exemplu elocvent la scara sistemului planetei îl constituie creşterea
+concentraţiei gazelor cu efect de seră resimţită în mediu prin tendinţa de creştere a temperaturii
+globale.
+Ignorarea acestor procese agravează şi mai mult dezechilibrele din natură. In absenţa
+unor măsuri de ordin legislativ şi educaţional şi a conştientizării populaţiei referitor la situaţia
+actuală a mediului înconjurător, starea acestuia se va deteriora în continuare. Cunoaşterea
+proceselor complexe generatoare de dezechilibre reprezintă premisa necesară pentru limitarea lor
+şi pentru proiectarea măsurilor de conservare şi protecţie a mediului.
+POLUAREA MEDIULUI
+1. GENERALITAŢI (etimologie, termeni, definiţie)
+Etimologic, termenul poluare provine din latinescul polluere = a murdări a pângări, a
+polua şi s-a folosit iniţial pentru a defini numai rezultatul unei acţiuni umane a cărei consecinţă a
+fost degradarea propriului mediu de viaţă. Ulterior sensul a fost extins şi asupra unor procese
+naturale al căror efect este identic. Prin urmare, poaluarea poate fi naturală şi artificială, ultima
+deţinând cea mai mare pondere.
+O primă definiţie a poluării a fost dată la Conferinţa Mondială ONU asupra mediului (1972),
+definiţie ce consideră poluarea drept „modificarea componentelor naturale sau prezenţa unor
+componente străine, ca urmare a activităţii omului şi care provoacă prin natura lor, prin
+concentraţia în care se găsesc şi prin timpul cât acţionează, efecte nocive asupra sănătăţii,
+crează disconfort sau împietează asupra diferitelor utilizări ale mediului la care acesta putea
+servi în forma sa anterioară”. Prin această definiţie se recunoaşte oficial faptul că cea mai
+intensă poluare este consecinţa activităţii antropice.
+La modul general, poluarea poate fi definita ca “totalitatea proceselor prin care se
+introduc în mediu, direct sau indirect, materie sau energie cu efecte dăunatoare sau nocive care
+alterează ecosistemele, diminuează resursele biologice şi pun în pericol sănătatea omulu. în
+sensul definit mai sus, prin poluant se înţelege un factor (materie sau energie) care introdus în
+mediu într - o cantitate care depăşeşte o limită care poate fi suportată de una sau mai multe specii
+de vieţuitoare, sau de către om, împiedică dezvoltarea normală a acestora. Activitatea umană
+produce poluare, indiferent de domeniul în care se desfăşoară. În perioada anterioară revoluţiei
+industriale, aproape toate produsele care produceau poluare erau de natură organică şi relativ
+reduse cantitativ, deci puteau fi uşor transformate prin procesul de biodegradare.
+Fisiere in arhiva: (1)
+- Poluarea si Protectia Mediului.pdf
+Previzualizare pagini (71):
+Alte informatii:
+UNIVERSITATEA SPIRU HARET Facultatea de Geografie
+Documente similare:
+Referatul contine 14 pagini in format doc cu o marime totala de 31.61 KB.
+Proiectul contine 212 pagini in format doc cu o marime totala de 1.13 MB.
+Cursul contine 178 pagini in format doc cu o marime totala de 304.07 KB.
+Cursul contine 43 pagini in format pdf cu o marime totala de 894.29 KB.
+Referatul contine 11 pagini in format doc cu o marime totala de 17.9 KB.
+Proiectul contine 29 pagini in format doc cu o marime totala de 663.52 KB.

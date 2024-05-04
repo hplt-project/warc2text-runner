@@ -5,13 +5,13 @@ import ujson as json
 import trafilatura
 import fire
 import zstandard
-import codecs
 import traceback
 from trafilatura.settings import use_config
 from trafilatura.utils import load_html
 from timeit import default_timer as timer
 import signal
 from contextlib import contextmanager, nullcontext
+from warc2text_runner.two.tagfilter.tagfilter1 import TagFilter1 as TagFilter
 
 @contextmanager
 def time_limit(seconds):
@@ -25,17 +25,7 @@ def time_limit(seconds):
         signal.setitimer(signal.ITIMER_REAL, 0)
 
 
-def contains1(tree, tag, attr, value_regex):
-
-    tree.xpath(f".//{tag}[re:match(@{attr},'{value_regex}')]", namespaces={'re': "http://exslt.org/regular-expressions"})
-
-
-def contains2(tree, tag, attr, value_regex):
-
-    tree.iterfind(f".//{tag}[@{attr}]")
-
-
-def traf(instream, fast_mode, decoding_errors, min_extracted_size=0, timelimit_perdoc=None):
+def traf(instream, fast_mode, decoding_errors, min_extracted_size=0, timelimit_perdoc=None, matcher=None):
     trafilatura_options = {"include_comments": False, "include_tables": False, "no_fallback": fast_mode}
     config = use_config()
     config.set("DEFAULT", "MIN_EXTRACTED_SIZE", str(min_extracted_size))
@@ -43,6 +33,7 @@ def traf(instream, fast_mode, decoding_errors, min_extracted_size=0, timelimit_p
     for byteline in instream:
         st = timer()
         errors = []
+        tagmatch = None
 
         try:
             line = byteline.decode('utf-8', errors='strict')
@@ -58,8 +49,11 @@ def traf(instream, fast_mode, decoding_errors, min_extracted_size=0, timelimit_p
                 html = d['h']
                 with time_limit(timelimit_perdoc) if timelimit_perdoc else nullcontext():
                     tree = load_html(html)
+                    if tree is None:
+                        raise ValueError("Could not parse HTML")
+                    tagmatch = matcher.matches(tree)
+                    # trafilatura.extract() changes the tree, tagfilters should be matched before
                     text = trafilatura.extract(tree, config=config, **trafilatura_options)
-                    # contains1(tree)
             except TimeoutError as e:
                 errors.append(f'Trafilatura timed out: {timelimit_perdoc}s')
                 text = None
@@ -68,7 +62,12 @@ def traf(instream, fast_mode, decoding_errors, min_extracted_size=0, timelimit_p
                 text = None
 
         dur = timer() - st
-        print(json.dumps({'t': text, 'e': errors, 'dur': f'{dur:.1e}'}))
+        res = {'t': text, 'dur': f'{dur:.1e}'}
+        if errors:
+            res['traferr'] = errors
+        if tagmatch is not None:
+            res['tagfilter'] = tagmatch
+        print(json.dumps(res))
 
 
 def main(fpath: str = '-', fast_mode: bool = False, decoding_errors: str = 'ignore', min_extracted_size: int = 0,
@@ -90,9 +89,9 @@ def main(fpath: str = '-', fast_mode: bool = False, decoding_errors: str = 'igno
     short pages.
     :param timelimit_perdoc: sets maximum time (in seconds) for processing 1 document with Trafilatura
     """
-
+    matcher = TagFilter()
     with sys.stdin.buffer if fpath == '-' else io.BufferedReader(zstandard.open(fpath, 'rb')) as inp:
-        traf(inp, fast_mode, decoding_errors, min_extracted_size, timelimit_perdoc)
+        traf(inp, fast_mode, decoding_errors, min_extracted_size, timelimit_perdoc, matcher)
 
 
 if __name__ == '__main__':

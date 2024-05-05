@@ -8,6 +8,7 @@ import ujson as json
 import sys
 
 import fasttext
+import os
 
 
 class FastTextLangId:
@@ -73,7 +74,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Predict language using FastText model.")
     parser.add_argument(
         "--model_path",
-        default="models/lid201-model.bin",
+        default=os.path.join(os.path.expanduser("~"), ".cache/hplt/lid201-model.bin"),
         help="Path to the FastText model file",
     )
 

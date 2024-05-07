@@ -53,8 +53,6 @@ class FastTextLangId:
 
                 if json_line["t"] is None:
                     print(json.dumps({'lang': None}))
-                    sys.stdout.write('{"lang": null}\n')
-
                 elif json_line["t"] == "":
                     print(json.dumps({'lang': '_unk'}))
                 else:

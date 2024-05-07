@@ -15,7 +15,7 @@ class TestFastTextLangId:
         model_dir.mkdir(parents=True, exist_ok=True)
 
         # Model URL
-        model_url = "https://data.statmt.org/lid/lid201-model.bin.gz"
+        model_url = "https://data.statmt.org/lid/lid193_merged_arabics.bin"
         model_bin = pathlib.Path(model_url).stem  # MODEL_NAME.bin
         model_bin_gz = pathlib.Path(model_url).name  # MODEL_NAME.bin.gz
 

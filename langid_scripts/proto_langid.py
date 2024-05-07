@@ -9,7 +9,7 @@ import sys
 
 import fasttext
 import regex
-from patterns import NONWORD_REPLACE_PATTERN
+from langid_scripts.patterns import NONWORD_REPLACE_PATTERN
 
 
 class FastTextLangId:

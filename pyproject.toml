@@ -52,7 +52,7 @@ lint.ignore = [
 line-length = 100
 
 [tool.ruff.lint.per-file-ignores]
-"tests/*" = ["ANN001", "ANN201", "S101", "ARG", "FBT", "D"]
+"tests/*" = ["ANN001", "ANN201", "S101", "ARG", "FBT", "D", "RUF001"]
 
 
 [tool.pytest.ini_options]

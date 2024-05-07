@@ -4,11 +4,11 @@ from __future__ import annotations
 
 import argparse
 import fileinput
-import sys
 
 import fasttext
+import numpy
 import regex
-import ujson as json
+import ujson
 
 from langid_scripts.patterns import NONWORD_REPLACE_PATTERN
 
@@ -24,7 +24,7 @@ class FastTextLangId:
         wget https://data.statmt.org/lid/lid193_merged_arabics.bin
 
         Expected usage (stdin jsonlines):
-        python proto_langid.py --model_path $MODEL_PATH < $YOUR_FILE
+        python -m langid_scripts.proto_langid --model_path $MODEL_PATH < $YOUR_FILE
 
         """
         self.model = fasttext.load_model(model_path)
@@ -34,47 +34,72 @@ class FastTextLangId:
         text = text.replace("\n", " ").strip()
         return regex.sub(NONWORD_REPLACE_PATTERN, "", text)
 
-    def _postprocess_prediction(self, prediction: tuple) -> str:
-        """Postprocesses the prediction."""
-        return prediction[0][0].split("__label__")[1]
+    def _postprocess_predicted_labels(self, prediction: tuple) -> list[str]:
+        """
+        Postprocess the predicted labels.
+
+        Example: "__label__eng_Latn" -> "eng_Latn"
+        """
+        return [label[9:] for label in prediction[0]]
+
+    def _postprocess_predicted_probabilities(self, prediction: tuple) -> list[float]:
+        """
+        Postprocess the predicted probabilities.
+
+        Example: [0.92134414] -> [0.9213]
+        """
+        rounded_probs = numpy.round(prediction[1], decimals=4)
+
+        return rounded_probs.tolist()
 
     def predict_language_from_stdin_jsonlines(self) -> None:
         """
         Read from stdin jsonlines.
 
-        Expected input: {"t":"text"}
-        Expected output: {"lang":"en", "prob":0.9}
+        Example input:
 
-        Expected output(if None/null it "t" field): {"lang":null}
-        Expected output(if empty string in "t" field): {"lang":"unk"}
+        {"t": "Hello, world!"}
+
+        Example output:
+
+        {"lang": ["eng_Latn"], "prob": [0.9213]}
 
         """
         with fileinput.input(files=("-",), encoding="utf-8") as f:
             for fileinput_line in f:
-                json_line = json.loads(fileinput_line)
+                # load json line
+                try:
+                    json_line = ujson.loads(fileinput_line)
+                # check if the line is a valid json line
+                except ujson.JSONDecodeError:
+                    print(ujson.dumps({"lang": ["_json_decode_error"]}))
+                    continue
 
-                if json_line["t"] is None:
-                    print(json.dumps({"lang": None}))
-                    sys.stdout.write('{"lang": null}\n')
+                text = json_line.get("t")
 
-                elif json_line["t"] == "":
-                    print(json.dumps({"lang": "_unk"}))
-                else:
-                    prediction = self.model.predict(
-                        text=self._preproccess_text(json_line["t"]),
-                        k=1,
-                        threshold=0.0,
-                        on_unicode_error="strict",
+                if text is None:
+                    print(ujson.dumps({"lang": ["_null"]}))
+                    continue
+
+                if len(text) == 0:
+                    print(ujson.dumps({"lang": ["_unk"]}))
+                    continue
+
+                prediction = self.model.predict(
+                    text=self._preproccess_text(text),
+                    k=3,
+                    threshold=0.0,
+                    on_unicode_error="strict",
+                )
+
+                print(
+                    ujson.dumps(
+                        {
+                            "lang": self._postprocess_predicted_labels(prediction),
+                            "prob": self._postprocess_predicted_probabilities(prediction),
+                        }
                     )
-
-                    print(
-                        json.dumps(
-                            {
-                                "lang": self._postprocess_prediction(prediction),
-                                "prob": round(prediction[1][0], 4),
-                            }
-                        )
-                    )
+                )
 
         return None
 

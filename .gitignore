@@ -162,3 +162,4 @@ pseudo_data
 source_pseudo_data
 models
 tests/test_langid_scripts/test_model
+naive.sh

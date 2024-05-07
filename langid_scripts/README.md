@@ -2,7 +2,7 @@
 
 ## Installation
 
-1) Create a virtual environment 
+1) Create a virtual environment
 
 2) Run the following commands to install the [fastText](https://github.com/facebookresearch/fastText?tab=readme-ov-file#building-fasttext-for-python) library
 

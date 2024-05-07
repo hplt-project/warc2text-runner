@@ -4,11 +4,12 @@ from __future__ import annotations
 
 import argparse
 import fileinput
-import ujson as json
 import sys
 
 import fasttext
 import regex
+import ujson as json
+
 from langid_scripts.patterns import NONWORD_REPLACE_PATTERN
 
 

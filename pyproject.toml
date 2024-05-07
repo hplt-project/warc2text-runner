@@ -1,12 +1,11 @@
 [build-system]
 requires = [
-    "setuptools==64",
-    "setuptools-scm==8.0"]
+    "setuptools==65.5.0",
+        "setuptools-scm==7.1.0"]
 build-backend = "setuptools.build_meta"
 
 # using setuptools_scm results in including all resource files tracked by git (e.g. mt-filter-list.annotated)
 [tool.setuptools_scm]
-version_file = "src/warc2text_runner/_version.py"
 
 [project]
 name = "warc2text-runner"
@@ -31,6 +30,7 @@ script-files = [
     "src/warc2text_runner/two/stage2traf.sh",
     "src/warc2text_runner/two/stage2local.sh",
     "src/warc2text_runner/two/stage2nodeparallel.sh",
-    "src/warc2text_runner/two/stage2download.sh"
+    "src/warc2text_runner/two/stage2download.sh",
+    "src/warc2text_runner/two/stage2preplumic.sh"
 ]
 

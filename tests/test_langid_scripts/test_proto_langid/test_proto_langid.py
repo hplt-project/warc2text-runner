@@ -1,5 +1,6 @@
 """Naive test for `proto_langid.py`."""
 
+import io
 import pathlib
 import subprocess
 
@@ -56,3 +57,16 @@ class TestFastTextLangId:
         expected = [0.9213, 0.0787]
         result = self.loaded_model._postprocess_predicted_probabilities(prediction)
         assert result == expected
+
+    def test_predict_language_from_stdin_jsonlines(self, monkeypatch) -> None:
+        """
+        Test the predict_language_from_stdin_jsonlines method.
+        """
+        stdin = """{"t":"Hello World. We can drink some tea. He likes ice-cream and potatoes."}"""
+        expected = """{"lang":["eng_Latn","swh_Latn","hau_Latn"],"prob":[0.9995,0.0001,0.0001]}\n"""
+        result = io.StringIO()
+
+        monkeypatch.setattr("sys.stdin", io.StringIO(stdin))
+        monkeypatch.setattr("sys.stdout", result)
+        self.loaded_model.predict_language_from_stdin_jsonlines()
+        assert result.getvalue() == expected

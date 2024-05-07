@@ -26,3 +26,9 @@ class TestFastTextLangId:
         Test the predict_language_from_stdin_jsonlines method. Test null input case.
         """
         self._run_test(monkeypatch, '{"t":null}', '{"lang":["_null"]}\n')
+
+    def test_json_decode_error(self, monkeypatch) -> None:
+        """
+        Test the predict_language_from_stdin_jsonlines method. Test json decode error case.
+        """
+        self._run_test(monkeypatch, '{"t":', '{"lang":["_json_decode_error"]}\n')

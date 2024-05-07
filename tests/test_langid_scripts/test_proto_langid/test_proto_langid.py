@@ -16,8 +16,7 @@ class TestFastTextLangId:
 
         # Model URL
         model_url = "https://data.statmt.org/lid/lid193_merged_arabics.bin"
-        model_bin = pathlib.Path(model_url).stem  # MODEL_NAME.bin
-        model_bin_gz = pathlib.Path(model_url).name  # MODEL_NAME.bin.gz
+        model_bin = pathlib.Path(model_url).name  # MODEL_NAME.bin
 
         if not model_dir.joinpath(model_bin).is_file():
             # Download the model file
@@ -25,10 +24,8 @@ class TestFastTextLangId:
                 ["wget", "-P", str(model_dir), model_url],
                 check=True,
             )
-            # Decompress the model file
-            subprocess.run(["pigz", "-d", str(model_dir.joinpath(model_bin_gz))], check=True)
 
-        return FastTextLangId(str(model_dir.joinpath(model_bin)))
+        return FastTextLangId(model_path=str(model_dir.joinpath(model_bin)))
 
     def setup_method(self):
         self.loaded_model = self.download_and_load_model()

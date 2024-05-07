@@ -4,10 +4,12 @@ from __future__ import annotations
 
 import argparse
 import fileinput
-import json
+import ujson as json
 import sys
 
 import fasttext
+import regex
+from patterns import NONWORD_REPLACE_PATTERN
 
 
 class FastTextLangId:
@@ -18,8 +20,7 @@ class FastTextLangId:
         Init the FastText model.
 
         To download the model, run the following commands:
-        wget https://data.statmt.org/lid/lid201-model.bin.gz
-        pigz -d lid201-model.bin.gz
+        wget https://data.statmt.org/lid/lid193_merged_arabics.bin
 
         Expected usage (stdin jsonlines):
         python proto_langid.py --model_path $MODEL_PATH < $YOUR_FILE
@@ -28,8 +29,9 @@ class FastTextLangId:
         self.model = fasttext.load_model(model_path)
 
     def _preproccess_text(self, text: str) -> str:
-        """Preprocesses the text. Naive cleaning."""
-        return text.replace("\n", " ").strip()
+        """Preprocesses a single line of text for lang ID."""
+        text = text.replace("\n", " ").strip()
+        return regex.sub(NONWORD_REPLACE_PATTERN, "", text)
 
     def _postprocess_prediction(self, prediction: tuple) -> str:
         """Postprocesses the prediction."""
@@ -51,11 +53,11 @@ class FastTextLangId:
                 json_line = json.loads(fileinput_line)
 
                 if json_line["t"] is None:
-                    sys.stdout.write('{"lang":null}\n')
+                    print(json.dumps({"lang": None}))
+                    sys.stdout.write('{"lang": null}\n')
 
                 elif json_line["t"] == "":
-                    sys.stdout.write('{"lang":"unk"}\n')
-
+                    print(json.dumps({"lang": "_unk"}))
                 else:
                     prediction = self.model.predict(
                         text=self._preproccess_text(json_line["t"]),
@@ -64,9 +66,14 @@ class FastTextLangId:
                         on_unicode_error="strict",
                     )
 
-                    res = f'{{"lang":"{self._postprocess_prediction(prediction)}", "prob":{round(prediction[1][0], 4)}}}\n'
-
-                    sys.stdout.write(res)
+                    print(
+                        json.dumps(
+                            {
+                                "lang": self._postprocess_prediction(prediction),
+                                "prob": round(prediction[1][0], 4),
+                            }
+                        )
+                    )
 
         return None
 
@@ -75,7 +82,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Predict language using FastText model.")
     parser.add_argument(
         "--model_path",
-        default="models/lid201-model.bin",
+        default="models/lid193_merged_arabics.bin",
         help="Path to the FastText model file",
     )
 

@@ -68,25 +68,19 @@ class FastTextLangId:
         with fileinput.input(files=("-",), encoding="utf-8") as f:
             for fileinput_line in f:
                 # load json line
-                try:
-                    json_line = ujson.loads(fileinput_line)
-                # check if the line is a valid json line
-                except ujson.JSONDecodeError:
-                    print(ujson.dumps({"lang": ["_json_decode_error"]}))
-                    continue
 
-                text = json_line.get("t")
+                json_line = ujson.loads(fileinput_line)
 
-                if text is None:
+                if json_line["t"] is None:
                     print(ujson.dumps({"lang": ["_null"]}))
                     continue
 
-                if len(text) == 0:
+                if len(json_line["t"]) == 0:
                     print(ujson.dumps({"lang": ["_unk"]}))
                     continue
 
                 prediction = self.model.predict(
-                    text=self._preproccess_text(text),
+                    text=self._preproccess_text(json_line["t"]),
                     k=3,
                     threshold=0.0,
                     on_unicode_error="strict",

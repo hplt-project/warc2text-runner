@@ -84,8 +84,8 @@ class FastTextLangId:
         """
         with fileinput.input(files=("-",), encoding="utf-8") as f:
             for fileinput_line in f:
+                self.logger.debug("Read fileinput line: %s", fileinput_line)
                 # load json line
-
                 json_line = ujson.loads(fileinput_line)
                 self.logger.debug("Read json line.")
 

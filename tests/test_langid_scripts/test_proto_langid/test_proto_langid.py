@@ -35,7 +35,7 @@ class TestFastTextLangId:
         """
         Test the _preproccess_text method.
         """
-        text = """\nHello World\nЯ стану%,1твоим9героем лирическим\n!@£$%^&*()_+"""
+        text = """\nHello World\nЯ стану%,1твоим9героем лирическим\n!@£$%^&*()_+"""  # noqa: RUF001
         expected = "Hello World Я станутвоимгероем лирическим _"
         result = self.loaded_model._preproccess_text(text)
         assert result == expected
@@ -75,7 +75,7 @@ class TestFastTextLangId:
         """
         Test the _preproccess_text method. Non-printable unicode character.
         """
-        text = """See what's hidden in your string…	or be\u200bhind﻿"""  # ruff: noqa: PLE2515
-        expected = "See whats hidden in your stringor behind"
+        text = """See what's hidden in your string…	or be\u200bhind﻿"""  # noqa: RUF001
+        expected = "See whats hidden in your stringor behind"  # noqa: RUF001
         result = self.loaded_model._preproccess_text(text)
         assert result == expected

@@ -2,7 +2,9 @@
 FIN=$1
 OUTDIR=$2
 NJOBS=$3
-BLOCKSIZE=10M  # TODO: think about increasing, esp. for langid which will load the model once per BLOCKSIZE of inputs!
+
+BLOCKSIZE_TRAF=10M  #  10x more parallel processes than for lid require smaller blocks;
+BLOCKSIZE_LID=100M  # 0.3s-0.5s to load model, 4.4s to FastText.predict for 10k lines, 28 MB (not random sample!)
 
 NJOBS_LID=$(($NJOBS/10 + 1))
 NJOBS_TRAF=$(($NJOBS - $NJOBS_LID))
@@ -17,8 +19,8 @@ mkdir -p $OUTDIR
 # making it too small will increase extra costs on script initialization (e.g. weights loading for langid),
 # making it too large will require buffering too much outputs in parallel due to --keep-order requirement.
 zstdcat $FIN  \
-    | parallel --halt now,fail=1 --block $BLOCKSIZE -j $NJOBS_TRAF --pipe --keep-order  \
+    | parallel --halt now,fail=1 --block $BLOCKSIZE_TRAF -j $NJOBS_TRAF --pipe --keep-order  \
         "python -m warc2text_runner.two.trafilatura.traf" | tee >(zstd > ${OUTDIR}/text.zst) \
-    | parallel --halt now,fail=1 --block $BLOCKSIZE -j $NJOBS_LID --pipe --keep-order \
+    | parallel --halt now,fail=1 --block $BLOCKSIZE_LID -j $NJOBS_LID --pipe --keep-order \
         "python -m warc2text_runner.two.fastertext_lid.proto_langid" | zstd > ${OUTDIR}/lang.zst
 

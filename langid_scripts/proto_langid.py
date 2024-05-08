@@ -4,19 +4,23 @@ from __future__ import annotations
 
 import argparse
 import fileinput
+import logging
 
 import fasttext
 import numpy
 import regex
 import ujson
 
+from langid_scripts.basic_log import langid_logger
 from langid_scripts.patterns import NONWORD_REPLACE_PATTERN
 
 
 class FastTextLangId:
     """The FastText language identification model."""
 
-    def __init__(self, model_path: str) -> None:
+    def __init__(
+        self, model_path: str, *, use_logging: bool = False, level_log: int | None = logging.INFO
+    ) -> None:
         """
         Init the FastText model.
 
@@ -27,7 +31,14 @@ class FastTextLangId:
         python -m langid_scripts.proto_langid --model_path $MODEL_PATH < $YOUR_FILE
 
         """
+        if use_logging is True:
+            self.logger = langid_logger(name=f"{__name__}.FastTextLangId", level=level_log)
+        else:
+            self.logger = logging.getLogger(__name__)
+            self.logger.disabled = True
+
         self.model = fasttext.load_model(model_path)
+        self.logger.debug("FastTextLangId model loaded.")
 
     def _preproccess_text(self, text: str) -> str:
         """Preprocesses a single line of text for lang ID."""
@@ -70,30 +81,33 @@ class FastTextLangId:
                 # load json line
 
                 json_line = ujson.loads(fileinput_line)
+                self.logger.debug("Read json line.")
 
                 if json_line["t"] is None:
+                    self.logger.debug("Case: text is None.")
                     print(ujson.dumps({"lang": ["_null"]}))
-                    continue
 
-                if len(json_line["t"]) == 0:
+                elif len(json_line["t"]) == 0:
+                    self.logger.debug("Case: text is empty.")
                     print(ujson.dumps({"lang": ["_unk"]}))
-                    continue
 
-                prediction = self.model.predict(
-                    text=self._preproccess_text(json_line["t"]),
-                    k=3,
-                    threshold=0.0,
-                    on_unicode_error="strict",
-                )
-
-                print(
-                    ujson.dumps(
-                        {
-                            "lang": self._postprocess_predicted_labels(prediction),
-                            "prob": self._postprocess_predicted_probabilities(prediction),
-                        }
+                else:
+                    self.logger.debug("Case: text is ok.")
+                    prediction = self.model.predict(
+                        text=self._preproccess_text(json_line["t"]),
+                        k=3,
+                        threshold=0.0,
+                        on_unicode_error="strict",
                     )
-                )
+
+                    print(
+                        ujson.dumps(
+                            {
+                                "lang": self._postprocess_predicted_labels(prediction),
+                                "prob": self._postprocess_predicted_probabilities(prediction),
+                            }
+                        )
+                    )
 
         return None
 
@@ -102,11 +116,32 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Predict language using FastText model.")
     parser.add_argument(
         "--model_path",
+        type=str,
         default="models/lid193_merged_arabics.bin",
         help="Path to the FastText model file",
     )
 
+    parser.add_argument(
+        "--use_logging",
+        type=bool,
+        default=True,
+        action=argparse.BooleanOptionalAction,
+        help="Use logging",
+    )
+
+    parser.add_argument(
+        "--log_level",
+        type=str,
+        default="DEBUG",
+        help="Logging level",
+    )
+
     args = parser.parse_args()
 
-    loaded_model = FastTextLangId(args.model_path)
+    loaded_model = FastTextLangId(
+        model_path=args.model_path,
+        use_logging=args.use_logging,
+        level_log=logging.getLevelName(args.log_level),
+    )
+
     loaded_model.predict_language_from_stdin_jsonlines()

@@ -1,5 +1,8 @@
 import io
 
+import pytest
+import ujson
+
 from langid_scripts.proto_langid import FastTextLangId
 
 
@@ -26,3 +29,17 @@ class TestFastTextLangId:
         Test the predict_language_from_stdin_jsonlines method. Test null input case.
         """
         self._run_test(monkeypatch, '{"t":null}', '{"lang":["_null"]}\n')
+
+    def _run_test_invalid_json(self, monkeypatch, invalid_jsonline) -> None:
+        result = io.StringIO()
+        monkeypatch.setattr("sys.stdin", io.StringIO(invalid_jsonline))
+        monkeypatch.setattr("sys.stdout", result)
+
+        with pytest.raises(ujson.JSONDecodeError):
+            self.loaded_model.predict_language_from_stdin_jsonlines()
+
+    def test_invalid_json(self, monkeypatch) -> None:
+        """
+        Test the predict_language_from_stdin_jsonlines method. Test invalid json case.
+        """
+        self._run_test_invalid_json(monkeypatch, '{"t":')

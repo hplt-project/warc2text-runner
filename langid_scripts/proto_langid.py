@@ -32,9 +32,9 @@ class FastTextLangId:
 
         """
         if use_logging is True:
-            self.logger = langid_logger(name=f"{__name__}.FastTextLangId", level=level_log)
+            self.logger = langid_logger(name="basic_langid_logger", level=level_log)
         else:
-            self.logger = logging.getLogger(__name__)
+            self.logger = logging.getLogger(name="basic_langid_logger_disabled")
             self.logger.disabled = True
 
         self.model = fasttext.load_model(model_path)
@@ -42,8 +42,14 @@ class FastTextLangId:
 
     def _preproccess_text(self, text: str) -> str:
         """Preprocesses a single line of text for lang ID."""
-        text = text.replace("\n", " ").strip()
-        return regex.sub(NONWORD_REPLACE_PATTERN, "", text)
+        if not isinstance(text, str):
+            msg = "Input text must be a string."
+            raise TypeError(msg)
+
+        self.logger.debug("Before: %s", text)
+        text = regex.sub(NONWORD_REPLACE_PATTERN, "", text.replace("\n", " ").strip())
+        self.logger.debug("After: %s", text)
+        return text
 
     def _postprocess_predicted_labels(self, prediction: tuple) -> list[str]:
         """

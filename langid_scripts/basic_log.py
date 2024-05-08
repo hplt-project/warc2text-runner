@@ -10,7 +10,9 @@ def langid_logger(
 ) -> logging.Logger:
     """Configure the logger for the langid scripts."""
     if log_format is None:
-        log_format = "%(asctime)s | %(name)s | %(module)s | %(levelname)s | %(message)s"
+        log_format = (
+            "%(asctime)s | %(name)s | %(module)s | %(funcName)s | %(levelname)s | %(message)s"
+        )
 
     datefmt = "%Y-%m-%d %H:%M:%S"
 

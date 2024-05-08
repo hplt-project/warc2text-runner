@@ -70,3 +70,12 @@ class TestFastTextLangId:
         monkeypatch.setattr("sys.stdout", result)
         self.loaded_model.predict_language_from_stdin_jsonlines()
         assert result.getvalue() == expected
+
+    def test_preprocess_text_non_printable_unicode_char(self):
+        """
+        Test the _preproccess_text method. Non-printable unicode character.
+        """
+        text = """See what's hidden in your string…	or be\u200bhind﻿"""  # ruff: noqa: PLE2515
+        expected = "See whats hidden in your stringor behind"
+        result = self.loaded_model._preproccess_text(text)
+        assert result == expected

@@ -124,7 +124,7 @@ if __name__ == "__main__":
         "--model_path",
         type=str,
         default="models/lid193_merged_arabics.bin",
-        help="Path to the FastText model file",
+        help="Path to the FastText model file.",
     )
 
     parser.add_argument(
@@ -132,14 +132,14 @@ if __name__ == "__main__":
         type=bool,
         default=True,
         action=argparse.BooleanOptionalAction,
-        help="Use logging",
+        help="Use logging.",
     )
 
     parser.add_argument(
         "--log_level",
         type=str,
         default="DEBUG",
-        help="Logging level",
+        help="Logging level.",
     )
 
     args = parser.parse_args()

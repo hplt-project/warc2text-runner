@@ -1,22 +1,42 @@
-# Language identification for HPLT
+# Language identification script for HPLT
 
+## Overview
 
+* `langid_scripts/proto_langid.py` - the script for language identification (fasttext).
+* `langid_scripts/patterns.py` - the modeule with regular expressions for preprocessing the text.
+* `langid_scripts/basic_log.py` - the module with basic logging functions.
+* `tests/*` - the tests for the script.
 
-## Obstacles
+## Basic usage
 
-1) What is the best way to install and use fastText?
+```bash
+python -m langid_scripts.proto_langid --model_path $MODEL_PATH < $YOUR_FILE
 
-    a. Via [building for python](https://github.com/facebookresearch/fastText?tab=readme-ov-file#building-fasttext-for-python) or via [building for CMake](https://github.com/facebookresearch/fastText?tab=readme-ov-file#building-fasttext-using-cmake)
+# See the help message for more options:
+python -m langid_scripts.proto_langid --help
+```
 
-    b. Kenneth merged [the pull request for faster inference](https://github.com/facebookresearch/fastText/pull/1341). For what models/hardware configs is this faster? Need tests.
+## Installation
 
-    c. Kenneth tested on `nllblid218e` and  `lid.176.bin` models.
+1) Create a virtual environment.
 
-2) What model/cleaning to use?
+2) Run the following commands to install the [fastText](https://github.com/facebookresearch/fastText?tab=readme-ov-file#building-fasttext-for-python) library.
 
-    a. Laurie has `lid201-model.bin` model (from this [repo](https://github.com/laurieburchell/open-lid-dataset))
+```bash
+git clone https://github.com/facebookresearch/fastText.git
+cd fastText
+pip install .
+```
 
-    b. `lid201-model.bin` trained on super-clean data. See this scripts [here](https://github.com/laurieburchell/open-lid-dataset/tree/main/data_cleaning).
+3) Install the required packages.
 
-    c. Laurie will release a new model soon and it also uses clean data.
-    https://github.com/laurieburchell/cs-lid-harder-than-you-think
+```bash
+pip install regex==2024.4.28
+pip install ujson==5.9.0
+```
+
+4) Install optional packages.
+
+```bash
+pip install pytest
+```

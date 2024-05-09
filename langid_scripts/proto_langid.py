@@ -130,7 +130,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--use_logging",
         type=bool,
-        default=True,
+        default=False,
         action=argparse.BooleanOptionalAction,
         help="Use logging.",
     )

@@ -28,7 +28,12 @@ cd fastText
 pip install .
 ```
 
-3) Install the required packages.
+3) Download the model.
+```bash
+wget https://data.statmt.org/lid/lid193_merged_arabics.bin
+```
+
+4) Install the required packages.
 
 ```bash
 pip install regex==2024.4.28

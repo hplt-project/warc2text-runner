@@ -11,8 +11,8 @@ import numpy
 import regex
 import ujson
 
-from langid_scripts.basic_log import langid_logger
-from langid_scripts.patterns import NONWORD_REPLACE_PATTERN
+from src.warc2text_runner.two.fastertext_lid.basic_log import langid_logger
+from src.warc2text_runner.two.fastertext_lid.patterns import NONWORD_REPLACE_PATTERN
 
 
 class FastTextLangId:

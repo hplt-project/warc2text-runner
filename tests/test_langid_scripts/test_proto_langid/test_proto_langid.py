@@ -4,7 +4,7 @@ import io
 import pathlib
 import subprocess
 
-from langid_scripts.proto_langid import FastTextLangId
+from src.warc2text_runner.two.fastertext_lid.proto_langid import FastTextLangId
 
 
 class TestFastTextLangId:

@@ -1,0 +1,96 @@
+# Created for LUMI by Nikolay Arefyev
+
+easyblock = 'PythonBundle'
+
+local_craypython_version =  '3.10.10'
+local_craypython_maj_min = '.'.join( local_craypython_version.split('.')[:2] )
+
+name = 'warc2text-runner-bundle'
+version = '2.0.0.a2'
+versionsuffix = '-cray-python%s' % local_craypython_maj_min
+
+homepage = 'https://github.com/hplt-project/warc2text-runner'
+whatis = ['Description: a package to run text extraction from WARC archives']
+
+description = """
+ warc2text-runner contains tools to extract plain text from HTML pages in WARC
+ archives. It is developed for the HPLT project https://hplt-project.org/
+
+ This version supports Stage 2 of text extraction: given a collection of 
+ HTML pages in json lines format already extracted from WARCs it does text
+ extraction with boilerplate removal using Trafilatura and language identification
+ with fasterText openLID model.
+"""
+
+toolchain = {'name': 'cpeGNU', 'version': '23.09'}
+
+
+use_pip = True
+
+dependencies = [
+    ('cray-python/%s' % local_craypython_version, EXTERNAL_MODULE),
+    ('libxslt/1.1.38-cpeGNU-23.09', EXTERNAL_MODULE),
+    ('libxml2/2.11.4-cpeGNU-23.09', EXTERNAL_MODULE),
+]
+
+
+exts_list = [
+   ('flit_core','3.9.0'),
+    ('tomli','2.0.1'),
+    ('packaging','24.0'),
+    ('typing_extensions', '4.11.0'),
+    ('wheel','0.43.0'),
+    ('setuptools-scm','8.0.0'),
+
+
+    ('lxml', '5.2.1'),
+    ('lxml_html_clean','0.1.0'),
+    ('jusText', '3.0.0'),
+    ('tzlocal', '5.2'),
+    ('regex', '2024.4.28'),
+    ('dateparser', '1.2.0'),
+    ('charset-normalizer', '3.3.2'),
+    ('htmldate', '1.8.1'),
+    ('tld', '0.13'),
+    ('babel', '2.15.0'),
+    ('courlan', '1.1.0'),
+    ('trafilatura', '1.8.0'),
+
+    ('trove-classifiers', '2024.4.10'),
+    ('pluggy', '1.2.0'),
+    ('pathspec', '0.12.1'),
+    ('packaging', '24.0'),
+    ('hatchling', '1.24.2'),
+
+    ('urllib3','2.2.1'),
+    ('certifi','2024.2.2'),
+    ('python-dateutil','2.9.0.post0'),
+
+    ('fire','0.6.0'),
+    ('pytz','2024.1'),
+    ('zstandard','0.22.0'),
+    ('ujson','5.4.0'),
+
+    ('warc2text-runner','2.0.0', {
+        'sources': {
+            'filename': '%(name)s-%(version)s.tar.gz',
+            'git_config': {
+            'url': 'https://github.com/hplt-project',
+            'repo_name': 'warc2text-runner',
+            'keep_git_dir': True,
+            'recursive': True,
+            'tag': 'v2.0.0-alpha.2',
+            }
+        }
+    })
+
+
+]
+
+sanity_check_paths = {
+    'files': ['bin/stage2local.sh'],
+    'dirs': ['lib/python%s/site-packages' % local_craypython_maj_min],
+}
+
+
+moduleclass = 'tools'

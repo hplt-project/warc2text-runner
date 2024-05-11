@@ -3,7 +3,9 @@ FIN=$1
 OUTDIR=$2
 NJOBS=$3
 
-BLOCKSIZE_TRAF=10M  #  10x more parallel processes than for lid require smaller blocks;
+BLOCKSIZE_TRAF=30M  #  10x more parallel processes than for lid require smaller blocks;
+TRAF_TIMEOUT=0.5  # timout 0.5s, should loose less than 0.5% of docs
+
 BLOCKSIZE_LID=100M  # 0.3s-0.5s to load model, 4.4s to FastText.predict for 10k lines, 28 MB (not random sample!)
 
 NJOBS_LID=$(($NJOBS/10 + 1))
@@ -20,7 +22,7 @@ mkdir -p $OUTDIR
 # making it too large will require buffering too much outputs in parallel due to --keep-order requirement.
 zstdcat $FIN  \
     | parallel --halt now,fail=1 --block $BLOCKSIZE_TRAF -j $NJOBS_TRAF --pipe --keep-order  \
-        "python -m warc2text_runner.two.trafilatura.traf" | tee >(zstd > ${OUTDIR}/text.zst) \
+        "python -m warc2text_runner.two.trafilatura.traf --timelimit_perdoc ${TRAF_TIMEOUT}" | tee >(zstd > ${OUTDIR}/text.zst) \
     | parallel --halt now,fail=1 --block $BLOCKSIZE_LID -j $NJOBS_LID --pipe --keep-order \
         "python -m warc2text_runner.two.fastertext_lid.proto_langid" | zstd > ${OUTDIR}/lang.zst
 

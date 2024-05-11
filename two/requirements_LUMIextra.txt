@@ -1,0 +1,20 @@
+Babel==2.15.0
+certifi==2024.2.2
+charset-normalizer==3.3.2
+courlan==1.1.0
+dateparser==1.2.0
+fasttext @ git+https://github.com/facebookresearch/fastText@1142dc4c4ecbc19cc16eee5cdd28472e689267e6
+fire==0.6.0
+htmldate==1.8.1
+jusText==3.0.0
+lxml==5.1.1
+lxml_html_clean==0.1.0
+regex==2024.4.28
+termcolor==2.4.0
+tld==0.13
+trafilatura==1.8.0
+tzlocal==5.2
+ujson==5.4.0
+urllib3==2.2.1
+-e git+https://github.com/hplt-project/warc2text-runner.git@54bb0c10d5acf12b915e6308f6db0c4ed1771804#egg=warc2text_runner
+zstandard==0.22.0

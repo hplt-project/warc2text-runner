@@ -16,5 +16,4 @@ trafilatura==1.8.0
 tzlocal==5.2
 ujson==5.4.0
 urllib3==2.2.1
--e git+https://github.com/hplt-project/warc2text-runner.git@54bb0c10d5acf12b915e6308f6db0c4ed1771804#egg=warc2text_runner
 zstandard==0.22.0

@@ -49,7 +49,6 @@ typing_extensions==4.7.1
 tzlocal==5.2
 ujson==5.4.0
 urllib3==2.2.1
--e git+https://github.com/hplt-project/warc2text-runner.git@169cf56fc7f2ba96a52bf8cb9fe43fc13dc2e42e#egg=warc2text_runner
 wcwidth==0.2.6
 zipp==3.16.2
 zstandard==0.22.0

@@ -10,6 +10,7 @@ import fasttext
 import numpy
 import regex
 import ujson
+import os
 
 from warc2text_runner.two.fastertext_lid.basic_log import langid_logger
 from warc2text_runner.two.fastertext_lid.patterns import NONWORD_REPLACE_PATTERN
@@ -131,7 +132,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--model_path",
         type=str,
-        default="~/.cache/hplt/lid193_merged_arabics.bin",
+        default=os.path.join(os.path.expanduser("~"), ".cache/hplt/lid193_merged_arabics.bin"),
         help="Path to the FastText model file.",
     )
 

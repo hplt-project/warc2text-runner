@@ -2,18 +2,21 @@
 
 ## Overview
 
-* `langid_scripts/proto_langid.py` - the script for language identification (fasttext).
-* `langid_scripts/patterns.py` - the modeule with regular expressions for preprocessing the text.
-* `langid_scripts/basic_log.py` - the module with basic logging functions.
+* `src/warc2text_runner/two/fastertext_lid/proto_langid.py` - the script for language identification (fasttext).
+* `src/warc2text_runner/two/fastertext_lid/patterns.py` - the modeule with regular expressions for preprocessing the text.
+* `src/warc2text_runner/two/fastertext_lid/basic_log.py` - the module with basic logging functions.
 * `tests/*` - the tests for the script.
+
+sr/warc2text_runner/two/fastertext_lid/proto_langid.py
 
 ## Basic usage
 
 ```bash
-python -m langid_scripts.proto_langid --model_path $MODEL_PATH < $YOUR_FILE
+python -m warc2text_runner.two.fastertext_lid.proto_langid --model_path $MODEL_PATH < $YOUR_FILE
 
 # See the help message for more options:
-python -m langid_scripts.proto_langid --help
+python -m warc2text_runner.two.fastertext_lid.proto_langid --help
+
 ```
 
 ## Installation

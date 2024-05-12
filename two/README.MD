@@ -12,10 +12,11 @@ source src/warc2text_runner/two/stage2preplumic.sh
 
 Install with pip in a virtual environment. Use --system-site-packages to reuse 
 packages installed in cray-python when possible, which may be better optimized for LUMI. 
+Install only extra dependencies from two/requirements_LUMIextra.txt 
 ```commandline
 python -m venv --system-site-packages venv
 source venv/bin/activate
-pip install -r two/requirements_LUMI.txt
+pip install -r two/requirements_LUMIextra.txt
 pip install .  
 ```
 

@@ -12,10 +12,10 @@ sr/warc2text_runner/two/fastertext_lid/proto_langid.py
 ## Basic usage
 
 ```bash
-python -m warc2text_runner.two.fastertext_lid.proto_langid --model_path $MODEL_PATH < $YOUR_FILE
+python -m src.warc2text_runner.two.fastertext_lid.proto_langid --model_path $MODEL_PATH < $YOUR_FILE
 
 # See the help message for more options:
-python -m warc2text_runner.two.fastertext_lid.proto_langid --help
+python -m src.warc2text_runner.two.fastertext_lid.proto_langid --help
 
 ```
 

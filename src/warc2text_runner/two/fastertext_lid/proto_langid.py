@@ -28,7 +28,7 @@ class FastTextLangId:
         wget https://data.statmt.org/lid/lid193_merged_arabics.bin
 
         Expected usage (stdin jsonlines):
-        python -m langid_scripts.proto_langid --model_path $MODEL_PATH < $YOUR_FILE
+        python -m src.warc2text_runner.two.fastertext_lid.proto_langid --model_path $MODEL_PATH < $YOUR_FILE
 
         """
         if use_logging is True:

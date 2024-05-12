@@ -11,15 +11,19 @@ import numpy
 import regex
 import ujson
 
-from src.warc2text_runner.two.fastertext_lid.basic_log import langid_logger
-from src.warc2text_runner.two.fastertext_lid.patterns import NONWORD_REPLACE_PATTERN
+from warc2text_runner.two.fastertext_lid.basic_log import langid_logger
+from warc2text_runner.two.fastertext_lid.patterns import NONWORD_REPLACE_PATTERN
 
 
 class FastTextLangId:
     """The FastText language identification model."""
 
     def __init__(
-        self, model_path: str, *, use_logging: bool = False, level_log: int | None = logging.INFO
+        self,
+        model_path: str,
+        *,
+        use_logging: bool = False,
+        level_log: int | None = logging.INFO,
     ) -> None:
         """
         Init the FastText model.
@@ -28,7 +32,7 @@ class FastTextLangId:
         wget https://data.statmt.org/lid/lid193_merged_arabics.bin
 
         Expected usage (stdin jsonlines):
-        python -m langid_scripts.proto_langid --model_path $MODEL_PATH < $YOUR_FILE
+        python -m src.warc2text_runner.two.fastertext_lid.proto_langid --model_path $MODEL_PATH < $YOUR_FILE
 
         """
         if use_logging is True:
@@ -57,7 +61,7 @@ class FastTextLangId:
 
         Example: "__label__eng_Latn" -> "eng_Latn"
         """
-        return [label[9:] for label in prediction[0]]
+        return [label.replace("__label__", "") for label in prediction[0]]
 
     def _postprocess_predicted_probabilities(self, prediction: tuple) -> list[float]:
         """
@@ -91,7 +95,7 @@ class FastTextLangId:
 
                 if json_line["t"] is None:
                     self.logger.debug("Case: text is None.")
-                    print(ujson.dumps({"lang": ["_null"]}))
+                    print(ujson.dumps({"lang": None}))
 
                 elif len(json_line["t"]) == 0:
                     self.logger.debug("Case: text is empty.")
@@ -110,7 +114,9 @@ class FastTextLangId:
                         ujson.dumps(
                             {
                                 "lang": self._postprocess_predicted_labels(prediction),
-                                "prob": self._postprocess_predicted_probabilities(prediction),
+                                "prob": self._postprocess_predicted_probabilities(
+                                    prediction
+                                ),
                             }
                         )
                     )
@@ -119,7 +125,9 @@ class FastTextLangId:
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Predict language using FastText model.")
+    parser = argparse.ArgumentParser(
+        description="Predict language using FastText model."
+    )
     parser.add_argument(
         "--model_path",
         type=str,

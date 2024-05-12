@@ -44,7 +44,7 @@ class TestFastTextLangId:
         """
         Test the _postprocess_predicted_labels method.
         """
-        prediction = (("__label__eng_Latn", "__label__mylang", "123456789magiclang"),)
+        prediction = (("__label__eng_Latn", "__label__mylang", "__label__magiclang"),)
         expected = ["eng_Latn", "mylang", "magiclang"]
         result = self.loaded_model._postprocess_predicted_labels(prediction)
         assert result == expected

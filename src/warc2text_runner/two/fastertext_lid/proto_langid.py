@@ -57,7 +57,7 @@ class FastTextLangId:
 
         Example: "__label__eng_Latn" -> "eng_Latn"
         """
-        return [label[9:] for label in prediction[0]]
+        return [label.replace("__label__", "") for label in prediction[0]]
 
     def _postprocess_predicted_probabilities(self, prediction: tuple) -> list[float]:
         """

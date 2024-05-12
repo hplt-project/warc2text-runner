@@ -131,7 +131,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--model_path",
         type=str,
-        default="models/lid193_merged_arabics.bin",
+        default="~/.cache/hplt/lid193_merged_arabics.bin",
         help="Path to the FastText model file.",
     )
 

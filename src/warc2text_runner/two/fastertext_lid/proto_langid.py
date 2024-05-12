@@ -91,7 +91,7 @@ class FastTextLangId:
 
                 if json_line["t"] is None:
                     self.logger.debug("Case: text is None.")
-                    print(ujson.dumps({"lang": ["_null"]}))
+                    print(ujson.dumps({"lang": None}))
 
                 elif len(json_line["t"]) == 0:
                     self.logger.debug("Case: text is empty.")

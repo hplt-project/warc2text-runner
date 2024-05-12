@@ -28,14 +28,14 @@ class TestFastTextLangId:
         """
         Test the predict_language_from_stdin_jsonlines method. Test null input case.
         """
-        self._run_test(monkeypatch, '{"t":null}', '{"lang":["_null"]}\n')
+        self._run_test(monkeypatch, '{"t":null}', '{"lang":null}\n')
 
     def test_sequence_of_texts(self, monkeypatch) -> None:
         """
         Test the predict_language_from_stdin_jsonlines method. Test sequence of texts case.
         """
         input_sequence = '{"t":"Привет! Меня зовут Юлия. Я изучаю эсперанто и хочу познакомиться с другими людьми, которые тоже изучают этот"}\n{"t":"язык."}\n{"t":"Hello! My name is Julia. I am studying Esperanto and want to meet other people who are also studying this language."}\n{"t":""}\n{"t": "汉语"}\n{"t": null}\n{"t":"Hello World. We can drink some tea. He likes ice-cream and potatoes."}\n{"t":"See\xa0what\'s hidden in your string…\tor be\u200bhind\ufeff"}\n'  # noqa: RUF001
-        output_sequence = '{"lang":["rus_Cyrl","tat_Cyrl","tgk_Cyrl"],"prob":[0.9998,0.0001,0.0001]}\n{"lang":["rus_Cyrl","tat_Cyrl","bel_Cyrl"],"prob":[0.9995,0.0005,0.0]}\n{"lang":["eng_Latn","ibo_Latn","yor_Latn"],"prob":[0.9975,0.0004,0.0004]}\n{"lang":["_unk"]}\n{"lang":["zho_Hans","khm_Khmr","amh_Ethi"],"prob":[0.8893,0.107,0.0038]}\n{"lang":["_null"]}\n{"lang":["eng_Latn","swh_Latn","hau_Latn"],"prob":[0.9995,0.0001,0.0001]}\n{"lang":["eng_Latn","gaz_Latn","swh_Latn"],"prob":[0.9327,0.0447,0.0039]}\n'
+        output_sequence = '{"lang":["rus_Cyrl","tat_Cyrl","tgk_Cyrl"],"prob":[0.9998,0.0001,0.0001]}\n{"lang":["rus_Cyrl","tat_Cyrl","bel_Cyrl"],"prob":[0.9995,0.0005,0.0]}\n{"lang":["eng_Latn","ibo_Latn","yor_Latn"],"prob":[0.9975,0.0004,0.0004]}\n{"lang":["_unk"]}\n{"lang":["zho_Hans","khm_Khmr","amh_Ethi"],"prob":[0.8893,0.107,0.0038]}\n{"lang":null}\n{"lang":["eng_Latn","swh_Latn","hau_Latn"],"prob":[0.9995,0.0001,0.0001]}\n{"lang":["eng_Latn","gaz_Latn","swh_Latn"],"prob":[0.9327,0.0447,0.0039]}\n'
 
         self._run_test(
             monkeypatch,

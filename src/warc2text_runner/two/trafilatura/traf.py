@@ -31,7 +31,7 @@ def traf(instream, fast_mode, decoding_errors, min_extracted_size=0, timelimit_p
     config.set("DEFAULT", "MIN_EXTRACTED_SIZE", str(min_extracted_size))
 
     for byteline in instream:
-        st = timer()
+        # st = timer()
         errors = []
         tagmatch = None
 
@@ -61,8 +61,10 @@ def traf(instream, fast_mode, decoding_errors, min_extracted_size=0, timelimit_p
                 errors.append(traceback.format_exc())
                 text = None
 
-        dur = timer() - st
-        res = {'t': text, 'dur': f'{dur:.1e}'}
+        # dur = timer() - st
+        res = {'t': text}
+        # res = {'t': text, 'dur': f'{dur:.1e}'}
+
         if errors:
             res['traferr'] = errors
         if tagmatch is not None:

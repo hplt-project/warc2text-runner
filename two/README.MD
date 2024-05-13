@@ -44,6 +44,10 @@ stage2download.sh
 ```commandline
 source src/warc2text_runner/two/stage2preplumic.sh
 source venv/bin/activate
+```
 
+```commandline
+find <PATH TO STAGE1 OTPUTS> -name "html.zst" >portion1.paths
+stage2nodeparallel.sh portion1.paths
 ```
 

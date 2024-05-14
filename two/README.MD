@@ -48,6 +48,6 @@ source venv/bin/activate
 
 ```commandline
 find <PATH TO STAGE1 OTPUTS> -name "html.zst" >portion1.paths
-stage2nodeparallel.sh portion1.paths
+stage2nodeparallel.sh 100 portion1.paths
 ```
 

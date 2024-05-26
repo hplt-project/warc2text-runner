@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html>
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>INFO-F Algorithmique 3 et Recherche Opérationnelle - PDF</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+            <meta content="INFO-F- - Algorithmique et Recherche Opérationnelle Yves De Smet Bernard Fortz - Table des matières I Introduction Aide à la décision et modèles mathématiques Quelques exemples de modèles mathématiques" name="description">
+        <meta property="og:description" content="INFO-F- - Algorithmique et Recherche Opérationnelle Yves De Smet Bernard Fortz - Table des matières I Introduction Aide à la décision et modèles mathématiques Quelques exemples de modèles mathématiques">
+    
+
+                <link rel="amphtml" href="http://docplayer.fr/amp/283172-Info-f-310-algorithmique-3-et-recherche-operationnelle.html" />
+    
+
+
+        
+    <meta property="og:title" content="INFO-F Algorithmique 3 et Recherche Opérationnelle - PDF">
+    <meta property="og:type" content="website">
+
+            <meta property="og:image" content="http://docplayer.fr/thumbs/19/283172.jpg">
+    
+            <link rel="canonical" href="http://docplayer.fr/283172-Info-f-310-algorithmique-3-et-recherche-operationnelle.html" />
+        <meta property="og:url" content="http://docplayer.fr/283172-Info-f-310-algorithmique-3-et-recherche-operationnelle.html">
+    
+    <link rel="shortcut icon" href="http://docplayer.fr/favicon.ico">
+
+    <!-- Fonts START -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&subset=all" rel="stylesheet" type="text/css">
+    <!-- Fonts END -->
+
+            <link rel="stylesheet" type="text/css" href="/static/css/df49f/total.css">
+                <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "VideoObject",
+
+                "requiresSubscription":"false",
+"playerType":"HTML5",
+"contentUrl":"http:\/\/docplayer.fr\/docs-video\/76\/283172\/video.mp4",
+"videoQuality":"HD",
+"author":{"@type":"Person","url":"http:\/\/docplayer.fr\/user\/283082\/","name":"Fernande Paquin"},
+"name":"INFO-F Algorithmique 3 et Recherche Op\u00e9rationnelle",
+"caption":"INFO-F Algorithmique 3 et Recherche Op\u00e9rationnelle",
+"thumbnail":"http:\/\/docplayer.fr\/docs-images\/40\/283172\/images\/page_1.jpg",
+"thumbnailUrl":"http:\/\/docplayer.fr\/docs-images\/40\/283172\/images\/page_1.jpg",
+"isFamilyFriendly":true,
+"url":"http:\/\/docplayer.fr\/283172-Info-f-310-algorithmique-3-et-recherche-operationnelle.html",
+"datePublished":"2018-04-06T03:10:25+00:00",
+"uploadDate":"2018-04-06T03:10:25+00:00",
+"dateCreated":"2018-04-06T03:10:25+00:00",
+"dateModified":"2018-04-06T03:10:25+00:00",
+"duration":"PM5S48",
+"transcript":"INFO-F- - Algorithmique et Recherche Op&eacute;rationnelle Yves De Smet Bernard Fortz - Table des mati&egrave;res I Introduction Aide &agrave; la d&eacute;cision et mod&egrave;les math&eacute;matiques Quelques exemples de mod&egrave;les math&eacute;matiques Tour d horizon des techniques de recherche op&eacute;rationnelle II Programmation lin&eacute;aire 6 D&eacute;finition, exemples et m&eacute;thode de r&eacute;solution 6. Notions de bases........................................... 6. Exemples de mod&egrave;les lin&eacute;aires.................................... 6. Forme standard et forme canonique d un programme lin&eacute;aire.................... 8. R&eacute;solution de programmes lin&eacute;aires................................... R&eacute;solution graphique....................................... La m&eacute;thode du simplexe..................................... La m&eacute;thode des deux phases................................. 6.. Cas particuliers........................................ 7 Dualit&eacute;. Le probl&egrave;me dual............................................ Relations primal\/dual.......................................... Interpr&eacute;tation &eacute;conomique de la dualit&eacute;................................ M&eacute;thode simplexe duale....................................... 6 Solveurs et langages de mod&eacute;lisation III Le probl&egrave;me de transport 7 D&eacute;finition et exemples 8 Algorithme pour le probl&egrave;me de transport 9 Le probl&egrave;me de transbordement IV Le flot maximum 6 Introduction 6 Formulation 6\nCoupe minimum 6 Algorithme de Ford-Fulkerson 6 V Flots de co&ucirc;t minimum 9 D&eacute;finitions et exemples 9 Algorithme de chemins augmentants 9 6 Extensions VI Couplages 6 7 Introduction 6 8 Affectations bipartites 7 9 Le probl&egrave;me des mariages stables VII La programmation dynamique Retour aux plus courts chemins Le probl&egrave;me de sac-&agrave;-dos D&eacute;termination de la taille des lots 6\nPremi&egrave;re partie Introduction Aide &agrave; la d&eacute;cision et mod&egrave;les math&eacute;matiques Un premier probl&egrave;me Exemple (Achat de billets d avion). Un homme d affaires doit effectuer voyages entre Fayetteville (FYV) &agrave; Denver (DEN), en partant le lundi de FYV et revenant le mercredi de DEN &agrave; FYV. Billet aller-retour : $. R&eacute;duction de % si un weekend est inclus. Aller simple : 7 % du prix aller-retour. Question Comment acheter les billets pour les semaines (&agrave; prix minimum)? Aide &agrave; la d&eacute;cision Probl&egrave;me d aide &agrave; la d&eacute;cision. Quelles sont les alternatives possibles?. Quelles sont les restrictions &agrave; cette d&eacute;cision?. Quel est l objectif utilis&eacute; pour &eacute;valuer les alternatives? Restrictions FYV-DEN le lundi et DEN-FYV le mercredi de la m&ecirc;me semaine. Evaluation des alternatives Alternatives Acheter FYV-DEN-FYV normaux. x $ = $ Acheter un FYV-DEN, DEN-FYV-DEN comprenant un weekend et un DEN-FYV..7 x $ + x.8 x $ +.7 x $ = $88 Acheter un FYV-DEN-FYV pour le lundi de la premi&egrave;re semaine et le mercredi de la derni&egrave;re semaine, et DEN-FYV-DEN comprenant un weekend pour les autres voyages. x.8 x $ = $6 La troisi&egrave;me alternative est la meilleure. Mod&egrave;le de recherche op&eacute;rationnelle Ingr&eacute;dients principaux Alternatives (variables, inconnues du probl&egrave;me). Restrictions (contraintes). Fonction objectif &agrave; optimiser (minimiser ou maximiser). D&eacute;finition (Solution admissible). Une solution admissible est un ensemble de valeurs donn&eacute;es aux variables qui satisfait toutes les contraintes. D&eacute;finition (Solution optimale). Une solution optimale est une solution admissible qui optimise la fonction objectif. D&eacute;finition (Mod&egrave;le de recherche op&eacute;rationnelle). Maximiser ou minimiser (fonction objectif) Sujet &agrave; { contraintes } Variables : continues (r&eacute;elles), enti&egrave;res, bool&eacute;ennes (\/),... Objectif : lin&eacute;aire \/ non-lin&eacute;aire, concave \/ convexe,...\nContraintes : lin&eacute;aire \/ non-lin&eacute;aire, concave \/ convexe, &eacute;galit&eacute;s \/ in&eacute;galit&eacute;s,... Param&egrave;tres : connus avec certitude (mod&egrave;les d&eacute;terministes) \/ incertains (mod&egrave;les stochastiques) Exemple (Maximisation de la surface d un rectangle). Supposons que l on veut plier un fil de fer de longueur L en rectangle de mani&egrave;re &agrave; maximiser la surface du rectangle. l w Formulation max A = lw s.t. l + w = L Solution A = ( L w) w = Lw w da dw = L w = Solution optimale : w = l = L M&eacute;thodes de r&eacute;solution Dans l exemple, solution analytique au probl&egrave;me. La plupart des probl&egrave;mes pratiques sont trop grands ou trop complexes pour &ecirc;tre r&eacute;solus analytiquement. M&eacute;thodes it&eacute;ratives D&eacute;placement de solution en solution pour atteindre l optimum (m&eacute;thodes exactes) ou une &quot;bonne&quot; solution (heuristiques). Importance des algorithmes et des solutions informatiques. Quelques exemples de mod&egrave;les math&eacute;matiques Un probl&egrave;me de placement Une entreprise veut placer un capital K. Six modalit&eacute;s de placement sont offertes sur le march&eacute;, les taux d int&eacute;r&ecirc;t &eacute;tant respectivement %,, %,, %, %, % et, %. Pour satisfaire aux contraintes l&eacute;gales, l entreprise doit placer au moins % de son capital suivant les deux premi&egrave;res modalit&eacute;s, au plus % suivant les deux suivantes et au plus % suivant les deux derni&egrave;res. Combien l entreprise doit-elle placer dans chaque modalit&eacute; de fa&ccedil;on &agrave; maximiser son int&eacute;r&ecirc;t total? Fabrication de cr&egrave;me glac&eacute;e Un fabriquant d&eacute;sire produire kg d une pr&eacute;paration de base pour cr&egrave;me glac&eacute;e. Cette pr&eacute;paration doit contenir, kg de mati&egrave;res grasses, kg de sucre,, kg d oeufs et 6, kg d eau. Les ingr&eacute;dients dont il dispose figurent ci-dessous, avec les pourcentages (en poids) de chaque constituant, et le co&ucirc;t au kg. Mati&egrave;res gr. Sucre Oeufs Eau Co&ucirc;t Cr&egrave;me 6 Jaune d oeuf frais Lait 88 Jaune d oeuf surgel&eacute; 6 Sirop 7,8 Eau Le fabriquant d&eacute;sire d&eacute;terminer la composition du m&eacute;lange de co&ucirc;t minimal.",
+"text":"INFO-F- - Algorithmique et Recherche Op&eacute;rationnelle Yves De Smet Bernard Fortz - Table des mati&egrave;res I Introduction Aide &agrave; la d&eacute;cision et mod&egrave;les math&eacute;matiques Quelques exemples de mod&egrave;les math&eacute;matiques Tour d horizon des techniques de recherche op&eacute;rationnelle II Programmation lin&eacute;aire 6 D&eacute;finition, exemples et m&eacute;thode de r&eacute;solution 6. Notions de bases........................................... 6. Exemples de mod&egrave;les lin&eacute;aires.................................... 6. Forme standard et forme canonique d un programme lin&eacute;aire.................... 8. R&eacute;solution de programmes lin&eacute;aires................................... R&eacute;solution graphique....................................... La m&eacute;thode du simplexe..................................... La m&eacute;thode des deux phases................................. 6.. Cas particuliers........................................ 7 Dualit&eacute;. Le probl&egrave;me dual............................................ Relations primal\/dual.......................................... Interpr&eacute;tation &eacute;conomique de la dualit&eacute;................................ M&eacute;thode simplexe duale....................................... 6 Solveurs et langages de mod&eacute;lisation III Le probl&egrave;me de transport 7 D&eacute;finition et exemples 8 Algorithme pour le probl&egrave;me de transport 9 Le probl&egrave;me de transbordement IV Le flot maximum 6 Introduction 6 Formulation 6\nCoupe minimum 6 Algorithme de Ford-Fulkerson 6 V Flots de co&ucirc;t minimum 9 D&eacute;finitions et exemples 9 Algorithme de chemins augmentants 9 6 Extensions VI Couplages 6 7 Introduction 6 8 Affectations bipartites 7 9 Le probl&egrave;me des mariages stables VII La programmation dynamique Retour aux plus courts chemins Le probl&egrave;me de sac-&agrave;-dos D&eacute;termination de la taille des lots 6\nPremi&egrave;re partie Introduction Aide &agrave; la d&eacute;cision et mod&egrave;les math&eacute;matiques Un premier probl&egrave;me Exemple (Achat de billets d avion). Un homme d affaires doit effectuer voyages entre Fayetteville (FYV) &agrave; Denver (DEN), en partant le lundi de FYV et revenant le mercredi de DEN &agrave; FYV. Billet aller-retour : $. R&eacute;duction de % si un weekend est inclus. Aller simple : 7 % du prix aller-retour. Question Comment acheter les billets pour les semaines (&agrave; prix minimum)? Aide &agrave; la d&eacute;cision Probl&egrave;me d aide &agrave; la d&eacute;cision. Quelles sont les alternatives possibles?. Quelles sont les restrictions &agrave; cette d&eacute;cision?. Quel est l objectif utilis&eacute; pour &eacute;valuer les alternatives? Restrictions FYV-DEN le lundi et DEN-FYV le mercredi de la m&ecirc;me semaine. Evaluation des alternatives Alternatives Acheter FYV-DEN-FYV normaux. x $ = $ Acheter un FYV-DEN, DEN-FYV-DEN comprenant un weekend et un DEN-FYV..7 x $ + x.8 x $ +.7 x $ = $88 Acheter un FYV-DEN-FYV pour le lundi de la premi&egrave;re semaine et le mercredi de la derni&egrave;re semaine, et DEN-FYV-DEN comprenant un weekend pour les autres voyages. x.8 x $ = $6 La troisi&egrave;me alternative est la meilleure. Mod&egrave;le de recherche op&eacute;rationnelle Ingr&eacute;dients principaux Alternatives (variables, inconnues du probl&egrave;me). Restrictions (contraintes). Fonction objectif &agrave; optimiser (minimiser ou maximiser). D&eacute;finition (Solution admissible). Une solution admissible est un ensemble de valeurs donn&eacute;es aux variables qui satisfait toutes les contraintes. D&eacute;finition (Solution optimale). Une solution optimale est une solution admissible qui optimise la fonction objectif. D&eacute;finition (Mod&egrave;le de recherche op&eacute;rationnelle). Maximiser ou minimiser (fonction objectif) Sujet &agrave; { contraintes } Variables : continues (r&eacute;elles), enti&egrave;res, bool&eacute;ennes (\/),... Objectif : lin&eacute;aire \/ non-lin&eacute;aire, concave \/ convexe,...\nContraintes : lin&eacute;aire \/ non-lin&eacute;aire, concave \/ convexe, &eacute;galit&eacute;s \/ in&eacute;galit&eacute;s,... Param&egrave;tres : connus avec certitude (mod&egrave;les d&eacute;terministes) \/ incertains (mod&egrave;les stochastiques) Exemple (Maximisation de la surface d un rectangle). Supposons que l on veut plier un fil de fer de longueur L en rectangle de mani&egrave;re &agrave; maximiser la surface du rectangle. l w Formulation max A = lw s.t. l + w = L Solution A = ( L w) w = Lw w da dw = L w = Solution optimale : w = l = L M&eacute;thodes de r&eacute;solution Dans l exemple, solution analytique au probl&egrave;me. La plupart des probl&egrave;mes pratiques sont trop grands ou trop complexes pour &ecirc;tre r&eacute;solus analytiquement. M&eacute;thodes it&eacute;ratives D&eacute;placement de solution en solution pour atteindre l optimum (m&eacute;thodes exactes) ou une &quot;bonne&quot; solution (heuristiques). Importance des algorithmes et des solutions informatiques. Quelques exemples de mod&egrave;les math&eacute;matiques Un probl&egrave;me de placement Une entreprise veut placer un capital K. Six modalit&eacute;s de placement sont offertes sur le march&eacute;, les taux d int&eacute;r&ecirc;t &eacute;tant respectivement %,, %,, %, %, % et, %. Pour satisfaire aux contraintes l&eacute;gales, l entreprise doit placer au moins % de son capital suivant les deux premi&egrave;res modalit&eacute;s, au plus % suivant les deux suivantes et au plus % suivant les deux derni&egrave;res. Combien l entreprise doit-elle placer dans chaque modalit&eacute; de fa&ccedil;on &agrave; maximiser son int&eacute;r&ecirc;t total? Fabrication de cr&egrave;me glac&eacute;e Un fabriquant d&eacute;sire produire kg d une pr&eacute;paration de base pour cr&egrave;me glac&eacute;e. Cette pr&eacute;paration doit contenir, kg de mati&egrave;res grasses, kg de sucre,, kg d oeufs et 6, kg d eau. Les ingr&eacute;dients dont il dispose figurent ci-dessous, avec les pourcentages (en poids) de chaque constituant, et le co&ucirc;t au kg. Mati&egrave;res gr. Sucre Oeufs Eau Co&ucirc;t Cr&egrave;me 6 Jaune d oeuf frais Lait 88 Jaune d oeuf surgel&eacute; 6 Sirop 7,8 Eau Le fabriquant d&eacute;sire d&eacute;terminer la composition du m&eacute;lange de co&ucirc;t minimal.",
+"description":"INFO-F- - Algorithmique et Recherche Op\u00e9rationnelle Yves De Smet Bernard Fortz - Table des mati\u00e8res I Introduction Aide \u00e0 la d\u00e9cision et mod\u00e8les math\u00e9matiques Quelques exemples de mod\u00e8les math\u00e9matiques"            }
+        </script>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-6133583279631137",
+            enable_page_level_ads: true
+        });
+    </script>
+    </head>
+
+<!-- Body BEGIN -->
+<body class="corporate">
+<!-- BEGIN HEADER -->
+<div class="header">
+    <div class="container-fluid pre-header">
+        <div class="row">
+            <div class="col-md-2 hidden-sm hidden-xs additional-shop-info">
+                <a style="max-width: 80px;" class="site-logo" href="/"><img src="/static/images/docplayer_logo.png"></a>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-12 top_menu_user pull-right">
+                <ul class="list-unstyled list-inline pull-right" style="float: none!important;">
+                    <li class="nologin hidden"><i class="fa fa-sign-in"></i> <a href="/login/">Entrer</a></li>
+                    <li class="nologin hidden"><a href="/register/">Enregistrement</a></li>
+                </ul>
+            </div>
+            <div class="col-md-8 col-sm-9 col-xs-12 pull-left">
+                <form action="/search/" class="content-search-view2">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Recherche..." name="q" value="">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-primary">Chercher</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header END -->
+
+
+
+    <div class="main">
+        <div class="container-fluid">
+            <!-- BEGIN SIDEBAR & CONTENT -->
+            <div class="row margin-bottom-40">
+                <!-- BEGIN CONTENT -->
+                <div class="col-md-12 col-sm-12">
+                    <div class="content-page">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <h1 id="name_header">INFO-F Algorithmique 3 et Recherche Opérationnelle</h1>
+                                                                    <div style="margin-bottom: 10px; text-align: center;">
+                                        <script>
+                                            var width = window.innerWidth
+                                                || document.documentElement.clientWidth
+                                                || document.body.clientWidth;
+                                            document.write('<sc'+'ript async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></sc'+'ript> \
+                       <ins class="adsbygoogle" \
+                             style="display:block" \
+                             data-ad-client="ca-pub-6133583279631137" \
+                             data-ad-slot="5061836408" \
+                             data-ad-format="auto"></ins> \
+                        <sc'+'ript> \
+                            (adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;\
+                            (adsbygoogle = window.adsbygoogle || []).push({}); \
+                        </'+'scr'+'ipt>');
+                                        </script>
+                                    </div>
+                                                            </div>
+                            <div class="col-md-9 col-sm-12">
+                                <div class="row">
+                                    <!-- BEGIN LEFT SIDEBAR -->
+                                    <div class="col-md-12 col-sm-12 blog-item">
+                                        <table style="table-layout: fixed;" width="100%">
+                                            <tr>
+                                                <td style="width: 170px;vertical-align: top;padding-right: 20px;padding-top: 6px;" id="left_banner_td">
+                                                                                                        <div style="width: 160px; height: 600px;">
+                                                        <script>
+                                                            if (width < 612) {
+                                                                document.getElementById('left_banner_td').style.display= "none";
+                                                            } else {
+                                                                document.write('<scr'+'ipt async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></scri'+'pt>\
+                            <ins class="adsbygoogle"\
+                                 style="display:inline-block;width:160px;height:600px"\
+                                 data-ad-client="ca-pub-6133583279631137"\
+                                 data-ad-slot="6538569603"></ins>\
+                            <sc'+'ript>\
+                                (adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;\
+                                (adsbygoogle = window.adsbygoogle || []).push({});\
+                            </'+'scr'+'ipt>');
+                                                            }
+                                                        </script>
+                                                    </div>
+                                                                                                    </td>
+                                                <td style="padding-left: 10px;">
+                                                    <div class="blog-item-img">
+                                                        <script>
+                                                            var k_dim = 70;
+                                                            var doc_pages_count = 58;
+                                                        </script>
+                                                                                                                    
+                                                            <div>
+                                                                <video id="playerFrameVideo" class="video-js" controls preload="auto">
+                                                                    <source src="http://docplayer.fr/docs-video/76/283172/video.mp4" type='video/mp4'>
+                                                                    <p class="vjs-no-js">
+                                                                        To view this video please enable JavaScript, and consider upgrading to a web browser that
+                                                                        <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                                                                    </p>
+                                                                </video>
+                                                            </div>
+                                                                                                                </div>
+
+                                                    
+                                                    <div style="margin-bottom: 10px;text-align: center;">
+                                                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                                        <!-- down -->
+                                                        <ins class="adsbygoogle"
+                                                             style="display:block"
+                                                             data-ad-client="ca-pub-6133583279631137"
+                                                             data-ad-slot="9492036005"
+                                                             data-ad-format="auto"></ins>
+                                                        <script>
+                                                            (adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
+                                                            (adsbygoogle = window.adsbygoogle || []).push({});
+                                                        </script>
+                                                    </div>
+                                                                                                    </td>
+                                            </tr>
+                                        </table>
+
+
+                                    </div>
+
+
+
+                                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                                        <div class="tabbable-custom">
+                                            <ul class="nav nav-tabs">
+                                                <li class="active">
+                                                    <a href="#tab_1_1_1" data-toggle="tab">
+                                                        <i class="fa fa-share-alt"></i>
+                                                        SHARE </a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="#tab_1_1_2" data-toggle="tab">
+                                                        <i class="fa fa-code"></i>
+                                                        HTML </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#download_tab_content" data-toggle="tab" id="download_tab">
+                                                        <i class="fa fa-download"></i>
+                                                        DOWNLOAD </a>
+                                                </li>
+                                                                                                    <li class="pull-right">
+                                                        <a href="#" id="hide_video_player" onclick="hide_video_player();return false">CLASSIC PLAYER</a>
+                                                    </li>
+                                                                                            </ul>
+                                            <div class="tab-content">
+                                                <div class="tab-pane active" id="tab_1_1_1">
+                                                    <div>
+                                                        <div class="save_as_header">Save this PDF as:</div>
+                                                        <a title="PDF to Word free online converter" href="http://pdftoword-converter.online/enter/?url=http://docplayer.fr/283172-Info-f-310-algorithmique-3-et-recherche-operationnelle.html" target="_blank" class="btn btn-default save_as_button"><i class="fa fa-download"></i>&nbsp;WORD</a>
+                                                        <a title="PDF to PNG free online converter" href="http://pdftopng-converter.online/enter/?url=http://docplayer.fr/283172-Info-f-310-algorithmique-3-et-recherche-operationnelle.html" target="_blank" class="btn btn-default save_as_button"><i class="fa fa-download"></i>&nbsp;PNG</a>
+                                                        <a title="PDF to Text free online converter" href="http://pdftotext-converter.online/enter/?url=http://docplayer.fr/283172-Info-f-310-algorithmique-3-et-recherche-operationnelle.html" target="_blank" class="btn btn-default save_as_button"><i class="fa fa-download"></i>&nbsp;TXT</a>
+                                                        <a title="PDF to JPG free online converter" href="http://pdftojpg-converter.online/enter/?url=http://docplayer.fr/283172-Info-f-310-algorithmique-3-et-recherche-operationnelle.html" target="_blank" class="btn btn-default save_as_button"><i class="fa fa-download"></i>&nbsp;JPG</a>
+                                                    </div>
+                                                    <p>
+                                                    <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+
+                                                        <a class="addthis_button_facebook"></a>
+                                                        <a class="addthis_button_vk"></a>
+                                                        <a class="addthis_button_twitter"></a>
+                                                        <a class="addthis_button_amazon"></a>
+                                                        <a class="addthis_button_google_plusone_share"></a>
+                                                        <a class="addthis_button_linkedin"></a>
+                                                        <a class="addthis_button_pinterest_share"></a>
+                                                        <a class="addthis_button_tumblr"></a>
+                                                        <a class="addthis_button_myspace"></a>
+                                                        <a class="addthis_button_reddit"></a>
+                                                        <a class="addthis_button_wordpress"></a>
+                                                        <a class="addthis_button_blogger"></a>
+                                                        <a class="addthis_button_adifiny"></a>
+                                                        <a class="addthis_button_vk"></a>
+                                                        <a class="addthis_button_ziczac"></a>
+                                                        <a class="addthis_button_favorites"></a>
+                                                        <a class="addthis_button_gmail"></a>
+                                                        <a class="addthis_button_buzzzy"></a>
+                                                        <a class="addthis_button_technerd"></a>
+                                                        <a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a>
+                                                    </div>
+                                                    </p>
+                                                    <p>
+                                                        
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="tab_1_1_2" style="padding-top: 20px; padding-bottom: 20px;">
+                                                    <div id="size_slider" class="slider bg-blue ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+                                                        <a class="ui-slider-handle ui-state-default ui-corner-all bg-red" href="#" style="left: 32%;"></a>
+                                                    </div>
+                                                    <div class="row margin-top-10 margin-bottom-10" style="line-height: 27px; font-size: 20px; font-weight: 100;">
+                                                        <div class="col-md-5 col-sm-12">
+                                                            Dimension: <span class="slider-value" id="slider-vertical-amount"></span>px
+                                                        </div>
+                                                        <div class="col-md-5 col-sm-6" style="text-align: right; line-height: 27px; font-size: 20px; font-weight: 100;">
+                                                            Commencer à balayer dès la page:
+                                                        </div>
+                                                        <div class="col-md-2 col-sm-6">
+                                                            <select class="form-control" id="embed_page_start">
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <p>
+                                                        <textarea id="embed_code" class="form-control" rows="3"></textarea>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="download_tab_content" style="min-height: 100px;">
+                                                    <strong>Download "INFO-F-310 - Algorithmique 3 et Recherche Opérationnelle"</strong>
+
+                                                    <form action="/doc/get-download-link/" id="form_download">
+                                                        <div id="download_loading" style="text-align: center; margin-bottom: 20px; margin-top: 20px;"><img src="/static/images/loading.gif" border="0" width="64" height="64"></div>
+                                                        <div class="note note-danger" id="download_error_message" style="display: none;">
+                                                            <p>
+                                                                Erreur: <span></span>
+                                                            </p>
+                                                        </div>
+
+                                                        <input type="hidden" name="doc_id" value="283172">
+                                                        <a id="download_link" download="INFO-F-310 - Algorithmique 3 et Recherche Opérationnelle.pdf" class="btn bg-purple-seance" href="#" target="_blank" style="margin-top: 10px; display: none;">
+                                                            <i class="fa fa-download"></i> Download Document</a>
+                                                    </form>
+                                                </div>
+                                                                                                    <div style="margin-top: 10px; text-align: center;">
+                                                </div>
+                                                                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12 blog-item">
+                                        <ul class="blog-info">
+                                            <li><i class="fa fa-user"></i> <a href="/user/283082/"> Fernande Paquin</a></li>
+                                            <li><i class="fa fa-calendar"></i> il y a 2 ans                                                                                            </li>
+                                            <li><i class="fa fa-eye"></i> Total affichages : <span id="views_count" doc_id="283172"></span> </li>
+                                        </ul>
+                                    </div>
+
+                                    <!--    <div class="col-md-12 col-sm-12 col-xs-12 blog-item">-->
+                                    <!--        <h2>-->
+                                    <!--            <i class="fa fa-comments-o"></i>-->
+                                    <!--            --><!--</h2>-->
+                                    <!--        <div class="comments" style="overflow: hidden;">-->
+                                    <!--            <div class="fb-comments" data-href="--><!--" data-numposts="5" data-width="100%"></div>-->
+                                    <!--        </div>-->
+                                    <!--    </div>-->
+
+                                    <div class="col-md-12 col-sm-12 col-sm-12 col-xs-12" id="transcript_block">
+                                        <h2 style="margin-top: 30px;"><i class="fa fa-file-text-o"></i>Transcription</h2>
+                                                                                    <div id="ban_200x200">
+                                                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:90px"
+     data-ad-client="ca-pub-6133583279631137"
+     data-ad-slot="1968769209"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                                            </div>
+                                                                                <p><span class="badge bg-blue-hoki">1</span> INFO-F- - Algorithmique et Recherche Op&eacute;rationnelle Yves De Smet Bernard Fortz - Table des mati&egrave;res I Introduction Aide &agrave; la d&eacute;cision et mod&egrave;les math&eacute;matiques Quelques exemples de mod&egrave;les math&eacute;matiques Tour d horizon des techniques de recherche op&eacute;rationnelle II Programmation lin&eacute;aire 6 D&eacute;finition, exemples et m&eacute;thode de r&eacute;solution 6. Notions de bases Exemples de mod&egrave;les lin&eacute;aires Forme standard et forme canonique d un programme lin&eacute;aire R&eacute;solution de programmes lin&eacute;aires R&eacute;solution graphique La m&eacute;thode du simplexe La m&eacute;thode des deux phases Cas particuliers Dualit&eacute;. Le probl&egrave;me dual Relations primal/dual Interpr&eacute;tation &eacute;conomique de la dualit&eacute; M&eacute;thode simplexe duale Solveurs et langages de mod&eacute;lisation III Le probl&egrave;me de transport 7 D&eacute;finition et exemples 8 Algorithme pour le probl&egrave;me de transport 9 Le probl&egrave;me de transbordement IV Le flot maximum 6 Introduction 6 Formulation 6</p>                                                <noscript><span itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="name" content="INFO-F- - Algorithmique et Recherche Op&eacute;rationnelle Yves De Smet Bernard Fortz - Table des mati&egrave;res I Introduction Aide &agrave; la d&eacute;cision et mod&egrave;les math&eacute;matiques Quelques exemples de mod&egrave;les"><meta itemprop="description" content="math&eacute;matiques Tour d horizon des techniques de recherche op&eacute;rationnelle II Programmation lin&eacute;aire 6 D&eacute;finition, exemples et m&eacute;thode de r&eacute;solution 6. Notions de bases........................................... 6. Exemples de mod&egrave;les lin&eacute;aires."><img itemprop="contentURL" src="/docs-images/40/283172/images/page_1.jpg" width="960" align="left" alt="................................... 6. Forme standard et forme canonique d un programme lin&eacute;aire.................... 8. R&eacute;solution de programmes lin&eacute;aires................................... R&eacute;solution graphique." title="...................................... La m&eacute;thode du simplexe..................................... La m&eacute;thode des deux phases................................. 6.. Cas particuliers........................................ 7 Dualit&eacute;."></span></noscript>
+                                                <p><span class="badge bg-blue-hoki">2</span> Coupe minimum 6 Algorithme de Ford-Fulkerson 6 V Flots de co&ucirc;t minimum 9 D&eacute;finitions et exemples 9 Algorithme de chemins augmentants 9 6 Extensions VI Couplages 6 7 Introduction 6 8 Affectations bipartites 7 9 Le probl&egrave;me des mariages stables VII La programmation dynamique Retour aux plus courts chemins Le probl&egrave;me de sac-&agrave;-dos D&eacute;termination de la taille des lots 6</p>                                                <noscript><span itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="name" content="Coupe minimum 6 Algorithme de Ford-Fulkerson 6 V Flots de co&ucirc;t minimum 9 D&eacute;finitions et"><meta itemprop="description" content="exemples 9 Algorithme de chemins augmentants 9 6 Extensions VI Couplages 6 7 Introduction 6"><img itemprop="contentURL" src="/docs-images/40/283172/images/page_2.jpg" width="960" align="left" alt="8 Affectations bipartites 7 9 Le probl&egrave;me des mariages stables VII La programmation" title="dynamique Retour aux plus courts chemins Le probl&egrave;me de sac-&agrave;-dos D&eacute;termination de la"></span></noscript>
+                                                <p><span class="badge bg-blue-hoki">3</span> Premi&egrave;re partie Introduction Aide &agrave; la d&eacute;cision et mod&egrave;les math&eacute;matiques Un premier probl&egrave;me Exemple (Achat de billets d avion). Un homme d affaires doit effectuer voyages entre Fayetteville (FYV) &agrave; Denver (DEN), en partant le lundi de FYV et revenant le mercredi de DEN &agrave; FYV. Billet aller-retour : $. R&eacute;duction de % si un weekend est inclus. Aller simple : 7 % du prix aller-retour. Question Comment acheter les billets pour les semaines (&agrave; prix minimum)? Aide &agrave; la d&eacute;cision Probl&egrave;me d aide &agrave; la d&eacute;cision. Quelles sont les alternatives possibles?. Quelles sont les restrictions &agrave; cette d&eacute;cision?. Quel est l objectif utilis&eacute; pour &eacute;valuer les alternatives? Restrictions FYV-DEN le lundi et DEN-FYV le mercredi de la m&ecirc;me semaine. Evaluation des alternatives Alternatives Acheter FYV-DEN-FYV normaux. x $ = $ Acheter un FYV-DEN, DEN-FYV-DEN comprenant un weekend et un DEN-FYV..7 x $ + x.8 x $ +.7 x $ = $88 Acheter un FYV-DEN-FYV pour le lundi de la premi&egrave;re semaine et le mercredi de la derni&egrave;re semaine, et DEN-FYV-DEN comprenant un weekend pour les autres voyages. x.8 x $ = $6 La troisi&egrave;me alternative est la meilleure. Mod&egrave;le de recherche op&eacute;rationnelle Ingr&eacute;dients principaux Alternatives (variables, inconnues du probl&egrave;me). Restrictions (contraintes). Fonction objectif &agrave; optimiser (minimiser ou maximiser). D&eacute;finition (Solution admissible). Une solution admissible est un ensemble de valeurs donn&eacute;es aux variables qui satisfait toutes les contraintes. D&eacute;finition (Solution optimale). Une solution optimale est une solution admissible qui optimise la fonction objectif. D&eacute;finition (Mod&egrave;le de recherche op&eacute;rationnelle). Maximiser ou minimiser (fonction objectif) Sujet &agrave; { contraintes } Variables : continues (r&eacute;elles), enti&egrave;res, bool&eacute;ennes (/),... Objectif : lin&eacute;aire / non-lin&eacute;aire, concave / convexe,...</p>                                                <noscript><span itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="name" content="Premi&egrave;re partie Introduction Aide &agrave; la d&eacute;cision et mod&egrave;les math&eacute;matiques Un premier probl&egrave;me Exemple (Achat de billets d avion)."><meta itemprop="description" content="Un homme d affaires doit effectuer voyages entre Fayetteville (FYV) &agrave; Denver (DEN), en partant le lundi de FYV et revenant le mercredi de DEN &agrave; FYV. Billet aller-retour : $."><img itemprop="contentURL" src="/docs-images/40/283172/images/page_3.jpg" width="960" align="left" alt="R&eacute;duction de % si un weekend est inclus. Aller simple : 7 % du prix aller-retour. Question Comment acheter les billets pour les semaines (&agrave; prix minimum)?" title="Aide &agrave; la d&eacute;cision Probl&egrave;me d aide &agrave; la d&eacute;cision. Quelles sont les alternatives possibles?. Quelles sont les restrictions &agrave; cette d&eacute;cision?. Quel est l objectif utilis&eacute; pour &eacute;valuer les alternatives?"></span></noscript>
+                                                <p><span class="badge bg-blue-hoki">4</span> Contraintes : lin&eacute;aire / non-lin&eacute;aire, concave / convexe, &eacute;galit&eacute;s / in&eacute;galit&eacute;s,... Param&egrave;tres : connus avec certitude (mod&egrave;les d&eacute;terministes) / incertains (mod&egrave;les stochastiques) Exemple (Maximisation de la surface d un rectangle). Supposons que l on veut plier un fil de fer de longueur L en rectangle de mani&egrave;re &agrave; maximiser la surface du rectangle. l w Formulation max A = lw s.t. l + w = L Solution A = ( L w) w = Lw w da dw = L w = Solution optimale : w = l = L M&eacute;thodes de r&eacute;solution Dans l exemple, solution analytique au probl&egrave;me. La plupart des probl&egrave;mes pratiques sont trop grands ou trop complexes pour &ecirc;tre r&eacute;solus analytiquement. M&eacute;thodes it&eacute;ratives D&eacute;placement de solution en solution pour atteindre l optimum (m&eacute;thodes exactes) ou une &quot;bonne&quot; solution (heuristiques). Importance des algorithmes et des solutions informatiques. Quelques exemples de mod&egrave;les math&eacute;matiques Un probl&egrave;me de placement Une entreprise veut placer un capital K. Six modalit&eacute;s de placement sont offertes sur le march&eacute;, les taux d int&eacute;r&ecirc;t &eacute;tant respectivement %,, %,, %, %, % et, %. Pour satisfaire aux contraintes l&eacute;gales, l entreprise doit placer au moins % de son capital suivant les deux premi&egrave;res modalit&eacute;s, au plus % suivant les deux suivantes et au plus % suivant les deux derni&egrave;res. Combien l entreprise doit-elle placer dans chaque modalit&eacute; de fa&ccedil;on &agrave; maximiser son int&eacute;r&ecirc;t total? Fabrication de cr&egrave;me glac&eacute;e Un fabriquant d&eacute;sire produire kg d une pr&eacute;paration de base pour cr&egrave;me glac&eacute;e. Cette pr&eacute;paration doit contenir, kg de mati&egrave;res grasses, kg de sucre,, kg d oeufs et 6, kg d eau. Les ingr&eacute;dients dont il dispose figurent ci-dessous, avec les pourcentages (en poids) de chaque constituant, et le co&ucirc;t au kg. Mati&egrave;res gr. Sucre Oeufs Eau Co&ucirc;t Cr&egrave;me 6 Jaune d oeuf frais Lait 88 Jaune d oeuf surgel&eacute; 6 Sirop 7,8 Eau Le fabriquant d&eacute;sire d&eacute;terminer la composition du m&eacute;lange de co&ucirc;t minimal.</p>                                                <noscript><span itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="name" content="Contraintes : lin&eacute;aire / non-lin&eacute;aire, concave / convexe, &eacute;galit&eacute;s / in&eacute;galit&eacute;s,."><meta itemprop="description" content=".. Param&egrave;tres : connus avec certitude (mod&egrave;les d&eacute;terministes) / incertains (mod&egrave;les stochastiques) Exemple (Maximisation de la surface d un rectangle)."><img itemprop="contentURL" src="/docs-images/40/283172/images/page_4.jpg" width="960" align="left" alt="Supposons que l on veut plier un fil de fer de longueur L en rectangle de mani&egrave;re &agrave; maximiser la surface du rectangle. l w Formulation max A = lw s.t. l + w = L Solution A = ( L w) w = Lw w da dw = L w = Solution optimale : w = l = L M&eacute;thodes de r&eacute;solution Dans l exemple, solution analytique au probl&egrave;me." title="La plupart des probl&egrave;mes pratiques sont trop grands ou trop complexes pour &ecirc;tre r&eacute;solus analytiquement."></span></noscript>
+                                                <p><span class="badge bg-blue-hoki">5</span> Localisation d &eacute;metteurs de t&eacute;l&eacute;vision Cinq sites ont &eacute;t&eacute; retenus pour construire des &eacute;metteurs de t&eacute;l&eacute;vision destin&eacute;s &agrave; desservir localit&eacute;s. Le tableau ci-dessous donne, pour chaque site, le co&ucirc;t de construction d un &eacute;metteur sur ce site et les localit&eacute;s desservies par cet &eacute;metteur. Site Co&ucirc;t Localit&eacute;s desservies,,, 7, 8, 7,, 6, 8, 9, 6,,, 8,,, 6, 7, 9 Un probl&egrave;me de localisation Une soci&eacute;t&eacute; de distribution d&eacute;sire construire un ou plusieurs entrep&ocirc;ts &agrave; partir desquels elle servira 6 clients importants. Quatre terrains appartenant &agrave; la soci&eacute;t&eacute; sont disponibles. Le tableau ci-dessous reprend, pour chacun d eux, la capacit&eacute; maximum de l entrep&ocirc;t qui pourrait y &ecirc;tre construit, le co&ucirc;t de construction et le co&ucirc;t unitaire de transport de cet &eacute;ventuel entrep&ocirc;t vers chaque client. Sachant que les quantit&eacute;s demand&eacute;es par les clients sont respectivement de,,,,, et 7, o&ugrave; faut-il construire un (des) entrep&ocirc;t(s) et comment faut-il organiser la distribution de fa&ccedil;on &agrave; minimiser le co&ucirc;t total de l op&eacute;ration? Clients 6 Capacit&eacute; Co&ucirc;t Entrep&ocirc;ts maximum construction Tour d horizon des techniques de recherche op&eacute;rationnelle Recherche op&eacute;rationnelle La recherche op&eacute;rationnelle est une technique d aide &agrave; la d&eacute;cision. Etapes pratiques. D&eacute;finition du probl&egrave;me. Construction d un mod&egrave;le. Solution du mod&egrave;le. Validation du mod&egrave;le. Impl&eacute;mentation de la solution M&eacute;thodologie Les &eacute;tapes les plus importantes sont la d&eacute;finition du probl&egrave;me (suppose un dialogue avec le d&eacute;cideur) et la construction du mod&egrave;le (prendre conscience des hypoth&egrave;ses simplificatrices et de leur impact). La phase de validation doit permettre de remettre en cause la validit&eacute; du mod&egrave;le. Une approche globale n&eacute;cessite donc un aller-retour constant entre le mod&egrave;le et les attentes du d&eacute;cideur. Techniques principales Programmation lin&eacute;aire Programmation en nombres entiers Optimisation dans les r&eacute;seaux Programmation non lin&eacute;aire &quot;Optimisation&quot; multi-crit&egrave;res Programmation dynamique Mod&egrave;les stochastiques Simulation</p>                                                <noscript><span itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="name" content="Localisation d &eacute;metteurs de t&eacute;l&eacute;vision Cinq sites ont &eacute;t&eacute; retenus pour construire des &eacute;metteurs de t&eacute;l&eacute;vision destin&eacute;s &agrave; desservir localit&eacute;s."><meta itemprop="description" content="Le tableau ci-dessous donne, pour chaque site, le co&ucirc;t de construction d un &eacute;metteur sur ce site et les localit&eacute;s desservies par cet &eacute;metteur."><img itemprop="contentURL" src="/docs-images/40/283172/images/page_5.jpg" width="960" align="left" alt="Site Co&ucirc;t Localit&eacute;s desservies,,, 7, 8, 7,, 6, 8, 9, 6,,, 8,,, 6, 7, 9 Un probl&egrave;me de localisation Une soci&eacute;t&eacute; de distribution d&eacute;sire construire un ou plusieurs entrep&ocirc;ts &agrave; partir desquels elle" title="servira 6 clients importants. Quatre terrains appartenant &agrave; la soci&eacute;t&eacute; sont disponibles."></span></noscript>
+                                                <p><span class="badge bg-blue-hoki">6</span> Deuxi&egrave;me partie Programmation lin&eacute;aire D&eacute;finition, exemples et m&eacute;thode de r&eacute;solution. Notions de bases Programmation lin&eacute;aire D&eacute;finition (Programme lin&eacute;aire). Mod&egrave;le math&eacute;matique dans lequel la fonction objectif et les contraintes sont lin&eacute;aires en les variables. Applications Optimisation de l usage de ressources limit&eacute;es dans les domaines militaire, industriel, agricole, &eacute;conomique,... Existence d algorithmes tr&egrave;s efficaces pour r&eacute;soudre des probl&egrave;mes de tr&egrave;s grande taille (simplexe, points int&eacute;rieurs). Exemples de mod&egrave;les lin&eacute;aires Exemple (Production de peinture). Une soci&eacute;t&eacute; produit de la peinture d int&eacute;rieur et d ext&eacute;rieur &agrave; partir de deux produits de base M et M. Donn&eacute;es Quantit&eacute; utilis&eacute;e par tonne Quantit&eacute; disponible par jour Ext&eacute;rieure Int&eacute;rieure M 6 M 6 Profit par tonne Contraintes suppl&eacute;mentaires Demande maximum en peinture d int&eacute;rieur : tonnes / jour. La production en peinture d int&eacute;rieur ne d&eacute;passer que d une tonne celle d ext&eacute;rieur. Formulation (Production de peinture) Alternatives (variables, inconnues du probl&egrave;me) x = tonnes de peinture d ext&eacute;rieur produites par jour x = tonnes de peinture d int&eacute;rieur produites par jour Fonction objectif &agrave; optimiser max z = x + x Restrictions (contraintes) 6</p>                                                <noscript><span itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="name" content="Deuxi&egrave;me partie Programmation lin&eacute;aire D&eacute;finition, exemples et m&eacute;thode de r&eacute;solution. Notions de bases Programmation lin&eacute;aire D&eacute;finition (Programme lin&eacute;aire)."><meta itemprop="description" content="Mod&egrave;le math&eacute;matique dans lequel la fonction objectif et les contraintes sont lin&eacute;aires en les variables."><img itemprop="contentURL" src="/docs-images/40/283172/images/page_6.jpg" width="960" align="left" alt="Applications Optimisation de l usage de ressources limit&eacute;es dans les domaines militaire, industriel, agricole, &eacute;conomique,." title=".. Existence d algorithmes tr&egrave;s efficaces pour r&eacute;soudre des probl&egrave;mes de tr&egrave;s grande taille (simplexe, points int&eacute;rieurs). Exemples de mod&egrave;les lin&eacute;aires Exemple (Production de peinture)."></span></noscript>
+                                                <p><span class="badge bg-blue-hoki">7</span> 6x + x x + x 6 x x x x, x Solutions et m&eacute;thodes de r&eacute;solution Solution admissible : satisfait toutes les contraintes. x =, x = ( z = 9) Nous voulons trouver la solution (admissible) optimale. Infinit&eacute; de solutions admissibles! M&eacute;thodes pour trouver l optimum M&eacute;thode graphique Simplexe ( Ellipsoide, points int&eacute;rieurs ) Exemple (Diet problem). On d&eacute;sire d&eacute;terminer la composition, &agrave; co&ucirc;t minimal, d un aliment pour b&eacute;tail qui est obtenu en m&eacute;langeant au plus trois produits bruts : orge et arachide. La quantit&eacute; n&eacute;cessaire par portion est de g. L aliment ainsi fabriqu&eacute; devra comporter au moins % de prot&eacute;ines et au plus % de fibres. Donn&eacute;es Quantit&eacute; par gramme d aliment Co&ucirc;t Aliment Prot&eacute;ines Fibres (EUR / kg) Orge.9.. Arachide.6.6. Formulation (Diet problem) Variables x = grammes d orge par portion x = grammes d arachide par portion Objectif min z =.x +.x Contraintes Quantit&eacute; totale : x + x Prot&eacute;ines :.9x +.6x.(x + x ) Fibres :.x +.6x.(x + x ) Non-n&eacute;gativit&eacute; : x, x 7</p>                                                <noscript><span itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="name" content="6x + x x + x 6 x x x x, x Solutions et m&eacute;thodes de r&eacute;solution Solution admissible : satisfait toutes les contraintes. x =, x = ( z = 9) Nous voulons trouver la solution (admissible) optimale."><meta itemprop="description" content="Infinit&eacute; de solutions admissibles! M&eacute;thodes pour trouver l optimum M&eacute;thode graphique Simplexe ( Ellipsoide, points int&eacute;rieurs ) Exemple (Diet problem)."><img itemprop="contentURL" src="/docs-images/40/283172/images/page_7.jpg" width="960" align="left" alt="On d&eacute;sire d&eacute;terminer la composition, &agrave; co&ucirc;t minimal, d un aliment pour b&eacute;tail qui est obtenu en m&eacute;langeant au plus trois produits bruts : orge et arachide. La quantit&eacute; n&eacute;cessaire par portion est de g." title="L aliment ainsi fabriqu&eacute; devra comporter au moins % de prot&eacute;ines et au plus % de fibres. Donn&eacute;es Quantit&eacute; par gramme d aliment Co&ucirc;t Aliment Prot&eacute;ines Fibres (EUR / kg) Orge.9.. Arachide.6."></span></noscript>
+                                                <p><span class="badge bg-blue-hoki">8</span> . Forme standard et forme canonique d un programme lin&eacute;aire Forme standard D&eacute;finition (Forme standard). Un programme lin&eacute;aire est sous forme standard lorsque toutes ses contraintes sont des &eacute;galit&eacute;s et toutes ses variables sont non-n&eacute;gatives. Repr&eacute;sentation matricielle max s.c. c T x Ax = b x n variables, m contraintes, m &lt; n, c, x R n, b R m, A R m n. Forme canonique D&eacute;finition 6 (Forme canonique). Un programme lin&eacute;aire est sous forme canonique lorsque toutes ses contraintes sont des in&eacute;galit&eacute;s et toutes ses variables sont non-n&eacute;gatives. Repr&eacute;sentation matricielle max s.t. c T x Ax b x n variables, m contraintes, c, x R n, b R m, A R m n. Th&eacute;or&egrave;me (Equivalence des formes standard et canonique). Tout programme lin&eacute;aire peut s &eacute;crire sous forme standard et sous forme canonique. D&eacute;monstration. Une containte d in&eacute;galit&eacute; a T x b peut &ecirc;tre transform&eacute;e en &eacute;galit&eacute; par l introduction d une variable d &eacute;cart : a T x + s = b, s. Une contrainte d &eacute;galit&eacute; a T x = b peut &ecirc;tre remplac&eacute;e par deux in&eacute;galit&eacute;s : a T x b a T x b a T x b a T x b. min c T x = max c T x. Variable x non restreinte : substitution par deux variables (partie positive et n&eacute;gative) x = x + x x +, x. Il existe toujours une solution optimale telle que x + = ou x =. 8</p>                                                <noscript><span itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="name" content=". Forme standard et forme canonique d un programme lin&eacute;aire Forme standard D&eacute;finition (Forme standard)."><meta itemprop="description" content="Un programme lin&eacute;aire est sous forme standard lorsque toutes ses contraintes sont des &eacute;galit&eacute;s et toutes ses variables sont non-n&eacute;gatives. Repr&eacute;sentation matricielle max s.c. c T x Ax = b x n variables, m contraintes, m &lt; n, c, x R n, b R m, A R m n."><img itemprop="contentURL" src="/docs-images/40/283172/images/page_8.jpg" width="960" align="left" alt="Forme canonique D&eacute;finition 6 (Forme canonique). Un programme lin&eacute;aire est sous forme canonique lorsque toutes ses contraintes sont des in&eacute;galit&eacute;s et toutes ses variables sont non-n&eacute;gatives." title="Repr&eacute;sentation matricielle max s.t. c T x Ax b x n variables, m contraintes, c, x R n, b R m, A R m n. Th&eacute;or&egrave;me (Equivalence des formes standard et canonique)."></span></noscript>
+                                                <p><span class="badge bg-blue-hoki">9</span> Forme standard du probl&egrave;me de production de peinture max z = x + x s.c. 6x + x x + x 6 x x x x, x Forme standard max z = x +x s.c. 6x +x +s = x +x +s = 6 x +s = x +x +s = x, x, s, s, s, s Forme matricielle max s.t. c T x Ax = b x c =, x = x x s s s s, A = 6, b = 6 Variables pouvant prendre des valeurs n&eacute;gatives Exemple (Vente de hamburgers). Un fast-food vend des hamburgers et des cheeseburgers. Un hamburger utilise g. de viande alors qu un cheeseburger n en utilise que g. Le fast-food d&eacute;marre chaque journ&eacute;e avec kg de viande mais peut commander de la viande suppl&eacute;mentaire avec un co&ucirc;t additionnel de EUR par kg pour la livraison. Le profit est de. EUR pour un hamburger et. EUR pour un cheeseburger. La demande ne d&eacute;passe pas 9 sandwiches / jour, et les surplus de viande sont donn&eacute;s au Restos du Coeur. Combien le fast-food doit-il produire de sandwiches de chaque type par jour? Variables x = nombre de hamburgers / jour x = nombre de cheeseburgers / jour Contraintes Commande de viande suppl&eacute;mentaire : x + x + x =, x non restreint Le co&ucirc;t pour la viande suppl&eacute;mentaire appara&icirc;t seulement si x &lt;. 9</p>                                                <noscript><span itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="name" content="Forme standard du probl&egrave;me de production de peinture max z = x + x s.c. 6x + x x + x 6 x x x x, x Forme standard max z = x +x s.c. 6x +x +s = x +x +s = 6 x +s = x +x +s = x, x, s, s, s, s Forme matricielle max s."><meta itemprop="description" content="t. c T x Ax = b x c =, x = x x s s s s, A = 6, b = 6 Variables pouvant prendre des valeurs n&eacute;gatives Exemple (Vente de hamburgers). Un fast-food vend des hamburgers et des cheeseburgers."><img itemprop="contentURL" src="/docs-images/40/283172/images/page_9.jpg" width="960" align="left" alt="Un hamburger utilise g. de viande alors qu un cheeseburger n en utilise que g." title="Le fast-food d&eacute;marre chaque journ&eacute;e avec kg de viande mais peut commander de la viande suppl&eacute;mentaire avec un co&ucirc;t additionnel de EUR par kg pour la livraison. Le profit est de."></span></noscript>
+                                                <p><span class="badge bg-blue-hoki">10</span> Substitution de x par variables non-n&eacute;gatives : x = x + x, x+, x x + x + x + x = Borne sup&eacute;rieure sur les ventes : x + x 9. Mod&egrave;le complet max z =.x +.x.x s.c. x + x + x + x = x + x 9 x, x, x +, x Remarque : Il existe une solution optimale telle que x + = ou x =.. R&eacute;solution de programmes lin&eacute;aires.. R&eacute;solution graphique Repr&eacute;sentation graphique () () () () () (6) Production de peinture max z = x + x sous les contraintes : 6x + x () x + x 6 () x () x x () x () x (6)</p>                                                <noscript><span itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="name" content="Substitution de x par variables non-n&eacute;gatives : x = x + x, x+, x x + x + x + x = Borne sup&eacute;rieure sur les ventes : x"><meta itemprop="description" content="+ x 9. Mod&egrave;le co"><img itemprop="contentURL" src="/docs-images/40/283172/images/page_10.jpg" width="960" align="left" alt="mplet max z =.x +.x.x s.c." title="x + x + x + x = x + x 9 x, x, x +, x Remarque : Il existe une solution optimale telle que x + = ou x =."></span></noscript>
+                                                <p><span class="badge bg-blue-hoki">11</span> G&eacute;om&eacute;trie des solutions B A C D z= E F Ensemble des solutions admissibles Poly&egrave;dre (ABCDEF) Courbes de niveaux de l objectif Ensemble de solutions ayant un profit (valeur de l objectif) donn&eacute; : intersection entre une droite et le poly&egrave;dre. Am&eacute;lioration de la solution Recherche d une direction dans laquelle le profit z augmente. R&eacute;solution graphique (Production de peinture) z= B A C D E F Recherche de la solution optimale La droite mobile doit garder une intersection avec l ensemble des solutions admissibles. Solution optimale : x =, x =. (E) La solution optimale est un sommet du poly&egrave;dre. Cette observation est la base de l algorithme du simplexe.</p>                                                <noscript><span itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="name" content="G&eacute;om&eacute;trie des solutions B A C D z= E F Ensemble des solutions admissibles Poly&egrave;dre (ABCDEF) Courbes de niveaux de l objectif Ensemble de solutions ayant un profit"><meta itemprop="description" content="(valeur de l objectif) donn&eacute; : intersection entre une droite et le poly&egrave;dre."><img itemprop="contentURL" src="/docs-images/40/283172/images/page_11.jpg" width="960" align="left" alt="Am&eacute;lioration de la solution Recherche d une direction dans laquelle le profit z augmente." title="R&eacute;solution graphique (Production de peinture) z= B A C D E F Recherche de la solution optimale La droite mobile doit garder une intersection avec l ensemble des"></span></noscript>
+                                                <p><span class="badge bg-blue-hoki">12</span> R&eacute;solution graphique (Diet problem) Diet problem min z =.x +.x sous les contraintes x + x.x.x.x.x x x Solution optimale x = 7. x = z = La m&eacute;thode du simplexe Id&eacute;es de base Solution optimale : sommet (point extr&ecirc;me). Id&eacute;e fondamentale du simplexe : d&eacute;placement de sommet en sommet adjacent de mani&egrave;re &agrave; am&eacute;liorer la fonction objectif. Transformation des in&eacute;galit&eacute;s en &eacute;galit&eacute;s : forme standard du programme lin&eacute;aire - syst&egrave;me de m &eacute;quations &agrave; n inconnues (m &lt; n). Identification alg&eacute;brique des sommets : correspondance avec les bases d un syst&egrave;me d &eacute;quations. Solutions de base Syst&egrave;me de m &eacute;quations lin&eacute;aires &agrave; n inconnues (m &lt; n) : infinit&eacute; de solutions. Si on fixe &agrave; z&eacute;ro n m variables : syst&egrave;me de m &eacute;quations &agrave; m inconnues poss&eacute;dant une solution unique (si la matrice est inversible). C est une solution de base. D&eacute;finition 7 (Solution de base). Une solution de base d un programme lin&eacute;aire est la solution unique du syst&egrave;me de m &eacute;quations &agrave; m inconnues obtenu en fixant &agrave; z&eacute;ro n m variables (pourvu que la matrice du syst&egrave;me soit inversible). Les variables fix&eacute;es &agrave; z&eacute;ro sont appel&eacute;es variables hors base et les autres variables en base.</p>                                                <noscript><span itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="name" content="R&eacute;solution graphique (Diet problem) Diet problem min z =.x +.x sous les contraintes x + x.x.x.x.x x x Solution optimale x = 7. x = 8 86 6.7 z = 7 7.9."><meta itemprop="description" content=". La m&eacute;thode du simplexe Id&eacute;es de base Solution optimale : sommet (point extr&ecirc;me). Id&eacute;e fondamentale du simplexe : d&eacute;placement de sommet en sommet adjacent de mani&egrave;re &agrave; am&eacute;liorer la fonction objectif."><img itemprop="contentURL" src="/docs-images/40/283172/images/page_12.jpg" width="960" align="left" alt="Transformation des in&eacute;galit&eacute;s en &eacute;galit&eacute;s : forme standard du programme lin&eacute;aire - syst&egrave;me de m &eacute;quations &agrave; n inconnues (m &lt; n)." title="Identification alg&eacute;brique des sommets : correspondance avec les bases d un syst&egrave;me d &eacute;quations. Solutions de base Syst&egrave;me de m &eacute;quations lin&eacute;aires &agrave; n inconnues (m &lt; n) : infinit&eacute; de solutions."></span></noscript>
+                                                <p><span class="badge bg-blue-hoki">13</span> Exemple 6 (Production de peinture). Prenons B = {s, s, s, s }. z = +x +x s = 6x x s = 6 x x s = x s = +x x Si x = x =, alors s =, s = 6, s =, s =. Toutes ces valeurs sont non-n&eacute;gatives et la solution est r&eacute;alisable. D&eacute;finition 8 (Solution de base r&eacute;alisable). Une solution de base telle que toutes les variables prennent des valeurs non-n&eacute;gatives est appel&eacute;e solution de base r&eacute;alisable. G&eacute;om&eacute;trie des solutions de base B A C D E F Prenons B = {s, s, s, s } x = x =, s =, s = 6, s =, s =. Cette solution de base r&eacute;alisable correspond au sommet (, ). Base Solution Objectif Sommet {s, s, s, s } (, ) A {x, s, s, s } (, ) F {s, x, s, s } (6, ) Non r&eacute;alisable {x, x, s, s } (,.) E Th&eacute;or&egrave;me. Toute solution de base r&eacute;alisable correspond &agrave; un sommet du poly&egrave;dre. D&eacute;termination de la solution de base optimale n! Nombre maximum de solutions de base : m!(n m)! Algorithme &quot;b&ecirc;te et m&eacute;chant&quot; : &eacute;num&eacute;ration de toutes les bases. M&eacute;thode du simplexe : partir d une solution de base admissible et passer &agrave; une solution de base voisine qui am&eacute;liore la valeur de l objectif. Solution voisine : changement d une variable en base. etapes :. D&eacute;termination de la variable entrante.. D&eacute;termination de la variable sortante.. Pivotage. L algorithme du simplexe Variable entrante z = +x +x s = 6x x s = 6 x x s = x s = +x x Si x (ou x ) augmente (entre en base), la valeur de la fonction objectif z augmente. Quelle est la valeur maximale de x?</p>                                                <noscript><span itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="name" content="Exemple 6 (Production de peinture). Prenons B = {s, s, s, s }. z = +x +x s = 6x x s = 6 x x s = x s = +x x Si x = x =, alors s =, s = 6, s =, s =."><meta itemprop="description" content="Toutes ces valeurs sont non-n&eacute;gatives et la solution est r&eacute;alisable. D&eacute;finition 8 (Solution de base r&eacute;alisable)."><img itemprop="contentURL" src="/docs-images/40/283172/images/page_13.jpg" width="960" align="left" alt="Une solution de base telle que toutes les variables prennent des valeurs non-n&eacute;gatives est appel&eacute;e solution de base r&eacute;alisable." title="G&eacute;om&eacute;trie des solutions de base B A C D E F Prenons B = {s, s, s, s } x = x =, s =, s = 6, s =, s =. Cette solution de base r&eacute;alisable correspond au sommet (, )."></span></noscript>
+                                                <p><span class="badge bg-blue-hoki">14</span> Contraintes : les autres variables doivent rester positives. Variable sortante s = 6x x s = 6 x x 6 s = toujours! s = +x x toujours! x Pivotage Si x =, alors s =. x entre en base, s sort de la base. Substitution : x = 6 s x Nouveau syst&egrave;me : z = 6 s + x x = 6 s x s = + 6 s x s = x s = 6 s x Repr&eacute;sentation matricielle (dictionnaire) B = indices des variables en base, N = indices des variables hors base. D&eacute;composition des donn&eacute;es et variables (en r&eacute;arrangeant l ordre des variables) : A = ( ( ) ( ) ) xb cb A B A N, x =, c = x N c N avec x B, c B R m, x N, c N R n m, A B R m m, A N R m (m n). Equations du simplexe Si A B est inversible : Ax = b A B x B + A N x N = b x B + A B A N x N = A B b Notation : z = c T x = c T Bx B + CN T x N = c T B(A B b A B A Nx N ) + c T Nx N = c T BA B b + (ct N c T BA B A N) } {{ } co&ucirc;ts r&eacute;duits ou profits marginaux x l + k N a lk x k = b l l B x N z = z + k N c k x k</p>                                                <noscript><span itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="name" content="Contraintes : les autres variables doivent rester positives. Variable sortante s = 6x x s = 6 x x 6 s = toujours! s = +x x toujours! x Pivotage Si x =, alors s =. x entre en base, s sort de la base."><meta itemprop="description" content="Substitution : x = 6 s x Nouveau syst&egrave;me : z = 6 s + x x = 6 s x s = + 6 s x s = x s = 6 s x Repr&eacute;sentation matricielle (dictionnaire) B = indices des variables en base, N = indices des variables"><img itemprop="contentURL" src="/docs-images/40/283172/images/page_14.jpg" width="960" align="left" alt="hors base. D&eacute;composition des donn&eacute;es et variables (en r&eacute;arrangeant l ordre des variables) : A = ( ( ) ( ) ) xb cb A B A N, x =, c = x N c N avec x B, c B R m, x N, c N R n m, A B R m m, A N R m (m n)." title="Equations du simplexe Si A B est inversible : Ax = b A B x B + A N x N = b x B + A B A N x N = A B b Notation : z = c T x = c T Bx B + CN T x N = c T B(A B b A B A Nx N ) + c T Nx N = c T BA B b +"></span></noscript>
+                                                <p><span class="badge bg-blue-hoki">15</span> R&egrave;gles de pivotage Variable entrante Choisir la variable k hors base avec le profit marginal maximum (max z) ou le co&ucirc;t r&eacute;duit minimum (min z). max z k = arg max i i N min z k = arg min i i N Si c k (max) ou c k (min) pour tout k N, solution optimale, STOP. z = +x +x s = 6x x s = 6 x x s = x s = +x x Variable sortante Choisir la variable l en base telle que l = arg Si a lk pour tout l B, probl&egrave;me non born&eacute;, STOP. min b j j B:a jk &gt; a jk z = +x +x s = 6x x s = 6 x x s = x s = +x x Pivotage a ij = b i = a lj a lk a ij a ika lj a lk b l a lk b i a ikb l a lk i = l i l i = l i l z = +x +x s = 6x x s = 6 x x s = x s = +x x z = 6 s + x x = 6 s x s = + 6 s x s = x s = 6 s x z = s s x = s + s x = + 8 s s s = 8 s + s s = 8 s + s</p>                                                <noscript><span itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="name" content="R&egrave;gles de pivotage Variable entrante Choisir la variable k hors base avec le profit marginal maximum (max z) ou le co&ucirc;t r&eacute;duit minimum (min z)."><meta itemprop="description" content="max z k = arg max i i N min z k = arg min i i N Si c k (max) ou c k (min) pour tout k N, solution optimale, STOP."><img itemprop="contentURL" src="/docs-images/40/283172/images/page_15.jpg" width="960" align="left" alt="z = +x +x s = 6x x s = 6 x x s = x s = +x x Variable sortante Choisir la variable l en base telle que l = arg Si a lk pour tout l B, probl&egrave;me non born&eacute;, STOP." title="min b j j B:a jk &gt; a jk z = +x +x s = 6x x s = 6 x x s = x s = +x x Pivotage a ij = b i = a lj a lk a ij a ika lj a lk b l a lk b i a ikb l a lk i = l i l i = l i l z = +x +x s = 6x"></span></noscript>
+                                                <p><span class="badge bg-blue-hoki">16</span> Pr&eacute;sentation en tableau Pr&eacute;sentation compacte pour effectuer les calculs sans r&eacute;p&eacute;ter les syst&egrave;mes d &eacute;quations. It&eacute;ration Var. en base z x Solution z c T c T A B A = c ct B A x B A B A = a A B b B b Var. en base z x x s s s s Solution z s 6 s 6 s s It&eacute;ration Var. en base z x x s s s s Solution z 6 x 6 s 6 s s 6 It&eacute;ration Var. en base z x x s s s s Solution z x x 8 s 8 s 8.. La m&eacute;thode des deux phases Solution initiale artificielle Une solution de base admissible n est pas toujours connue a priori. Certains probl&egrave;mes n admettent pas de solution admissible, donc il est impossible de trouver une base de d&eacute;part. La m&eacute;thode des deux phases va permettre de d&eacute;terminer une base admissible ou prouver que le probl&egrave;me est impossible. Exemple 7 (M&eacute;thode des phases). min z = x +x s.c. x +x = x +x 6 x +x x, x 6</p>                                                <noscript><span itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="name" content="Pr&eacute;sentation en tableau Pr&eacute;sentation compacte pour effectuer les calculs sans r&eacute;p&eacute;ter les syst&egrave;mes d &eacute;quations. It&eacute;ration Var."><meta itemprop="description" content="en base z x Solution z c T c T A B A = c ct B A x B A B A = a A B b B b Var. en base z x x s s s s Solution z s 6 s 6 s s It&eacute;ration Var. en base z x x s s s s Solution z 6 x 6 s 6 s s 6 It&eacute;ration Var."><img itemprop="contentURL" src="/docs-images/40/283172/images/page_16.jpg" width="960" align="left" alt="en base z x x s s s s Solution z x x 8 s 8 s 8.. La m&eacute;thode des deux phases Solution initiale artificielle Une solution de base admissible n est pas toujours connue a priori." title="Certains probl&egrave;mes n admettent pas de solution admissible, donc il est impossible de trouver une base de d&eacute;part."></span></noscript>
+                                                <p><span class="badge bg-blue-hoki">17</span> Introduction des variables d &eacute;cart min z = x +x s.c. x +x = x +x x = 6 x +x +x = x, x, x, x Pas de base admissible &quot;triviale&quot;. On voudrait voir appara&icirc;tre une matrice identit&eacute;. Introduction de variables artificielles. Introduction des variables artificielles min z = x +x min r = R +R min r = 7x x +x +9 s.c. x +x +R = x +x x +R = 6 x +x +x = x, x, x, R, R, x R, R et x peuvent &ecirc;tre utilis&eacute;es comme base de d&eacute;part admissible. Base pour le syst&egrave;me de d&eacute;part si R = R = (hors base). R&eacute;&eacute;crire l objectif en fonction des variables hors base!.. Cas particuliers Bases d&eacute;g&eacute;n&eacute;r&eacute;es Si plusieurs choix sont possibles pour la variable sortante, une des variables en base sera nulle &agrave; l it&eacute;ration suivante. Base telle qu une variable en base est nulle : base d&eacute;g&eacute;n&eacute;r&eacute;e. Correspond &agrave; une contrainte redondante. Risque de cyclage! Exemple 8 (Bases d&eacute;g&eacute;n&eacute;r&eacute;es). max z = x +9x s.c. x +x 8 x +x x, x 7</p>                                                <noscript><span itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="name" content="Introduction des variables d &eacute;cart min z = x +x s.c. x +x = x +x x = 6 x +x +x = x, x, x, x Pas de base admissible &quot;triviale&quot;. On voudrait voir appara&icirc;tre une matrice identit&eacute;."><meta itemprop="description" content="Introduction de variables artificielles. Introduction des variables artificielles min z = x +x min r = R +R min r = 7x x +x +9 s.c. x +x +R = x +x x +R = 6 x +x +x = x, x, x, R, R, x R, R et x peuvent &ecirc;tre utilis&eacute;es comme base de d&eacute;part admissible."><img itemprop="contentURL" src="/docs-images/40/283172/images/page_17.jpg" width="960" align="left" alt="Base pour le syst&egrave;me de d&eacute;part si R = R = (hors base). R&eacute;&eacute;crire l objectif en fonction des variables hors base!" title=".. Cas particuliers Bases d&eacute;g&eacute;n&eacute;r&eacute;es Si plusieurs choix sont possibles pour la variable sortante, une des variables en base sera nulle &agrave; l it&eacute;ration suivante."></span></noscript>
+                                                <p><span class="badge bg-blue-hoki">18</span> Var. en base z x x s s Solution z 9 s 8 s z 9 8 x s z 8 x x En pratique, le risque de cyclage est quasiment nul. M&eacute;thodes pour l &eacute;viter : perturbations, ordre lexicographique pour les variables entrant en base,... Une bonne analyse a priori pour &eacute;liminer les redondances est le meilleur moyen d &eacute;viter ces probl&egrave;mes! Solutions optimales multiples Si la fonction objectif est parall&egrave;le &agrave; une contrainte active pour la solution optimale, la m&ecirc;me valeur de l objectif peut &ecirc;tre prise par plusieurs solutions admissibles. Il y a une infinit&eacute; de solutions optimales dans ce cas (toutes les combinaisons convexes de sommets optimaux). Cela se traduit par un profit marginal nul pour une ou plusieurs variables hors base. Exemple 9 (Solutions optimales multiples). Solution optimale : max z = x +x s.c. x +x x +x x, x Var. en base z x x s s Solution z s s z x s z x x x = &alpha; + ( &alpha;) = &alpha; x = &alpha; + ( &alpha;) = + &alpha; ( &alpha; ) Probl&egrave;mes non born&eacute;s Certains probl&egrave;mes sont non born&eacute;s dans une direction donn&eacute;e. Si cette direction est une direction d am&eacute;lioration de la fonction objectif, celle-ci peut prendre une valeur arbitrairement grande! 8</p>                                                <noscript><span itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="name" content="Var. en base z x x s s Solution z 9 s 8 s z 9 8 x s z 8 x x En pratique, le risque de cyclage est quasiment nul."><meta itemprop="description" content="M&eacute;thodes pour l &eacute;viter : perturbations, ordre lexicographique pour les variables entrant en base,."><img itemprop="contentURL" src="/docs-images/40/283172/images/page_18.jpg" width="960" align="left" alt=".. Une bonne analyse a priori pour &eacute;liminer les redondances est le meilleur moyen d &eacute;viter ces probl&egrave;mes!" title="Solutions optimales multiples Si la fonction objectif est parall&egrave;le &agrave; une contrainte active pour la solution optimale, la m&ecirc;me valeur de l objectif peut &ecirc;tre prise par plusieurs solutions admissibles."></span></noscript>
+                                                <p><span class="badge bg-blue-hoki">19</span> Exemple (Probl&egrave;mes non born&eacute;s). max z = x +x s.c. x x x x, x Var. en base z x x s s Solution z s s Tous les coefficients (sauf le profit maginal) dans la colonne de x sont n&eacute;gatifs ou nuls. Cela signifie que toutes les contraintes de non-n&eacute;gativit&eacute; sont satisfaites quelle que soit la valeur de x. L objectif peut donc augmenter ind&eacute;finiment. Probl&egrave;mes impossibles Le syst&egrave;me de contraintes peut n avoir aucune solution. M&eacute;thode des phases : termine avec des variables artificielles non nulles. G&eacute;n&eacute;ralement, provient d une mauvaise formulation du probl&egrave;me. Exemple (Probl&egrave;mes impossibles). max z = x +x s.c. x +x x +x x, x 9</p>                                                <noscript><span itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="name" content="Exemple (Probl&egrave;mes non born&eacute;s). max z = x +x s.c. x x x x, x Var."><meta itemprop="description" content="en base z x x s s Solution z s s Tous les coefficients (sauf le profit maginal) dans la colonne de x sont n&eacute;gatifs ou nuls."><img itemprop="contentURL" src="/docs-images/40/283172/images/page_19.jpg" width="960" align="left" alt="Cela signifie que toutes les contraintes de non-n&eacute;gativit&eacute; sont satisfaites quelle que soit la valeur de x. L objectif peut donc augmenter ind&eacute;finiment." title="Probl&egrave;mes impossibles Le syst&egrave;me de contraintes peut n avoir aucune solution. M&eacute;thode des phases : termine avec des variables artificielles non nulles."></span></noscript>
+                                                <p><span class="badge bg-blue-hoki">20</span> Dualit&eacute;. Le probl&egrave;me dual Probl&egrave;me primal et probl&egrave;me dual Probl&egrave;me primal max s.c. c T x Ax = b x n variables, m contraintes, m &lt; n, c, x R n, b R m, A R m n. Probl&egrave;me dual min s.c. b T y A T y c (y non restreint) m variables, n contraintes, m &lt; n, c R n, b, y R m, A R m n. Exemple (Probl&egrave;me primal et dual - forme standard). Probl&egrave;me primal : max z = x +x s.c. x +x = (y ) x x = 6 (y ) x, x Probl&egrave;me dual : min w = y +6y s.c y +y (x ) y y (x ) Propri&eacute;t&eacute;s et r&egrave;gles de construction du dual Th&eacute;or&egrave;me. Le probl&egrave;me dual du probl&egrave;me dual est le probl&egrave;me primal. R&egrave;gles de construction Exemple (Probl&egrave;me primal et dual - forme g&eacute;n&eacute;rale). Probl&egrave;me primal : Probl&egrave;me max Probl&egrave;me min Contrainte Variable = non restreinte Variable Contrainte non restreinte = max z = x +x +x s.c. x +x +x (y ) x x +x = 8 (y ) x, x, x</p>                                                <noscript><span itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="name" content="Dualit&eacute;. Le probl&egrave;me dual Probl&egrave;me primal et probl&egrave;me dual Probl&egrave;me primal max s.c. c T x Ax = b x n variables, m contraintes, m &lt; n, c, x R n, b R m, A R m n. Probl&egrave;me dual min s.c. b T y A T y c (y non restreint) m variables, n contraintes, m &lt; n, c R n, b, y R m, A R m n."><meta itemprop="description" content="Exemple (Probl&egrave;me primal et dual - forme standard). Probl&egrave;me primal : max z = x +x s.c. x +x = (y ) x x = 6 (y ) x, x Probl&egrave;me dual : min w = y +6y s."><img itemprop="contentURL" src="/docs-images/40/283172/images/page_20.jpg" width="960" align="left" alt="c y +y (x ) y y (x ) Propri&eacute;t&eacute;s et r&egrave;gles de construction du dual Th&eacute;or&egrave;me. Le probl&egrave;me dual du probl&egrave;me dual est le probl&egrave;me primal." title="R&egrave;gles de construction Exemple (Probl&egrave;me primal et dual - forme g&eacute;n&eacute;rale)."></span></noscript>
+                                                <p><span class="badge bg-blue-hoki">21</span> Probl&egrave;me dual : min w = y +8y s.c y +y (x ) y y (x ) y +y (x ) y. Relations primal/dual Th&eacute;or&egrave;me (Dualit&eacute; faible). Consid&eacute;rons la paire primale-duale : max s.c. c T x Ax = b x min s.c. b T y A T y c Si x est une solution admissible du primal et y une solution admissible du dual, alors c T x b T y S il y a &eacute;galit&eacute;, alors x est une solution optimale du primal et y une solution optimale du dual. Th&eacute;or&egrave;me (Dualit&eacute; forte). Consid&eacute;rons la paire primale-duale : max s.c. c T x Ax = b x min s.c. b T y A T y c Si le primal et le dual admettent tous les deux une solution admissible, ils ont tous deux une solution optimale finie et la m&ecirc;me valeur objectif optimale. Si le primal (dual) est non born&eacute;, le dual (primal) n admet pas de solution admissible. Th&eacute;or&egrave;me 6 (Compl&eacute;mentarit&eacute;). Consid&eacute;rons la paire primale-duale : max s.c. c T x Ax = b x min s.c. b T y A T y c</p><p><span class="badge bg-blue-hoki">22</span> Si x est une solution optimale du primal et y une solution optimale du dual, alors x i (a T i y c i ) =. o&ugrave; a i est la i-&egrave;me colonne de A. En d autres termes : x i &gt; a T i y = c i, a T i y &gt; c i x i =. Exemple (R&eacute;solution du dual par les r&egrave;gles de compl&eacute;mentarit&eacute;). Primal (P ) : max z = x +x +x s.c. x +x +x (y ) x x +x = 8 (y ) x, x, x Dual (D) : Solution optimale de (P ) : min w = y +8y s.c y +y (x ) y y (x ) y +y (x ) y (x, x, x ) = z = 7 ( 6, ), Solution optimale de (D) : x &gt; y + y = x &gt; y y = ( ) 9 (y, y ) =, w = 7. Interpr&eacute;tation &eacute;conomique de la dualit&eacute; La forme canonique d un programme lin&eacute;aire peut &ecirc;tre interpr&eacute;t&eacute;e comme un probl&egrave;me d allocation de ressources. Paire primale-duale : max s.c. c T x Ax b x min s.c. b T y A T y c y</p><p><span class="badge bg-blue-hoki">23</span> Donn&eacute;es : c j : profit par unit&eacute; d activit&eacute; j. b i : disponibilit&eacute; de la ressource i. a ij : consommation de la ressource i par unit&eacute; d activit&eacute; j. Variables : x j : niveau de l activit&eacute; j. y i : valeur d une unit&eacute; de la ressource i. Interpr&eacute;tation de la dualit&eacute; faible z w : profit valeur des ressources Interpr&eacute;tation de la dualit&eacute; forte Le profit maximal est atteint si les ressources ont &eacute;t&eacute; exploit&eacute;es compl&egrave;tement, i.e. jusqu &agrave; &eacute;puisement de leur valeur. Exemple (Dualit&eacute; dans le probl&egrave;me de production de peinture). max z = x +x s.c 6x +x x +x 6 x x +x x, x min w = y +6y +y +y 6y +y y y +y +y +y y, y, y, y x =, x =., z = y =.7, y =., y = y =, w = Le profit augmente de.7 par augmentation d une tonne de M et de. par tonne de M. Les &quot;ressources&quot; et sont abondantes, augmenter ces ressources n apporte aucun profit suppl&eacute;mentaire.. M&eacute;thode simplexe duale Relations primal / dual dans le tableau du simplexe Tableau primal final Tableau dual final Var. en base z x x s s s s Solution z x x 8 s 8 s 8 Var. en base w t t y y y y Solution w y y</p><p><span class="badge bg-blue-hoki">24</span> Ici, toutes les contraintes dans le primal et dans le dual sont des in&eacute;galit&eacute;s correspondance entre variable originale du primal et variable d &eacute;cart du dual (et vice-versa). Primal x x s s s s Dual t t y y y y Observation : Les valeurs des variables duales sont &eacute;gales &agrave; l oppos&eacute; des profits marginaux des variables correspondantes du primal. Les valeurs des variables primales sont &eacute;gales aux co&ucirc;ts r&eacute;duits des variables correspondantes du dual. Cons&eacute;quence de la compl&eacute;mentarit&eacute; des solutions primale et duale. Th&eacute;or&egrave;me 7. Consid&eacute;rons la paire primale-duale : max s.c. c T x Ax = b x min s.c. b T y A T y c. Pour toute solution de base non d&eacute;g&eacute;n&eacute;r&eacute;e x du primal, il existe une et une seule solution y du dual compl&eacute;mentaire &agrave; x.. x est admissible si et seulement si y satisfait les conditions d optimalit&eacute; (co&ucirc;ts r&eacute;duits non n&eacute;gatifs).. y est admissible si et seulement si x satisfait les conditions d optimalit&eacute; (profits marginaux n&eacute;gatifs ou nuls). D&eacute;monstration. Le dual peut se r&eacute;&eacute;crire sous forme standard : min s.c. b T y A T y t = c t Consid&eacute;rons un ensemble de variables en base B et un ensemble de variables hors base N, tels que la base correspondante est non d&eacute;g&eacute;n&eacute;r&eacute;e : x B = A B b &gt; x N = Par compl&eacute;mentarit&eacute;, t B = et A T B y = c B. D&egrave;s lors, () et () sont des cons&eacute;quences directes. y T = c T BA B, tt B = t T N = (c T N c T BA B A N) Simplexe dual : motivation Il arrive souvent qu une solution en base non admissible, mais satisfaisant les contraintes d optimalit&eacute; soit identifiable facilement (par exemple, variables d &eacute;cart de contraintes ). Cette base correspond &agrave; une solution admissible du dual. Id&eacute;e de la m&eacute;thode simplexe duale : r&eacute;soudre (implicitement) le dual par la m&eacute;thode du simplexe (mais en travaillant sur le tableau primal!) Partir avec une solution de base satisfaisant les conditions d optimalit&eacute; (= base admissible pour le dual) et chercher &agrave; la rendre admissible (= dual optimale).</p><p><span class="badge bg-blue-hoki">25</span> R&egrave;gles de pivotage (simplexe dual) Variable sortante Choisir la variable l en base avec la valeur minimum (n&eacute;gative). Si b l pour tout l B, solution admissible, STOP. Variable entrante Choisir la variable k hors base telle que k = arg min c i i N:a li &lt; Si a li pour tout i N, probl&egrave;me non admissible, STOP. Exemple 6 (Simplexe dual). Forme standard avec les variables d &eacute;cart en base : a li min z = x +x s.c. x +x x +x 6 x +x x, x min z = x +x s.c. x x +s = x x +s = 6 x +x +s = x, x, s, s, s Var. en base z x x s s s Solution z s s 6 s Var. en base z x x s s s Solution z s x s Var. en base z x x s s s Solution z x x 6 s 6 6 Solveurs et langages de mod&eacute;lisation Exemple 7 (Production de jouets). Une soci&eacute;t&eacute; de jouets produit des trains, des camions et des voitures, en utilisant machines. Les disponibilit&eacute;s quotidiennes des machines sont, 6 et minutes, et les profits par train, camion et voiture sont respectivement EUR, EUR et EUR. Les temps n&eacute;cessaires sur chaque machine sont :</p><p><span class="badge bg-blue-hoki">26</span> Machine Train Camion Voiture Primal max z = x +x +x s.c. x +x +x x +x 6 x +x x, x, x x = x = x = z = Dual min w = y +6y +y s.c. y +y +y y +y y +y y, y, y y = y = y = Var. en base z x x x s s s Solution z x x s Base : B = {x, x, s }. Solveurs Logiciels pour r&eacute;soudre des programmes lin&eacute;aires : Ind&eacute;pendants : Commerciaux : CPLEX (IBM), XPRESS-MP (http ://www.fico.com/), Gurobi (http ://www.gurobi.com/),... Gratuits : PCx, lpsolve, glpk,... Tableurs : La plupart des tableurs int&egrave;grent un outil de r&eacute;solution de programmes lin&eacute;aires (Excel, Gnumeric,...) Langages de mod&eacute;lisation (ampl, GNU MathProg, mpl, OPL studio, mosel,...) : langages de haut niveau permettant la s&eacute;paration mod&egrave;le/donn&eacute;es, se chargeant de l interface avec un solveur. 6</p><p><span class="badge bg-blue-hoki">27</span> NAME toys ROWS L R L R L R N R COLUMNS C R C R C R C R C R C R C R C R C R C R RHS B R B R 6 B R ENDATA FIGURE Exemple de production de jouets au format MPS Solveurs ind&eacute;pendants Avantages Puissance, efficacit&eacute; Int&eacute;grables dans des applications via des librairies D&eacute;savantages Formats de fichiers (MPS) Pas de s&eacute;paration mod&egrave;le / donn&eacute;es R&eacute;-utilisation difficile des mod&egrave;les Solveurs int&eacute;gr&eacute;s aux tableurs Avantages Disponibles sur (quasi) tous les ordinateurs Interface facile d utilisation Pr&eacute;sentation des donn&eacute;es / r&eacute;sultats D&eacute;savantages Difficult&eacute; d impl&eacute;menter de grands mod&egrave;les S&eacute;paration mod&egrave;le / donn&eacute;es difficile Solveurs moins efficaces (en g&eacute;n&eacute;ral) Langages de mod&eacute;lisation Avantages S&eacute;paration mod&egrave;le / donn&eacute;es R&eacute;-utilisabilit&eacute; des mod&egrave;les Ind&eacute;pendance mod&egrave;le / solveur 7</p><p><span class="badge bg-blue-hoki">28</span> # # Data definition # set Toys; param nmachines; set Machines :=..nmachines; param profit {Toys}; param time {Machines,Toys}; param avail {Machines}; # # Variables # var prod {Toys} &gt;= ; # # Objective # maximize total_profit: sum{t in Toys} profit[t]*prod[t]; # # Constraints # subject to machine_usage {m in Machines}: sum{t in Toys} time[m,t] * prod[t] &lt;= avail[m]; FIGURE Exemple de production de jouets au format AMPL (mod&egrave;le) D&eacute;savantages Apprentissage du langage Prix des versions commerciales Limitation en taille des versions d essai gratuites Moindre efficacit&eacute; (actuellement) des solveurs gratuits 8</p><p><span class="badge bg-blue-hoki">29</span> # # Data # data; set Toys := Trains, Trucks, Cars ; param nmachines := ; param profit := Trains Trucks Cars ; param time : Trains Trucks Cars := ; param avail := 6 ; end; FIGURE Exemple de production de jouets au format AMPL (donn&eacute;es) 9</p><p><span class="badge bg-blue-hoki">30</span> Troisi&egrave;me partie Le probl&egrave;me de transport 7 D&eacute;finition et exemples Un produit doit &ecirc;tre transport&eacute; de sources (usines) vers des destinations (d&eacute;p&ocirc;ts, clients). Objectif : d&eacute;terminer la quantit&eacute; envoy&eacute;e de chaque source &agrave; chaque destination en minimisant les co&ucirc;ts de transport. Les co&ucirc;ts sont proportionnels aux quantit&eacute;s transport&eacute;es. Contraintes d offre limit&eacute;e aux sources et de demande &agrave; satisfaire au destinations. a Sources Destinations b a b a m m c m n x m n n b n Exemple 8 (Mod&egrave;le de transport). Une firme automobile a trois usines &agrave; Los Angeles, Detroit et New Orleans, et deux centres de distribution &agrave; Denver et Miami. Les capacit&eacute;s des trois usines sont de, et respectivement, et les demandes aux centres de distribution sont de et voitures. Co&ucirc;ts : Denver Miami Los Angeles 8 Detroit 8 New Orleans 68 Formulation min z = 8x +x +x +8x +x +68x s.c. (Los Angeles) x +x = (Detroit) x +x = (New Orleans) x +x = (Denver) x +x +x = (Miami) x +x +x = x, x, x, x, x, x Repr&eacute;sentation tableau</p>                                            <div id="transcript_more"><a href="#show_full_text" class="btn blue btn-block" id="show_more" doc_id="283172"><i class="fa fa-arrow-circle-down"></i> Montrer encore</a></div>
+                                                                            </div>
+                                </div>
+                                <!-- END LEFT SIDEBAR -->
+                            </div>
+
+
+
+                            <!-- BEGIN RIGHT SIDEBAR -->
+                            <div class="col-md-3 news-page col-sm-12 pull-right">
+                                                                    <div style="margin-top: 5px; margin-bottom: 10px;">
+                                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                        <!-- right -->
+                                        <ins class="adsbygoogle"
+                                             style="display:block"
+                                             data-ad-client="ca-pub-6133583279631137"
+                                             data-ad-slot="3445502402"
+                                             data-ad-format="auto"></ins>
+                                        <script>
+                                            (adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
+                                            (adsbygoogle = window.adsbygoogle || []).push({});
+                                        </script>
+                                    </div>
+                                
+
+                                <div class="top-news">
+                                    <a href="#" class="btn purple">
+                                        <span>Documents pareils</span>
+                                        <i class="fa fa-puzzle-piece top-news-icon"></i>
+                                    </a>
+                                </div>
+
+                                <div class="news-blocks">
+
+    <h3>
+        <a href="/2845315-Programmation-lineaire.html">Programmation linéaire</a>
+    </h3>
+    <p>
+        <img alt="Programmation linéaire" title="Programmation linéaire" class="news-block-img pull-right" src="/thumbs/24/2845315.jpg">
+        Programmation linéaire DIDIER MAQUIN Ecole Nationale Supérieure d Electricité et de Mécanique Institut National Polytechnique de Lorraine Mathématiques discrètes cours de 2ème année Programmation linéaire    </p>
+    <a href="/2845315-Programmation-lineaire.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/11759677-Programmation-lineaire-cours-2.html">Programmation Linéaire - Cours 2</a>
+    </h3>
+    <p>
+        <img alt="Programmation Linéaire - Cours 2" title="Programmation Linéaire - Cours 2" class="news-block-img pull-right" src="/thumbs/27/11759677.jpg">
+        Programmation Linéaire - Cours 2 P. Pesneau pierre.pesneau@math.u-bordeaux1.fr Université Bordeaux 1 Bât A33 - Bur 265 Sommaire 1 2 3 Retournons dans le yaourt! Reprenons l exemple du 1er cours Forme normale    </p>
+    <a href="/11759677-Programmation-lineaire-cours-2.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/3627968-La-notion-de-dualite.html">La notion de dualité</a>
+    </h3>
+    <p>
+        <img alt="La notion de dualité" title="La notion de dualité" class="news-block-img pull-right" src="/thumbs/24/3627968.jpg">
+        La notion de dualité Dual d un PL sous forme standard Un programme linéaire est caractérisé par le tableau simplexe [ ] A b. c Par définition, le problème dual est obtenu en transposant ce tableau. [ A    </p>
+    <a href="/3627968-La-notion-de-dualite.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/32474797-Introduction-premiere-partie-1-aide-a-la-decision-et-modeles-mathematiques.html">Introduction. Première partie. 1 Aide à la décision et modèles mathématiques</a>
+    </h3>
+    <p>
+        <img alt="Introduction. Première partie. 1 Aide à la décision et modèles mathématiques" title="Introduction. Première partie. 1 Aide à la décision et modèles mathématiques" class="news-block-img pull-right" src="/thumbs/53/32474797.jpg">
+        Première partie Introduction Aide à la décision et modèles mathématiques Un premier problème Exemple (Achat de billets d avion). Un homme d affaires doit effectuer 5 voyages entre Fayetteville (FYV) à    </p>
+    <a href="/32474797-Introduction-premiere-partie-1-aide-a-la-decision-et-modeles-mathematiques.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/1072351-Programmation-lineaire.html">Programmation linéaire</a>
+    </h3>
+    <p>
+        <img alt="Programmation linéaire" title="Programmation linéaire" class="news-block-img pull-right" src="/thumbs/21/1072351.jpg">
+        1 Programmation linéaire 1. Le problème, un exemple. 2. Le cas b = 0 3. Théorème de dualité 4. L algorithme du simplexe 5. Problèmes équivalents 6. Complexité de l Algorithme 2 Position du problème Soit    </p>
+    <a href="/1072351-Programmation-lineaire.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/6786137-Recherche-operationnelle-programmation-lineaire-et-recherche-operationnelle-programmation-lineaire-des-problemes-de-ro-que-vous-savez-resoudre.html">Recherche opérationnelle. Programmation linéaire et recherche opérationnelle. Programmation linéaire. Des problèmes de RO que vous savez résoudre</a>
+    </h3>
+    <p>
+        <img alt="Recherche opérationnelle. Programmation linéaire et recherche opérationnelle. Programmation linéaire. Des problèmes de RO que vous savez résoudre" title="Recherche opérationnelle. Programmation linéaire et recherche opérationnelle. Programmation linéaire. Des problèmes de RO que vous savez résoudre" class="news-block-img pull-right" src="/thumbs/25/6786137.jpg">
+        Recherche opérationnelle Programmation linéaire et recherche opérationnelle Ioan Todinca Ioan.Todinca@univ-orleans.fr tél. 0 38 41 7 93 bureau : en bas à gauche Tentative de définition Ensemble de méthodes    </p>
+    <a href="/6786137-Recherche-operationnelle-programmation-lineaire-et-recherche-operationnelle-programmation-lineaire-des-problemes-de-ro-que-vous-savez-resoudre.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/10616838-Programmation-lineaire-cours-1-programmes-lineaires-modelisation-et-resolution-graphique.html">Programmation Linéaire Cours 1 : programmes linéaires, modélisation et résolution graphique</a>
+    </h3>
+    <p>
+        <img alt="Programmation Linéaire Cours 1 : programmes linéaires, modélisation et résolution graphique" title="Programmation Linéaire Cours 1 : programmes linéaires, modélisation et résolution graphique" class="news-block-img pull-right" src="/thumbs/27/10616838.jpg">
+        Programmation Linéaire Cours 1 : programmes linéaires, modélisation et résolution graphique F. Clautiaux francois.clautiaux@math.u-bordeaux1.fr Université Bordeaux 1 Bât A33 Motivation et objectif du cours    </p>
+    <a href="/10616838-Programmation-lineaire-cours-1-programmes-lineaires-modelisation-et-resolution-graphique.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/284284-La-programmation-lineaire-une-introduction-qu-est-ce-qu-un-programme-lineaire-terminologie-ecriture-mathematique.html">La programmation linéaire : une introduction. Qu est-ce qu un programme linéaire? Terminologie. Écriture mathématique</a>
+    </h3>
+    <p>
+        <img alt="La programmation linéaire : une introduction. Qu est-ce qu un programme linéaire? Terminologie. Écriture mathématique" title="La programmation linéaire : une introduction. Qu est-ce qu un programme linéaire? Terminologie. Écriture mathématique" class="news-block-img pull-right" src="/thumbs/19/284284.jpg">
+        La programmation linéaire : une introduction Qu est-ce qu un programme linéaire? Qu est-ce qu un programme linéaire? Exemples : allocation de ressources problème de recouvrement Hypothèses de la programmation    </p>
+    <a href="/284284-La-programmation-lineaire-une-introduction-qu-est-ce-qu-un-programme-lineaire-terminologie-ecriture-mathematique.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/7455643-Exercices-theoriques.html">Exercices théoriques</a>
+    </h3>
+    <p>
+        <img alt="Exercices théoriques" title="Exercices théoriques" class="news-block-img pull-right" src="/thumbs/26/7455643.jpg">
+        École normale supérieure 2008-2009 Département d informatique Algorithmique et Programmation TD n 9 : Programmation Linéaire Avec Solutions Exercices théoriques Rappel : Dual d un programme linéaire cf.    </p>
+    <a href="/7455643-Exercices-theoriques.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/13542054-Info-f-310-math-h404-algorithmique-et-recherche-operationnelle-prof-yves-de-smet-co-titulaire-prof-bernard-fortz.html">INFO-F-310 (MATH-H404) Algorithmique et Recherche Opérationnelle. Prof. Yves De Smet (co-titulaire Prof. Bernard Fortz)</a>
+    </h3>
+    <p>
+        <img alt="INFO-F-310 (MATH-H404) Algorithmique et Recherche Opérationnelle. Prof. Yves De Smet (co-titulaire Prof. Bernard Fortz)" title="INFO-F-310 (MATH-H404) Algorithmique et Recherche Opérationnelle. Prof. Yves De Smet (co-titulaire Prof. Bernard Fortz)" class="news-block-img pull-right" src="/thumbs/29/13542054.jpg">
+        INFO-F-310 (MATH-H404) Algorithmique et Recherche Opérationnelle Prof. Yves De Smet (co-titulaire Prof. Bernard Fortz) Terminologie Recherche Opérationnelle Méthodes quantitatives de gestion Mathématiques    </p>
+    <a href="/13542054-Info-f-310-math-h404-algorithmique-et-recherche-operationnelle-prof-yves-de-smet-co-titulaire-prof-bernard-fortz.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/3627404-Correction-de-l-epreuve-intermediaire-de-mai-2009.html">Correction de l épreuve intermédiaire de mai 2009.</a>
+    </h3>
+    <p>
+        <img alt="Correction de l épreuve intermédiaire de mai 2009." title="Correction de l épreuve intermédiaire de mai 2009." class="news-block-img pull-right" src="/thumbs/24/3627404.jpg">
+        Licence de Gestion. 3ème Année Année universitaire 8-9 Optimisation Appliquée C. Léonard Correction de l épreuve intermédiaire de mai 9. Exercice 1 Avec les notations du cours démontrer que la solution    </p>
+    <a href="/3627404-Correction-de-l-epreuve-intermediaire-de-mai-2009.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/284987-Souad-el-bernoussi-groupe-d-analyse-numerique-et-optimisation-rabat-http-www-fsr-ac-ma-ano.html">Souad EL Bernoussi. Groupe d Analyse Numérique et Optimisation Rabat http ://www.fsr.ac.ma/ano/</a>
+    </h3>
+    <p>
+        <img alt="Souad EL Bernoussi. Groupe d Analyse Numérique et Optimisation Rabat http ://www.fsr.ac.ma/ano/" title="Souad EL Bernoussi. Groupe d Analyse Numérique et Optimisation Rabat http ://www.fsr.ac.ma/ano/" class="news-block-img pull-right" src="/thumbs/19/284987.jpg">
+        Recherche opérationnelle Les démonstrations et les exemples seront traités en cours Souad EL Bernoussi Groupe d Analyse Numérique et Optimisation Rabat http ://www.fsr.ac.ma/ano/ Table des matières 1 Programmation    </p>
+    <a href="/284987-Souad-el-bernoussi-groupe-d-analyse-numerique-et-optimisation-rabat-http-www-fsr-ac-ma-ano.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/9317992-Optimisation-en-nombres-entiers.html">Optimisation en nombres entiers</a>
+    </h3>
+    <p>
+        <img alt="Optimisation en nombres entiers" title="Optimisation en nombres entiers" class="news-block-img pull-right" src="/thumbs/26/9317992.jpg">
+        Optimisation en nombres entiers p. 1/83 Optimisation en nombres entiers Michel Bierlaire michel.bierlaire@epfl.ch EPFL - Laboratoire Transport et Mobilité - ENAC Optimisation en nombres entiers p. 2/83    </p>
+    <a href="/9317992-Optimisation-en-nombres-entiers.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/6785959-Optimisation-lineaire.html">Optimisation linéaire</a>
+    </h3>
+    <p>
+        <img alt="Optimisation linéaire" title="Optimisation linéaire" class="news-block-img pull-right" src="/thumbs/25/6785959.jpg">
+        Optimisation linéaire Recherche opérationnelle GC-SIE Algorithme du simplexe Phase I 1 Introduction Algorithme du simplexe : Soit x 0 une solution de base admissible Comment déterminer x 0? Comment déterminer    </p>
+    <a href="/6785959-Optimisation-lineaire.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/2844863-Programmation-lineaire-cours-1.html">Programmation Linéaire - Cours 1</a>
+    </h3>
+    <p>
+        <img alt="Programmation Linéaire - Cours 1" title="Programmation Linéaire - Cours 1" class="news-block-img pull-right" src="/thumbs/24/2844863.jpg">
+        Programmation Linéaire - Cours 1 P. Pesneau pierre.pesneau@math.u-bordeaux1.fr Université Bordeaux 1 Bât A33 - Bur 265 Ouvrages de référence V. Chvátal - Linear Programming, W.H.Freeman, New York, 1983.    </p>
+    <a href="/2844863-Programmation-lineaire-cours-1.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/10744532-Plus-courts-et-plus-longs-chemins.html">Plus courts et plus longs chemins</a>
+    </h3>
+    <p>
+        <img alt="Plus courts et plus longs chemins" title="Plus courts et plus longs chemins" class="news-block-img pull-right" src="/thumbs/27/10744532.jpg">
+        Plus courts et plus longs chemins Complément au chapitre 8 «Une voiture nous attend» Soit I={1,2,,n} un ensemble de tâches à ordonnancer. La durée d exécution de chaque tâche i est connue et égale à p    </p>
+    <a href="/10744532-Plus-courts-et-plus-longs-chemins.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/9010981-Cours-de-specialite-mathematiques-en-terminale-es.html">Cours de spécialité mathématiques en Terminale ES</a>
+    </h3>
+    <p>
+        <img alt="Cours de spécialité mathématiques en Terminale ES" title="Cours de spécialité mathématiques en Terminale ES" class="news-block-img pull-right" src="/thumbs/26/9010981.jpg">
+        Cours de spécialité mathématiques en Terminale ES O. Lader 2014/2015 Lycée Jean Vilar Spé math terminale ES 2014/2015 1 / 51 Systèmes linéaires Deux exemples de systèmes linéaires à deux équations et deux    </p>
+    <a href="/9010981-Cours-de-specialite-mathematiques-en-terminale-es.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/12807212-Introduction-a-l-optimisation.html">INTRODUCTION A L OPTIMISATION</a>
+    </h3>
+    <p>
+        <img alt="INTRODUCTION A L OPTIMISATION" title="INTRODUCTION A L OPTIMISATION" class="news-block-img pull-right" src="/thumbs/28/12807212.jpg">
+        INTRODUCTION A L OPTIMISATION Les domaines d application L optimisation est essentiellement un outil d aide à la décision au sein de l entreprise, mais aussi pour des individus. Le terme optimal est souvent    </p>
+    <a href="/12807212-Introduction-a-l-optimisation.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/214541-Chapitre-5-flot-maximal-dans-un-graphe.html">Chapitre 5 : Flot maximal dans un graphe</a>
+    </h3>
+    <p>
+        <img alt="Chapitre 5 : Flot maximal dans un graphe" title="Chapitre 5 : Flot maximal dans un graphe" class="news-block-img pull-right" src="/thumbs/19/214541.jpg">
+        Graphes et RO TELECOM Nancy A Chapitre 5 : Flot maximal dans un graphe J.-F. Scheid 1 Plan du chapitre I. Définitions 1 Graphe Graphe valué 3 Représentation d un graphe (matrice d incidence, matrice d    </p>
+    <a href="/214541-Chapitre-5-flot-maximal-dans-un-graphe.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/3657518-Fonctions-homographiques.html">Fonctions homographiques</a>
+    </h3>
+    <p>
+        <img alt="Fonctions homographiques" title="Fonctions homographiques" class="news-block-img pull-right" src="/thumbs/24/3657518.jpg">
+        Fonctions homographiques On donne ci-dessous deux définitions des fonctions homographiques, et on montre que ces deux définitions sont équivalentes. On décrit la courbe représentative d une fonction homographique.    </p>
+    <a href="/3657518-Fonctions-homographiques.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/12569135-Introduction-a-la-programmation-en-variables-entieres-cours-3.html">Introduction à la programmation en variables entières Cours 3</a>
+    </h3>
+    <p>
+        <img alt="Introduction à la programmation en variables entières Cours 3" title="Introduction à la programmation en variables entières Cours 3" class="news-block-img pull-right" src="/thumbs/28/12569135.jpg">
+        Introduction à la programmation en variables entières Cours 3 F. Clautiaux francois.clautiaux@math.u-bordeaux1.fr Université Bordeaux 1 Bât A33 - Bur 272 Sommaire Notion d heuristique Les algorithmes gloutons    </p>
+    <a href="/12569135-Introduction-a-la-programmation-en-variables-entieres-cours-3.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/9625997-Couplages-et-colorations-d-aretes.html">Couplages et colorations d arêtes</a>
+    </h3>
+    <p>
+        <img alt="Couplages et colorations d arêtes" title="Couplages et colorations d arêtes" class="news-block-img pull-right" src="/thumbs/27/9625997.jpg">
+        Couplages et colorations d arêtes Complément au chapitre 5 «Une employée mécontente» et au chapitre 9 «L apprentie sudokiste» Considérons n équipes de hockey qui doivent s affronter lors d un tournoi.    </p>
+    <a href="/9625997-Couplages-et-colorations-d-aretes.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/8661792-Recherche-operationnelle.html">Recherche Opérationnelle</a>
+    </h3>
+    <p>
+        <img alt="Recherche Opérationnelle" title="Recherche Opérationnelle" class="news-block-img pull-right" src="/thumbs/26/8661792.jpg">
+        Chapitre 2 : Programmation linéaire (Introduction) Vendredi 06 Novembre 2015 Sommaire 1 Historique 2 3 4 5 Plan 1 Historique 2 3 4 5 La programmation linéaire est un cadre mathématique général permettant    </p>
+    <a href="/8661792-Recherche-operationnelle.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/12857165-Les-graphes-d-intervalles.html">Les graphes d intervalles</a>
+    </h3>
+    <p>
+        <img alt="Les graphes d intervalles" title="Les graphes d intervalles" class="news-block-img pull-right" src="/thumbs/28/12857165.jpg">
+        Les graphes d intervalles Complément au chapitre 3 «Vol aux archives cantonales» Considérons un ensemble de tâches ayant chacune une heure de début et une heure de fin bien précises. Supposons qu on demande    </p>
+    <a href="/12857165-Les-graphes-d-intervalles.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/9212912-Terminale-es-correction-du-bac-blanc-de-mathematiques-version-specialite.html">Terminale ES Correction du bac blanc de Mathématiques (version spécialité).</a>
+    </h3>
+    <p>
+        <img alt="Terminale ES Correction du bac blanc de Mathématiques (version spécialité)." title="Terminale ES Correction du bac blanc de Mathématiques (version spécialité)." class="news-block-img pull-right" src="/thumbs/26/9212912.jpg">
+        Terminale ES Correction du bac blanc de Mathématiques (version spécialité). Lycée Jacques Monod février 05 Exercice : Voici les graphiques des questions. et.. A 4 A Graphique Question. Graphique Question..    </p>
+    <a href="/9212912-Terminale-es-correction-du-bac-blanc-de-mathematiques-version-specialite.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/7371179-Chapitre-6-modelisation-en-p-l-i-6-1-lien-entre-pl-et-pli-6-1-1-approximation-de-la-pli.html">Chapitre 6. Modélisation en P.L.I. 6.1 Lien entre PL et PLI. 6.1.1 Approximation de la PLI</a>
+    </h3>
+    <p>
+        <img alt="Chapitre 6. Modélisation en P.L.I. 6.1 Lien entre PL et PLI. 6.1.1 Approximation de la PLI" title="Chapitre 6. Modélisation en P.L.I. 6.1 Lien entre PL et PLI. 6.1.1 Approximation de la PLI" class="news-block-img pull-right" src="/thumbs/26/7371179.jpg">
+        Chapitre 6 Modélisation en P.L.I. 6.1 Lien entre PL et PLI (P) problème de PL. On restreint les variables à être entières : on a un problème de PLI (ILP en anglais). On restreint certaines variables à    </p>
+    <a href="/7371179-Chapitre-6-modelisation-en-p-l-i-6-1-lien-entre-pl-et-pli-6-1-1-approximation-de-la-pli.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/10694640-Solutions-optimales-multiples-3d-1-unicite-de-la-solution-optimale-du-modele-frb.html">Solutions optimales multiples. 3D.1 Unicité de la solution optimale du modèle (FRB)</a>
+    </h3>
+    <p>
+        <img alt="Solutions optimales multiples. 3D.1 Unicité de la solution optimale du modèle (FRB)" title="Solutions optimales multiples. 3D.1 Unicité de la solution optimale du modèle (FRB)" class="news-block-img pull-right" src="/thumbs/27/10694640.jpg">
+        3D Solutions optimales multiples 3D.1 Unicité de la solution optimale du modèle (FRB) Le modèle (FRB) admet une solution optimale unique. En effet (voir page 182), l'algorithme du simplexe se termine par    </p>
+    <a href="/10694640-Solutions-optimales-multiples-3d-1-unicite-de-la-solution-optimale-du-modele-frb.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/37266023-Le-probleme-de-transport.html">Le problème de transport</a>
+    </h3>
+    <p>
+        <img alt="Le problème de transport" title="Le problème de transport" class="news-block-img pull-right" src="/thumbs/55/37266023.jpg">
+        Quatrième partie Le problème de transport 13 Définition et exemples Un produit doit être transporté de sources (usines) vers des destinations (dépôts, clients). Objectif : déterminer la quantité envoyée    </p>
+    <a href="/37266023-Le-probleme-de-transport.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/8058352-Www-almohandiss-com-recherche-operationnelle-exercices-de-serveur-d-exercices-1-16.html">www.almohandiss.com Recherche opérationnelle EXERCICES DE Serveur d'exercices 1/16</a>
+    </h3>
+    <p>
+        <img alt="www.almohandiss.com Recherche opérationnelle EXERCICES DE Serveur d'exercices 1/16" title="www.almohandiss.com Recherche opérationnelle EXERCICES DE Serveur d'exercices 1/16" class="news-block-img pull-right" src="/thumbs/26/8058352.jpg">
+        EXERCICES DE RECHERCHE OPERATIONNELLE Serveur d'exercices 1/16 EXERCICE 1. Niveau : Gymnase (Lycée) Auteur : Vincent Isoz (isozv@hotmail.com Mots-clés : recherche opérationnelle Enoncé : Supposons qu'une    </p>
+    <a href="/8058352-Www-almohandiss-com-recherche-operationnelle-exercices-de-serveur-d-exercices-1-16.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/17421550-Problemes-de-transport.html">Problèmes de transport</a>
+    </h3>
+    <p>
+        <img alt="Problèmes de transport" title="Problèmes de transport" class="news-block-img pull-right" src="/thumbs/36/17421550.jpg">
+        Problèmes de transport formulation des problèmes d affectation Hugues Talbot Laboratoire A2SI 31 mars 2009 Problèmes de Transport Introduction Distribution Théorie Équilibrage Modélisation Plan Solution    </p>
+    <a href="/17421550-Problemes-de-transport.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/18397452-Mathematique-pour-l-informatique-examen-duree-3-heures-question-1-mettre-ce-probleme-en-forme-standard-en-introduisant-des-variables-d-ecarts.html">Mathématique pour l informatique Examen durée : 3 heures. Question 1. Mettre ce problème en forme standard en introduisant des variables d écarts.</a>
+    </h3>
+    <p>
+        <img alt="Mathématique pour l informatique Examen durée : 3 heures. Question 1. Mettre ce problème en forme standard en introduisant des variables d écarts." title="Mathématique pour l informatique Examen durée : 3 heures. Question 1. Mettre ce problème en forme standard en introduisant des variables d écarts." class="news-block-img pull-right" src="/thumbs/39/18397452.jpg">
+        Mathématique pour l informatique Examen durée : 3 heures. Université de Provence Licence Informatique Année 2001-2002 Exercice 1 (Simplexe : 10 points) On donne le problème de programmation linéaire (P)    </p>
+    <a href="/18397452-Mathematique-pour-l-informatique-examen-duree-3-heures-question-1-mettre-ce-probleme-en-forme-standard-en-introduisant-des-variables-d-ecarts.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/9106535-Utilisation-d-excel-pour-resoudre-des-problemes-de-programmation-lineaire.html">Utilisation d EXCEL pour résoudre des problèmes de programmation linéaire</a>
+    </h3>
+    <p>
+        <img alt="Utilisation d EXCEL pour résoudre des problèmes de programmation linéaire" title="Utilisation d EXCEL pour résoudre des problèmes de programmation linéaire" class="news-block-img pull-right" src="/thumbs/26/9106535.jpg">
+        Utilisation d EXCEL pour résoudre des problèmes de programmation linéaire Introduction Le solveur d'excel est un outil puissance d'optimisation et d'allocation de ressources. Il peut vous aider à déterminer    </p>
+    <a href="/9106535-Utilisation-d-excel-pour-resoudre-des-problemes-de-programmation-lineaire.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/4632081-Cours-de-mathematiques-alternance-gea.html">Cours de mathématiques - Alternance Gea</a>
+    </h3>
+    <p>
+        <img alt="Cours de mathématiques - Alternance Gea" title="Cours de mathématiques - Alternance Gea" class="news-block-img pull-right" src="/thumbs/25/4632081.jpg">
+        Cours de mathématiques - Alternance Gea Anne Fredet 11 décembre 005 1 Calcul matriciel Une matrice n m est un tableau de nombres à n lignes( et m colonnes. 1 0 Par exemple, avec n = et m =, on peut considérer    </p>
+    <a href="/4632081-Cours-de-mathematiques-alternance-gea.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/12665722-Points-fixes-de-fonctions-a-domaine-fini.html">Points fixes de fonctions à domaine fini</a>
+    </h3>
+    <p>
+        <img alt="Points fixes de fonctions à domaine fini" title="Points fixes de fonctions à domaine fini" class="news-block-img pull-right" src="/thumbs/28/12665722.jpg">
+        ÉCOLE POLYTECHNIQUE ÉCOLE NORMALE SUPÉRIEURE DE CACHAN ÉCOLE SUPÉRIEURE DE PHYSIQUE ET DE CHIMIE INDUSTRIELLES CONCOURS D ADMISSION 2013 FILIÈRE MP HORS SPÉCIALITÉ INFO FILIÈRE PC COMPOSITION D INFORMATIQUE    </p>
+    <a href="/12665722-Points-fixes-de-fonctions-a-domaine-fini.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/8659334-La-programmation-lineaire-un-outil-de-modelisation.html">LA PROGRAMMATION LINEAIRE : UN OUTIL DE MODELISATION</a>
+    </h3>
+    <p>
+        <img alt="LA PROGRAMMATION LINEAIRE : UN OUTIL DE MODELISATION" title="LA PROGRAMMATION LINEAIRE : UN OUTIL DE MODELISATION" class="news-block-img pull-right" src="/thumbs/26/8659334.jpg">
+        LA PROGRAMMATION LINEAIRE : UN OUTIL DE MODELISATION Dans les leçons précédentes, nous avons modélisé des problèmes en utilisant des graphes. Nous abordons dans cette leçon un autre type de modélisation.    </p>
+    <a href="/8659334-La-programmation-lineaire-un-outil-de-modelisation.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/2845042-Cours-02-probleme-general-de-la-programmation-lineaire.html">Cours 02 : Problème général de la programmation linéaire</a>
+    </h3>
+    <p>
+        <img alt="Cours 02 : Problème général de la programmation linéaire" title="Cours 02 : Problème général de la programmation linéaire" class="news-block-img pull-right" src="/thumbs/24/2845042.jpg">
+        Cours 02 : Problème général de la programmation linéaire Cours 02 : Problème général de la Programmation Linéaire. 5 . Introduction Un programme linéaire s'écrit sous la forme suivante. MinZ(ou maxw) =    </p>
+    <a href="/2845042-Cours-02-probleme-general-de-la-programmation-lineaire.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/12003179-Chapitre-7-programmation-dynamique.html">Chapitre 7 : Programmation dynamique</a>
+    </h3>
+    <p>
+        <img alt="Chapitre 7 : Programmation dynamique" title="Chapitre 7 : Programmation dynamique" class="news-block-img pull-right" src="/thumbs/27/12003179.jpg">
+        Graphes et RO TELECOM Nancy 2A Chapitre 7 : Programmation dynamique J.-F. Scheid 1 Plan du chapitre I. Introduction et principe d optimalité de Bellman II. Programmation dynamique pour la programmation    </p>
+    <a href="/12003179-Chapitre-7-programmation-dynamique.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/2073913-Exercices-du-cours-de-la-programmation-lineaire-donne-par-le-dr-ali-derbala.html">Exercices du Cours de la programmation linéaire donné par le Dr. Ali DERBALA</a>
+    </h3>
+    <p>
+        <img alt="Exercices du Cours de la programmation linéaire donné par le Dr. Ali DERBALA" title="Exercices du Cours de la programmation linéaire donné par le Dr. Ali DERBALA" class="news-block-img pull-right" src="/thumbs/23/2073913.jpg">
+        75. Un plombier connaît la disposition de trois tuyaux sous des dalles ( voir figure ci dessous ) et il lui suffit de découvrir une partie de chacun d eux pour pouvoir y poser les robinets. Il cherche    </p>
+    <a href="/2073913-Exercices-du-cours-de-la-programmation-lineaire-donne-par-le-dr-ali-derbala.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/5198322-Projet-informatique-voyageur-de-commerce-resolution-approchee-par-algorithme-genetique-du-probleme-du-voyageur-de-commerce.html">Projet informatique «Voyageur de commerce» Résolution approchée par algorithme génétique du problème du voyageur de commerce</a>
+    </h3>
+    <p>
+        <img alt="Projet informatique «Voyageur de commerce» Résolution approchée par algorithme génétique du problème du voyageur de commerce" title="Projet informatique «Voyageur de commerce» Résolution approchée par algorithme génétique du problème du voyageur de commerce" class="news-block-img pull-right" src="/thumbs/25/5198322.jpg">
+        Année 2007-2008 Projet informatique «Voyageur de commerce» Résolution approchée par algorithme génétique du problème du voyageur de commerce B. Monsuez Projet informatique «Voyageur de commerce» Résolution    </p>
+    <a href="/5198322-Projet-informatique-voyageur-de-commerce-resolution-approchee-par-algorithme-genetique-du-probleme-du-voyageur-de-commerce.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/15690657-Le-probleme-des-multiplications-matricielles-enchainees-peut-etre-enonce-comme-suit-etant.html">Le problème des multiplications matricielles enchaînées peut être énoncé comme suit : étant</a>
+    </h3>
+    <p>
+        <img alt="Le problème des multiplications matricielles enchaînées peut être énoncé comme suit : étant" title="Le problème des multiplications matricielles enchaînées peut être énoncé comme suit : étant" class="news-block-img pull-right" src="/thumbs/32/15690657.jpg">
+        Licence informatique - L Année 0/0 Conception d algorithmes et applications (LI) COURS Résumé. Dans cette cinquième séance, nous continuons l exploration des algorithmes de type Programmation Dynamique.    </p>
+    <a href="/15690657-Le-probleme-des-multiplications-matricielles-enchainees-peut-etre-enonce-comme-suit-etant.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/17588881-Problemes-de-transport-et-transbordement.html">Problèmes de transport et transbordement</a>
+    </h3>
+    <p>
+        <img alt="Problèmes de transport et transbordement" title="Problèmes de transport et transbordement" class="news-block-img pull-right" src="/thumbs/36/17588881.jpg">
+        Problèmes de transport et transbordement Résolution Hugues Talbot Laboratoire A2SI 9 avril 2009 Plan Introduction Introduction Solution des problèmes de transport Solution de base initiale Le simplexe    </p>
+    <a href="/17588881-Problemes-de-transport-et-transbordement.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/10999957-Probleme-combinatoire-sur-le-reseau-de-transport-de-gaz-nicolas-derhy-aurelie-le-maitre-nga-thanh-crigen-manuel-ruiz-sylvain-mouret-artelys.html">Problème combinatoire sur le réseau de transport de gaz. Nicolas Derhy, Aurélie Le Maitre, Nga Thanh CRIGEN Manuel Ruiz, Sylvain Mouret ARTELYS</a>
+    </h3>
+    <p>
+        <img alt="Problème combinatoire sur le réseau de transport de gaz. Nicolas Derhy, Aurélie Le Maitre, Nga Thanh CRIGEN Manuel Ruiz, Sylvain Mouret ARTELYS" title="Problème combinatoire sur le réseau de transport de gaz. Nicolas Derhy, Aurélie Le Maitre, Nga Thanh CRIGEN Manuel Ruiz, Sylvain Mouret ARTELYS" class="news-block-img pull-right" src="/thumbs/27/10999957.jpg">
+        Problème combinatoire sur le réseau de transport de gaz Nicolas Derhy, Aurélie Le Maitre, Nga Thanh CRIGEN Manuel Ruiz, Sylvain Mouret ARTELYS Au programme Présentation du problème Un problème d optimisation    </p>
+    <a href="/10999957-Probleme-combinatoire-sur-le-reseau-de-transport-de-gaz-nicolas-derhy-aurelie-le-maitre-nga-thanh-crigen-manuel-ruiz-sylvain-mouret-artelys.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/11000070-Recherche-operationnelle.html">RECHERCHE OPERATIONNELLE</a>
+    </h3>
+    <p>
+        <img alt="RECHERCHE OPERATIONNELLE" title="RECHERCHE OPERATIONNELLE" class="news-block-img pull-right" src="/thumbs/27/11000070.jpg">
+        RECHERCHE OPERATIONNELLE PROBLEME DE L ARBRE RECOUVRANT MINIMAL I - INTRODUCTION (1) Définitions (2) Propriétés, Conditions d existence II ALGORITHMES (1) Algorithme de KRUSKAL (2) Algorithme de PRIM  I    </p>
+    <a href="/11000070-Recherche-operationnelle.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/10999840-Le-probleme-du-flot-maximal.html">LE PROBLEME DU FLOT MAXIMAL</a>
+    </h3>
+    <p>
+        <img alt="LE PROBLEME DU FLOT MAXIMAL" title="LE PROBLEME DU FLOT MAXIMAL" class="news-block-img pull-right" src="/thumbs/27/10999840.jpg">
+        LE PROBLEME DU FLOT MAXIMAL I Exemple d introduction Deux châteaux d'eau alimentent 3 villes à travers un réseau de canalisations au sein duquel se trouvent également des stations de pompage. Les châteaux    </p>
+    <a href="/10999840-Le-probleme-du-flot-maximal.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/15981756-Resume-du-chapitre-8-ressources-et-interblocage.html">Résumé du chapitre 8 Ressources et interblocage</a>
+    </h3>
+    <p>
+        <img alt="Résumé du chapitre 8 Ressources et interblocage" title="Résumé du chapitre 8 Ressources et interblocage" class="news-block-img pull-right" src="/thumbs/33/15981756.jpg">
+        Résumé du chapitre 8 Ressources et interblocage Jacques Mossière 12 août 2004 1 Introduction Ce chapitre est consacré à l étude d un problème classique dans les systèmes, l interblocage, c est à dire l    </p>
+    <a href="/15981756-Resume-du-chapitre-8-ressources-et-interblocage.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/16346824-M2-mpro-optimisation-dans-les-graphes-2014-2015.html">M2 MPRO. Optimisation dans les Graphes 2014-2015</a>
+    </h3>
+    <p>
+        <img alt="M2 MPRO. Optimisation dans les Graphes 2014-2015" title="M2 MPRO. Optimisation dans les Graphes 2014-2015" class="news-block-img pull-right" src="/thumbs/33/16346824.jpg">
+        M2 MPRO Optimisation dans les Graphes 2014-2015 Programmation linéaire et problèmes d'optimisation dans les graphes 1 Problèmes d'optimisation dans les graphes : quelles méthodes pour les résoudre? Théorie    </p>
+    <a href="/16346824-M2-mpro-optimisation-dans-les-graphes-2014-2015.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/15360081-Chapitre-1-programmation-lineaire.html">Chapitre 1 : Programmation linéaire</a>
+    </h3>
+    <p>
+        <img alt="Chapitre 1 : Programmation linéaire" title="Chapitre 1 : Programmation linéaire" class="news-block-img pull-right" src="/thumbs/32/15360081.jpg">
+        Graphes et RO TELECOM Nancy 2A Chapitre 1 : Programmation linéaire J.-F. Scheid 1 I. Introduction 1) Modélisation En Recherche Opérationnelle (RO), modéliser un problème consiste à identifier: les variables    </p>
+    <a href="/15360081-Chapitre-1-programmation-lineaire.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/12507636-Machine-de-turing-informatique-ii-algorithmique-1.html">Machine de Turing. Informatique II Algorithmique 1</a>
+    </h3>
+    <p>
+        <img alt="Machine de Turing. Informatique II Algorithmique 1" title="Machine de Turing. Informatique II Algorithmique 1" class="news-block-img pull-right" src="/thumbs/28/12507636.jpg">
+        Machine de Turing Nous avons vu qu un programme peut être considéré comme la décomposition de la tâche à réaliser en une séquence d instructions élémentaires (manipulant des données élémentaires) compréhensibles    </p>
+    <a href="/12507636-Machine-de-turing-informatique-ii-algorithmique-1.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/18330623-I-le-nombre-de-travailleurs-commencant-leur-service-est-positif-ou-nul-x-i-0-i-1-7.html">(i) Le nombre de travailleurs commencant leur service est positif ou nul : x i 0 i = 1,...,7</a>
+    </h3>
+    <p>
+        <img alt="(i) Le nombre de travailleurs commencant leur service est positif ou nul : x i 0 i = 1,...,7" title="(i) Le nombre de travailleurs commencant leur service est positif ou nul : x i 0 i = 1,...,7" class="news-block-img pull-right" src="/thumbs/39/18330623.jpg">
+        Chapitre 1 Modelisation 11 Exemples de Problèmes 111 La Cafétaria Cafétaria ouverte toute la semaine Statistique sur le personnel requis : Jour Lundi Mardi Mercredi Jeudi Vendredi Samedi Dimanche Nombre    </p>
+    <a href="/18330623-I-le-nombre-de-travailleurs-commencant-leur-service-est-positif-ou-nul-x-i-0-i-1-7.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/5462512-Programmation-lineaire-et-optimisation-didier-smets.html">Programmation linéaire et Optimisation. Didier Smets</a>
+    </h3>
+    <p>
+        <img alt="Programmation linéaire et Optimisation. Didier Smets" title="Programmation linéaire et Optimisation. Didier Smets" class="news-block-img pull-right" src="/thumbs/25/5462512.jpg">
+        Programmation linéaire et Optimisation Didier Smets Chapitre 1 Un problème d optimisation linéaire en dimension 2 On considère le cas d un fabricant d automobiles qui propose deux modèles à la vente, des    </p>
+    <a href="/5462512-Programmation-lineaire-et-optimisation-didier-smets.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/10946683-Enveloppes-convexes-dans-le-plan.html">Enveloppes convexes dans le plan</a>
+    </h3>
+    <p>
+        <img alt="Enveloppes convexes dans le plan" title="Enveloppes convexes dans le plan" class="news-block-img pull-right" src="/thumbs/27/10946683.jpg">
+        ÉCOLE POLYTECHNIQUE ÉCOLES NORMALES SUPÉRIEURES ÉCOLE SUPÉRIEURE DE PHYSIQUE ET DE CHIMIE INDUSTRIELLES CONCOURS D ADMISSION FILIÈRE MP HORS SPÉCIALITÉ INFO FILIÈRE PC COMPOSITION D INFORMATIQUE B (XECLR)    </p>
+    <a href="/10946683-Enveloppes-convexes-dans-le-plan.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/326085-Fonctions-de-plusieurs-variables.html">Fonctions de plusieurs variables</a>
+    </h3>
+    <p>
+        <img alt="Fonctions de plusieurs variables" title="Fonctions de plusieurs variables" class="news-block-img pull-right" src="/thumbs/19/326085.jpg">
+        Module : Analyse 03 Chapitre 00 : Fonctions de plusieurs variables Généralités et Rappels des notions topologiques dans : Qu est- ce que?: Mathématiquement, n étant un entier non nul, on définit comme    </p>
+    <a href="/326085-Fonctions-de-plusieurs-variables.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/7663718-Td-3-probleme-geometrique-dual-et-methode-des-moindres-carres.html">TD 3 : Problème géométrique dual et méthode des moindres carrés</a>
+    </h3>
+    <p>
+        <img alt="TD 3 : Problème géométrique dual et méthode des moindres carrés" title="TD 3 : Problème géométrique dual et méthode des moindres carrés" class="news-block-img pull-right" src="/thumbs/26/7663718.jpg">
+        Semestre, ENSIIE Optimisation mathématique 4 mars 04 TD 3 : Problème géométrique dual et méthode des moindres carrés lionel.rieg@ensiie.fr Exercice On considère le programme géométrique suivant : min x>0,y>0    </p>
+    <a href="/7663718-Td-3-probleme-geometrique-dual-et-methode-des-moindres-carres.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/7520173-Niveau-de-production-croissant.html">Niveau de production croissant</a>
+    </h3>
+    <p>
+        <img alt="Niveau de production croissant" title="Niveau de production croissant" class="news-block-img pull-right" src="/thumbs/26/7520173.jpg">
+        En effet, la fonction de production définit : l ensemble de production l ensemble des paniers de facteurs qui permettent de produire un niveau donné de bien. Cette fonction permet de définir des courbes    </p>
+    <a href="/7520173-Niveau-de-production-croissant.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/3353723-Projet-clanu-en-3ge-complements-d-algebre-lineaire-numerique.html">Projet CLANU en 3GE: Compléments d algèbre linéaire numérique</a>
+    </h3>
+    <p>
+        <img alt="Projet CLANU en 3GE: Compléments d algèbre linéaire numérique" title="Projet CLANU en 3GE: Compléments d algèbre linéaire numérique" class="news-block-img pull-right" src="/thumbs/24/3353723.jpg">
+        Projet CLANU en 3GE: Compléments d algèbre linéaire numérique Année 2008/2009 1 Décomposition QR On rappelle que la multiplication avec une matrice unitaire Q C n n (c est-à-dire Q 1 = Q = Q T ) ne change    </p>
+    <a href="/3353723-Projet-clanu-en-3ge-complements-d-algebre-lineaire-numerique.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/15360480-Recherche-operationnelle.html">Recherche opérationnelle</a>
+    </h3>
+    <p>
+        <img alt="Recherche opérationnelle" title="Recherche opérationnelle" class="news-block-img pull-right" src="/thumbs/32/15360480.jpg">
+        Université dulittoral Côte d Opale Master 2 en Sciences Economiques et de Gestion Recherche opérationnelle Daniel DE WOLF Dunkerque, Septembre 2006  Table des matières 1 Laprogrammation linéaire. 7 1.1    </p>
+    <a href="/15360480-Recherche-operationnelle.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/2040746-Choix-optimal-du-consommateur-a-proprietes-et-determination-du-choix-optimal.html">CHOIX OPTIMAL DU CONSOMMATEUR. A - Propriétés et détermination du choix optimal</a>
+    </h3>
+    <p>
+        <img alt="CHOIX OPTIMAL DU CONSOMMATEUR. A - Propriétés et détermination du choix optimal" title="CHOIX OPTIMAL DU CONSOMMATEUR. A - Propriétés et détermination du choix optimal" class="news-block-img pull-right" src="/thumbs/23/2040746.jpg">
+        III CHOIX OPTIMAL DU CONSOMMATEUR A - Propriétés et détermination du choix optimal La demande du consommateur sur la droite de budget Résolution graphique Règle (d or) pour déterminer la demande quand    </p>
+    <a href="/2040746-Choix-optimal-du-consommateur-a-proprietes-et-determination-du-choix-optimal.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/12200596-Cours-et-applications.html">Cours et applications</a>
+    </h3>
+    <p>
+        <img alt="Cours et applications" title="Cours et applications" class="news-block-img pull-right" src="/thumbs/27/12200596.jpg">
+        MANAGEMENT SUP Cours et applications 3 e édition Farouk Hémici Mira Bounab Dunod, Paris, 2012 ISBN 978-2-10-058279-2 Table des matières Introduction 1 1 Les techniques de prévision : ajustements linéaires    </p>
+    <a href="/12200596-Cours-et-applications.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/8832225-Programmation-avancee.html">Programmation avancée</a>
+    </h3>
+    <p>
+        <img alt="Programmation avancée" title="Programmation avancée" class="news-block-img pull-right" src="/thumbs/26/8832225.jpg">
+        Programmation avancée Chapitre 1 : Complexité et les ABR (arbres binaires de recherche) 1 1 IFSIC Université de Rennes-1 M2Crypto, octobre 2011 Plan du cours 1 2 3 4 5 6 7 8 9 10 Algorithmes Définition    </p>
+    <a href="/8832225-Programmation-avancee.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/10948653-Chapitre-2-representation-des-nombres-en-machine.html">Chapitre 2 : Représentation des nombres en machine</a>
+    </h3>
+    <p>
+        <img alt="Chapitre 2 : Représentation des nombres en machine" title="Chapitre 2 : Représentation des nombres en machine" class="news-block-img pull-right" src="/thumbs/27/10948653.jpg">
+        Chapitre 2 : Représentation des nombres en machine Introduction La mémoire des ordinateurs est constituée d une multitude de petits circuits électroniques qui ne peuvent être que dans deux états : sous    </p>
+    <a href="/10948653-Chapitre-2-representation-des-nombres-en-machine.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/11570918-Etapes-du-developpement-et-de-l-utilisation-d-un-modele-de-simulation.html">Étapes du développement et de l utilisation d un modèle de simulation</a>
+    </h3>
+    <p>
+        <img alt="Étapes du développement et de l utilisation d un modèle de simulation" title="Étapes du développement et de l utilisation d un modèle de simulation" class="news-block-img pull-right" src="/thumbs/27/11570918.jpg">
+        Étapes du développement et de l utilisation d un modèle de simulation Étapes du développement et de l utilisation d un modèle de simulation Formulation du problème Cueillette et analyse de données Conception    </p>
+    <a href="/11570918-Etapes-du-developpement-et-de-l-utilisation-d-un-modele-de-simulation.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/11771603-Partie-i-le-consommateur-et-la-demande.html">Partie I Le consommateur et la demande</a>
+    </h3>
+    <p>
+        <img alt="Partie I Le consommateur et la demande" title="Partie I Le consommateur et la demande" class="news-block-img pull-right" src="/thumbs/27/11771603.jpg">
+        Partie I Le consommateur et la demande Chapitre 1 La fonction d utilité 1 Plan du cours 1. Le consommateur. 2. La notion d utilité. 3. Les courbes d indifférence. 4. L optimum du consommateur. 5. Exercices.    </p>
+    <a href="/11771603-Partie-i-le-consommateur-et-la-demande.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/11542032-Epreuve-d-informatique-2011.html">Épreuve d informatique 2011</a>
+    </h3>
+    <p>
+        <img alt="Épreuve d informatique 2011" title="Épreuve d informatique 2011" class="news-block-img pull-right" src="/thumbs/27/11542032.jpg">
+        A 2011 INFO. MP ÉCOLE NATIONALE DES PONTS ET CHAUSSÉES, ÉCOLES NATIONALES SUPÉRIEURES DE L AÉRONAUTIQUE ET DE L ESPACE, DE TECHNIQUES AVANCÉES, DES TÉLÉCOMMUNICATIONS, DES MINES DE PARIS, DES MINES DE    </p>
+    <a href="/11542032-Epreuve-d-informatique-2011.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/12569044-Heuristique-et-metaheuristique-8-optimisation-combinatoire-et-metaheuristiques-optimisation-combinatoire-probleme-du-voyageur-de-commerce.html">Heuristique et métaheuristique. 8. Optimisation combinatoire et métaheuristiques. Optimisation combinatoire. Problème du voyageur de commerce</a>
+    </h3>
+    <p>
+        <img alt="Heuristique et métaheuristique. 8. Optimisation combinatoire et métaheuristiques. Optimisation combinatoire. Problème du voyageur de commerce" title="Heuristique et métaheuristique. 8. Optimisation combinatoire et métaheuristiques. Optimisation combinatoire. Problème du voyageur de commerce" class="news-block-img pull-right" src="/thumbs/28/12569044.jpg">
+        Heuristique et métaheuristique IFT1575 Modèles de recherche opérationnelle (RO) 8. Optimisation combinatoire et métaheuristiques Un algorithme heuristique permet d identifier au moins une solution réalisable    </p>
+    <a href="/12569044-Heuristique-et-metaheuristique-8-optimisation-combinatoire-et-metaheuristiques-optimisation-combinatoire-probleme-du-voyageur-de-commerce.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/18539915-Introduction-a-la-ro.html">Introduction à la RO</a>
+    </h3>
+    <p>
+        <img alt="Introduction à la RO" title="Introduction à la RO" class="news-block-img pull-right" src="/thumbs/39/18539915.jpg">
+        1 Introduction à la RO Problèmes de flots dans les graphes Cédric BENTZ (CNAM) Christophe PICOULEAU (CNAM) 2 Capacité journalière d'un réseau ferroviaire (1/2) Sur le réseau ferroviaire, on a indiqué sur    </p>
+    <a href="/18539915-Introduction-a-la-ro.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/12767839-Placement-de-centres-logistiques.html">Placement de centres logistiques</a>
+    </h3>
+    <p>
+        <img alt="Placement de centres logistiques" title="Placement de centres logistiques" class="news-block-img pull-right" src="/thumbs/28/12767839.jpg">
+        Master 1 - Spécialité Androide Année 2014/2015 Module RP Résolution de Problèmes Projet Placement de centres logistiques On considère dans ce projet la résolution du problème de placement de centres logistiques    </p>
+    <a href="/12767839-Placement-de-centres-logistiques.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/9032845-Sujet-2-programmation-lineaire-applications-et-proprietes.html">Sujet 2 : Programmation linéaire: applications et propriétés</a>
+    </h3>
+    <p>
+        <img alt="Sujet 2 : Programmation linéaire: applications et propriétés" title="Sujet 2 : Programmation linéaire: applications et propriétés" class="news-block-img pull-right" src="/thumbs/26/9032845.jpg">
+        Sujet 2 : Programmation linéaire: applications et propriétés MHT 423 : Modèles et méthodes d optimisation Andrew J. Miller Dernière mise à jour: March 10, 2010 Dans ce sujet... 1 Application : problème    </p>
+    <a href="/9032845-Sujet-2-programmation-lineaire-applications-et-proprietes.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/8274021-Cours-1-introduction-a-l-algorithmique.html">Cours 1: Introduction à l algorithmique</a>
+    </h3>
+    <p>
+        <img alt="Cours 1: Introduction à l algorithmique" title="Cours 1: Introduction à l algorithmique" class="news-block-img pull-right" src="/thumbs/26/8274021.jpg">
+        1 Cours 1: Introduction à l algorithmique Olivier Bournez bournez@lix.polytechnique.fr LIX, Ecole Polytechnique 2011-12 Algorithmique 2 Aujourd hui Calcul de x n Maximum Complexité d un problème Problème    </p>
+    <a href="/8274021-Cours-1-introduction-a-l-algorithmique.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/16372848-06-la-gestion-de-la-production-partie-1.html">- 06 - LA GESTION DE LA PRODUCTION : PARTIE 1</a>
+    </h3>
+    <p>
+        <img alt="- 06 - LA GESTION DE LA PRODUCTION : PARTIE 1" title="- 06 - LA GESTION DE LA PRODUCTION : PARTIE 1" class="news-block-img pull-right" src="/thumbs/33/16372848.jpg">
+        - 06 - LA GESTION DE LA PRODUCTION : PARTIE 1 Objectif(s) : o o Pré requis : o o o Contraintes de production, Optimisation de la gestion de la production. Coût de production, Production sous contraintes,    </p>
+    <a href="/16372848-06-la-gestion-de-la-production-partie-1.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/18137975-Chapitre-4-dualite-en-programmation-lineaire.html">Chapitre 4 : Dualité en programmation linéaire</a>
+    </h3>
+    <p>
+        <img alt="Chapitre 4 : Dualité en programmation linéaire" title="Chapitre 4 : Dualité en programmation linéaire" class="news-block-img pull-right" src="/thumbs/39/18137975.jpg">
+        Graphes et RO TELECOM Nancy 2A Chapitre 4 : Dualité en programmation linéaire J.-F. Scheid 1 Plan du chapitre 1 Introduction et définitions 2 Propriétés et Théorèmes de dualité 3 Conditions d optimalité    </p>
+    <a href="/18137975-Chapitre-4-dualite-en-programmation-lineaire.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/4131837-Mathematiques-financieres-i.html">MATHÉMATIQUES FINANCIÈRES I</a>
+    </h3>
+    <p>
+        <img alt="MATHÉMATIQUES FINANCIÈRES I" title="MATHÉMATIQUES FINANCIÈRES I" class="news-block-img pull-right" src="/thumbs/24/4131837.jpg">
+        MATHÉMATIQUES FINANCIÈRES I Cinquième cours Taux instantané constant Taux instantané constant Date de comparaison Taux instantané constant Date de comparaison Diagramme d entrées et sorties Taux instantané    </p>
+    <a href="/4131837-Mathematiques-financieres-i.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/5657235-Patrick-morie-bernard-philippe-boyer.html">Patrick Morié, Bernard-Philippe Boyer</a>
+    </h3>
+    <p>
+        <img alt="Patrick Morié, Bernard-Philippe Boyer" title="Patrick Morié, Bernard-Philippe Boyer" class="news-block-img pull-right" src="/thumbs/25/5657235.jpg">
+        Patrick Morié, Bernard-Philippe Boyer Tsoft et Groupe Eyrolles, 2004, ISBN : 2-212-11418-4 5 - ANALYSE ET SIMULATION 5 MODÈLE ITÉRATIF 1 - NOTION D ITÉRATION Dans certains modèles, il arrive qu une formule    </p>
+    <a href="/5657235-Patrick-morie-bernard-philippe-boyer.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/6785997-Rappels-sur-les-tableaux-et-l-algorithme-du-simplexe.html">Rappels sur les tableaux et l algorithme du simplexe</a>
+    </h3>
+    <p>
+        <img alt="Rappels sur les tableaux et l algorithme du simplexe" title="Rappels sur les tableaux et l algorithme du simplexe" class="news-block-img pull-right" src="/thumbs/25/6785997.jpg">
+        Rappels sur les tableaux et l algorithme du simplexe À tout tableau est associée non seulement une base du problème initial (primal) mais également une base du problème dual. Les valeurs des variables    </p>
+    <a href="/6785997-Rappels-sur-les-tableaux-et-l-algorithme-du-simplexe.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/5246776-Le-corps-r-des-nombres-reels.html">Le corps R des nombres réels</a>
+    </h3>
+    <p>
+        <img alt="Le corps R des nombres réels" title="Le corps R des nombres réels" class="news-block-img pull-right" src="/thumbs/25/5246776.jpg">
+        Le corps R des nombres réels. Construction de R à l aide des suites de Cauchy de nombres rationnels On explique brièvement dans ce paragraphe comment construire le corps R des nombres réels à partir du    </p>
+    <a href="/5246776-Le-corps-r-des-nombres-reels.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/12032193-Cours-de-mathematiques-seconde-generalites-sur-les-fonctions.html">Cours de Mathématiques Seconde. Généralités sur les fonctions</a>
+    </h3>
+    <p>
+        <img alt="Cours de Mathématiques Seconde. Généralités sur les fonctions" title="Cours de Mathématiques Seconde. Généralités sur les fonctions" class="news-block-img pull-right" src="/thumbs/27/12032193.jpg">
+        Cours de Mathématiques Seconde Frédéric Demoulin 1 Dernière révision : 16 avril 007 Document diffusé via le site www.bacamaths.net de Gilles Costantini 1 frederic.demoulin (chez) voila.fr gilles.costantini    </p>
+    <a href="/12032193-Cours-de-mathematiques-seconde-generalites-sur-les-fonctions.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/14497529-Exemple-d-un-modele-de-pl-2-programmation-lineaire-a-modelisation-programmation-lineaire-pl-exemple-d-un-modele-de-pl-suite.html">Exemple d un modèle de PL. 2. Programmation linéaire a. modélisation. Programmation linéaire (PL) Exemple d un modèle de PL (suite)</a>
+    </h3>
+    <p>
+        <img alt="Exemple d un modèle de PL. 2. Programmation linéaire a. modélisation. Programmation linéaire (PL) Exemple d un modèle de PL (suite)" title="Exemple d un modèle de PL. 2. Programmation linéaire a. modélisation. Programmation linéaire (PL) Exemple d un modèle de PL (suite)" class="news-block-img pull-right" src="/thumbs/30/14497529.jpg">
+        Exemple d un modèle de PL IFT1575 Modèles de recherche opérationnelle (RO). Programmation linéaire a. modélisation Données du problème (Wyndor Glass, sec..1 H&L): Deux types de produits (produit 1, produit    </p>
+    <a href="/14497529-Exemple-d-un-modele-de-pl-2-programmation-lineaire-a-modelisation-programmation-lineaire-pl-exemple-d-un-modele-de-pl-suite.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/12003479-1-1-definitions-2-1-2-operations-elementaires-2-1-3-systemes-echelonnes-et-triangulaires-3.html">1.1 Définitions... 2 1.2 Opérations élémentaires... 2 1.3 Systèmes échelonnés et triangulaires... 3</a>
+    </h3>
+    <p>
+        <img alt="1.1 Définitions... 2 1.2 Opérations élémentaires... 2 1.3 Systèmes échelonnés et triangulaires... 3" title="1.1 Définitions... 2 1.2 Opérations élémentaires... 2 1.3 Systèmes échelonnés et triangulaires... 3" class="news-block-img pull-right" src="/thumbs/27/12003479.jpg">
+        Chapitre 5 Systèmes linéaires 1 Généralités sur les systèmes linéaires 2 11 Définitions 2 12 Opérations élémentaires 2 13 Systèmes échelonnés et triangulaires 3 2 Résolution des systèmes linéaires 3 21    </p>
+    <a href="/12003479-1-1-definitions-2-1-2-operations-elementaires-2-1-3-systemes-echelonnes-et-triangulaires-3.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/3596698-Procedure-exemple-operations-dans-un-systeme-positionnel.html">Procédure. Exemple OPÉRATIONS DANS UN SYSTÈME POSITIONNEL</a>
+    </h3>
+    <p>
+        <img alt="Procédure. Exemple OPÉRATIONS DANS UN SYSTÈME POSITIONNEL" title="Procédure. Exemple OPÉRATIONS DANS UN SYSTÈME POSITIONNEL" class="news-block-img pull-right" src="/thumbs/24/3596698.jpg">
+        Opérations dans un système positionnel OPÉRATIONS DANS UN SYSTÈME POSITIONNEL INTRODUCTION Dans tout système de numération positionnel, les symboles sont utilisés de façon cyclique et la longueur du correspond    </p>
+    <a href="/3596698-Procedure-exemple-operations-dans-un-systeme-positionnel.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/325599-Chapitre-1-evolution-cours.html">Chapitre 1 : Évolution COURS</a>
+    </h3>
+    <p>
+        <img alt="Chapitre 1 : Évolution COURS" title="Chapitre 1 : Évolution COURS" class="news-block-img pull-right" src="/thumbs/19/325599.jpg">
+        Chapitre 1 : Évolution COURS OBJECTIFS DU CHAPITRE Savoir déterminer le taux d évolution, le coefficient multiplicateur et l indice en base d une évolution. Connaître les liens entre ces notions et savoir    </p>
+    <a href="/325599-Chapitre-1-evolution-cours.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/4791839-Mathematiques-appliquees-a-l-informatique.html">Mathématiques appliquées à l informatique</a>
+    </h3>
+    <p>
+        <img alt="Mathématiques appliquées à l informatique" title="Mathématiques appliquées à l informatique" class="news-block-img pull-right" src="/thumbs/25/4791839.jpg">
+        Mathématiques appliquées à l informatique Jean-Etienne Poirrier 15 décembre 2005 Table des matières 1 Matrices 3 1.1 Définition......................................... 3 1.2 Les différents types de matrices.............................    </p>
+    <a href="/4791839-Mathematiques-appliquees-a-l-informatique.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/1900149-Travaux-diriges-n-1-programmation-lineaire.html">Travaux dirigés n 1. Programmation linéaire</a>
+    </h3>
+    <p>
+        <img alt="Travaux dirigés n 1. Programmation linéaire" title="Travaux dirigés n 1. Programmation linéaire" class="news-block-img pull-right" src="/thumbs/23/1900149.jpg">
+        Université de Reims Champagne Ardenne U.F.R. de Sciences Exactes et Naturelles MASTER 1 Informatique - 2014/2015 Pierre Delisle Travaux dirigés n 1 Programmation linéaire Exercice 1 (Résolution d'un programme    </p>
+    <a href="/1900149-Travaux-diriges-n-1-programmation-lineaire.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/4300302-A-propos-des-matrices-echelonnees.html">À propos des matrices échelonnées</a>
+    </h3>
+    <p>
+        <img alt="À propos des matrices échelonnées" title="À propos des matrices échelonnées" class="news-block-img pull-right" src="/thumbs/24/4300302.jpg">
+        À propos des matrices échelonnées Antoine Ducros appendice au cours de Géométrie affine et euclidienne dispensé à l Université Paris 6 Année universitaire 2011-2012 Introduction Soit k un corps, soit E    </p>
+    <a href="/4300302-A-propos-des-matrices-echelonnees.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/11291411-Systemes-lineaires-1-introduction-aux-systemes-d-equations-lineaires-exo7-1-1-exemple-deux-droites-dans-le-plan.html">Systèmes linéaires. 1. Introduction aux systèmes d équations linéaires. Exo7. 1.1. Exemple : deux droites dans le plan</a>
+    </h3>
+    <p>
+        <img alt="Systèmes linéaires. 1. Introduction aux systèmes d équations linéaires. Exo7. 1.1. Exemple : deux droites dans le plan" title="Systèmes linéaires. 1. Introduction aux systèmes d équations linéaires. Exo7. 1.1. Exemple : deux droites dans le plan" class="news-block-img pull-right" src="/thumbs/27/11291411.jpg">
+        Exo7 Systèmes linéaires Vidéo partie 1. Introduction aux systèmes d'équations linéaires Vidéo partie 2. Théorie des systèmes linéaires Vidéo partie 3. Résolution par la méthode du pivot de Gauss 1. Introduction    </p>
+    <a href="/11291411-Systemes-lineaires-1-introduction-aux-systemes-d-equations-lineaires-exo7-1-1-exemple-deux-droites-dans-le-plan.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/18236866-1-programmation-lineaire.html">1 Programmation linéaire</a>
+    </h3>
+    <p>
+        <img alt="1 Programmation linéaire" title="1 Programmation linéaire" class="news-block-img pull-right" src="/thumbs/39/18236866.jpg">
+        UNIVERSITÉ PARIS OUEST NANTERRE LA DÉFENSE U.F.R. SEGMI Année universitaire 2012 2013 Master d économie Cours de M. Desgraupes Méthodes Numériques Document 4 : Corrigé des exercices d optimisation linéaire    </p>
+    <a href="/18236866-1-programmation-lineaire.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/12864427-Recherche-operationnelle-mercredi-06-novembre-2013-controle-terminal-session-1.html">Recherche Opérationnelle Mercredi 06 Novembre 2013 - Contrôle Terminal - Session 1</a>
+    </h3>
+    <p>
+        <img alt="Recherche Opérationnelle Mercredi 06 Novembre 2013 - Contrôle Terminal - Session 1" title="Recherche Opérationnelle Mercredi 06 Novembre 2013 - Contrôle Terminal - Session 1" class="news-block-img pull-right" src="/thumbs/28/12864427.jpg">
+        Master 2 LT, MPM, MIR Pôle Lamartine - ULCO Recherche Opérationnelle Mercredi 06 Novembre 2013 - Contrôle Terminal - Session 1 Durée de l épreuve : 2h00 Documents interdits. Calculatrice autorisée Exercice    </p>
+    <a href="/12864427-Recherche-operationnelle-mercredi-06-novembre-2013-controle-terminal-session-1.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/10948869-L-enseignement-de-l-algorithmique-au-lycee.html">L enseignement de l algorithmique au Lycée</a>
+    </h3>
+    <p>
+        <img alt="L enseignement de l algorithmique au Lycée" title="L enseignement de l algorithmique au Lycée" class="news-block-img pull-right" src="/thumbs/27/10948869.jpg">
+        L enseignement de l algorithmique au Lycée Sisteron 12 novembre 2009 Fernand Didier didier@irem.univ-mrs.fr Approche naïve C est une méthode, une façon systématique de procéder, pour faire quelque chose    </p>
+    <a href="/10948869-L-enseignement-de-l-algorithmique-au-lycee.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/928657-Definitions-numero-a-preciser-duree.html">Définitions. Numéro à préciser. (Durée : )</a>
+    </h3>
+    <p>
+        <img alt="Définitions. Numéro à préciser. (Durée : )" title="Définitions. Numéro à préciser. (Durée : )" class="news-block-img pull-right" src="/thumbs/18/928657.jpg">
+        Numéro à préciser (Durée : ) On étudie dans ce problème l ordre lexicographique pour les mots sur un alphabet fini et plusieurs constructions des cycles de De Bruijn. Les trois parties sont largement indépendantes.    </p>
+    <a href="/928657-Definitions-numero-a-preciser-duree.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/8649059-Declassement-d-actifs-et-stock-brut-de-capital.html">Déclassement d'actifs et stock brut de capital</a>
+    </h3>
+    <p>
+        <img alt="Déclassement d'actifs et stock brut de capital" title="Déclassement d'actifs et stock brut de capital" class="news-block-img pull-right" src="/thumbs/26/8649059.jpg">
+        Extrait de : La mesure du capital - Manuel de l'ocde 2009 Deuxième édition Accéder à cette publication : http://dx.doi.org/10.1787/9789264067752-fr Déclassement d'actifs et stock brut de capital Merci    </p>
+    <a href="/8649059-Declassement-d-actifs-et-stock-brut-de-capital.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/6785983-6-11-bases-de-lanczos-bi-orthogonales-pour-des-matrices-non-symetriques.html">6.11 Bases de Lanczos bi-orthogonales pour des matrices non symétriques</a>
+    </h3>
+    <p>
+        <img alt="6.11 Bases de Lanczos bi-orthogonales pour des matrices non symétriques" title="6.11 Bases de Lanczos bi-orthogonales pour des matrices non symétriques" class="news-block-img pull-right" src="/thumbs/25/6785983.jpg">
+        Chapitre 6 Méthodes de Krylov 611 Bases de Lanczos bi-orthogonales pour des matrices non symétriques Dans le cas où la matrice A n est pas symétrique, comment peut-on retrouver une matrice de corrélation    </p>
+    <a href="/6785983-6-11-bases-de-lanczos-bi-orthogonales-pour-des-matrices-non-symetriques.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/398766-Introduction-a-l-etude-des-corps-finis.html">Introduction à l étude des Corps Finis</a>
+    </h3>
+    <p>
+        <img alt="Introduction à l étude des Corps Finis" title="Introduction à l étude des Corps Finis" class="news-block-img pull-right" src="/thumbs/20/398766.jpg">
+        Introduction à l étude des Corps Finis Robert Rolland (Résumé) 1 Introduction La structure de corps fini intervient dans divers domaines des mathématiques, en particulier dans la théorie de Galois sur    </p>
+    <a href="/398766-Introduction-a-l-etude-des-corps-finis.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/9870045-Support-du-cours-de-probabilites-iut-d-orleans-departement-d-informatique.html">Support du cours de Probabilités IUT d Orléans, Département d informatique</a>
+    </h3>
+    <p>
+        <img alt="Support du cours de Probabilités IUT d Orléans, Département d informatique" title="Support du cours de Probabilités IUT d Orléans, Département d informatique" class="news-block-img pull-right" src="/thumbs/27/9870045.jpg">
+        Support du cours de Probabilités IUT d Orléans, Département d informatique Pierre Andreoletti IUT d Orléans Laboratoire MAPMO (Bât. de Mathématiques UFR Sciences) - Bureau 126 email: pierre.andreoletti@univ-orleans.fr    </p>
+    <a href="/9870045-Support-du-cours-de-probabilites-iut-d-orleans-departement-d-informatique.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/8519751-Licence-stic-semestre-1-algorithmique-programmation-1.html">Licence STIC, Semestre 1 Algorithmique & Programmation 1</a>
+    </h3>
+    <p>
+        <img alt="Licence STIC, Semestre 1 Algorithmique & Programmation 1" title="Licence STIC, Semestre 1 Algorithmique & Programmation 1" class="news-block-img pull-right" src="/thumbs/26/8519751.jpg">
+        Licence STIC, Semestre 1 Algorithmique & Programmation 1 Exercices Alexandre Tessier 1 Introduction 2 instruction de sortie 3 expressions 4 variable informatique 5 séquence d instructions, trace Exercice    </p>
+    <a href="/8519751-Licence-stic-semestre-1-algorithmique-programmation-1.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/5389358-Master-modelisation-statistique-m2-finance-chapitre-1-gestion-optimale-de-portefeuille-l-approche-de-markowitz.html">Master Modélisation Statistique M2 Finance - chapitre 1. Gestion optimale de portefeuille, l approche de Markowitz</a>
+    </h3>
+    <p>
+        <img alt="Master Modélisation Statistique M2 Finance - chapitre 1. Gestion optimale de portefeuille, l approche de Markowitz" title="Master Modélisation Statistique M2 Finance - chapitre 1. Gestion optimale de portefeuille, l approche de Markowitz" class="news-block-img pull-right" src="/thumbs/25/5389358.jpg">
+        Master Modélisation Statistique M2 Finance - chapitre 1 Gestion optimale de portefeuille, l approche de Markowitz Clément Dombry, Laboratoire de Mathématiques de Besançon, Université de Franche-Comté.    </p>
+    <a href="/5389358-Master-modelisation-statistique-m2-finance-chapitre-1-gestion-optimale-de-portefeuille-l-approche-de-markowitz.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/3943376-Structures-de-donnees-non-lineaires.html">Structures de données non linéaires</a>
+    </h3>
+    <p>
+        <img alt="Structures de données non linéaires" title="Structures de données non linéaires" class="news-block-img pull-right" src="/thumbs/24/3943376.jpg">
+        Structures de données non linéaires I. Graphes Définition Un graphe (simple) orienté G est un couple (S, A), où : S est un ensemble dont les éléments sont appelés les sommets. A est un ensemble de couples    </p>
+    <a href="/3943376-Structures-de-donnees-non-lineaires.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/12089404-Plusieurs-exercices-de-la-douzieme-seance-de-td.html">Plusieurs exercices de la douzième séance de TD</a>
+    </h3>
+    <p>
+        <img alt="Plusieurs exercices de la douzième séance de TD" title="Plusieurs exercices de la douzième séance de TD" class="news-block-img pull-right" src="/thumbs/27/12089404.jpg">
+        Plusieurs exercices de la douzième séance de TD Décembre 2006 1 Offre du travail 1.1 énoncé On considère un ménage dont les préférences portent sur la consommation et le temps consacré aux activités non    </p>
+    <a href="/12089404-Plusieurs-exercices-de-la-douzieme-seance-de-td.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/7351997-Theorie-des-graphes-introduction-programme-de-terminale-es-specialite-resolution-de-problemes-a-l-aide-de-graphes-preparation-capes-ucbl.html">Théorie des graphes. Introduction. Programme de Terminale ES Spécialité. Résolution de problèmes à l aide de graphes. Préparation CAPES UCBL</a>
+    </h3>
+    <p>
+        <img alt="Théorie des graphes. Introduction. Programme de Terminale ES Spécialité. Résolution de problèmes à l aide de graphes. Préparation CAPES UCBL" title="Théorie des graphes. Introduction. Programme de Terminale ES Spécialité. Résolution de problèmes à l aide de graphes. Préparation CAPES UCBL" class="news-block-img pull-right" src="/thumbs/26/7351997.jpg">
+        Introduction Ces quelques pages ont pour objectif de vous initier aux notions de théorie des graphes enseignées en Terminale ES. Le programme de Terminale (voir ci-après) est construit sur la résolution    </p>
+    <a href="/7351997-Theorie-des-graphes-introduction-programme-de-terminale-es-specialite-resolution-de-problemes-a-l-aide-de-graphes-preparation-capes-ucbl.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/12824997-Deuxieme-partie-ii-algorithmes-dans-les-graphes.html">Deuxième partie II ALGORITHMES DANS LES GRAPHES</a>
+    </h3>
+    <p>
+        <img alt="Deuxième partie II ALGORITHMES DANS LES GRAPHES" title="Deuxième partie II ALGORITHMES DANS LES GRAPHES" class="news-block-img pull-right" src="/thumbs/28/12824997.jpg">
+        Deuxième partie II ALGORITHMES DANS LES GRAPHES Représentation des graphes Représentation en mémoire : matrice d incidence / Matrice d incidence Soit G = (, E) graphe simple non orienté avec n = et m =    </p>
+    <a href="/12824997-Deuxieme-partie-ii-algorithmes-dans-les-graphes.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/5913347-Pert-gantt-l-ordonnancement-du-travail.html">PERT GANTT L ordonnancement du travail</a>
+    </h3>
+    <p>
+        <img alt="PERT GANTT L ordonnancement du travail" title="PERT GANTT L ordonnancement du travail" class="news-block-img pull-right" src="/thumbs/25/5913347.jpg">
+        GDP-MEP1 PERT GNTT TYPE RESSOURCE COURS N VERSION 1 01 PERT GNTT L ordonnancement du travail Pour faciliter le suivi des opérations à entreprendre, éviter les oublis et les malentendus, l information doit    </p>
+    <a href="/5913347-Pert-gantt-l-ordonnancement-du-travail.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/12569297-.html"></a>
+    </h3>
+    <p>
+        <img alt="" title="" class="news-block-img pull-right" src="/thumbs/28/12569297.jpg">
+        Table des matières I La programmation linéaire en variables continues 1 Présentation 3 1 Les bases de la programmation linéaire 5 1.1 Formulation d'un problème de programmation linéaire........... 5 1.2    </p>
+    <a href="/12569297-.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+<div class="news-blocks">
+
+    <h3>
+        <a href="/5605649-Lecon-n-11-faire-un-album-de-photo-avec-albelli-2-eme-partie.html">Leçon N 11 Faire un Album de photo avec ALBELLI 2 ème partie</a>
+    </h3>
+    <p>
+        <img alt="Leçon N 11 Faire un Album de photo avec ALBELLI 2 ème partie" title="Leçon N 11 Faire un Album de photo avec ALBELLI 2 ème partie" class="news-block-img pull-right" src="/thumbs/25/5605649.jpg">
+        Leçon N 11 Faire un Album de photo avec ALBELLI 2 ème partie Vous allez créer avec cette leçon un album de photo avec le logiciel «Albelli livre photo». 2 La préparation Le travail le plus important pour    </p>
+    <a href="/5605649-Lecon-n-11-faire-un-album-de-photo-avec-albelli-2-eme-partie.html" class="news-block-btn">
+        Plus en détail <i class="m-icon-swapright m-icon-black"></i>
+    </a>
+</div>
+
+                            </div>
+                            <!-- END RIGHT SIDEBAR -->
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- END CONTENT -->
+            </div>
+            <!-- END SIDEBAR & CONTENT 19/283172/283172.pdf -->
+        </div>
+    </div>
+<!-- BEGIN FOOTER -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <!-- BEGIN COPYRIGHT -->
+            <div class="col-md-10 col-sm-10 padding-top-10">
+                2018 © DocPlayer.fr <a href="/support/privacy-policy/">Politique de confidentialité</a> | <a href="/support/terms-of-service/">Conditions de service</a> | <a href="/support/feedback/">Feed-back</a>
+            </div>
+            <!-- END COPYRIGHT -->
+
+            <!-- BEGIN PAYMENTS -->
+            <div class="col-md-6 col-sm-6">
+                            </div>
+            <!-- END PAYMENTS -->
+            <div id="footer_height_for_cookie_msg" style="height:20em; visibility: hidden;"><!--height for cookie banner on bottom of page --></div>
+        </div>
+    </div>
+</div>
+<!-- END FOOTER -->
+
+<!--[if lt IE 9]>
+    <script src="/static/theme/global/plugins/respond.min.js"></script>
+<![endif]-->
+
+
+    <script src="/static/js/df49f/total.js" type="text/javascript"></script>
+
+<div style="display: none;">
+            <script src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+        <script>
+            window.HELP_IMPROVE_VIDEOJS = false;
+            
+            function hide_video_player() {
+                $('#playerFrameVideo').parent().replaceWith("<iframe id=\"player_frame\" frameborder=\"0\" style=\"border-bottom: 2px solid #eee; border-top: 0px;\" scrolling=\"no\" src=\"\/docview\/19\/283172\/\" width=\"100%\" height=\"750\" allowfullscreen><\/iframe>");
+                $('#hide_video_player').remove();
+            }
+            
+            var video_js_id     = 'playerFrameVideo',
+                player = videojs(video_js_id, {inactivityTimeout: 0});
+
+            player.on(['texttrackchange', 'fullscreenchange'], function () {
+                var tracks = player.textTracks();
+                console.log('tracks.length ' + tracks.length);
+                for (var i = 0; i < tracks.length; i++) {
+                    tracks[i].mode = 'disabled';
+                }
+            });
+
+                        player.ima({
+                id:              video_js_id,
+                disableFlashAds: true,
+                adTagUrl:        '//googleads.g.doubleclick.net/pagead/ads?ad_type=video_text_image&client=ca-video-pub-6133583279631137&videoad_start_delay=0&hl=fr&description_url=http%3A%2F%2Fdocplayer.fr%2F283172-Info-f-310-algorithmique-3-et-recherche-operationnelle.html'
+            });
+                    </script>
+    <script>
+        var page_data = {"domain_id":29,"design_id":0,"page_id":0};        (function(){
+            var img = new Image();
+            var pixel_image_src = '/pix/'+Math.random()+'/report/pixel.gif?type=pageview&domain_id=29&page_id=0&design_id=0&l='+encodeURIComponent(navigator.language)+'&p='+encodeURIComponent(navigator.platform)+'&url='+encodeURIComponent(document.location);
+            document.write('<img src="'+pixel_image_src+'"> ');
+        }());
+    </script>
+</div>
+
+<div id="cookie_msg" style="z-index:99999; background-color: lightgray; border-top: 1px gray solid; width: 100%; position: fixed;bottom: 0;padding: 3px; padding-right: 30px ;text-align: center;left:0">
+    To ensure the functioning of the site, we use <b>cookies</b>. We share information about your activities on the site with our partners and Google partners: social networks and companies engaged in advertising and web analytics. For more information, see the <a href="/support/privacy-policy/" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites" target="_blank">Google Privacy &amp Terms</a>.
+    Your consent to our cookies if you continue to use this website.
+    <p>
+        <label><input type="checkbox" checked disabled>Necessary cookie</label>
+        <button href="#" type="submit" onclick="accept_cookie_msg();return false;" style="border:black 1px solid">Accept</button>
+    </p>
+</div>
+<script>
+    function accept_cookie_msg() {
+        document.cookie = "cookie_msg_viewed=1;max-age=15768000;path=/";
+        hide_cookie_msg();
+    }
+    
+    function hide_cookie_msg() {
+        var cb = document.getElementById('cookie_msg');
+        if (cb) { cb.parentElement.removeChild(cb); }
+        var fcb = document.getElementById('footer_height_for_cookie_msg');
+        if (fcb) { fcb.parentElement.removeChild(fcb); }
+    }
+    
+    (function () {
+        var cookie_msg_viewed = (function (name) {
+            var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+            return matches ? decodeURIComponent(matches[1]) : undefined
+        })('cookie_msg_viewed');
+        
+        if (cookie_msg_viewed) {
+            hide_cookie_msg();
+        }
+    })();
+</script>
+
+</body>
+</html>

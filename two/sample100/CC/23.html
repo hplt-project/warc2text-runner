@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en">
+<![endif]-->
+<!--[if !(IE 7) & !(IE 8)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>essay | Writer&#039;s Resource Blog | Page 3</title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://writersresourceblog.com/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="https://s2.wp.com/wp-content/themes/pub/twentytwelve/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+<script type="text/javascript">
+  WebFontConfig = {"google":{"families":["Alegreya+Sans:r:latin,latin-ext","Gentium+Book+Basic:r,i,b,bi:latin,latin-ext"]}};
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = 'https://s0.wp.com/wp-content/plugins/custom-fonts/js/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+	})();
+</script><style id="jetpack-custom-fonts-css">.wf-active .site-header h1{font-family:"Alegreya Sans",sans-serif;font-style:normal;font-weight:400}.wf-active body, .wf-active body.custom-font-enabled{font-family:"Gentium Book Basic",serif}.wf-active .site-header h2{font-family:"Gentium Book Basic",serif}.wf-active h1, .wf-active h2, .wf-active h3, .wf-active h4, .wf-active h5, .wf-active h6{font-family:"Alegreya Sans",sans-serif;font-style:normal;font-weight:400}.wf-active .entry-header .entry-title{font-weight:400;font-style:normal}.wf-active .comment-content h1, .wf-active .entry-content h1{font-style:normal;font-weight:400}.wf-active .comment-content h2, .wf-active .entry-content h2{font-style:normal;font-weight:400}.wf-active .comment-content h3, .wf-active .entry-content h3{font-style:normal;font-weight:400}.wf-active .comment-content h4, .wf-active .entry-content h4{font-style:normal;font-weight:400}.wf-active .comment-content h5, .wf-active .entry-content h5{font-style:normal;font-weight:400}.wf-active .comment-content h6, .wf-active .entry-content h6{font-style:normal;font-weight:400}.wf-active article.format-image footer h1{font-weight:400;font-style:normal}.wf-active article.format-image footer h2{font-style:normal;font-weight:400}.wf-active article.format-link header{font-weight:400;font-style:normal}.wf-active .comments-title{font-weight:400;font-style:normal}.wf-active .comments-area article header h4{font-weight:400;font-style:normal}.wf-active #respond h3#reply-title{font-style:normal;font-weight:400}.wf-active .entry-header .entry-title{font-style:normal;font-weight:400}</style>
+
+<!-- Async WordPress.com Remote Login -->
+<script id="wpcom_remote_login_js">
+var wpcom_remote_login_extra_auth = '';
+function wpcom_remote_login_remove_dom_node_id( element_id ) {
+	var dom_node = document.getElementById( element_id );
+	if ( dom_node ) { dom_node.remove(); }
+}
+function wpcom_remote_login_remove_dom_node_classes( class_name ) {
+	var dom_nodes = document.querySelectorAll( '.' + class_name );
+	for ( var i = 0; i < dom_nodes.length; i++ ) {
+		dom_nodes[i].remove();
+	}
+}
+function wpcom_remote_login_final_cleanup() {
+	wpcom_remote_login_remove_dom_node_classes( "wpcom_remote_login_msg" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_key" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_validate" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_js" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_request_access_iframe" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_request_access_styles" );
+}
+
+// Watch for messages back from the remote login
+window.addEventListener( "message", function( e ) {
+	if ( e.origin === "https://r-login.wordpress.com" ) {
+		var data = {};
+		try {
+			data = JSON.parse( e.data );
+		} catch( e ) {
+			wpcom_remote_login_final_cleanup();
+			return;
+		}
+
+		if ( data.msg === 'LOGIN' ) {
+			// Clean up the login check iframe
+			wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_key" );
+
+			var id_regex = new RegExp( /^[0-9]+$/ );
+			var token_regex = new RegExp( /^.*|.*|.*$/ );
+			if (
+				token_regex.test( data.token )
+				&& id_regex.test( data.wpcomid )
+			) {
+				// We have everything we need to ask for a login
+				var script = document.createElement( "script" );
+				script.setAttribute( "id", "wpcom_remote_login_validate" );
+				script.src = '/remote-login.php?wpcom_remote_login=validate'
+					+ '&wpcomid=' + data.wpcomid
+					+ '&token=' + encodeURIComponent( data.token )
+					+ '&host=' + window.location.protocol
+						+ '//' + window.location.hostname;
+				document.body.appendChild( script );
+			}
+
+			return;
+		}
+
+		// Safari ITP, not logged in, so redirect
+		if ( data.msg === 'LOGIN-REDIRECT' ) {
+			window.location = 'https://wordpress.com/log-in?redirect_to=' + window.location.href;
+			return;
+		}
+
+		// Safari ITP, storage access failed, remove the request
+		if ( data.msg === 'LOGIN-REMOVE' ) {
+			var css_zap = 'html { -webkit-transition: margin-top 1s; transition: margin-top 1s; } /* 9001 */ html { margin-top: 0 !important; } * html body { margin-top: 0 !important; } @media screen and ( max-width: 782px ) { html { margin-top: 0 !important; } * html body { margin-top: 0 !important; } }';
+			var style_zap = document.createElement( 'style' );
+			style_zap.type = 'text/css';
+			style_zap.appendChild( document.createTextNode( css_zap ) );
+			document.body.appendChild( style_zap );
+
+			var e = document.getElementById( 'wpcom_request_access_iframe' );
+			e.parentNode.removeChild( e );
+
+			document.cookie = 'wordpress_com_login_access=denied; path=/; max-age=31536000';
+
+			return;
+		}
+
+		// Safari ITP
+		if ( data.msg === 'REQUEST_ACCESS' ) {
+			console.log( 'request access: safari' );
+
+			// Check ITP iframe enable/disable knob
+			if ( wpcom_remote_login_extra_auth !== 'safari_itp_iframe' ) {
+				return;
+			}
+
+			// If we are in a "private window" there is no ITP.
+			var private_window = false;
+			try {
+				var opendb = window.openDatabase( null, null, null, null );
+			} catch( e ) {
+				private_window = true;
+			}
+
+			if ( private_window ) {
+				console.log( 'private window' );
+				return;
+			}
+
+			var iframe = document.createElement( 'iframe' );
+			iframe.id = 'wpcom_request_access_iframe';
+			iframe.setAttribute( 'scrolling', 'no' );
+			iframe.setAttribute( 'sandbox', 'allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-top-navigation-by-user-activation' );
+			iframe.src = 'https://r-login.wordpress.com/remote-login.php?wpcom_remote_login=request_access&origin=' + encodeURIComponent( data.origin ) + '&wpcomid=' + encodeURIComponent( data.wpcomid );
+
+			var css = 'html { -webkit-transition: margin-top 1s; transition: margin-top 1s; } /* 9001 */ html { margin-top: 46px !important; } * html body { margin-top: 46px !important; } @media screen and ( max-width: 660px ) { html { margin-top: 71px !important; } * html body { margin-top: 71px !important; } #wpcom_request_access_iframe { display: block; height: 71px !important; } } #wpcom_request_access_iframe { border: 0px; height: 46px; position: fixed; top: 0; left: 0; width: 100%; min-width: 100%; z-index: 99999; background: #23282d; } ';
+
+			var style = document.createElement( 'style' );
+			style.type = 'text/css';
+			style.id = 'wpcom_request_access_styles';
+			style.appendChild( document.createTextNode( css ) );
+			document.body.appendChild( style );
+
+			document.body.appendChild( iframe );
+		}
+
+		if ( data.msg === 'DONE' ) {
+			wpcom_remote_login_final_cleanup();
+		}
+	}
+}, false );
+
+// Inject the remote login iframe after the page has had a chance to load
+// more critical resources
+window.addEventListener( "DOMContentLoaded", function( e ) {
+	var iframe = document.createElement( "iframe" );
+	iframe.style.display = "none";
+	iframe.setAttribute( "scrolling", "no" );
+	iframe.setAttribute( "id", "wpcom_remote_login_key" );
+	iframe.src = "https://r-login.wordpress.com/remote-login.php"
+		+ "?wpcom_remote_login=key"
+		+ "&origin=aHR0cHM6Ly93cml0ZXJzcmVzb3VyY2VibG9nLmNvbQ%3D%3D"
+		+ "&wpcomid=44874191"
+		+ "&time=1558514057";
+	document.body.appendChild( iframe );
+}, false );
+</script>
+<link rel='dns-prefetch' href='//s2.wp.com' />
+<link rel='dns-prefetch' href='//s1.wp.com' />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//writersresourceblog.wordpress.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.pubmine.com' />
+<link rel='dns-prefetch' href='//x.bidswitch.net' />
+<link rel='dns-prefetch' href='//static.criteo.net' />
+<link rel='dns-prefetch' href='//ib.adnxs.com' />
+<link rel='dns-prefetch' href='//aax.amazon-adsystem.com' />
+<link rel='dns-prefetch' href='//bidder.criteo.com' />
+<link rel='dns-prefetch' href='//cas.criteo.com' />
+<link rel='dns-prefetch' href='//gum.criteo.com' />
+<link rel='dns-prefetch' href='//ads.pubmatic.com' />
+<link rel='dns-prefetch' href='//gads.pubmatic.com' />
+<link rel='dns-prefetch' href='//tpc.googlesyndication.com' />
+<link rel='dns-prefetch' href='//ad.doubleclick.net' />
+<link rel='dns-prefetch' href='//googleads.g.doubleclick.net' />
+<link rel='dns-prefetch' href='//www.googletagservices.com' />
+<link rel='dns-prefetch' href='//cdn.switchadhub.com' />
+<link rel='dns-prefetch' href='//delivery.g.switchadhub.com' />
+<link rel='dns-prefetch' href='//delivery.swid.switchadhub.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Writer&#039;s Resource Blog &raquo; Feed" href="https://writersresourceblog.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Writer&#039;s Resource Blog &raquo; Comments Feed" href="https://writersresourceblog.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Writer&#039;s Resource Blog &raquo; essay Tag Feed" href="https://writersresourceblog.com/tag/essay/feed/" />
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+			<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s2.wp.com\/wp-includes\/js\/wp-emoji-release.min.js?m=1556893897h&ver=5.2.1"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='all-css-0-1' href='https://s1.wp.com/_static/??-eJyNkVtuAjEMRTdESKFQvirWkocZDHYSxRlG2X1DqlIK1Ygfy497rGtZT0m5GAqEonlUicYBg+gpuchKGAnqQ7V0Igt9h1mKwy8Yszde9EDRGnpNW6Y2qi3SBdRl/QTd+SI8g+gTlGTcWfVqTo7hgAFLvSU3MQZHo2+7WkN7lG6tr7TZ5KqlVIIlY3iZKEfgv8Q/hlzM0PqcTLkqGDwaoAaGModx+vihrumxHT979/fDrE0ZRFSLjCOr7rBze/5cbbe79Wa1e387fQESIcGk?cssminify=yes' type='text/css' media='all' />
+<link rel='stylesheet' id='twentytwelve-fonts-css'  href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&#038;subset=latin,latin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='all-css-2-1' href='https://s1.wp.com/_static/??-eJzTLy/QTc7PK0nNK9EvyUjNTS3WLyhN0i8pBwpUAsmcslT94pLKnFS95OJiHX0iVAPV6Sfl5CdnF4O02OfaGpqaWFgYGpmZmWYBADAIKLU=?cssminify=yes' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentytwelve-ie-css'  href='https://s2.wp.com/wp-content/themes/pub/twentytwelve/css/ie.css?m=1423935238h&#038;ver=20121010' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='all-css-4-1' href='https://s0.wp.com/_static/??-eJyNkNFuwyAMRX9ozK227G3atwBziFeDUXDK8vcjbbWlmob2AveCz5VtqNl4SYpJQSeMWCAvDrS2h7WdfEYoujKamr3ER1/KA+yYuJjMS6BUoNJ7QC2AS/uVE6FhW0ExZrbaci8x/wkYrUfXEgzTqYnPPUmQRKnB5Vv0IgOKYfFWSdKdMSNbmnvojI4lNBmgVe1sD6I0UiJd/9plj7V+a8zZ+Uf1yrMUvU4BZbLz1uft7lFFPFluawhyb35BtwmmZwgszvJW8BZfj8PwchieDsPx4wu799gI?cssminify=yes' type='text/css' media='all' />
+<script type='text/javascript' src='https://s2.wp.com/_static/??-eJyF0FEKwjAMBuAL2RUZHb6IZ6k1jtQ1rU26oae3wkSEqhDIQz7In+glKSQ3lROw9rWuBfJtbZ3njf4FVMAxW4EuIL2wiyRA8rQpsgRgtiM0piEecQJVGHIFJHXNOTbcZySkGWH5yzxIsu6iMjDeoXUIp3fm7x9Y1SHst8bsejMMpvcPs7tzAg=='></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://writersresourceblog.wordpress.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress.com" />
+<link rel="shortcut icon" type="image/x-icon" href="https://secure.gravatar.com/blavatar/ab807dcf95f53360f9c026a422cd3088?s=32" sizes="16x16" />
+<link rel="icon" type="image/x-icon" href="https://secure.gravatar.com/blavatar/ab807dcf95f53360f9c026a422cd3088?s=32" sizes="16x16" />
+<link rel="apple-touch-icon-precomposed" href="https://secure.gravatar.com/blavatar/ab807dcf95f53360f9c026a422cd3088?s=114" />
+<link rel='openid.server' href='https://writersresourceblog.wordpress.com/?openidserver=1' />
+<link rel='openid.delegate' href='https://writersresourceblog.wordpress.com/' />
+<link rel="search" type="application/opensearchdescription+xml" href="https://writersresourceblog.com/osd.xml" title="Writer&#039;s Resource Blog" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com" />
+<meta name="theme-color" content="#1e73be" />
+<meta name="application-name" content="Writer&#039;s Resource Blog" /><meta name="msapplication-window" content="width=device-width;height=device-height" /><meta name="msapplication-tooltip" content="Book Reviews and Publishing News" /><meta name="msapplication-task" content="name=Subscribe;action-uri=https://writersresourceblog.com/feed/;icon-uri=https://secure.gravatar.com/blavatar/ab807dcf95f53360f9c026a422cd3088?s=16" /><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=https://s1.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=https://s1.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=https://s1.wp.com/i/favicon.ico" /><meta name="description" content="Posts about essay written by Laine Cunningham" />
+	<style type="text/css" id="twentytwelve-header-css">
+			.site-header h1 a,
+		.site-header h2 {
+			color: #1e64bf;
+		}
+		</style>
+	<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #1e73be; background-image: url("https://writersresourceblog.files.wordpress.com/2016/01/deathtostock_creativespace3-1.jpg"); background-position: left top; background-size: auto; background-repeat: repeat; background-attachment: scroll; }
+</style>
+			<script type="text/javascript">
+		function __ATA_CC() {var v = document.cookie.match('(^|;) ?personalized-ads-consent=([^;]*)(;|$)');return v ? 1 : 0;}
+		var __ATA_PP = { pt: 3, ht: 0, tn: 'twentytwelve', amp: false, siteid: 8982, blogid: 44874191, consent: __ATA_CC() };
+		var __ATA = __ATA || {};
+		__ATA.cmd = __ATA.cmd || [];
+		__ATA.criteo = __ATA.criteo || {};
+		__ATA.criteo.cmd = __ATA.criteo.cmd || [];
+		</script>
+		<script type="text/javascript" src="//s.pubmine.com/head.js" async></script><style type="text/css" id="syntaxhighlighteranchor"></style>
+<script type="text/javascript">
+	window.google_analytics_uacct = "UA-52447-2";
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'none']);
+	_gaq.push(['_setAllowLinker', true]);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script>
+</head>
+
+<body class="archive paged tag tag-essay tag-858 custom-background wp-embed-responsive paged-3 tag-paged-3 mp6 customizer-styles-applied custom-font-enabled single-author highlander-enabled highlander-light infinite-scroll neverending">
+<div id="page" class="hfeed site">
+	<header id="masthead" class="site-header" role="banner">
+				<hgroup>
+			<h1 class="site-title"><a href="https://writersresourceblog.com/" title="Writer&#039;s Resource Blog" rel="home">Writer&#039;s Resource Blog</a></h1>
+			<h2 class="site-description">Book Reviews and Publishing News</h2>
+		</hgroup>
+
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<button class="menu-toggle">Menu</button>
+			<a class="assistive-text" href="#content" title="Skip to content">Skip to content</a>
+			<div class="nav-menu"><ul>
+<li ><a href="https://writersresourceblog.com/">Home</a></li><li class="page_item page-item-1179"><a href="https://writersresourceblog.com/about-laine-cunningham/">About Laine Cunningham</a></li>
+<li class="page_item page-item-3113"><a href="https://writersresourceblog.com/about-sunspot-literary-journal/">About Sunspot Literary&nbsp;Journal</a></li>
+<li class="page_item page-item-1"><a href="https://writersresourceblog.com/about/">About Writer&#8217;s Resource</a></li>
+</ul></div>
+		</nav><!-- #site-navigation -->
+
+			</header><!-- #masthead -->
+
+	<div id="main" class="wrapper">
+	<section id="primary" class="site-content">
+		<div id="content" role="main">
+
+					<header class="archive-header">
+				<h1 class="archive-title">Tag Archives: <span>essay</span></h1>
+
+						</header><!-- .archive-header -->
+
+			
+	<article id="post-179" class="post-179 post type-post status-publish format-link hentry category-marketing category-publishing tag-essay tag-marketing-2 tag-nonfiction tag-publishing tag-writing post_format-post-format-link">
+		<header>Link</header>
+		<div class="entry-content">
+			<p>Conde Nast magazines like Wired, The New Yorker and Vanity Fair have a new contract that changes the film option agreement (think about films based on articles like Argo, Brokeback Mountain, and Eat Pray Love This<a title="Conde Nast" href="http://www.nytimes.com/2013/01/14/business/media/conde-nast-contracts-cut-authors-share-in-film-deals.html?_r=0"> article</a> warn writers about some of the pitfalls.</p>
+<p>&nbsp;</p>
+		<div class="wpcnt">
+			<div class="wpa wpmrec">
+				<span class="wpa-about">Advertisements</span>
+				<div class="u">		<div style="padding-bottom:15px;width:300px;height:250px;float:left;margin-right:5px;margin-top:0px">
+			<div id="atatags-26942-5ce50989cba96">
+				<script type="text/javascript">
+				__ATA.cmd.push(function() {
+					__ATA.initSlot('atatags-26942-5ce50989cba96',  {
+						collapseEmpty: 'before',
+						sectionId: '26942',
+						location: 120,
+						width: 300,
+						height: 250
+					});
+				});
+				</script>
+			</div>
+		</div></div>
+				
+			</div>
+		</div><div id="jp-post-flair" class="sharedaddy sd-rating-enabled sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Check out this cool blog post for readers and writers!</h3><div class="sd-content"><ul><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="https://writersresourceblog.com/2013/01/16/conde-naste-contracts-for-film-options/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-179" class="share-twitter sd-button share-icon" href="https://writersresourceblog.com/2013/01/16/conde-naste-contracts-for-film-options/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-179" class="share-linkedin sd-button share-icon" href="https://writersresourceblog.com/2013/01/16/conde-naste-contracts-for-film-options/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-179" class="share-facebook sd-button share-icon" href="https://writersresourceblog.com/2013/01/16/conde-naste-contracts-for-film-options/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-pinterest"><a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-179" class="share-pinterest sd-button share-icon" href="https://writersresourceblog.com/2013/01/16/conde-naste-contracts-for-film-options/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="https://writersresourceblog.com/2013/01/16/conde-naste-contracts-for-film-options/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a></li><li class="share-reddit"><a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="https://writersresourceblog.com/2013/01/16/conde-naste-contracts-for-film-options/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a></li><li class="share-tumblr"><a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="https://writersresourceblog.com/2013/01/16/conde-naste-contracts-for-film-options/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a></li><li class="share-print"><a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="https://writersresourceblog.com/2013/01/16/conde-naste-contracts-for-film-options/" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end"></li></ul></div></div></div><div class='sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-post-wrapper-44874191-179-5ce50989cc247' data-src='//widgets.wp.com/likes/index.html?ver=20190321#blog_id=44874191&amp;post_id=179&amp;origin=writersresourceblog.wordpress.com&amp;obj_id=44874191-179-5ce50989cc247&amp;domain=writersresourceblog.com' data-name='like-post-frame-44874191-179-5ce50989cc247'><h3 class='sd-title'>Like this:</h3><div class='likes-widget-placeholder post-likes-widget-placeholder' style='height: 55px;'><span class='button'><span>Like</span></span> <span class="loading">Loading...</span></div><span class='sd-text-color'></span><a class='sd-link-color'></a></div></div>		</div><!-- .entry-content -->
+
+		<footer class="entry-meta">
+			<a href="https://writersresourceblog.com/2013/01/16/conde-naste-contracts-for-film-options/" title="Permalink to Conde Naste Contracts for Film&nbsp;Options" rel="bookmark">January 16, 2013</a>
+						<div class="comments-link">
+				<a href="https://writersresourceblog.com/2013/01/16/conde-naste-contracts-for-film-options/#respond"><span class="leave-reply">Leave a reply</span></a>			</div><!-- .comments-link -->
+								</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+
+	<article id="post-154" class="post-154 post type-post status-publish format-standard hentry category-agents category-marketing category-publishing category-writing-tips tag-book-agent tag-books tag-childrens-book tag-essay tag-fiction tag-flash-fiction tag-marketing-2 tag-nonfiction tag-novel tag-novella tag-publishing tag-writing">
+				<header class="entry-header">
+			
+						<h1 class="entry-title">
+				<a href="https://writersresourceblog.com/2013/01/15/writing-as-a-business/" rel="bookmark">Writing as a&nbsp;Business</a>
+			</h1>
+										<div class="comments-link">
+					<a href="https://writersresourceblog.com/2013/01/15/writing-as-a-business/#respond"><span class="leave-reply">Leave a reply</span></a>				</div><!-- .comments-link -->
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Very good overview <a title="Writing Business" href="http://blog.bookbaby.com/2012/12/how-to-approach-publishing-as-a-business/?utm_source=BBeNews&amp;utm_medium=Email&amp;utm_campaign=BB1302">article</a> on thinking about your writing career. When the time is right, my clients and I discuss the business aspects of writing. This ranges from our first contact when they&#8217;re wondering whether their work is marketable to considering their audience&#8217;s needs during editing or rewriting. When the final product is done, we then discuss market trends that will impact their choice of agents and publishers.</p>
+<p><strong>Publishing is a business and, as the author, you must consider yourself the CEO of your book</strong>. From start to finish—the germ of a book idea to publication (and beyond)—you must take charge. If you make good business decisions, you will surely experience greater success. If not, then, you could be one of the nearly 78 percent of authors who fail.</p>
+<div id="atatags-370373-5ce50989ccc19">
+        <script type="text/javascript">
+            __ATA.cmd.push(function() {
+                __ATA.initVideoSlot('atatags-370373-5ce50989ccc19', {
+                    sectionId: '370373',
+                    format: 'inread'
+                });
+            });
+        </script>
+    </div><div id="jp-post-flair" class="sharedaddy sd-rating-enabled sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Check out this cool blog post for readers and writers!</h3><div class="sd-content"><ul><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="https://writersresourceblog.com/2013/01/15/writing-as-a-business/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-154" class="share-twitter sd-button share-icon" href="https://writersresourceblog.com/2013/01/15/writing-as-a-business/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-154" class="share-linkedin sd-button share-icon" href="https://writersresourceblog.com/2013/01/15/writing-as-a-business/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-154" class="share-facebook sd-button share-icon" href="https://writersresourceblog.com/2013/01/15/writing-as-a-business/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-pinterest"><a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-154" class="share-pinterest sd-button share-icon" href="https://writersresourceblog.com/2013/01/15/writing-as-a-business/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="https://writersresourceblog.com/2013/01/15/writing-as-a-business/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a></li><li class="share-reddit"><a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="https://writersresourceblog.com/2013/01/15/writing-as-a-business/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a></li><li class="share-tumblr"><a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="https://writersresourceblog.com/2013/01/15/writing-as-a-business/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a></li><li class="share-print"><a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="https://writersresourceblog.com/2013/01/15/writing-as-a-business/" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end"></li></ul></div></div></div><div class='sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-post-wrapper-44874191-154-5ce50989cd2e1' data-src='//widgets.wp.com/likes/index.html?ver=20190321#blog_id=44874191&amp;post_id=154&amp;origin=writersresourceblog.wordpress.com&amp;obj_id=44874191-154-5ce50989cd2e1&amp;domain=writersresourceblog.com' data-name='like-post-frame-44874191-154-5ce50989cd2e1'><h3 class='sd-title'>Like this:</h3><div class='likes-widget-placeholder post-likes-widget-placeholder' style='height: 55px;'><span class='button'><span>Like</span></span> <span class="loading">Loading...</span></div><span class='sd-text-color'></span><a class='sd-link-color'></a></div></div>					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			This entry was posted in <a href="https://writersresourceblog.com/category/agents/" rel="category tag">Agents</a>, <a href="https://writersresourceblog.com/category/marketing/" rel="category tag">Marketing</a>, <a href="https://writersresourceblog.com/tag/publishing/" rel="category tag">Publishing</a>, <a href="https://writersresourceblog.com/category/writing-tips/" rel="category tag">Writing Tips</a> and tagged <a href="https://writersresourceblog.com/tag/book-agent/" rel="tag">book agent</a>, <a href="https://writersresourceblog.com/tag/books/" rel="tag">books</a>, <a href="https://writersresourceblog.com/tag/childrens-book/" rel="tag">children's book</a>, <a href="https://writersresourceblog.com/tag/essay/" rel="tag">essay</a>, <a href="https://writersresourceblog.com/tag/fiction/" rel="tag">fiction</a>, <a href="https://writersresourceblog.com/tag/flash-fiction/" rel="tag">flash fiction</a>, <a href="https://writersresourceblog.com/tag/marketing-2/" rel="tag">marketing</a>, <a href="https://writersresourceblog.com/tag/nonfiction/" rel="tag">nonfiction</a>, <a href="https://writersresourceblog.com/tag/novel/" rel="tag">novel</a>, <a href="https://writersresourceblog.com/tag/novella/" rel="tag">novella</a>, <a href="https://writersresourceblog.com/tag/publishing/" rel="tag">Publishing</a>, <a href="https://writersresourceblog.com/tag/writing/" rel="tag">writing</a> on <a href="https://writersresourceblog.com/2013/01/15/writing-as-a-business/" title="8:10 am" rel="bookmark"><time class="entry-date" datetime="2013-01-15T08:10:14-04:00">January 15, 2013</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="https://writersresourceblog.com/author/wrlaine/" title="View all posts by Laine Cunningham" rel="author">Laine Cunningham</a></span></span>.								</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+
+	<article id="post-166" class="post-166 post type-post status-publish format-standard hentry category-conferences category-marketing category-publishing category-workshop category-writing-tips tag-book-agent tag-books tag-childrens-book tag-conference tag-essay tag-fiction tag-flash-fiction tag-juvenile tag-literary-magazine tag-marketing-2 tag-nonfiction tag-novel tag-novella tag-publishing tag-short-story tag-workshop-2 tag-writing">
+				<header class="entry-header">
+			
+						<h1 class="entry-title">
+				<a href="https://writersresourceblog.com/2013/01/14/workshop-query-letters-in-nc/" rel="bookmark">Workshop: Query Letters in&nbsp;NC</a>
+			</h1>
+										<div class="comments-link">
+					<a href="https://writersresourceblog.com/2013/01/14/workshop-query-letters-in-nc/#respond"><span class="leave-reply">Leave a reply</span></a>				</div><!-- .comments-link -->
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p><span style="font-family:Calibri;"><b>Writing the Perfect Query Letter with Laine Cunningham, presented by Alice Osborn</b></span></p>
+<p><span style="font-family:Calibri;"><b>Location: Center for Excellence, 3803-B Computer Dr. Suite 106, Raleigh, NC 27609</b></span></p>
+<p><span style="font-family:Calibri;"><b>Saturday, March 9     Time:  1:30-4:30pm</b></span></p>
+<p><span style="font-family:Calibri;"><b>Fee:  $55 (Early Bird till March 1<sup>st</sup>)/$75 after</b></span></p>
+<p><span style="font-family:Calibri;"><b>Registration: Click <a title="Query workshop registration" href="http://events.constantcontact.com/register/event?llr=wzy8uocab&amp;oeidk=a07e6w9mrkle546f286">here</a>  </b></span></p>
+<p><span style="font-family:Calibri;">Your query letter<b> </b>is every bit as important as the opening pages of your novel. It’s your first opportunity to show your writing skills to a prospective agent or editor. Make it count! Make it shine! A good query letter should make that editor and agent want to read your material&#8230;and it should grab their hearts in the thirty seconds or so they give each query in their pile. In this class, publishing consultant and owner of the Writer’s Resource Laine Cunningham will discuss the three important elements to inject into your query so you can get published. Fiction and nonfiction authors writing books, stories or articles will benefit from this class.</span></p>
+<p><span style="font-family:Calibri;">Laine Cunningham’s clients consistently garner attention from the nation’s top publishers and agents. Several of her clients’ books have been shopped around Hollywood and have received film options. She has been quoted on </span><i style="font-family:Calibri;">CNN Money</i><span style="font-family:Calibri;">, </span><i style="font-family:Calibri;">Media Bistro</i><span style="font-family:Calibri;">, and </span><i style="font-family:Calibri;">The Writer Magazine</i><span style="font-family:Calibri;"> for her opinion on the end of the Harry Potter series, the “Oprah Effect,” and Sarah Palin’s ghostwriter. She has presented workshops and lectures for The Loft, the nation’s largest independent literary organization; the National Writer’s Union; The Writer’s Workshop in Asheville and writing conferences across the country.</span></p>
+<div id="jp-post-flair" class="sharedaddy sd-rating-enabled sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Check out this cool blog post for readers and writers!</h3><div class="sd-content"><ul><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="https://writersresourceblog.com/2013/01/14/workshop-query-letters-in-nc/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-166" class="share-twitter sd-button share-icon" href="https://writersresourceblog.com/2013/01/14/workshop-query-letters-in-nc/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-166" class="share-linkedin sd-button share-icon" href="https://writersresourceblog.com/2013/01/14/workshop-query-letters-in-nc/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-166" class="share-facebook sd-button share-icon" href="https://writersresourceblog.com/2013/01/14/workshop-query-letters-in-nc/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-pinterest"><a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-166" class="share-pinterest sd-button share-icon" href="https://writersresourceblog.com/2013/01/14/workshop-query-letters-in-nc/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="https://writersresourceblog.com/2013/01/14/workshop-query-letters-in-nc/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a></li><li class="share-reddit"><a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="https://writersresourceblog.com/2013/01/14/workshop-query-letters-in-nc/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a></li><li class="share-tumblr"><a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="https://writersresourceblog.com/2013/01/14/workshop-query-letters-in-nc/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a></li><li class="share-print"><a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="https://writersresourceblog.com/2013/01/14/workshop-query-letters-in-nc/" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end"></li></ul></div></div></div><div class='sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-post-wrapper-44874191-166-5ce50989cead8' data-src='//widgets.wp.com/likes/index.html?ver=20190321#blog_id=44874191&amp;post_id=166&amp;origin=writersresourceblog.wordpress.com&amp;obj_id=44874191-166-5ce50989cead8&amp;domain=writersresourceblog.com' data-name='like-post-frame-44874191-166-5ce50989cead8'><h3 class='sd-title'>Like this:</h3><div class='likes-widget-placeholder post-likes-widget-placeholder' style='height: 55px;'><span class='button'><span>Like</span></span> <span class="loading">Loading...</span></div><span class='sd-text-color'></span><a class='sd-link-color'></a></div></div>					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			This entry was posted in <a href="https://writersresourceblog.com/category/conferences/" rel="category tag">Conferences</a>, <a href="https://writersresourceblog.com/category/marketing/" rel="category tag">Marketing</a>, <a href="https://writersresourceblog.com/tag/publishing/" rel="category tag">Publishing</a>, <a href="https://writersresourceblog.com/category/workshop/" rel="category tag">Workshop</a>, <a href="https://writersresourceblog.com/category/writing-tips/" rel="category tag">Writing Tips</a> and tagged <a href="https://writersresourceblog.com/tag/book-agent/" rel="tag">book agent</a>, <a href="https://writersresourceblog.com/tag/books/" rel="tag">books</a>, <a href="https://writersresourceblog.com/tag/childrens-book/" rel="tag">children's book</a>, <a href="https://writersresourceblog.com/tag/conference/" rel="tag">conference</a>, <a href="https://writersresourceblog.com/tag/essay/" rel="tag">essay</a>, <a href="https://writersresourceblog.com/tag/fiction/" rel="tag">fiction</a>, <a href="https://writersresourceblog.com/tag/flash-fiction/" rel="tag">flash fiction</a>, <a href="https://writersresourceblog.com/tag/juvenile/" rel="tag">juvenile</a>, <a href="https://writersresourceblog.com/tag/literary-magazine/" rel="tag">literary magazine</a>, <a href="https://writersresourceblog.com/tag/marketing-2/" rel="tag">marketing</a>, <a href="https://writersresourceblog.com/tag/nonfiction/" rel="tag">nonfiction</a>, <a href="https://writersresourceblog.com/tag/novel/" rel="tag">novel</a>, <a href="https://writersresourceblog.com/tag/novella/" rel="tag">novella</a>, <a href="https://writersresourceblog.com/tag/publishing/" rel="tag">Publishing</a>, <a href="https://writersresourceblog.com/tag/short-story/" rel="tag">short story</a>, <a href="https://writersresourceblog.com/tag/workshop-2/" rel="tag">workshop</a>, <a href="https://writersresourceblog.com/tag/writing/" rel="tag">writing</a> on <a href="https://writersresourceblog.com/2013/01/14/workshop-query-letters-in-nc/" title="12:48 pm" rel="bookmark"><time class="entry-date" datetime="2013-01-14T12:48:24-04:00">January 14, 2013</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="https://writersresourceblog.com/author/wrlaine/" title="View all posts by Laine Cunningham" rel="author">Laine Cunningham</a></span></span>.								</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+
+	<article id="post-119" class="post-119 post type-post status-publish format-link hentry category-literary-magazines category-submissions tag-essay tag-fiction tag-flash-fiction tag-literary-magazine tag-publishing post_format-post-format-link">
+		<header>Link</header>
+		<div class="entry-content">
+			<p>Here&#8217;s a <a title="Treehouse" href="http://treehousemag.com/2013/01/02/lit-journals-for-your-new-years-resolution/">roundup</a> of multiple literary magazines from Treehouse.</p>
+<p>&nbsp;</p>
+<div id="jp-post-flair" class="sharedaddy sd-rating-enabled sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Check out this cool blog post for readers and writers!</h3><div class="sd-content"><ul><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="https://writersresourceblog.com/2013/01/14/literary-magazines-2/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-119" class="share-twitter sd-button share-icon" href="https://writersresourceblog.com/2013/01/14/literary-magazines-2/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-119" class="share-linkedin sd-button share-icon" href="https://writersresourceblog.com/2013/01/14/literary-magazines-2/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-119" class="share-facebook sd-button share-icon" href="https://writersresourceblog.com/2013/01/14/literary-magazines-2/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-pinterest"><a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-119" class="share-pinterest sd-button share-icon" href="https://writersresourceblog.com/2013/01/14/literary-magazines-2/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="https://writersresourceblog.com/2013/01/14/literary-magazines-2/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a></li><li class="share-reddit"><a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="https://writersresourceblog.com/2013/01/14/literary-magazines-2/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a></li><li class="share-tumblr"><a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="https://writersresourceblog.com/2013/01/14/literary-magazines-2/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a></li><li class="share-print"><a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="https://writersresourceblog.com/2013/01/14/literary-magazines-2/" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end"></li></ul></div></div></div><div class='sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-post-wrapper-44874191-119-5ce50989cfdd0' data-src='//widgets.wp.com/likes/index.html?ver=20190321#blog_id=44874191&amp;post_id=119&amp;origin=writersresourceblog.wordpress.com&amp;obj_id=44874191-119-5ce50989cfdd0&amp;domain=writersresourceblog.com' data-name='like-post-frame-44874191-119-5ce50989cfdd0'><h3 class='sd-title'>Like this:</h3><div class='likes-widget-placeholder post-likes-widget-placeholder' style='height: 55px;'><span class='button'><span>Like</span></span> <span class="loading">Loading...</span></div><span class='sd-text-color'></span><a class='sd-link-color'></a></div></div>		</div><!-- .entry-content -->
+
+		<footer class="entry-meta">
+			<a href="https://writersresourceblog.com/2013/01/14/literary-magazines-2/" title="Permalink to Literary Magazines" rel="bookmark">January 14, 2013</a>
+						<div class="comments-link">
+				<a href="https://writersresourceblog.com/2013/01/14/literary-magazines-2/#respond"><span class="leave-reply">Leave a reply</span></a>			</div><!-- .comments-link -->
+								</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+
+	<article id="post-145" class="post-145 post type-post status-publish format-standard hentry category-contests-grants-and-awards tag-award tag-contest tag-essay tag-flash-fiction tag-nonfiction tag-short-story tag-writing">
+				<header class="entry-header">
+			
+						<h1 class="entry-title">
+				<a href="https://writersresourceblog.com/2013/01/11/contest-3/" rel="bookmark">Contest</a>
+			</h1>
+										<div class="comments-link">
+					<a href="https://writersresourceblog.com/2013/01/11/contest-3/#respond"><span class="leave-reply">Leave a reply</span></a>				</div><!-- .comments-link -->
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Short story and nonfiction <a title="Bethel" href="https://sites.google.com/site/bethlehemwritersroundtable/short-story-contest">contest</a>.</p>
+<blockquote><p><span style="color:#000000;">The </span><b>First Place </b><span style="color:#000000;">winner will receive a $200 cash award and consideration for publication in the Bethlehem Writers Group, LLC&#8217;s upcoming anthology, entitled, <i>Once Around the Sun: Sweet, Funny, and Strange Tales for All Seasons</i><i>.*</i><i> </i>Our previous anthology, <i>A Christmas Sampler: Sweet, Funny, and Strange Holiday Tales </i>(2009), won two <b><a href="http://www.indiebookawards.com/index.php" target="_blank" rel="nofollow">Next Generation Indie Book Awards</a>: Best Anthology </b>and <b>Best Short Fiction. </b></span></p></blockquote>
+<div id="jp-post-flair" class="sharedaddy sd-rating-enabled sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Check out this cool blog post for readers and writers!</h3><div class="sd-content"><ul><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/contest-3/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-145" class="share-twitter sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/contest-3/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-145" class="share-linkedin sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/contest-3/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-145" class="share-facebook sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/contest-3/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-pinterest"><a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-145" class="share-pinterest sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/contest-3/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/contest-3/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a></li><li class="share-reddit"><a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/contest-3/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a></li><li class="share-tumblr"><a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/contest-3/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a></li><li class="share-print"><a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/contest-3/" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end"></li></ul></div></div></div><div class='sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-post-wrapper-44874191-145-5ce50989d0a45' data-src='//widgets.wp.com/likes/index.html?ver=20190321#blog_id=44874191&amp;post_id=145&amp;origin=writersresourceblog.wordpress.com&amp;obj_id=44874191-145-5ce50989d0a45&amp;domain=writersresourceblog.com' data-name='like-post-frame-44874191-145-5ce50989d0a45'><h3 class='sd-title'>Like this:</h3><div class='likes-widget-placeholder post-likes-widget-placeholder' style='height: 55px;'><span class='button'><span>Like</span></span> <span class="loading">Loading...</span></div><span class='sd-text-color'></span><a class='sd-link-color'></a></div></div>					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			This entry was posted in <a href="https://writersresourceblog.com/category/contests-grants-and-awards/" rel="category tag">Contests, Grants and Awards</a> and tagged <a href="https://writersresourceblog.com/tag/award/" rel="tag">award</a>, <a href="https://writersresourceblog.com/tag/contest/" rel="tag">contest</a>, <a href="https://writersresourceblog.com/tag/essay/" rel="tag">essay</a>, <a href="https://writersresourceblog.com/tag/flash-fiction/" rel="tag">flash fiction</a>, <a href="https://writersresourceblog.com/tag/nonfiction/" rel="tag">nonfiction</a>, <a href="https://writersresourceblog.com/tag/short-story/" rel="tag">short story</a>, <a href="https://writersresourceblog.com/tag/writing/" rel="tag">writing</a> on <a href="https://writersresourceblog.com/2013/01/11/contest-3/" title="12:05 pm" rel="bookmark"><time class="entry-date" datetime="2013-01-11T12:05:17-04:00">January 11, 2013</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="https://writersresourceblog.com/author/wrlaine/" title="View all posts by Laine Cunningham" rel="author">Laine Cunningham</a></span></span>.								</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+
+	<article id="post-140" class="post-140 post type-post status-publish format-standard hentry category-contests-grants-and-awards tag-contest tag-essay tag-nonfiction">
+				<header class="entry-header">
+			
+						<h1 class="entry-title">
+				<a href="https://writersresourceblog.com/2013/01/11/contest/" rel="bookmark">Contest</a>
+			</h1>
+										<div class="comments-link">
+					<a href="https://writersresourceblog.com/2013/01/11/contest/#respond"><span class="leave-reply">Leave a reply</span></a>				</div><!-- .comments-link -->
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Writing <a title="Winter Wonderland" href="http://pearcepublications.com/Contest_Guidelines_2.html">contest</a> for nonfiction.</p>
+<p>&nbsp;</p>
+<div id="jp-post-flair" class="sharedaddy sd-rating-enabled sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Check out this cool blog post for readers and writers!</h3><div class="sd-content"><ul><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/contest/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-140" class="share-twitter sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/contest/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-140" class="share-linkedin sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/contest/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-140" class="share-facebook sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/contest/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-pinterest"><a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-140" class="share-pinterest sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/contest/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/contest/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a></li><li class="share-reddit"><a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/contest/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a></li><li class="share-tumblr"><a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/contest/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a></li><li class="share-print"><a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/contest/" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end"></li></ul></div></div></div><div class='sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-post-wrapper-44874191-140-5ce50989d19ab' data-src='//widgets.wp.com/likes/index.html?ver=20190321#blog_id=44874191&amp;post_id=140&amp;origin=writersresourceblog.wordpress.com&amp;obj_id=44874191-140-5ce50989d19ab&amp;domain=writersresourceblog.com' data-name='like-post-frame-44874191-140-5ce50989d19ab'><h3 class='sd-title'>Like this:</h3><div class='likes-widget-placeholder post-likes-widget-placeholder' style='height: 55px;'><span class='button'><span>Like</span></span> <span class="loading">Loading...</span></div><span class='sd-text-color'></span><a class='sd-link-color'></a></div></div>					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			This entry was posted in <a href="https://writersresourceblog.com/category/contests-grants-and-awards/" rel="category tag">Contests, Grants and Awards</a> and tagged <a href="https://writersresourceblog.com/tag/contest/" rel="tag">contest</a>, <a href="https://writersresourceblog.com/tag/essay/" rel="tag">essay</a>, <a href="https://writersresourceblog.com/tag/nonfiction/" rel="tag">nonfiction</a> on <a href="https://writersresourceblog.com/2013/01/11/contest/" title="11:58 am" rel="bookmark"><time class="entry-date" datetime="2013-01-11T11:58:22-04:00">January 11, 2013</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="https://writersresourceblog.com/author/wrlaine/" title="View all posts by Laine Cunningham" rel="author">Laine Cunningham</a></span></span>.								</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+
+	<article id="post-137" class="post-137 post type-post status-publish format-standard hentry category-literary-magazines tag-essay tag-fiction tag-flash-fiction tag-literary-magazine tag-novel tag-novella">
+				<header class="entry-header">
+			
+						<h1 class="entry-title">
+				<a href="https://writersresourceblog.com/2013/01/11/literary-magazine-8/" rel="bookmark">Literary Magazine</a>
+			</h1>
+										<div class="comments-link">
+					<a href="https://writersresourceblog.com/2013/01/11/literary-magazine-8/#respond"><span class="leave-reply">Leave a reply</span></a>				</div><!-- .comments-link -->
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Writing Tomorrow is a brand new magazine. We launched our <a href="http://www.writingtomorrow.com/October2012.pdf">first edition</a> October 1, 2012. We are seeking all types of quality literature and welcome submissions of original, unpublished short stories, novel excerpts, and poems. Our next issue will be out in early February.</p>
+<div id="jp-post-flair" class="sharedaddy sd-rating-enabled sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Check out this cool blog post for readers and writers!</h3><div class="sd-content"><ul><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/literary-magazine-8/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-137" class="share-twitter sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/literary-magazine-8/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-137" class="share-linkedin sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/literary-magazine-8/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-137" class="share-facebook sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/literary-magazine-8/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-pinterest"><a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-137" class="share-pinterest sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/literary-magazine-8/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/literary-magazine-8/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a></li><li class="share-reddit"><a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/literary-magazine-8/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a></li><li class="share-tumblr"><a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/literary-magazine-8/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a></li><li class="share-print"><a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="https://writersresourceblog.com/2013/01/11/literary-magazine-8/" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end"></li></ul></div></div></div><div class='sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-post-wrapper-44874191-137-5ce50989d2893' data-src='//widgets.wp.com/likes/index.html?ver=20190321#blog_id=44874191&amp;post_id=137&amp;origin=writersresourceblog.wordpress.com&amp;obj_id=44874191-137-5ce50989d2893&amp;domain=writersresourceblog.com' data-name='like-post-frame-44874191-137-5ce50989d2893'><h3 class='sd-title'>Like this:</h3><div class='likes-widget-placeholder post-likes-widget-placeholder' style='height: 55px;'><span class='button'><span>Like</span></span> <span class="loading">Loading...</span></div><span class='sd-text-color'></span><a class='sd-link-color'></a></div></div>					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			This entry was posted in <a href="https://writersresourceblog.com/category/literary-magazines/" rel="category tag">Literary Magazines</a> and tagged <a href="https://writersresourceblog.com/tag/essay/" rel="tag">essay</a>, <a href="https://writersresourceblog.com/tag/fiction/" rel="tag">fiction</a>, <a href="https://writersresourceblog.com/tag/flash-fiction/" rel="tag">flash fiction</a>, <a href="https://writersresourceblog.com/tag/literary-magazine/" rel="tag">literary magazine</a>, <a href="https://writersresourceblog.com/tag/novel/" rel="tag">novel</a>, <a href="https://writersresourceblog.com/tag/novella/" rel="tag">novella</a> on <a href="https://writersresourceblog.com/2013/01/11/literary-magazine-8/" title="11:55 am" rel="bookmark"><time class="entry-date" datetime="2013-01-11T11:55:03-04:00">January 11, 2013</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="https://writersresourceblog.com/author/wrlaine/" title="View all posts by Laine Cunningham" rel="author">Laine Cunningham</a></span></span>.								</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+		<nav id="nav-below" class="navigation" role="navigation">
+			<h3 class="assistive-text">Post navigation</h3>
+			<div class="nav-previous"><a href="https://writersresourceblog.com/tag/essay/page/4/" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+			<div class="nav-next"><a href="https://writersresourceblog.com/tag/essay/page/2/" >Newer posts <span class="meta-nav">&rarr;</span></a></div>
+		</nav><!-- .navigation -->
+	
+		
+		</div><!-- #content -->
+	</section><!-- #primary -->
+
+
+			<div id="secondary" class="widget-area" role="complementary">
+						<aside id="search-2" class="widget widget_search"><form role="search" method="get" id="searchform" class="searchform" action="https://writersresourceblog.com/">
+				<div>
+					<label class="screen-reader-text" for="s">Search for:</label>
+					<input type="text" value="" name="s" id="s" />
+					<input type="submit" id="searchsubmit" value="Search" />
+				</div>
+			</form></aside><aside id="pages-2" class="widget widget_pages"><h3 class="widget-title">Pages</h3>		<ul>
+			<li class="page_item page-item-1179"><a href="https://writersresourceblog.com/about-laine-cunningham/">About Laine Cunningham</a></li>
+<li class="page_item page-item-3113"><a href="https://writersresourceblog.com/about-sunspot-literary-journal/">About Sunspot Literary&nbsp;Journal</a></li>
+<li class="page_item page-item-1"><a href="https://writersresourceblog.com/about/">About Writer&#8217;s Resource</a></li>
+		</ul>
+			</aside><aside id="blog_subscription-2" class="widget widget_blog_subscription jetpack_subscription_widget"><h3 class="widget-title"><label for="subscribe-field">Follow Blog via Email</label></h3>
+            <form action="https://subscribe.wordpress.com" method="post" accept-charset="utf-8"
+                  id="subscribe-blog">
+									<p>Enter your email address to follow this blog and receive notifications of new posts by email.</p>
+<p>Join 3,552 other followers</p>
+                    <p><input type="text" name="email" style="width: 95%; padding: 1px 2px"
+                              placeholder="Enter your email address" value=""
+                              id="subscribe-field"/></p>
+				
+                <p>
+                    <input type="hidden" name="action" value="subscribe"/>
+                    <input type="hidden" name="blog_id" value="44874191"/>
+                    <input type="hidden" name="source" value="https://writersresourceblog.com/tag/essay/page/3/"/>
+                    <input type="hidden" name="sub-type" value="widget"/>
+                    <input type="hidden" name="redirect_fragment" value="blog_subscription-2"/>
+					<input type="hidden" id="_wpnonce" name="_wpnonce" value="7fa14e23ec" />                    <button type="submit"
+	                    		                	                >
+	                    Follow                    </button>
+                </p>
+            </form>
+			
+</aside><aside id="twitter_timeline-2" class="widget widget_twitter_timeline"><h3 class="widget-title">Follow me on Twitter</h3><a class="twitter-timeline" data-height="400" data-theme="light" data-link-color="#f96e5b" data-border-color="#e8e8e8" data-tweet-limit="3" data-lang="EN" data-partner="jetpack" data-widget-id="573806156323373056" href="https://twitter.com/573806156323373056">My Tweets</a></aside><aside id="facebook-likebox-2" class="widget widget_facebook_likebox"><h3 class="widget-title"><a href="https://www.facebook.com/creationtocontract">Connect with Writer&#8217;s Resource on Facebook</a></h3>		<div id="fb-root"></div>
+		<div class="fb-page" data-href="https://www.facebook.com/creationtocontract" data-width="200"  data-height="432" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
+		<div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/creationtocontract"><a href="https://www.facebook.com/creationtocontract">Connect with Writer&#8217;s Resource on Facebook</a></blockquote></div>
+		</div>
+		</aside><aside id="widget_contact_info-2" class="widget widget_contact_info"><h3 class="widget-title">Connect with a Publishing Consultant</h3><div itemscope itemtype="http://schema.org/LocalBusiness"><div class="contact-map-container"><iframe width="600" height="216" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=PO+Box+122Hillsborough+NC+27278&#038;key=AIzaSyCq4vWNv6eCGe2uvhPRGWQlv80IQp8dwTE" class="contact-map"></iframe><div class="contact-map-distractor"></div></div><div class="confit-address" itemscope itemtype="http://schema.org/PostalAddress" itemprop="address"><a href="http://maps.google.com/maps?z=16&#038;q=po%2Bbox%2B122%2Bhillsborough%2Bnc%2B27278" target="_blank">PO Box 122<br/>Hillsborough NC 27278</a></div><div class="confit-phone"><span itemprop="telephone">Toll-free 866-212-9805</span></div><div class="confit-hours" itemprop="openingHours">M-F 8 a.m. to 6 p.m. Eastern</div></div></aside><aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3>		<ul>
+				<li class="cat-item cat-item-62850"><a href="https://writersresourceblog.com/category/academic-publishing/">Academic Publishing</a>
+</li>
+	<li class="cat-item cat-item-5682"><a href="https://writersresourceblog.com/category/agents/">Agents</a>
+</li>
+	<li class="cat-item cat-item-553705"><a href="https://writersresourceblog.com/category/author-interview/">author interview</a>
+</li>
+	<li class="cat-item cat-item-143095"><a href="https://writersresourceblog.com/category/author-interviews/">Author Interviews</a>
+</li>
+	<li class="cat-item cat-item-177899"><a href="https://writersresourceblog.com/category/book-awards/">Book Awards</a>
+</li>
+	<li class="cat-item cat-item-6628572"><a href="https://writersresourceblog.com/category/book-promos/">Book Promos</a>
+</li>
+	<li class="cat-item cat-item-3883647"><a href="https://writersresourceblog.com/category/book-reviews-2/">Book Reviews</a>
+</li>
+	<li class="cat-item cat-item-151115"><a href="https://writersresourceblog.com/category/book-sale/">Book Sale</a>
+</li>
+	<li class="cat-item cat-item-249819"><a href="https://writersresourceblog.com/category/bookstore/">bookstore</a>
+</li>
+	<li class="cat-item cat-item-1024823"><a href="https://writersresourceblog.com/category/cash-prize/">Cash Prize</a>
+</li>
+	<li class="cat-item cat-item-3849474"><a href="https://writersresourceblog.com/category/childrens-picture-books/">Children&#039;s Picture Books</a>
+</li>
+	<li class="cat-item cat-item-9204"><a href="https://writersresourceblog.com/category/conferences/">Conferences</a>
+</li>
+	<li class="cat-item cat-item-135704821"><a href="https://writersresourceblog.com/category/contests-grants-and-awards/">Contests, Grants and Awards</a>
+</li>
+	<li class="cat-item cat-item-5718510"><a href="https://writersresourceblog.com/category/dystopian-fiction/">dystopian fiction</a>
+</li>
+	<li class="cat-item cat-item-6725"><a href="https://writersresourceblog.com/category/ebooks/">ebooks</a>
+</li>
+	<li class="cat-item cat-item-1342"><a href="https://writersresourceblog.com/category/education/">Education</a>
+</li>
+	<li class="cat-item cat-item-7224"><a href="https://writersresourceblog.com/category/fantasy/">fantasy</a>
+</li>
+	<li class="cat-item cat-item-2853"><a href="https://writersresourceblog.com/category/giveaway/">giveaway</a>
+</li>
+	<li class="cat-item cat-item-2472"><a href="https://writersresourceblog.com/category/indie/">Indie</a>
+</li>
+	<li class="cat-item cat-item-10166"><a href="https://writersresourceblog.com/category/inspirational/">inspirational</a>
+</li>
+	<li class="cat-item cat-item-330133498"><a href="https://writersresourceblog.com/category/job-for-author/">job for author</a>
+</li>
+	<li class="cat-item cat-item-100355"><a href="https://writersresourceblog.com/category/job-listings/">Job Listings</a>
+</li>
+	<li class="cat-item cat-item-6437892"><a href="https://writersresourceblog.com/category/juvenile-books/">Juvenile Books</a>
+</li>
+	<li class="cat-item cat-item-153955"><a href="https://writersresourceblog.com/category/lgbtq/">LGBTQ</a>
+</li>
+	<li class="cat-item cat-item-125907"><a href="https://writersresourceblog.com/category/literary-magazines/">Literary Magazines</a>
+</li>
+	<li class="cat-item cat-item-157010"><a href="https://writersresourceblog.com/category/live-event/">Live Event</a>
+</li>
+	<li class="cat-item cat-item-175"><a href="https://writersresourceblog.com/category/marketing/">Marketing</a>
+</li>
+	<li class="cat-item cat-item-182071"><a href="https://writersresourceblog.com/category/mbs/">mbs</a>
+</li>
+	<li class="cat-item cat-item-139638"><a href="https://writersresourceblog.com/category/mind-body-spirit/">Mind Body Spirit</a>
+</li>
+	<li class="cat-item cat-item-33351"><a href="https://writersresourceblog.com/category/motivational/">motivational</a>
+</li>
+	<li class="cat-item cat-item-18"><a href="https://writersresourceblog.com/category/music/">Music</a>
+</li>
+	<li class="cat-item cat-item-38393"><a href="https://writersresourceblog.com/category/new-books/">New books</a>
+</li>
+	<li class="cat-item cat-item-17358"><a href="https://writersresourceblog.com/category/new-releases/">New releases</a>
+</li>
+	<li class="cat-item cat-item-1067996"><a href="https://writersresourceblog.com/category/paying-market/">Paying Market</a>
+</li>
+	<li class="cat-item cat-item-3330"><a href="https://writersresourceblog.com/category/publishing/">Publishing</a>
+</li>
+	<li class="cat-item cat-item-8076041"><a href="https://writersresourceblog.com/category/publishing-job/">publishing job</a>
+</li>
+	<li class="cat-item cat-item-382322"><a href="https://writersresourceblog.com/category/publishing-trends/">publishing trends</a>
+</li>
+	<li class="cat-item cat-item-8154"><a href="https://writersresourceblog.com/category/romance/">romance</a>
+</li>
+	<li class="cat-item cat-item-4522"><a href="https://writersresourceblog.com/category/spiritual/">spiritual</a>
+</li>
+	<li class="cat-item cat-item-58275"><a href="https://writersresourceblog.com/category/submissions/">Submissions</a>
+</li>
+	<li class="cat-item cat-item-200"><a href="https://writersresourceblog.com/category/travel/">Travel</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://writersresourceblog.com/category/uncategorized/">Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-19557"><a href="https://writersresourceblog.com/category/workshop/">Workshop</a>
+</li>
+	<li class="cat-item cat-item-59708"><a href="https://writersresourceblog.com/category/writing-tips/">Writing Tips</a>
+</li>
+		</ul>
+			</aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+				<li><a href='https://writersresourceblog.com/2019/05/'>May 2019</a></li>
+	<li><a href='https://writersresourceblog.com/2019/04/'>April 2019</a></li>
+	<li><a href='https://writersresourceblog.com/2019/03/'>March 2019</a></li>
+	<li><a href='https://writersresourceblog.com/2019/02/'>February 2019</a></li>
+	<li><a href='https://writersresourceblog.com/2019/01/'>January 2019</a></li>
+	<li><a href='https://writersresourceblog.com/2018/12/'>December 2018</a></li>
+	<li><a href='https://writersresourceblog.com/2018/11/'>November 2018</a></li>
+	<li><a href='https://writersresourceblog.com/2018/10/'>October 2018</a></li>
+	<li><a href='https://writersresourceblog.com/2018/08/'>August 2018</a></li>
+	<li><a href='https://writersresourceblog.com/2018/07/'>July 2018</a></li>
+	<li><a href='https://writersresourceblog.com/2018/06/'>June 2018</a></li>
+	<li><a href='https://writersresourceblog.com/2018/05/'>May 2018</a></li>
+	<li><a href='https://writersresourceblog.com/2018/04/'>April 2018</a></li>
+	<li><a href='https://writersresourceblog.com/2018/02/'>February 2018</a></li>
+	<li><a href='https://writersresourceblog.com/2017/12/'>December 2017</a></li>
+	<li><a href='https://writersresourceblog.com/2017/11/'>November 2017</a></li>
+	<li><a href='https://writersresourceblog.com/2017/10/'>October 2017</a></li>
+	<li><a href='https://writersresourceblog.com/2017/09/'>September 2017</a></li>
+	<li><a href='https://writersresourceblog.com/2017/08/'>August 2017</a></li>
+	<li><a href='https://writersresourceblog.com/2017/07/'>July 2017</a></li>
+	<li><a href='https://writersresourceblog.com/2017/03/'>March 2017</a></li>
+	<li><a href='https://writersresourceblog.com/2017/02/'>February 2017</a></li>
+	<li><a href='https://writersresourceblog.com/2017/01/'>January 2017</a></li>
+	<li><a href='https://writersresourceblog.com/2016/11/'>November 2016</a></li>
+	<li><a href='https://writersresourceblog.com/2016/10/'>October 2016</a></li>
+	<li><a href='https://writersresourceblog.com/2016/09/'>September 2016</a></li>
+	<li><a href='https://writersresourceblog.com/2016/08/'>August 2016</a></li>
+	<li><a href='https://writersresourceblog.com/2016/07/'>July 2016</a></li>
+	<li><a href='https://writersresourceblog.com/2016/06/'>June 2016</a></li>
+	<li><a href='https://writersresourceblog.com/2016/05/'>May 2016</a></li>
+	<li><a href='https://writersresourceblog.com/2016/04/'>April 2016</a></li>
+	<li><a href='https://writersresourceblog.com/2016/03/'>March 2016</a></li>
+	<li><a href='https://writersresourceblog.com/2016/02/'>February 2016</a></li>
+	<li><a href='https://writersresourceblog.com/2016/01/'>January 2016</a></li>
+	<li><a href='https://writersresourceblog.com/2015/12/'>December 2015</a></li>
+	<li><a href='https://writersresourceblog.com/2015/10/'>October 2015</a></li>
+	<li><a href='https://writersresourceblog.com/2015/09/'>September 2015</a></li>
+	<li><a href='https://writersresourceblog.com/2015/08/'>August 2015</a></li>
+	<li><a href='https://writersresourceblog.com/2015/07/'>July 2015</a></li>
+	<li><a href='https://writersresourceblog.com/2015/06/'>June 2015</a></li>
+	<li><a href='https://writersresourceblog.com/2015/05/'>May 2015</a></li>
+	<li><a href='https://writersresourceblog.com/2015/04/'>April 2015</a></li>
+	<li><a href='https://writersresourceblog.com/2015/03/'>March 2015</a></li>
+	<li><a href='https://writersresourceblog.com/2015/02/'>February 2015</a></li>
+	<li><a href='https://writersresourceblog.com/2015/01/'>January 2015</a></li>
+	<li><a href='https://writersresourceblog.com/2014/12/'>December 2014</a></li>
+	<li><a href='https://writersresourceblog.com/2014/11/'>November 2014</a></li>
+	<li><a href='https://writersresourceblog.com/2014/10/'>October 2014</a></li>
+	<li><a href='https://writersresourceblog.com/2014/09/'>September 2014</a></li>
+	<li><a href='https://writersresourceblog.com/2014/07/'>July 2014</a></li>
+	<li><a href='https://writersresourceblog.com/2014/06/'>June 2014</a></li>
+	<li><a href='https://writersresourceblog.com/2014/05/'>May 2014</a></li>
+	<li><a href='https://writersresourceblog.com/2014/04/'>April 2014</a></li>
+	<li><a href='https://writersresourceblog.com/2014/03/'>March 2014</a></li>
+	<li><a href='https://writersresourceblog.com/2014/02/'>February 2014</a></li>
+	<li><a href='https://writersresourceblog.com/2014/01/'>January 2014</a></li>
+	<li><a href='https://writersresourceblog.com/2013/12/'>December 2013</a></li>
+	<li><a href='https://writersresourceblog.com/2013/11/'>November 2013</a></li>
+	<li><a href='https://writersresourceblog.com/2013/10/'>October 2013</a></li>
+	<li><a href='https://writersresourceblog.com/2013/09/'>September 2013</a></li>
+	<li><a href='https://writersresourceblog.com/2013/08/'>August 2013</a></li>
+	<li><a href='https://writersresourceblog.com/2013/07/'>July 2013</a></li>
+	<li><a href='https://writersresourceblog.com/2013/06/'>June 2013</a></li>
+	<li><a href='https://writersresourceblog.com/2013/05/'>May 2013</a></li>
+	<li><a href='https://writersresourceblog.com/2013/04/'>April 2013</a></li>
+	<li><a href='https://writersresourceblog.com/2013/03/'>March 2013</a></li>
+	<li><a href='https://writersresourceblog.com/2013/02/'>February 2013</a></li>
+	<li><a href='https://writersresourceblog.com/2013/01/'>January 2013</a></li>
+		</ul>
+			</aside><aside id="meta-2" class="widget widget_meta"><h3 class="widget-title">Meta</h3>			<ul>
+			<li><a href="https://wordpress.com/start?ref=wplogin">Register</a></li>			<li><a href="https://writersresourceblog.wordpress.com/wp-login.php">Log in</a></li>
+			<li><a href="https://writersresourceblog.com/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://writersresourceblog.com/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.com/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.com</a></li>			</ul>
+			</aside>		<div class="wpcnt">
+			<div class="wpa wpmrec">
+				<span class="wpa-about">Advertisements</span>
+				<div class="u">
+							<div style="padding-bottom:15px;width:300px;height:250px;">
+			<div id="atatags-286348-5ce50989d6e65">
+				<script type="text/javascript">
+				__ATA.cmd.push(function() {
+					__ATA.initSlot('atatags-286348-5ce50989d6e65',  {
+						collapseEmpty: 'before',
+						sectionId: '286348',
+						location: 140,
+						width: 300,
+						height: 250
+					});
+				});
+				</script>
+			</div>
+		</div>
+				</div>
+				
+			</div>
+		</div>		</div><!-- #secondary -->
+		</div><!-- #main .wrapper -->
+	<footer id="colophon" role="contentinfo">
+		<div class="site-info">
+									<a href="https://wordpress.com/?ref=footer_blog">Blog at WordPress.com.</a>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+		<script type="text/javascript">
+		//<![CDATA[
+		var infiniteScroll = JSON.parse( decodeURIComponent( '%7B%22settings%22%3A%7B%22id%22%3A%22content%22%2C%22ajaxurl%22%3A%22https%3A%5C%2F%5C%2Fwritersresourceblog.com%5C%2F%3Finfinity%3Dscrolling%22%2C%22type%22%3A%22scroll%22%2C%22wrapper%22%3Atrue%2C%22wrapper_class%22%3A%22infinite-wrap%22%2C%22footer%22%3A%22page%22%2C%22click_handle%22%3A%221%22%2C%22text%22%3A%22Older%20posts%22%2C%22totop%22%3A%22Scroll%20back%20to%20top%22%2C%22currentday%22%3A%2211.01.13%22%2C%22order%22%3A%22DESC%22%2C%22scripts%22%3A%5B%5D%2C%22styles%22%3A%5B%5D%2C%22google_analytics%22%3Afalse%2C%22offset%22%3A3%2C%22history%22%3A%7B%22host%22%3A%22writersresourceblog.com%22%2C%22path%22%3A%22%5C%2Ftag%5C%2Fessay%5C%2Fpage%5C%2F%25d%5C%2F%22%2C%22use_trailing_slashes%22%3Atrue%2C%22parameters%22%3A%22%22%7D%2C%22query_args%22%3A%7B%22paged%22%3A3%2C%22tag%22%3A%22essay%22%2C%22error%22%3A%22%22%2C%22m%22%3A%22%22%2C%22p%22%3A0%2C%22post_parent%22%3A%22%22%2C%22subpost%22%3A%22%22%2C%22subpost_id%22%3A%22%22%2C%22attachment%22%3A%22%22%2C%22attachment_id%22%3A0%2C%22name%22%3A%22%22%2C%22pagename%22%3A%22%22%2C%22page_id%22%3A0%2C%22second%22%3A%22%22%2C%22minute%22%3A%22%22%2C%22hour%22%3A%22%22%2C%22day%22%3A0%2C%22monthnum%22%3A0%2C%22year%22%3A0%2C%22w%22%3A0%2C%22category_name%22%3A%22%22%2C%22cat%22%3A%22%22%2C%22tag_id%22%3A858%2C%22author%22%3A%22%22%2C%22author_name%22%3A%22%22%2C%22feed%22%3A%22%22%2C%22tb%22%3A%22%22%2C%22meta_key%22%3A%22%22%2C%22meta_value%22%3A%22%22%2C%22preview%22%3A%22%22%2C%22s%22%3A%22%22%2C%22sentence%22%3A%22%22%2C%22title%22%3A%22%22%2C%22fields%22%3A%22%22%2C%22menu_order%22%3A%22%22%2C%22embed%22%3A%22%22%2C%22category__in%22%3A%5B%5D%2C%22category__not_in%22%3A%5B%5D%2C%22category__and%22%3A%5B%5D%2C%22post__in%22%3A%5B%5D%2C%22post__not_in%22%3A%5B%5D%2C%22post_name__in%22%3A%5B%5D%2C%22tag__in%22%3A%5B%5D%2C%22tag__not_in%22%3A%5B%5D%2C%22tag__and%22%3A%5B%5D%2C%22tag_slug__in%22%3A%5B%22essay%22%5D%2C%22tag_slug__and%22%3A%5B%5D%2C%22post_parent__in%22%3A%5B%5D%2C%22post_parent__not_in%22%3A%5B%5D%2C%22author__in%22%3A%5B%5D%2C%22author__not_in%22%3A%5B%5D%2C%22posts_per_page%22%3A7%2C%22ignore_sticky_posts%22%3Afalse%2C%22suppress_filters%22%3Afalse%2C%22cache_results%22%3Afalse%2C%22update_post_term_cache%22%3Atrue%2C%22lazy_load_term_meta%22%3Atrue%2C%22update_post_meta_cache%22%3Atrue%2C%22post_type%22%3A%22%22%2C%22nopaging%22%3Afalse%2C%22comments_per_page%22%3A%2250%22%2C%22no_found_rows%22%3Afalse%2C%22order%22%3A%22DESC%22%7D%2C%22last_post_date%22%3A%222013-01-11%2011%3A55%3A03%22%2C%22stats%22%3A%22blog%3D44874191%26v%3Dwpcom%26tz%3D-4%26user_id%3D0%26subd%3Dwritersresourceblog%26x_pagetype%3Dinfinite%22%7D%7D' ) );
+		//]]>
+		</script>
+		<!--  -->
+<script type='text/javascript' src='//0.gravatar.com/js/gprofiles.js?ver=201921y'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s1.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1380573781h'></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	</div>
+		<div id="infinite-footer">
+			<div class="container">
+				<div class="blog-info">
+					<a id="infinity-blog-title" href="https://writersresourceblog.com/" rel="home">
+						Writer&#039;s Resource Blog					</a>
+				</div>
+				<div class="blog-credits">
+					<a href="https://wordpress.com/?ref=footer_blog">Blog at WordPress.com.</a> 				</div>
+			</div>
+		</div><!-- #infinite-footer -->
+		
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/writersresourceblog.com\/2013\/01\/16\/conde-naste-contracts-for-film-options\/":179,"https:\/\/writersresourceblog.com\/2013\/01\/15\/writing-as-a-business\/":154,"https:\/\/writersresourceblog.com\/2013\/01\/14\/workshop-query-letters-in-nc\/":166,"https:\/\/writersresourceblog.com\/2013\/01\/14\/literary-magazines-2\/":119,"https:\/\/writersresourceblog.com\/2013\/01\/11\/contest-3\/":145,"https:\/\/writersresourceblog.com\/2013\/01\/11\/contest\/":140,"https:\/\/writersresourceblog.com\/2013\/01\/11\/literary-magazine-8\/":137};
+	</script>
+					<div id="sharing_email" style="display: none;">
+		<form action="/tag/essay/page/3/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email" value="" />
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="" />
+
+				<label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email" value="" />
+
+						<input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" value="" size="25" autocomplete="off" title="This field is for validation and should not be changed" />
+			
+			<div
+				class="g-recaptcha"
+				data-sitekey="6LcmyE0UAAAAALID28yVNg7pFCodGaArJzHitez_"
+				data-theme="light"
+				data-type="image"
+				data-tabindex="0"></div>
+			<script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=en" async></script>
+			
+			<img style="float: right; display: none" class="loading" src="https://s2.wp.com/wp-content/mu-plugins/post-flair/sharing/images/loading.gif" alt="loading" width="16" height="16" />
+			<input type="submit" value="Send Email" class="sharing_send" />
+			<a rel="nofollow" href="#cancel" class="sharing_cancel" role="button">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+		<div class="widget widget_eu_cookie_law_widget"><div
+	class="hide-on-button ads-active"
+	data-hide-timeout="30"
+	data-consent-expiration="180"
+	id="eu-cookie-law"
+>
+	<form method="post">
+		<input type="submit" value="Close and accept" class="accept" />
+
+		Privacy &amp; Cookies: This site uses cookies. By continuing to use this website, you agree to their use. <br />
+To find out more, including how to control cookies, see here:
+		<a href="https://automattic.com/cookies" >
+			Cookie Policy		</a>
+ </form>
+</div>
+</div>
+	<div id="carousel-reblog-box">
+		<form action="#" name="carousel-reblog">
+			<textarea id="carousel-reblog-content" name="carousel-reblog-content" placeholder="Add your thoughts here... (optional)"></textarea>
+			<label for="carousel-reblog-to-blog-id" id="carousel-reblog-lblogid">Post to</label>
+			<select name="carousel-reblog-to-blog-id" id="carousel-reblog-to-blog-id">
+						</select>
+
+			<div class="submit">
+				<span class="canceltext"><a href="#" class="cancel">Cancel</a></span>
+				<input type="submit" name="carousel-reblog-submit" class="button" id="carousel-reblog-submit" value="Reblog Post" />
+				<input type="hidden" id="carousel-reblog-blog-id" value="44874191" />
+				<input type="hidden" id="carousel-reblog-blog-url" value="https://writersresourceblog.com" />
+				<input type="hidden" id="carousel-reblog-blog-title" value="Writer&#039;s Resource Blog" />
+				<input type="hidden" id="carousel-reblog-post-url" value="" />
+				<input type="hidden" id="carousel-reblog-post-title" value="" />
+			</div>
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="d33f086284" /><input type="hidden" name="_wp_http_referer" value="/tag/essay/page/3/" />		</form>
+
+		<div class="arrow"></div>
+	</div>
+<link rel='stylesheet' id='all-css-0-2' href='https://s1.wp.com/_static/??-eJx9jMsKg0AMRX+oaWirBRel3xJiOozNPDAZxL8vLroQxOU5l3NxqcAlu2TH1KBqCzEbLnEM4obbROwQ86fsABLVK5td8PiAaS7NRHESr8Rf+IuzyKPKCIFUZV73tGXv9Lr19+45DP2jm37ML0T5?cssminify=yes' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var jpfbembed = {"appid":"249643311490","locale":"en_US"};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var actionbardata = {"siteID":"44874191","siteName":"Writer's Resource Blog","siteURL":"https:\/\/writersresourceblog.com","icon":"<img alt='' src='https:\/\/secure.gravatar.com\/blavatar\/ab807dcf95f53360f9c026a422cd3088?s=50&d=https%3A%2F%2Fs2.wp.com%2Fi%2Flogo%2Fwpcom-gray-white.png' class='avatar avatar-50' height='50' width='50' \/>","canManageOptions":"","canCustomizeSite":"","isFollowing":"","themeSlug":"pub\/twentytwelve","signupURL":"https:\/\/wordpress.com\/start\/","loginURL":"https:\/\/wordpress.com\/log-in?redirect_to=https%3A%2F%2Fwritersresourceblog.com%2F2013%2F01%2F16%2Fconde-naste-contracts-for-film-options%2F&signup_flow=account&domain=writersresourceblog.com","themeURL":"https:\/\/wordpress.com\/theme\/twentytwelve\/","xhrURL":"https:\/\/writersresourceblog.com\/wp-admin\/admin-ajax.php","nonce":"052d63791c","isSingular":"","isFolded":"","isLoggedIn":"","isMobile":"","subscribeNonce":"<input type=\"hidden\" id=\"_wpnonce\" name=\"_wpnonce\" value=\"7fa14e23ec\" \/>","referer":"https:\/\/writersresourceblog.com\/tag\/essay\/page\/3\/","canFollow":"1","feedID":"6961544","statusMessage":"","customizeLink":"https:\/\/writersresourceblog.wordpress.com\/wp-admin\/customize.php?url=https%3A%2F%2Fwritersresourceblog.wordpress.com%2Ftag%2Fessay%2Fpage%2F3%2F","i18n":{"view":"View site","follow":"Follow","following":"Following","edit":"Edit","login":"Log in","signup":"Sign up","customize":"Customize","report":"Report this content","themeInfo":"Get theme: Twenty Twelve","shortlink":"Copy shortlink","copied":"Copied","followedText":"New posts from this site will now appear in your <a href=\"https:\/\/wordpress.com\/\">Reader<\/a>","foldBar":"Collapse this bar","unfoldBar":"Expand this bar","editSubs":"Manage subscriptions","viewReader":"View site in Reader","viewReadPost":"View post in Reader","subscribe":"Sign me up","enterEmail":"Enter your email address","followers":"Join 3,552 other followers","alreadyUser":"Already have a WordPress.com account? <a href=\"https:\/\/wordpress.com\/log-in?redirect_to=https%3A%2F%2Fwritersresourceblog.com%2F2013%2F01%2F16%2Fconde-naste-contracts-for-film-options%2F&signup_flow=account&domain=writersresourceblog.com\">Log in now.<\/a>","stats":"Stats"}};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"https:\/\/writersresourceblog.com\/wp-admin\/admin-ajax.php","nonce":"1c68ecf21f","display_exif":"1","display_geo":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Copyright","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/writersresourceblog.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Fwritersresourceblog.com%2F2013%2F01%2F11%2Fliterary-magazine-8%2F","blog_id":"44874191","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"],"local_comments_commenting_as":"<fieldset><label for=\"email\">Email (Required)<\/label> <input type=\"text\" name=\"email\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-email-field\" \/><\/fieldset><fieldset><label for=\"author\">Name (Required)<\/label> <input type=\"text\" name=\"author\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-author-field\" \/><\/fieldset><fieldset><label for=\"url\">Website<\/label> <input type=\"text\" name=\"url\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-url-field\" \/><\/fieldset>","reblog":"Reblog","reblogged":"Reblogged","reblog_add_thoughts":"Add your thoughts here... (optional)","reblogging":"Reblogging...","post_reblog":"Post Reblog","stats_query_args":"blog=44874191&v=wpcom&tz=-4&user_id=0&subd=writersresourceblog","is_public":"1","reblog_enabled":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s1.wp.com/_static/??-eJyVUctOxDAM/CGCWcSKvSA+Bbmp23WbF4nTsn+PK9EKeqiWS+SMPZPJGOZkbAxCQWAo0NLEltLX41Ae4FfLV5Nc7TkUcDxSgc9Kla4YWkf5YJhDx4HlthX7WbmSV7lUG5BZgZuebqLFS8CJexSO4eCBmduepABV7caRyTicQcgnh0I7/EBnIEloR/jgYKFDS42yDPmG2ntZMrMIZSPsyXGgAx62noNpMIPHohytTJwoZ27V84b9U0GyeilHJLukuZC26o5ol5bOG11h/HMxHtPK1wBcXczr4srcxWYgK3vxVXnSb0bAUhb54eeeMpUj8xZzrIXcGrpZAeW8+7fT+fz6crpcnp6HbzKMERE='></script>
+<script type='text/javascript' src='https://platform.twitter.com/widgets.js?ver=20111117'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s2.wp.com/_static/??-eJyVzTEOwjAMheELYSwQkciAOEvamODiupHjtuL2dGFgATE9/cOnh2uFflIndRxnqDIX1oa+sjsZdJL6R8eWoTKh0kJGmlnLfmg7/MfW346FMpQkQvb8rC+qTs3hJokN2z3ZdvHeDV3HyyGEU4zxHI7DC5Z1V/8='></script>
+<script type='text/javascript'>
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-linkedin', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-pocket', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-tumblr', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtumblr', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+</script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script><script type="text/javascript">
+			jQuery.extend( infiniteScroll.settings.scripts, ["jquery-core","jquery-migrate","jquery","postmessage","mobile-useragent-info","jquery_inview","jetpack_resize","spin","jquery.spin","grofiles-cards","wpgroho","devicepx","jetpack_likes_queuehandler","the-neverending-homepage","twentytwelve-navigation","eu-cookie-law-script","jetpack-facebook-embed","jetpack-twitter-timeline","wpcom-masterbar-js","wpcom-masterbar-tracks-js","wpcom-actionbar-bar","contact-info-map-js","swfobject","videopress","jetpack-carousel","twitter-widgets","twitter-widgets-infinity","twitter-widgets-pending","tiled-gallery","sharing-js"] );
+			jQuery.extend( infiniteScroll.settings.styles, ["wpcom-smileys","wordads-global","wordads-twentytwelve","jetpack_likes","the-neverending-homepage","wp-block-library","wp-block-library-theme","wpcom-core-compat-playlist-styles","mp6hacks","wpcom-bbpress2-staff-css","twentytwelve-style","twentytwelve-block-style","twentytwelve-wpcom-style","eu-cookie-law-style","jetpack_facebook_likebox","noticons","geo-location-flair","reblogging","infinity-twentytwelve","wpcom-actionbar-bar","sharedaddy","social-logos","h4-global","twentytwelve-fonts","twentytwelve-ie","contact-info-map-css","jetpack-carousel","tiled-gallery"] );
+		</script>		<iframe src='https://widgets.wp.com/likes/master.html?ver=20190321#ver=20190321' scrolling='no' id='likes-master' name='likes-master' style='display:none;'></iframe>
+		<div id='likes-other-gravatars'><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+<script src="//stats.wp.com/w.js?60" type="text/javascript" async defer></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'44874191','blog_tz':'-4','user_lang':'en','blog_lang':'en','user_id':'0'}]);
+_stq.push(['view', {'blog':'44874191','v':'wpcom','tz':'-4','user_id':'0','subd':'writersresourceblog'}]);
+_stq.push(['extra', {'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdWtpP0NsWnVkPS9sL0ViLndld3BuVT01Unp2dX5PUG5uPS4wRFE1dXd6ejhRQ2Z4ZTFMRndBbDkla0cxZXVrLitffE5SOE1IJk9+NzRbdy1ET2x+MUpnR1dJcFZIZUI2eXpTckhxWV1vNlRxRDIlRjU/a2hVLnNnMnZwSVN+UThRUU84ZENMSEYmaEowOVBqUmViP0h6US1ZSmV3Jm8zY2l8aWo2SmNWa0pGalsyZDd2RlBJckF3ViV8JSxdU0FoWjBIU3MtR3QlTGR1VHVxUnEud1BDYjVlUzJuL1BNOC9YVHRbXWs9XVRzTTh0Mi1heGFvRHU4XUhNM1ZGPTlwP1NhR29JWXxNN1ZxQ2VmS1tEX3JFN0xIcGRLQUlmWUdOW2o='}]);
+_stq.push([ 'clickTrackerInit', '44874191', '0' ]);
+	</script>
+<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script></body>
+</html>

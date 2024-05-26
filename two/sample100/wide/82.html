@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+	<title>
+		温网微博 - 温州网</title>
+		<meta name="keywords" content="微博,围脖" />
+	<meta name="description" content="微博微生活" />
+	<meta name="Copyright" content="Comsenz Inc." />
+	<meta name="MSSmartTagsPreventParsing" content="True" />
+	<meta http-equiv="MSThemeCompatible" content="Yes" />
+	
+			<link rel="stylesheet" type="text/css" href="data/cache/css/1_common.css?s3M" />
+		<script type="text/javascript">
+		var CHARSET = 'gbk';
+		var UC_API = 'http://login.66wz.com';
+		var imgdir = 'img/default';
+		var COOKIEDOMAIN = '';
+		var COOKIEPATH = '/';
+		var COOKIEPRE = 'mb_';
+	</script>
+	<script type="text/javascript" src="data/cache/js/common.js?Ckl"></script>
+	<script type="text/javascript" src="image/script_face.js"></script>	
+</head>
+<body>
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<div id="header">
+	<div class="wrap s_clear">
+		<div class="topbox">
+		
+			<div class="blogtraymain_txt">				<a href="./reg">注册</a>&nbsp;&nbsp;
+				<a href="index.php?m=login" onclick="showWindow('login', this.href);return false;">登录</a>&nbsp;&nbsp;
+							<span class="input">
+					<input id="mbsearch_keyword" value="搜话题、找人..." type="text" onclick="this.value='';this.onclick=null;" onkeyup="showsearchmenu();" onkeydown="ctrlEnter(event, 'mbsearch_btn', 1)" />
+				</span>
+				<input type="button" class="btn" onclick="mbsearch('topic', $('mbsearch_keyword').value);" id="mbsearch_btn" value="搜索" />
+			</div>
+		</div>
+		<h2><a href="index.php?m=login" title="温网微博"><img src="img/default/logo.gif" alt="温网微博" border="0" /></a></h2>
+		<div id="menu">
+			<ul>
+													<li id="nav_1">
+												<a href="./browse">随便看看</a>
+											</li>
+									<li id="nav_2">
+												<a href="./hotblog">热门微博</a>
+											</li>
+									<li id="nav_10">
+												<a href="portal">广场</a>
+											</li>
+									<li id="nav_6">
+												<a href="./hottag">标签</a>
+											</li>
+									<li id="nav_3">
+												<a href="./ranking">排行榜</a>
+											</li>
+									<li id="nav_4">
+												<a href="./star">名人堂</a>
+											</li>
+									<li id="nav_9">
+												<a href="./hottopic">话题</a>
+											</li>
+									<li id="nav_7">
+												<a href="http://blog.66wz.com/">博客</a>
+											</li>
+									<li id="nav_8">
+												<a href="http://bbs.66wz.com/">论坛</a>
+											</li>
+							</ul>
+		</div>
+	</div>
+</div>
+<div style="position:relative;" id="weiboad"><a href="http://pic.66wz.com/0/01/23/29/1232954_164466.jpg" target="_blank"><img src="http://bbs.66wz.com/images/ad/820-20110428.gif" width="820" height="60" border="0"/></a><div style="position:absolute;right:430px;top:-12px"><a href="#" onclick="$('weiboad').style.display='none';setCookie('adsel',1,72000);"><strong>关闭</strong></a></div></div>
+<div id="mbsearch_keyword_menu" class="select_menu searchtopcon" style="display:none">
+	<ul>
+		<li><a href="javascript:mbsearch('topic', $('mbsearch_keyword').value);">含<span id="mbsearch_topic"></span>的话题</a></li>
+		<li><a href="javascript:mbsearch('user', $('mbsearch_keyword').value);">含<span id="mbsearch_user"></span>的人</a></li>
+	</ul>
+</div>
+
+<div class="wrap shell_t s_clear"></div><div id="wrap" class="wrap s_clear"><div class="main"><div class="content nofloat">
+			<div class="fcontent alert_win">
+				<h3 class="float_ctrl"><em>温网微博 提示信息</em></h3>
+				<hr class="shadowline" />
+				<div class="postbox"><div class="alert_error">
+					<p>您还没有登录，无法进行此操作。</p>
+											<meta http-equiv="refresh" content="2; url=index.php?m=login">
+						<p class="alert_btnleft"><a href="index.php?m=login">如果您的浏览器没有自动跳转，请点击此链接</a></p>
+									</div></div>
+			</div>
+		</div></div></div>			<script type="text/javascript" src="index.php?m=cron"></script>
+		<div class="wrap shell_b s_clear"></div>
+	<div id="footer">
+		<div class="wrap s_clear">
+			<div id="footlink">
+					<a href="" target="_blank">温网微博</a>
+					<span class="pipe">|</span>
+					<a href="index.php?m=faq">帮助</a>
+					<span class="pipe">|</span>
+					<a href="index.php?m=login" onclick="showWindow('login', this.href);return false;">举报不良信息</a><br />
+					Powered by <strong>CTT</strong> <em>1.0</em> <span class="smalltext">&copy; 2009-2010 <a target="_blank" href="http://www.comsenz.com">Comsenz Inc.</a></span>
+			</div>
+			<a id="returnToTop" class="goTop" style="position: fixed; bottom: 30px; visibility: visible;display:none">
+            <span class="goTopbg "></span>
+            <span class="goTopcon"><em class="toparr" style="text-align: center;">&lt;</em><span>返回顶部</span></span>
+            </a>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function returnToTop(btnId) {
+			var btn = document.getElementById(btnId);
+			var dd = document.documentElement;
+			window.onscroll = function () {
+				if(document.documentElement)
+					btn.style.display = dd.scrollTop ? 'block' : 'none';
+				else
+					btn.style.display = document.body.scrollTop ? 'block' : 'none';
+				if(btn.style.display == "none")
+					btn.style.display = document.body.scrollTop ? 'block' : 'none';
+			};
+			btn.onclick = function () {
+				btn.style.display = 'none';
+				dd.scrollTop = 0;
+				document.body.scrollTop = 0;
+			};
+		}
+		returnToTop('returnToTop');
+	</script>
+        <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-347412-10']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? ' https://ssl' : ' http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F668abbfa0d8dab80684d021ed88c0617' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<LINK rel=stylesheet type=text/css href="css/common.css">
+</body>
+</html>

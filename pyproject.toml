@@ -1,0 +1,36 @@
+[build-system]
+requires = [
+    "setuptools==65.5.0",
+        "setuptools-scm==7.1.0"]
+build-backend = "setuptools.build_meta"
+
+# using setuptools_scm results in including all resource files tracked by git (e.g. mt-filter-list.annotated)
+[tool.setuptools_scm]
+
+[project]
+name = "warc2text-runner"
+dynamic = ["version"]  # setuptools_scm will use the version received from git
+requires-python = ">= 3.10"
+
+dependencies = [
+    "trafilatura==1.8.0",
+    "lxml==5.1.1",
+    "lxml-html-clean==0.1.0",
+    "ujson==5.4.0",
+    "zstandard==0.22.0",
+    "fire",
+    "fasttext @ git+https://github.com/facebookresearch/fastText@1142dc4c4ecbc19cc16eee5cdd28472e689267e6"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]  # ["."] by default
+
+[tool.setuptools]
+script-files = [
+    "src/warc2text_runner/two/stage2traf.sh",
+    "src/warc2text_runner/two/stage2local.sh",
+    "src/warc2text_runner/two/stage2nodeparallel.sh",
+    "src/warc2text_runner/two/stage2download.sh",
+    "src/warc2text_runner/two/stage2preplumic.sh"
+]
+

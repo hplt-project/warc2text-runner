@@ -1,0 +1,319 @@
+﻿
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>东北大学新闻网  - 东大要闻</title>
+<link href="/campus/css/style.css" rel="stylesheet" type="text/css" />
+<link href="/campus/css/jcalendar.css" rel="stylesheet" type="text/css" />
+<script src="/campus/js/jquery.min.js" type=text/javascript></script>
+<script src="/campus/js/loopedslider.min.js" type=text/javascript></script>
+<script src="/campus/js/security.js" type=text/javascript></script>
+<script src="/campus/js/jcalendar-source.js" type=text/javascript></script>
+<script language="javascript" type="text/javascript">
+document.writeln("<link href=\"\/campus\/css\/css.css\" rel=\"stylesheet\" type=\"text\/css\" \/>")
+;</script>
+<script type=text/javascript>
+	isLoginError();
+</script>
+<script language="javascript" type="text/javascript">
+//calendar
+$(document).ready(function() {
+  $('fieldset.jcalendar').jcalendar();
+  $("#what").load("/getviewpoint.jsp #what_content");
+});
+
+</script>
+</head>
+
+<body>
+<table width="986" border="0" align="center" cellpadding="0" cellspacing="0" class="topbar">
+  <tr>
+    <td width="225" align="center" valign="middle"><iframe src="http://m.weather.com.cn/m/pn5/weather.htm?id=101070101T "  style="border:1px solid #dde9f9;" width="200" height="22" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe></td>
+    <td width="761" align="right" class="logintd"><table width="630" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="right">
+	        <form id="mainForm" name="mainForm" action="/security/login" method="post" onsubmit="return login();">
+				<input type="hidden" name="j_sign" value="campus"/>
+				      	<script type="text/javascript">
+					      		var login_code=getCookieValue("neu_login_code");
+						    	var nickname=getCookieValue("neu_login_nickname");
+						    	nickname = decodeURIComponent(nickname);
+						    	if(login_code==null||login_code==""){
+								   	var str = '用户名：<input type="text" name="j_username" id="j_username" class="frmtxt" />&nbsp;&nbsp;';
+								   	str = str+'密 码：<input type="password" class="frmtxt" name="j_password" id="j_password" />&nbsp;&nbsp;';
+								   	str = str+'<input name="button" type="submit" class="butbg" id="button" value="登录" />&nbsp;&nbsp;';
+								   	str = str+'<input type="button" class="butbg2" value="用户注册"  onclick="register(/campus/);"/>';
+						    		document.write(str);
+								}else{
+									var path='/security/logout?j_sign=campus';
+									var str="欢迎&nbsp; "+nickname+" &nbsp;登录本网站&nbsp;&nbsp;&nbsp;&nbsp;";
+									str=str+'<input type="button" class="butbg2" value="我要投稿" onclick="contribute(/campus/);"/>&nbsp;&nbsp;&nbsp;&nbsp;';
+									str=str+'<input type="button" class="butbg2" value="退出登录"  onclick="return logout(path);"/>';
+									document.write(str);
+								}
+						</script>
+			</form>
+      </td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="986" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><embed src="/campus/img/banner.swf" quality="high" width="986" height="102" 
+    		type='application/x-shockwave-flash'></embed> </td>
+  </tr>
+</table>
+<table width="986" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="topnav">
+	    <ul>
+	      <li><a href="/campus/index.html">网站首页</a></li>
+    	  		<li><a href="/campus/part/DDYW.html">东大要闻</a></li>
+    	  		<li><a href="/campus/part/XYFC.html">科技前沿</a></li>
+    	  		<li><a href="/campus/part/XSHD.html">新闻纵横</a></li>
+    	  		<li><a href="/campus/part/ZSJY.html">招生就业</a></li>
+    	  		<li><a href="/campus/part/XKJS.html">学术科研</a></li>
+    	  		<li><a href="/campus/part/HZJL.html">社会热点</a></li>
+    	  		<li><a href="/campus/part/MTDD.html">媒体东大</a></li>
+    	  		<li><a href="/campus/part/DDRW.html">校报精选</a></li>
+    	  		<li><a href="/campus/part/XYCQ.html">校友风采</a></li>
+    	  		<li><a href="/campus/part/GJDT.html">教育前沿</a></li>
+    	  		<li><a href="/campus/part/BWJX.html">通知公告</a></li>
+    	  		<li><a href="/campus/part/RWDD.html">文化视点</a></li>
+    	  		<li><a href="/campus/part/YYXW.html">视频新闻</a></li>
+	    </ul>
+	</td>
+  </tr>
+</table>
+<table width="986" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>
+    <iframe src="/campus/bulletins.html"  style="" width="986" height="30" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe>
+    </td>
+  </tr>
+</table>
+    
+<table width="986" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td bgcolor="#FFFFFF">
+		<table width="956" border="0" align="center" cellpadding="0" cellspacing="0" class="main">
+			  <tr>
+			    <td width="719" rowspan="3" valign="top">
+				  <table width="705" border="0" cellspacing="0" cellpadding="0" class="contentbgtd">
+				      <tr>
+				        <td height="635" valign="top"><table width="96%" border="0" align="center" cellpadding="0" cellspacing="0" class="postd">
+			          <tr>
+			            <td>当前位置：<a href="/campus/index.html">东北大学新闻网</a> &gt;&gt; <a href="/campus/part/DDYW.html">东大要闻</a></td>
+			          </tr>
+			      </table>
+		          <table width="94%" border="0" align="center" cellpadding="0" cellspacing="0" class="newslist">
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2010-04/07-15189547786876.html " title="热烈祝贺我校在2010年国际数学建模竞赛中实现历史性突破"  target='_blank'>热烈祝贺我校在2010年国际数学建模竞赛中实现历史性突破</a><span class="datetime">[04-07]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2010-04/07-09317657543832.html " title="“十一五”规划课题《新世纪高校思想政治理论课教育教学质量研究》在我校现场结题鉴定"  target='_blank'>“十一五”规划课题《新世纪高校思想政治理论课教育教学质量研究》在我校现场结题鉴定</a><span class="datetime">[04-07]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2010-04/07-09207865794089.html " title="我校17名教授成为辽宁省人民政府学位委员会第五届学科评议组成员"  target='_blank'>我校17名教授成为辽宁省人民政府学位委员会第五届学科评议组成员</a><span class="datetime">[04-07]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2010-04/07-09191969342538.html " title="集思广益 凝聚共识 谱写学生科技创新工作新篇章——学生创新中心于新学期开展系列座谈会"  target='_blank'>集思广益 凝聚共识 谱写学生科技创新工作新篇章——学生创新中心于新学期开展系列座谈会</a><span class="datetime">[04-07]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2010-04/02-08285139674653.html " title="基础学院召开年度工作计划研讨会"  target='_blank'>基础学院召开年度工作计划研讨会</a><span class="datetime">[04-02]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2010-04/02-08237904388295.html " title="基础学院召开新学期兼职班主任工作交流会"  target='_blank'>基础学院召开新学期兼职班主任工作交流会</a><span class="datetime">[04-02]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2010-03/31-15102566787489.html " title="“立德树人——高校辅导员先进事迹报告团”在我校举行报告会"  target='_blank'>“立德树人——高校辅导员先进事迹报告团”在我校举行报告会</a><span class="datetime">[03-31]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2010-03/28-22484212767384.html " title="牢固信念，践行科学发展观，坚定理想，争做合格党员"  target='_blank'>牢固信念，践行科学发展观，坚定理想，争做合格党员</a><span class="datetime">[03-28]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2010-03/28-22100711604216.html " title="学生指导服务中心组织召开家庭经济困难学生学习“两会”精神座谈会"  target='_blank'>学生指导服务中心组织召开家庭经济困难学生学习“两会”精神座谈会</a><span class="datetime">[03-28]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2010-03/23-08580281534477.html " title="校长赫冀成两会归来话感受"  target='_blank'>校长赫冀成两会归来话感受</a><span class="datetime">[03-23]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2010-03/17-10301319051181.html " title="我校第四批创新项目立项申报工作正在进行中"  target='_blank'>我校第四批创新项目立项申报工作正在进行中</a><span class="datetime">[03-17]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2010-03/17-09170173170731.html " title="东北大学2010届毕业生春季就业“双向选择”洽谈会"  target='_blank'>东北大学2010届毕业生春季就业“双向选择”洽谈会</a><span class="datetime">[03-17]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2010-03/16-15054271350077.html " title="我校召开授予博士、硕士学位工作会议"  target='_blank'>我校召开授予博士、硕士学位工作会议</a><span class="datetime">[03-16]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2010-03/09-14111214551044.html " title="我校36支代表队参加2010年国际大学生数学建模竞赛"  target='_blank'>我校36支代表队参加2010年国际大学生数学建模竞赛</a><span class="datetime">[03-09]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2010-02/27-19015077232288.html " title="国际著名冶金专家应材冶学院邀请来校访问"  target='_blank'>国际著名冶金专家应材冶学院邀请来校访问</a><span class="datetime">[02-27]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2010-01/26-09288623678686.html " title="小盗龙的飞行研究取得重大突破"  target='_blank'>小盗龙的飞行研究取得重大突破</a><span class="datetime">[01-26]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2010-01/16-08332059780250.html " title="信息学院召开2009年度东软奖教金颁奖暨总结表彰大会"  target='_blank'>信息学院召开2009年度东软奖教金颁奖暨总结表彰大会</a><span class="datetime">[01-16]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2010-01/14-11234118879337.html " title="我校四篇博士学位论文获得辽宁省优秀论文"  target='_blank'>我校四篇博士学位论文获得辽宁省优秀论文</a><span class="datetime">[01-14]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2010-01/13-09304570026150.html " title="材冶学院召开2009年总结表彰大会"  target='_blank'>材冶学院召开2009年总结表彰大会</a><span class="datetime">[01-13]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2010-01/05-10454599473875.html " title="信息学院吴成东教授被英国BEDFORDSHIRE大学聘请为兼职教授"  target='_blank'>信息学院吴成东教授被英国BEDFORDSHIRE大学聘请为兼职教授</a><span class="datetime">[01-05]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2009-12/30-11498602801795.html " title="提高德育研究水平 促进学生工作科学发展——我校召开大学生日常思想政治教育研究课题结项汇报会"  target='_blank'>提高德育研究水平 促进学生工作科学发展——我校召开大学生日常思想政治教育研究课题结项汇报会</a><span class="datetime">[12-30]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2009-12/28-16124041350245.html " title="我校隆重举行2009年度学生科技创新工作总结表彰大会"  target='_blank'>我校隆重举行2009年度学生科技创新工作总结表彰大会</a><span class="datetime">[12-28]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2009-12/24-17079606330325.html " title="刘积仁当选2009CCTV中国经济年度人物"  target='_blank'>刘积仁当选2009CCTV中国经济年度人物</a><span class="datetime">[12-24]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2009-12/22-17562597237058.html " title="东北大学巩恩普教授领衔的中美研究小组发现：“中国鸟龙” 能以“毒牙”克敌制胜"  target='_blank'>东北大学巩恩普教授领衔的中美研究小组发现：“中国鸟龙” 能以“毒牙”克敌制胜</a><span class="datetime">[12-22]</span></td>
+			            </tr>
+						<tr>
+			              <td width="2%"><img src="/campus/img/ico002.jpg" alt="" width="9" height="9" /></td>
+			              <td width="98%"><a href=" /campus/news/2009-12/15-14352014299261.html " title="我校本科生科技创新能力逐年提升"  target='_blank'>我校本科生科技创新能力逐年提升</a><span class="datetime">[12-15]</span></td>
+			            </tr>
+		          </table>
+<table width="96%" border="0" align="center" cellpadding="0" cellspacing="0" class="page">
+	<tr>
+		<td nowrap="nowrap">
+			<div style="height:50px;overflow:auto;text-align: left;padding:0 5px;width:660px;">
+				共<strong>4597</strong>条 &nbsp;&nbsp;本页<strong>25</strong>条&nbsp;&nbsp; <strong>25</strong>条/每页&nbsp;&nbsp;<a href='DDYW.html'>1</a>&nbsp;&nbsp;<a href='DDYW_2.html'>2</a>&nbsp;&nbsp;<a href='DDYW_3.html'>3</a>&nbsp;&nbsp;<a href='DDYW_4.html'>4</a>&nbsp;&nbsp;<a href='DDYW_5.html'>5</a>&nbsp;&nbsp;<a href='DDYW_6.html'>6</a>&nbsp;&nbsp;<a href='DDYW_7.html'>7</a>&nbsp;&nbsp;<a href='DDYW_8.html'>8</a>&nbsp;&nbsp;<a href='DDYW_9.html'>9</a>&nbsp;&nbsp;<a href='DDYW_10.html'>10</a>&nbsp;&nbsp;<a href='DDYW_11.html'>11</a>&nbsp;&nbsp;<a href='DDYW_12.html'>12</a>&nbsp;&nbsp;<a href='DDYW_13.html'>13</a>&nbsp;&nbsp;<a href='DDYW_14.html'>14</a>&nbsp;&nbsp;<a href='DDYW_15.html'>15</a>&nbsp;&nbsp;<a href='DDYW_16.html'>16</a>&nbsp;&nbsp;<a href='DDYW_17.html'>17</a>&nbsp;&nbsp;<a href='DDYW_18.html'>18</a>&nbsp;&nbsp;<a href='DDYW_19.html'>19</a>&nbsp;&nbsp;<a href='DDYW_20.html'>20</a>&nbsp;&nbsp;<a href='DDYW_21.html'>21</a>&nbsp;&nbsp;<a href='DDYW_22.html'>22</a>&nbsp;&nbsp;<a href='DDYW_23.html'>23</a>&nbsp;&nbsp;<a href='DDYW_24.html'>24</a>&nbsp;&nbsp;<a href='DDYW_25.html'>25</a>&nbsp;&nbsp;<a href='DDYW_26.html'>26</a>&nbsp;&nbsp;<a href='DDYW_27.html'>27</a>&nbsp;&nbsp;<a href='DDYW_28.html'>28</a>&nbsp;&nbsp;<a href='DDYW_29.html'>29</a>&nbsp;&nbsp;<a href='DDYW_30.html'>30</a>&nbsp;&nbsp;<a href='DDYW_31.html'>31</a>&nbsp;&nbsp;<a href='DDYW_32.html'>32</a>&nbsp;&nbsp;<a href='DDYW_33.html'>33</a>&nbsp;&nbsp;<a href='DDYW_34.html'>34</a>&nbsp;&nbsp;<a href='DDYW_35.html'>35</a>&nbsp;&nbsp;<a href='DDYW_36.html'>36</a>&nbsp;&nbsp;<a href='DDYW_37.html'>37</a>&nbsp;&nbsp;<a href='DDYW_38.html'>38</a>&nbsp;&nbsp;<a href='DDYW_39.html'>39</a>&nbsp;&nbsp;<a href='DDYW_40.html'>40</a>&nbsp;&nbsp;<a href='DDYW_41.html'>41</a>&nbsp;&nbsp;<a href='DDYW_42.html'>42</a>&nbsp;&nbsp;<a href='DDYW_43.html'>43</a>&nbsp;&nbsp;<a href='DDYW_44.html'>44</a>&nbsp;&nbsp;<a href='DDYW_45.html'>45</a>&nbsp;&nbsp;<a href='DDYW_46.html'>46</a>&nbsp;&nbsp;<a href='DDYW_47.html'>47</a>&nbsp;&nbsp;<a href='DDYW_48.html'>48</a>&nbsp;&nbsp;<a href='DDYW_49.html'>49</a>&nbsp;&nbsp;<a href='DDYW_50.html'>50</a>&nbsp;&nbsp;<a href='DDYW_51.html'>51</a>&nbsp;&nbsp;<a href='DDYW_52.html'>52</a>&nbsp;&nbsp;<a href='DDYW_53.html'>53</a>&nbsp;&nbsp;<a href='DDYW_54.html'>54</a>&nbsp;&nbsp;<a href='DDYW_55.html'>55</a>&nbsp;&nbsp;<a href='DDYW_56.html'>56</a>&nbsp;&nbsp;<a href='DDYW_57.html'>57</a>&nbsp;&nbsp;<a href='DDYW_58.html'>58</a>&nbsp;&nbsp;<a href='DDYW_59.html'>59</a>&nbsp;&nbsp;<a href='DDYW_60.html'>60</a>&nbsp;&nbsp;<a href='DDYW_61.html'>61</a>&nbsp;&nbsp;<a href='DDYW_62.html'>62</a>&nbsp;&nbsp;<a href='DDYW_63.html'>63</a>&nbsp;&nbsp;<a href='DDYW_64.html'>64</a>&nbsp;&nbsp;<a href='DDYW_65.html'>65</a>&nbsp;&nbsp;<b>66</b>&nbsp;&nbsp;<a href='DDYW_67.html'>67</a>&nbsp;&nbsp;<a href='DDYW_68.html'>68</a>&nbsp;&nbsp;<a href='DDYW_69.html'>69</a>&nbsp;&nbsp;<a href='DDYW_70.html'>70</a>&nbsp;&nbsp;<a href='DDYW_71.html'>71</a>&nbsp;&nbsp;<a href='DDYW_72.html'>72</a>&nbsp;&nbsp;<a href='DDYW_73.html'>73</a>&nbsp;&nbsp;<a href='DDYW_74.html'>74</a>&nbsp;&nbsp;<a href='DDYW_75.html'>75</a>&nbsp;&nbsp;<a href='DDYW_76.html'>76</a>&nbsp;&nbsp;<a href='DDYW_77.html'>77</a>&nbsp;&nbsp;<a href='DDYW_78.html'>78</a>&nbsp;&nbsp;<a href='DDYW_79.html'>79</a>&nbsp;&nbsp;<a href='DDYW_80.html'>80</a>&nbsp;&nbsp;<a href='DDYW_81.html'>81</a>&nbsp;&nbsp;<a href='DDYW_82.html'>82</a>&nbsp;&nbsp;<a href='DDYW_83.html'>83</a>&nbsp;&nbsp;<a href='DDYW_84.html'>84</a>&nbsp;&nbsp;<a href='DDYW_85.html'>85</a>&nbsp;&nbsp;<a href='DDYW_86.html'>86</a>&nbsp;&nbsp;<a href='DDYW_87.html'>87</a>&nbsp;&nbsp;<a href='DDYW_88.html'>88</a>&nbsp;&nbsp;<a href='DDYW_89.html'>89</a>&nbsp;&nbsp;<a href='DDYW_90.html'>90</a>&nbsp;&nbsp;<a href='DDYW_91.html'>91</a>&nbsp;&nbsp;<a href='DDYW_92.html'>92</a>&nbsp;&nbsp;<a href='DDYW_93.html'>93</a>&nbsp;&nbsp;<a href='DDYW_94.html'>94</a>&nbsp;&nbsp;<a href='DDYW_95.html'>95</a>&nbsp;&nbsp;<a href='DDYW_96.html'>96</a>&nbsp;&nbsp;<a href='DDYW_97.html'>97</a>&nbsp;&nbsp;<a href='DDYW_98.html'>98</a>&nbsp;&nbsp;<a href='DDYW_99.html'>99</a>&nbsp;&nbsp;<a href='DDYW_100.html'>100</a>&nbsp;&nbsp;<a href='DDYW_101.html'>101</a>&nbsp;&nbsp;<a href='DDYW_102.html'>102</a>&nbsp;&nbsp;<a href='DDYW_103.html'>103</a>&nbsp;&nbsp;<a href='DDYW_104.html'>104</a>&nbsp;&nbsp;<a href='DDYW_105.html'>105</a>&nbsp;&nbsp;<a href='DDYW_106.html'>106</a>&nbsp;&nbsp;<a href='DDYW_107.html'>107</a>&nbsp;&nbsp;<a href='DDYW_108.html'>108</a>&nbsp;&nbsp;<a href='DDYW_109.html'>109</a>&nbsp;&nbsp;<a href='DDYW_110.html'>110</a>&nbsp;&nbsp;<a href='DDYW_111.html'>111</a>&nbsp;&nbsp;<a href='DDYW_112.html'>112</a>&nbsp;&nbsp;<a href='DDYW_113.html'>113</a>&nbsp;&nbsp;<a href='DDYW_114.html'>114</a>&nbsp;&nbsp;<a href='DDYW_115.html'>115</a>&nbsp;&nbsp;<a href='DDYW_116.html'>116</a>&nbsp;&nbsp;<a href='DDYW_117.html'>117</a>&nbsp;&nbsp;<a href='DDYW_118.html'>118</a>&nbsp;&nbsp;<a href='DDYW_119.html'>119</a>&nbsp;&nbsp;<a href='DDYW_120.html'>120</a>&nbsp;&nbsp;<a href='DDYW_121.html'>121</a>&nbsp;&nbsp;<a href='DDYW_122.html'>122</a>&nbsp;&nbsp;<a href='DDYW_123.html'>123</a>&nbsp;&nbsp;<a href='DDYW_124.html'>124</a>&nbsp;&nbsp;<a href='DDYW_125.html'>125</a>&nbsp;&nbsp;<a href='DDYW_126.html'>126</a>&nbsp;&nbsp;<a href='DDYW_127.html'>127</a>&nbsp;&nbsp;<a href='DDYW_128.html'>128</a>&nbsp;&nbsp;<a href='DDYW_129.html'>129</a>&nbsp;&nbsp;<a href='DDYW_130.html'>130</a>&nbsp;&nbsp;<a href='DDYW_131.html'>131</a>&nbsp;&nbsp;<a href='DDYW_132.html'>132</a>&nbsp;&nbsp;<a href='DDYW_133.html'>133</a>&nbsp;&nbsp;<a href='DDYW_134.html'>134</a>&nbsp;&nbsp;<a href='DDYW_135.html'>135</a>&nbsp;&nbsp;<a href='DDYW_136.html'>136</a>&nbsp;&nbsp;<a href='DDYW_137.html'>137</a>&nbsp;&nbsp;<a href='DDYW_138.html'>138</a>&nbsp;&nbsp;<a href='DDYW_139.html'>139</a>&nbsp;&nbsp;<a href='DDYW_140.html'>140</a>&nbsp;&nbsp;<a href='DDYW_141.html'>141</a>&nbsp;&nbsp;<a href='DDYW_142.html'>142</a>&nbsp;&nbsp;<a href='DDYW_143.html'>143</a>&nbsp;&nbsp;<a href='DDYW_144.html'>144</a>&nbsp;&nbsp;<a href='DDYW_145.html'>145</a>&nbsp;&nbsp;<a href='DDYW_146.html'>146</a>&nbsp;&nbsp;<a href='DDYW_147.html'>147</a>&nbsp;&nbsp;<a href='DDYW_148.html'>148</a>&nbsp;&nbsp;<a href='DDYW_149.html'>149</a>&nbsp;&nbsp;<a href='DDYW_150.html'>150</a>&nbsp;&nbsp;<a href='DDYW_151.html'>151</a>&nbsp;&nbsp;<a href='DDYW_152.html'>152</a>&nbsp;&nbsp;<a href='DDYW_153.html'>153</a>&nbsp;&nbsp;<a href='DDYW_154.html'>154</a>&nbsp;&nbsp;<a href='DDYW_155.html'>155</a>&nbsp;&nbsp;<a href='DDYW_156.html'>156</a>&nbsp;&nbsp;<a href='DDYW_157.html'>157</a>&nbsp;&nbsp;<a href='DDYW_158.html'>158</a>&nbsp;&nbsp;<a href='DDYW_159.html'>159</a>&nbsp;&nbsp;<a href='DDYW_160.html'>160</a>&nbsp;&nbsp;<a href='DDYW_161.html'>161</a>&nbsp;&nbsp;<a href='DDYW_162.html'>162</a>&nbsp;&nbsp;<a href='DDYW_163.html'>163</a>&nbsp;&nbsp;<a href='DDYW_164.html'>164</a>&nbsp;&nbsp;<a href='DDYW_165.html'>165</a>&nbsp;&nbsp;<a href='DDYW_166.html'>166</a>&nbsp;&nbsp;<a href='DDYW_167.html'>167</a>&nbsp;&nbsp;<a href='DDYW_168.html'>168</a>&nbsp;&nbsp;<a href='DDYW_169.html'>169</a>&nbsp;&nbsp;<a href='DDYW_170.html'>170</a>&nbsp;&nbsp;<a href='DDYW_171.html'>171</a>&nbsp;&nbsp;<a href='DDYW_172.html'>172</a>&nbsp;&nbsp;<a href='DDYW_173.html'>173</a>&nbsp;&nbsp;<a href='DDYW_174.html'>174</a>&nbsp;&nbsp;<a href='DDYW_175.html'>175</a>&nbsp;&nbsp;<a href='DDYW_176.html'>176</a>&nbsp;&nbsp;<a href='DDYW_177.html'>177</a>&nbsp;&nbsp;<a href='DDYW_178.html'>178</a>&nbsp;&nbsp;<a href='DDYW_179.html'>179</a>&nbsp;&nbsp;<a href='DDYW_180.html'>180</a>&nbsp;&nbsp;<a href='DDYW_181.html'>181</a>&nbsp;&nbsp;<a href='DDYW_182.html'>182</a>&nbsp;&nbsp;<a href='DDYW_183.html'>183</a>&nbsp;&nbsp;<a href='DDYW_184.html'>184</a>&nbsp;&nbsp;
+			</div>
+		</td>
+	</tr>
+</table>		        </td>
+      </tr>
+    </table>
+    
+    </td>
+    
+    <td width="237" rowspan="3" valign="top" class="rightbg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td height="31" colspan="2"><img src="/campus/img/tit03.jpg" alt="" width="236" height="30" /></td>
+            </tr>
+            <tr>
+              <td height="60" colspan="2" align="center">
+              <form name="fmSearch" id="fmSearch" action="/campus/search" method="post" onsubmit="return serachCheck();">
+	              <table width="95%" border="0" cellspacing="0" cellpadding="0">
+		                <tr>
+		                  <td width="64%"  align="center"><input type="text" name="search_text" id="search_text" class="srcfrmtxt" /></td>
+		                  <td width="30%" align="center"><input type="submit" class="srcbut" value=""/></td>
+		                </tr>
+	              </table>
+	              </form>
+	           </td>
+            </tr>
+</table>
+
+<script type="text/javascript">
+	function serachCheck(){
+		var search_text = document.getElementById("search_text").value;
+		if(search_text==null||search_text==""){
+			alert('请填写搜索内容！');
+			document.getElementById("search_text").focus();
+			return false;
+		}
+		return true;
+	}
+</script>	     <iframe src="/campus/right.html"  style="" width="240" height="600" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe>
+    </td>
+    </tr>
+	  <tr>    </tr>
+	  <tr>    </tr>
+</table>
+</td>
+</tr>
+</table>
+<table width="986" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="40" align="center" class="footnav01">
+	<a href="http://www.neu.edu.cn/files/intro_leader.htm" target="_blank">领导</a> | 
+	<a href="http://www.neu.edu.cn/files/intro_academician.htm" target="_blank">院士</a> | 
+	<a href="http://www.neualumni.org.cn/" target="_blank">校友</a> | 
+	<a href="http://www.lib.neu.edu.cn" target="_blank">图书</a> | 
+	<a href="http://www.neuzs.com/" target="_blank">招生</a> | 
+	<a href="http://www.graduate.neu.edu.cn/" target="_blank">研究生</a> | 
+	<a href="http://job.neu.edu.cn/" target="_blank">就业</a> | 
+	<a href="http://ipgw.neu.edu.cn/" target="_blank">校园网</a> | 
+	<a href="http://aao.neu.edu.cn/" target="_blank">教务</a> | 
+	<a href="http://202.118.27.233/home/home.asp" target="_blank">人事</a> | 
+	<a href="http://gach.neu.edu.cn/" target="_blank">校园安全</a> | 
+	<a href="http://www.neu.edu.cn/hqglc/" target="_blank">后勤服务</a> | 
+	<a href="http://xuebao.neu.edu.cn/" target="_blank">学报</a> | 
+	<a href="http://psy.neu.edu.cn/" target="_blank">心理咨询</a> | 
+	<a href="http://qzonline.neu.edu.cn/" target="_blank">勤工助学</a> | 
+	<a href="http://202.118.20.232" target="_blank">医院</a></td>
+  </tr>
+  <tr>
+    <td height="60" class="footnav02">
+	<a href="http://www.neu.edu.cn" target="_blank">东大主页</a> 
+	<a href="http://view.neu.edu.cn" target="_blank">东大视点网</a> 
+	<a href="http://online.neu.edu.cn/" target="_blank">视频东大</a> 
+	<a href="#">东大掠影</a> 
+	<a href="http://weekly.neu.edu.cn" target="_blank">东北大学报</a> 
+	<a href="http://neunews.neu.edu.cn:808/xcb/" target="_blank">党委宣传部</a> 
+	<a href="http://uzone.univs.cn/school_2129.html" target="_blank">长夜书香</a> 
+	<a href="http://bbs.neu.edu.cn" target="_blank">白山黑水论坛</a>
+	</td>
+  </tr>
+  <tr>
+    <td height="38" class="foot">
+<div style="position: relative; top: -8px;"><a href="http://neunews.neu.edu.cn:8080/campus/bulletin/2011-09/28-0913291329.html" style="color: rgb(0, 0, 0);">投稿须知</a>	投稿邮箱：85590@mail.neu.edu.cn 新闻热线：024-83685590 建议使用 1024*768分辨率</div>
+<div style="position: relative; top: -4px;">Copyright © 2004-2011 东北大学党委宣传部（新闻中心）版权所有，网络管理室编辑维护，技术支持：“东大在线”网络传媒工作室</div>
+    </td>
+  </tr>
+</table>
+
+<map name="Map" id="Map">
+  <area shape="rect" coords="187,5,235,24" href="newslist.html" />
+</map>
+
+<map name="Map2" id="Map2">
+  <area shape="rect" coords="353,5,390,23" href="newslist.html" />
+</map>
+
+<map name="Map3" id="Map3">
+  <area shape="rect" coords="670,2,702,24" href="newslist2.html" />
+</map>
+</body>
+</html>

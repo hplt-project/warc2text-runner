@@ -1,0 +1,102 @@
+<div id="tshirt-controls" style="padding:8px;">
+
+        <form method="post" action="https://store.textsfromlastnight.com/checkout/cart/add" enctype="multipart/form-data">
+
+        <input type="hidden" name="product" value="65" />
+        <input type="hidden" name="options[1]" value="Don&amp;#39;t mind the bowl full of ashes in the sink. I meant to set that on fire." />
+        <input type="hidden" name="options[4]" id="areacodeValue" value="770" />
+
+        <table border="0" cellspacing="4" cellpadding="4">
+        <tr>
+                <td>
+                        <div style="color:#333;font-size:11px;">Gender</div>
+                        <select name="options[2]" id="gender">
+                                <option class="male" value="1">Men's</option>
+                                <option class="female" value="2">Women's</option>
+                        </select>
+                        &nbsp;&nbsp;&nbsp;
+                </td>
+
+                <td>
+                        <div style="color:#333;font-size:11px;">Color</div>
+                        <select name="super_attribute[76]">
+                                <option value="6">White</option>
+                        </select>
+                        &nbsp;&nbsp;&nbsp;
+                </td>
+                <td>
+                        <div style="color:#333;font-size:11px;">Size</div>
+                        <select name="super_attribute[497]">
+                                <option value="5">Small</option>
+                                <option value="4">Medium</option>
+                                <option value="3">Large</option>
+                                <option value="2">X-Large</option>
+                                <option value="1">2X-Large</option>
+                        </select>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td valign="bottom">
+                        Quantity
+                        <input type="text" size="2" name="qty" value="1" />
+                        <input type="submit" value="Add to Cart" />
+                </td>
+        </tr>
+        <tr>
+                <td colspan="4">
+                        <label>
+                                <input type="checkbox" name="options[3][]" id="areacodeCustom" value="3" />
+                                Customize the area code used on the t-shirt. <span style="font-size:11px;color:#333;">+$1.00</span>
+                        </label>
+                </td>
+        </tr>
+        </table>
+
+        <div id="areacodeSpecify" style="padding:4px;">
+                Area Code
+                <input type="text" size="3" name="areacode" id="areacodeInput" onkeyup="javascript:void areacodeCheck(this);" value="770" />
+                <span style="color:#cc0000;font-size:11px;" id="areacodeError"></span>
+        </div>
+
+
+        </form>
+</div>
+
+<div id="tshirt-preview" style="width:500px;height:408px;"><img src="/postings/tshirt_preview/36044/male" /></div>
+
+<script language="Javascript" type="text/javascript">
+var strAreacodeDefault = 770;
+$('#areacodeSpecify').hide();
+$('#areacodeCustom').attr('checked', false);
+
+var updateImage = function ( ) {
+	//var html = '<img src="/postings/tshirt_preview/36044/' + $('#gender :selected').val() + '/' + $('#areacodeInput').val() + '" />';
+	//$('#tshirt-preview').html( html );
+	var src = '/postings/tshirt_preview/36044/' + $('#gender :selected').val() + '/' + $('#areacodeInput').val();
+	$('#tshirt-preview img').attr( 'src', src );
+}
+
+$('#gender').change( updateImage );
+
+$('#areacodeCustom').change(function() {
+	if ( $('#areacodeCustom').attr('checked') ) {
+		$('#areacodeSpecify').slideDown('fast');
+		$('#areacodeInput').attr('value', strAreacodeDefault);
+	} else {
+		$('#areacodeValue').val(strAreacodeDefault);
+		$('#areacodeInput').attr('value', strAreacodeDefault);
+		$('#areacodeSpecify').slideUp('fast');
+		updateImage();
+	}
+});
+function areacodeCheck(elm) {
+        if($(elm).val().length > 3 || $(elm).val().length < 3) {
+                $('#areacodeError').html('Area codes must be 3 digits');
+        } else if($(elm).val().length == 3 && parseInt($(elm).val()) > 200 && parseInt($(elm).val()) < 990 && $(elm).val() != '666') {
+                $('#areacodeError').html('');
+								updateImage(); 
+                $('#areacodeValue').val($(elm).val());
+        } else {
+                $('#areacodeError').html('Invalid area code entered.');
+        }
+};
+</script>

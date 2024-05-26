@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head><!-- Powered by www.ukmsl.com - v7.99.1804.1701 --><title>
+	Outdoor Adventure
+</title><meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"84b777e1cc","applicationID":"9145585,9166025","transactionName":"Y1YBNkRRWUJZUxdZWFocIjFmH1ZBSG8AX1lAVg0WGVNYXFVfDR9YRlQCDF9DVkVRXw0fWEZUAgxfQ1ZFUV8NHlZHQxs=","queueTime":0,"applicationTime":40,"agent":"","atts":""}</script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><link href="/skins/print.css" rel="stylesheet" type="text/css" media="print" /><link href="/skins/system.css" rel="stylesheet" type="text/css" media="all" /><link href="/skins/icons.css" rel="stylesheet" type="text/css" media="all" />
+	<link id="ctl00_organisationtemplatesdefaultpagestyles" href="/pagestylesheet/organisation/templates/default/styles.css" rel="stylesheet" type="text/css" media="all" /><link href="/skins/Controls/EventList.css" rel="stylesheet" type="text/css" media="all" /><link href="/skins/Controls/newslayouts.css" rel="stylesheet" type="text/css" media="all" /><link href="/skins/Controls/News.css" rel="stylesheet" type="text/css" media="all" /><link href="/skins/Controls/Organisation/ElectionList.css" rel="stylesheet" type="text/css" media="all" /><link href="/skins/Controls/Basket.css" rel="stylesheet" type="text/css" media="all" /><link href="/stylesheet/LSESU 2017/bootstrap.css" rel="stylesheet" type="text/css" media="all" /><link href="/stylesheet/LSESU 2017/customise.css" rel="stylesheet" type="text/css" media="all" /><link href="/stylesheet/LSESU 2017/fonts.css" rel="stylesheet" type="text/css" media="all" /><link href="/stylesheet/LSESU 2017/navigation.css" rel="stylesheet" type="text/css" media="all" /><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="/assets/site_resources/jquery-1.7.2.min.js"  type="text/javascript"></script>
+<script src="/assets/site_resources/jquery-ui-1.10.3.custom.min.js"  type="text/javascript"></script>
+<script type="text/javascript" src="/assets/site_resources/bootstrap.js"></script>
+<script type="text/javascript" src="/assets/site_resources/html5shiv.js"></script>
+<script type="text/javascript" src="/assets/site_resources/doubletaptogo.js"></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="The London School of Economics Students' Union is the representative and campaigning body for students at The London School of Economics and Political Science (LSE).">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="alternate" type="application/rss+xml" title="Outdoor Adventure News RSS Feed" href="https://www.lsesu.com/news/rss/12131/" /></head>
+    <body id="msl">
+        <form name="aspnetForm" method="post" action="./" id="aspnetForm">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+
+<script src="https://ajax.aspnetcdn.com/ajax/4.6/1/MicrosoftAjax.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+(window.Sys && Sys._Application && Sys.Observer)||document.write('<script type="text/javascript" src="/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvjLEB7oqhakVglR1NkQNLek8OSRjdBgrVDJn5SaMBpUsFfqC1vS9uEWejfaxBkCBkZvTVuWnuCdQLhS-D3kdceMiP9vpVeUCJJN1sqxyRQGZ0pUuFR1OBky1WaJxE__mvk71Qe81&t=44237217"><\/script>');//]]>
+</script>
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="9477CD4C" />
+
+            
+	<script id="ctl00_commonjs" type="text/javascript" src="/scripts/common.js"></script>
+            
+
+            
+            
+            
+            
+            <div id="ctl00_pnlCatchEnter" class="CatchEnter">
+	
+                <input type="submit" name="ctl00$btnCatchEnter" value="" onclick="javascript:return false;" id="ctl00_btnCatchEnter" class="button" style="display:none;" />
+            
+</div>
+            
+            
+
+            <div id="skin_LSESU 2017" class="page_organisation"><div class="org_12131 parent_org_6049">
+	        
+<!-- start of mainnav2016 snippet -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(document).on('click', '.dropdown-menu', function (e) {
+            $(this).hasClass('keep_open') && e.stopPropagation(); // This replace if conditional.
+        }); 
+    });
+$(function(){
+$('#basket dl').css({'border-bottom' : '0'});
+});
+    </script>
+
+<div class="navbar navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsebar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+ <a class="navbar-brand" href="/"><img src="/assets/site_resources/logo_v4.png" /></a>
+        </div>
+        <div class="navbar-collapse collapse" id="collapsebar">
+              <div class="nav-container">
+                    <div class="mslwidget mainnav">
+<ul class="msl_navbar">	<li><a href="/whatson/" class=" msl-itemhassubnav"><span class="nav-text">What&#39;s On</span></a>
+<ul class="level_1 subnav_nav_whatson_">		<li><a href="https://www.lsesu.com/ents/event/6633/" class="nav_whatson_gradball_">Graduation Ball 2018</a></li>
+		<li><a href="https://www.lsesu.com/sheffieldstreet/" class="nav_whatson_streetparty_">Sheffield Street Party</a></li>
+</ul>
+</li>
+	<li><a href="/join-in/" class=" msl-itemhassubnav"><span class="nav-text">Join In</span></a>
+<ul class="level_1 subnav_nav_join-in_">		<li><a href="/join-in/becomeasportsambassador/" class="nav_join-in_becomeasportsambassador_">Become a Sports Ambassador</a></li>
+		<li><a href="https://www.lsesu.com/organisers-hub/get-funding/" class="nav_join-in_getfunding_">Get Funding</a></li>
+		<li><a href="/join-in/new-group/" class="nav_join-in_new-group_">How to Start a New Group</a></li>
+		<li><a href="/join-in/halls-cup/" class="nav_join-in_halls-cup_">LSE Halls Cup</a></li>
+		<li><a href="/join-in/rag/" class="nav_join-in_rag_">RAG (Raising &amp; Giving)</a></li>
+		<li><a href="/join-in/societies/" class="nav_join-in_societies_">Societies</a></li>
+		<li><a href="/join-in/sports/" class="nav_join-in_sports_">Sports and Recreation</a></li>
+		<li><a href="/join-in/media-group/" class="nav_join-in_media-group_">Student Media</a></li>
+		<li><a href="/join-in/committee-hub/" class="nav_join-in_committee-hub_">Committee Hub</a></li>
+</ul>
+</li>
+	<li><a href="/campaigning/" class=" msl-itemhassubnav"><span class="nav-text">Campaigns</span></a>
+<ul class="level_1 subnav_nav_campaigning_">		<li><a href="/campaigning/" class="nav_campaigning_campaigns_">Campaigns</a></li>
+		<li><a href="/campaigning/campaigns-network/" class="nav_campaigning_campaigns-network_">Campaigns Network</a></li>
+</ul>
+</li>
+	<li><a href="/democracy/" class=" msl-itemhassubnav"><span class="nav-text">Representation</span></a>
+<ul class="level_1 subnav_nav_democracy_">		<li><a href="/democracy/democracy-committee/" class="nav_democracy_democracy-committee_">Democracy Committee</a></li>
+		<li><a href="/democracy/elections/" class="nav_democracy_elections_">Elections</a></li>
+		<li><a href="/democracy/resources/" class="nav_democracy_resources_">Resources</a></li>
+		<li><a href="/democracy/sslc-reps/" class="nav_democracy_sslc-reps_">SSLC Reps</a></li>
+		<li><a href="/democracy/student-reps/" class="nav_democracy_student-reps_">Student Reps</a></li>
+		<li><a href="/democracy/trustee-board/" class="nav_democracy_trustee-board_">Trustee Board</a></li>
+		<li><a href="/democracy/ugm/" class="nav_democracy_ugm_">Union General Meetings</a></li>
+</ul>
+</li>
+	<li><a href="/advice/" class=" msl-itemhassubnav"><span class="nav-text">Advice</span></a>
+<ul class="level_1 subnav_nav_advice_">		<li><a href="/advice/suhardshipfunds/" class="nav_advice_suhardshipfunds_">LSESU Hardship Funds</a></li>
+</ul>
+</li>
+	<li><a href="/services/" class=" msl-itemhassubnav"><span class="nav-text">Services</span></a>
+<ul class="level_1 subnav_nav_services_">		<li><a href="/services/drink/" class="nav_services_drink_">Drink</a></li>
+		<li><a href="/services/eat/" class="nav_services_eat_">Eat</a></li>
+		<li><a href="/services/gym/" class="nav_services_gym_">Gym</a></li>
+		<li><a href="/services/shop/" class="nav_services_shop_">LSESU Shop</a></li>
+		<li><a href="/services/nus-extra/" class="nav_services_nus-extra_">NUS Extra</a></li>
+</ul>
+</li>
+	<li><a href="/bookable-spaces/" class=" msl-itemhassubnav"><span class="nav-text">Bookable Spaces</span></a>
+<ul class="level_1 subnav_nav_bookable-spaces_">		<li><a href="/bookable-spaces/lse-spaces/" class="nav_bookable-spaces_lse-spaces_">LSE Spaces</a></li>
+		<li><a href="/bookable-spaces/lsesu-spaces/" class="nav_bookable-spaces_lsesu-spaces_">LSESU Bookable Spaces</a></li>
+		<li><a href="/bookable-spaces/guidelines/" class="nav_bookable-spaces_guidelines_">LSESU Booking Guidelines</a></li>
+		<li><a href="/bookable-spaces/promotional-spaces/" class="nav_bookable-spaces_promotional-spaces_">Promotional Spaces</a></li>
+</ul>
+</li>
+	<li><a href="/lsesu-pro/" class=" msl-itemhassubnav"><span class="nav-text">LSESU Pro</span></a>
+<ul class="level_1 subnav_nav_lsesu-pro_">		<li><a href="/lsesu-pro/beyond-the-classroom/" class="nav_lsesu-pro_beyond-the-classroom_">Beyond the Classroom</a></li>
+		<li><a href="/lsesu-pro/leadership-accreditation/" class="nav_lsesu-pro_leadership-accreditation_">Leadership Accreditation</a></li>
+		<li><a href="/lsesu-pro/mentorship-scheme/" class="nav_lsesu-pro_mentorship-scheme_">Mentorship Scheme</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+              </div>
+            <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="navtext">Options<b class="caret"></b></a>
+
+              <ul id="options" class="dropdown-menu navbar-right keep_open">
+
+                <li><a id="tbbasket">Basket</a></li>
+                <li><a id="tbaccount">Account</a></li>
+                <li><a id="tbcontrols">Control Panel</a></li>
+			    <li><a id="tbadmin">Admin</a></li>
+               <div id="login"><ul><li><div class="mslwidget">
+	
+<a id="ctl00_ctl08_hlExtLogin" class="msl-sso-login-link" rel="nofollow" href="/shib.ashx?ReturnUrl=/organisation/12131/">Student Login</a>
+
+
+</div></li>
+<p class="small">Via University Portal</p>
+<a href="/login"><li>Guest Login</li></a>
+<p class="small">Admin, Alumni, Guests</p></ul>
+</div>
+					    
+                <li class="divider"></li>
+<div id="basket"></div>
+
+<div id="account"></div>
+<div id="controls"></div>
+<div id="admin"></div>
+
+              </ul>
+
+            </li>
+ 
+<!--
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">Search</a>
+<ul class="dropdown-menu navbar-right keep_open">
+<div id="search">
+    <div class="mslwidget">
+	<div id="ctl00_search_pnlSearch">
+	
+	    <input name="ctl00$search$txtSearchStr" type="text" id="ctl00_search_txtSearchStr" class="textbox" />
+	    
+	    <input type="submit" name="ctl00$search$btnSubmit" value="Search" id="ctl00_search_btnSubmit" class="button" />
+	
+</div>
+	</div>
+</div>
+</ul>
+</li>
+-->            
+
+
+        </div><!--/.navbar-collapse -->
+<div class="mslwidget navbanner">
+
+</div>
+      </div>
+
+    </div>
+<script type="text/javascript">
+$(document).ready(function() {
+
+
+//dropdown navigation
+$( ".mainnav ul" ).addClass( "nav navbar-nav" );
+
+//toggle subnav - tab/mobile
+//$(".mainnav ul li:has(ul)").children("ul").hide(); 
+  $(".mainnav ul > li:has(ul)").find("a").click(function() {
+    var parent = $(this).parent()
+    parent.siblings().find("ul.open").removeClass("open");
+    parent.find("ul:first").toggleClass("open");
+  });
+//doubletaptogo
+$( '.mainnav ul > li:has(ul)' ).doubleTapToGo();
+
+    loginCheck = $('.sidepanel.controlpanel');
+    controlCheck = $('#controlpanel.sidepanel');
+    adminCheck = $('#msl_admin');
+
+        if (loginCheck.length === 0) {
+		$('#admin-panel .account,#admin-panel .control,#admin-panel .admin, #tbbasket, #tbadmin,#tbaccount,#tbcontrols,').hide();
+$('#navtext').text('Login');
+		}
+
+    else {
+        $('#login').hide();
+        }
+
+        if (controlCheck.length === 0) {$('#admin-panel .control, #admin-panel .tbcontrol').hide();}
+        
+        if (adminCheck.length === 0) {$('#admin-panel .admin,#admin-panel .tbadmin').hide();}
+
+});
+
+</script>
+<script type="text/javascript">
+$(document).ready(function() {						   
+
+
+	$('a#tbbasket').bind('click', function() {
+		$('div#basket').toggle();
+		$('div#account').css('display', 'none');
+		$('div#controls').css('display', 'none');
+ $('div#admin').css('display','none');																 
+	});
+
+
+	$('a#tbaccount').bind('click', function() {
+		$('div#account').toggle();
+		$('div#basket').css('display', 'none');
+		$('div#controls').css('display', 'none');
+		$('div#admin').css('display', 'none');																 
+	});
+   	
+	$('a#tbcontrols').bind('click', function() {
+		$('div#basket').css('display', 'none');
+		$('div#account').css('display', 'none');
+		$('div#controls').toggle();
+		$('div#admin').css('display', 'none');																 
+	});
+   	
+	$('a#tbadmin').bind('click', function() {
+		$('div#basket').css('display', 'none');
+		$('div#account').css('display', 'none');
+		$('div#controls').css('display', 'none');
+		$('div#admin').toggle();																 
+	});
+
+});
+</script>
+<!-- end of mainnav2016 snippet -->
+
+
+<div class="container">
+<div class="main">
+<div class="topbanner">
+<h1>Outdoor Adventure</h1>
+</div>
+<div class="clear"></div>
+<div class="pagecontent">
+<div class="row">
+
+	
+	        
+	        
+<div id="organisation">
+	<div class="col-md-12">
+<h1 id="topbanner">Outdoor Adventure</h1>
+</div>
+
+
+<div class="col-md-8">
+<h2 class="yellow-header">Outdoor Adventure: Introduction</h2>
+
+<p><div class="mslwidget">
+<p>At LSESU ODAC, we believe that there is great value in experiencing the natural environment, and hence aim to provide a platform and community, for beginners and the experienced alike, for outdoor activities.<br />
+<br />
+We draw on David Kolb&#39;s Experiential Learning theory that &quot;learning is the process whereby knowledge is created through the transformation of experience&rdquo;, and hope to promote experiential learning as a way to better understand the self, the roles we play in a biophysical environment, and to develop empathetic and communicative skills in new environments.<br />
+<br />
+We will plan and facilitate outdoor activities for society members and members of the LSE community, that include but are not restricted to the following: camping, hiking, star gazing, outdoor cooking, and wild swimming.<br />
+<br />
+On a more intimate level, we also hope to encourage a greater appreciation of, and to foster a more informed sense of responsibility to, the natural environment, beyond the means of outdoor activities, through the hosting of relevant guest lectures or panel discussions.<br />
+<br />
+We also intend to provide opportunities for society members to equip themselves with useful skills in outdoor environments, through courses such as Wilderness First Aid, Outdoor Cooking, and Lifeguard training.<br />
+<br />
+Collectively, we hope to create a safe space for individuals to step out of their comfort zones by seeking new experiences, as well as a support community for interaction amongst like-minded individuals, through the shared experience of experiential learning in the outdoors.</p>
+
+<p>We are in the process of procuring outdoor equipment such as tents, sleeping bags and camping bags for our members. For personal outdoor wear, you can check <a href="https://www.lyst.co.uk/shop/mens-clothing/?category=coats&amp;subcategory=parka+coats&amp;final_price_from=0&amp;final_price_to=1000000&amp;ref=%2Fshop%2Fmens-clothing%2F">this</a>&nbsp;website out!</p>
+</div></p>
+
+<p><div class="mslwidget">
+
+
+No elections are currently running
+
+	
+	
+</div></p>
+
+<p></p>
+
+<h3 class="yellow-header">News &amp; Events</h3>
+
+<p><div id="news" class="news_1col news_full">
+
+
+<span id="ctl00_Main_news_lblNoNews">There are no current news articles.</span>
+
+
+
+<div class="killfloat">&nbsp;</div>
+
+
+
+<div class="news_all">
+	
+	<a id="ctl00_Main_news_lnkRSS" class="rss" href="/news/rss/12131/">RSS Feed</a>
+		
+</div>
+
+</div></p>
+
+<p><div class="mslwidget">
+
+<div class="msl_eventlist">
+
+    
+    There are currently no upcoming events.
+
+    
+
+    
+
+</div>
+
+</div></p>
+</div>
+
+<div class="col-md-4">
+<div class="sidebar-item">
+<p><div id="join" class="mslwidget">
+
+<h3>Join</h3>
+
+<div class="msl_notification">
+	<span class="msl_info">Please log in to join this organisation.</span>
+</div>
+
+
+
+
+
+</div></p>
+
+<p></p>
+</div>
+
+<div class="sidebar-item"></div>
+
+<div class="sidebar-item">
+<h3>STARS Award</h3>
+
+<p><div class="mslwidget awardicon">
+
+<ul class="msl-groupingattributelist">
+        <li>
+            <img id="ctl00_Main_groupingattributes_rptAttributeList_ctl01_imgAttribute" class="msl-groupingattributelist-image" src="/assets/site_resources/bronze.png" alt="Image for Bronze attribute" border="0" />
+            <a id="ctl00_Main_groupingattributes_rptAttributeList_ctl01_hlAttribute" class="msl-groupingattributelist-link">Bronze</a>
+        </li>
+    </ul>
+
+</div>
+</p>
+
+<p><a href="http://www.lsesu.com/activities/awards/">Find out more about STARS Awards</a></p>
+</div>
+
+<div class="sidebar-item">
+<h3>Contact</h3>
+
+<p><div class="mslwidget">
+<a class="msl_email" href="mailto:odac@lsesu.org">odac@lsesu.org</a>
+</div></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+</div>
+</div>		
+</div>
+
+	        
+	        
+	        
+
+</div>
+</div>
+<div class="row">
+
+<!-- start of newfooter snippet -->
+<div id="footer">
+<div class="clear"></div>
+<div id="footerinfo">
+<div class="container">
+<div class="row">
+
+<div class="col-md-2">
+<center>
+<img src="/pageassets/join-in/new-group/Screen-Shot-2016-10-27-at-14.54.43.png" alt="" style="" />
+<img src="/assets/site_resources/Fairtrade_University_FINAL_CMYK.png" alt="" style="width:60%;" />
+</center>
+</div>
+
+<div class="col-md-4">
+<h4>About</h4>
+
+<p>London School of Economics & Political Sciences Studentsâ€™ Union.</p>
+<p><small>Charity Number (Registered Charity: Charity Commission): <strong>1143103</strong>; Company Number (Company Limited by Guarantee): <strong>7710669;</strong> We are a London Living Wage employer.</small></p>
+
+<div>
+
+</div>
+
+<ul class="quick_links">
+<li><a href="/about-us">About us</a> / </li>
+<li><a href="/contact">Contact</a> / </li>
+<li><a href="/workforus">Work for us</a> / </li>
+<li><a href="/advertise">Advertise</a> / </li>
+<li><a href="/data-protection">Data Protection</a> </li>
+</ul>
+
+<ul class="quick_links">
+<li><a href="http://www.twitter.com/lsesu" alt="Twitter">Twitter</a> / </li>
+<li><a href="http://www.facebook.com/lsesu" alt="Facebook">Facebook</a> / </li>
+ <li><a href="http://www.youtube.com/user/lsesu" alt="Youtube">Youtube</a> / </li>
+<li><a href="http://www.flickr.com/photos/lsesu" alt="Flickr">Flickr</a> / </li>
+<li><a href="http://lsesu.tumblr.com" alt="Tumblr">Tumblr</a> / </li>
+<li><a href="http://www.instagram.com/lsesu" alt="Instagram">Instagram</a></li>
+</ul>
+
+</div>
+<div class="col-md-6">
+<h4>NUS Extra Card</h4>
+<a href="/services/nus-extra/"><img alt="" src="/assets/site_resources/NUS marketing image.jpg" /></a>
+<p>Site powered by <a href="http://www.ukmsl.com">Membership Solutions.</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- end of newfooter snippet -->
+
+</div>
+</div>
+</div>
+            </div></div>
+
+            <script type="text/javascript">  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-17807932-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+        </form>
+        
+    </body>
+</html>

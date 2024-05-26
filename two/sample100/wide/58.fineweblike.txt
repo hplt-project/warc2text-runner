@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+$txt='03:Jun:2017 "This is an Example!"';
+$re1='.*?';
+$re2='(s)';
+$re3='.*?';
+$re4='(?:[a-z][a-z0-9_]*)';
+$re5='.*?';
+$re6='((?:[a-z][a-z0-9_]*))';
+$re7='.*?';
+$re8='((?:[a-z][a-z0-9_]*))';
+$re=$re1.$re2.$re3.$re4.$re5.$re6.$re7.$re8;
+if ($txt =~ m/$re/is)
+{
+$w1=$1;
+$var1=$2;
+$var2=$3;
+print "($w1) ($var1) ($var2) \n";
+}

@@ -1,0 +1,55 @@
+1 211 314Miejsce w rankingu w Polsce
+--Miejsce Na Świecie
+Stron oglądanych miesięcznie|
+< 300|
+Odwiedzających miesięcznie|
+< 300|
+Wartość na odwiedzającego|
+--|
+Szacowana wartość|
+639,04 zł|
+Linki zewnętrzne|
+--|
+Ilość stron|
+15|
+Ostatnia aktualizacja: 28.04.2017 . Dane szacunkowe, przeczytaj wyłączenie odpowiedzialności.
+www.Ritel.pl
+SerwerPolozenie Serwera|
+Nazwa.pl S.a.Malopolskie
+Krakow
+Polska
+50.08333, 19.91667
+|
+Jej 3 serwerów nazw to ns2.nazwa.pl, ns3.nazwa.pl, i ns1.nazwa.pl. Nazwa.pl S.a (Malopolskie, Krakow) jest lokalizacją serwera Apache/2. Numer IP serwera Ritel.pl to 77.55.137.189.
+IP: 77.55.137.189
+Web serwer: Apache/2
+kodowanie: utf-8
+PING www. (77.55.137.189) 56(84) bajtów danych.|
+64 bajty od afh189.rev.netart.pl (77.55.137.189): icmp_seq=1 ttl=51 czas=203 ms|
+64 bajty od afh189.rev.netart.pl (77.55.137.189): icmp_seq=2 ttl=51 czas=207 ms|
+64 bajty od afh189.rev.netart.pl (77.55.137.189): icmp_seq=3 ttl=51 czas=210 ms|
+--- www. ping statystyka ---|
+3 pakiety przesyłane, 3 otrzymał, 0% utraty pakietów, czas 2213ms|
+rtt min/avg/max/mdev = 203.760/207.230/210.347/2.700 ms|
+rtt min/avg/max/mdev = 203.760/207.230/210.347/2.700 ms|
+W teście ping zarejestrowano czas 203 ms.
+Ustawienia Serwera|
+Date:|
+--|
+Content-Type:|
+text/html|
+Content-Length:|
+5|
+Connection:|
+keep-alive|
+Last-Modified:|
+--|
+ETag:|
+"6f05b68-5-4a7a8eb9b2400"|
+Accept-Ranges:|
+bytes|
+Vary:|
+Accept-Encoding|
+Server:|
+Apache/2|
+Hello|

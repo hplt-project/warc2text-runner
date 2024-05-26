@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en-US" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en-US" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en-US" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en-US" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"637e16e3aa",applicationID:"83017010"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1211.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <title>Mr Rajesh Agarwal | 4th Steel Scrap, Billet &amp; DRI Trade Summit</title>
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <link rel="pingback" href="https://events.steelmintgroup.com/xmlrpc.php">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <!-- For SEO -->
+            <meta name="description" content="SteelMint Events is organising a combined conference on Steel Scrap, Billet DRI and Graphite Electrode on 27th to 29th August 2019 in Bangkok, Thailand.">
+                <meta name="keywords" content="Steel Conference, Scrap Conference, Raw Material Conference, Steel Events ASIA, scrap in Chinese market, global scrap trade, Chinese steel market, Indian metal recycling policy, steel exports">
+        <!-- End SEO-->
+
+    <link rel="shortcut icon" href="https://events.steelmintgroup.com/wp-content/uploads/2019/06/favicon.png">
+    <link rel="apple-touch-icon" href="https://events.steelmintgroup.com/wp-content/uploads/2019/06/SteelMint-Event-logo.png">
+     
+
+     
+                            <script>
+                            /* You can add more configuration options to webfontloader by previously defining the WebFontConfig with your options */
+                            if ( typeof WebFontConfig === "undefined" ) {
+                                WebFontConfig = new Object();
+                            }
+                            WebFontConfig['google'] = {families: ['Raleway:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic', 'Roboto:100,300,400,500,700,900,100italic,300italic,400italic,500italic,700italic,900italic']};
+
+                            (function() {
+                                var wf = document.createElement( 'script' );
+                                wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.5.3/webfont.js';
+                                wf.type = 'text/javascript';
+                                wf.async = 'true';
+                                var s = document.getElementsByTagName( 'script' )[0];
+                                s.parentNode.insertBefore( wf, s );
+                            })();
+                        </script>
+                        <link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="4th Steel Scrap, Billet &amp; DRI Trade Summit &raquo; Feed" href="https://events.steelmintgroup.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="4th Steel Scrap, Billet &amp; DRI Trade Summit &raquo; Comments Feed" href="https://events.steelmintgroup.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="4th Steel Scrap, Billet &amp; DRI Trade Summit &raquo; Mr Rajesh Agarwal Comments Feed" href="https://events.steelmintgroup.com/speaker/mr-rajesh-agarwal-2/feed/" />
+<meta property="og:title" content="Mr Rajesh Agarwal"/><meta property="og:type" content="article"/><meta property="og:url" content="https://events.steelmintgroup.com/speaker/mr-rajesh-agarwal-2/"/><meta property="og:site_name" content="4th Steel Scrap, Billet &amp; DRI Trade Summit"/><meta property="og:image" content="https://events.steelmintgroup.com/wp-content/uploads/2019/07/Mr-Rajesh-Agarwal.png"/>
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/events.steelmintgroup.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.12"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])?!1:!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wplc-admin-style-emoji-css'  href='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support//js/vendor/wdt-emoji/wdt-emoji-bundle.css?ver=8.0.36' type='text/css' media='all' />
+<link rel='stylesheet' id='wplc-user-pro-styles-css'  href='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support/css/wplc_styles_pro.css?ver=5.2.12' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://events.steelmintgroup.com/wp-includes/css/dist/block-library/style.min.css?ver=5.2.12' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='https://events.steelmintgroup.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.1.4' type='text/css' media='all' />
+<link rel='stylesheet' id='wplc-font-awesome-css'  href='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support/css/font-awesome.min.css?ver=5.2.12' type='text/css' media='all' />
+<link rel='stylesheet' id='wplc-style-css'  href='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support/css/wplcstyle.css?ver=8.0.36' type='text/css' media='all' />
+<style id='wplc-style-inline-css' type='text/css'>
+#wp-live-chat-header { background:url('https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support//images/chaticon.png') no-repeat; background-size: cover; }  #wp-live-chat-header.active { background:url('https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support/images/iconCloseRetina.png') no-repeat; background-size: cover; } #wp-live-chat-4 { background:url('https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support/images/bg/tech.jpg') repeat; background-size: cover; }
+</style>
+<link rel='stylesheet' id='wplc-theme-palette-1-css'  href='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support/css/themes/theme-1.css?ver=8.0.36' type='text/css' media='all' />
+<link rel='stylesheet' id='wplc-theme-modern-css'  href='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support/css/themes/modern.css?ver=8.0.36' type='text/css' media='all' />
+<link rel='stylesheet' id='wplc-theme-position-css'  href='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support/css/themes/position-bottom-right.css?ver=8.0.36' type='text/css' media='all' />
+<link rel='stylesheet' id='wplc-gutenberg-template-styles-user-css'  href='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support/includes/blocks/wplc-chat-box/wplc_gutenberg_template_styles.css?ver=5.2.12' type='text/css' media='all' />
+<link rel='stylesheet' id='wplc-gif-integration-user-css'  href='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support/css/wplc_gif_integration.css?ver=5.2.12' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap_min-css'  href='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/plugins/bootstrap/css/bootstrap.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='https://events.steelmintgroup.com/wp-content/plugins/js_composer/assets/lib/bower/font-awesome/css/font-awesome.min.css?ver=5.7' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-select-css'  href='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/plugins/bootstrap-select/bootstrap-select.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='owl-carousel-css'  href='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/plugins/owlcarousel2/assets/owl.carousel.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='theme-default-css'  href='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/plugins/owlcarousel2/assets/owl.theme.default.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='prettyphoto-css'  href='https://events.steelmintgroup.com/wp-content/plugins/js_composer/assets/lib/prettyphoto/css/prettyPhoto.min.css?ver=5.7' type='text/css' media='all' />
+<link rel='stylesheet' id='animate-css'  href='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/plugins/animate/animate.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='countdown-css'  href='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/plugins/countdown/jquery.countdown.css' type='text/css' media='all' />
+<link rel='stylesheet' id='newhome-css'  href='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/css/newhome.css' type='text/css' media='all' />
+<link rel='stylesheet' id='theme-style-css'  href='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/style.css?ver=5.2.12' type='text/css' media='all' />
+<link rel='stylesheet' id='custom-css-css'  href='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/css/custom.css?ver=5.2.12' type='text/css' media='all' />
+<script>if (document.location.protocol != "https:") {document.location = document.URL.replace(/^http:/i, "https:");}</script><script type='text/javascript' src='https://events.steelmintgroup.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support/js/jquery-cookie.js?ver=5.2.12'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var config = {"baseurl":"https:\/\/events.steelmintgroup.com\/wp-content\/plugins\/wp-live-chat-support\/","serverurl":"https:\/\/tcx-live-chat.appspot.com"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support//js/wplc_common_node.js?ver=8.0.36'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wplc_datetime_format = {"date_format":"F j, Y","time_format":"g:i a"};
+var wplc_use_node_server = "true";
+var bleeper_api_key = "cde64d2f43310433712c5dcdb434f091";
+var bleeper_override_upload_url = "https:\/\/events.steelmintgroup.com\/wp-json\/wp_live_chat_support\/v1\/remote_upload";
+var wplc_guid = "306ca512cd4048b4d2976f197b6bd40e9ac8ebb2";
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support/js/wplc_server.js?ver=8.0.36'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wplc_restapi_enabled = "1";
+var wplc_restapi_token = "6bb64133a1e696138f159f9ff111f4b6";
+var wplc_restapi_endpoint = "https:\/\/events.steelmintgroup.com\/wp-json\/wp_live_chat_support\/v1";
+var wplc_restapi_nonce = "4babdc1b0d";
+var bleeper_message_override = "\/\/events.steelmintgroup.com\/wp-content\/plugins\/wp-live-chat-support\/includes\/sounds\/general\/ding.mp3";
+var wplc_is_mobile = "false";
+var wplc_ajaxurl = "https:\/\/events.steelmintgroup.com\/wp-admin\/admin-ajax.php";
+var wplc_ajaxurl_site = "https:\/\/events.steelmintgroup.com\/wp-admin\/admin-ajax.php";
+var wplc_nonce = "6bdd058422";
+var wplc_plugin_url = "https:\/\/events.steelmintgroup.com\/wp-content\/plugins\/wp-live-chat-support\/";
+var wplc_preload_images = ["https:\/\/events.steelmintgroup.com\/wp-content\/uploads\/2019\/07\/60x60-icon-2.png","https:\/\/events.steelmintgroup.com\/wp-content\/plugins\/wp-live-chat-support\/images\/iconRetina.png","https:\/\/events.steelmintgroup.com\/wp-content\/plugins\/wp-live-chat-support\/images\/iconCloseRetina.png"];
+var wplc_show_chat_detail = {"name":"","avatar":"1","date":"1","time":"1"};
+var wplc_agent_data = {"1":{"name":"admin","md5":"af1d4e200289503fcfe7e4229ece6275","tagline":""}};
+var wplc_error_messages = {"valid_name":"Please Enter Your Name","valid_email":"Please Enter Your Email Address","server_connection_lost":"Connection to Server Lost. Please Reload This Page. Error: ","chat_ended_by_operator":"The chat has been ended by the operator.","empty_message":"Please Enter a Message","disconnected_message":"Disconnected, Attempting to Reconnect..."};
+var wplc_enable_ding = "1";
+var wplc_filter_run_override = "1";
+var wplc_offline_msg = "Sending message...";
+var wplc_offline_msg3 = "Thank you for your message. We will be in contact soon.";
+var wplc_welcome_msg = "Please standby for an agent. While you wait for the agent you may type your message.";
+var wplc_pro_sst1 = "Start Chat";
+var wplc_pro_offline_btn_send = "Send message";
+var wplc_user_default_visitor_name = "Guest";
+var wplc_localized_string_is_typing = "agent is typing...";
+var wplc_localized_string_is_typing_single = " is typing...";
+var bleeper_localized_strings = [" has joined."," has left."," has ended the chat."," has disconnected.","(edited)","Type here"];
+var wplc_extra_data = {"object_switch":"1"};
+var wplc_hide_chat = null;
+var wplc_redirect_thank_you = "https:\/\/events.steelmintgroup.com\/";
+var wplc_misc_strings = {"typing_enabled":"1","typingimg":"https:\/\/events.steelmintgroup.com\/wp-content\/plugins\/wp-live-chat-support\/images\/comment.svg"};
+var wplc_integration_pro_active = "true";
+var wplc_delay = "2000";
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support/js/wplc_u.js?ver=8.0.36'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support/js/md5.js?ver=8.0.36'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support//js/vendor/sockets.io/socket.io.slim.js?ver=8.0.36'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support//js/vendor/wdt-emoji/wdt-emoji-concat.min.js?ver=8.0.36'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support/js/wplc_node.js?ver=8.0.36'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support/js/wplc_u_node_events.js?ver=8.0.36'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wplc_user_avatars = {"1":"\/\/www.gravatar.com\/avatar\/af1d4e200289503fcfe7e4229ece6275"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support/js/themes/modern.js?ver=8.0.36'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support/js/bleeper_action_events.js?ver=8.0.36'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wplc_pro_auto_resp_chat_msg = "Welcome to Our Website!";
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support/js/wplc_pro_features.js?ver=5.2.12'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support/js/wplc_u_node_pro_events.js?ver=8.0.36'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/plugins/wp-live-chat-support/js/wplc_u_editor.js?ver=5.2.12'></script>
+<link rel='https://api.w.org/' href='https://events.steelmintgroup.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://events.steelmintgroup.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://events.steelmintgroup.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Alok Mukherjee' href='https://events.steelmintgroup.com/speaker/alok-mukherjee/' />
+<link rel='next' title='Kunal Kanti Sarkar' href='https://events.steelmintgroup.com/speaker/kunal-kanti-sarkar-2/' />
+<meta name="generator" content="WordPress 5.2.12" />
+<link rel="canonical" href="https://events.steelmintgroup.com/speaker/mr-rajesh-agarwal-2/" />
+<link rel='shortlink' href='https://events.steelmintgroup.com/?p=17168' />
+<link rel="alternate" type="application/json+oembed" href="https://events.steelmintgroup.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fevents.steelmintgroup.com%2Fspeaker%2Fmr-rajesh-agarwal-2%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://events.steelmintgroup.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fevents.steelmintgroup.com%2Fspeaker%2Fmr-rajesh-agarwal-2%2F&#038;format=xml" />
+
+        <script type="text/javascript">
+            var wplc_ajaxurl = 'https://events.steelmintgroup.com/wp-admin/admin-ajax.php';
+            var wplc_nonce = '6bdd058422';
+        </script>
+
+
+
+
+        
+         <style type="text/css">
+
+                        .shrink .logo img{
+              height: 50px;
+            }
+            /* RED 2 */
+            #preloader {
+              background-color: #ffffff;
+            }
+            .spinner {
+              background: #ffffff;
+              box-shadow: inset 0 0 0 0.12em rgba(0, 0, 0, 0.2);
+              background: -webkit-linear-gradient(#dd3333 50%, #353535 50%), -webkit-linear-gradient(#353535 50%, #dd3333 50%);
+              background: linear-gradient(#dd3333 50%, #353535 50%), linear-gradient(#353535 50%, #dd3333 50%);
+            }
+            .spinner:after {
+              border: 0.9em solid #ffffff;
+            }
+            body {
+              background: #fbfbfb;
+              color: #6d7a83;
+            }
+            .wide .page-section.light,.boxednew .page-section.light{
+              background-color: #f5f5f5;
+              color: #435469;
+            }
+            .color,.wide .page-section.color,.boxednew .page-section.color {
+              background-color: #dd3333;
+              color: #ffffff;
+            }
+            h1,h2,h3,h4,h5,h6 { color: #141f23;}
+            h1 .fa,h2 .fa,h3 .fa,h4 .fa,h5 .fa,h6 .fa,h1 .glyphicon,h2 .glyphicon,h3 .glyphicon,h4 .glyphicon,h5 .glyphicon,h6 .glyphicon {
+              color: #e71f16;
+            }
+            .section-title {
+              color: #0d1d31;
+            }
+            .section-title small {
+              color: #374146;
+            }
+            .dark .section-title,.dark .section-title small,.color .section-title,.color .section-title small {
+              color: #ffffff;
+            }
+            .body-dark .color .section-title small{
+              color: #435469;
+            }
+            .color .section-title:after {
+              color: #141f23;
+            }
+            .section-title .fa-stack .fa {
+              color: #ffffff;
+            }
+            .color .section-title .fa-stack .fa {
+              color: #dd3333;
+            }
+            .section-title .rhex {
+              background-color: #dd3333;
+            }
+            .color .section-title .rhex {
+              background-color: #ffffff;
+            }
+            .rhex {
+              background-color: #dd3333;
+            }
+            a {
+              color: #dd3333;
+            }
+            a:hover,a:active,a:focus {
+              color: #000000;
+            }
+            .color a {
+              color: #ffffff;
+            }
+            .color a:hover,.color a:active,.color a:focus {
+              color: #000000;
+            }
+            .dropcap {
+              color: #e71f16;
+            }
+            .text-lg {
+              color: #141f23;
+            }
+            .page-header {
+              color: #515151;
+            }
+            .page-header h1 {
+              color: #515151;
+            }
+            .page-header h1 small {
+              color: #6f6f6f;
+            }
+            hr.page-divider {
+              border-color: #eeeeee;
+            }
+            hr.page-divider:after {
+              border-bottom: solid 1px #eeeeee;
+            }
+            hr.page-divider.single {
+              border-color: #646464;
+            }
+            .btn-theme {
+              color: #ffffff;
+              background-color: #dd3333;
+              border-color: #dd3333;
+            }
+            .btn-theme:hover {
+              background-color: #435469;
+              border-color: #435469;
+              color: #ffffff;
+            }
+            .color .btn-theme {
+              color: #dd3333;
+              background-color: #ffffff;
+              border-color: #ffffff;
+            }
+            .color .btn-theme:hover {
+              background-color: #435469;
+              border-color: #435469;
+              color: #ffffff;
+            }
+            .btn-theme-transparent,
+            .btn-theme-transparent:focus,
+            .btn-theme-transparent:active {
+              background-color: transparent;
+              border-color: #dd3333;
+              color: #dd3333;
+            }
+            .btn-theme-transparent:hover {
+              background-color: #435469;
+              border-color: #435469;
+              color: #ffffff;
+            }
+            .btn-theme-transparent-grey,
+            .btn-theme-transparent-grey:focus,
+            .btn-theme-transparent-grey:active {
+              background-color: transparent;
+              border-color: #435469;
+              color: #435469;
+            }
+            .btn-theme-transparent-grey:hover {
+              background-color: #435469;
+              border-color: #435469;
+              color: #ffffff;
+            }
+            .btn-theme-transparent-white,
+            .btn-theme-transparent-white:focus,
+            .btn-theme-transparent-white:active {
+              background-color: transparent;
+              border-color: #ffffff;
+              color: #ffffff;
+            }
+            .btn-theme-transparent-white:hover {
+              background-color: #435469;
+              border-color: #435469;
+              color: #ffffff;
+            }
+            .btn-theme-grey {
+              background-color: #f5f5f5;
+              border-color: #e8e8e8;
+              color: #e71f16;
+            }
+            .btn-theme-grey:hover,
+            .btn-theme-grey:focus,
+            .btn-theme-grey:active {
+              background-color: #435469;
+              border-color: #435469;
+              color: #ffffff;
+            }
+            .form-control {
+              border: 1px solid #c8cdd2;
+              color: #6d7a83;
+            }
+            .form-control:focus {
+              border-color: #dd3333;
+            }
+            .bootstrap-select > .selectpicker {
+              border: 1px solid #c8cdd2;
+              color: #6d7a83 !important;
+              background-color: #ffffff !important;
+            }
+            .bootstrap-select > .selectpicker:focus {
+              border-color: #dd3333;
+            }
+            .registration-form .tooltip-inner {
+              background-color: #dd3333;
+            }
+            .registration-form .tooltip-arrow {
+              border-top-color: #dd3333;
+            }
+            .registration-form .tooltip.top .tooltip-arrow {
+              border-top-color: #dd3333;
+            }
+            .sub-page .header {
+              background-color: #81868c;
+            }
+            .home.sub-page .header{
+              background-color: transparent;
+            }
+            .home.blog .header{
+              background-color: #81868c;
+            }
+
+            .wide .header.shrink,
+            .boxednew .header.shrink  {
+              background-color: rgba(129, 134, 140, 0.8);
+            }
+            .logo a {
+              color: #ffffff;
+            }
+            .logo a:hover {
+              color: #dd3333;
+            }
+            .logo a .logo-hex {
+              background-color: #dd3333;
+            }
+            .logo a:hover .logo-hex {
+              background-color: #ffffff;
+            }
+            .logo a .logo-fa {
+              color: #ffffff;
+            }
+            .logo a:hover .logo-fa {
+              color: #dd3333;
+            }
+           
+            .sf-menu li.active {
+              background-color: rgba(13, 29, 49, 0.3);
+            }
+            .sf-menu li.active > a {
+              color: #ffffff;
+            }
+            .sf-menu ul li {
+              background: #f2f2f2;
+            }
+            .sf-arrows .sf-with-ul:after {
+              border-top-color: #9e9e9e;
+            }
+            .sf-arrows > li > .sf-with-ul:focus:after,
+            .sf-arrows > li:hover > .sf-with-ul:after,
+            .sf-arrows > .sfHover > .sf-with-ul:after {
+              border-top-color: #dd3333;
+            }
+            .sf-arrows ul .sf-with-ul:after {
+              border-left-color: #9e9e9e;
+            }
+            .sf-arrows ul li > .sf-with-ul:focus:after,
+            .sf-arrows ul li:hover > .sf-with-ul:after,
+            .sf-arrows ul .sfHover > .sf-with-ul:after {
+              border-left-color: #dd3333;
+            }
+            .menu-toggle {
+              color: #ffffff !important;
+            }
+            @media (max-width: 991px) {
+              .navigation {
+                background-color: rgba(13, 29, 49, 0.95);
+              }
+            }
+            @media (max-width: 991px) {
+              .mobile-submenu {
+                background-color: #dd3333;
+              }
+            }
+            #main-slider.owl-theme .owl-controls .owl-buttons .owl-prev,
+            #main-slider.owl-theme .owl-controls .owl-buttons .owl-next {
+              color: #ffffff;
+              text-shadow: 1px 1px 0 #141f23;
+            }
+            #main-slider.owl-theme .owl-controls .owl-buttons .owl-prev:hover,
+            #main-slider.owl-theme .owl-controls .owl-buttons .owl-next:hover {
+              color: #dd3333;
+            }
+            #main-slider .caption-title {
+              color: #ffffff;
+              text-shadow: 1px 1px #000000;
+            }
+            #main-slider .caption-title span:before,
+            #main-slider .caption-title span:after {
+              border-top: solid 1px #ffffff;
+              border-bottom: solid 1px #ffffff;
+            }
+            #main-slider .caption-subtitle {
+              color: #ffffff;
+              text-shadow: 1px 1px #000000;
+            }
+            #main-slider .caption-subtitle .fa {
+              color: #ffffff;
+            }
+            #main-slider .caption-subtitle span {
+              color: #253239;
+            }
+            #main-slider .caption-text {
+              color: #8c8e93;
+            }
+            .form-background {
+              background-color: #0d1d31;
+            }
+            .form-header {
+              background-color: #dd3333;
+            }
+            .text-holder:before,
+            .text-holder:after {
+              border-top: solid 1px #ffffff;
+              border-bottom: solid 1px #ffffff;
+            }
+            .btn-play {
+              border: solid 1px #ffffff;
+              background-color: rgba(255, 255, 255, 0.3);
+            }
+            .btn-play .fa {
+              background-color: #ffffff;
+              color: #dd3333;
+            }
+            .btn-play:hover {
+              border-color: #dd3333;
+            }
+            .btn-play:hover .fa {
+              background-color: #dd3333;
+            }
+            .btn-play:hover .fa {
+              color: #ffffff;
+            }
+
+            .event-background {
+              background-color: #0d1d31;
+            }
+            .event-description {
+              color: #ffffff;
+            }
+            .event-description .media-heading {
+              color: #d01c14;
+            }
+            .img-carousel .owl-controls .owl-page span,
+            .img-carousel .owl-controls .owl-buttons div {
+              background-color: #dd3333;
+            }
+            /* 3.4 - Partners carousel / Owl carousel
+            /* ========================================================================== */
+            .partners-carousel .owl-carousel div a {
+              background-color: #f3f4f5;
+            }
+            .partners-carousel .owl-prev,
+            .partners-carousel .owl-next {
+              border: solid 1px #435469;
+              color: #435469;
+            }
+            .partners-carousel .owl-prev .fa,
+            .partners-carousel .owl-next .fa {
+              color: #435469;
+            }
+            .partners-carousel .owl-prev:hover,
+            .partners-carousel .owl-next:hover {
+              border-color: #dd3333;
+              color: #dd3333;
+            }
+            .partners-carousel .owl-prev:hover .fa,
+            .partners-carousel .owl-next:hover .fa {
+              color: #dd3333;
+            }
+            .page-section.breadcrumbs {
+              background-color: #f9f9f9;
+            }
+            .breadcrumbs .breadcrumb:after {
+              background-color: #e1e1e1;
+            }
+            .schedule-wrapper {
+              border: solid 1px #435469;
+              border-bottom-width: 10px;
+            }
+            .schedule-tabs.lv1 {
+              background-color: #435469;
+              color: #ffffff;
+            }
+            .schedule-tabs.lv2 {
+              border: solid 1px #8598b0;
+              background-color: #ffffff;
+            }
+            .schedule-wrapper .schedule-tabs.lv1 .nav > li > a {
+              color: #ffffff;
+            }
+            .schedule-wrapper .schedule-tabs.lv1 .nav > li.active:before {
+              border-top: 7px solid #435469;
+            }
+            .schedule-wrapper .schedule-tabs.lv2 .nav > li > a {
+              color: #293239;
+            }
+            .schedule-wrapper .schedule-tabs.lv2 .nav > li.active > a {
+              color: #dd3333;
+            }
+            .schedule-wrapper .schedule-tabs.lv2 .nav > li.active:before {
+              background-color: #dd3333;
+            }
+            .row.faq .tab-content {
+              border: solid 1px #435469;
+              background-color: #fdfdfd;
+            }
+            @media (min-width: 768px) {
+              .row.faq .tab-content:before {
+                border-right: 10px solid #435469;
+              }
+              .row.faq .tab-content:after {
+                border-right: 10px solid #fdfdfd;
+              }
+            }
+            .row.faq .nav li a {
+              border: solid 1px #435469;
+              background-color: #fdfdfd;
+              color: #374146;
+            }
+            .row.faq .nav li.active a,
+            .row.faq .nav li a:hover {
+              background-color: #dd3333;
+              border-color: #dd3333;
+              color: #ffffff;
+            }
+            .post-title {
+              color: #0d1d31;
+            }
+            .post-title a {
+              color: #0d1d31;
+            }
+            .post-title a:hover {
+              color: #dd3333;
+            }
+            .post-header .post-meta {
+              color: #dd3333;
+            }
+            .post-header .post-meta a,
+            .post-header .post-meta .fa {
+              color: #435469;
+            }
+            .post-header .post-meta a:hover {
+              color: #dd3333;
+            }
+            .post-readmore .btn {
+              border-color: #435469;
+              color: #435469;
+            }
+            .post-readmore .btn:hover,
+            .post-readmore .btn:focus {
+              background-color: #435469;
+              border-color: #435469;
+              color: #ffffff;
+            }
+            .post-meta-author a {
+              color: #464c4e;
+            }
+            .post-meta-author a:hover {
+              color: #000000;
+            }
+            .post-type {
+              background-color: rgba(255, 255, 255, 0.8);
+            }
+            .post + .post {
+              border-top: solid 1px #efefef;
+            }
+            .about-the-author {
+              border-top: solid 1px #efefef;
+            }
+            .timeline .media-body {
+              background-color: #ffffff;
+            }
+            .timeline .post-media {
+              border: solid 8px #afb4ba;
+            }
+            .timeline .no.post-media {
+              border: none;
+            }
+            .timeline .post-title {
+              color: #dd3333;
+              border-bottom: solid 1px #d2d2dc;
+            }
+            .timeline .post-title a {
+              color: #dd3333;
+            }
+            .body-dark .timeline .post-title a{
+              color: #fff;
+            }
+            .timeline .post-title a:hover {
+              color: #000000;
+            }
+            .timeline .post-meta a .fa {
+              color: #dd3333;
+            }
+            .timeline .post-meta a:hover .fa {
+              color: #293239;
+            }
+            .timeline .post-readmore {
+              color: #293239;
+            }
+            .timeline .post-readmore a {
+              color: #293239;
+            }
+            .timeline .post-readmore a:hover {
+              color: #dd3333;
+            }
+            .comments {
+              border-top: solid 1px #efefef;
+            }
+            .comment-date {
+              color: #b0afaf;
+            }
+            .comment-reply {
+              border-bottom: solid 1px #efefef;
+            }
+            .comments-form {
+              border-top: solid 1px #efefef;
+            }
+            .pagination-wrapper {
+              border-top: solid 1px #efefef;
+            }
+            .pagination > li > a {
+              background-color: #f5f5f5;
+              color: #253239;
+            }
+            .pagination > li > a:hover,
+            .pagination > li > span:hover,
+            .pagination > li > a:focus,
+            .pagination > li > span:focus {
+              background-color: #dd3333;
+              color: #ffffff;
+            }
+            .pagination > .active > a,
+            .pagination > .active > span,
+            .pagination > .active > a:hover,
+            .pagination > .active > span:hover,
+            .pagination > .active > a:focus,
+            .pagination > .active > span:focus {
+              background-color: #dd3333!important;
+              border-color: #dd3333!important;
+            }
+
+            .project-details .dl-horizontal dt {
+              color: #3c4547;
+            }
+            .thumbnail.hover,
+            .thumbnail:hover {
+              border: solid 1px #dd3333;
+            }
+            .thumbnail .caption.hovered {
+              background-color: rgba(221,51, 51, 0.5);  
+              color: #ffffff;
+            }
+            .caption-title {
+              color: #0d1d31;
+            }
+            .hovered .caption-title {
+              color: #ffffff;
+            }
+            .caption-buttons .btn {
+              color: #ffffff;
+            }
+            .caption-category {
+              color: #dd3333;
+            }
+            .caption-redmore {
+              color: #c4334b;
+            }
+            .caption-redmore:hover {
+              color: #000000;
+            }
+            .testimonial .media-heading {
+              color: #0d1d31;
+            }
+            .color .testimonials.owl-theme .owl-dots .owl-dot span {
+              background-color: #dd3333;
+              border: solid 2px #ffffff;
+            }
+            .color .testimonials.owl-theme .owl-dots .owl-dot.active span,
+            .color .testimonials.owl-theme .owl-dots .owl-dot:hover span {
+              background-color: #ffffff;
+            }
+            .wide .footer-meta,
+            .boxednew .footer-meta  {
+              background-color: #f5f5f5;
+              color: #414650;
+            }
+            .footer .widget-title {
+              color: #ffffff;
+            }
+            .sidebar .widget-title small {
+              color: #999999;
+            }
+            .footer .widget-title small {
+              color: #818181;
+            }
+            .widget-title:before {
+              background-color: #dd3333;
+            }
+            #af-form .form-control {
+              background-color: #ffffff;
+              border-color: #ffffff;
+              color: #ffffff;
+            }
+            #af-form .form-control:focus {
+              border-color: #dd3333;
+            }
+            #af-form .alert {
+              border-color: #dd3333;
+              background-color: #dd3333;
+              color: #ffffff;
+            }
+            #af-form .tooltip-inner {
+              background-color: #000000;
+            }
+            #af-form .tooltip-arrow {
+              border-top-color: #000000;
+            }
+            .form-button-reset {
+              color: #253239;
+              background-color: #f5f5f5;
+              border-color: #e8e8e8;
+            }
+            .form-button-reset:focus,
+            .form-button-reset:hover {
+              color: #ffffff;
+              background-color: #999999;
+              border-color: #999999;
+            }
+            .color #af-form .form-control {
+              border-color: #ffffff;
+              background-color: rgba(2, 2, 2, 0.2);
+            }
+            .color #af-form .form-control:focus {
+              background-color: rgba(2, 2, 2, 0.5);
+            }
+            .social-line a {
+              background-color: #c3c3c3;
+              color: #ffffff;
+            }
+            .social-line a:before {
+              border-bottom: 10px solid #c3c3c3;
+            }
+            .social-line a:after {
+              border-top: 10px solid #c3c3c3;
+            }
+            .price-table {
+              border: solid 1px #0d1d31;
+            }
+            .price-label {
+              background-color: #f5f5f5;
+              color: #475056;
+            }
+            .price-label-title {
+              color: #475056;
+            }
+            .price-value {
+              color: #dd3333;
+            }
+            .price-table-row {
+              color: #6d7a83;
+              border-top: solid 1px #c5c7c9;
+            }
+            .price-table-row-bottom {
+              border-top: solid 1px #c5c7c9;
+            }
+            .price-table.featured {
+              border-color: #dd3333;
+            }
+            .price-table.featured:before {
+              background-color: #dd3333;
+              color: #ffffff;
+            }
+            .container.gmap-background .on-gmap.color {
+              background-color: #dd3333;
+              color: #fefefe;
+            }
+            .parallax h1,
+            .parallax h2,
+            .parallax h3,
+            .parallax h4,
+            .parallax h5,
+            .parallax h6 {
+              color: #ffffff;
+            }
+            .parallax .block-text {
+              color: #ffffff;
+            }
+            .parallax-inner {
+              color: #ffffff;
+            }
+            .error-number {
+              color: #0d1d31;
+            }
+            .to-top {
+              background-color: #373737;
+              color: #9f9197;
+            }
+            .to-top:hover {
+              background-color: #dd3333;
+              color: #ffffff;
+            }
+            .btn-preview-light,
+            .btn-preview-light:hover {
+              border-color: #f5f5f5;
+              background-color: #dd3333;
+            }
+            .btn-preview-dark,
+            .btn-preview-dark:hover {
+              border-color: #f5f5f5;
+              background-color: #0d1d31;
+            }
+            .sidebar .widget-title {
+              color: #dd3333;
+            }
+            .widget.categories li.active a,
+            .widget.categories li a:hover {
+              background-color: #dd3333;
+              color: #ffffff;
+            }
+            .about-the-author .media-heading {
+              color: #dd3333;
+            }
+            .comments-form .block-title {
+              color: #dd3333 !important;
+            }
+            .error-page .logo a,
+            .error-page .logo a:hover {
+              color: #ffffff;
+            }
+            .error-page .logo a .logo-hex,
+            .error-page .logo a:hover .logo-hex {
+              background-color: #ffffff;
+            }
+            .error-page .logo a .logo-fa,
+            .error-page .logo a:hover .logo-fa {
+              color: #dd3333;
+            }
+            /* dark version */
+            .body-dark .section-title .rhex {
+              background-color: #dd3333;
+            }
+            .body-dark .color .section-title .rhex {
+              background-color: #dd3333;
+            }
+            .body-dark .form-background .section-title .rhex {
+              background-color: #ffffff;
+            }
+            .body-dark .form-background .section-title .fa-stack-1x {
+              color: #dd3333 !important;
+            }
+            .body-dark .color .btn-theme {
+              background-color: #dd3333;
+              border-color: #dd3333;
+            }
+            .body-dark .form-control:focus {
+              border-color: #e71f16;
+            }
+            .body-dark .event-background {
+              background-color: #dd3333;
+            }
+            .body-dark .post-header .post-meta {
+              color: #dd3333;
+            }
+            .body-dark .pagination-wrapper {
+              border-top: solid 1px #435469;
+            }
+            .body-dark .pagination > li > a {
+              background-color: #435469 ;
+              color: #f5f5f5;
+            }
+            .body-dark .pagination > li > a:hover,
+            .body-dark .pagination > li > span:hover,
+            .body-dark .pagination > li > a:focus,
+            .body-dark .pagination > li > span:focus {
+              background-color: #dd3333;
+              color: #ffffff;
+            }
+            .body-dark .pagination > .active > a,
+            .body-dark .pagination > .active > span,
+            .body-dark .pagination > .active > a:hover,
+            .body-dark .pagination > .active > span:hover,
+            .body-dark .pagination > .active > a:focus,
+            .body-dark .pagination > .active > span:focus {
+              background-color: #dd3333;
+              border-color: #dd3333;
+            }
+            .body-dark .widget.categories li a {
+              background-color: #435469;
+              color: #f5f5f5;
+            }
+            .body-dark .widget.categories li.active a,
+            .body-dark .widget.categories li a:hover {
+              background-color: #dd3333;
+              color: #ffffff;
+            }
+
+            .tagcloud a:hover{
+              background-color: #dd3333;
+              border-color: #dd3333;
+            }
+
+            .speaker .caption-title a:hover{
+             color: #dd3333; 
+            }
+            .body-dark .speaker .caption-title a{
+              color: #fff!important;
+            }
+
+            .error404.sub-page .header{
+              background-color: #dd3333;
+              border-bottom: 1px solid #fff;
+            }
+
+            .error404 #preloader{
+              display:none;
+            }
+            .error404 .logo a:hover{
+              color:#fff;
+
+            }
+            .error404 .logo a .logo-hex{
+              background-color:#fff;
+            }
+            .error404 .logo a .logo-fa{
+              color: #dd3333;
+            }
+            .error404 footer, .error404 .to-top{
+              display:none;
+            }
+
+            .social-line a:hover{
+              background-color: #dd3333!important;
+            }
+            .social-line a:hover:before{
+            border-bottom-color: #dd3333!important;
+            }
+            .social-line a:hover:after{
+              border-top-color: #dd3333!important;
+            }
+
+            .single-schedule .post-readmore{
+            text-align: left;
+            }
+
+            #sidebar ul,#sidebar li{
+              list-style-type:none;
+              padding-left: 0;
+              margin-left:0;
+
+            }
+            .page-section.with-sidebar{
+              padding-top: 60px;
+            }
+
+
+            /*************** Update css for version 2.0 ************************/
+            .event-description .media-heading{
+              color: #dd3333!important;
+            }
+
+            /* fix for icon style of heading */
+
+            .wohex, .crcle, .rhex {
+            background-color: #dd3333;
+            }
+
+            .color .wohex,.color .crcle {
+            background-color: #fff;
+            }
+
+            .body-dark  .wohex, .body-dark .crcle, .body-dark  .rhex {
+            background-color: #dd3333;
+            }
+
+
+            #main-slider.owl-theme .owl-controls .owl-nav [class*=owl-]:hover{
+              border-color: #dd3333!important;
+              background: #dd3333!important;  
+            }
+
+            ul.pagination li span.current{
+                background-color: #dd3333;
+              }
+
+
+            /* Update for version 2.8 */
+
+            .theme-color, 
+            .primary-navbar > li > a:hover, 
+            .primary-navbar > li > a:focus, 
+            .primary-navbar > li > a:focus, 
+            .testimonials-links .slider-btn:hover,
+            .testimonials-links .slider-btn:focus, 
+            .pricing-wrap:hover .theme-btn-2, 
+            .navigation .dropdown-menu li a:hover, 
+            .navigation .dropdown-menu li a:focus, 
+            .pricing-wrap:focus .theme-btn-2, 
+            .event-faqs-tabs li a:hover, 
+            .event-faqs-tabs li a:focus, 
+            .event-faqs-tabs li.active > a, 
+            .slider_button:hover,
+            .slider_button:focus, 
+            .event-faqs-tabs li.active > a:hover, 
+            .event-faqs-tabs li.active > a:focus, 
+            .contact-form .theme-btn,
+            .footer-social a:hover, 
+            .footer-social a:focus, 
+            .breadcrumb-menubar > li > a:hover, 
+            .breadcrumb-menubar > li > a:focus, 
+            .widget-wrap ul li.active a, 
+            .comment-form input[type="submit"]:hover, 
+            .comment-form input[type="submit"]:focus, 
+            .blog-pagination li a, 
+            .pricing-wrap.featured:hover::before, 
+            .pricing-wrap.featured:focus::before, 
+            .blog-post-wrap .post-title:hover, 
+            .blog-post-wrap .post-title:focus{
+                color: #dd3333;
+            }
+            .object, 
+            .theme-btn, 
+            .theme-btn-big, 
+            .theme-color-bg, 
+            .event-schedule-wrap .schedule-tabs li.active a,
+            .event-schedule-wrap .schedule-tabs li a:hover,
+            .event-schedule-wrap .schedule-tabs li a:focus,
+            .event-schedule-wrap .schedule-tabs > li.active > a,
+            .event-schedule-wrap .schedule-tabs > li.active > a:hover, 
+            .event-schedule-wrap .schedule-tabs > li.active > a:focus, 
+            .social-overlay li a:hover, 
+            .social-overlay li a:focus,
+            .pricing-wrap:hover,
+            .pricing-wrap:focus, 
+            .register-bg,
+            .contact-form .theme-btn:hover,
+            .contact-form .theme-btn:focus, 
+            .to-top,.comment-form input[type="submit"],
+            .blog-pagination > .active > a,
+            .blog-pagination > .active > a:hover, 
+            .blog-pagination > .active > a:focus, 
+            .blog-pagination > li > a:hover, 
+            .blog-pagination > li > a:focus{
+                background-color: #dd3333;
+            }
+            .theme-btn:hover,.theme-btn:focus, 
+            .theme-btn-big:hover,
+            .theme-btn-big:focus,
+            .donation-wrap .theme-btn:hover,
+            .donation-wrap .theme-btn:focus{
+                border-color: #dd3333;
+                color: #ffffff;
+                background-color: #dd3333;
+            }
+
+            .title-devider .line-1 ,
+            .title-devider .line-2, 
+            .title-devider .line-3, 
+            .testimonials-links .slider-btn:hover,
+            .testimonials-links .slider-btn:focus,
+            .slider_button:hover, 
+            .slider_button:focus, 
+            .tagcloud > a:hover, 
+            .tagcloud > a:focus,
+            .post-previous a:hover, 
+            .post-next a:hover,
+            .post-previous a:focus,
+            .post-next a:focus, 
+            .comment-form input[type="submit"], 
+            .comment-form input[type="submit"]:hover,
+            .comment-form input[type="submit"]:focus,
+            .blog-pagination li a, 
+            .blog-pagination .active a,
+            .blog-pagination > .active > a:hover, 
+            .blog-pagination > .active > a:focus, 
+            .blog-pagination > li > a:hover, 
+            .blog-pagination > li > a:focus{
+                border-color: #dd3333;
+            }
+            .donation button:hover{
+              background-color: #dd3333;
+              border-color: #dd3333;
+              color: #fff;
+            }
+
+            .bg_color .title-devider .line-1, 
+            .bg_color .title-devider .line-2, 
+            .bg_color .title-devider .line-3{
+              border-color: #fff;
+            }
+
+            .theme-btn-big:hover,
+            .theme-btn:hover{
+              background:#fff;
+              color: #dd3333;
+            }
+            /* /Update for version 2.8 */
+            .event-schedule-wrap .schedule-tabs > li:hover{
+              background-color: #dd3333;
+            }
+
+            .section-title.normal .fa-stack .fa.fa-stack-2x{
+              color: #dd3333;
+              margin-top: 5px;
+            }
+            .section-title.normal .fa-stack .fa.fa-stack-1x{
+              font-size: 70%;
+            }
+            .section-title.normal.color .fa-stack .fa.fa-stack-2x{
+              color:#fff;
+            }
+            .valentine{
+              margin-top: 5px;
+            }
+
+            .color .valentine{
+              color:#fff!important;
+            }
+
+
+            .pricing_woo .woocommerce a.button{
+              background-color: #dd3333;
+              border-color: #dd3333;
+            }
+            .pricing_woo .woocommerce a.button:hover{
+                background-color: #435469;
+                border-color: #435469;
+                color: #ffffff;
+            }
+
+
+            .woocommerce ul.products li.product .price,
+            .woocommerce div.product p.price, .woocommerce div.product span.price{
+              color: #dd3333;
+            }
+            .woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+            .woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
+            .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
+              background-color: #dd3333;
+            }
+
+            
+
+            .sf-menu a{
+              color: #ffffff;
+            }
+
+            .sf-menu a:hover{
+              color: #ffffff;
+            }
+            .wide .header.shrink, .boxednew .header.shrink{
+              background-color: rgba(51,51,51,1);
+            }
+            .wide .header.shrink .sf-menu a, .boxednew .header.shrink .sf-menu a{
+              color: #ffffff;
+            }
+            .wide .header.shrink .sf-menu a:hover, .boxednew .header.shrink .sf-menu a:hover{
+              color: #ffffff;
+            }
+
+            .sf-menu ul.sub-menu li{
+              background-color: #111111            }
+
+            .sub-page .header{
+              background-color: #111111              
+            }
+            @media (max-width: 990px) {
+               nav.navigation ul li a.active{
+                color: #dd3333!important;
+              }
+            }
+            @media (max-width: 767px) {
+              ul#tabs-lv1 li.active{
+                background-color: #dd3333;
+              }
+              .schedule-wrapper .schedule-tabs.lv1 .nav > li.active:before{
+                border-top: none;
+              }
+             
+            }
+            
+
+         </style>
+    		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
+<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://events.steelmintgroup.com/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]-->      <meta name="onesignal" content="wordpress-plugin"/>
+          <link rel="manifest"
+            href="https://events.steelmintgroup.com/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/manifest.json.php?gcm_sender_id="/>
+          <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>    <script>
+
+      window.OneSignal = window.OneSignal || [];
+
+      OneSignal.push( function() {
+        OneSignal.SERVICE_WORKER_UPDATER_PATH = "OneSignalSDKUpdaterWorker.js.php";
+        OneSignal.SERVICE_WORKER_PATH = "OneSignalSDKWorker.js.php";
+        OneSignal.SERVICE_WORKER_PARAM = { scope: '/' };
+
+        OneSignal.setDefaultNotificationUrl("https://events.steelmintgroup.com");
+        var oneSignal_options = {};
+        window._oneSignalInitOptions = oneSignal_options;
+
+        oneSignal_options['wordpress'] = true;
+oneSignal_options['appId'] = '0ffe96a9-0141-46a3-9f47-7ef76a121f56';
+oneSignal_options['autoRegister'] = false;
+oneSignal_options['welcomeNotification'] = { };
+oneSignal_options['welcomeNotification']['title'] = "";
+oneSignal_options['welcomeNotification']['message'] = "";
+oneSignal_options['path'] = "https://events.steelmintgroup.com/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";
+oneSignal_options['promptOptions'] = { };
+oneSignal_options['notifyButton'] = { };
+oneSignal_options['notifyButton']['enable'] = true;
+oneSignal_options['notifyButton']['position'] = 'bottom-left';
+oneSignal_options['notifyButton']['theme'] = 'default';
+oneSignal_options['notifyButton']['size'] = 'small';
+oneSignal_options['notifyButton']['prenotify'] = true;
+oneSignal_options['notifyButton']['showCredit'] = true;
+oneSignal_options['notifyButton']['text'] = {};
+              OneSignal.init(window._oneSignalInitOptions);
+                    });
+
+      function documentInitOneSignal() {
+        var oneSignal_elements = document.getElementsByClassName("OneSignal-prompt");
+
+        var oneSignalLinkClickHandler = function(event) { OneSignal.push(['registerForPushNotifications']); event.preventDefault(); };        for(var i = 0; i < oneSignal_elements.length; i++)
+          oneSignal_elements[i].addEventListener('click', oneSignalLinkClickHandler, false);
+      }
+
+      if (document.readyState === 'complete') {
+           documentInitOneSignal();
+      }
+      else {
+           window.addEventListener("load", function(event){
+               documentInitOneSignal();
+          });
+      }
+    </script>
+
+		<style type="text/css" id="wp-custom-css">
+			.wpcf7 {
+    background: #f1f1f1;
+    border: 1px solid #ddd;
+    width: 100%;
+    padding: 20px !important;
+	border-radius:4px;
+}
+.wpcf7 input[type="text"],
+.wpcf7 input[type="select"],
+.wpcf7 input[type="email"],
+.wpcf7 input[type="tel"],
+.wpcf7 input[type="number"],
+textarea {
+	font-size: 16px;
+	background-color: #fff;
+	border: none;
+	width: 95%;
+	padding: 2%;
+}
+.wpcf7 input[type="submit"] {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    background: #066b1d;
+    padding: 15px 25px 15px 25px;
+    border: none;
+    border-radius: 5px;
+    width: auto;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.wpcf7 input:hover[type="submit"] {
+    background: #494949;
+    transition: all 0.4s ease 0s;
+}
+.wpcf7 .wpcf7-select {
+   width:100%; /* you can use pixels, em, rem, % to determine the width */
+   font-size:20px;
+}
+.wpcf7-select {
+    background-color:#ffffff; /* it won't work without a background color set */
+   
+	padding:10px; border:1px solid #ededed;
+}
+.wpcf7 input:active[type="submit"] {
+    background: #000000;
+}
+
+#main-slider .caption-title{
+font-weight:bold;
+}
+
+#main-slider .caption-subtitle{
+font-weight:normal;
+}
+
+.btn-theme {
+    color: #2D2D2B;
+    background-color: #F4E611;
+    border-color: #CDC107;
+}		</style>
+		<style type="text/css" title="dynamic-css" class="options-output">body{font-family:Raleway;font-weight:400;font-style:normal;color:#444444;font-size:18px;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading body{opacity: 0;}.ie.wf-loading body{visibility: hidden;}.countdown-period, .schedule-wrapper .nav > li > a, .timeline .post-meta, #main-slider .caption-title{font-family:Roboto;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading .countdown-period,.wf-loading  .schedule-wrapper .nav > li > a,.wf-loading  .timeline .post-meta,.wf-loading  #main-slider .caption-title{opacity: 0;}.ie.wf-loading .countdown-period,.ie.wf-loading  .schedule-wrapper .nav > li > a,.ie.wf-loading  .timeline .post-meta,.ie.wf-loading  #main-slider .caption-title{visibility: hidden;}#main-slider .caption-subtitle,#main-slider .countdown-amount{font-family:Roboto;opacity: 1;visibility: visible;-webkit-transition: opacity 0.24s ease-in-out;-moz-transition: opacity 0.24s ease-in-out;transition: opacity 0.24s ease-in-out;}.wf-loading #main-slider .caption-subtitle,.wf-loading #main-slider .countdown-amount{opacity: 0;}.ie.wf-loading #main-slider .caption-subtitle,.ie.wf-loading #main-slider .countdown-amount{visibility: hidden;}</style><noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>
+   
+
+
+	
+</head>
+
+<body data-rsssl=1 class="speaker-template-default single single-speaker postid-17168 global wide ltr sub-page ova_animate wpb-js-composer js-comp-ver-5.7 vc_responsive">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PXZPVX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Preloader -->
+	
+
+	
+	
+
+<!-- /Preloader -->
+
+<!-- Google Analytics -->
+        <script>
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PXZPVX');        </script>
+    <!-- /Google Analytics -->
+
+
+
+<!-- Wrap all content -->
+<div class="wrapper container_boxed ">
+
+
+     <!-- Header -->
+         <header class="header fixed h_relative">
+        <div class="container">
+            <div class="header-wrapper clearfix">
+
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="https://events.steelmintgroup.com" title="4th Steel Scrap, Billet &amp; DRI Trade Summit" class="scroll-to">
+                                                    <img src="https://events.steelmintgroup.com/wp-content/uploads/2019/06/logo-steelmint.png" alt="4th Steel Scrap, Billet &amp; DRI Trade Summit"/>
+                                            </a>
+                </div>
+                <!-- /Logo -->
+
+                <!-- Navigation -->
+                <div id="mobile-menu"></div>
+                <nav class="navigation closed clearfix">
+                    <a href="#" class="menu-toggle btn"><i class="fa fa-bars"></i></a>
+                                        <ul id="menu-main-nav" class="sf-menu nav"><li id="menu-item-77" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-77"><a href="https://events.steelmintgroup.com/"><i class="fa fa-home"></i></a></li>
+<li id="menu-item-16175" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16175"><a href="#">Scrap Billet &#038; DRI</a>
+<ul class="sub-menu">
+	<li id="menu-item-16316" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16316"><a href="https://events.steelmintgroup.com/past-events/4th-steel-scrap-billet-dri-trade-summit/">Overview</a></li>
+	<li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="https://events.steelmintgroup.com/past-events/4th-steel-scrap-billet-dri-trade-summit/participants/">Participants</a></li>
+	<li id="menu-item-64" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="https://events.steelmintgroup.com/past-events/4th-steel-scrap-billet-dri-trade-summit/schedule/">Schedule</a></li>
+	<li id="menu-item-65" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"><a href="https://events.steelmintgroup.com/past-events/4th-steel-scrap-billet-dri-trade-summit/speakers/">Speakers</a></li>
+</ul>
+</li>
+<li id="menu-item-16176" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16176"><a href="#">Graphite Electrode</a>
+<ul class="sub-menu">
+	<li id="menu-item-16317" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16317"><a href="https://events.steelmintgroup.com/past-events/2nd-global-graphite-electrode-conference/">Overview</a></li>
+	<li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="https://events.steelmintgroup.com/past-events/2nd-global-graphite-electrode-conference/participants/">Participants</a></li>
+	<li id="menu-item-58" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58"><a href="https://events.steelmintgroup.com/past-events/2nd-global-graphite-electrode-conference/schedule/">Schedule</a></li>
+	<li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><a href="https://events.steelmintgroup.com/past-events/2nd-global-graphite-electrode-conference/speakers/">Speakers</a></li>
+</ul>
+</li>
+<li id="menu-item-16177" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16177"><a href="#">Opportunities</a>
+<ul class="sub-menu">
+	<li id="menu-item-69" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-69"><a href="https://events.steelmintgroup.com/opportunities/exhibitors/">Exhibitors</a></li>
+	<li id="menu-item-71" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-71"><a href="https://events.steelmintgroup.com/opportunities/sponsors/">Sponsors</a></li>
+	<li id="menu-item-70" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-70"><a href="https://events.steelmintgroup.com/opportunities/speakers/">Speakers</a></li>
+</ul>
+</li>
+<li id="menu-item-16178" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16178"><a href="#">Venue</a>
+<ul class="sub-menu">
+	<li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-75"><a href="https://events.steelmintgroup.com/venue/accommodation/">Accommodation</a></li>
+	<li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76"><a href="https://events.steelmintgroup.com/venue/event-location/">Event Location</a></li>
+</ul>
+</li>
+<li id="menu-item-66" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-66"><a href="https://events.steelmintgroup.com/blog/">Blog</a></li>
+<li id="menu-item-67" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-67"><a href="https://events.steelmintgroup.com/contact/">Contact</a></li>
+<li id="menu-item-17635" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17635"><a href="https://events.steelmintgroup.com/gallery/">Gallery</a></li>
+</ul>                    
+                    
+
+                </nav>
+                <!-- /Navigation -->
+
+
+
+            </div>
+
+            
+
+        </div>
+    </header>
+    <!-- /Header -->
+
+    <!-- Content area-->
+    <div class="content-area">
+
+        
+<!-- PAGE BLOG -->
+<section class="page-section with-sidebar sidebar-right">
+	<div class="container">
+		<div class="row">
+
+			<!-- Content -->
+			<section id="content" class="content col-sm-12 col-md-9">
+											<div class="col-md-4 col-sm-6">
+								<div class="speaker_img">
+									<img width="200" height="200" src="https://events.steelmintgroup.com/wp-content/uploads/2019/07/Mr-Rajesh-Agarwal.png" class="attachment-large size-large wp-post-image" alt="Mr Rajesh Agarwal" srcset="https://events.steelmintgroup.com/wp-content/uploads/2019/07/Mr-Rajesh-Agarwal.png 200w, https://events.steelmintgroup.com/wp-content/uploads/2019/07/Mr-Rajesh-Agarwal-150x150.png 150w, https://events.steelmintgroup.com/wp-content/uploads/2019/07/Mr-Rajesh-Agarwal-100x100.png 100w" sizes="(max-width: 200px) 100vw, 200px" />								</div>
+							</div>
+							<div class="col-md-8 col-sm-6">
+                            <article>
+								
+								<div class="post-body">
+																			<h1 class="post-title">Mr Rajesh Agarwal</h1>
+																											
+									<p>Head (ISC) - Steel Trading, TATA International</p>
+									
+									<ul class="social-line list-inline "></ul>									
+								</div>								
+							</article>
+							</div>
+							<div class="clearfix"></div>
+
+							<div class="col-md-12">							
+								<div class="post-excerpt row">
+																	</div>
+							</div>
+                                        			    
+			    
+                
+
+			</section>
+			<!-- Content -->
+
+			
+				<hr class="page-divider transparent visible-xs"/>
+				<aside id="sidebar" class="sidebar col-sm-12 col-md-3">
+					<div id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3>		<ul>
+				<li class="cat-item cat-item-7"><a href="https://events.steelmintgroup.com/category/blog/">Blog</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="https://events.steelmintgroup.com/category/graphite-electrodes/">Graphite Electrode</a>
+</li>
+	<li class="cat-item cat-item-20"><a href="https://events.steelmintgroup.com/category/scrap-billet-dri-trade-summit/">Scrap Billet &amp; DRI Trade Summit</a>
+</li>
+		</ul>
+			</div><div id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="https://events.steelmintgroup.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form></div><div id="text-2" class="widget widget_text"><h3 class="widget-title">Send Your Query</h3>			<div class="textwidget"><div role="form" class="wpcf7" id="wpcf7-f5-o1" lang="en-US" dir="ltr">
+<div class="screen-reader-response"></div>
+<form action="/speaker/mr-rajesh-agarwal-2/#wpcf7-f5-o1" method="post" class="wpcf7-form" novalidate="novalidate">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="5" />
+<input type="hidden" name="_wpcf7_version" value="5.1.4" />
+<input type="hidden" name="_wpcf7_locale" value="en_US" />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f5-o1" />
+<input type="hidden" name="_wpcf7_container_post" value="0" />
+</div>
+<p><label> Name *<br />
+    <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span> </label></p>
+<p><label> Email id *<br />
+    <span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" /></span> </label></p>
+<p><label> Contact no. *<br />
+    <span class="wpcf7-form-control-wrap your-contact"><input type="tel" name="your-contact" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" /></span> </label></p>
+<p><label> Your Query<br />
+    <span class="wpcf7-form-control-wrap your-query"><textarea name="your-query" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false"></textarea></span> </label></p>
+<p><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit" /></p>
+<div class="wpcf7-response-output wpcf7-display-none"></div></form></div>
+</div>
+		</div>		<div id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+											<li>
+					<a href="https://events.steelmintgroup.com/vehicle-recycling-in-india-gains-pace-with-recent-roll-out-of-draft-policy/">Vehicle Recycling in India Gains Pace with Recent Roll Out of Draft Policy</a>
+									</li>
+											<li>
+					<a href="https://events.steelmintgroup.com/supply-tightness-pushes-chinese-steel-scrap-prices-to-new-high/">Supply Tightness Pushes Chinese Steel Scrap Prices to New High</a>
+									</li>
+											<li>
+					<a href="https://events.steelmintgroup.com/indias-largest-merchant-pig-iron-producer-staring-at-shut-down/">India‚Äôs Largest Merchant Pig Iron Producer Staring at Shut-Down</a>
+									</li>
+											<li>
+					<a href="https://events.steelmintgroup.com/what-is-compelling-iran-to-set-up-its-own-graphite-electrodes-plant/">What is compelling Iran to set up its own Graphite Electrodes Plant?</a>
+									</li>
+											<li>
+					<a href="https://events.steelmintgroup.com/will-the-eaf-steel-sector-in-southeast-asian-countries-support-graphite-electrodes-demand-in-future/">Will the EAF Steel Sector in Southeast Asian Countries Support Graphite Electrodes Demand in Future?</a>
+									</li>
+					</ul>
+		</div><div id="recent-comments-2" class="widget widget_recent_comments"><h3 class="widget-title">Recent Comments</h3><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='https://events.steelmintgroup.com/needle-coke-prices-wont-fall-in-next-2-years-chinese-needle-coke-manufacturer-tells-steelmint/' rel='external nofollow' class='url'>Needle Coke Prices Won&#039;t Fall in Next 2 Years: Chinese Needle Coke</a></span> on <a href="https://events.steelmintgroup.com/steelmints-china-roadshow-precious-insights-into-graphite-electrodes-and-needle-coke/#comment-2">SteelMint&#8217;s China Roadshow: Precious Insights into Graphite Electrodes and Needle Coke</a></li></ul></div>				</aside>
+
+							
+			
+
+		</div>
+	</div>
+</section>
+<!-- /PAGE BLOG -->
+
+<div class="vc_row-full-width vc_clearfix"></div>
+    <footer class="footer">
+        <div class="footer-meta">
+            <div class="container1 text-center">
+
+                <div class="clearfix">
+<ul class="list-inline">
+<li><a href="https://events.steelmintgroup.com/about-us/">About Us</a></li>
+<li><a href="https://events.steelmintgroup.com/blog/">Blog</a></li>
+<li> <a href="https://events.steelmintgroup.com/past-events/">Past Events</a></li>
+<li><a href="https://events.steelmintgroup.com/contact/">Contact</a> </li>
+
+
+</ul>
+</div>
+
+<div class="clearfix">
+                            <ul class="social-line list-inline">
+                            <li data-animation="flipInY" data-animation-delay="100"><a href="https://twitter.com/steelmintevents" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li data-animation="flipInY" data-animation-delay="300"><a href="https://www.facebook.com/steelmintevents" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                              <li data-animation="flipInY" data-animation-delay="500"><a href="https://www.youtube.com/channel/UCi6GNO0ss03Ku8DMz1UBm5g" class="youtube"><i class="fa fa-youtube"></i></a></li>
+                              <li data-animation="flipInY" data-animation-delay="700"><a href="https://www.linkedin.com/company/steelmint-events" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                            </div>                
+                            <span class="copyright" data-animation="fadeInUp" data-animation-delay="100">Powered by <b>Steel Mint Group</b> </span>
+                    
+            </div>
+        </div>
+    </footer>
+    
+        <!-- /FOOTER -->
+
+	    	<div class="to-top"><i class="fa fa-angle-up"></i></div>
+    
+</div> <!-- /wrapper -->
+</div> <!-- /content-area -->
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-includes/js/jquery/ui/mouse.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-includes/js/jquery/ui/draggable.min.js?ver=1.11.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/events.steelmintgroup.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.4'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-includes/js/comment-reply.min.js?ver=5.2.12'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/plugins/modernizr.custom.js'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/plugins/bootstrap/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/plugins/bootstrap-select/bootstrap-select.min.js'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/plugins/superfish/js/superfish.js'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/plugins/prettyphoto/js/jquery.prettyPhoto_https.js'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/plugins/jquery.smoothscroll.min.js'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/plugins/jquery.easing.min.js'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/plugins/owlcarousel2/owl.carousel.min.js'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/plugins/js_composer/assets/lib/waypoints/waypoints.min.js?ver=5.7'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/plugins/countdown/jquery.plugin.min.js'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/plugins/countdown/jquery.countdown.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ajax_object = {"ajaxurl":"https:\/\/events.steelmintgroup.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/js/register_event.js'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/plugins/wow.js'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-includes/js/dist/vendor/moment.min.js?ver=2.22.2'></script>
+<script type='text/javascript'>
+moment.locale( 'en_US', {"months":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthsShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"weekdaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"week":{"dow":1},"longDateFormat":{"LT":"g:i a","LTS":null,"L":null,"LL":"F j, Y","LLL":"F j, Y g:i a","LLLL":null}} );
+</script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/js/theme.js'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/js/custom.js'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.11.4'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-content/themes/imevent/imevent/assets/js/theme-init.js'></script>
+<script type='text/javascript' src='https://events.steelmintgroup.com/wp-includes/js/wp-embed.min.js?ver=5.2.12'></script>
+
+<!-- This site is optimized with Phil Singleton's WP SEO Structured Data Plugin v2.5.9 - https://kcseopro.com/wordpress-seo-structured-data-schema-plugin/ -->
+<script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "additionalType": [
+        "https://events.steelmintgroup.com/4th-steel-scrap-billet-dri-trade-summit/",
+        "https://events.steelmintgroup.com/2nd-global-graphite-electrode-conference/",
+        "https://events.steelmintgroup.com/4th-steel-scrap-billet-dri-trade-summit/participants/",
+        "https://events.steelmintgroup.com/2nd-global-graphite-electrode-conference/participants/",
+        "https://events.steelmintgroup.com/contact/",
+        "https://events.steelmintgroup.com/blog/",
+        "https://events.steelmintgroup.com/venue/event-location/"
+    ],
+    "name": "SteelMint Events",
+    "logo": "https://events.steelmintgroup.com/wp-content/uploads/2019/06/SteelMint-Event-logo.png",
+    "url": "https://events.steelmintgroup.com",
+    "sameAs": [
+        "https://www.facebook.com/steelmintevents",
+        "https://twitter.com/steelmintevents",
+        "https://www.youtube.com/channel/UCWhKIB9J97CGFSdMsnyeC3Q",
+        "https://in.linkedin.com/in/steelmint-info-59543722"
+    ],
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91 8602270907",
+        "contactType": "customer support",
+        "email": "aditya.raj@steelmintgroup.com",
+        "contactOption": "HearingImpairedSupported",
+        "areaServed": [
+            "IN"
+        ],
+        "availableLanguage": [
+            "English",
+            "Hindi\u00a0/\u00a0Urdu"
+        ]
+    },
+    "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "India",
+        "addressLocality": "Raipur",
+        "addressRegion": "Chhattisgarh",
+        "postalCode": "492007",
+        "streetAddress": "301, 3rd Floor, Jeevan Parisar, Rajeev Nagar, Behind Crystal Arcade, Anupam Nagar"
+    }
+}</script>
+<!-- / WP SEO Structured Data Plugin. -->
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"637e16e3aa","applicationID":"83017010","transactionName":"ZlAHbEVZDxVWV0xQCV8aJFtDUQ4IGEdRVwFdUEhLR10ADVJG","queueTime":0,"applicationTime":832,"atts":"ShcEGg1DHBs=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+<script type="text/javascript">
+    adroll_adv_id = "GR2ZV2EUIFDBNB4IGNFZLW";
+    adroll_pix_id = "MQCR2VKMVFHTHCUWKHRXSP";
+
+    (function () {
+        var _onload = function(){
+            if (document.readyState && !/loaded|complete/.test(document.readyState)){setTimeout(_onload, 10);return}
+            if (!window.__adroll_loaded){__adroll_loaded=true;setTimeout(_onload, 50);return}
+            var scr = document.createElement("script");
+            var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+            scr.setAttribute('async', 'true');
+            scr.type = "text/javascript";
+            scr.src = host + "/j/roundtrip.js";
+            ((document.getElementsByTagName('head') || [null])[0] ||
+                document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+        };
+        if (window.addEventListener) {window.addEventListener('load', _onload, false);}
+        else {window.attachEvent('onload', _onload)}
+    }());
+</script>
+</html>

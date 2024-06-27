@@ -1,6 +1,6 @@
 # Second HPLT data release
 
-## Phase2
+## Phase2 (a.k.a. Stage2)
 Phase2 does text extraction with boilerplate removal (Trafilatura) and language identification (fasterText with the openLID model).
 It is executed on 100 LUMI compute nodes, in 250 parallel processes on each.
 
@@ -108,3 +108,11 @@ To run on 30 LUMI nodes in parallel, combining html.zst files from interrupted.p
 ```commandline
 stage2nodeparallel_batched.sh 30 interruped.paths 1500
 ```
+
+## Sanity checks for the outputs of Phase2
+### Line counts
+src/warc2text_runner/two/qualitycontrol/check_linecnt.sh checks that the number of lines (i.e. documents) in the input
+metadata.zst and the output text.zst and lang.zst files matches. To reduce processing time it does not check html.zst 
+files assuming Stage1 was done correctly. It also does not check that the lines are aligned between files, i.e. i-th line
+in all files represent the same document, this should be guaranteed by the --keep-order flag of GNU parallel in the
+data processing scripts.

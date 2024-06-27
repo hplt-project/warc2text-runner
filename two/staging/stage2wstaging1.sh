@@ -24,5 +24,5 @@ cat $FIFO | \
 	sed --unbuffered -r 's!^.*: (.*.zst).*$!'${LPATH}'/\1!' | \
 	# extract local path to downloaded html.zst, --unbuffered to process immeditely 
 	parallel --eta --total-jobs $NFILES --joblog ${LOGDIR}/stage2.joblog -N 1 -j $MAXNODES \
-	  "srun --quiet --nodes=1 --cpus-per-task=128 --account=project_465000498 --partition=standard  --time=0-07:00:00 stage2local.sh {} {//} 250 &>${LOGDIR}/{#}.stage2.out "
+	  "srun --quiet --nodes=1 --cpus-per-task=128 --account=project_465000498 --partition=small  --time=0-07:00:00 stage2local.sh {} {//} 250 &>${LOGDIR}/{#}.stage2.out "
 

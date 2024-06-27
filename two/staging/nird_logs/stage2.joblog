@@ -1,0 +1,2 @@
+Seq	Host	Starttime	JobRuntime	Send	Receive	Exitval	Signal	Command
+1	:	1717404640.734	  4043.884	0	0	0	0	srun --quiet --nodes=1 --cpus-per-task=128 --account=project_465000498 --partition=small  --time=0-07:00:00 stage2local.sh /scratch/project_465000498/two/html_staging//wide00015/144/html.zst /scratch/project_465000498/two/html_staging//wide00015/144 250 &>nird_logs/1.stage2.out 

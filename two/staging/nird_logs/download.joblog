@@ -1,0 +1,2 @@
+Seq	Host	Starttime	JobRuntime	Send	Receive	Exitval	Signal	Command
+1	uan02	1717403887.537	   753.177	0	1689	0	0	echo -n we are on; hostname; cd ~/hplt/two/code/warc2text-runner/two/staging/lumi; bash stage2lumidownload_local.sh nird /scratch/project_465000498/two/html_staging/ /wide00015/144/html.zst

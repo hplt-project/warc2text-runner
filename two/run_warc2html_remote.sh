@@ -3,17 +3,17 @@ set -euo pipefail
 
 # This script runs commands from ${RUNDIR}/tasks.args.gz in parallel on several remote nodes, and in parallel on each node
 
-#RUNDIR=$1
-#NJOBS=$2
-#REMOTECONFIG=$3
+RUNDIR=$1  # The directory with tasks.args.gz to take tasks from
+NJOBS=$2  # The number of tasks to run in parallel on each remote node
+REMOTECONFIG=$3  # Configuration of remote nodes for GNU Parallel, leave empty to run locally. E.g. "--sshlogin 1/mon3,1/mon4,1/mon6", "--sshloginfile sshloginfile_cesnet"
 
 #RUNDIR='cesnet'
 #NJOBS=60
 #REMOTECONFIG="--sshlogin 1/mon3,1/mon4,1/mon6"
 
-RUNDIR='nirdl'
-NJOBS=250  # number of commands executed in parallel on each remote node
-REMOTECONFIG="--sshlogin 1/nird-d,1/nird-c"  # hostnames of the compute nodes, ensure passwordless access to them
+#RUNDIR='nirdl'
+#NJOBS=250  # number of commands executed in parallel on each remote node
+#REMOTECONFIG="--sshlogin 1/nird-d,1/nird-c"  # hostnames of the compute nodes, ensure passwordless access to them
 
 LOG_DIR=${RUNDIR%/}_logs  # ${VAR%/} removes trailing slash if there is any
 

@@ -1,7 +1,58 @@
 # Second HPLT data release
+Extraction of raw texts from WARC archives is performed in two stages. In the first stage WARC files
+are processed and relevant records are selected. From these records web pages in HTML format and
+additional metadata are extracted and dumped to disk. This stage requires voluminous storage and
+fast access to WARC files stored in two data centers but it is not computationally intensive, thus, this
+stage is run on the compute nodes in the data centers directly attached to the storage with WARC
+files.
+The second stage consists of parsing HTML pages, removing boilerplate and extracting text in natural
+language, and finally running language identification on the extracted text. This stage is significantly
+more computationally intensive, thus, it is run on the LUMI cluster.
 
-## Phase2 (a.k.a. Stage2)
-Phase2 does text extraction with boilerplate removal (Trafilatura) and language identification (fasterText with the openLID model).
+## Stage1 (a.k.a. warc2html)
+### Install
+* Install warc2text 1.2.0 from https://github.com/bitextor/warc2text. To reproduce what was done for the second data 
+release, follow the installation method using EasyBuild. 
+
+### Configure
+The following instructions rely on the file structure and configuration of NIRD and CESNET, in particular:
+1. a symlink ~/hplt in your home directory points to the project directory; e.g. for NIRD:
+```commandline
+ln -s /nird/datalake/NS8112K/ ~/hplt
+```
+2. this repository is cloned to ~/hplt/two/code/warc2text-runner;
+3. passwordless access to the computing nodes 
+
+
+### Run
+1. Compile a list of crawls to process, e.g. see lists for [CESNET](cesnet/crawls.paths) and [NIRD](nirdl/crawls.paths).
+Do this manually or adapt and run [this script](find_crawls.sh), which reflects what was done in the 2nd data release.
+E.g. for NIRD just run:
+```commandline
+./find_crawls.sh
+```
+2. Generate a list of processing tasks from the list of crawls, e.g. for NIRD:
+```commandline
+ ./generate_tasks.sh nirdl 1000
+```
+This will take find all WARC files, combine them into batches of 1000 WARCs and for each batch write a command that 
+processes this batch with warc2text to nirdl/tasks.args.gz
+3. Run HTML extraction with warc2text. E.g. for NIRD:
+```commandline
+./run_warc2html_remote.sh nirdl 250 "--sshlogin 1/nird-d,1/nird-c"
+```
+takes tasks from nirdl/tasks.args.gz and runs warc2text on two nodes (nird-d and nird-c), in 250 parallel processes on each node.
+To run locally specify the empty string as the 3rd argument:
+```commandline
+./run_warc2html_remote.sh nirdl 250 ""
+```
+At the end it reports how many nodes finished all their tasks successfully. In case of any errors, inspect joblogs for
+each compute node (dumped to ./`hostname`/joblog), find the failed commands and their batch ids, 
+inspect stdout/stderr of warc2text for the corresponding batch ids (dumped to  ~/hplt/two/text/*_logs). 
+The output HTMLs will be dumped to ~/hplt/two/text/.
+
+## Stage2 (a.k.a. html2text)
+Stage2 does text extraction with boilerplate removal (Trafilatura) and language identification (fasterText with the openLID model).
 It is executed on 100 LUMI compute nodes, in 250 parallel processes on each.
 
 ### Install on LUMI
@@ -109,7 +160,7 @@ To run on 30 LUMI nodes in parallel, combining html.zst files from interrupted.p
 stage2nodeparallel_batched.sh 30 interruped.paths 1500
 ```
 
-## Sanity checks for the outputs of Phase2
+## Sanity checks for the outputs of Stage2
 ### Line counts
 src/warc2text_runner/two/qualitycontrol/check_linecnt.sh checks that the number of lines (i.e. documents) in the input
 metadata.zst and the output text.zst and lang.zst files matches. To reduce processing time it does not check html.zst 

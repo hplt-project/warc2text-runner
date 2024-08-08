@@ -31,12 +31,14 @@ E.g. for NIRD just run:
 ```commandline
 ./find_crawls.sh
 ```
+
 2. Generate a list of processing tasks from the list of crawls, e.g. for NIRD:
 ```commandline
  ./generate_tasks.sh nirdl 1000
 ```
 This will take find all WARC files, combine them into batches of 1000 WARCs and for each batch write a command that 
 processes this batch with warc2text to nirdl/tasks.args.gz
+
 3. Run HTML extraction with warc2text. E.g. for NIRD:
 ```commandline
 ./run_warc2html_remote.sh nirdl 250 "--sshlogin 1/nird-d,1/nird-c"

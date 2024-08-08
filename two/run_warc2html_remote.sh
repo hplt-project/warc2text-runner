@@ -1,21 +1,25 @@
 #!/bin/bash
 set -euo pipefail
 
-RUNDIR=$1
-NJOBS=$2
-REMOTECONFIG=$3
+# This script runs commands from ${RUNDIR}/tasks.args.gz in parallel on several remote nodes, and in parallel on each node
+
+#RUNDIR=$1
+#NJOBS=$2
+#REMOTECONFIG=$3
 
 #RUNDIR='cesnet'
 #NJOBS=60
 #REMOTECONFIG="--sshlogin 1/mon3,1/mon4,1/mon6"
 
-#RUNDIR='nirdl'
-#NJOBS=250
-#REMOTECONFIG="--sshlogin 1/nird-d,1/nird-c"
+RUNDIR='nirdl'
+NJOBS=250  # number of commands executed in parallel on each remote node
+REMOTECONFIG="--sshlogin 1/nird-d,1/nird-c"  # hostnames of the compute nodes, ensure passwordless access to them
 
 LOG_DIR=${RUNDIR%/}_logs  # ${VAR%/} removes trailing slash if there is any
 
 rm -rf $LOG_DIR; mkdir -p $LOG_DIR
+
+# run_warc2html_local.sh will be started on the remote host and will take commands to run from the stdin
 zcat ${RUNDIR}/tasks.args.gz | parallel \
     --pipe -j1 --roundrobin -N1 \
     --joblog ${LOG_DIR}/joblog $REMOTECONFIG \

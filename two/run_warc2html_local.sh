@@ -1,13 +1,13 @@
 #!/bin/bash
 set -euo pipefail
 
+# This script will read commands to run from stdin and run them on the local machine in NJOBS parallel processes.
+# This script is started from ./run_warc2html_remote.sh, if you start it separately make sure to redirect stdin.
 NJOBS=$1  # number of parallel processes to fork
 LOG_DIR=$2
 mkdir -p ${LOG_DIR}
 echo "Extracting HTML from WARCs in stdin in ${NJOBS} parallel processes, logging to ${LOG_DIR}"
 
-#find ${WARCS_DIR} -name "*.warc.gz" | 
-#sort | 
 parallel \
     --joblog ${LOG_DIR}/joblog \
     --jobs=${NJOBS} 

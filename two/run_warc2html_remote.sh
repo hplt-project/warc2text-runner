@@ -5,7 +5,7 @@ set -euo pipefail
 
 RUNDIR=$1  # The directory with tasks.args.gz to take tasks from
 NJOBS=$2  # The number of tasks to run in parallel on each remote node
-REMOTECONFIG=$3  # Configuration of remote nodes for GNU Parallel, leave empty to run locally. E.g. "--sshlogin 1/mon3,1/mon4,1/mon6", "--sshloginfile sshloginfile_cesnet"
+REMOTECONFIG=$3  # Configuration of remote nodes for GNU Parallel, pass the empty string to run locally. E.g. "--sshlogin 1/mon3,1/mon4,1/mon6", "--sshloginfile sshloginfile_cesnet"
 
 #RUNDIR='cesnet'
 #NJOBS=60

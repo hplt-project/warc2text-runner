@@ -49,7 +49,7 @@ To run locally specify the empty string as the 3rd argument:
 ./run_warc2html_remote.sh nirdl 250 ""
 ```
 At the end it reports how many nodes finished all their tasks successfully. In case of any errors, inspect joblogs for
-each compute node (dumped to ./`hostname`/joblog), find the failed commands and their batch ids, 
+each compute node (dumped to ./$HOSTNAME/joblog), find the failed commands and their batch ids, 
 inspect stdout/stderr of warc2text for the corresponding batch ids (dumped to  ~/hplt/two/text/*_logs). 
 The output HTMLs will be dumped to ~/hplt/two/text/.
 

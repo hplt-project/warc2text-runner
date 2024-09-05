@@ -1,0 +1,194 @@
+v2 Language Code (ISO 693-3+script)	Language Name	ISO693-3 code	ISO693-1 code	ISO693-3 code macro
+ace_Arab	Achinese	ace	
+ace_Latn	Achinese	ace	
+afr_Latn	Afrikaans	afr	af
+als_Latn	Tosk Albanian	als	sq
+amh_Ethi	Amharic	amh	am
+ara_Arab	Arabic	ara	ar
+asm_Beng	Assamese	asm	as
+ast_Latn	Asturian	ast	
+awa_Deva	Awadhi	awa	
+ayr_Latn	Central Aymara	ayr	
+azb_Arab	South Azerbaijani	azb	az
+azj_Latn	North Azerbaijani	azj	az
+bak_Cyrl	Bashkir	bak	ba
+bam_Latn	Bambara	bam	bm
+ban_Latn	Balinese	ban	
+bel_Cyrl	Belarusian	bel	be
+bem_Latn	Bemba (Zambia)	bem	
+ben_Beng	Bengali	ben	bn
+bho_Deva	Bhojpuri	bho	
+bjn_Arab	Banjar	bjn	
+bjn_Latn	Banjar	bjn	
+bod_Tibt	Tibetan	bod	bo
+bos_Latn	Bosnian	bos	bs
+bug_Latn	Buginese	bug	
+bul_Cyrl	Bulgarian	bul	bg
+cat_Latn	Catalan	cat	ca
+ceb_Latn	Cebuano	ceb	
+ces_Latn	Czech	ces	cs
+cjk_Latn	Chokwe	cjk	
+ckb_Arab	Central Kurdish	ckb	
+crh_Latn	Crimean Tatar	crh	
+cym_Latn	Welsh	cym	cy
+dan_Latn	Danish	dan	da
+deu_Latn	German	deu	de
+dik_Latn	Southwestern Dinka	dik	
+dyu_Latn	Dyula	dyu	
+dzo_Tibt	Dzongkha	dzo	dz
+ell_Grek	Modern Greek (1453-)	ell	el
+eng_Latn	English	eng	en
+epo_Latn	Esperanto	epo	eo
+est_Latn	Estonian	est	et
+eus_Latn	Basque	eus	eu
+ewe_Latn	Ewe	ewe	ee
+fao_Latn	Faroese	fao	fo
+fij_Latn	Fijian	fij	fj
+fin_Latn	Finnish	fin	fi
+fon_Latn	Fon	fon	
+fra_Latn	French	fra	fr
+fur_Latn	Friulian	fur	
+fuv_Latn	Nigerian Fulfulde	fuv	
+gaz_Latn	West Central Oromo	gaz	om
+gla_Latn	Scottish Gaelic	gla	gd
+gle_Latn	Irish	gle	ga
+glg_Latn	Galician	glg	gl
+grn_Latn	Guarani	grn	gn
+guj_Gujr	Gujarati	guj	gu
+hat_Latn	Haitian	hat	ht
+hau_Latn	Hausa	hau	ha
+heb_Hebr	Hebrew	heb	he
+hin_Deva	Hindi	hin	hi
+hne_Deva	Chhattisgarhi	hne	
+hrv_Latn	Croatian	hrv	hr
+hun_Latn	Hungarian	hun	hu
+hye_Armn	Armenian	hye	hy
+ibo_Latn	Igbo	ibo	ig
+ilo_Latn	Iloko	ilo	
+ind_Latn	Indonesian	ind	id
+isl_Latn	Icelandic	isl	is
+ita_Latn	Italian	ita	it
+jav_Latn	Javanese	jav	jv
+jpn_Jpan	Japanese	jpn	ja
+kab_Latn	Kabyle	kab	
+kac_Latn	Kachin	kac	
+kam_Latn	Kamba (Kenya)	kam	
+kan_Knda	Kannada	kan	kn
+kas_Arab	Kashmiri	kas	ks
+kas_Deva	Kashmiri	kas	ks
+kat_Geor	Georgian	kat	ka
+kaz_Cyrl	Kazakh	kaz	kk
+kbp_Latn	Kabiyè	kbp	
+kea_Latn	Kabuverdianu	kea	
+khk_Cyrl	Halh Mongolian	khk	mn
+khm_Khmr	Khmer	khm	km
+kik_Latn	Kikuyu	kik	ki
+kin_Latn	Kinyarwanda	kin	rw
+kir_Cyrl	Kirghiz	kir	ky
+kmb_Latn	Kimbundu	kmb	
+kmr_Latn	Northern Kurdish	kmr	
+knc_Arab	Central Kanuri	knc	
+knc_Latn	Central Kanuri	knc	kr
+kon_Latn	Kongo	kon	kg
+kor_Hang	Korean	kor	ko
+lao_Laoo	Lao	lao	lo
+lij_Latn	Ligurian	lij	
+lim_Latn	Limburgan	lim	li
+lin_Latn	Lingala	lin	ln
+lit_Latn	Lithuanian	lit	lt
+lmo_Latn	Lombard	lmo	
+ltg_Latn	Latgalian	ltg	
+ltz_Latn	Luxembourgish	ltz	lb
+lua_Latn	Luba-Lulua	lua	
+lug_Latn	Ganda	lug	lg
+luo_Latn	Luo (Kenya and Tanzania)	luo	
+lus_Latn	Lushai	lus	
+lvs_Latn	Standard Latvian	lvs	lv
+mag_Deva	Magahi	mag	
+mai_Deva	Maithili	mai	
+mal_Mlym	Malayalam	mal	ml
+mar_Deva	Marathi	mar	mr
+min_Latn	Minangkabau	min	
+mkd_Cyrl	Macedonian	mkd	mk
+mlt_Latn	Maltese	mlt	mt
+mni_Beng	Manipuri	mni	
+mos_Latn	Mossi	mos	
+mri_Latn	Maori	mri	mi
+mya_Mymr	Burmese	mya	my
+nld_Latn	Dutch	nld	nl
+nno_Latn	Norwegian Nynorsk	nno	nn
+nob_Latn	Norwegian Bokmål	nob	nb
+npi_Deva	Nepali (individual language)	npi	ne
+nso_Latn	Pedi	nso	
+nus_Latn	Nuer	nus	
+nya_Latn	Nyanja	nya	ny
+oci_Latn	Occitan (post 1500)	oci	oc
+ory_Orya	Odia	ory	or
+pag_Latn	Pangasinan	pag	
+pan_Guru	Panjabi	pan	pa
+pap_Latn	Papiamento	pap	
+pbt_Arab	Southern Pashto	pbt	ps
+pes_Arab	Iranian Persian	pes	fa
+plt_Latn	Plateau Malagasy	plt	
+pol_Latn	Polish	pol	pl
+por_Latn	Portuguese	por	pt
+prs_Arab	Dari	prs	
+quy_Latn	Ayacucho Quechua	quy	qu
+ron_Latn	Romanian	ron	ro
+run_Latn	Rundi	run	rn
+rus_Cyrl	Russian	rus	ru
+sag_Latn	Sango	sag	sg
+san_Deva	Sanskrit	san	sa
+sat_Olck	Santali	sat	
+scn_Latn	Sicilian	scn	
+shn_Mymr	Shan	shn	
+sin_Sinh	Sinhala	sin	si
+slk_Latn	Slovak	slk	sk
+slv_Latn	Slovenian	slv	sl
+smo_Latn	Samoan	smo	sm
+sna_Latn	Shona	sna	sn
+snd_Arab	Sindhi	snd	sd
+som_Latn	Somali	som	so
+sot_Latn	Southern Sotho	sot	st
+spa_Latn	Spanish	spa	es
+srd_Latn	Sardinian	srd	sc
+srp_Cyrl	Serbian	srp	sr
+ssw_Latn	Swati	ssw	ss
+sun_Latn	Sundanese	sun	su
+swe_Latn	Swedish	swe	sv
+swh_Latn	Swahili (individual language)	swh	sw
+szl_Latn	Silesian	szl	
+tam_Taml	Tamil	tam	ta
+taq_Latn	Tamasheq	taq	
+taq_Tfng	Tamasheq	taq	
+tat_Cyrl	Tatar	tat	tt
+tel_Telu	Telugu	tel	te
+tgk_Cyrl	Tajik	tgk	tg
+tgl_Latn	Tagalog	tgl	tl
+tha_Thai	Thai	tha	th
+tir_Ethi	Tigrinya	tir	ti
+tpi_Latn	Tok Pisin	tpi	
+tsn_Latn	Tswana	tsn	tn
+tso_Latn	Tsonga	tso	ts
+tuk_Latn	Turkmen	tuk	tk
+tum_Latn	Tumbuka	tum	
+tur_Latn	Turkish	tur	tr
+twi_Latn	Twi	twi	tw
+tzm_Tfng	Central Atlas Tamazight	tzm	
+uig_Arab	Uighur	uig	ug
+ukr_Cyrl	Ukrainian	ukr	uk
+umb_Latn	Umbundu	umb	
+urd_Arab	Urdu	urd	ur
+uzn_Latn	Northern Uzbek	uzn	uz
+vec_Latn	Venetian	vec	
+vie_Latn	Vietnamese	vie	vi
+war_Latn	Waray (Philippines)	war	
+wol_Latn	Wolof	wol	wo
+xho_Latn	Xhosa	xho	xh
+ydd_Hebr	Eastern Yiddish	ydd	yi
+yor_Latn	Yoruba	yor	yo
+yue_Hant	Yue Chinese	yue	
+zho_Hans	Chinese	zho	zh
+zho_Hant	Chinese	zho	zh
+zsm_Latn	Standard Malay	zsm	ms
+zul_Latn	Zulu	zul	zu

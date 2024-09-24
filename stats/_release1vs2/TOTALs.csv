@@ -1,0 +1,9 @@
+crawl	text_newlines	text_wcwords	text_chars	text_bytes	docs
+release1.2_cleaned_stats	5.66e+11	4.21e+12	3.19e+13	4.27e+13	3.39e+09
+release1.2_dedup_stats	9.84e+11	5.56e+12	4.15e+13	5.41e+13	5.25e+09
+release1_deduped_stats	1.11e+12	5.64e+12	4.05e+13	5.01e+13	5.25e+09
+release1_stats	5.40e+12	2.17e+13	1.51e+14	1.94e+14	2.89e+10
+release2.0_annotated_stats	6.13e+11	7.58e+12	5.20e+13	6.74e+13	2.06e+10
+release2.0_cleaned_stats	3.00e+11	5.56e+12	3.74e+13	4.86e+13	1.06e+10
+release2.0_collections_merged_stats	6.13e+11	7.58e+12	5.20e+13	6.74e+13	2.06e+10
+release2.0_html_stage2_stats	2.22e+12	2.13e+13	1.46e+14	1.79e+14	1.06e+11

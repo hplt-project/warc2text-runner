@@ -10,6 +10,7 @@ class MRStatsR2:
 
     def _build_index(self, df):
         df['index'] = df['collection']
+        df['index'] += ','
         df['index'] += df['lang'].str[0].fillna('null')
 
 

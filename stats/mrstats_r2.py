@@ -32,7 +32,7 @@ class MRStatsR2:
         return df
 
 
-    def map(self, ftext='t', index_prefix='', file='-', *files):
+    def map(self, ftext='t', file='-', *files):
         adf = None
         files = [file] + list(files)
         inps = [sys.stdin if f=='-' else zstandard.open(f, 'r') for f in files]
@@ -43,7 +43,7 @@ class MRStatsR2:
             if len(df) == 0:
                 break
 
-            mdf = self._map(df, ftext, index_prefix, count_words=False)
+            mdf = self._map(df, ftext, count_words=False)
             rdf = self._reduce(mdf)
             adf = rdf if adf is None else adf.add(rdf, fill_value=0)
 

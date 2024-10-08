@@ -4,6 +4,10 @@ import pandas as pd
 import sys
 
 class StatsCalc:
+    def __init__(self):
+        pass
+
+
     def _map(self, df, ftext, index_prefix, count_words=False):
         """
         Returns dataframe with the same number of rows, each row is the statistics for the corresponding input row.

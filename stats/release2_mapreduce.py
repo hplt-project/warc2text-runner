@@ -41,10 +41,10 @@ class StatsCalc:
         rdf.to_csv(sys.stdout, sep='\t', index=True, header=None)
 
 
-    def map(self, ftext='t', index_prefix='', file=sys.stdout, *files):
+    def map(self, ftext='t', index_prefix='', file='-', *files):
         adf = None
         files = [file] + list(files)
-        inps = [zstandard.open(f, 'r') for f in files]
+        inps = [sys.stdin if f=='-' else zstandard.open(f, 'r') for f in files]
         while True:
             dfs = [pd.read_json(inp, nrows=10**6, orient='records', lines=True) for inp in inps]
             assert all( len(dfs[i]) == len(dfs[0]) for i in range(1,len(dfs)) )

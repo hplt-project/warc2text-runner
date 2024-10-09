@@ -1,9 +1,9 @@
 from fire import Fire
-from stats.mrstats_r2 import MRStatsR2
+from mrstats_r2 import MRStatsR2
 
 
 class MRStatsR2S2(MRStatsR2):
-    def __init__(self, collection):
+    def __init__(self, collection=''):
         super().__init__()
         self.collection = collection
 
@@ -13,4 +13,5 @@ class MRStatsR2S2(MRStatsR2):
         df['index'] += df.lang.str[0].fillna('null')
 
 
-Fire(MRStatsR2S2)
+if __name__ == "__main__":
+    Fire(MRStatsR2S2)

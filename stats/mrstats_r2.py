@@ -44,7 +44,7 @@ class MRStatsR2:
             if len(df) == 0:
                 break
 
-            mdf = self._map(df, ftext, count_words=False)
+            mdf = self._map(df, ftext, count_words=True)
             rdf = self._reduce(mdf)
             adf = rdf if adf is None else adf.add(rdf, fill_value=0)
 
@@ -56,10 +56,11 @@ class MRStatsR2:
 
 
     def reduce(self):
-        mdf = pd.read_csv('tmp/text_stats.csv',sep='\t', header=None)
+        mdf = pd.read_csv(sys.stdin,sep='\t', header=None)
         mdf.rename(columns={0: 'index'}, inplace=True)
         rdf = self._reduce(mdf)
         rdf.to_csv(sys.stdout, sep='\t', index=True, header=None)
 
 
-Fire(MRStatsR2)
+if __name__ == "__main__":
+    Fire(MRStatsR2)

@@ -36,12 +36,8 @@ class MRStatsR2:
     def map(self, file='-', *files):
         adf = None
         files = [file] + list(files)
-        inps = [sys.stdin if f=='-' else zstandard.open(f, 'r') for f in files]
-        while True:
-            df = self._read_batch(inps)
-            if len(df) == 0:
-                break
-
+        inps = [sys.stdin if f=='-' else f for f in files]
+        for df in self._batch_it(inps, batch_size=10**5):
             mdf = self._map(df, count_words=True)
             rdf = self._reduce(mdf)
             adf = rdf if adf is None else adf.add(rdf, fill_value=0)
@@ -49,13 +45,16 @@ class MRStatsR2:
         adf.to_csv(sys.stdout, sep='\t', index=True, header=None)
 
 
-    def _read_batch(self, inps, batch_size=10**5):
-        dfs = [pd.read_json(inp, nrows=batch_size, orient='records', lines=True) for inp in inps]
-        assert all(len(dfs[i]) == len(dfs[0]) for i in range(1, len(dfs)))
-        df = pd.concat(dfs, axis=1)
-        df.rename(columns={self.ftext: 'text'}, inplace=True)
-        df.lang, df.text = df.lang.astype(object), df.text.astype(str)
-        return df
+    def _batch_it(self, inps, batch_size):
+        readers = [
+            pd.read_json(inp, nrows=batch_size, orient='records', lines=True, chunksize=batch_size)
+            for inp in inps]
+        for dfs in zip(readers):
+            assert all(len(dfs[i]) == len(dfs[0]) for i in range(1, len(dfs)))
+            df = pd.concat(dfs, axis=1)
+            df.rename(columns={self.ftext: 'text'}, inplace=True)
+            df.lang, df.text = df.lang.astype(object), df.text.astype(str)
+            yield df
 
 
     def _reduce(self, mdf):

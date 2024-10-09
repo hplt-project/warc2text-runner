@@ -1,5 +1,5 @@
 import base64
-
+from fire import Fire
 from stats.mrstats_r2 import MRStatsR2
 import pandas as pd
 
@@ -20,4 +20,8 @@ class MRStatsR1Warc2text(MRStatsR2):
         df = pd.read_csv(inps[0], sep='\t', header=None, nrows=10**5, names=['text'])
         df.text = df.text.apply(lambda b: base64.b64decode(b).decode('utf-8'))
         return df
+
+
+if __name__ == "__main__":
+    Fire(MRStatsR1Warc2text)
 

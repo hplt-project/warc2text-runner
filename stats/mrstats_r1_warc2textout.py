@@ -1,6 +1,6 @@
 import base64
 from fire import Fire
-from stats.mrstats_r2 import MRStatsR2
+from mrstats_r2 import MRStatsR2
 import pandas as pd
 
 

@@ -53,6 +53,8 @@ class MRStatsR2:
         dfs = [pd.read_json(inp, nrows=batch_size, orient='records', lines=True) for inp in inps]
         assert all(len(dfs[i]) == len(dfs[0]) for i in range(1, len(dfs)))
         df = pd.concat(dfs, axis=1)
+        if len(df) == 0: 
+            return df
         df.rename(columns={self.ftext: 'text'}, inplace=True)
         df.lang, df.text = df.lang.astype(object), df.text.astype(str)
         return df

@@ -3,8 +3,8 @@ from mrstats_r2 import MRStatsR2
 
 
 class MRStatsR2S2(MRStatsR2):
-    def __init__(self, collection=''):
-        super().__init__()
+    def __init__(self, collection):
+        super().__init__(ftext='t')
         self.collection = collection
 
 

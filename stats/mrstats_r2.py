@@ -4,8 +4,8 @@ import pandas as pd
 import sys
 
 class MRStatsR2:
-    def __init__(self):
-        pass
+    def __init__(self,ftext='text'):
+        self.ftext = ftext
 
 
     def _build_index(self, df):
@@ -14,14 +14,14 @@ class MRStatsR2:
         df['index'] += df['lang'].str[0].fillna('null')
 
 
-    def _map(self, df, ftext, count_words=False):
+    def _map(self, df, count_words=False):
         """
         Returns dataframe with the same number of rows, each row is the statistics for the corresponding input row.
         Counting words is expensive, disabled by default.
         """
         self._build_index(df)
 
-        df['text'] = df[ftext].fillna('')
+        df['text'] = df['text'].fillna('')
         df = df.drop(columns=[c for c in df.columns if c not in {'index','text'}])
 
         df['text_newlines'] = df.text.str.count('\n') + 1
@@ -33,14 +33,12 @@ class MRStatsR2:
         return df
 
 
-    def map(self, ftext='t', file='-', *files):
+    def map(self, file='-', *files):
         adf = None
         files = [file] + list(files)
         inps = [sys.stdin if f=='-' else zstandard.open(f, 'r') for f in files]
         while True:
-            dfs = [pd.read_json(inp, nrows=10**5, orient='records', lines=True) for inp in inps]
-            assert all( len(dfs[i]) == len(dfs[0]) for i in range(1,len(dfs)) )
-            df = pd.concat(dfs, axis=1)
+            df = self._read_batch(inps)
             if len(df) == 0:
                 break
 
@@ -49,6 +47,14 @@ class MRStatsR2:
             adf = rdf if adf is None else adf.add(rdf, fill_value=0)
 
         adf.to_csv(sys.stdout, sep='\t', index=True, header=None)
+
+
+    def _read_batch(self, inps):
+        dfs = [pd.read_json(inp, nrows=10 ** 5, orient='records', lines=True) for inp in inps]
+        assert all(len(dfs[i]) == len(dfs[0]) for i in range(1, len(dfs)))
+        df = pd.concat(dfs, axis=1)
+        df.rename(columns={self.ftext: 'text'}, inplace=True)
+        return df
 
 
     def _reduce(self, mdf):

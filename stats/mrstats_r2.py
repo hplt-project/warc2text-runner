@@ -54,6 +54,7 @@ class MRStatsR2:
         assert all(len(dfs[i]) == len(dfs[0]) for i in range(1, len(dfs)))
         df = pd.concat(dfs, axis=1)
         df.rename(columns={self.ftext: 'text'}, inplace=True)
+        df.lang, df.text = df.lang.astype(object), df.text.astype(str)
         return df
 
 

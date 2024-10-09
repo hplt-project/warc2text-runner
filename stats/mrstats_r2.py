@@ -42,15 +42,15 @@ class MRStatsR2:
             if len(df) == 0:
                 break
 
-            mdf = self._map(df, ftext, count_words=True)
+            mdf = self._map(df, count_words=True)
             rdf = self._reduce(mdf)
             adf = rdf if adf is None else adf.add(rdf, fill_value=0)
 
         adf.to_csv(sys.stdout, sep='\t', index=True, header=None)
 
 
-    def _read_batch(self, inps):
-        dfs = [pd.read_json(inp, nrows=10 ** 5, orient='records', lines=True) for inp in inps]
+    def _read_batch(self, inps, batch_size=10**5):
+        dfs = [pd.read_json(inp, nrows=batch_size, orient='records', lines=True) for inp in inps]
         assert all(len(dfs[i]) == len(dfs[0]) for i in range(1, len(dfs)))
         df = pd.concat(dfs, axis=1)
         df.rename(columns={self.ftext: 'text'}, inplace=True)

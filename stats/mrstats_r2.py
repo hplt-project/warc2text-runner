@@ -47,14 +47,12 @@ class MRStatsR2:
 
     def _batch_it(self, inps, batch_size):
         readers = [
-            pd.read_json(inp, nrows=batch_size, orient='records', lines=True, chunksize=batch_size)
+            pd.read_json(inp, orient='records', lines=True, chunksize=batch_size)
             for inp in inps]
-        for dfs in zip(readers):
+#        import pdb; pdb.set_trace()
+        for dfs in zip(*readers):
             assert all(len(dfs[i]) == len(dfs[0]) for i in range(1, len(dfs)))
             df = pd.concat(dfs, axis=1)
-            if len(df) == 0: 
-                return df
- 
             df.rename(columns={self.ftext: 'text'}, inplace=True)
             df.lang, df.text = df.lang.astype(object), df.text.astype(str)
             yield df

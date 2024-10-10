@@ -7,7 +7,7 @@ FILTER_DIR=$(dirname $0)/..  # directory to take filter files from, if empty the
 mkdir -p ${LOG_DIR}
 echo "Extracting HTML from WARCs in stdin in ${NJOBS} parallel processes, logging to ${LOG_DIR}"
 
-#find ${WARCS_DIR} -name "*.warc.gz" | 
+#find ${WARCS_DIR} -name "*.warc*.gz" | 
 #sort | 
 parallel --colsep ':' \
     --joblog ${LOG_DIR}/joblog \

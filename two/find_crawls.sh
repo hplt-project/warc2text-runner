@@ -9,4 +9,4 @@ PATTERNS="~/hplt/one/warc/ia/* ~/hplt/two/warc/archivebot/* ~/hplt/two/warc/cc/C
 module purge; module load parallel; module unload OpenSSL
 mkdir -p $RUNDIR
 parallel $REMOTECONFIG --keep-order "eval echo {}" ::: $PATTERNS | tr ' ' '\n'  |tee $RUNDIR/crawls.paths
-parallel $REMOTECONFIG --keep-order "find {} -name '*.warc.gz'|wc -l|tr '\n' '\t'; du -sh {}" :::: $RUNDIR/crawls.paths |tee $RUNDIR/crawls.stat
+parallel $REMOTECONFIG --keep-order "find {} -name '*.warc*.gz'|wc -l|tr '\n' '\t'; du -sh {}" :::: $RUNDIR/crawls.paths |tee $RUNDIR/crawls.stat

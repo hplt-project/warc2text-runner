@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from fire import Fire
 import zstandard
 import pandas as pd
@@ -64,11 +66,16 @@ class MRStatsR2:
         return mdf.groupby('index').agg('sum')
 
 
-    def reduce(self):
-        mdf = pd.read_csv(sys.stdin,sep='\t', header=None)
+    def reduce(self, dir):
+        mdf = pd.read_csv(Path(dir)/'text_stats.csv',sep='\t', header=None)
         mdf.rename(columns={0: 'index'}, inplace=True)
         rdf = self._reduce(mdf)
-        rdf.to_csv(sys.stdout, sep='\t', index=True, header=None)
+        rdf.to_csv(Path(dir)/'stats.csv', sep='\t', index=True, header=None)
+        for f in (0,1):
+            adf = rdf.groupby(rdf.index.str.split(',').str[f]).agg('sum')
+            adf.to_csv(Path(dir) / f'stats-{f}.csv', sep='\t', index=True, header=None)
+        adf = rdf.sum().to_frame('TOTAL').T
+        adf.to_csv(Path(dir) / f'stats-TOTAL.csv', sep='\t', index=True, header=None)
 
 
 if __name__ == "__main__":

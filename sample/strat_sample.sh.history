@@ -1,0 +1,19 @@
+OUTDIR=per_lang_group_1K
+mkdir $OUTDIR
+find ~/hplt/public/two/cleaned/ -name "???_????" | grep -E -v 'eng_Latn|rus_Cyrl' | parallel  --eta --line-buffer  -j 200 "zstdcat {}/*zst | python stratified_sample.py sample --fcol2group=./collection2group.tsv --outdir=$OUTDIR/{/} --k=1000"
+
+# for a few largest languages passing all data through stratified_sample.py is a bit slow (e.g. 2.5d for eng_Latn), but we can pass only a sample of 1M examples for each language because for these languages we will have >1000 from each group in the 1M sample (but not from each collection, e.g. 20 examples from cc13 in the 1M sample for Russian !)
+for lang in eng_Latn rus_Cyrl; do
+  zstdcat per_lang_1M/${lang}.shuf.zst | python stratified_sample.py sample --fcol2group=./collection2group.tsv --outdir=per_lang_group_1K-eng/${lang} --k=1000
+  wc per_lang_group_1K-${lang}/${lang}/*
+  echo "Check there are 1000 examples in each group above! This guarantees that for these languages sampling from from the sample is identical to sampling from all data."
+  cp -r per_lang_group_1K-${lang}/${lang} $OUTDIR/
+done
+
+
+find $OUTDIR -mindepth 2  | parallel --eta --line-buffer -j 200 "shuf {} | zstd -o {}.shuf.zst; rm {}" 
+
+
+
+
+

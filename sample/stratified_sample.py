@@ -46,6 +46,11 @@ class Reservoir:
 
 class Sampler:
     def __init__(self, fcol2group, outdir, k=1000):
+        """
+        :param fcol2group: a mapping from collections to groups
+        :param outdir: a directory to dump samples
+        :param k: the number of examples sampled per group, if the total number is smaller all examples will be returned
+        """
         self.outdir = Path(outdir)
         self.outdir.mkdir(parents=True, exist_ok=False)
         self.k = k
@@ -54,7 +59,16 @@ class Sampler:
 
 
     def sample(self, file='-', *files):
-        # TODO: feed all files for the same language to the script!
+        """
+        Stratified sampling from a list of files or stdin.
+        NB: feed all files for the same language to the script if you don't want to stratify by file as well, otherwise
+        different number of examples in different files will not be taken into account!
+        NB: tests have shown that processing speed is comparable to the speed of the UNIX ```wc``` utility when it calculates
+        the number of words among other statistics (```wc -l``` which calculates only the number of lines is much faster).
+        :param file: the first file or '-' for stdin
+        :param files: other files
+        :return: nothing
+        """
         c2r = defaultdict(lambda: Reservoir(k=self.k))
         files = [file] + list(files)
         inps = [sys.stdin if f=='-' else f for f in files]

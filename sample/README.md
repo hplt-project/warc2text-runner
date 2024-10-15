@@ -11,13 +11,25 @@ combine crawls of similar type and age, [see this mapping](collection2group.tsv)
 shuffled, which make the first N lines a uniform sample from the full data on its own. 
 [See commands](strat_sample.sh.history) used to create samples stratified by language and group.
 
+### Notes on usage of samples
+Notice that the number of examples for some languages and groups can be smaller than the target number, this means that
+the whole dataset contains fewer examples and the sample contains all of them. E.g. in the 1K sample
+stratified by language and collection group about 30% of language-group pairs have less than 1K examples.
 
-### Note on implementation
+These samples are stratified, meaning one can easily estimate different quantities for each strata separately.  
+To draw estimates for the whole dataset you may want to take proportions of different stratas into account. If you work
+with samples stratified by language see [the total size of data extracted for each language](../stats/release2.0_cleaned_stats_mr/stats-1.tsv).
+If you work with samples stratified by language and group consider
+[the total size of data extracted for each language from each crawl](../stats/release2.0_cleaned_stats_mr/stats.tsv) and
+[the mapping from collections to groups](collection2group.tsv).
+
+
+### Notes on implementation
 Documents from different groups but the same language are mixed in the same files. It is unclear how an 
 efficient and simple solution with ```shuf``` for this case can look like. Instead, we [implemented stratified sampling](stratified_sample.py)
 using one reservoir per group. For efficiency, the algorithm is adapted for batched update of a reservoir. 
 
-### Note on efficiency
+### Notes on efficiency
 Tests have shown that the speed of [stratified_sample.py](stratified_sample.py) is comparable to the speed of the UNIX 
 ```wc``` utility when it calculates the number of words among other statistics (```wc -l``` which calculates only the
 number of lines is much faster).

@@ -5,6 +5,9 @@ import zstandard
 import pandas as pd
 import sys
 
+from warc2text_runner.utils import unifying_iterator
+
+
 class MRStatsR2:
     def __init__(self,ftext='text'):
         self.ftext = ftext
@@ -48,16 +51,17 @@ class MRStatsR2:
 
 
     def _batch_it(self, inps, batch_size):
-        readers = [
-            pd.read_json(inp, orient='records', lines=True, chunksize=batch_size)
-            for inp in inps]
-#        import pdb; pdb.set_trace()
-        for dfs in zip(*readers):
-            assert all(len(dfs[i]) == len(dfs[0]) for i in range(1, len(dfs)))
-            df = pd.concat(dfs, axis=1)
-            df.rename(columns={self.ftext: 'text'}, inplace=True)
-            df.lang, df.text = df.lang.astype(object), df.text.astype(str)
-            yield df
+        unifying_iterator.batch_iterator('r2', inps, batch_size)
+#         readers = [
+#             pd.read_json(inp, orient='records', lines=True, chunksize=batch_size)
+#             for inp in inps]
+# #        import pdb; pdb.set_trace()
+#         for dfs in zip(*readers):
+#             assert all(len(dfs[i]) == len(dfs[0]) for i in range(1, len(dfs)))
+#             df = pd.concat(dfs, axis=1)
+#             df.rename(columns={self.ftext: 'text'}, inplace=True)
+#             df.lang, df.text = df.lang.astype(object), df.text.astype(str)
+#             yield df
 
 
     def _reduce(self, mdf):

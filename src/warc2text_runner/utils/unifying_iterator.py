@@ -3,17 +3,17 @@ import pandas as pd
 
 
 def _release2_iterator(inps, batch_size):
-        readers = [
-            pd.read_json(inp, orient='records', lines=True, chunksize=batch_size)
-            for inp in inps]
+    readers = [
+        pd.read_json(inp, orient='records', lines=True, chunksize=batch_size)
+        for inp in inps]
 #        import pdb; pdb.set_trace()
-        for dfs in zip(*readers):
-            assert all(len(dfs[i]) == len(dfs[0]) for i in range(1, len(dfs)))
-            df = pd.concat(dfs, axis=1)
-            # text field is 't' for stage2out, no field 't' for later stages and rename() does nothing
-            df.rename(columns={'t': 'text'}, inplace=True)
-            df.lang, df.text = df.lang.astype(object), df.text.astype(str)
-            yield df
+    for dfs in zip(*readers):
+        assert all(len(dfs[i]) == len(dfs[0]) for i in range(1, len(dfs)))
+        df = pd.concat(dfs, axis=1)
+        # text field is 't' for stage2out, no field 't' for later stages and rename() does nothing
+        df.rename(columns={'t': 'text'}, inplace=True)
+        df.lang, df.text = df.lang.astype(object), df.text.astype(str)
+        yield df
 
 
 def _release1_warc2textout_iterator(inps, batch_size):

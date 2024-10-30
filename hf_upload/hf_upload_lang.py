@@ -7,8 +7,13 @@ import fire
 
 def upload(lang_dir, remote, cache_dir='/nird/datalake/NS8112K/hf_cache'):
     p = Path(lang_dir)
-    part = p.name
-    files = [str(f) for f in p.glob("*.zst")]
+    if p.is_dir():
+        part = p.name
+        files = [str(f) for f in p.glob("*.zst")]
+    else:
+        part = p.parent.name + '_' + p.name.split('.')[0]
+        files = str(p)
+
     print(f'Loading part {part} from {p}: {len(files)} files. Cache dir: {cache_dir}')
     features = Features({
         'f': Value('string'),

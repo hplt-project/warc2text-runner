@@ -3,7 +3,7 @@ from pathlib import Path
 import fire
 
 
-def upload(lang_dir, remote, cache_dir='/nird/projects/NS8112K/two/cache'):
+def upload(lang_dir, remote, cache_dir='/nird/datalake/NS8112K/hf_cache'):
     p = Path(lang_dir)
     part = p.name
     files = [str(f) for f in p.glob("*.zst")]

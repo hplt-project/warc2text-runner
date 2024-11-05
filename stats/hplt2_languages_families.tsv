@@ -1,0 +1,194 @@
+v2 Language Code (ISO 693-3+script)	Language Name	ISO693-3 code	ISO693-1 code	ISO693-3 code macro	Macroarea	Latitude	Longitude	Family	Subfamily	Genus
+ace_Arab	Achinese	ace			Eurasia	5.5	95.5	Austronesian		Malayo-Sumbawan
+ace_Latn	Achinese	ace			Eurasia	5.5	95.5	Austronesian		Malayo-Sumbawan
+afr_Latn	Afrikaans	afr	af		Africa	-31.0	22.0	Indo-European		Germanic
+als_Latn	Tosk Albanian	als	sq	sqi	Eurasia	41.0	20.0	Indo-European		Albanian
+amh_Ethi	Amharic	amh	am		Africa	10.0	38.0	Afro-Asiatic		Semitic
+ara_Arab	Arabic	ara	ar		Eurasia	25.0	42.0	Afro-Asiatic		Semitic
+asm_Beng	Assamese	asm	as		Eurasia	26.0	93.0	Indo-European		Indic
+ast_Latn	Asturian	ast			Eurasia	43.25	-6.0	Indo-European		Romance
+awa_Deva	Awadhi	awa			Eurasia	27.5	81.5	Indo-European		Indic
+ayr_Latn	Central Aymara	ayr		aym	South America	-17.0	-69.0	Aymaran		Aymaran
+azb_Arab	South Azerbaijani	azb	az	aze	Eurasia	37.5	47.0	Altaic		Turkic
+azj_Latn	North Azerbaijani	azj	az	aze	Eurasia	40.5	48.5	Altaic		Turkic
+bak_Cyrl	Bashkir	bak	ba		Eurasia	53.0	58.0	Altaic		Turkic
+bam_Latn	Bambara	bam	bm		Africa	12.5	-7.5	Mande		Western Mande
+ban_Latn	Balinese	ban			Papunesia	-8.33333333333	115.25	Austronesian		Malayo-Sumbawan
+bel_Cyrl	Belarusian	bel	be		Eurasia	54.0	28.0	Indo-European		Slavic
+bem_Latn	Bemba (Zambia)	bem			Africa	-10.0	28.25	Niger-Congo	Benue-Congo	Bantu
+ben_Beng	Bengali	ben	bn		Eurasia	24.0	90.0	Indo-European		Indic
+bho_Deva	Bhojpuri	bho			Eurasia	26.0	84.0	Indo-European		Indic
+bjn_Arab	Banjar	bjn		msa				Austronesian		
+bjn_Latn	Banjar	bjn		msa				Austronesian		
+bod_Tibt	Tibetan	bod	bo		Eurasia	30.3333333333	79.3333333333	Sino-Tibetan	Tibeto-Burman	Bodic
+bos_Latn	Bosnian	bos	bs	hbs	Eurasia	43.0	18.0	Indo-European		Slavic
+bug_Latn	Buginese	bug			Papunesia	-4.0	120.0	Austronesian		South Sulawesi
+bul_Cyrl	Bulgarian	bul	bg		Eurasia	42.5	25.0	Indo-European		Slavic
+cat_Latn	Catalan	cat	ca		Eurasia	41.75	2.0	Indo-European		Romance
+ceb_Latn	Cebuano	ceb			Papunesia	10.0	124.0	Austronesian		Greater Central Philippine
+ces_Latn	Czech	ces	cs		Eurasia	50.0	15.0	Indo-European		Slavic
+cjk_Latn	Chokwe	cjk						Niger-Congo		
+ckb_Arab	Central Kurdish	ckb		kur	Eurasia	36.0	44.0	Indo-European		Iranian
+crh_Latn	Crimean Tatar	crh			Eurasia	45.0	34.0833333333	Altaic		Turkic
+cym_Latn	Welsh	cym	cy		Eurasia	52.75	-3.5833	Indo-European		Celtic
+dan_Latn	Danish	dan	da		Eurasia	56.0	10.0	Indo-European		Germanic
+deu_Latn	German	deu	de		Eurasia	52.5	13.3333333333	Indo-European		Germanic
+dik_Latn	Southwestern Dinka	dik		din	Africa	8.5	28.0	Eastern Sudanic	Nilotic	Western Nilotic
+dyu_Latn	Dyula	dyu			Africa	9.83333333333	-4.66666666667	Mande		Western Mande
+dzo_Tibt	Dzongkha	dzo	dz					Sino-Tibetan		
+ell_Grek	Modern Greek (1453-)	ell	el		Eurasia	34.75	33.0	Indo-European		Greek
+eng_Latn	English	eng	en		Eurasia	52.0	0.0	Indo-European		Germanic
+epo_Latn	Esperanto	epo	eo					other		
+est_Latn	Estonian	est	et		Eurasia	59.0	26.0	Uralic	Finno-Ugric	Finnic
+eus_Latn	Basque	eus	eu		Eurasia	43.0	-3.83333333333	Basque		Basque
+ewe_Latn	Ewe	ewe	ee		Africa	6.0	1.0	Niger-Congo	Kwa	Gbe
+fao_Latn	Faroese	fao	fo		Eurasia	62.0	-7.0	Indo-European		Germanic
+fij_Latn	Fijian	fij	fj		Papunesia	-17.8333333333	178.0	Austronesian	Eastern Malayo-Polynesian	Oceanic
+fin_Latn	Finnish	fin	fi		Eurasia	62.0	25.0	Uralic	Finno-Ugric	Finnic
+fon_Latn	Fon	fon			Africa	6.41666666667	2.16666666667	Niger-Congo	Kwa	Gbe
+fra_Latn	French	fra	fr		Eurasia	48.0	2.0	Indo-European		Romance
+fur_Latn	Friulian	fur						Indo-European		Romance
+fuv_Latn	Nigerian Fulfulde	fuv		ful	Africa	10.25	11.25	Niger-Congo	North-Central Atlantic	Peul-Serer
+gaz_Latn	West Central Oromo	gaz	om	orm	Africa	9.0	37.0	Afro-Asiatic	Cushitic	Lowland East Cushitic
+gla_Latn	Scottish Gaelic	gla	gd		Eurasia	57.0	-4.0	Indo-European		Celtic
+gle_Latn	Irish	gle	ga		Eurasia	55.0	-8.0	Indo-European		Celtic
+glg_Latn	Galician	glg	gl		Eurasia	43.0	-8.0	Indo-European		Romance
+grn_Latn	Guarani	grn	gn		South America	-26.0	-56.0	Tupian		Maweti-Guarani
+guj_Gujr	Gujarati	guj	gu		Eurasia	23.0	72.0	Indo-European		Indic
+hat_Latn	Haitian	hat	ht		North America	19.0	-72.5	other		Creoles and Pidgins
+hau_Latn	Hausa	hau	ha		Africa	12.0	7.0	Afro-Asiatic	Chadic	West Chadic
+heb_Hebr	Hebrew	heb	he		Eurasia	31.75	35.1666666667	Afro-Asiatic		Semitic
+hin_Deva	Hindi	hin	hi		Eurasia	25.0	77.0	Indo-European		Indic
+hne_Deva	Chhattisgarhi	hne						Indo-European		
+hrv_Latn	Croatian	hrv	hr	hbs	Eurasia	44.0	19.0	Indo-European		Slavic
+hun_Latn	Hungarian	hun	hu		Eurasia	47.0	20.0	Uralic	Finno-Ugric	Ugric
+hye_Armn	Armenian	hye	hy		Eurasia	40.0	45.0	Indo-European		Armenian
+ibo_Latn	Igbo	ibo	ig		Africa	6.0	7.33333333333	Niger-Congo	Benue-Congo	Igboid
+ilo_Latn	Iloko	ilo			Papunesia	16.0	121.0	Austronesian		Northern Luzon
+ind_Latn	Indonesian	ind	id	msa	Papunesia	0.0	106.0	Austronesian		Malayo-Sumbawan
+isl_Latn	Icelandic	isl	is		Eurasia	65.0	-17.0	Indo-European		Germanic
+ita_Latn	Italian	ita	it		Eurasia	43.75	11.25	Indo-European		Romance
+jav_Latn	Javanese	jav	jv		Papunesia	-7.0	111.0	Austronesian		Javanese
+jpn_Jpan	Japanese	jpn	ja		Eurasia	37.0	140.0	Japanese		Japanese
+kab_Latn	Kabyle	kab			Africa	36.5	5.0	Afro-Asiatic		Berber
+kac_Latn	Kachin	kac			Eurasia	25.4166666667	97.0	Sino-Tibetan	Tibeto-Burman	Brahmaputran
+kam_Latn	Kamba (Kenya)	kam			Africa	-1.5	38.0	Niger-Congo	Benue-Congo	Bantu
+kan_Knda	Kannada	kan	kn		Eurasia	14.0	76.0	Dravidian		Dravidian
+kas_Arab	Kashmiri	kas	ks		Eurasia	34.0	76.0	Indo-European		Indic
+kas_Deva	Kashmiri	kas	ks		Eurasia	34.0	76.0	Indo-European		Indic
+kat_Geor	Georgian	kat	ka		Eurasia	42.0	44.0	Kartvelian		Kartvelian
+kaz_Cyrl	Kazakh	kaz	kk		Eurasia	50.0	70.0	Altaic		Turkic
+kbp_Latn	Kabiyè	kbp			Africa	9.66666666667	1.16666666667	Niger-Congo	Gur	Grusi
+kea_Latn	Kabuverdianu	kea						other		
+khk_Cyrl	Halh Mongolian	khk	mn	mon	Eurasia	47.0	105.0	Altaic		Mongolic
+khm_Khmr	Khmer	khm	km		Eurasia	12.5	105.0	Austro-Asiatic	Mon-Khmer	Khmer
+kik_Latn	Kikuyu	kik	ki		Africa	-0.75	36.75	Niger-Congo	Benue-Congo	Bantu
+kin_Latn	Kinyarwanda	kin	rw		Africa	-2.0	30.0	Niger-Congo	Benue-Congo	Bantu
+kir_Cyrl	Kirghiz	kir	ky		Eurasia	47.75	124.416666667	Altaic		Turkic
+kmb_Latn	Kimbundu	kmb			Africa	-10.6666666667	24.0	Niger-Congo	Benue-Congo	Bantu
+kmr_Latn	Northern Kurdish	kmr		kur	Eurasia	38.0	42.0	Indo-European		Iranian
+knc_Arab	Central Kanuri	knc		kau	Africa	12.0	13.0	Saharan	Saharan	Western Saharan
+knc_Latn	Central Kanuri	knc	kr	kau	Africa	12.0	13.0	Saharan	Saharan	Western Saharan
+kon_Latn	Kongo	kon	kg		Africa	-5.0	15.0	Niger-Congo	Benue-Congo	Bantu
+kor_Hang	Korean	kor	ko		Eurasia	37.5	128.0	Korean		Korean
+lao_Laoo	Lao	lao	lo		Eurasia	18.0	103.0	Tai-Kadai		Kam-Tai
+lij_Latn	Ligurian	lij			Eurasia	44.4166666667	8.95	Indo-European		Romance
+lim_Latn	Limburgan	lim	li		Eurasia	51.0	5.5	Indo-European		Germanic
+lin_Latn	Lingala	lin	ln		Africa	2.0	18.5	Niger-Congo	Benue-Congo	Bantu
+lit_Latn	Lithuanian	lit	lt		Eurasia	55.0	24.0	Indo-European		Baltic
+lmo_Latn	Lombard	lmo			Eurasia	45.88	9.4	Indo-European		Romance
+ltg_Latn	Latgalian	ltg		lav				Indo-European		Balti
+ltz_Latn	Luxembourgish	ltz	lb		Eurasia	49.8333333333	6.16666666667	Indo-European		Germanic
+lua_Latn	Luba-Lulua	lua			Africa	-6.0	21.0	Niger-Congo	Benue-Congo	Bantu
+lug_Latn	Ganda	lug	lg		Africa	0.5	32.1666666667	Niger-Congo	Benue-Congo	Bantu
+luo_Latn	Luo (Kenya and Tanzania)	luo			Africa	-0.5	34.75	Eastern Sudanic	Nilotic	Western Nilotic
+lus_Latn	Lushai	lus			Eurasia	23.1666666667	92.8333333333	Sino-Tibetan	Tibeto-Burman	Kuki-Chin
+lvs_Latn	Standard Latvian	lvs	lv	lav	Eurasia	57.0	24.0	Indo-European		Baltic
+mag_Deva	Magahi	mag			Eurasia	23.5	85.5	Indo-European		Indic
+mai_Deva	Maithili	mai			Eurasia	26.0	86.0	Indo-European		Indic
+mal_Mlym	Malayalam	mal	ml		Eurasia	10.0	76.5	Dravidian		Dravidian
+mar_Deva	Marathi	mar	mr		Eurasia	19.0	76.0	Indo-European		Indic
+min_Latn	Minangkabau	min		msa	Papunesia	-1.0	101.0	Austronesian		Malayo-Sumbawan
+mkd_Cyrl	Macedonian	mkd	mk		Eurasia	41.6666666667	21.75	Indo-European		Slavic
+mlt_Latn	Maltese	mlt	mt		Eurasia	35.9166666667	14.4166666667	Afro-Asiatic		Semitic
+mni_Beng	Manipuri	mni			Eurasia	24.75	94.0	Sino-Tibetan	Tibeto-Burman	Manipuri
+mos_Latn	Mossi	mos			Africa	12.8333333333	-1.25	Niger-Congo	Gur	Oti-Volta
+mri_Latn	Maori	mri	mi		Papunesia	-40.0	176.0	Austronesian	Eastern Malayo-Polynesian	Oceanic
+mya_Mymr	Burmese	mya	my		Eurasia	21.0	96.0	Sino-Tibetan	Tibeto-Burman	Burmese-Lolo
+nld_Latn	Dutch	nld	nl		Eurasia	50.75	4.5	Indo-European		Germanic
+nno_Latn	Norwegian Nynorsk	nno	nn	nor	Eurasia	61.0	8.0	Indo-European		Germanic
+nob_Latn	Norwegian Bokmål	nob	nb	nor	Eurasia	61.0	8.0	Indo-European		Germanic
+npi_Deva	Nepali (individual language)	npi	ne	nep	Eurasia	28.0	85.0	Indo-European		Indic
+nso_Latn	Pedi	nso			Africa	-24.0	29.0	Niger-Congo	Benue-Congo	Bantu
+nus_Latn	Nuer	nus			Africa	8.33333333333	32.0	Eastern Sudanic	Nilotic	Western Nilotic
+nya_Latn	Nyanja	nya	ny		Africa	-14.0	34.0	Niger-Congo	Benue-Congo	Bantu
+oci_Latn	Occitan (post 1500)	oci	oc		Eurasia	44.0	2.0	Indo-European		Romance
+ory_Orya	Odia	ory	or	ori	Eurasia	21.0	85.0	Indo-European		Indic
+pag_Latn	Pangasinan	pag			Papunesia	15.9166666667	120.333333333	Austronesian		Northern Luzon
+pan_Guru	Panjabi	pan	pa		Eurasia	31.0	74.0	Indo-European		Indic
+pap_Latn	Papiamento	pap			North America	12.25	-69.0	other		Creoles and Pidgins
+pbt_Arab	Southern Pashto	pbt	ps	pus	Eurasia	33.0	67.0	Indo-European		Iranian
+pes_Arab	Iranian Persian	pes	fa	fas	Eurasia	32.0	54.0	Indo-European		Iranian
+plt_Latn	Plateau Malagasy	plt		mlg	Africa	-20.0	47.0	Austronesian		Barito
+pol_Latn	Polish	pol	pl		Eurasia	52.0	20.0	Indo-European		Slavic
+por_Latn	Portuguese	por	pt		Eurasia	39.0	-8.0	Indo-European		Romance
+prs_Arab	Dari	prs		fas	Eurasia	35.0	66.0	Indo-European		Iranian
+quy_Latn	Ayacucho Quechua	quy	qu	que	South America	-14.0	-74.0	Quechuan		Quechuan
+ron_Latn	Romanian	ron	ro		Eurasia	47.0	29.0	Indo-European		Romance
+run_Latn	Rundi	run	rn		Africa	-3.5	30.0	Niger-Congo	Benue-Congo	Bantu
+rus_Cyrl	Russian	rus	ru		Eurasia	56.0	38.0	Indo-European		Slavic
+sag_Latn	Sango	sag	sg		Africa	5.0	18.0	Niger-Congo	Adamawa-Ubangi	Ubangi
+san_Deva	Sanskrit	san	sa					Indo-European		
+sat_Olck	Santali	sat			Eurasia	24.5	87.0	Austro-Asiatic		Munda
+scn_Latn	Sicilian	scn			Eurasia	37.57	14.04	Indo-European		Romance
+shn_Mymr	Shan	shn			Eurasia	22.0	98.0	Tai-Kadai		Kam-Tai
+sin_Sinh	Sinhala	sin	si		Eurasia	7.0	80.5	Indo-European		Indic
+slk_Latn	Slovak	slk	sk		Eurasia	49.0	20.0	Indo-European		Slavic
+slv_Latn	Slovenian	slv	sl		Eurasia	46.0	15.0	Indo-European		Slavic
+smo_Latn	Samoan	smo	sm		Papunesia	-13.9166666667	-171.833333333	Austronesian	Eastern Malayo-Polynesian	Oceanic
+sna_Latn	Shona	sna	sn		Africa	-20.0	31.0	Niger-Congo	Benue-Congo	Bantu
+snd_Arab	Sindhi	snd	sd		Eurasia	26.0	69.0	Indo-European		Indic
+som_Latn	Somali	som	so		Africa	3.0	45.0	Afro-Asiatic	Cushitic	Lowland East Cushitic
+sot_Latn	Southern Sotho	sot	st		Africa	-28.0	27.0	Niger-Congo	Benue-Congo	Bantu
+spa_Latn	Spanish	spa	es		Eurasia	40.0	-4.0	Indo-European		Romance
+srd_Latn	Sardinian	srd	sc		Eurasia	40.0	9.0	Indo-European		Romance
+srp_Cyrl	Serbian	srp	sr	hbs	Eurasia	44.0	19.0	Indo-European		Slavic
+ssw_Latn	Swati	ssw	ss		Africa	-26.5	31.0	Niger-Congo	Benue-Congo	Bantu
+sun_Latn	Sundanese	sun	su		Papunesia	-7.0	107.0	Austronesian		Malayo-Sumbawan
+swe_Latn	Swedish	swe	sv		Eurasia	60.0	15.0	Indo-European		Germanic
+swh_Latn	Swahili (individual language)	swh	sw	swa	Africa	-6.5	39.0	Niger-Congo	Benue-Congo	Bantu
+szl_Latn	Silesian	szl						Indo-European		Slavic
+tam_Taml	Tamil	tam	ta		Eurasia	11.0	78.5	Dravidian		Dravidian
+taq_Latn	Tamasheq	taq		tmh	Africa	20.0	-2.0	Afro-Asiatic		Berber
+taq_Tfng	Tamasheq	taq		tmh	Africa	20.0	-2.0	Afro-Asiatic		Berber
+tat_Cyrl	Tatar	tat	tt		Eurasia	55.5	49.0	Altaic		Turkic
+tel_Telu	Telugu	tel	te		Eurasia	16.0	79.0	Dravidian		Dravidian
+tgk_Cyrl	Tajik	tgk	tg		Eurasia	38.6666666667	70.0	Indo-European		Iranian
+tgl_Latn	Tagalog	tgl	tl		Papunesia	15.0	121.0	Austronesian		Greater Central Philippine
+tha_Thai	Thai	tha	th		Eurasia	16.0	101.0	Tai-Kadai		Kam-Tai
+tir_Ethi	Tigrinya	tir	ti		Africa	14.5	38.5	Afro-Asiatic		Semitic
+tpi_Latn	Tok Pisin	tpi			Papunesia	-9.5	147.166666667	other		Creoles and Pidgins
+tsn_Latn	Tswana	tsn	tn		Africa	-24.0	26.0	Niger-Congo	Benue-Congo	Bantu
+tso_Latn	Tsonga	tso	ts		Africa	-24.0	32.0	Niger-Congo	Benue-Congo	Bantu
+tuk_Latn	Turkmen	tuk	tk		Eurasia	40.0	58.0	Altaic		Turkic
+tum_Latn	Tumbuka	tum						Niger-Congo		
+tur_Latn	Turkish	tur	tr		Eurasia	39.0	35.0	Altaic		Turkic
+twi_Latn	Twi	twi	tw	aka	Africa	6.5	-1.25	Niger-Congo	Kwa	Tano
+tzm_Tfng	Central Atlas Tamazight	tzm			Africa	33.0	-5.0	Afro-Asiatic		Berber
+uig_Arab	Uighur	uig	ug		Eurasia	40.0	80.0	Altaic		Turkic
+ukr_Cyrl	Ukrainian	ukr	uk		Eurasia	49.0	33.0	Indo-European		Slavic
+umb_Latn	Umbundu	umb			Africa	-12.5	15.0	Niger-Congo	Benue-Congo	Bantu
+urd_Arab	Urdu	urd	ur		Eurasia	25.0	67.0	Indo-European		Indic
+uzn_Latn	Northern Uzbek	uzn	uz	uzb	Eurasia	40.6666666667	66.5	Altaic		Turkic
+vec_Latn	Venetian	vec						Indo-European		Romance
+vie_Latn	Vietnamese	vie	vi		Eurasia	10.5	106.5	Austro-Asiatic	Mon-Khmer	Vietic
+war_Latn	Waray (Philippines)	war			Papunesia	12.0	125.0	Austronesian		Greater Central Philippine
+wol_Latn	Wolof	wol	wo		Africa	15.25	-16.0	Niger-Congo	North-Central Atlantic	Wolof
+xho_Latn	Xhosa	xho	xh		Africa	-32.0	27.0	Niger-Congo	Benue-Congo	Bantu
+ydd_Hebr	Eastern Yiddish	ydd	yi	yid	Eurasia	47.0	28.5	Indo-European		Germanic
+yor_Latn	Yoruba	yor	yo		Africa	8.0	4.33333333333	Niger-Congo	Benue-Congo	Defoid
+yue_Hant	Yue Chinese	yue		zho	Eurasia	23.0	113.0	Sino-Tibetan		Chinese
+zho_Hans	Chinese	zho	zh		Eurasia	34.0	110.0	Sino-Tibetan		Chinese
+zho_Hant	Chinese	zho	zh		Eurasia	34.0	110.0	Sino-Tibetan		Chinese
+zsm_Latn	Standard Malay	zsm	ms	msa	Eurasia	3.0	102.0	Austronesian		Malayo-Sumbawan
+zul_Latn	Zulu	zul	zu		Africa	-28.0	31.0	Niger-Congo	Benue-Congo	Bantu

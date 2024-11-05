@@ -38,7 +38,7 @@ pytz==2023.3
 PyYAML==6.0.1
 regex==2024.4.28
 SciPy==1.10.0
-setuptools==65.5.0
+setuptools==70.0.0
 setuptools-scm==7.1.0
 six==1.16.0
 termcolor==2.4.0

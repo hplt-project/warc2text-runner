@@ -28,7 +28,6 @@ partd==1.4.0
 pip==22.3.1
 pluggy==1.2.0
 ply==3.11
-py==1.11.0
 pybind11==2.11.1
 pyparsing==3.1.1
 pytest==7.4.0
@@ -38,7 +37,7 @@ pytz==2023.3
 PyYAML==6.0.1
 regex==2024.4.28
 SciPy==1.10.0
-setuptools==65.5.0
+setuptools==70.0.0
 setuptools-scm==7.1.0
 six==1.16.0
 termcolor==2.4.0

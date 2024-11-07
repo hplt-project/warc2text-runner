@@ -8,16 +8,17 @@ import sys
 from warc2text_runner.utils import unifying_iterator
 
 
-class MRStatsR2:
-    def __init__(self,ftext='text'):
-        self.ftext = ftext
-        self.data_version = 'r2'
+class MRStats:
+    def __init__(self, data_version='r2', collection=None, lang=None):
+        self.lang = lang
+        self.collection = collection
+        self.data_version = data_version
 
 
     def _build_index(self, df):
-        df['index'] = df['collection']
+        df['index'] = self.collection or df['collection']
         df['index'] += ','
-        df['index'] += df['lang'].str[0].fillna('null')
+        df['index'] += self.lang or df['lang'].str[0].fillna('null')
 
 
     def _map(self, df, count_words=False):
@@ -81,4 +82,4 @@ class MRStatsR2:
 
 
 if __name__ == "__main__":
-    Fire(MRStatsR2)
+    Fire(MRStats)

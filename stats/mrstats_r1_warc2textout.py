@@ -11,14 +11,12 @@ class MRStatsR1Warc2text(MRStatsR2):
         super().__init__()
         self.collection = collection
         self.lang = lang
+        self.data_version = 'r1_warc2textout'
 
 
     def _build_index(self, df):
         df['index'] = (self.collection + ',' + self.lang)  # given constant value
 
-
-    def _batch_it(self, inps, batch_size):
-        unifying_iterator.batch_iterator('r1_warc2textout', inps, batch_size)
 
 if __name__ == "__main__":
     Fire(MRStatsR1Warc2text)

@@ -11,6 +11,7 @@ from warc2text_runner.utils import unifying_iterator
 class MRStatsR2:
     def __init__(self,ftext='text'):
         self.ftext = ftext
+        self.data_version = 'r2'
 
 
     def _build_index(self, df):
@@ -42,7 +43,7 @@ class MRStatsR2:
         adf = None
         files = [file] + list(files)
         inps = [sys.stdin if f=='-' else f for f in files]
-        for df in self._batch_it(inps, batch_size=10**5):
+        for df in unifying_iterator.batch_iterator(self.data_version, inps, batch_size=10**5, encoding_errors='replace'):
             mdf = self._map(df, count_words=True)
             rdf = self._reduce(mdf)
             adf = rdf if adf is None else adf.add(rdf, fill_value=0)
@@ -50,8 +51,7 @@ class MRStatsR2:
         adf.to_csv(sys.stdout, sep='\t', index=True, header=None)
 
 
-    def _batch_it(self, inps, batch_size):
-        unifying_iterator.batch_iterator('r2', inps, batch_size)
+    # def _batch_it(self, inps, batch_size):
 #         readers = [
 #             pd.read_json(inp, orient='records', lines=True, chunksize=batch_size)
 #             for inp in inps]

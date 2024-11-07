@@ -30,8 +30,8 @@ version2impl = {
 }
 
 
-def batch_iterator(data_version, inp, batch_size=10**5, encoding_errors):
+def batch_iterator(data_version, inp, batch_size, encoding_errors):
     f = version2impl.get(data_version)
     if f is None:
         raise ValueError(f'Unsupported dataset version {data_version}, select among {version2impl.keys()}')
-    f(inp, batch_size, encoding_errorrs)
+    yield from f(inp, batch_size, encoding_errors)

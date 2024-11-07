@@ -1,0 +1,48 @@
+[zh-CN] offer详细描述：1
+offer详细描述：2
+offer详细描述：3
+offer详细描述：4
+供应商信息
+产品搜索
+销量排行
+-
+1 成交 1 笔￥ 230.01
+-
+2 成交 1 笔￥ 71.33
+-
+3 成交 1 笔￥ 442.43
+-
+4 成交 1 笔￥ 418.25
+联系方式
+周雪松 先生 （总经理室 总经理）
+- 电 话：
+- 86 023 65017500
+- 移动电话：
+-
+- 传 真：
+- 86
+    ->
+[en] Offer Detailed Description: 1
+Offer Detailed Description: 2
+Offer Detailed Description: 3
+Offer Detailed Description: 4
+Supplier information
+Product search
+Sales rank
+-
+1 transaction 1 pen ￥ 230.01
+-
+2 Transaction 1 pen ￥ 71.33
+-
+3 Transaction 1 pen ￥ 442.43
+-
+4 turn 1 pen ￥ 418.25
+Contact information
+Mr. Zhou Xuesong (General Manager Office General Manager)
+- Telephone:
+-86 023 65017500
+-Chimac phone:
+-
+-The True:
+-86
+[pron.] None

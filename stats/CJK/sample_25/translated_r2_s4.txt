@@ -1,0 +1,4 @@
+[zh-CN] 庄园滚动新闻
+    ->
+[en] Manor rolling news
+[pron.] None

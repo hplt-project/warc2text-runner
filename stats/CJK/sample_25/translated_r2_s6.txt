@@ -1,0 +1,6 @@
+[zh-CN] 错误提示
+页面没有找到
+    ->
+[en] Error
+Nothing to find on the page
+[pron.] None

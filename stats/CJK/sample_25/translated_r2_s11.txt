@@ -1,0 +1,4 @@
+[zh-CN] 404 您访问的页面找不回来了，您可以上百度查找您感兴趣的内容。
+    ->
+[en] 404 The page you visit can't be found, you can find the content you are interested in.
+[pron.] None

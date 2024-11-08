@@ -73,12 +73,12 @@ class MRStats:
         mdf = pd.read_csv(Path(dir)/'text_stats.csv',sep='\t', header=None)
         mdf.rename(columns={0: 'index'}, inplace=True)
         rdf = self._reduce(mdf)
-        rdf.to_csv(Path(dir)/'stats.csv', sep='\t', index=True, header=None)
+        rdf.to_csv(Path(dir)/'stats.tsv', sep='\t', index=True, header=None)
         for f in (0,1):
             adf = rdf.groupby(rdf.index.str.split(',').str[f]).agg('sum')
-            adf.to_csv(Path(dir) / f'stats-{f}.csv', sep='\t', index=True, header=None)
+            adf.to_csv(Path(dir) / f'stats-{f}.tsv', sep='\t', index=True, header=None)
         adf = rdf.sum().to_frame('TOTAL').T
-        adf.to_csv(Path(dir) / f'stats-TOTAL.csv', sep='\t', index=True, header=None)
+        adf.to_csv(Path(dir) / f'stats-TOTAL.tsv', sep='\t', index=True, header=None)
 
 
 if __name__ == "__main__":

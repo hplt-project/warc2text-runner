@@ -1,0 +1,10 @@
+OK,0	19189632422	0	19189632422.0
+OK,1	29284929	29284927	29284927.0
+OK,>1	2174515766845	144336508703069	82709929273.0
+"['Traceback (most recent call last):\n  File ""/pfs/lustrep3/scratch/project_465000498/two/code/warc2text-runner/venv/lib/python3.10/site-packages/warc2text_runner/two/trafilatura/traf.py"", line 53, in traf\n    raise ValueError(""Could not parse HTML"")\nValueError: Could not parse HTML\n'],0"	3053369862	0	3053369862.0
+['Trafilatura timed out: 0.5s'],0	341732799	0	341732799.0
+"['UnicodeDecodeError', 'Traceback (most recent call last):\n  File ""/pfs/lustrep3/scratch/project_465000498/two/code/warc2text-runner/venv/lib/python3.10/site-packages/warc2text_runner/two/trafilatura/traf.py"", line 53, in traf\n    raise ValueError(""Could not parse HTML"")\nValueError: Could not parse HTML\n'],0"	2578599	0	2578599.0
+['UnicodeDecodeError', 'Trafilatura timed out: 0.5s'],0	6110628	0	6110628.0
+['UnicodeDecodeError'],0	174002248	0	174002248.0
+['UnicodeDecodeError'],1	358580	358580	358580.0
+['UnicodeDecodeError'],>1	24954422407	1769206460582	670779049.0

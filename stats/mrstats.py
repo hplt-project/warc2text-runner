@@ -9,7 +9,7 @@ from warc2text_runner.utils import unifying_iterator
 
 
 class MRStats:
-    def __init__(self, data_version='r2', collection=None, lang=None):
+    def __init__(self, collection=None, lang=None, data_version='r2'):
         self.lang = lang
         self.collection = collection
         self.data_version = data_version

@@ -14,13 +14,15 @@ class TraferrStats:
 
 
     def _build_index(self, df):
+        if 'traferr' not in df.columns:
+            df['traferr'] = 'OK'
         df['index'] = self.collection
         df['index'] += ','
         df['index'] += df['lang'].str[0].fillna('null')
         df['index'] += ','
-        df['index'] += df['traferr'].fillna('OK')
+        df['index'] += df['traferr'].fillna('OK').astype(str)
         df['index'] += ','
-        df['index'] += df['text'].apply(lambda t: 'null' if t is None else str(len(t)) if len(t) <= 1 else '>1')
+        df['index'] += df['text'].fillna('').apply(lambda t: str(len(t)) if len(t) <= 1 else '>1')
 
 
     def _map(self, df):
@@ -43,7 +45,7 @@ class TraferrStats:
         adf = None
         files = [file] + list(files)
         inps = [sys.stdin if f=='-' else f for f in files]
-        for df in unifying_iterator.batch_iterator('r2', inps, batch_size=10**5, encoding_errors='replace'):
+        for df in unifying_iterator.batch_iterator('r2', inps, batch_size=10**4, encoding_errors='replace'):
             mdf = self._map(df)
             rdf = self._reduce(mdf)
             adf = rdf if adf is None else adf.add(rdf, fill_value=0)
@@ -60,8 +62,8 @@ class TraferrStats:
         mdf.rename(columns={0: 'index'}, inplace=True)
         rdf = self._reduce(mdf)
         rdf.to_csv(Path(dir)/'stats.tsv', sep='\t', index=True, header=None)
-        for f in range(4):
-            adf = rdf.groupby(rdf.index.str.split(',').str[f]).agg('sum')
+        for f in [0,1,2]:
+            adf = rdf.groupby(rdf.index.str.split(',').str[f:].str.join(',')).agg('sum')
             adf.to_csv(Path(dir) / f'stats-{f}.tsv', sep='\t', index=True, header=None)
         adf = rdf.sum().to_frame('TOTAL').T
         adf.to_csv(Path(dir) / f'stats-TOTAL.tsv', sep='\t', index=True, header=None)

@@ -1,0 +1,173 @@
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/conda/miniconda3/lib/python3.11/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/conda/miniconda3/lib/python3.11/site-packages/urllib3/connectionpool.py", line 462, in _make_request
+    httplib_response = conn.getresponse()
+                       ^^^^^^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/http/client.py", line 1378, in getresponse
+    response.begin()
+  File "/conda/miniconda3/lib/python3.11/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/http/client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/ssl.py", line 1311, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/ssl.py", line 1167, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/site-packages/urllib3/packages/six.py", line 770, in reraise
+    raise value
+  File "/conda/miniconda3/lib/python3.11/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/site-packages/urllib3/connectionpool.py", line 469, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/conda/miniconda3/lib/python3.11/site-packages/urllib3/connectionpool.py", line 358, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/conda/miniconda3/lib/python3.11/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/multiprocessing/pool.py", line 48, in mapstar
+    return list(map(*args))
+           ^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/utils/py_utils.py", line 399, in _single_map_nested
+    mapped = [_single_map_nested((function, v, batched, batch_size, types, None, True, None)) for v in pbar]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/utils/py_utils.py", line 399, in <listcomp>
+    mapped = [_single_map_nested((function, v, batched, batch_size, types, None, True, None)) for v in pbar]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/utils/py_utils.py", line 380, in _single_map_nested
+    return [mapped_item for batch in iter_batched(data_struct, batch_size) for mapped_item in function(batch)]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/utils/py_utils.py", line 380, in <listcomp>
+    return [mapped_item for batch in iter_batched(data_struct, batch_size) for mapped_item in function(batch)]
+                                                                                              ^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/download/download_manager.py", line 215, in _download_batched
+    return [
+           ^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/download/download_manager.py", line 216, in <listcomp>
+    self._download_single(url_or_filename, download_config=download_config)
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/download/download_manager.py", line 225, in _download_single
+    out = cached_path(url_or_filename, download_config=download_config)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/utils/file_utils.py", line 180, in cached_path
+    ).resolve_path(url_or_filename)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/huggingface_hub/hf_file_system.py", line 175, in resolve_path
+    repo_and_revision_exist, err = self._repo_and_revision_exist(repo_type, repo_id, revision)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/huggingface_hub/hf_file_system.py", line 121, in _repo_and_revision_exist
+    self._api.repo_info(
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/huggingface_hub/hf_api.py", line 2748, in repo_info
+    return method(
+           ^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/huggingface_hub/hf_api.py", line 2605, in dataset_info
+    r = get_session().get(path, headers=headers, timeout=timeout, params=params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 93, in send
+    return super().send(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/requests/adapters.py", line 713, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: (ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 8c0d4500-861d-4d6d-81d2-b8b325c7c056)')
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/nird/datalake/NS8112K/two/code/warc2text-runner/hf_upload/hf_size.py", line 19, in <module>
+    Fire(size)
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/fire/core.py", line 135, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/fire/core.py", line 468, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/fire/core.py", line 684, in _CallAndUpdateTrace
+    component = fn(*varargs, **kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/datalake/NS8112K/two/code/warc2text-runner/hf_upload/hf_size.py", line 9, in size
+    ds = datasets.load_dataset(ds,config, cache_dir=cache_dir, num_proc=num_proc)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/load.py", line 2096, in load_dataset
+    builder_instance.download_and_prepare(
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/builder.py", line 924, in download_and_prepare
+    self._download_and_prepare(
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/builder.py", line 977, in _download_and_prepare
+    split_generators = self._split_generators(dl_manager, **split_generators_kwargs)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/packaged_modules/parquet/parquet.py", line 47, in _split_generators
+    data_files = dl_manager.download_and_extract(self.config.data_files)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/download/download_manager.py", line 322, in download_and_extract
+    return self.extract(self.download(url_or_urls))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/download/download_manager.py", line 159, in download
+    downloaded_path_or_paths = map_nested(
+                               ^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/utils/py_utils.py", line 494, in map_nested
+    mapped = [
+             ^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/utils/py_utils.py", line 495, in <listcomp>
+    map_nested(
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/utils/py_utils.py", line 528, in map_nested
+    mapped = parallel_map(
+             ^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/utils/experimental.py", line 41, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/parallel/parallel.py", line 34, in parallel_map
+    return _map_with_multiprocessing_pool(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/parallel/parallel.py", line 69, in _map_with_multiprocessing_pool
+    mapped = pool.map(single_map_nested_func, split_kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/multiprocessing/pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/multiprocessing/pool.py", line 774, in get
+    raise self._value
+requests.exceptions.ReadTimeout: [Errno None: None] (Request ID: 8c0d4500-861d-4d6d-81d2-b8b325c7c056)

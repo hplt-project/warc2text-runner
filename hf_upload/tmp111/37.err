@@ -1,0 +1,146 @@
+Traceback (most recent call last):
+  File "/conda/miniconda3/lib/python3.11/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/conda/miniconda3/lib/python3.11/site-packages/urllib3/connectionpool.py", line 462, in _make_request
+    httplib_response = conn.getresponse()
+                       ^^^^^^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/http/client.py", line 1378, in getresponse
+    response.begin()
+  File "/conda/miniconda3/lib/python3.11/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/http/client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/ssl.py", line 1311, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/ssl.py", line 1167, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/site-packages/urllib3/packages/six.py", line 770, in reraise
+    raise value
+  File "/conda/miniconda3/lib/python3.11/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/site-packages/urllib3/connectionpool.py", line 469, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/conda/miniconda3/lib/python3.11/site-packages/urllib3/connectionpool.py", line 358, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nird/datalake/NS8112K/two/code/warc2text-runner/hf_upload/hf_size.py", line 19, in <module>
+    Fire(size)
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/fire/core.py", line 135, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/fire/core.py", line 468, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/fire/core.py", line 684, in _CallAndUpdateTrace
+    component = fn(*varargs, **kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/datalake/NS8112K/two/code/warc2text-runner/hf_upload/hf_size.py", line 9, in size
+    ds = datasets.load_dataset(ds,config, cache_dir=cache_dir, num_proc=num_proc)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/load.py", line 2074, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/load.py", line 1832, in load_dataset_builder
+    builder_instance: DatasetBuilder = builder_cls(
+                                       ^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/builder.py", line 342, in __init__
+    self.config, self.config_id = self._create_builder_config(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/builder.py", line 597, in _create_builder_config
+    builder_config._resolve_data_files(
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/builder.py", line 206, in _resolve_data_files
+    self.data_files = self.data_files.resolve(base_path, download_config)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/data_files.py", line 818, in resolve
+    out[key] = data_files_patterns_list.resolve(base_path, download_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/data_files.py", line 781, in resolve
+    origin_metadata = _get_origin_metadata(data_files, download_config=download_config)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/data_files.py", line 548, in _get_origin_metadata
+    return thread_map(
+           ^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/tqdm/contrib/concurrent.py", line 69, in thread_map
+    return _executor_map(ThreadPoolExecutor, fn, *iterables, **tqdm_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/tqdm/contrib/concurrent.py", line 51, in _executor_map
+    return list(tqdm_class(ex.map(fn, *iterables, chunksize=chunksize), **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/tqdm/std.py", line 1169, in __iter__
+    for obj in iterable:
+  File "/conda/miniconda3/lib/python3.11/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/conda/miniconda3/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/conda/miniconda3/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/datasets/data_files.py", line 527, in _get_single_origin_metadata
+    resolved_path = fs.resolve_path(data_file)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/huggingface_hub/hf_file_system.py", line 175, in resolve_path
+    repo_and_revision_exist, err = self._repo_and_revision_exist(repo_type, repo_id, revision)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/huggingface_hub/hf_file_system.py", line 121, in _repo_and_revision_exist
+    self._api.repo_info(
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/huggingface_hub/hf_api.py", line 2748, in repo_info
+    return method(
+           ^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/huggingface_hub/hf_api.py", line 2605, in dataset_info
+    r = get_session().get(path, headers=headers, timeout=timeout, params=params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 93, in send
+    return super().send(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nird/home/nikolare/.local/lib/python3.11/site-packages/requests/adapters.py", line 713, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: (ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 6f658fc0-54d7-4fe8-8517-bd477efa6aa9)')

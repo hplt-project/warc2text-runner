@@ -1,0 +1,2 @@
+Setting num_proc from 20 back to 1 for the train split to disable multiprocessing as it only contains one shard.
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 5000 examples [00:00, 44483.11 examples/s]Generating train split: 7760 examples [00:00, 50228.01 examples/s]

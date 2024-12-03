@@ -1,8 +1,12 @@
 import datasets
 from fire import Fire
 import sys
+import os
 
 def size(ds, config, num_proc=20, cache_dir='~/hplt/hf_cache'):
+    os.environ["HF_HUB_ETAG_TIMEOUT"] = "120" 
+    os.environ["HF_HOME"] = "/nird/datalake/NS8112K/hf_home" 
+
     configs = datasets.get_dataset_config_names(ds)
     if config not in configs:
         print(f'config {config} not in', configs, file=sys.stderr)

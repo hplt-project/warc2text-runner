@@ -23,7 +23,7 @@ rm -rf $LOG_DIR; mkdir -p $LOG_DIR
 zcat ${RUNDIR}/tasks.args.gz | parallel \
     --pipe -j1 --roundrobin -N1 \
     --joblog ${LOG_DIR}/joblog $REMOTECONFIG \
-    "pwd; module purge; module load parallel nlpl-warc2text/1.3; run_warc2html_local.sh ${NJOBS} \`hostname\` "
+    "pwd; module purge; module load parallel nlpl-warc2text/1.3; run_warc2html_local.sh ${NJOBS} ${LOG_DIR}/\`hostname\` "
 
 JOBS_SUCCESS=`cat ${LOG_DIR}/joblog |cut -f 7|tail -n +2|python -c "import sys; l=list(map(bool,map(int,sys.stdin))); print(len(l)-sum(l),'/',len(l))"`
 echo "$JOBS_SUCCESS jobs finished successfully, see ${LOG_DIR}/joblog for details. Run the following command to rerun failed jobs if any:"

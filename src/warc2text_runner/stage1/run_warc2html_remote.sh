@@ -18,11 +18,12 @@ REMOTECONFIG=$3  # Configuration of remote nodes for GNU Parallel, pass the empt
 LOG_DIR=${RUNDIR%/}_logs  # ${VAR%/} removes trailing slash if there is any
 
 rm -rf $LOG_DIR; mkdir -p $LOG_DIR
+LOG_DIR=$(realpath $LOG_DIR)
 
 # run_warc2html_local.sh will be started on the remote host and will take commands to run from the stdin
 zcat ${RUNDIR}/tasks.args.gz | parallel \
     --pipe -j1 --roundrobin -N1 \
-    --joblog ${LOG_DIR}/joblog $REMOTECONFIG \
+    --line-buffer --joblog ${LOG_DIR}/joblog $REMOTECONFIG \
     "pwd; module purge; module load parallel nlpl-warc2text/1.3; run_warc2html_local.sh ${NJOBS} ${LOG_DIR}/\`hostname\` "
 
 JOBS_SUCCESS=`cat ${LOG_DIR}/joblog |cut -f 7|tail -n +2|python -c "import sys; l=list(map(bool,map(int,sys.stdin))); print(len(l)-sum(l),'/',len(l))"`

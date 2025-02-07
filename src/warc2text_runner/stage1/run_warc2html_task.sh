@@ -8,7 +8,7 @@ WARCS=${@:4}
 # the current directory to $INDIR. To fit many WARCs into the limitation of the command line length, pass the lowest
 # common parent directory of all WARCs as INDIR and use shorter relative paths to WARCs.
 # ${OUTDIR}/${ID} will contain the outputs and ${OUTDIR}_logs/${ID} the logs (stdout, stderr of warc2text).
-FILTERDIR=$(realpath $(dirname $0)/..)
+FILTERDIR=$(realpath $(dirname $0))
 LOGDIR=${OUTDIR%/}_logs
 
 mkdir -p $LOGDIR $OUTDIR || exit 1

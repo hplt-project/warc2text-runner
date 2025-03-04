@@ -119,15 +119,15 @@ def main(task_dir, logs_dir, freq='10min', max_warcs=1000):
 
     g = sdf[[c for c in sdf.columns if ':' not in c]].plot(x='ts', rot=90, grid=True)
     g = g.legend(loc='center left',bbox_to_anchor=(1.0, 0.5)).get_figure()
-    g.savefig(task_dir/'speed-total.pdf')
+    g.savefig(task_dir/'speed-total.pdf',  bbox_inches="tight")
 
     g = sdf[[c for c in sdf.columns if ':' in c or c=='ts']].plot(x='ts', rot=90, grid=True)
     g = g.legend(loc='center left',bbox_to_anchor=(1.0, 0.5)).get_figure()
-    g.savefig(task_dir/'speed-pernode.pdf')
+    g.savefig(task_dir/'speed-pernode.pdf', bbox_inches="tight")
 
     g = sdf[sdf.ts.describe().loc['75%'] <= sdf.ts][[c for c in sdf.columns if ':' in c or c=='ts']].plot(x='ts', rot=90, grid=True)
     g = g.legend(loc='center left',bbox_to_anchor=(1.0, 0.5)).get_figure()
-    g.savefig(task_dir/'speed-pernode-lastquarter.pdf')
+    g.savefig(task_dir/'speed-pernode-lastquarter.pdf', bbox_inches="tight")
 
 
 fire.Fire(main)

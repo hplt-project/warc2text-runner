@@ -110,7 +110,7 @@ def main(task_dir, logs_dir, freq='10min', max_warcs=1000):
 
     sdf['ts'] = gdf[0]
     sdf.to_csv(task_dir/'speed.tsv', sep='\t', index=False)
-    sdf.describe().to_csv(task_dir/'speed_stats.tsv', sep='\t', index=False)
+    sdf.describe().reset_index().to_csv(task_dir/'speed_stats.tsv', sep='\t', index=False)
 
     mdf = tdf.merge(df[['outdir','warcs','end']], how='left', on=['outdir','warcs'])
 

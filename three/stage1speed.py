@@ -9,7 +9,7 @@ def file_size(path):
     return Path(path).stat().st_size
 
 
-def read_tasks(task_dir):
+def read_tasks(task_dir, max_warcs):
     tdf = pd.read_csv(task_dir/'tasks.args.gz', sep=' ', names=list(range(max_warcs+5)), header=None)
 
     warcs_ser = tdf.loc[:,4:].apply(lambda r: [e for e in r if not pd.isnull(e)], axis=1)
@@ -74,18 +74,18 @@ def main(task_dir, logs_dir, freq='10min', max_warcs=1000):
     #max_warcs = 1000  # specify batch size here, required for correct loading with pandas
     #freq = '10min'  # frequency for the speed grid
 
-    # Load logs
-    ldf = read_logs(logs_dir)
-    ldf.outdir = ldf.outdir.str.replace('log_', '')
-
     # Load warc sizes from cache or compute
     tdf_path = Path(task_dir)/'warc_size.tsv'
     if not tdf_path.exists():
-        tdf = read_tasks(task_dir)
+        tdf = read_tasks(task_dir, max_warcs)
         tdf.to_csv(tdf_path, sep='\t', index=False)
     tdf = pd.read_csv(tdf_path, sep='\t')
 
-    # Merge warc sizes and processing time
+     # Load logs
+    ldf = read_logs(logs_dir)
+    ldf.outdir = ldf.outdir.str.replace('log_', '')
+
+   # Merge warc sizes and processing time
     df = ldf.merge(tdf, how='inner',on=['outdir','warcs'])
     assert len(df) == len(ldf), f'{len(df)}!={len(ldf)}'
 

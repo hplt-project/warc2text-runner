@@ -9,3 +9,4 @@ import regex
 # defines what we want to remove from string for langID
 NONWORD_REPLACE_STR = r"[^\p{Word}\p{Zs}]|\d"  # either (not a word nor a space) or (is digit)
 NONWORD_REPLACE_PATTERN = regex.compile(NONWORD_REPLACE_STR)
+SPACE_PATTERN = regex.compile(r"\s\s+")  # squeezes sequential whitespace

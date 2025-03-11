@@ -13,7 +13,7 @@ import ujson
 import os
 
 from warc2text_runner.two.fastertext_lid.basic_log import langid_logger
-from warc2text_runner.two.fastertext_lid.patterns import NONWORD_REPLACE_PATTERN
+from warc2text_runner.two.fastertext_lid.patterns import NONWORD_REPLACE_PATTERN, SPACE_PATTERN
 
 
 class FastTextLangId:
@@ -52,7 +52,9 @@ class FastTextLangId:
             raise TypeError(msg)
 
         self.logger.debug("Before: %s", text)
-        text = regex.sub(NONWORD_REPLACE_PATTERN, "", text.replace("\n", " ").strip())
+	text = text.replace('\n', ' ').strip().lower()
+	text = regex.sub(SPACE_PATTERN, " ", text)
+        text = regex.sub(NONWORD_REPLACE_PATTERN, "", text)
         self.logger.debug("After: %s", text)
         return text
 

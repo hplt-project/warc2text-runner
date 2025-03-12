@@ -1,0 +1,7 @@
+# 404
+
+## ERROR
+
+The page you are looking for does not exist. Return to the home page
+
+Return to home page

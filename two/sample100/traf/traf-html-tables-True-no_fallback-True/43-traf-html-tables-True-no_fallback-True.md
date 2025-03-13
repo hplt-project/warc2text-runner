@@ -1,0 +1,4 @@
+GreatSchools ratings are based on standardized test results and additional metrics,
+when available. These ratings are designed to be a starting point, and not the only
+factor, in selecting the right school for your family. Learn More
+

@@ -1,0 +1,11 @@
+I began learning to fly in the early winter of 2008.
+
+I have not been up much lately due to the cost and events in my life, however, I
+will go back.
+
+I got a lot of positive response to these short essays on a pilot forum so I will
+share them here.
+
+
+This page has the following sub pages.
+

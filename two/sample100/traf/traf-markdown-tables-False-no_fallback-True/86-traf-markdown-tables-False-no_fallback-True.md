@@ -1,0 +1,68 @@
+-
+### Research Highlights
+
+### Recent Comments
+
+### Archives
+
+- September 2022
+- May 2022
+- March 2022
+- January 2022
+- November 2021
+- September 2021
+- August 2021
+- June 2021
+- April 2021
+- February 2021
+- December 2020
+- October 2020
+- August 2020
+- June 2020
+- April 2020
+- December 2019
+- October 2019
+- May 2019
+- March 2019
+- January 2019
+- November 2018
+- August 2018
+- April 2018
+- February 2018
+- January 2018
+- November 2017
+- October 2017
+- September 2017
+- May 2017
+- April 2017
+- March 2017
+- February 2017
+- January 2017
+- November 2016
+- September 2016
+- April 2016
+- March 2016
+- January 2016
+- September 2015
+- May 2015
+- April 2015
+- March 2015
+- February 2015
+- November 2014
+
+
+# Category Archives: Art
+
+## Discovering some of world history’s missing links
+
+In the late 1970s, when Candice Goucher began researching African metalwork, she had the field practically to herself. “I’m recognized as being kind of an old timer in terms of research on African ironworking,” said Goucher, professor of history at … Continue reading
+
+Posted in Art, world history
+Leave a comment
+
+## ENVIRONMENT AS ART EXPERIENCE: Geography and architecture inspire Avantika Bawa’s installations.
+
+Visitors entering the gallery see jagged swaths of color—the earthy colors found in topographical maps of the San Fernando Valley and San Gabriel Fault line in California. Rumbling sounds of tremors and earthquakes interrupt the silence. It is as if … Continue reading
+
+Posted in Art
+Leave a comment

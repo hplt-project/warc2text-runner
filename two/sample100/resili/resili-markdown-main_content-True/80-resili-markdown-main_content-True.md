@@ -1,0 +1,43 @@
+# Blog: Dave LeggettVolvo Trucks and Van Damme's 'Epic Split'
+
+Dave Leggett | 7 February 2014
+
+Look, I don't seek out things like this. I was on Volvo Group's website looking for
+serious stuff about trucks and then I stumbled on a release about an 'Epic Split'
+featuring the actor sometimes known as 'muscles from Brussels'. Eh? I had to have
+a look. Have a look yourself (you may already have seen; it's had 69m views but passed
+me by). Great concentration from Mr Van Damme and the truck drivers. Nicely shot,
+too. (A colleague has also pointed out that there was a reply from Chuck Norris.)
+
+ 
+
+
+Sectors: Commercial vehicles
+
+Companies: Volvo Trucks, Volvo
+
+NEWS
+
+CARB awards US$41m to Port of Los Angeles
+
+California's Air Resources Board (CARB) has preliminarily awarded US$41m to the Port
+of Los Angeles (POLA) for the Zero-Emission and Near Zero-Emission Freight Facilities
+(ZANZEFF) project....
+
+BLOG
+
+Colossal China powers on
+
+I'm starting to get a small idea of the scale of things here in China, but really,
+I'm only scratching the surface of this vast country....
+
+BLOG
+
+China Hot Pot
+
+Given the startling complexity of obtaining a journalist visa for China - the code
+'J2' is now indelibly stamped on my mind - it was with some surprise how swiftly
+I managed to sail through airport im...
+
+
+Forgot your password?

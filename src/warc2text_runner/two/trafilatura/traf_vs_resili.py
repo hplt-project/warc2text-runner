@@ -24,7 +24,7 @@ FORMATS = {
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--extractor', default='traf',
-                        choices=('traf', 'resili'))
+                        choices=('traf', 'resili', 'traf_1_8'))
     parser.add_argument('--fpath', default='~/html.zst')
     parser.add_argument(
         '--output_format',
@@ -93,7 +93,7 @@ def resili(doc_html, args):
 
 def extract(args, method_name, outdir):
     fpath = os.path.expanduser(args.fpath)
-    if args.extractor == "traf":
+    if "traf" in args.extractor:
         trafilatura_options, config = setup_traf(args)
     times_doc = []
     with sys.stdin.buffer if fpath == '-' else io.BufferedReader(
@@ -117,7 +117,7 @@ def extract(args, method_name, outdir):
                 if '<td>' in doc_html:
                     out_fn = f'IS_TABLE-{out_fn}'
                 t_doc = time.time()
-                if args.extractor == "traf":
+                if "traf" in args.extractor:
                     text = traf(doc_html, config, trafilatura_options)
                 elif args.extractor == "resili":  # does not extract tables?
                     text = resili(doc_html, args)
@@ -155,7 +155,7 @@ def extract(args, method_name, outdir):
 
 if __name__ == '__main__':
     args = parse_args()
-    if args.extractor == 'traf':
+    if 'traf' in args.extractor:
         method_name = f"{args.extractor}-{args.output_format}-tables-{args.include_tables}-no_fallback-{args.no_fallback}"
     elif args.extractor == 'resili':
         method_name = f"{args.extractor}-{args.output_format}-main_content-{args.main_content}"

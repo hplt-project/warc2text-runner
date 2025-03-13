@@ -113,6 +113,9 @@ def extract(args, method_name, outdir):
                 doc = json.loads(line.strip())
                 doc_html = doc['h']
                 counter += 1
+                out_fn = f"{counter}-{method_name}{os.extsep}{FORMATS[args.output_format]}"
+                if '<td>' in doc_html:
+                    out_fn = f'IS_TABLE-{out_fn}'
                 t_doc = time.time()
                 if args.extractor == "traf":
                     text = traf(doc_html, config, trafilatura_options)
@@ -120,10 +123,11 @@ def extract(args, method_name, outdir):
                     text = resili(doc_html, args)
                 times_doc.append(time.time() - t_doc)
 
-                with open(os.path.join(outdir,
-                                       f"{counter}-{method_name}{os.extsep}{FORMATS[args.output_format]}"),
-                          'w',
-                          encoding='utf8') as f:
+                with open(
+                        os.path.join(outdir, out_fn),
+                        'w',
+                        encoding='utf8',
+                ) as f:
                     if not isinstance(text, str):
                         text = ''
                     f.write(text)
@@ -133,7 +137,8 @@ def extract(args, method_name, outdir):
                 if counter % 100 == 0:
                     logging.info(f"{counter} docs processed")
         logging.info(f"Total time: {round(time.time() - t0, 3)}")
-    logging.info(f"Average doc time {round(sum(times_doc) / len(times_doc), 3)}")
+    logging.info(
+        f"Average doc time {round(sum(times_doc) / len(times_doc), 3)}")
 
     # traf 1.8 w/o parallel Total time: 76.71070313453674, 1000 docs
     # Average doc time 0.07639440846443177

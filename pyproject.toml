@@ -13,8 +13,8 @@ dynamic = ["version"]  # setuptools_scm will use the version received from git
 requires-python = ">= 3.10"
 
 dependencies = [
-    "trafilatura==1.8.0",
-    "lxml==5.1.1",
+    "trafilatura==2.0.0",
+    "lxml>=5.3.1",
     "lxml-html-clean==0.1.0",
     "ujson==5.4.0",
     "zstandard==0.22.0",

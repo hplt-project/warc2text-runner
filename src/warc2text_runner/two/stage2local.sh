@@ -20,7 +20,7 @@ mkdir -p $OUTDIR
 # --block issues one task per block of input lines of roughly this size, but without breaking lines;
 # making it too small will increase extra costs on script initialization (e.g. weights loading for langid),
 # making it too large will require buffering too much outputs in parallel due to --keep-order requirement.
-zstdcat $FIN  \
+rclone cat $FIN | zstdcat  \
     | parallel --halt now,fail=1 --block $BLOCKSIZE_TRAF -j $NJOBS_TRAF --pipe --keep-order  \
         "python -m warc2text_runner.two.trafilatura.traf --timelimit_perdoc ${TRAF_TIMEOUT}" | tee >(zstd > ${OUTDIR}/text.zst) \
     | parallel --halt now,fail=1 --block $BLOCKSIZE_LID -j $NJOBS_LID --pipe --keep-order \

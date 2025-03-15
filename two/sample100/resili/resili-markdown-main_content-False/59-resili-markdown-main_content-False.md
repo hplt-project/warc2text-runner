@@ -1,0 +1,230 @@
+1. weblog
+2. categorieën
+3. archief
+4. teksten
+5. over mijzelf
+
+
+## Categorieën
+
+- dieren
+- film-tv
+- filosofie
+- Fokke Sierksma
+- Friesland
+- gedichten
+- Gerard Reve
+- geschiedenis
+- internet
+- kunst
+- Le Roy
+- literatuur
+- mezelf
+- muziek
+- personen
+- plaatsen
+- politiek
+- powerpoint presentaties
+- psychologie
+- religie
+- voetbal
+- wetenschap
+
+## Archief
+
+- oktober 2021
+- september 2021
+- augustus 2021
+- juli 2021
+- juni 2021
+- mei 2021
+- april 2021
+- maart 2021
+- februari 2021
+- januari 2021
+- december 2020
+- november 2020
+- oktober 2020
+- september 2020
+- augustus 2020
+- juli 2020
+- juni 2020
+- mei 2020
+- april 2020
+- maart 2020
+- februari 2020
+- januari 2020
+- december 2019
+- november 2019
+- oktober 2019
+- september 2019
+- augustus 2019
+- juli 2019
+- juni 2019
+- mei 2019
+- april 2019
+- maart 2019
+- februari 2019
+- januari 2019
+- december 2018
+- november 2018
+- oktober 2018
+- september 2018
+- augustus 2018
+- juli 2018
+- juni 2018
+- mei 2018
+- april 2018
+- maart 2018
+- februari 2018
+- januari 2018
+- december 2017
+- november 2017
+- oktober 2017
+- september 2017
+- augustus 2017
+- juli 2017
+- juni 2017
+- mei 2017
+- april 2017
+- maart 2017
+- februari 2017
+- januari 2017
+- december 2016
+- november 2016
+- oktober 2016
+- september 2016
+- augustus 2016
+- juli 2016
+- juni 2016
+- mei 2016
+- april 2016
+- maart 2016
+- februari 2016
+- januari 2016
+- december 2015
+- november 2015
+- oktober 2015
+- september 2015
+- augustus 2015
+- juli 2015
+- juni 2015
+- mei 2015
+- april 2015
+- maart 2015
+- februari 2015
+- januari 2015
+- december 2014
+- november 2014
+- oktober 2014
+- september 2014
+- augustus 2014
+- juli 2014
+- juni 2014
+- mei 2014
+- april 2014
+- maart 2014
+- februari 2014
+- januari 2014
+- december 2013
+- november 2013
+- oktober 2013
+- september 2013
+- augustus 2013
+- juli 2013
+- juni 2013
+- mei 2013
+- april 2013
+- maart 2013
+- februari 2013
+- januari 2013
+- december 2012
+- november 2012
+- oktober 2012
+- september 2012
+- augustus 2012
+- juli 2012
+- juni 2012
+- mei 2012
+- april 2012
+- maart 2012
+- februari 2012
+- januari 2012
+- december 2011
+- november 2011
+- oktober 2011
+- september 2011
+- augustus 2011
+- juli 2011
+- juni 2011
+- mei 2011
+- april 2011
+- maart 2011
+- februari 2011
+- januari 2011
+- december 2010
+- november 2010
+- oktober 2010
+- september 2010
+- augustus 2010
+- juli 2010
+- juni 2010
+- mei 2010
+- april 2010
+- maart 2010
+- februari 2010
+- januari 2010
+- december 2009
+- november 2009
+- oktober 2009
+- september 2009
+- augustus 2009
+- juli 2009
+- juni 2009
+- mei 2009
+- april 2009
+- maart 2009
+- februari 2009
+- december 2008
+- november 2008
+- oktober 2008
+- september 2008
+- augustus 2008
+- juli 2008
+- juni 2008
+- mei 2008
+- april 2008
+- maart 2008
+- februari 2008
+- januari 2008
+- december 2007
+- november 2007
+- oktober 2007
+- september 2007
+- augustus 2007
+- juli 2007
+- juni 2007
+- mei 2007
+- april 2007
+- maart 2007
+- februari 2007
+- januari 2007
+- december 2006
+- november 2006
+- oktober 2006
+- september 2006
+- augustus 2006
+- juli 2006
+- juni 2006
+- mei 2006
+- april 2006
+Search:
+## Lunch op het trottoir
+
+8 juni 2021
+Gistermiddag op een terras in de Rijnstraat, Amsterdam
+Reageren is niet mogelijk.
+
+Vorige post:  
+De Vlaamse bluf van Kris CallensVolgende post  
+Rectificatie

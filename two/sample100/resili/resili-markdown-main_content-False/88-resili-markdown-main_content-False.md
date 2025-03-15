@@ -1,0 +1,317 @@
+- zum Inhalt springen
+
+#  Pannonia IT Knowledgebase
+
+### Benutzer-Werkzeuge
+
+- Anmelden
+
+### Webseiten-Werkzeuge
+
+- Letzte Änderungen
+- Medien-Manager
+- Übersicht
+Zuletzt angesehen:know-how:kids
+# Medien-Manager
+
+## Namensräume
+Namensraum wählen
+- −[Wurzel]      - −know-how
+- +wiki
+
+
+## Dateiauswahl
+
+- Dateiauswahl
+- Hochladen
+- Suchen
+
+### Dateien in know-how
+
+-
+-
+-
+
+- 0_123random.pannoniait.at.png0_123random.pannoniait.at.png1313×3332020/03/29 14:043.8 KB
+- 0_1920_port_detail.png0_1920_port_detail.png794×4192020/10/20 14:2723.5 KB
+- 0_app_portal_aure_com.png0_app_portal_aure_com.png863×2272021/07/01 08:0926.3 KB
+- 0_chat_pannoniait_at.png0_chat_pannoniait_at.png679×5152020/03/29 13:5716.2 KB
+- 0_controller_add_rollen_hinzufuegen_domain_dienste.png0_controller_add_rollen_hinzufuegen_domain_dienste.png778×5512022/08/17 16:3964.4 KB
+- 0_convert_mbr_to_gpt.png0_convert_mbr_to_gpt.png893×5002022/06/28 11:3395.1 KB
+- 0_dhcp_pxe_option.png0_dhcp_pxe_option.png406×4622019/11/12 10:0113.6 KB
+- 0_firefox_yubikey_provider.png0_firefox_yubikey_provider.png1367×5922021/02/08 07:5141.8 KB
+- 0_gvm_port_forwarding_login.png0_gvm_port_forwarding_login.png1053×9642021/06/23 10:05123.3 KB
+- 0_hpe_1950_vlan_10_create.png0_hpe_1950_vlan_10_create.png524×2642020/12/02 12:5710 KB
+- 0_hpe1930_local_management.png0_hpe1930_local_management.png1889×5252022/02/09 09:54155.3 KB
+- 0_kids_admin_menue_overview.png0_kids_admin_menue_overview.png1920×10142021/06/26 17:3998.1 KB
+- 0_local_gpo_path.png0_local_gpo_path.png1281×3182019/09/23 14:0124.3 KB
+- 00_local_shutdown_user.png00_local_shutdown_user.png699×5632019/09/23 14:0127.8 KB
+- 0_move_virtual_machine_storage.png0_move_virtual_machine_storage.png513×3512021/03/03 09:1711.3 KB
+- 0_mrtg_example_interface.png0_mrtg_example_interface.png532×5512021/05/06 09:1643.5 KB
+- 0_partitions_raid.png0_partitions_raid.png806×6762020/11/29 21:2168.1 KB
+- 0_rdp_cert_import.png0_rdp_cert_import.png530×5172020/01/15 07:4014.9 KB
+- 0_skripts_overview.png0_skripts_overview.png1509×5432021/07/05 11:3484.5 KB
+- 0_static_routing_hpe1950.png0_static_routing_hpe1950.png918×6542020/12/17 08:5337.5 KB
+- 0_support_edv_hilfe.png0_support_edv_hilfe.png105×992022/03/21 14:0912.9 KB
+- 0_thunderbird_user_agent.png0_thunderbird_user_agent.png892×8922021/05/06 09:0363.2 KB
+- 0_two_factor_auth_dokuwiki.png0_two_factor_auth_dokuwiki.png952×3382021/04/14 10:0956 KB
+- 0_video.pannoniait.at.png0_video.pannoniait.at.png1196×4112020/03/29 14:20138.6 KB
+- 0_workstation_intune_info.png0_workstation_intune_info.png929×6002021/07/05 11:5347.5 KB
+- 0-aruba-505-certificates-list.png0-aruba-505-certificates-list.png1415×6902021/04/27 07:4498.4 KB
+- 0-dedup-install.png0-dedup-install.png775×5562022/09/05 09:2375.4 KB
+- 00-gphotos-sync-new-project.png00-gphotos-sync-new-project.png608×4432019/09/10 12:1425 KB
+- 0-gphotos-sync-photos_library_api_activate.png0-gphotos-sync-photos_library_api_activate.png1877×5842019/09/10 12:1663.9 KB
+- 0-guest-network-without-vlan.png0-guest-network-without-vlan.png970×6232022/05/11 17:0245.9 KB
+- 0-ipxe-custom.png0-ipxe-custom.png738×1112022/09/26 11:3030.4 KB
+- 0-ms-intune-byod.png0-ms-intune-byod.png1305×7292021/04/07 10:34213.7 KB
+- 0-ms365-defender-atp-einstellungen-onboarding.png0-ms365-defender-atp-einstellungen-onboarding.png1350×8672022/06/23 10:32174.8 KB
+- 0-ms365-defender-atp.png0-ms365-defender-atp.png1661×4082022/06/23 10:3371.3 KB
+- 0-mstd-disable-gpo.png0-mstd-disable-gpo.png742×4692022/06/09 11:06166.4 KB
+- 0-power-management.png0-power-management.png1267×3692019/09/27 21:0274.8 KB
+- 0-remote-hilfe.png0-remote-hilfe.png784×3842021/04/07 09:4319.6 KB
+- 0-smart-ups-750-battery-failed.jpg0-smart-ups-750-battery-failed.jpg3456×46082021/04/07 11:101.6 MB
+- 0-uefi-class-match-correct.png0-uefi-class-match-correct.png474×4692022/08/31 13:5153.2 KB
+- 0-windows-7-restore-hyper-v-settings.png0-windows-7-restore-hyper-v-settings.png716×5402019/12/22 12:2320.6 KB
+- 0-windows-image-manager.png0-windows-image-manager.png1896×8612022/09/26 12:21101.9 KB
+- 0-x2go-client-access.png0-x2go-client-access.png735×6662021/03/29 11:2250.2 KB
+- 1_123random.pannoniait.at.png1_123random.pannoniait.at.png1349×4882020/03/29 14:0410.1 KB
+- 1_1920_tagged_vlan40.png1_1920_tagged_vlan40.png781×4752020/10/20 14:2729.7 KB
+- 1_app_registrations.png1_app_registrations.png1345×4812021/07/01 08:1093.2 KB
+- 1_chat_pannoniait_at.png1_chat_pannoniait_at.png1343×5202020/03/29 13:5720 KB
+- 1_controller_add_installation_starten.png1_controller_add_installation_starten.png782×5522022/08/17 16:3945 KB
+- 1_convert_mbr_to_gpt.png1_convert_mbr_to_gpt.png983×7112022/06/28 11:33472.3 KB
+- 1_dhcp_pxe_name_file.png1_dhcp_pxe_name_file.png409×4602019/11/12 09:5911.8 KB
+- 1_firefox_yubikey_logged_in.png1_firefox_yubikey_logged_in.png1354×6042021/02/08 07:5259.4 KB
+- 1_force_shutdown_from_remote.png1_force_shutdown_from_remote.png1227×3332019/09/23 14:0128.2 KB
+- 1_gvm_scan_konfigurationen.png1_gvm_scan_konfigurationen.png1784×7082021/06/23 10:05124.9 KB
+- 1_hpe_1950_assign_ports_to_vlan10.png1_hpe_1950_assign_ports_to_vlan10.png1714×9232020/12/02 12:5795.2 KB
+- 1_hpe1930_after_password_set.png1_hpe1930_after_password_set.png1875×7362022/02/09 09:55103.9 KB
+- 1_kids_admin_multimedia_overview.png1_kids_admin_multimedia_overview.png1920×10142021/06/26 17:3995.4 KB
+- 1_move_virtual_machine_storage.png1_move_virtual_machine_storage.png735×5402021/03/03 09:1729.5 KB
+- 1_raid_6.png1_raid_6.png806×6762020/11/29 21:2140.3 KB
+- 1_rdp_cert_import.png1_rdp_cert_import.png525×5182020/01/15 07:4016.8 KB
+- 1_skripts_overview_monitor.png1_skripts_overview_monitor.png1292×9612021/07/05 11:36100.8 KB
+- 1_support_ticket_beschreibung.png1_support_ticket_beschreibung.png1135×7742022/03/21 14:09162.9 KB
+- 1_thunderbird_about_config.png1_thunderbird_about_config.png789×5892021/05/06 09:0333.5 KB
+- 1_two_factor_auth_core_dokuwiki.png1_two_factor_auth_core_dokuwiki.png999×1102021/04/14 10:0824.6 KB
+- 1_video_pannoniait.at.png1_video_pannoniait.at.png633×2852020/03/29 14:209.7 KB
+- 1_workstation_intune_management_extensions.png1_workstation_intune_management_extensions.png521×6222021/07/05 11:5436.8 KB
+- 1-ad_prep.png1-ad_prep.png1214×7292022/06/20 08:47270.2 KB
+- 1-aruba-505-certificates-upload.png1-aruba-505-certificates-upload.png641×3812021/04/27 07:4526.7 KB
+- 1-dedup-configure.png1-dedup-configure.png899×5402022/09/05 09:2362.8 KB
+- 1-gphotos-sync-create-credentials-client-id-oauth.png1-gphotos-sync-create-credentials-client-id-oauth.png1884×4262019/09/10 12:1736.5 KB
+- 1-gphotos-sync-create-credentials.png1-gphotos-sync-create-credentials.png1881×6332019/09/10 12:1757.9 KB
+- 1-guest-network-without-vlan.png1-guest-network-without-vlan.png895×3022022/05/11 17:0218.6 KB
+- 1-ipxe-custom-path-menue.png1-ipxe-custom-path-menue.png487×4782022/09/26 11:3086.6 KB
+- 1-ms365-defender-atp-notify-mail.png1-ms365-defender-atp-notify-mail.png1669×8702022/06/23 10:33126.3 KB
+- 1-power-management.png1-power-management.png644×2472019/09/27 21:0220.8 KB
+- 1-remote-hilfe.png1-remote-hilfe.png353×6172021/04/07 09:4437.1 KB
+- 1-smart-ups-750-replace-old-battery.jpg1-smart-ups-750-replace-old-battery.jpg3456×46082021/04/07 11:12446.7 KB
+- 1-uefi-richtlinie-erstellen.png1-uefi-richtlinie-erstellen.png928×5522022/08/31 13:50149.9 KB
+- 1-windows-7-restore-boot-win7-cd.png1-windows-7-restore-boot-win7-cd.png1193×6342019/12/22 12:23175.2 KB
+- 1-x2go-client-access-click.png1-x2go-client-access-click.png1016×6202021/03/29 11:22119 KB
+- 2_1920_hybrid_port.png2_1920_hybrid_port.png908×6822020/10/20 14:2750.5 KB
+- 2_app_risk_detections.png2_app_risk_detections.png868×8262021/07/01 08:1192.7 KB
+- 2_controller_add_taskmanager.png2_controller_add_taskmanager.png652×5222022/08/17 16:39155 KB
+- 2_gvm_portlisten.png2_gvm_portlisten.png1631×6012021/06/23 10:0574.9 KB
+- 2_hpe_1950_remove_ip_default_vlan.png2_hpe_1950_remove_ip_default_vlan.png1009×6342020/12/02 12:5758.9 KB
+- 2_hpe_management_ip_change_use_different_browser.png2_hpe_management_ip_change_use_different_browser.png673×1172022/02/09 09:5517.7 KB
+- 2_kids_admin_websites_overview.png2_kids_admin_websites_overview.png1920×10142021/06/26 17:3973.5 KB
+- 2_move_virtual_machine_storage.png2_move_virtual_machine_storage.png729×5442021/03/03 09:1747.3 KB
+- 2_raid_volumes.png2_raid_volumes.png806×6762020/11/29 21:2157 KB
+- 2_rdp_cert_import.png2_rdp_cert_import.png528×5122020/01/15 07:4012.5 KB
+- 2_skripts_properties.png2_skripts_properties.png1274×6812021/07/05 11:38100.5 KB
+- 2_support_uebermittlung..png2_support_uebermittlung..png1138×3492022/03/21 14:1041 KB
+- 2_thunderbird_string_value.png2_thunderbird_string_value.png791×5862021/05/06 09:0480.5 KB
+- 2_two_factor_auth_attribute.png2_two_factor_auth_attribute.png953×1082021/04/14 10:0827.2 KB
+- 2_weiterleitungen_filterrichtlinie_fuer_ausgehenden_spam.png2_weiterleitungen_filterrichtlinie_fuer_ausgehenden_spam.png1920×8182021/01/11 13:34152.2 KB
+- 2_workstation_synchronize_manually.png2_workstation_synchronize_manually.png550×5472021/07/05 11:5633.4 KB
+- 2-aruba-505-certificate-assignment.png2-aruba-505-certificate-assignment.png646×2172021/04/27 07:4516 KB
+- 2-dedup-activate.png2-dedup-activate.png1299×7392022/09/05 09:24115.4 KB
+- 2-gphotos-sync-application_type_other.png2-gphotos-sync-application_type_other.png1166×5062019/09/10 12:1826.9 KB
+- 2-guest-network-without-vlan.png2-guest-network-without-vlan.png903×3932022/05/11 17:0225.7 KB
+- 2-ipxe-conditions.png2-ipxe-conditions.png495×4782022/09/26 11:3097.4 KB
+- 2-ms365-defender-atp-notify-mail.png2-ms365-defender-atp-notify-mail.png1667×8792022/06/23 10:33118.6 KB
+- 2-power-management.png2-power-management.png234×642019/09/27 21:023.6 KB
+- 2-remote-hilfe-support-geben.png2-remote-hilfe-support-geben.png315×1642021/04/07 09:4536.4 KB
+- 2-remove-identity.png2-remove-identity.png1226×2632022/06/20 08:4648 KB
+- 2-smart-ups-750-inset-new-battery.jpg2-smart-ups-750-inset-new-battery.jpg3456×46082021/04/07 11:12336.7 KB
+- 2-uefi-class-match.png2-uefi-class-match.png468×4802022/08/31 13:5286.5 KB
+- 2-windows-7-restore-boot-win7-cd.png2-windows-7-restore-boot-win7-cd.png1193×6342019/12/22 12:23134.2 KB
+- 2-x2go-client-access-desktop.png2-x2go-client-access-desktop.png1279×6912021/03/29 11:22100.8 KB
+- 3_1920_save_current_settings.png3_1920_save_current_settings.png692×6552020/10/20 14:2756.3 KB
+- 3_app_permission_graph_api.png3_app_permission_graph_api.png1550×8332021/07/01 08:12163.1 KB
+- 3_controller_add_server_heraufstufen_domain_controller.png3_controller_add_server_heraufstufen_domain_controller.png773×2702022/08/17 16:3925.4 KB
+- 3_kids_admin_packages.png3_kids_admin_packages.png1920×10142021/06/26 17:39121.5 KB
+- 3_move_virtual_machine_storage.png3_move_virtual_machine_storage.png738×5352021/03/03 09:1731.2 KB
+- 3_rdp_cert_import.png3_rdp_cert_import.png387×1952020/01/15 07:405.9 KB
+- 3_skripts_properties_deployment.png3_skripts_properties_deployment.png1149×9552021/07/05 11:4089.2 KB
+- 3_support_mailbox_support_content.png3_support_mailbox_support_content.png997×4072022/03/21 14:1120.8 KB
+- 3_support_mailbox_support.png3_support_mailbox_support.png589×1282022/03/21 14:107.6 KB
+- 3_thunderbird_override.png3_thunderbird_override.png783×412021/05/06 09:043.8 KB
+- 3_two_factor_auth_config.png3_two_factor_auth_config.png639×7232021/04/14 10:1086.6 KB
+- 3_volume_group.png3_volume_group.png806×6762020/11/29 21:2150.3 KB
+- 3_workstation_intunemanagement_extension_logfiles.png3_workstation_intunemanagement_extension_logfiles.png606×3252021/07/05 11:5618.6 KB
+- 3-aruba-505-cetificate-assigned.png3-aruba-505-cetificate-assigned.png344×372021/04/27 07:464.6 KB
+- 3-dedup-rate.png3-dedup-rate.png997×392022/09/05 09:244.8 KB
+- 3-gphotos-sync-show-credentials.png3-gphotos-sync-show-credentials.png1888×5132019/09/10 12:2048.6 KB
+- 3-guest-network-without-vlan.png3-guest-network-without-vlan.png876×5092022/05/11 17:0234.6 KB
+- 3-ipxe-user-class.png3-ipxe-user-class.png583×4912022/09/26 11:30117.8 KB
+- 3-ms365-defender-atp-mail.png3-ms365-defender-atp-mail.png888×292022/06/23 10:347.7 KB
+- 3-remote-hilfe-support-geben-id.png3-remote-hilfe-support-geben-id.png334×4542021/04/07 09:4671.7 KB
+- 3-smart-ups-750-test-new-battery.jpg3-smart-ups-750-test-new-battery.jpg3456×46082021/04/07 11:131.1 MB
+- 3-uefi-send-match-66-pxe-server.png3-uefi-send-match-66-pxe-server.png489×4832022/08/31 13:5292.2 KB
+- 3-uefi-send-match-67-pxe-server.png3-uefi-send-match-67-pxe-server.png493×4802022/08/31 13:5388.2 KB
+- 3-windows-7-restore-boot-win7-cd-abort.png3-windows-7-restore-boot-win7-cd-abort.png1193×6342019/12/22 12:23126 KB
+- 3-x2go-access-connect-local-desktop.png3-x2go-access-connect-local-desktop.png714×1372021/03/29 11:408.9 KB
+- 4_app_grant_permission.png4_app_grant_permission.png1074×5172021/07/01 08:1481.8 KB
+- 4_controller_add_domaincontroller_hinzufuegen_vorhanden.png4_controller_add_domaincontroller_hinzufuegen_vorhanden.png733×5482022/08/17 16:3936.9 KB
+- 4_kids_admin_working_mode.png4_kids_admin_working_mode.png1920×10142021/06/26 17:3969.3 KB
+- 4_move_virtual_machine_storage.png4_move_virtual_machine_storage.png842×352021/03/03 09:173.6 KB
+- 4_rdp_cert_import.png4_rdp_cert_import.png833×5362020/01/15 07:4077.6 KB
+- 4_root_example.png4_root_example.png806×6762020/11/29 21:2171.3 KB
+- 4_skripts_devices_category.png4_skripts_devices_category.png1364×9102021/07/05 11:42128.4 KB
+- 4_two_factor_auth_use_two_factor_auth.png4_two_factor_auth_use_two_factor_auth.png586×3002021/04/14 10:1128.7 KB
+- 4-guest-network-without-vlan.png4-guest-network-without-vlan.png875×5532022/05/11 17:0237.7 KB
+- 4-ipxe-benutzerklasse.png4-ipxe-benutzerklasse.png450×2652022/09/26 11:3048 KB
+- 4-ms365-defender-atp-mail.png4-ms365-defender-atp-mail.png717×4872022/06/23 10:3450 KB
+- 4-remote-hilfe-support-anfordern-id.png4-remote-hilfe-support-anfordern-id.png332×3082021/04/07 09:4617 KB
+- 4-uefi-ip-bereich.png4-uefi-ip-bereich.png483×4852022/08/31 13:54141.3 KB
+- 4-windows-7-restore-boot-cd-win7-cd-cmd.png4-windows-7-restore-boot-cd-win7-cd-cmd.png1193×6342019/12/22 12:2391.6 KB
+- 4-x2go-client-access-local-desktop.png4-x2go-client-access-local-desktop.png697×5592021/03/29 11:4265.4 KB
+- 5_app_granted_permission.png5_app_granted_permission.png1074×5482021/07/01 08:1480.8 KB
+- 5_controller_add_full_provisioning_domain_controller.png5_controller_add_full_provisioning_domain_controller.png741×5502022/08/17 16:3937.5 KB
+- 5_installed_and_bootet.png5_installed_and_bootet.png806×6762020/11/29 21:2131.4 KB
+- 5_kids_admin_wifi_networks.png5_kids_admin_wifi_networks.png1920×10142021/06/26 17:39108.4 KB
+- 5_rdp_cert_import.png5_rdp_cert_import.png733×4782020/01/15 07:4034.5 KB
+- 5_skripts_groups_dynamic_membership.png5_skripts_groups_dynamic_membership.png1423×8112021/07/05 11:45139.3 KB
+- 5_two_factor_auth_use_two_factor_auth_go.png5_two_factor_auth_use_two_factor_auth_go.png344×1872021/04/14 10:1110.5 KB
+- 5-ipxe-benutzerklasse-ascii.png5-ipxe-benutzerklasse-ascii.png457×4632022/09/26 11:3047.6 KB
+- 5-remote-hilfe-support-full-access.png5-remote-hilfe-support-full-access.png342×4782021/04/07 09:4741.1 KB
+- 5-uefi-send-match-summary.png5-uefi-send-match-summary.png491×4832022/08/31 13:5498.5 KB
+- 5-windows-7-restore-boot-win7-cd-fix7hdc.png5-windows-7-restore-boot-win7-cd-fix7hdc.png1193×6342019/12/22 12:2394.8 KB
+- 6_app_shared_secret.png6_app_shared_secret.png1882×8472021/07/01 08:15150.6 KB
+- 6_controller_add_dns_fehler_ok.png6_controller_add_dns_fehler_ok.png748×5502022/08/17 16:3931.6 KB
+- 6_kids_user_blocked.png6_kids_user_blocked.png1920×10142021/06/26 17:3989.8 KB
+- 6_rdp_cert_import.png6_rdp_cert_import.png778×3912020/01/15 07:4048.8 KB
+- 6_skripts_devices_categories_names.png6_skripts_devices_categories_names.png1550×9212021/07/05 11:43135.5 KB
+- 6_two_factor_auth_use_two_factor_auth_google_auth.png6_two_factor_auth_use_two_factor_auth_google_auth.png673×3492021/04/14 10:1230.4 KB
+- 6_up_to_date.png6_up_to_date.png806×6762020/11/29 21:2138.2 KB
+- 6-remote-hilfe-freigeben.png6-remote-hilfe-freigeben.png335×4932021/04/07 09:4816.4 KB
+- 6-windows-7-restore-boot-win7-cd-fixhdc.png6-windows-7-restore-boot-win7-cd-fixhdc.png1193×6342019/12/22 12:2392.2 KB
+- 7_2disks_missing.png7_2disks_missing.png806×6762020/11/29 21:2131.7 KB
+- 7_controller_add_beliebige_domain_controller.png7_controller_add_beliebige_domain_controller.png751×5452022/08/17 16:3929.1 KB
+- 7_kids_user_request.png7_kids_user_request.png1920×10142021/06/26 17:3995.5 KB
+- 7_rdp_cert_import.png7_rdp_cert_import.png960×952020/01/15 07:409.5 KB
+- 7_two_factor_auth_use_two_factor_auth_google_auth.png7_two_factor_auth_use_two_factor_auth_google_auth.png636×4472021/04/14 10:1333 KB
+- 7-remote-hilfe-access.png7-remote-hilfe-access.png1244×7212021/04/07 09:49767 KB
+- 7-windows-7-restore-boot-win7-cd-success-boot.png7-windows-7-restore-boot-win7-cd-success-boot.png1193×6342019/12/22 12:27168.9 KB
+- 8_controller_add_standard_pfade.png8_controller_add_standard_pfade.png757×5572022/08/17 16:3933.5 KB
+- 8_kids_user_multimedia.png8_kids_user_multimedia.png1920×10142021/06/26 17:39386.2 KB
+- 8_readded_devices.png8_readded_devices.png806×6762020/11/29 21:2140.2 KB
+- 8_two_factor_auth_use_two_factor_auth_google_auth.png8_two_factor_auth_use_two_factor_auth_google_auth.png668×4192021/04/14 10:1326.2 KB
+- 9_controller_add_warnings_ok_dns.png9_controller_add_warnings_ok_dns.png752×5562022/08/17 16:3928.5 KB
+- 9_kids_admin_request_permission.png9_kids_admin_request_permission.png789×3082021/06/26 17:3957.4 KB
+- 9_two_factor_auth_use_two_factor_auth_google_auth_example_login.png9_two_factor_auth_use_two_factor_auth_google_auth_example_login.png683×3472021/04/14 10:1427.7 KB
+- 9_volume_group_not_found.png9_volume_group_not_found.png726×4762020/11/29 21:2122.6 KB
+- 10_controller_add_alles_ok.png10_controller_add_alles_ok.png820×5752022/08/17 16:3948.5 KB
+- 10_kids_admin_allow.png10_kids_admin_allow.png1339×6392021/06/26 17:3947 KB
+- 11_kids_admin_allow_add.png11_kids_admin_allow_add.png951×6382021/06/26 17:3934.8 KB
+- 11_local_shutdown_user_group.png11_local_shutdown_user_group.png691×5362019/09/23 14:0124.7 KB
+- 22_network_configuration.png22_network_configuration.png318×1192019/09/23 14:013.3 KB
+- 14880059454992714.odt14880059454992714.odt 2020/03/24 12:1211.8 KB
+- aktivierung_1.pngaktivierung_1.png1323×9222022/09/14 12:23126.2 KB
+- aktivierung_2.pngaktivierung_2.png1042×4432022/09/14 12:2319 KB
+- aktivierung_3.pngaktivierung_3.png1020×5262022/09/14 12:2332.6 KB
+- aktivierung_4.pngaktivierung_4.png1020×3032022/09/14 12:2319.3 KB
+- aktivierung_5.pngaktivierung_5.png877×6572022/09/14 12:2335 KB
+- apc_management_card_hotplug.jpgapc_management_card_hotplug.jpg2573×23502021/03/02 09:31366.6 KB
+- artists_search.php.zipartists_search.php.zip 2019/01/22 11:26888 B
+- aruba_instant_webcategory_filter.pngaruba_instant_webcategory_filter.png1016×4582021/10/13 10:5171 KB
+- atp-deploy-system.ps1.zipatp-deploy-system.ps1.zip 2021/07/05 11:50832 B
+- authorizer.tar.gzauthorizer.tar.gz 2021/02/04 11:342 MB
+- blocked-addresses.zipblocked-addresses.zip 2021/02/09 11:306.2 MB
+- blocked-ipset.zipblocked-ipset.zip 2021/02/09 11:326.2 MB
+- boot-driver-fix.iso.gzboot-driver-fix.iso.gz 2019/12/22 12:2286.4 KB
+- brennenstuhl-premium-web-line.pngbrennenstuhl-premium-web-line.png1875×5652021/11/26 12:3051.3 KB
+- centiwatt-verbrauch.pngcentiwatt-verbrauch.png576×2382021/11/26 12:3615.3 KB
+- check_battery.xml.gzcheck_battery.xml.gz 2019/09/23 13:57876 B
+- converse.js-6.0.1.tgzconverse.js-6.0.1.tgz 2020/03/29 14:076.8 MB
+- dell_r710_front.jpgdell_r710_front.jpg3897×7762019/09/03 10:30653 KB
+- deploy_malware_trigger.bat.zipdeploy_malware_trigger.bat.zip 2019/09/25 11:29475 B
+- dlp-regeln-microsoft.pngdlp-regeln-microsoft.png1331×5412018/06/19 14:1177.5 KB
+- duplicati_one_drive_v2.pngduplicati_one_drive_v2.png1025×7972019/10/10 09:5157 KB
+- duplicati_overview_backup_entry.pngduplicati_overview_backup_entry.png727×5052019/10/10 09:5131.5 KB
+- duplicati_success_restore.pngduplicati_success_restore.png1064×3612019/10/10 11:1228.8 KB
+- gpo_skripts_interaktiv.pnggpo_skripts_interaktiv.png1216×4512019/10/10 11:0834.8 KB
+- gpo_windows_auto_login_aktivieren.pnggpo_windows_auto_login_aktivieren.png1705×4322020/06/10 12:5479.3 KB
+- gpo_windows_auto_login_deaktivieren.pnggpo_windows_auto_login_deaktivieren.png1594×4032020/06/10 12:5451.8 KB
+- harddisk_notification.zipharddisk_notification.zip 2022/03/16 13:412.7 KB
+- harddisk-troubles.pngharddisk-troubles.png662×3432022/03/29 11:2521.6 KB
+- hp-microserver-gen10-plus-softwareraid-4tb-ssd.jpghp-microserver-gen10-plus-softwareraid-4tb-ssd.jpg2685×43732021/04/10 16:431.7 MB
+- hp-smart-array-p440-controller.pnghp-smart-array-p440-controller.png746×7492021/03/03 08:52154.7 KB
+- hp2055-boot-rescue.ziphp2055-boot-rescue.zip 2018/06/19 14:1330.6 MB
+- hpe_lwl_module.pnghpe_lwl_module.png687×6932020/12/17 09:25101.1 KB
+- hpe1920_default_gateway.pnghpe1920_default_gateway.png1169×4152020/06/17 15:0444.4 KB
+- hpe1950_direct_vlan_assignment.pnghpe1950_direct_vlan_assignment.png862×6122021/03/17 13:5041 KB
+- hping3-attacks-flood.pdfhping3-attacks-flood.pdf 2018/08/13 09:372.8 MB
+- hyper_v_2019_cpu_fehler.pnghyper_v_2019_cpu_fehler.png555×2742020/06/25 15:0217.4 KB
+- hyper-v-vlans.pnghyper-v-vlans.png658×4402020/12/14 10:21155.6 KB
+- hyper-v-vmq-setting-guest.pnghyper-v-vmq-setting-guest.png648×3032018/09/11 11:3315.2 KB
+- ict-shapes-for-openoffice-draw-2010-05-11.odgict-shapes-for-openoffice-draw-2010-05-11.odg 2022/07/07 11:2478.4 KB
+- integrity-boot-graphical-startup.pngintegrity-boot-graphical-startup.png1190×5492019/05/21 09:4391.8 KB
+- intune_atp_server.zipintune_atp_server.zip 2021/07/05 12:072.9 KB
+- ipmicfg_1.31.0_build.200205.zipipmicfg_1.31.0_build.200205.zip 2020/06/17 12:391.9 MB
+- ipset-master.zipipset-master.zip 2022/02/21 13:202 MB
+- iptables-scripts.zipiptables-scripts.zip 2018/11/22 11:372.6 KB
+- issues.pngissues.png708×5562022/06/20 08:45138.6 KB
+- konzept_infrastruktur_template_darstellung.jpgkonzept_infrastruktur_template_darstellung.jpg4494×31792022/07/07 11:23791.7 KB
+- konzept_infrastruktur_template_darstellung.odgkonzept_infrastruktur_template_darstellung.odg 2022/07/07 11:2436.3 KB
+- logo_sticker.pnglogo_sticker.png876×2622021/11/26 12:1968.1 KB
+- lwl_om2_kabel.jpglwl_om2_kabel.jpg900×8052020/12/17 09:19131.5 KB
+- ntopng-delete-data.pngntopng-delete-data.png1817×5902021/10/08 15:1681.4 KB
+- perc_i_6_battery_info.pngperc_i_6_battery_info.png746×3182021/03/29 07:5024 KB
+- perc_i6_new_battery_pack.jpgperc_i6_new_battery_pack.jpg1228×9212021/03/29 07:50101.1 KB
+- perc_i6_old_battery_pack.jpgperc_i6_old_battery_pack.jpg1228×9212021/03/29 07:49163.4 KB
+- pihole-minimal.tarpihole-minimal.tar 2019/05/28 12:4911.2 MB
+- poor_mans_update_available_notification.pngpoor_mans_update_available_notification.png827×5422022/05/11 15:1442.4 KB
+- poor-mans-windows-atp.zippoor-mans-windows-atp.zip 2019/09/24 14:082.2 KB
+- powershell-force-tls12.pngpowershell-force-tls12.png959×1862020/11/03 08:59139.6 KB
+- proxy.zipproxy.zip 2021/02/09 11:196.2 MB
+- pxe-option-60-same-server-dhcp-wds.pngpxe-option-60-same-server-dhcp-wds.png598×5452022/08/31 13:4671.9 KB
+- pxe-wds-options-legacy-mbr-boot-wds-windows.pngpxe-wds-options-legacy-mbr-boot-wds-windows.png576×1202022/08/31 13:4824.4 KB
+- raid_5_hard_drive_failure_replacement_through_megaraid_stora.mp4raid_5_hard_drive_failure_replacement_through_megaraid_stora.mp4 2018/08/22 10:3419.1 MB
+- ressourcen-manager-eigenschaften-kontingent.pngressourcen-manager-eigenschaften-kontingent.png625×6432018/08/22 10:4217.2 KB
+- ressourcen-manager-kontingente-uebersicht.pngressourcen-manager-kontingente-uebersicht.png1033×2872018/08/22 10:4213.8 KB
+- ressourcen-manager-windows-dateisserver.pngressourcen-manager-windows-dateisserver.png832×5822018/08/22 10:4159.5 KB
+- rpi4-passiv-cooling-edited.jpgrpi4-passiv-cooling-edited.jpg684×6122021/04/20 16:4363.3 KB
+- scripts.zipscripts.zip 2019/09/23 16:061.3 KB
+- shutdown_server_on_low_battery.xml.gzshutdown_server_on_low_battery.xml.gz 2019/09/23 13:571.1 KB
+- spam-in-junkmail.pngspam-in-junkmail.png1593×8632022/05/17 11:03103.9 KB
+- startup-xfce-roadworker-vpn.pngstartup-xfce-roadworker-vpn.png836×5012020/05/14 16:3060.4 KB
+- subinacl.zipsubinacl.zip 2018/06/19 14:14135.4 KB
+- teamtyp_auswaehlen.pngteamtyp_auswaehlen.png1325×5752021/10/06 16:2560 KB
+- ticket-system.zipticket-system.zip 2022/03/21 14:0511.7 KB
+- update-ipsets.tarupdate-ipsets.tar 2018/11/22 09:40320 KB
+- updatesavailable.zipupdatesavailable.zip 2022/05/11 15:152.4 KB
+- wds-option-60-for-dhcp.pngwds-option-60-for-dhcp.png438×5602022/08/31 13:4683.3 KB
+- wds-pxe-deployment.tar.gzwds-pxe-deployment.tar.gz 2018/06/27 13:54289.8 MB
+- windows_2019_key_cmd.pngwindows_2019_key_cmd.png718×3382020/06/24 13:537.6 KB
+- windows_2019_mak_key_troubles.pngwindows_2019_mak_key_troubles.png676×3752020/06/24 13:5345.9 KB
+- wireguard-smartphone.pngwireguard-smartphone.png1080×21602020/05/24 18:26128.7 KB
+- yersinia.pdfyersinia.pdf 2018/06/27 07:581.1 MB
+
+## Datei
+
+- Anzeigen
+- Verlauf
+
+### know-how:0_partitions_raid.png
+
+Datum:2020/11/29 21:21Dateiname:0_partitions_raid.pngFormat:PNGGröße:68KBBreite:806Höhe:676Verwendung von:linuxknow-how/kids.txt · Zuletzt geändert: 2021/06/26 17:56 von cc  
+### Seiten-Werkzeuge        - Seite anzeigen
+- Ältere Versionen
+- Links hierher
+- Nach oben
+
+Donate Powered by PHP Valid HTML5 Valid CSS Driven by DokuWiki

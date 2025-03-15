@@ -1,0 +1,32 @@
+- Australia A 1st innings
+- Australia A: 51 runs in 17.4 overs (107 balls, 78 mins)
+- NJ Maddinson: 50 off 63 balls in 109 mins (7x4, 1x6)
+- Australia A: 100 runs in 30.6 overs (189 balls, 144 mins)
+- South Africa A 1st innings
+- South Africa A: 50 runs in 18.6 overs (114 balls, 96 mins)
+- South Africa A: 50 runs in 18.6 overs (114 balls, 76 mins)
+- 1st Wicket: 50 runs off 114 balls in 76 mins (RR Hendricks 21, D Elgar 29, Ex 0)
+- D Elgar: 51 off 72 balls in 104 mins (5x4, 0x6)
+- South Africa A: 100 runs in 28.6 overs (175 balls, 122 mins)
+- 1st Wicket: 100 runs off 175 balls in 122 mins (RR Hendricks 33, D Elgar 66, Ex 1)
+- South Africa A: 150 runs in 41.5 overs (253 balls, 176 mins)
+- South Africa A: 200 runs in 55.6 overs (339 balls, 240 mins)
+- RR Rossouw: 50 off 96 balls in 135 mins (7x4, 0x6)
+- 5th Wicket: 50 runs off 106 balls in 71 mins (RR Rossouw 15, JL Ontong 35, Ex 0)
+- South Africa A: 250 runs in 73.2 overs (443 balls, 308 mins)
+- New ball taken by Australia A after 80 overs
+- South Africa A: 300 runs in 93.1 overs (363 balls, 395 mins)
+- 7th Wicket: 51 runs off 117 balls in 86 mins (RR Rossouw 27, SR Harmer 21, Ex 3)
+- RR Rossouw: 100 off 174 balls in 260 mins (14x4, 0x6)
+- South Africa A: 350 runs in 105.1 overs (635 balls, 445 mins)
+- Australia A 2nd innings
+- Australia A: 50 runs in 15.5 overs (99 balls, 76 mins)
+- 3rd Wicket: 50 runs off 55 balls in 37 mins (AJ Doolan 23, NJ Maddinson 26, Ex 1)
+- Australia A: 100 runs in 24.4 overs (152 balls, 108 mins)
+- NJ Maddinson: 53 off 67 balls in 84 mins (7x4, 0x6)
+- Australia A: 151 runs in 37.6 overs (234 balls, 163 mins)
+- Australia A: 201 runs in 61.2 overs (372 balls, 248 mins)
+- Australia A: 251 runs in 70.2 overs (428 balls, 286 mins)
+- South Africa A 2nd innings
+- South Africa A: 51 runs in 12.2 overs (74 balls, 45 mins)
+|

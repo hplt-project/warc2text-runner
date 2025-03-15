@@ -21,7 +21,7 @@ rm -rf $LOG_DIR; mkdir -p $LOG_DIR
 LOG_DIR=$(realpath $LOG_DIR)
 
 # run_warc2html_local.sh will be started on the remote host and will take commands to run from the stdin
-zcat ${RUNDIR}/tasks.args.gz | parallel \
+zcat ${RUNDIR}/tasks.args.gz | awk '{print} NR % 50 == 0 {system("sleep 600")}' | parallel \
     --pipe -j1 --roundrobin -N1 \
     --line-buffer --joblog ${LOG_DIR}/joblog $REMOTECONFIG \
     "pwd; module purge; module load parallel nlpl-warc2text/1.3; run_warc2html_local.sh ${NJOBS} ${LOG_DIR}/\`hostname\` "

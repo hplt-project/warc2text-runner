@@ -1,0 +1,1 @@
+Nečekejte na motivaci před vlastní činností - pusťte se do práce a motivace se dostaví!

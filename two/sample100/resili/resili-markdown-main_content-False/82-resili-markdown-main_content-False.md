@@ -1,0 +1,36 @@
+Wink GroupNosotrosBlogPrensa¿Hablamos?
+# Transformamos un laboratorio en un apartamento de uso vacacional
+
+Santa Brígida, Madrid, España.
+
+Una de las transformaciones de las que más orgullosos estamos ¿Sabías que esta
+vivienda antes era un laboratorio? Difícil de creer, ¿verdad? Diseño, actualidad
+y Vanguardia son las palabras que mejor describen a este apartamento de uso vacacional
+situado en pleno centro de Madrid. La adaptación de los espacios, como el cambio
+del área abovedada en dormitorio acogedor, fue todo un reto, pero el resultado no
+puede gustarnos más. La combinación de estilos, colores y texturas dan vida a un
+diseño único, moderno, diferente lleno de vida, que contrasta a la perfección
+con elementos clásicos como las vigas y pilares recuperados de los años cuarenta
+que presiden las estancias.
+
+Galeria del Proyecto
+
+## Footer
+Wink Group
+#DREAMSDOCOMETRUE ;)
+InstagramFacebookPinterestLinkedInEmail
+### Nosotros
+
+- ¿Quiénes somos?
+- ¿Dónde estamos?
+- Trabaja con nosotros
+- Contacto
+
+### Legal
+
+- Politica de privacidad
+- Protección de datos
+- Politica de Cookies
+
+© 2021 Wink Group. Todos los derechos reservados.
+Wink Group WhatsAppWink Group Instagram

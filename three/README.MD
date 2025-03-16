@@ -31,3 +31,26 @@ run_warc2html_remote.sh nirdl_three_cc 250 ""
 ```
 NB! On NIRD ssh connection to other node occasionally dropped, thus, we preferred splitting crawls manually and running
 on each node locally. On CESNET the first remote option works well. 
+
+## Stage2 (a.k.a. warc2html)
+Prepare a list of HTML files to process from a local directory:
+```commandline
+du -ab /users/arefevni/hplt/two/html_sample0.01_bs10/ | grep html.zst >local.paths
+```
+or from LUMIO:
+```commandline
+rclone ls --include="html.zst" lumio:htmlsample | sed -r 's!( *[0-9]+\s+)!\1 lumio:htmlsample/!' >lumio.paths
+```
+
+Specify the account and the partition SLURM should use:
+```commandline
+export SLURM_ACCOUNT=project_465001386
+export SLURM_PARTITION=small
+```
+
+Run processing in 100 parallel nodes max, 50 GB of input HTMLs per SLURM job:
+```commandline
+stage2nodeparallel_batched.sh 100 lumio.paths 50 ~/hplt/three/html_test
+```
+
+

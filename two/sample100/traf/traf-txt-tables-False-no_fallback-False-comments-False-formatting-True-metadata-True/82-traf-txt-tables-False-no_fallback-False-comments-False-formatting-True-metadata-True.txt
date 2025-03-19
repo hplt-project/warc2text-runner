@@ -1,4 +1,15 @@
+---
+title: Wink Group. Reformas Integrales en Madrid
+url: https://winkgroup.es/proyectos/reforma-integral-vivienda-santa-brigida
+hostname: winkgroup.es
+description: Estudio 360 (arquitectura, constructora e interiorismo) con una meta clara: hacer realidad el hogar de tus sueños. WINK Group es especialista en reformas integrales priorizando el cumplimiento de plazos, presupuestos y calidades.
+sitename: Wink Group. Reformas Integrales en Madrid
+date: 2021-11-26
+---
 # Transformamos un laboratorio en un apartamento de uso vacacional
+
 Santa Brígida, Madrid, España.
+
 Una de las transformaciones de las que más orgullosos estamos ¿Sabías que esta vivienda antes era un laboratorio? Difícil de creer, ¿verdad? Diseño, actualidad y Vanguardia son las palabras que mejor describen a este apartamento de uso vacacional situado en pleno centro de Madrid. La adaptación de los espacios, como el cambio del área abovedada en dormitorio acogedor, fue todo un reto, pero el resultado no puede gustarnos más. La combinación de estilos, colores y texturas dan vida a un diseño único, moderno, diferente lleno de vida, que contrasta a la perfección con elementos clásicos como las vigas y pilares recuperados de los años cuarenta que presiden las estancias.
+
 Galeria del Proyecto

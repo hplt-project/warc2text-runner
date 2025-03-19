@@ -1,11 +1,22 @@
+---
+title: Deception
+description: This new family murder mystery stars Meagan Good.
+sitename: HitFix
+date: 2013-01-07
+tags: ['NBC,Meagan Good,Victor Garber,Tate Donovan,Katherine LaNasa,Laz Alonso,Marin Hinkle,Ella Rae Peck,Wes Brown,Must Watch,Deception,tv']
+---
 Must Watch
+
 # Deception
+
 - Summary
 - Reviews / Ratings
 - Photos
 - Videos
 - Events
+
 #### Other Videos
+
 -
 Feb 23, 2013
 -

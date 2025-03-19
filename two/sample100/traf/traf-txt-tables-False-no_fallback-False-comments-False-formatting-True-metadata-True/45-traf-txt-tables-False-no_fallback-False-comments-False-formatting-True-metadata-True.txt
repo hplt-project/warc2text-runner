@@ -1,5 +1,14 @@
+---
+description: The German Academic Exchange Service (DAAD) is Germany’s organization distributing data on German international post-secondary student exchange. The German Academic Exchange Service is a partner of Project Atlas. On this page you can find data on International students in Germany, students from Germany studying abroad, general higher education sector and resources information. If you were wondering how many German students go study abroad or how many international students there are in Germany, you may find the answer here.
+date: 2014-01-01
+tags: ['germany german deutschland project atlas international higher education student student data higher number partner mobility study abroad news trends migration universities go overseas tertiary mobile Deutscher Akademischer Austausch dienst Austauschdienst German Academic Exchange Service (DAAD), Institute of International Education, IIE']
+---
 **International Students in Germany: **Moving towards "prior education" as a criterion for international mobility.
+
 **International students are classified into two categories:**
+
 • Bildungsauslaender: Foreign country of previous education/study (level of secondary education completed in countries outside Germany)
+
 • Bildungsinlaender: Previous education/study in Germany (level of secondary education completed in Germany)
+
 **Private Higher Education Institution:** Private HEI have private founding bodies. Numbers for German and foreign students are only collected by the federal statistical office if a private HEI has been awarded state recognition.

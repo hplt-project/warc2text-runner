@@ -1,1 +1,9 @@
+---
+title: Log in
+url: https://www.channelpronetwork.com/user/login
+hostname: channelpronetwork.com
+sitename: The ChannelPro Network
+date: 2022-06-20
+tags: ['IoT', 'K-12 Education']
+---
 The purpose of this report is to empower MSPs and IT solution providers to hone defense and recovery strategies in order to keep SMBs safe in the year ahead.

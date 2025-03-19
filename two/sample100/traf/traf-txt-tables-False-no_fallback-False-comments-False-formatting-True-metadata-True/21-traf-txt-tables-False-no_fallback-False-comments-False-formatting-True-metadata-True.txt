@@ -1,2 +1,8 @@
+---
+title: Outdoor Adventure
+description: The London School of Economics Students' Union is the representative and campaigning body for students at The London School of Economics and Political Science (LSE).
+date: 2016-10-27
+---
 No elections are currently running
+
 There are no current news articles.

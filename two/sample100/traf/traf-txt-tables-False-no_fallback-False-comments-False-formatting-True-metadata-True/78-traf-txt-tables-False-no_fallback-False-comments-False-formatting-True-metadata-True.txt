@@ -1,1 +1,9 @@
+---
+title: A.A Lazarus citáty
+author: Azcitaty Cz
+description: Citáty A.A Lazarus. … Citáty o lásce, životě, přátelství. A.A Lazarus citáty #1
+sitename: azcitaty.cz
+date: 2009-01-01
+tags: ['Citáty, láska, život, citáty o lásce, citáty o životě, smutné citáty']
+---
 Nečekejte na motivaci před vlastní činností - pusťte se do práce a motivace se dostaví!

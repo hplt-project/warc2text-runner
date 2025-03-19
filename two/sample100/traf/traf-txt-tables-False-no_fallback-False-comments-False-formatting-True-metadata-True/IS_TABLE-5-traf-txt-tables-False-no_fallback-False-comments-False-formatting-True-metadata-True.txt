@@ -1,3 +1,12 @@
+---
+title: CSC Scientific DuNouy Precision and Interfacial Tensiometers Precision:Spectrophotometers,
+url: https://www.fishersci.com/shop/products/csc-scientific-dunouy-precision-interfacial-tensiometers-1/02080015
+hostname: fishersci.com
+description: Provides rapid surface tension measurements15 to 30 secinds
+sitename: fishersci.com
+date: 2016-01-01
+tags: ['CSC Scientific DuNouy Precision and Interfacial Tensiometers - Spectrophotometers, Refractometers and Benchtop Instruments, Tensiometers']
+---
 ### Related Products
+
 We continue to work to improve your shopping experience and your feedback regarding this content is very important to us. Please use the form below to provide feedback related to the content on this product.
-Your feedback has been submitted. Fisher Scientific is always working to improve our content for you. We appreciate your feedback.Ok

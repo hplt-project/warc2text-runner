@@ -1,1 +1,6 @@
+---
+title: WSDOT
+date: 2017-01-01
+tags: ['Washington State Statewide road conditions Western Washington Travel Alerts']
+---
 Sorry, This incident has expired. The icons on the map will be updated within 5 minutes.

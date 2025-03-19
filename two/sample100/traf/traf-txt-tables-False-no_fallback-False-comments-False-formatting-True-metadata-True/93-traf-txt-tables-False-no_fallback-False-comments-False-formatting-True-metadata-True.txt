@@ -1,9 +1,25 @@
+---
+title: Efterlevelsespension - Danbegravelse
+url: https://www.danbegravelse.dk/ordbog/efterlevelsespension/
+hostname: danbegravelse.dk
+description: Der er mange nyttige informationer og forklaringer, der kan gøre det nemmere for dig at forstå, hvad der sker ved bisættelse, begravelse, askespredning og hvilke muligheder du har.
+sitename: Danbegravelse
+date: 2019-05-25
+---
 Efterlevende ægtefælle eller samlever til afdøde kan være berettiget til efterlevelsespension.
+
 Efterlevelsespension består i, at pensionisternes samlede pension fortsætter med at blive udbetalt i 3 måneder fra dødsfaldet.
+
 Berettigelse til efterlevelsespension forudsætter, at begge samlevende/ægtefæller modtager social pension, samt at de var samlevende ved dødsfaldet.
+
 Efterlevelsespension vil ved berettigelse hertil blive udbetalt automatisk. I tvivlstilfælde kan Udbetaling Danmark kontaktes for rådgivning.
+
 **Tlf. 72 30 20 91**
+
 info@danbegravelse.dk
+
 Hovedkontor & Administration
+
 Aurehøjvej 5B, 1
+
 2900 Hellerup

@@ -1,3 +1,11 @@
-shopping bag0
-Love list0
-The page you are looking for does not exist. Return to the home pageReturn to home page
+---
+title: 404
+date: 2011-01-01
+---
+# 404
+
+## ERROR
+
+The page you are looking for does not exist. Return to the home page
+
+Return to home page

@@ -1,30 +1,24 @@
-- Senior QAQC (Manager roles)
-- Project Based
-- Construction/Civil
-- Manager Construction
-- Project Based, Contract
-- Civil/Construction
-- Manager - HSE (Project)
-- Project Based
-- Construction/Civil
+---
+title: 9 lowongan di Pare-Pare
+url: https://id.jobsdb.com/id/id/job-location/pare-pare/1
+hostname: jobsdb.com
+description: Temukan lowongan di Pare-Pare di Indonesia. Dapatkan pekerjaan impian Anda di sekitar Pare-Pare dengan jobsDB.
+sitename: id.jobsdb.com
+date: 2018-05-19
+tags: ['Lowongan kerja pare-pare, loker pare-pare, info kerja pare-pare']
+---
 - Have knowledge in Tax
 - 2 - 3 years experience in general accounting
 - minimum 2 - 3 years experience in the same area
+
+
 - Skilled, experienced and passionate Cook
 - Local hire, Based in Sidrap
 - Contract (with opportunity to become Permanent)
-- Development
-- Government Relation
-- Construction
+
+
 - Member of Pertamina
 - Career Opportunity
 - Work Life Balance
-Gaji dapat dinegosiasi
-- Member of Pertamina
-- Career Opportunity
-- Work Life Bamace
-Gaji dapat dinegosiasi
-- Member of Pertamina
-- Career Opportunity
-- Work Life Balance
+
 Gaji dapat dinegosiasi

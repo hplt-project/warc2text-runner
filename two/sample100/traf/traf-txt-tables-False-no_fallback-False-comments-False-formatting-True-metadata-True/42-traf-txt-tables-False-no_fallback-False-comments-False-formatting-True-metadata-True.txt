@@ -1,1 +1,8 @@
+---
+title: für Coaches
+url: http://agile-school.de/materialien/fuer-coaches/
+hostname: agile-school.de
+sitename: agile-school.de
+date: 2017-12-01
+---
 Springe zum Inhalt

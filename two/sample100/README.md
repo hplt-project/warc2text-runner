@@ -1,6 +1,6 @@
 ## Resiliparse
 
-fast, but [not removing much boilerplate](https://github.com/MariaFjodorowa/warc2text-runner/tree/main/two/sample100/resili) 
+fast, but [not removing much boilerplate](resili) 
 
 ## Preliminary speed comparison
 
@@ -56,9 +56,9 @@ in case of xml it preserves formatting tags like [<hi>](https://tei-c.org/releas
 
 Pros of Markdown:
 
-- [longer documents are more readable](https://github.com/MariaFjodorowa/warc2text-runner/blob/main/two/sample100/traf/traf-markdown-tables-True-no_fallback-True/IS_TABLE-61-traf-markdown-tables-True-no_fallback-True.md)
-- possible to train models that output pretty formatted tables, [lists](https://github.com/MariaFjodorowa/warc2text-runner/blob/main/two/sample100/traf/traf-html-tables-True-no_fallback-True/55-traf-html-tables-True-no_fallback-True.md), [code](https://github.com/MariaFjodorowa/warc2text-runner/blob/main/two/sample100/traf/traf-markdown-tables-True-no_fallback-True/56-traf-markdown-tables-True-no_fallback-True.md)
-- [documents with emodjis look better](https://github.com/MariaFjodorowa/warc2text-runner/blob/main/two/sample100/traf/traf-markdown-tables-True-no_fallback-True/18-traf-markdown-tables-True-no_fallback-True.md)
+- [longer documents are more readable](traf/traf-markdown-tables-True-no_fallback-True/IS_TABLE-61-traf-markdown-tables-True-no_fallback-True.md)
+- possible to train models that output pretty formatted tables, [lists](traf/traf-html-tables-True-no_fallback-True/55-traf-html-tables-True-no_fallback-True.md), [code](traf/traf-markdown-tables-True-no_fallback-True/56-traf-markdown-tables-True-no_fallback-True.md)
+- [documents with emodjis look better](traf/traf-markdown-tables-True-no_fallback-True/18-traf-markdown-tables-True-no_fallback-True.md)
 
 Cons of Markdown:
 
@@ -73,7 +73,7 @@ Pros of Markdown table extraction:
 Cons of Markdown table extraction:
 
 - most tables are removed as boilerplate anyway, e.g. in the table below "empty" is where all text was removed and "no table" is where text was extracted, but tables were judged to be boilerplate
-- usefulness of the tables that are extracted properly is in question (see docs [30](https://github.com/MariaFjodorowa/warc2text-runner/blob/main/two/sample100/traf/traf-html-tables-True-no_fallback-False/30-traf-html-tables-True-no_fallback-False.md), [15](https://github.com/MariaFjodorowa/warc2text-runner/blob/main/two/sample100/traf/traf-html-tables-True-no_fallback-False/15-traf-html-tables-True-no_fallback-False.md), [3](https://github.com/MariaFjodorowa/warc2text-runner/blob/main/two/sample100/traf/traf-html-tables-True-no_fallback-False/3-traf-html-tables-True-no_fallback-False.md))
+- usefulness of the tables that are extracted properly is in question (see docs [30](traf/traf-html-tables-True-no_fallback-False/30-traf-html-tables-True-no_fallback-False.md), [15](traf/traf-html-tables-True-no_fallback-False/15-traf-html-tables-True-no_fallback-False.md), [3](traf/traf-html-tables-True-no_fallback-False/3-traf-html-tables-True-no_fallback-False.md))
 - Trafilatura doesn't fix non-standard source tables, and uses an own non-standard set of tags
 
 Documents with tables (those containing `<td>` tag):

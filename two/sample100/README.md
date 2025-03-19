@@ -44,7 +44,9 @@ in case of xml it preserves formatting tags like [<hi>](https://tei-c.org/releas
 
 ## with_metadata
 
-
+- [xml metadata](traf/traf-xml-tables-True-no_fallback-False-comments-True-formatting-True-metadata-True)
+- [xml w/o metadata](traf/traf-xml-tables-True-no_fallback-False-comments-True-formatting-False-metadata-False)
+- [txt metadata](traf/traf-txt-tables-False-no_fallback-False-comments-False-formatting-True-metadata-True)
 
 ## Markdown and tables
 

@@ -35,12 +35,13 @@ def parse_args():
     parser.add_argument('--output_dir', default='../../../two/sample100/')
     parser.add_argument('--no_fallback', action='store_true')
     parser.add_argument('--main_content', action='store_true')
+    parser.add_argument('--include_comments', action='store_true')
     return parser.parse_args()
 
 
 def setup_traf(args):
     trafilatura_options = {
-        "include_comments": False,
+        "include_comments": args.include_comments,
         "include_tables": args.include_tables,
         "no_fallback": args.no_fallback,
         "output_format": args.output_format,
@@ -119,6 +120,8 @@ def extract(args, method_name, outdir):
                 t_doc = time.time()
                 if "traf" in args.extractor:
                     text = traf(doc_html, config, trafilatura_options)
+                    if (text is not None) and ('<comments>' in text) and ('Comments not found' not in text):
+                        out_fn = f'IS_COMMENTS-{out_fn}'
                 elif args.extractor == "resili":  # does not extract tables?
                     text = resili(doc_html, args)
                 times_doc.append(time.time() - t_doc)
@@ -156,7 +159,15 @@ def extract(args, method_name, outdir):
 if __name__ == '__main__':
     args = parse_args()
     if 'traf' in args.extractor:
-        method_name = f"{args.extractor}-{args.output_format}-tables-{args.include_tables}-no_fallback-{args.no_fallback}"
+        method_name = '-'.join(
+            (
+                args.extractor,
+                args.output_format,
+                f"tables-{args.include_tables}",
+                f"no_fallback-{args.no_fallback}",
+                f"comments-{args.include_comments}",
+            )
+        )
     elif args.extractor == 'resili':
         method_name = f"{args.extractor}-{args.output_format}-main_content-{args.main_content}"
     outdir = f'{args.output_dir}/{args.extractor}/{method_name}'

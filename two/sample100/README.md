@@ -23,24 +23,24 @@ TLDR: for trafilatura, fallback influences more than tables
 
 ### XML outcomes:
 
-- [no comments opening tag](traf/traf-xml-tables-True-no_fallback-False-comments-True/8-traf-xml-tables-True-no_fallback-False-comments-True.xml)
-- [boilerplate](traf/traf-xml-tables-True-no_fallback-False-comments-True/IS_COMMENTS-6-traf-xml-tables-True-no_fallback-False-comments-True.xml)
-- [more boilerplate](traf/traf-xml-tables-True-no_fallback-False-comments-True/IS_COMMENTS-33-traf-xml-tables-True-no_fallback-False-comments-True.xml)
-- [boilerplate may be in any language](traf/traf-xml-tables-True-no_fallback-False-comments-True/IS_COMMENTS-44-traf-xml-tables-True-no_fallback-False-comments-True.xml)
-- [continuation of the main content](traf/traf-xml-tables-True-no_fallback-False-comments-True/IS_COMMENTS-38-traf-xml-tables-True-no_fallback-False-comments-True.xml)
-- [TRUE comments!!!](traf/traf-xml-tables-True-no_fallback-False-comments-True/IS_COMMENTS-IS_TABLE-61-traf-xml-tables-True-no_fallback-False-comments-True.xml). Actually a lot of useful text. But still includes some boilerplate like "ReplyDelete"
+- [no comments opening tag](traf/traf-xml-tables-True-no_fallback-False-comments-True-formatting-True-metadata-True/8-traf-xml-tables-True-no_fallback-False-comments-True-formatting-True-metadata-True.xml)
+- [boilerplate](traf/traf-xml-tables-True-no_fallback-False-comments-True-formatting-True-metadata-True/IS_COMMENTS-6-traf-xml-tables-True-no_fallback-False-comments-True-formatting-True-metadata-True.xml)
+- [more boilerplate](traf/traf-xml-tables-True-no_fallback-False-comments-True-formatting-True-metadata-True/IS_COMMENTS-33-traf-xml-tables-True-no_fallback-False-comments-True-formatting-True-metadata-True.xml)
+- [boilerplate may be in any language](traf/traf-xml-tables-True-no_fallback-False-comments-True-formatting-True-metadata-True/IS_COMMENTS-44-traf-xml-tables-True-no_fallback-False-comments-True-formatting-True-metadata-True.xml)
+- [continuation of the main content](traf/traf-xml-tables-True-no_fallback-False-comments-True-formatting-True-metadata-True/IS_COMMENTS-38-traf-xml-tables-True-no_fallback-False-comments-True-formatting-True-metadata-True.xml)
+- [TRUE comments!!!](traf/traf-xml-tables-True-no_fallback-False-comments-True-formatting-True-metadata-True/IS_COMMENTS-IS_TABLE-61-traf-xml-tables-True-no_fallback-False-comments-True-formatting-True-metadata-True.xml). Actually a lot of useful text. But still includes some boilerplate like "ReplyDelete"
 
 ### TXT
 
-- [where there is no comments opening tag in XML, there is nothing in txt](traf/traf-txt-tables-False-no_fallback-False-comments-False-formatting-True-metadata-True/8-traf-txt-tables-False-no_fallback-False-comments-False-formatting-True-metadata-True.txt)
-- [boilerplate looks like a usual plaintext in any language](traf/traf-txt-tables-False-no_fallback-False-comments-False-formatting-True-metadata-True/44-traf-txt-tables-False-no_fallback-False-comments-False-formatting-True-metadata-True.txt), may be difficult to filter out
-- [true comments look like a regular text](traf/traf-txt-tables-False-no_fallback-False-comments-False-formatting-True-metadata-True/IS_TABLE-61-traf-txt-tables-False-no_fallback-False-comments-False-formatting-True-metadata-True.txt), they are in no way distinguished from the main body, which seems to be bad for LM
+- [where there is no comments opening tag in XML, there is nothing in txt](traf/traf-txt-tables-False-no_fallback-False-comments-True-formatting-False-metadata-False/8-traf-txt-tables-False-no_fallback-False-comments-True-formatting-False-metadata-False.txt)
+- [boilerplate looks like a usual plaintext in any language](traf/traf-txt-tables-False-no_fallback-False-comments-True-formatting-False-metadata-False/44-traf-txt-tables-False-no_fallback-False-comments-True-formatting-False-metadata-False.txt), may be difficult to filter out
+- [true comments look like a regular text](traf/traf-txt-tables-False-no_fallback-False-comments-True-formatting-False-metadata-False/IS_TABLE-61-traf-txt-tables-False-no_fallback-False-comments-True-formatting-False-metadata-False.txt), they are in no way distinguished from the main body, which seems to be bad for LM
 
 ## include_formatting
 
 makes sense also with txt output format: it turns it into markdown [(not any better as when output_format='markdown')](traf/traf-txt-tables-False-no_fallback-False-comments-False-formatting-True-metadata-True/56-traf-txt-tables-False-no_fallback-False-comments-False-formatting-True-metadata-True.txt), so it's not true that is only valuable for xml as official docstring says at the time of writing
 
-in case of xml it preserves formatting tags like [<hi>](https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-hi.html). Compare [doc 56 with formatting](traf/traf-xml-tables-True-no_fallback-False-comments-True-formatting-False-metadata-False/56-traf-xml-tables-True-no_fallback-False-comments-True-formatting-False-metadata-False.xml) and [without](traf/traf-xml-tables-True-no_fallback-False-comments-True-formatting-True-metadata-True/56-traf-xml-tables-True-no_fallback-False-comments-True-formatting-True-metadata-True.xml)
+in case of xml it preserves formatting tags like [<hi>](https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-hi.html). Compare [doc 56 without formatting](traf/traf-xml-tables-True-no_fallback-False-comments-True-formatting-False-metadata-False/56-traf-xml-tables-True-no_fallback-False-comments-True-formatting-False-metadata-False.xml) and [with](traf/traf-xml-tables-True-no_fallback-False-comments-True-formatting-True-metadata-True/56-traf-xml-tables-True-no_fallback-False-comments-True-formatting-True-metadata-True.xml)
 
 ## with_metadata
 

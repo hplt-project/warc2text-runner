@@ -50,8 +50,6 @@ def setup_traf(args):
         "with_metadata": args.with_metadata,
         "include_formatting": args.include_formatting,
     }
-    if args.output_format == 'txt':
-        trafilatura_options['include_formatting'] = False # will be same as markdown otherwise
     config = use_config()
     min_extracted_size = 0
     config.set("DEFAULT", "MIN_EXTRACTED_SIZE", str(min_extracted_size))

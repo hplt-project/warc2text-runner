@@ -38,7 +38,7 @@ TLDR: for trafilatura, fallback influences more than tables
 
 ## include_formatting
 
-makes sense also with txt output format: it turns it into markdown (not any better as when output_format='markdown'), so it's not true that is only valuable for xml as official docstring says at the time of writing
+makes sense also with txt output format: it turns it into markdown [(not any better as when output_format='markdown')](traf/traf-txt-tables-False-no_fallback-False-comments-False-formatting-True-metadata-True/56-traf-txt-tables-False-no_fallback-False-comments-False-formatting-True-metadata-True.txt), so it's not true that is only valuable for xml as official docstring says at the time of writing
 
 in case of xml it preserves formatting tags like [<hi>](https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-hi.html). Compare [doc 56 with formatting](traf/traf-xml-tables-True-no_fallback-False-comments-True-formatting-False-metadata-False/56-traf-xml-tables-True-no_fallback-False-comments-True-formatting-False-metadata-False.xml) and [without](traf/traf-xml-tables-True-no_fallback-False-comments-True-formatting-True-metadata-True/56-traf-xml-tables-True-no_fallback-False-comments-True-formatting-True-metadata-True.xml)
 

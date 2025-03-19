@@ -1,7 +1,7 @@
-Intel's Barrett goes for Washington on education, innovation
-'Teachers are the ultimate tools'
+# Intel's Barrett goes for Washington on education, innovation
+## 'Teachers are the ultimate tools'
 Intelligent flash storage arrays
-IDF Intel chairman Craig Barrett got political at the opening of the Intel Developer Forum this morning, taking aim at the US’ records on education, healthcare and investment in R&D.
+**IDF** Intel chairman Craig Barrett got political at the opening of the Intel Developer Forum this morning, taking aim at the US’ records on education, healthcare and investment in R&D.
 Intel billed Barrett as the world’s ambassador for IT, but he was decidedly un-diplomatic in his opening keynote, excoriating the US government for failing to back innovation or stem the decline in the public education system.
 Barrett kicked off his presentation with a rundown of milestones in the development and expansion of the IT industry over the last 40 years, the last 15 of which have coincided with the expansion of the free economies beyond the US, Europe and Japan.
 These emerging economies all “recognise that to be successful, you have to know understand and use technology” said Barrett, and to focus on education, healthcare and economic development.

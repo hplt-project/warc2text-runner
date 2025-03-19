@@ -9,5 +9,14 @@ WARNING:trafilatura.core:discarding data for url: None
 WARNING:trafilatura.core:discarding data for url: None
 WARNING:trafilatura.core:discarding data for url: None
 WARNING:trafilatura.core:discarding data for url: None
-INFO:root:Total time: 12.729
-INFO:root:Average doc time 0.128
+WARNING:trafilatura.core:discarding data for url: None
+WARNING:trafilatura.core:discarding data for url: None
+WARNING:trafilatura.core:discarding data for url: None
+WARNING:trafilatura.core:discarding data for url: None
+WARNING:trafilatura.core:discarding data for url: None
+WARNING:trafilatura.core:discarding data for url: None
+WARNING:trafilatura.core:discarding data for url: None
+WARNING:trafilatura.core:discarding data for url: None
+WARNING:trafilatura.core:discarding data for url: None
+INFO:root:Total time: 2.953
+INFO:root:Average doc time 0.029

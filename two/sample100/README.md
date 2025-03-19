@@ -21,14 +21,20 @@ TLDR: for trafilatura, fallback influences more than tables
 
 ## Comments
 
-Possible outcomes:
+### XML outcomes:
 
 - [no comments opening tag](traf/traf-xml-tables-True-no_fallback-False-comments-True/8-traf-xml-tables-True-no_fallback-False-comments-True.xml)
-- [boilerplate](traf/traf-xml-tables-True-no_fallback-False-comments-True/6-traf-xml-tables-True-no_fallback-False-comments-True.xml)
+- [boilerplate](traf/traf-xml-tables-True-no_fallback-False-comments-True/IS_COMMENTS-6-traf-xml-tables-True-no_fallback-False-comments-True.xml)
 - [more boilerplate](traf/traf-xml-tables-True-no_fallback-False-comments-True/IS_COMMENTS-33-traf-xml-tables-True-no_fallback-False-comments-True.xml)
 - [boilerplate may be in any language](traf/traf-xml-tables-True-no_fallback-False-comments-True/IS_COMMENTS-44-traf-xml-tables-True-no_fallback-False-comments-True.xml)
 - [continuation of the main content](traf/traf-xml-tables-True-no_fallback-False-comments-True/IS_COMMENTS-38-traf-xml-tables-True-no_fallback-False-comments-True.xml)
 - [TRUE comments!!!](traf/traf-xml-tables-True-no_fallback-False-comments-True/IS_COMMENTS-IS_TABLE-61-traf-xml-tables-True-no_fallback-False-comments-True.xml). Actually a lot of useful text. But still includes some boilerplate like "ReplyDelete"
+
+### TXT
+
+- [where there is no comments opening tag in XML, there is nothing in txt](traf/traf-txt-tables-False-no_fallback-False-comments-True/8-traf-txt-tables-False-no_fallback-False-comments-True.txt)
+- [boilerplate looks like a usual plaintext in any language](traf/traf-txt-tables-False-no_fallback-False-comments-True/44-traf-txt-tables-False-no_fallback-False-comments-True.txt), may be difficult to filter out
+- [true comments look like a regular text](traf/traf-txt-tables-False-no_fallback-False-comments-True/IS_TABLE-61-traf-txt-tables-False-no_fallback-False-comments-True.txt), they are in no way distinguished from the main body, which seems to be bad for LM
 
 ## Markdown and tables
 

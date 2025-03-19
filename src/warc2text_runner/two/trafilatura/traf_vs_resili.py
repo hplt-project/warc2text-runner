@@ -48,6 +48,8 @@ def setup_traf(args):
         "with_metadata": False,
         "include_formatting": True,
     }
+    if args.output_format == 'txt':
+        trafilatura_options['include_formatting'] = False
     config = use_config()
     min_extracted_size = 0
     config.set("DEFAULT", "MIN_EXTRACTED_SIZE", str(min_extracted_size))
@@ -120,7 +122,7 @@ def extract(args, method_name, outdir):
                 t_doc = time.time()
                 if "traf" in args.extractor:
                     text = traf(doc_html, config, trafilatura_options)
-                    if (text is not None) and ('<comments>' in text) and ('Comments not found' not in text):
+                    if (text is not None) and ('<comments>' in text):
                         out_fn = f'IS_COMMENTS-{out_fn}'
                 elif args.extractor == "resili":  # does not extract tables?
                     text = resili(doc_html, args)

@@ -1,4 +1,4 @@
-<doc title="Pannonia IT Knowledgebase" author="Authorizer Tar Gz" date="2020-03-29" categories="" tags="" fingerprint="4df11381d91f1f74">
+<doc fingerprint="310b0897acd86c4b">
   <main>
     <p>know-how:kids</p>
     <head rend="h1">Medien-Manager</head>
@@ -2118,29 +2118,6 @@
           <item rend="dd-1072">1.1 MB</item>
         </list>
       </item>
-    </list>
-    <head rend="h2">Datei</head>
-    <list rend="ul">
-      <item>Anzeigen</item>
-      <item>Verlauf</item>
-    </list>
-    <list rend="dl">
-      <item rend="dt-1">Datum:</item>
-      <item rend="dd-1">2020/11/29 21:21</item>
-      <item rend="dt-2">Dateiname:</item>
-      <item rend="dd-2">0_partitions_raid.png</item>
-      <item rend="dt-3">Format:</item>
-      <item rend="dd-3">PNG</item>
-      <item rend="dt-4">Größe:</item>
-      <item rend="dd-4">68KB</item>
-      <item rend="dt-5">Breite:</item>
-      <item rend="dd-5">806</item>
-      <item rend="dt-6">Höhe:</item>
-      <item rend="dd-6">676</item>
-    </list>
-    <list rend="dl">
-      <item rend="dt-1">Verwendung von:</item>
-      <item rend="dd-1">linux</item>
     </list>
     <p>know-how/kids.txt · Zuletzt geändert: 2021/06/26 17:56 von cc</p>
   </main>

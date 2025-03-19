@@ -1,4 +1,4 @@
-<doc sitename="Mercor Tecresa" title="Euroclases - Clasificación europea de reacción al fuego de materiales" author="Roberto Perez Salillas" date="2020-11-10" url="https://mercortecresa.com/blog/euroclases-clasificacion-europea-de-reaccion-al-fuego-de-materiales-de-construccion" hostname="mercortecresa.com" description="Desde el año 2004 se han unificado los criterios europeos de clasificación en la Reacción al Fuego de los materiales de .. (euroclases)" categories="Mercor Tecresa" tags="" fingerprint="3555340610981c3e">
+<doc fingerprint="3555340602981e3e">
   <main>
     <head rend="h1">Euroclases – Clasificación Europea de Reacción al Fuego de Materiales de Construcción</head>
     <p>Desde el año 2004 se han unificado los criterios europeos de clasificación en la Reacción al Fuego de los materiales de construcción y además se ha implementado al concepto de combustibilidad otros parámetros, como son la emisión de humo y la caída de gotas inflamadas.</p>
@@ -22,15 +22,15 @@
       <item>Clasificación de cubiertas y de materiales de revestimientos de cubiertas según su reacción ante un Fuego Exterior. Aquí en este caso se mide el comportamiento de una cubierta sometido a un ensayo especifico con una Pavesa en llamas colocada encima de la misma. Su denominación le sigue el Subíndice “ROOF” (techo en inglés), seguido del término (tx) que nos indica que tipo de ensayo se ha realizado:</item>
     </list>
     <table>
-      <row>
+      <row span="2">
         <cell>(t1)</cell>
         <cell>Pavesa en llamas</cell>
       </row>
-      <row>
+      <row span="2">
         <cell>(t2)</cell>
         <cell>Pavesa en llamas + viento</cell>
       </row>
-      <row>
+      <row span="2">
         <cell>(t3)</cell>
         <cell>Pavesa en llamas + viento+ radiación térmica</cell>
       </row>

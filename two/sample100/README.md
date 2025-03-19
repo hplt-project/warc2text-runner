@@ -32,9 +32,9 @@ TLDR: for trafilatura, fallback influences more than tables
 
 ### TXT
 
-- [where there is no comments opening tag in XML, there is nothing in txt](traf/traf-txt-tables-False-no_fallback-False-comments-True/8-traf-txt-tables-False-no_fallback-False-comments-True.txt)
-- [boilerplate looks like a usual plaintext in any language](traf/traf-txt-tables-False-no_fallback-False-comments-True/44-traf-txt-tables-False-no_fallback-False-comments-True.txt), may be difficult to filter out
-- [true comments look like a regular text](traf/traf-txt-tables-False-no_fallback-False-comments-True/IS_TABLE-61-traf-txt-tables-False-no_fallback-False-comments-True.txt), they are in no way distinguished from the main body, which seems to be bad for LM
+- [where there is no comments opening tag in XML, there is nothing in txt](traf/traf-txt-tables-False-no_fallback-False-comments-False-formatting-True-metadata-True/8-traf-txt-tables-False-no_fallback-False-comments-False-formatting-True-metadata-True.txt)
+- [boilerplate looks like a usual plaintext in any language](traf/traf-txt-tables-False-no_fallback-False-comments-False-formatting-True-metadata-True/44-traf-txt-tables-False-no_fallback-False-comments-False-formatting-True-metadata-True.txt), may be difficult to filter out
+- [true comments look like a regular text](traf/traf-txt-tables-False-no_fallback-False-comments-False-formatting-True-metadata-True/IS_TABLE-61-traf-txt-tables-False-no_fallback-False-comments-False-formatting-True-metadata-True.txt), they are in no way distinguished from the main body, which seems to be bad for LM
 
 ## include_formatting
 

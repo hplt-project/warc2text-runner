@@ -1,92 +1,13 @@
 INFO:root:traf
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-ERROR:trafilatura.core:no metadata for URL None
-WARNING:trafilatura.core:discarding data for url: None
-INFO:root:Total time: 11.883
-INFO:root:Average doc time 0.119
+WARNING:trafilatura.core:discarding data: None
+WARNING:trafilatura.core:discarding data: None
+WARNING:trafilatura.core:discarding data: None
+WARNING:trafilatura.core:discarding data: None
+WARNING:trafilatura.core:discarding data: None
+WARNING:trafilatura.core:discarding data: None
+WARNING:trafilatura.core:discarding data: None
+WARNING:trafilatura.core:discarding data: None
+WARNING:trafilatura.core:discarding data: None
+WARNING:trafilatura.core:discarding data: None
+INFO:root:Total time: 12.095
+INFO:root:Average doc time 0.121

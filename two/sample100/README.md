@@ -36,6 +36,16 @@ TLDR: for trafilatura, fallback influences more than tables
 - [boilerplate looks like a usual plaintext in any language](traf/traf-txt-tables-False-no_fallback-False-comments-True/44-traf-txt-tables-False-no_fallback-False-comments-True.txt), may be difficult to filter out
 - [true comments look like a regular text](traf/traf-txt-tables-False-no_fallback-False-comments-True/IS_TABLE-61-traf-txt-tables-False-no_fallback-False-comments-True.txt), they are in no way distinguished from the main body, which seems to be bad for LM
 
+## include_formatting
+
+makes sense also with txt output format: it turns it into markdown (not any better as when output_format='markdown'), so it's not true that is only valuable for xml as official docstring says at the time of writing
+
+in case of xml it preserves formatting tags like [<hi>](https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-hi.html). Compare [doc 56 with formatting](traf/traf-xml-tables-True-no_fallback-False-comments-True-formatting-False-metadata-False/56-traf-xml-tables-True-no_fallback-False-comments-True-formatting-False-metadata-False.xml) and [without](traf/traf-xml-tables-True-no_fallback-False-comments-True-formatting-True-metadata-True/56-traf-xml-tables-True-no_fallback-False-comments-True-formatting-False-metadata-False.xml)
+
+## with_metadata
+
+
+
 ## Markdown and tables
 
 ### Markdown can be done with Trafilatura only or with Trafilatura + pyhtml2md, or with Resiliparse + pyhtml2md

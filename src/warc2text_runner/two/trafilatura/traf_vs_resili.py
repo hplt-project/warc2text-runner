@@ -36,6 +36,8 @@ def parse_args():
     parser.add_argument('--no_fallback', action='store_true')
     parser.add_argument('--main_content', action='store_true')
     parser.add_argument('--include_comments', action='store_true')
+    parser.add_argument('--include_formatting', action='store_true')
+    parser.add_argument('--with_metadata', action='store_true')
     return parser.parse_args()
 
 
@@ -45,11 +47,11 @@ def setup_traf(args):
         "include_tables": args.include_tables,
         "no_fallback": args.no_fallback,
         "output_format": args.output_format,
-        "with_metadata": False,
-        "include_formatting": True,
+        "with_metadata": args.with_metadata,
+        "include_formatting": args.include_formatting,
     }
     if args.output_format == 'txt':
-        trafilatura_options['include_formatting'] = False
+        trafilatura_options['include_formatting'] = False # will be same as markdown otherwise
     config = use_config()
     min_extracted_size = 0
     config.set("DEFAULT", "MIN_EXTRACTED_SIZE", str(min_extracted_size))
@@ -168,6 +170,8 @@ if __name__ == '__main__':
                 f"tables-{args.include_tables}",
                 f"no_fallback-{args.no_fallback}",
                 f"comments-{args.include_comments}",
+                f"formatting-{args.include_formatting}",
+                f"metadata-{args.with_metadata}",
             )
         )
     elif args.extractor == 'resili':

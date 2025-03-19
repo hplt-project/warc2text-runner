@@ -19,11 +19,22 @@ TLDR: for trafilatura, fallback influences more than tables
 | Trafilatura, no tables, markdown, no fallback          | 1.931                     |
 |Trafilatura 1.8, no tables, txt, with fallback| 11.761|
 
+## Comments
+
+Possible outcomes:
+
+- [no comments opening tag](traf/traf-xml-tables-True-no_fallback-False-comments-True/8-traf-xml-tables-True-no_fallback-False-comments-True.xml)
+- [boilerplate](traf/traf-xml-tables-True-no_fallback-False-comments-True/6-traf-xml-tables-True-no_fallback-False-comments-True.xml)
+- [more boilerplate](traf/traf-xml-tables-True-no_fallback-False-comments-True/IS_COMMENTS-33-traf-xml-tables-True-no_fallback-False-comments-True.xml)
+- [boilerplate may be in any language](traf/traf-xml-tables-True-no_fallback-False-comments-True/IS_COMMENTS-44-traf-xml-tables-True-no_fallback-False-comments-True.xml)
+- [continuation of the main content](traf/traf-xml-tables-True-no_fallback-False-comments-True/IS_COMMENTS-38-traf-xml-tables-True-no_fallback-False-comments-True.xml)
+- [TRUE comments!!!](traf/traf-xml-tables-True-no_fallback-False-comments-True/IS_COMMENTS-IS_TABLE-61-traf-xml-tables-True-no_fallback-False-comments-True.xml). Actually a lot of useful text. But still includes some boilerplate like "ReplyDelete"
+
 ## Markdown and tables
 
 ### Markdown can be done with Trafilatura only or with Trafilatura + pyhtml2md, or with Resiliparse + pyhtml2md
 
-### Markdown including tables can only be done reliably with Trafilatura with fallback + pyhtml2md
+### Markdown including tables can only be done reliably with Trafilatura with fallback + pyhtml2md (but still not as reliably as we would wish)
 
 Pros of Markdown:
 
@@ -33,17 +44,19 @@ Pros of Markdown:
 
 Cons of Markdown:
 
-- possible lost spaces and newlines in formulas (although not sure formulas were readable w/o Markdown)
-- possible redundant "|"s if table was not fully recognized (especially from Trafilatura with native Markdown)
+- lost spaces and newlines in formulas, code
+- lost list elements
+- redundant "|"s if table was not fully recognized (especially from Trafilatura with native Markdown)
 
-Pros of table extraction:
+Pros of Markdown table extraction:
 
 - users like it
 
-Cons of table extraction:
+Cons of Markdown table extraction:
 
 - most tables are removed as boilerplate anyway, e.g. in the table below "empty" is where all text was removed and "no table" is where text was extracted, but tables were judged to be boilerplate
 - usefulness of the tables that are extracted properly is in question (see docs [30](https://github.com/MariaFjodorowa/warc2text-runner/blob/main/two/sample100/traf/traf-html-tables-True-no_fallback-False/30-traf-html-tables-True-no_fallback-False.md), [15](https://github.com/MariaFjodorowa/warc2text-runner/blob/main/two/sample100/traf/traf-html-tables-True-no_fallback-False/15-traf-html-tables-True-no_fallback-False.md), [3](https://github.com/MariaFjodorowa/warc2text-runner/blob/main/two/sample100/traf/traf-html-tables-True-no_fallback-False/3-traf-html-tables-True-no_fallback-False.md))
+- Trafilatura doesn't fix non-standard source tables, and uses an own non-standard set of tags
 
 Documents with tables (those containing `<td>` tag):
 

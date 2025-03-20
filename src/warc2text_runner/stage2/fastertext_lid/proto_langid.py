@@ -12,8 +12,8 @@ import regex
 import ujson
 import os
 
-from warc2text_runner.two.fastertext_lid.basic_log import langid_logger
-from warc2text_runner.two.fastertext_lid.patterns import NONWORD_REPLACE_PATTERN
+from warc2text_runner.stage2.fastertext_lid.basic_log import langid_logger
+from warc2text_runner.stage2.fastertext_lid.patterns import NONWORD_REPLACE_PATTERN
 
 
 class FastTextLangId:
@@ -33,7 +33,7 @@ class FastTextLangId:
         wget https://data.statmt.org/lid/lid193_merged_arabics.bin
 
         Expected usage (stdin jsonlines):
-        python -m src.warc2text_runner.two.fastertext_lid.proto_langid --model_path $MODEL_PATH < $YOUR_FILE
+        python -m src.warc2text_runner.stage2.fastertext_lid.proto_langid --model_path $MODEL_PATH < $YOUR_FILE
 
         """
         if use_logging is True:

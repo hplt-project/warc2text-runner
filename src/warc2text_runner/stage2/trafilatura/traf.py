@@ -10,8 +10,8 @@ from trafilatura.settings import use_config
 from trafilatura.utils import load_html
 import signal
 from contextlib import contextmanager, nullcontext
-from warc2text_runner.two.tagfilter.tagfilter1 import TagFilter1 as TagFilter
-from warc2text_runner.two.tagfilter.tagextractor import extract_lang_info
+from warc2text_runner.stage2.tagfilter.tagfilter1 import TagFilter1 as TagFilter
+from warc2text_runner.stage2.tagfilter.tagextractor import extract_lang_info
 
 
 @contextmanager

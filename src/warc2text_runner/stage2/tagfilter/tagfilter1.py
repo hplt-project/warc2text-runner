@@ -7,7 +7,7 @@ from importlib.resources import files
 def load_tagfilters(tagfilters_fname="mt-filter-list.annotated"):
     # For Python<3.10 replace importlib.resources with importlib_resources,
     # see https://setuptools.pypa.io/en/latest/userguide/datafiles.html for details
-    filters_text = files('warc2text_runner.two.tagfilter').joinpath(tagfilters_fname).read_text()
+    filters_text = files('warc2text_runner.stage2.tagfilter').joinpath(tagfilters_fname).read_text()
 
     tagfilters = defaultdict(list)
     for l in filters_text.split('\n'):

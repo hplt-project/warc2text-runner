@@ -1,0 +1,41 @@
+<doc fingerprint="67b093f6b96bfd54">
+  <main>
+    <table>
+      <row span="3">
+        <cell>author</cell>
+        <cell>H.Merijn Brand &lt;merijn@lx09.procura.nl&gt;</cell>
+      </row>
+      <row span="3">
+        <cell>Thu, 16 Feb 2012 16:18:59 +0000 (17:18 +0100)</cell>
+      </row>
+      <row span="3">
+        <cell>committer</cell>
+        <cell>H.Merijn Brand &lt;merijn@lx09.procura.nl&gt;</cell>
+      </row>
+      <row span="3">
+        <cell>Thu, 16 Feb 2012 16:18:59 +0000 (17:18 +0100)</cell>
+      </row>
+      <row span="3">
+        <cell>commit</cell>
+        <cell>49732c7ecfb38eddaf7f1ec32b2d538376b28f34</cell>
+      </row>
+      <row span="3">
+        <cell>tree</cell>
+        <cell>9772e2734352c8f0533e9f8431b80900f7a679fb</cell>
+        <cell>tree | snapshot</cell>
+      </row>
+      <row>
+        <cell>parent</cell>
+        <cell>4783626708d8fcb2d3c34169d7e0fa68822a0942</cell>
+        <cell>commit | diff</cell>
+      </row>
+    </table>
+    <table>
+      <row>
+        <cell>U/modified/d_socket.U</cell>
+        <cell>diff | blob | blame | history</cell>
+      </row>
+    </table>
+  </main>
+  <comments/>
+</doc>

@@ -100,6 +100,8 @@ def extract(args, method_name, outdir):
     if "traf" in args.extractor:
         trafilatura_options, config = setup_traf(args)
     times_doc = []
+    rend_tags_counter = 0
+    is_formatted_xml = (args.output_format == 'xml') and args.include_formatting
     with (sys.stdin.buffer if fpath == '-' else io.BufferedReader(
             zstandard.open(fpath, 'rb')) as instream):
         counter = 0
@@ -127,11 +129,11 @@ def extract(args, method_name, outdir):
                         if '<comments>' in text:
                             out_fn = f'IS_COMMENTS-{out_fn}'
 
-                        if (args.output_format == 'xml') and \
-                            args.include_formatting:
+                        if is_formatted_xml:
                             for tag in REND_TAG_MAPPING.values():
                                 if tag in text:
                                     out_fn = f'REND_TAG-{out_fn}'
+                                    rend_tags_counter += 1
                                     break
                 elif args.extractor == "resili":  # does not extract tables?
                     text = resili(doc_html, args)
@@ -151,8 +153,13 @@ def extract(args, method_name, outdir):
                 if counter % 100 == 0:
                     logging.info(f"{counter} docs processed")
         logging.info(f"Total time: {round(perf_counter() - t0, 3)}")
+    if is_formatted_xml:
+        logging.info(
+            f"Proportion of documents affected with include_formatting: {round(rend_tags_counter/counter, 3)}",
+        )
     logging.info(
-        f"Average doc time {round(sum(times_doc) / len(times_doc), 3)}")
+        f"Average doc time {round(sum(times_doc) / len(times_doc), 3)}",
+    )
 
     # traf 1.8 w/o parallel Total time: 76.71070313453674, 1000 docs
     # Average doc time 0.07639440846443177

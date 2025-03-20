@@ -30,7 +30,7 @@ class FastTextLangId:
         Init the FastText model.
 
         To download the model, run the following commands:
-        wget https://data.statmt.org/lid/lid193_merged_arabics.bin
+        wget https://zenodo.org/records/15056559/files/openlid_v2_180325.bin
 
         Expected usage (stdin jsonlines):
         python -m src.warc2text_runner.two.fastertext_lid.proto_langid --model_path $MODEL_PATH < $YOUR_FILE
@@ -134,7 +134,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--model_path",
         type=str,
-        default=os.path.join(os.path.expanduser("~"), ".cache/hplt/lid193_merged_arabics.bin"),
+        default=os.path.join(os.path.expanduser("~"), ".cache/hplt/openlid_v2_180325.bin"),
         help="Path to the FastText model file.",
     )
 

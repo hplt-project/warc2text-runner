@@ -1,5 +1,17 @@
 INFO:root:traf
 WARNING:trafilatura.core:discarding data: None
+WARNING:trafilatura.core:discarding data: None
+WARNING:trafilatura.core:discarding data: None
+WARNING:trafilatura.core:discarding data: None
+WARNING:trafilatura.core:discarding data: None
+WARNING:trafilatura.core:discarding data: None
+WARNING:trafilatura.core:discarding data: None
+WARNING:trafilatura.core:discarding data: None
+WARNING:trafilatura.core:discarding data: None
+WARNING:trafilatura.core:discarding data: None
+INFO:root:Total time: 3.039
+INFO:root:Proportion of documents affected with include_formatting: 0.333
+INFO:root:Average doc time 0.03
 INFO:root:traf
 WARNING:trafilatura.core:discarding data: None
 WARNING:trafilatura.core:discarding data: None
@@ -11,5 +23,6 @@ WARNING:trafilatura.core:discarding data: None
 WARNING:trafilatura.core:discarding data: None
 WARNING:trafilatura.core:discarding data: None
 WARNING:trafilatura.core:discarding data: None
-INFO:root:Total time: 2.969
-INFO:root:Average doc time 0.029
+INFO:root:Total time: 3.01
+INFO:root:Proportion of documents affected with include_formatting: 0.333
+INFO:root:Average doc time 0.03

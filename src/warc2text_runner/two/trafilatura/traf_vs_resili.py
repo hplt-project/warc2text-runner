@@ -3,13 +3,14 @@ import io
 import logging
 import os
 import sys
-import time
+from time import perf_counter
 
 import zstandard
 import ujson as json
 import trafilatura
 from trafilatura.settings import use_config
 from trafilatura.utils import load_html
+from trafilatura.htmlprocessing import REND_TAG_MAPPING
 from resiliparse.extract.html2text import extract_plain_text
 import pyhtml2md
 
@@ -99,10 +100,10 @@ def extract(args, method_name, outdir):
     if "traf" in args.extractor:
         trafilatura_options, config = setup_traf(args)
     times_doc = []
-    with sys.stdin.buffer if fpath == '-' else io.BufferedReader(
-            zstandard.open(fpath, 'rb')) as instream:
+    with (sys.stdin.buffer if fpath == '-' else io.BufferedReader(
+            zstandard.open(fpath, 'rb')) as instream):
         counter = 0
-        t0 = time.time()
+        t0 = perf_counter()
 
         for byteline in instream:
             errors = []
@@ -119,14 +120,22 @@ def extract(args, method_name, outdir):
                 out_fn = f"{counter}-{method_name}{os.extsep}{FORMATS[args.output_format]}"
                 if '<td>' in doc_html:
                     out_fn = f'IS_TABLE-{out_fn}'
-                t_doc = time.time()
+                t_doc = perf_counter()
                 if "traf" in args.extractor:
                     text = traf(doc_html, config, trafilatura_options)
-                    if (text is not None) and ('<comments>' in text):
-                        out_fn = f'IS_COMMENTS-{out_fn}'
+                    if text is not None:
+                        if '<comments>' in text:
+                            out_fn = f'IS_COMMENTS-{out_fn}'
+
+                        if (args.output_format == 'xml') and \
+                            args.include_formatting:
+                            for tag in REND_TAG_MAPPING.values():
+                                if tag in text:
+                                    out_fn = f'REND_TAG-{out_fn}'
+                                    break
                 elif args.extractor == "resili":  # does not extract tables?
                     text = resili(doc_html, args)
-                times_doc.append(time.time() - t_doc)
+                times_doc.append(perf_counter() - t_doc)
 
                 with open(
                         os.path.join(outdir, out_fn),
@@ -141,7 +150,7 @@ def extract(args, method_name, outdir):
                     break
                 if counter % 100 == 0:
                     logging.info(f"{counter} docs processed")
-        logging.info(f"Total time: {round(time.time() - t0, 3)}")
+        logging.info(f"Total time: {round(perf_counter() - t0, 3)}")
     logging.info(
         f"Average doc time {round(sum(times_doc) / len(times_doc), 3)}")
 

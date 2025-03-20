@@ -27,13 +27,13 @@ where = ["src"]  # ["."] by default
 
 [tool.setuptools]
 script-files = [
-    "src/warc2text_runner/two/stage2traf.sh",
-    "src/warc2text_runner/two/stage2local.sh",
-    "src/warc2text_runner/two/stage2nodeparallel.sh",
-    "src/warc2text_runner/two/stage2download.sh",
-    "src/warc2text_runner/two/stage2preplumic.sh",
-    "src/warc2text_runner/two/stage2nodeparallel_batched.sh",
-    "src/warc2text_runner/two/stage2local_batch.sh",
+    "src/warc2text_runner/stage2/stage2traf.sh",
+    "src/warc2text_runner/stage2/stage2local.sh",
+    "src/warc2text_runner/stage2/stage2nodeparallel.sh",
+    "src/warc2text_runner/stage2/stage2download.sh",
+    "src/warc2text_runner/stage2/stage2preplumic.sh",
+    "src/warc2text_runner/stage2/stage2nodeparallel_batched.sh",
+    "src/warc2text_runner/stage2/stage2local_batch.sh",
     "src/warc2text_runner/stage1/generate_tasks.sh",
     "src/warc2text_runner/stage1/run_warc2html_local.sh",
     "src/warc2text_runner/stage1/run_warc2html_remote.sh",

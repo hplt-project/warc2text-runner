@@ -33,7 +33,7 @@ pip install .
 
 3) Download the model.
 ```bash
-wget https://data.statmt.org/lid/lid193_merged_arabics.bin
+wget https://zenodo.org/records/15056559/files/openlid_v2_180325.bin 
 ```
 
 4) Install the required packages.

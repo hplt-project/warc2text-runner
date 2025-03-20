@@ -1,6 +1,6 @@
 import io
-import os
 import sys
+
 import ujson as json
 import trafilatura
 import fire
@@ -8,10 +8,11 @@ import zstandard
 import traceback
 from trafilatura.settings import use_config
 from trafilatura.utils import load_html
-from timeit import default_timer as timer
 import signal
 from contextlib import contextmanager, nullcontext
 from warc2text_runner.two.tagfilter.tagfilter1 import TagFilter1 as TagFilter
+from warc2text_runner.two.tagfilter.tagextractor import extract_lang_info
+
 
 @contextmanager
 def time_limit(seconds):
@@ -26,14 +27,17 @@ def time_limit(seconds):
 
 
 def traf(instream, fast_mode, decoding_errors, min_extracted_size=0, timelimit_perdoc=None, matcher=None):
-    trafilatura_options = {"include_comments": False, "include_tables": False, "no_fallback": fast_mode}
+    trafilatura_text_options = {"include_comments": False, "include_tables": False, "no_fallback": fast_mode}
+    trafilatura_xml_options = {"include_comments": True, "include_tables": True, "no_fallback": fast_mode,
+                               "with_metadata": False, "include_formatting": False}
+
     config = use_config()
     config.set("DEFAULT", "MIN_EXTRACTED_SIZE", str(min_extracted_size))
 
     for byteline in instream:
         # st = timer()
         errors = []
-        tagmatch = None
+        res = {}
 
         try:
             line = byteline.decode('utf-8', errors='strict')
@@ -42,7 +46,7 @@ def traf(instream, fast_mode, decoding_errors, min_extracted_size=0, timelimit_p
             line = None if decoding_errors == 'strict' else byteline.decode('utf-8', errors=decoding_errors)
 
         if line is None:
-            text = None
+            res['t'] = None
         else:
             try:
                 d = json.loads(line.strip())
@@ -52,23 +56,25 @@ def traf(instream, fast_mode, decoding_errors, min_extracted_size=0, timelimit_p
                     if tree is None:
                         raise ValueError("Could not parse HTML")
                     tagmatch = matcher.matches(tree)
+                    if tagmatch is not None:
+                        res['tagfilter'] = tagmatch
+                    res.update(extract_lang_info(tree))
                     # trafilatura.extract() changes the tree, tagfilters should be matched before
-                    text = trafilatura.extract(tree, config=config, **trafilatura_options)
+                    res['t'] = trafilatura.extract(tree, config=config, **trafilatura_text_options)
+                    res['x'] = trafilatura.extract(tree, output_format='xml', config=config, **trafilatura_xml_options)
             except TimeoutError as e:
                 errors.append(f'Trafilatura timed out: {timelimit_perdoc}s')
-                text = None
+                res['t'] = None
             except Exception as e:
                 errors.append(traceback.format_exc())
-                text = None
+                res['t'] = None
 
         # dur = timer() - st
-        res = {'t': text}
-        # res = {'t': text, 'dur': f'{dur:.1e}'}
+        # res['dur'] = f'{dur:.1e}'
 
         if errors:
             res['traferr'] = errors
-        if tagmatch is not None:
-            res['tagfilter'] = tagmatch
+
         print(json.dumps(res))
 
 

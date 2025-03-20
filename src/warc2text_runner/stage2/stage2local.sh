@@ -22,7 +22,7 @@ mkdir -p $OUTDIR
 # making it too large will require buffering too much outputs in parallel due to --keep-order requirement.
 rclone cat $FIN | zstdcat  \
     | parallel --halt now,fail=1 --block $BLOCKSIZE_TRAF -j $NJOBS_TRAF --pipe --keep-order  \
-        "python -m warc2text_runner.two.trafilatura.traf --timelimit_perdoc ${TRAF_TIMEOUT}" | tee >(zstd > ${OUTDIR}/text.zst) \
+        "python -m warc2text_runner.stage2.trafilatura.traf --timelimit_perdoc ${TRAF_TIMEOUT}" | tee >(zstd > ${OUTDIR}/text.zst) \
     | parallel --halt now,fail=1 --block $BLOCKSIZE_LID -j $NJOBS_LID --pipe --keep-order \
-        "python -m warc2text_runner.two.fastertext_lid.proto_langid" | zstd > ${OUTDIR}/lang.zst
+        "python -m warc2text_runner.stage2.fastertext_lid.proto_langid" | zstd > ${OUTDIR}/lang.zst
 

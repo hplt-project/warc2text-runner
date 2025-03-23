@@ -32,7 +32,16 @@ run_warc2html_remote.sh nirdl_three_cc 250 ""
 NB! On NIRD ssh connection to other node occasionally dropped, thus, we preferred splitting crawls manually and running
 on each node locally. On CESNET the first remote option works well. 
 
-## Stage2 (a.k.a. warc2html)
+## Data transfer to LUMIO
+1) Limit the number of parts per file for multipart uploads to 1K: --s3-max-upload-parts 1000 (The number of files per bucket on LUMIO is limited to 500K files, rclone uses multipart upload with max 10K parts per 
+file by default.)
+2) Increase upload chunk size: --s3-chunk-size 128M (splitting files into many small chunks results in too many IOPS, especially on CESNET)
+
+```commandline
+rclone copy -P --s3-max-upload-parts 1000 --transfers 16 --s3-upload-concurrency 16 --s3-chunk-size 128M --checkers 1 --log-level DEBUG --log-file lumio-upload.log html_three_cc_nird_part1 lumio:threecc/html_three_cc_nird_part1
+```
+
+## Stage2 (a.k.a. html2text)
 Prepare a list of HTML files to process from a local directory:
 ```commandline
 du -ab /users/arefevni/hplt/two/html_sample0.01_bs10/ | grep html.zst >local.paths

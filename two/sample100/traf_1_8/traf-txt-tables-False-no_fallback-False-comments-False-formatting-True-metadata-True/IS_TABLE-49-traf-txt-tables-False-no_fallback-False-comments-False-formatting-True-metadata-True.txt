@@ -1,0 +1,16 @@
+*Enter Code
+** JGSBSAF6 ** at Checkout.
+Offer available for a limited time with your online purchase of $49 or more.Offer is limited to 15 Percent Off + Free Standard Shipping on your online purchase of $49 or more,
+**in-stock items only**, 10lbs or less (pre-tax and pre-shipping; see restrictions on product page)
+.
+Does not apply to prior purchases or open orders and cannot be combined with any other offer. May not be used towards purchase of gift cards, gift certificates, pitching machines, balls, drop-ship items, team orders, or select items. May not be redeemed for cash.
+*
+**FREE STANDARD GROUND SHIPPING ON ORDER WITH PURCHASE OF ANY BAT** (pre-tax and pre-shipping). See details below.
+*
+**FREE STANDARD GROUND SHIPPING ON ORDER WITH PURCHASE OF A GLOVE OVER $49** (pre-tax and pre-shipping). See details below.
+**DETAILS**
+**SHIPPING:** Order must be shipped within the Continental US and excludes APO/FPO addresses. Offer valid for online purchases only. Entire order must be shipped to a single address. See shipping information.
+Does not apply to prior purchases or open orders and cannot be combined with any other offer. May not be used towards purchase of gift cards, gift certificates, pitching machines, balls, drop-ship items, team orders, or select items. May not be redeemed for cash.
+Promotion may be modified or terminated at any time. Certain restrictions may apply.
+**RETURNS:** If you are not satisfied with your purchase, simply return the item within 30 days of purchase. Customer is responsible for shipping costs on returned merchandise, except for bats and gloves over $49. In order to receive FREE return shipping and a refund or exchange, the bat or glove must be in new, unused condition, still in its original shrink-wrapped packaging. Orders shipped outside the continguous 48 states are not eligible for free bat returns program.
+**BACKORDERS:** When an item is on backorder, we will ship the item to you via our standard ground shipping as soon as it becomes available. You are never charged for a back-ordered item until it is shipped, and you may cancel an item on backorder at any time. The are no additional shipping charges for backorders.

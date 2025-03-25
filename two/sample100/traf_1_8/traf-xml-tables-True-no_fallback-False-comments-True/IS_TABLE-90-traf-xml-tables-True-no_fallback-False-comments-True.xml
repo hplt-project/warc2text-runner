@@ -1,0 +1,41 @@
+<doc sitename="perl5.git.perl.org Git" title="perl5.git.perl.org Git - metaconfig.git/commit" date="2012-02-16" categories="" tags="" fingerprint="66b09bf6b963fd54">
+  <main>
+    <table>
+      <row>
+        <cell>author</cell>
+        <cell>H.Merijn Brand &lt;merijn@lx09.procura.nl&gt;</cell>
+      </row>
+      <row>
+        <cell>Thu, 16 Feb 2012 16:18:59 +0000 (17:18 +0100)</cell>
+      </row>
+      <row>
+        <cell>committer</cell>
+        <cell>H.Merijn Brand &lt;merijn@lx09.procura.nl&gt;</cell>
+      </row>
+      <row>
+        <cell>Thu, 16 Feb 2012 16:18:59 +0000 (17:18 +0100)</cell>
+      </row>
+      <row>
+        <cell>commit</cell>
+        <cell>49732c7ecfb38eddaf7f1ec32b2d538376b28f34</cell>
+      </row>
+      <row>
+        <cell>tree</cell>
+        <cell>9772e2734352c8f0533e9f8431b80900f7a679fb</cell>
+        <cell>tree | snapshot</cell>
+      </row>
+      <row>
+        <cell>parent</cell>
+        <cell>4783626708d8fcb2d3c34169d7e0fa68822a0942</cell>
+        <cell>commit | diff</cell>
+      </row>
+    </table>
+    <table>
+      <row>
+        <cell>U/modified/d_socket.U</cell>
+        <cell>diff | blob | blame | history</cell>
+      </row>
+    </table>
+  </main>
+  <comments/>
+</doc>

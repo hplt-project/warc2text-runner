@@ -1,0 +1,9 @@
+Efterlevende ægtefælle eller samlever til afdøde kan være berettiget til efterlevelsespension.
+Efterlevelsespension består i, at pensionisternes samlede pension fortsætter med at blive udbetalt i 3 måneder fra dødsfaldet.
+Berettigelse til efterlevelsespension forudsætter, at begge samlevende/ægtefæller modtager social pension, samt at de var samlevende ved dødsfaldet.
+Efterlevelsespension vil ved berettigelse hertil blive udbetalt automatisk. I tvivlstilfælde kan Udbetaling Danmark kontaktes for rådgivning.
+**Tlf. 72 30 20 91**
+info@danbegravelse.dk
+Hovedkontor & Administration
+Aurehøjvej 5B, 1
+2900 Hellerup

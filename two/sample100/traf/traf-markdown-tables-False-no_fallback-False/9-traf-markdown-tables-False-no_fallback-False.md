@@ -1,0 +1,5 @@
+# US Consumers Expected To Spend $1.5 Billion On Cyber Monday Holiday Shopping
+## Similar images
+**View all**
+## Keywords
+In this photo illustration Electronics retailer Best Buy advertises... News Photo 156976232Best Buy,Business,Chicago - Illinois,Cyborg,Electronics,Finance,Horizontal,Illinois,Illustration,Illustration Technique,Merchandise,Photography,Retail,Sale,Sales Occupation,Shop,Technology,The Internet,USAPhotographer Scott OlsonCollection: Getty Images News 2012 Getty ImagesCHICAGO, IL - NOVEMBER 26: In this photo illustration, Electronics retailer Best Buy advertises Cyber Monday sales on the store's website on November 26, 2012 in Chicago, Illinois. Americans are expected to spend $1.5 billion while shopping online today, up 20 percent from last year. (Photo Illustration by Scott Olson/Getty Images)

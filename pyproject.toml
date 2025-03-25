@@ -13,12 +13,13 @@ dynamic = ["version"]  # setuptools_scm will use the version received from git
 requires-python = ">= 3.10"
 
 dependencies = [
-    "trafilatura==1.8.0",
-    "lxml==5.1.1",
+    "trafilatura==2.0.0",
+    "lxml>=5.3.1",
     "lxml-html-clean==0.1.0",
     "ujson==5.4.0",
     "zstandard==0.22.0",
     "fire",
+    "numpy==1.23.5",
     "fasttext @ git+https://github.com/facebookresearch/fastText@1142dc4c4ecbc19cc16eee5cdd28472e689267e6"
 ]
 
@@ -27,13 +28,13 @@ where = ["src"]  # ["."] by default
 
 [tool.setuptools]
 script-files = [
-    "src/warc2text_runner/two/stage2traf.sh",
-    "src/warc2text_runner/two/stage2local.sh",
-    "src/warc2text_runner/two/stage2nodeparallel.sh",
-    "src/warc2text_runner/two/stage2download.sh",
-    "src/warc2text_runner/two/stage2preplumic.sh",
-    "src/warc2text_runner/two/stage2nodeparallel_batched.sh",
-    "src/warc2text_runner/two/stage2local_batch.sh",
+    "src/warc2text_runner/stage2/stage2traf.sh",
+    "src/warc2text_runner/stage2/stage2local.sh",
+    "src/warc2text_runner/stage2/stage2nodeparallel.sh",
+    "src/warc2text_runner/stage2/stage2download.sh",
+    "src/warc2text_runner/stage2/stage2preplumic.sh",
+    "src/warc2text_runner/stage2/stage2nodeparallel_batched.sh",
+    "src/warc2text_runner/stage2/stage2local_batch.sh",
     "src/warc2text_runner/stage1/generate_tasks.sh",
     "src/warc2text_runner/stage1/run_warc2html_local.sh",
     "src/warc2text_runner/stage1/run_warc2html_remote.sh",

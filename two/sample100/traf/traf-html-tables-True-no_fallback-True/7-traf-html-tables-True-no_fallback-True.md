@@ -1,0 +1,6 @@
+Dank unserer lieben Hofläden und Naturkostmärkte bringen wir unsere leckeren Honig-Spezialitäten
+an die Frau bzw. an den Mann. Die komplette Honigernte selber zu vermarkten, würde
+unser Arbeitspensum bei weitem sprengen. Daher sind wir sehr froh und dankbar, dass
+es rund um Hannover und der Stadt Naturkostläden und Biolandhöfe gibt, die unseren
+Bioland-Honig für Sie anbieten. […]
+weiterlesen Bisher kein Kommentar.

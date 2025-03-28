@@ -1,64 +1,16 @@
-INFO:root:2.0
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-WARNING:trafilatura.core:discarding data: None
-INFO:root:0.10696658934363648
-INFO:root:1.8.0
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-WARNING:trafilatura.core:discarding data for url: None
-INFO:root:0.33549242939404916
+INFO:root:Namespace(version='2.0.0', include_tables=True, include_comments=True, output_format='xml')
+INFO:root:0.11182417643431108
+INFO:root:Namespace(version='2.0.0', include_tables=True, include_comments=True, output_format='txt')
+INFO:root:0.0846055699290409
+INFO:root:Namespace(version='2.0.0', include_tables=False, include_comments=False, output_format='txt')
+INFO:root:0.07368310659593488
+INFO:root:Namespace(version='2.0.0', include_tables=False, include_comments=False, output_format='xml')
+INFO:root:0.08701205581768812
+INFO:root:Namespace(version='1.8.0', include_tables=True, include_comments=True, output_format='xml')
+INFO:root:0.29890915538396595
+INFO:root:Namespace(version='1.8..0', include_tables=True, include_comments=True, output_format='txt')
+INFO:root:0.08302933437355225
+INFO:root:Namespace(version='1.8..0', include_tables=False, include_comments=False, output_format='txt')
+INFO:root:0.07727133419165962
+INFO:root:Namespace(version='1.8.0', include_tables=False, include_comments=False, output_format='xml')
+INFO:root:0.2923128657570524

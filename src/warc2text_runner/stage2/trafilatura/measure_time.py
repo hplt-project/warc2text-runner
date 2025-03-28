@@ -1,20 +1,21 @@
 import argparse
-import logging
 import io
 import trafilatura
 from trafilatura.settings import use_config
 from trafilatura.utils import load_html
 import timeit
+import logging
 import zstandard
 import json
 import functools
 
-def setup_traf():
+
+def setup_traf(args):
     trafilatura_options = {
-        "include_comments": True,
-        "include_tables": True,
+        "include_comments": args.include_comments,
+        "include_tables": args.include_tables,
         "no_fallback": False,
-        "output_format": 'xml',
+        "output_format": args.output_format,
         "with_metadata": False,
         "include_formatting": True,
     }
@@ -37,11 +38,15 @@ def extarct(doc_html):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--version', default='2.0')
+    parser.add_argument('--version', default='2.0.0')
+    parser.add_argument('--include_tables', action='store_true')
+    parser.add_argument('--include_comments', action='store_true')
+    parser.add_argument('--output_format', default='xml')
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, filename="speed.log")
-    logging.info(args.version)
-    trafilatura_options, config = setup_traf()
+    logging.info(args)
+    trafilatura_options, config = setup_traf(args)
+
     times = []
     with io.BufferedReader(
             zstandard.open('../../../../two/sample100/CC.zst', 'rb')) as instream:

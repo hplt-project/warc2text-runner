@@ -13,7 +13,7 @@ import ujson
 import os
 
 from warc2text_runner.stage2.fastertext_lid.basic_log import langid_logger
-from warc2text_runner.stage2.fastertext_lid.patterns import NONWORD_REPLACE_PATTERN
+from warc2text_runner.stage2.fastertext_lid.patterns import NONWORD_REPLACE_PATTERN, SPACE_PATTERN
 
 
 class FastTextLangId:
@@ -30,7 +30,7 @@ class FastTextLangId:
         Init the FastText model.
 
         To download the model, run the following commands:
-        wget https://data.statmt.org/lid/lid193_merged_arabics.bin
+        wget https://zenodo.org/records/15056559/files/openlid_v2_180325.bin
 
         Expected usage (stdin jsonlines):
         python -m src.warc2text_runner.stage2.fastertext_lid.proto_langid --model_path $MODEL_PATH < $YOUR_FILE
@@ -52,7 +52,9 @@ class FastTextLangId:
             raise TypeError(msg)
 
         self.logger.debug("Before: %s", text)
-        text = regex.sub(NONWORD_REPLACE_PATTERN, "", text.replace("\n", " ").strip())
+	text = text.replace('\n', ' ').strip().lower()
+	text = regex.sub(SPACE_PATTERN, " ", text)
+        text = regex.sub(NONWORD_REPLACE_PATTERN, "", text)
         self.logger.debug("After: %s", text)
         return text
 
@@ -132,7 +134,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--model_path",
         type=str,
-        default=os.path.join(os.path.expanduser("~"), ".cache/hplt/lid193_merged_arabics.bin"),
+        default=os.path.join(os.path.expanduser("~"), ".cache/hplt/openlid_v2_180325.bin"),
         help="Path to the FastText model file.",
     )
 

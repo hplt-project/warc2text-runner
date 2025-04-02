@@ -52,8 +52,8 @@ class FastTextLangId:
             raise TypeError(msg)
 
         self.logger.debug("Before: %s", text)
-	text = text.replace('\n', ' ').strip().lower()
-	text = regex.sub(SPACE_PATTERN, " ", text)
+        text = text.replace('\n', ' ').strip().lower()
+        text = regex.sub(SPACE_PATTERN, " ", text)
         text = regex.sub(NONWORD_REPLACE_PATTERN, "", text)
         self.logger.debug("After: %s", text)
         return text

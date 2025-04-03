@@ -31,7 +31,7 @@ def traf(instream, decoding_errors, timelimit_perdoc=None, matcher=None):
                                 "no_fallback": False, "favor_precision": True, "favor_recall": False}
     trafilatura_xml_options = trafilatura_text_options | {"include_comments": True, "include_tables": True,
                                                           "with_metadata": False, "include_formatting": True}
-    min_extracted_size = 250
+    min_extracted_size = 0
     config = use_config()
     config.set("DEFAULT", "MIN_EXTRACTED_SIZE", str(min_extracted_size))
 

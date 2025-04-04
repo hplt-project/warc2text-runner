@@ -28,7 +28,7 @@ where = ["src"]  # ["."] by default
 
 [tool.setuptools]
 script-files = [
-    "src/warc2text_runner/stage2/traferrstats.sh",
+    "src/warc2text_runner/stage2/qualitycontrol/traferrstats.sh",
     "src/warc2text_runner/stage2/stage2traf.sh",
     "src/warc2text_runner/stage2/stage2local.sh",
     "src/warc2text_runner/stage2/stage2nodeparallel.sh",

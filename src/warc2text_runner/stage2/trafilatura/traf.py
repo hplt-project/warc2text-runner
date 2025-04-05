@@ -12,6 +12,7 @@ import signal
 from contextlib import contextmanager, nullcontext
 from warc2text_runner.stage2.tagfilter.tagfilter1 import TagFilter1 as TagFilter
 from warc2text_runner.stage2.tagfilter.tagextractor import extract_lang_info
+from copy import deepcopy
 
 
 @contextmanager
@@ -61,14 +62,13 @@ def traf(instream, decoding_errors, timelimit_perdoc=None, matcher=None):
                         res['tagfilter'] = tagmatch
                     res.update(extract_lang_info(tree))
                     # trafilatura.extract() changes the tree, tagfilters should be matched before
-                    res['t'] = trafilatura.extract(tree, config=config, **trafilatura_text_options)
+                    res['t'] = None
+                    res['t'] = trafilatura.extract(deepcopy(tree), config=config, **trafilatura_text_options)
                     res['x'] = trafilatura.extract(tree, output_format='xml', config=config, **trafilatura_xml_options)
             except TimeoutError as e:
                 errors.append(f'Trafilatura timed out: {timelimit_perdoc}s')
-                res['t'] = None
             except Exception as e:
                 errors.append(traceback.format_exc())
-                res['t'] = None
 
         # dur = timer() - st
         # res['dur'] = f'{dur:.1e}'

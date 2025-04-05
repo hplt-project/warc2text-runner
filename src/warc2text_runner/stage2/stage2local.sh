@@ -1,13 +1,14 @@
 #!/usr/bin/bash
 FIN=$1
 OUTDIR=$2
-NJOBS=$3
+NJOBS=`nproc --all`
 
 BLOCKSIZE_TRAF=30M  #  10x more parallel processes than for lid require smaller blocks;
 TRAF_TIMEOUT=1.5  # timout 1.5s increased to compensate for adding xml extraction for the 3rd iteration
 
 BLOCKSIZE_LID=100M  # 0.3s-0.5s to load model, 4.4s to FastText.predict for 10k lines, 28 MB (not random sample!)
 
+NJOBS=$(($NJOBS - 8))  # leave some threads for rclone, zstdcat, zstd steps in the pipeline
 NJOBS_LID=$(($NJOBS/10 + 1))
 NJOBS_TRAF=$(($NJOBS - $NJOBS_LID))
 #echo Running lid in $NJOBS_LID and trafilatura in $NJOBS_TRAF processes

@@ -47,9 +47,8 @@ def traf(instream, decoding_errors, timelimit_perdoc=None, matcher=None):
             errors.append('UnicodeDecodeError')
             line = None if decoding_errors == 'strict' else byteline.decode('utf-8', errors=decoding_errors)
 
-        if line is None:
-            res['t'] = None
-        else:
+        res['t'] = None  # LID requires that the 't' field is always present, even if None
+        if line is not None:
             try:
                 d = json.loads(line.strip())
                 html = d['h']
@@ -62,7 +61,6 @@ def traf(instream, decoding_errors, timelimit_perdoc=None, matcher=None):
                         res['tagfilter'] = tagmatch
                     res.update(extract_lang_info(tree))
                     # trafilatura.extract() changes the tree, tagfilters should be matched before
-                    res['t'] = None
                     res['t'] = trafilatura.extract(deepcopy(tree), config=config, **trafilatura_text_options)
                     res['x'] = trafilatura.extract(tree, output_format='xml', config=config, **trafilatura_xml_options)
             except TimeoutError as e:

@@ -6,8 +6,8 @@ import lxml.etree as etree
 # from resiliparse.extract.html2text import extract_plain_text
 
 
-def process_html(fpath, include_comments=False, include_tables=False, no_fallback=False,
-                 favour_precision=False, min_extracted_size=None, flog=None):
+def process_html(fpath, include_comments=True, include_tables=False, no_fallback=False,
+                 favour_precision=True, favour_recall=False, min_extracted_size=250, flog=None):
     logger = logging.getLogger(__name__)
     if flog is not None:
         logging.basicConfig(filename=flog, encoding='utf-8', level=logging.DEBUG)
@@ -17,7 +17,8 @@ def process_html(fpath, include_comments=False, include_tables=False, no_fallbac
         "include_tables": include_tables,
         "no_fallback": no_fallback,
         "favor_precision": favour_precision,
-        "with_metadata": True,
+        "favor_recall": favour_recall,
+        "with_metadata": False,
         # "target_language": "bg"
     }
 
@@ -31,8 +32,8 @@ def process_html(fpath, include_comments=False, include_tables=False, no_fallbac
 
     with open(fpath) as inp:
         html = inp.read()
-        # text = trafilatura.extract(html, config=config, **trafilatura_args)
-        text = trafilatura.extract(html, output_format='xml', tei_validation=False, **trafilatura_args)
+        text = trafilatura.extract(html, config=config, **trafilatura_args)
+        # text = trafilatura.extract(html, output_format='xml', tei_validation=False, **trafilatura_args)
         # text = trafilatura.extract(html, output_format='markdown', **trafilatura_args)
         # text = trafilatura.extract(html, output_format='txt', **trafilatura_args)
         print(text)

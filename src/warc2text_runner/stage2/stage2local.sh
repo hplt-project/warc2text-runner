@@ -11,7 +11,7 @@ BLOCKSIZE_LID=100M  # 0.3s-0.5s to load model, 4.4s to FastText.predict for 10k 
 NJOBS=$(($NJOBS - 8))  # leave some threads for rclone, zstdcat, zstd steps in the pipeline
 NJOBS_LID=$(($NJOBS/10 + 1))
 NJOBS_TRAF=$(($NJOBS - $NJOBS_LID))
-#echo Running lid in $NJOBS_LID and trafilatura in $NJOBS_TRAF processes
+echo Running lid in $NJOBS_LID and trafilatura in $NJOBS_TRAF processes
 
 set -euo pipefail
 

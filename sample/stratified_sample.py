@@ -85,6 +85,9 @@ class Sampler:
 
         for k, sdf in c2r.items():
             sdf.dump(self.outdir / k)
+        df = pd.DataFrame.from_records(((k,sdf.i) for k, sdf in c2r.items()),
+                                       columns=['group','size'])
+        df.to_csv(self.outdir / 'groupsizes.tsv', index=False, sep='\t')
 
 
     def _batch_it(self, inps, batch_size):

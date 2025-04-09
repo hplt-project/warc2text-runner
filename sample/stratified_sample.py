@@ -54,8 +54,11 @@ class Sampler:
         self.outdir = Path(outdir)
         self.outdir.mkdir(parents=True, exist_ok=False)
         self.k = k
-        mdf = pd.read_csv(fcol2group, sep='\t').set_index('collection').group.to_dict()
-        self.col2group = mdf
+        if fcol2group:
+            mdf = pd.read_csv(fcol2group, sep='\t').set_index('collection').group.to_dict()
+            self.col2group = mdf
+        else:
+            self.col2group = None
 
 
     def sample(self, file='-', *files):
@@ -73,7 +76,9 @@ class Sampler:
         files = [file] + list(files)
         inps = [sys.stdin if f=='-' else f for f in files]
         for df in self._batch_it(inps, batch_size=self.k):  # Reservoir currently doesn't work with batches >self.k
-            df[0] = df.collection.replace(self.col2group)
+            df[0] = df.collection
+            if self.col2group:
+                df[0] = df[0].replace(self.col2group)
             df.groupby(0).apply(lambda dfg : c2r[dfg.name].update(dfg), include_groups=False)
 
         for k, sdf in c2r.items():

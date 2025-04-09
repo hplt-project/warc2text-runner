@@ -6,6 +6,8 @@ from fire import Fire
 import zstandard
 import pandas as pd
 import sys
+from tqdm import tqdm
+
 
 class Reservoir:
     def __init__(self, k):
@@ -88,7 +90,7 @@ class Sampler:
     def _batch_it(self, inps, batch_size):
         for inp in inps:
             with pd.read_json(inp, orient='records', lines=True, chunksize=batch_size) as reader:
-                for df in reader:
+                for df in tqdm(reader):
                     yield df
 
 

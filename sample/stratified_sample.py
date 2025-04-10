@@ -20,7 +20,6 @@ class Reservoir:
 
 
     def _process_remaining(self, qdf):
-        self.i += len(qdf)
         idx = np.random.randint(0, self.i, size=len(qdf))
         incl = (idx < self.k)  # each new example ends in the sample with prob=k/N, N is the running total
         nincl = incl.sum()
@@ -34,6 +33,8 @@ class Reservoir:
 
 
     def update(self, df):
+        self.i += len(df)
+
         #print('UPDATE: ', df.collection.unique(), len(df))
         if len(self.sdf) < self.k:  # first k examples go to the reservoir unconditionally
             n = self.k - len(self.sdf)

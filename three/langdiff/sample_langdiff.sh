@@ -1,8 +1,8 @@
 D1=$1
 D2=$2
-OUTDIR=$3
 
-#find $D1 -name "lang.zst" | parallel --eta "bash combine_textlang_12.sh {//} $D2/{= s:.*/([^/]+/[^/]+)/[^/]+.zst:\1: =} $OUTDIR/{= s:.*/([^/]+/[^/]+)/[^/]+.zst:\1: =}"
+bash combine_textlang_12.sh $D1 $D2 byoldlang
+bash combine_textlang_12.sh $D2 $D1 bynewlang
 
-zstdcat $OUTDIR/*/*/textlang12.zst |jq -c 'select(.lang1[0]!=.lang2[0])|. + {"collection":(.collection|split("-")|.[0]+"-x")}' | python ../../sample/stratified_sample.py --fcol2group="" --outdir=lang-x sample
-zstdcat $OUTDIR/*/*/textlang12.zst |jq -c 'select(.lang1[0]!=.lang2[0])|. + {"collection":("x-"+ .collection|split("-")|.[1])}' | python ../../sample/stratified_sample.py --fcol2group="" --outdir=x-lang sample
+python ../../sample/stratified_sample.py --fcol2group="" --outdir=lang-other sample byoldlang/*/*/lang_changed.zst
+python ../../sample/stratified_sample.py --fcol2group="" --outdir=other-lang sample bynewlang/*/*/lang_changed.zst

@@ -1,3 +1,4 @@
+#!/bin/sh
 # Statistics for Release 2, just after stage2 (WP2)
 GZ_DIR=$1
 STATS_DIR=$2

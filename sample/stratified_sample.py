@@ -92,9 +92,11 @@ class Sampler:
 
 
     def _batch_it(self, inps, batch_size):
-        for inp in tqdm(inps, desc='input files'):
+        pbar = tqdm(inps)
+        for inp in pbar:
+            pbar.set_description(inp) 
             with pd.read_json(inp, orient='records', lines=True, chunksize=batch_size) as reader:
-                for df in tqdm(reader):
+                for df in reader:
                     yield df
 
 

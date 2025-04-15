@@ -41,3 +41,4 @@ if [ "$l" != "$m" ]; then
 fi
 
 echo $t $l $m >${OUTDIR}/.done
+rm $FIN

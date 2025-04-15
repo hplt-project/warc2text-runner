@@ -27,3 +27,17 @@ rclone cat $FIN | zstdcat  \
     | parallel --halt now,fail=1 --block $BLOCKSIZE_LID -j $NJOBS_LID --pipe --keep-order \
         "python -m warc2text_runner.stage2.fastertext_lid.proto_langid" | zstd > ${OUTDIR}/lang.zst
 
+# check the number of lines
+C=`paste <(zstdcat ${OUTDIR}/text.zst)|wc -l) <(zstdcat ${OUTDIR}/lang.zst|wc -l) <(zstdcat ${OUTDIR}/metadata.zst|wc -l)`
+read t l m  <<< "$C"
+if [ "$t" != "$m" ]; then
+  echo "Number of lines mismatch: $t in ${OUTDIR}/text.zst and $m in ${OUTDIR}/metadata.zst"
+  exit 1
+fi
+
+if [ "$l" != "$m" ]; then
+  echo "Number of lines mismatch: $l in ${OUTDIR}/lang.zst and $m in ${OUTDIR}/metadata.zst"
+  exit 1
+fi
+
+echo $t $l $m >${OUTDIR}/.done

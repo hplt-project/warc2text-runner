@@ -9,8 +9,6 @@ filter_done() {
     fdone=`echo $line | sed -r "s@.*lumio:(.*)/html.zst@${OUTDIR}/\1/html.zst@"`
     if [ ! -f "$fdone" ]; then
       echo "$line"
-    else
-      echo DONE
     fi
   done
 }

@@ -28,7 +28,7 @@ rclone cat $FIN | zstdcat  \
         "python -m warc2text_runner.stage2.fastertext_lid.proto_langid" | zstd > ${OUTDIR}/lang.zst
 
 # check the number of lines
-C=`paste <(zstdcat ${OUTDIR}/text.zst)|wc -l) <(zstdcat ${OUTDIR}/lang.zst|wc -l) <(zstdcat ${OUTDIR}/metadata.zst|wc -l)`
+C=`paste <(zstdcat ${OUTDIR}/text.zst|wc -l) <(zstdcat ${OUTDIR}/lang.zst|wc -l) <(zstdcat ${OUTDIR}/metadata.zst|wc -l)`
 read t l m  <<< "$C"
 if [ "$t" != "$m" ]; then
   echo "Number of lines mismatch: $t in ${OUTDIR}/text.zst and $m in ${OUTDIR}/metadata.zst"

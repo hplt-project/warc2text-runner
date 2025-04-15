@@ -36,6 +36,7 @@ script-files = [
     "src/warc2text_runner/stage2/stage2preplumic.sh",
     "src/warc2text_runner/stage2/stage2nodeparallel_batched.sh",
     "src/warc2text_runner/stage2/stage2local_batch.sh",
+    "src/warc2text_runner/stage2/stage2stagelumio.sh",
     "src/warc2text_runner/stage1/generate_tasks.sh",
     "src/warc2text_runner/stage1/run_warc2html_local.sh",
     "src/warc2text_runner/stage1/run_warc2html_remote.sh",

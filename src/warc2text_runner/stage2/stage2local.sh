@@ -11,20 +11,20 @@ BLOCKSIZE_LID=100M  # 0.3s-0.5s to load model, 4.4s to FastText.predict for 10k 
 NJOBS=$(($NJOBS - 8))  # leave some threads for rclone, zstdcat, zstd steps in the pipeline
 NJOBS_LID=$(($NJOBS/10 + 1))
 NJOBS_TRAF=$(($NJOBS - $NJOBS_LID))
-echo Running lid in $NJOBS_LID and trafilatura in $NJOBS_TRAF processes
 
 set -euo pipefail
 
 mkdir -p $OUTDIR
 
 S3FIN=`echo $FIN | sed 's@lumio:@s3://@'`
-s3cmd get `echo $S3FIN | sed 's@html.zst@metadata.zst@'` ${OUTDIR}/
+s3cmd get `echo $S3FIN | sed 's@html.zst@metadata.zst@'` ${OUTDIR}/ --continue  # continue downloading in case it failed last time
 
 # --keep-order guarantees that GNU Parallel will collect stdout from tasks and print it to its stdout in the order
 # aligned with the order of input lines
 # --block issues one task per block of input lines of roughly this size, but without breaking lines;
 # making it too small will increase extra costs on script initialization (e.g. weights loading for langid),
 # making it too large will require buffering too much outputs in parallel due to --keep-order requirement.
+echo Running lid in $NJOBS_LID and trafilatura in $NJOBS_TRAF processes
 
 # rclone occasionally crashes with EOF error when streaming some files from lumio (<1% for bs=10, ~50% for bs=1000)...
 # s3cmd shows warnings about EOF for these files, but retries with success

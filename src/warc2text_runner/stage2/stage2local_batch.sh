@@ -1,6 +1,7 @@
 #!/bin/bash
 BASEOUTDIR=$1
 
+echo "stage2local_batch.sh: running at `hostname`"
 echo "stage2local_batch.sh: processing ${@:2}, writing to $BASEOUTDIR"
 rc=0
 for x in ${@:2}; do 

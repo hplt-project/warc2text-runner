@@ -18,7 +18,7 @@ set -euo pipefail
 mkdir -p $OUTDIR
 
 S3FIN=`echo $FIN | sed 's@lumio:@s3://@'`
-s3cmd get `echo $FIN | sed 's@html.zst@metadata.zst@'` ${OUTDIR}/
+s3cmd get `echo $S3FIN | sed 's@html.zst@metadata.zst@'` ${OUTDIR}/
 
 # --keep-order guarantees that GNU Parallel will collect stdout from tasks and print it to its stdout in the order
 # aligned with the order of input lines

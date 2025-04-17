@@ -19,3 +19,7 @@ tzlocal==5.3.1
 ujson==5.4.0
 urllib3==2.3.0
 zstandard==0.22.0
+cffi==1.15.1
+mip==1.15.0
+prtpy==0.8.3
+pycparser==2.22

@@ -20,7 +20,8 @@ dependencies = [
     "zstandard==0.22.0",
     "fire",
     "numpy==1.23.5",
-    "fasttext @ git+https://github.com/facebookresearch/fastText@1142dc4c4ecbc19cc16eee5cdd28472e689267e6"
+    "fasttext @ git+https://github.com/facebookresearch/fastText@1142dc4c4ecbc19cc16eee5cdd28472e689267e6",
+    "prtpy==0.8.3"
 ]
 
 [tool.setuptools.packages.find]

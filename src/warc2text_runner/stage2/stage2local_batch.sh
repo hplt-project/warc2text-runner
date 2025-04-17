@@ -17,7 +17,7 @@ for x in ${@:2}; do
 done
 
 if [ "$rc" -eq 0 ]; then
-  echo "stage2local_batch.sh: all files processed without errors"
+  echo "stage2local_batch.sh: all files processed successfully"
 else
   echo "stage2local_batch.sh: all files processed, errors occurred while processing"
 fi

@@ -109,7 +109,7 @@ pip install .
 stage2download.sh
 ```
 
-### Run on LUMI, method1: for locally located input data
+### Run on LUMI, method1: for data from LUMI-O object store
 ```commandline
 source src/warc2text_runner/stage2/stage2preplumic.sh
 source venv/bin/activate

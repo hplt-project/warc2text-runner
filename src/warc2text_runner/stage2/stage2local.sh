@@ -3,7 +3,7 @@ FIN=$1
 OUTDIR=$2
 NJOBS=`nproc --all`
 
-BLOCKSIZE_TRAF=10M  #  more parallel processes than for lid require smaller blocks;
+BLOCKSIZE_TRAF=30M  #  more parallel processes than for lid require smaller blocks;
 TRAF_TIMEOUT=10  # timeout 10s, increased from 0.5s to compensate for adding xml extraction for the 3rd iteration and hopefully get more long good texts
 
 BLOCKSIZE_LID=100M  # 0.3s-0.5s to load model, 4.4s to FastText.predict for 10k lines, 28 MB (not random sample!)

@@ -115,11 +115,7 @@ source src/warc2text_runner/stage2/stage2preplumic.sh
 source venv/bin/activate
 ```
 
-Prepare a list of HTML files to process from a local directory:
-```commandline
-du -ab ~/hplt/two/html_sample0.01_bs10/ | grep html.zst >local.paths
-```
-or from LUMIO:
+Prepare a list of HTML files to process from LUMIO:
 ```commandline
 rclone ls --include="html.zst" lumio:htmlsample | sed -r 's!( *[0-9]+\s+)!\1 lumio:htmlsample/!' >lumio.paths
 ```

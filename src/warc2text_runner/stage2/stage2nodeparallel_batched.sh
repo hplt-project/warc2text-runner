@@ -9,7 +9,7 @@ mkdir $LOGDIR
 
 filter_done() {
   while read -r line; do
-    fdone=`echo $line | sed -r "s@.*lumio:(.*)/html.zst@${OUTDIR}/\1/.done@"`
+    fdone=`echo $line | sed -r "s@[0-9]+ +[^:]+:(.*)/html.zst@${OUTDIR}/\1/.done@"`
     if [ ! -f "$fdone" ]; then
       echo "$line"
     else

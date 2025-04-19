@@ -12,7 +12,7 @@ prepare_inputs() {
     s3cmd get `echo $S3FIN | sed 's@html.zst@metadata.zst@'` ${OUTDIR}/ --continue  # continue downloading in case it failed last time
   else
     echo "Streaming $FIN of size $size GB using rclone" 1>&2
-    rclone copy $FIN ${OUTDIR}/
+    rclone copy `echo $S3FIN | sed 's@html.zst@metadata.zst@'` ${OUTDIR}/
   fi
 }
 

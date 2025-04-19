@@ -5,10 +5,13 @@ set -euo pipefail
 mkdir -p $OUTDIR
 
 prepare_inputs() {
+  size=$(rclone lsjson $FIN | jq -c '.[]|.Size/pow(2; 30)')
   if [[ $FIN =~ ^lumio: ]]; then
     S3FIN=`echo $FIN | sed 's@lumio:@s3://@'`
+    echo "Streaming $S3FIN of size $size GB using s3cmd" 1>&2
     s3cmd get `echo $S3FIN | sed 's@html.zst@metadata.zst@'` ${OUTDIR}/ --continue  # continue downloading in case it failed last time
   else
+    echo "Streaming $FIN of size $size GB using rclone" 1>&2
     rclone copy $FIN ${OUTDIR}/
   fi
 }

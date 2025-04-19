@@ -5,6 +5,28 @@ import logging
 import lxml.etree as etree
 # from resiliparse.extract.html2text import extract_plain_text
 
+import signal
+
+
+class CustomTimeoutError(BaseException):
+    """ We need a special exception class directly inherited from BaseException because Trafilatura  code catches
+    Exception and thus all derived classes including the standard TimeoutError, which breaks time limits. """
+    pass
+
+def timeout_handler(signum, frame):
+    raise CustomTimeoutError()
+
+
+def func_with_timeout(func):
+    def wrapper(*args, **kwargs):
+        signal.signal(signal.SIGALRM, timeout_handler)
+        signal.alarm(10)
+        try:
+            return func(*args, **kwargs)
+        finally:
+            signal.alarm(0)
+    return wrapper
+
 
 def process_html(fpath, include_comments=True, include_tables=False, no_fallback=False,
                  favour_precision=True, favour_recall=False, min_extracted_size=250, flog=None):
@@ -32,7 +54,7 @@ def process_html(fpath, include_comments=True, include_tables=False, no_fallback
 
     with open(fpath) as inp:
         html = inp.read()
-        text = trafilatura.extract(html, config=config, **trafilatura_args)
+        text = traf_wtimelimit(config, html, trafilatura_args)
         # text = trafilatura.extract(html, output_format='xml', tei_validation=False, **trafilatura_args)
         # text = trafilatura.extract(html, output_format='markdown', **trafilatura_args)
         # text = trafilatura.extract(html, output_format='txt', **trafilatura_args)
@@ -40,6 +62,15 @@ def process_html(fpath, include_comments=True, include_tables=False, no_fallback
 
         # text = extract_plain_text(html, main_content=True)
         # print(text)
+
+@func_with_timeout
+def traf_wtimelimit(config, html, trafilatura_args):
+    try:
+        text = trafilatura.extract(html, config=config, **trafilatura_args)
+    except CustomTimeoutError as e:
+        print("TIMEOUT")
+        text = ''
+    return text
 
 
 fire.Fire(process_html)

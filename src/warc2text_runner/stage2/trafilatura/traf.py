@@ -14,11 +14,19 @@ from warc2text_runner.stage2.tagfilter.tagfilter1 import TagFilter1 as TagFilter
 from warc2text_runner.stage2.tagfilter.tagextractor import extract_lang_info
 from copy import deepcopy
 
+class CustomTimeoutError(BaseException):
+    """ We need a special exception class directly inherited from BaseException because Trafilatura  code catches
+    Exception and thus all derived classes including the standard TimeoutError, which breaks time limits. """
+    pass
+
+def timeout_handler(signum, frame):
+    raise CustomTimeoutError()
+
 
 @contextmanager
 def time_limit(seconds):
     def signal_handler(signum, frame):
-        raise TimeoutError("Timed out!")
+        raise CustomTimeoutError()
     signal.signal(signal.SIGALRM, signal_handler)
     signal.setitimer(signal.ITIMER_REAL, seconds)
     try:
@@ -63,7 +71,7 @@ def traf(instream, decoding_errors, timelimit_perdoc=None, matcher=None):
                     # trafilatura.extract() changes the tree, tagfilters should be matched before
                     res['t'] = trafilatura.extract(deepcopy(tree), config=config, **trafilatura_text_options)
                     res['x'] = trafilatura.extract(tree, output_format='xml', config=config, **trafilatura_xml_options)
-            except TimeoutError as e:
+            except CustomTimeoutError as e:
                 errors.append(f'Trafilatura timed out: {timelimit_perdoc}s')
             except Exception as e:
                 errors.append(traceback.format_exc())

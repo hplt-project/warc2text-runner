@@ -8,6 +8,8 @@ prepare_inputs() {
   if [[ $FIN =~ ^lumio: ]]; then
     S3FIN=`echo $FIN | sed 's@lumio:@s3://@'`
     s3cmd get `echo $S3FIN | sed 's@html.zst@metadata.zst@'` ${OUTDIR}/ --continue  # continue downloading in case it failed last time
+  else
+    rclone copy $FIN ${OUTDIR}/
   fi
 }
 

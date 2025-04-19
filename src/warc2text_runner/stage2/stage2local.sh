@@ -5,13 +5,10 @@ set -euo pipefail
 mkdir -p $OUTDIR
 
 prepare_inputs() {
-  size=$(rclone lsjson $FIN | jq -c '.[]|.Size/pow(2; 30)')
   if [[ $FIN =~ ^lumio: ]]; then
     S3FIN=`echo $FIN | sed 's@lumio:@s3://@'`
-    echo "Streaming $S3FIN of size $size GB using s3cmd" 1>&2
     s3cmd get `echo $S3FIN | sed 's@html.zst@metadata.zst@'` ${OUTDIR}/ --continue  # continue downloading in case it failed last time
   else
-    echo "Streaming $FIN of size $size GB using rclone" 1>&2
     rclone copy `echo $FIN | sed 's@html.zst@metadata.zst@'` ${OUTDIR}/
   fi
 }
@@ -35,12 +32,16 @@ check_outputs() {
 }
 
 stream_html() {
+  size=$(rclone lsjson $FIN | jq -c '.[]|.Size/pow(2; 30)')
+
   # rclone occasionally crashes with EOF error when streaming some files from lumio (<1% for bs=10, ~50% for bs=1000)...
   # s3cmd shows warnings about EOF for these files, but retries with success
   if [[ $FIN =~ ^lumio: ]]; then
     S3FIN=`echo $FIN | sed 's@lumio:@s3://@'`
+    echo "Streaming $S3FIN of size $size GB using s3cmd" 1>&2
     s3cmd get $S3FIN - | zstdcat
   else
+    echo "Streaming $FIN of size $size GB using rclone" 1>&2
     rclone cat $FIN | zstdcat
   fi
 }

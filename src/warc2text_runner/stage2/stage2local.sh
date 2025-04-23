@@ -38,10 +38,10 @@ stream_html() {
   # s3cmd shows warnings about EOF for these files, but retries with success
   if [[ $FIN =~ ^lumio: ]]; then
     S3FIN=`echo $FIN | sed 's@lumio:@s3://@'`
-    echo "Streaming $S3FIN of size $size GB using s3cmd"
+    echo "Streaming $S3FIN of size $size GB using s3cmd"  1>&2
     s3cmd get $S3FIN - | zstdcat
   else
-    echo "Streaming $FIN of size $size GB using rclone"
+    echo "Streaming $FIN of size $size GB using rclone"  1>&2
     rclone cat $FIN | zstdcat
   fi
 }

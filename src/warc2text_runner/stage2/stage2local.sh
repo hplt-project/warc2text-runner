@@ -18,12 +18,12 @@ check_outputs() {
   C=`paste <(zstdcat ${OUTDIR}/text.zst|wc -l) <(zstdcat ${OUTDIR}/lang.zst|wc -l) <(zstdcat ${OUTDIR}/metadata.zst|wc -l)`
   read t l m  <<< "$C"
   if [ "$t" != "$m" ]; then
-    echo "ERROR: Number of lines mismatch: $t in ${OUTDIR}/text.zst and $m in ${OUTDIR}/metadata.zst"
+    echo "ERROR: Number of lines mismatch: $t in ${OUTDIR}/text.zst and $m in ${OUTDIR}/metadata.zst" 1>&2
     exit 1
   fi
 
   if [ "$l" != "$m" ]; then
-    echo "ERROR: Number of lines mismatch: $l in ${OUTDIR}/lang.zst and $m in ${OUTDIR}/metadata.zst"
+    echo "ERROR: Number of lines mismatch: $l in ${OUTDIR}/lang.zst and $m in ${OUTDIR}/metadata.zst" 1>&2
     exit 1
   fi
 

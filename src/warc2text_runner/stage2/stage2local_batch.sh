@@ -28,6 +28,7 @@ stage() {
     local OUTDIR=$2
     echo "$(date) stage2local_batch.sh: staging $x to $OUTDIR"
     rclone copy --multi-thread-streams=0 "$x" "$OUTDIR"
+    rclone copy --multi-thread-streams=0 "${x%html.zst}"/metadata.zst "$OUTDIR"
     echo "$(date) stage2local_batch.sh: staging $x to $OUTDIR finished"
 }
 

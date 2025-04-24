@@ -2,6 +2,7 @@
 BASEOUTDIR=$1
 
 getoutdir() {
+    x=$1
 #    OUTDIR=${BASEOUTDIR}/`echo $x | sed -r 's!.*(/[^/]+/[^/]+/)[^/]+!\1!'`  # BASEOUTDIR/crawl/batch_id/
 #    OUTDIR=$(dirname $x)
     OUTDIR=${BASEOUTDIR}/`echo $x | sed -r "s@[^:]+:(.*)/html.zst@\1@"`

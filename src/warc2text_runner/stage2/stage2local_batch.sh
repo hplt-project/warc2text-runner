@@ -27,9 +27,10 @@ stage() {
     local x=$1
     local OUTDIR=$2
     echo "$(date) stage2local_batch.sh: staging $x to $OUTDIR"
-    rclone copy --multi-thread-streams=0 "$x" "$OUTDIR"
-    rclone copy --multi-thread-streams=0 "${x%html.zst}"/metadata.zst "$OUTDIR"
-    echo "$(date) stage2local_batch.sh: staging $x to $OUTDIR finished"
+    rclone copy --multi-thread-streams=0 "$x" "$OUTDIR" && \
+        rclone copy --multi-thread-streams=0 "${x%html.zst}"/metadata.zst "$OUTDIR" && \
+        echo "$(date) stage2local_batch.sh: staging $x to $OUTDIR finished" || \
+        echo "$(date) stage2local_batch.sh: ERROR while staging $x to $OUTDIR"
 }
 
 clean() {
@@ -51,7 +52,7 @@ for next in "${@:3}"; do
     process "$current" "$(getoutdir "$current")" && clean "$(getoutdir "$current")" || rc="$?"
     wait $staging_job && current="$(getoutdir "$next")/html.zst" || current=$next
 done
-process "$current" || rc="$?"
+process "$current" "$(getoutdir "$current")" && clean "$(getoutdir "$current")" || rc="$?"
 
 if [ "$rc" -eq 0 ]; then
   echo "$(date) stage2local_batch.sh: all files processed successfully"

@@ -5,7 +5,9 @@ getoutdir() {
     x=$1
 #    OUTDIR=${BASEOUTDIR}/`echo $x | sed -r 's!.*(/[^/]+/[^/]+/)[^/]+!\1!'`  # BASEOUTDIR/crawl/batch_id/
 #    OUTDIR=$(dirname $x)
-    OUTDIR=${BASEOUTDIR}/`echo $x | sed -r "s@[^:]+:(.*)/html.zst@\1@"`
+    if [ "${x#$BASEOUTDIR}" = "$x" ]; then  # if removing $BASEOUTDIR from the beginning of $x doesn't change $x, then it doesn't start with it
+        OUTDIR=${BASEOUTDIR}/`echo $x | sed -r "s@[^:]+:(.*)/html.zst@\1@"`
+    fi
     echo $OUTDIR
 }
 

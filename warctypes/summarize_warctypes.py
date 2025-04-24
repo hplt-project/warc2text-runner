@@ -7,11 +7,10 @@ def summarize_warctypes(inputdir, t):
     df['content-length'] = pd.to_numeric(df['content-length'], errors='coerce')
     df = df.dropna()
     mdf = df.groupby('content-type').agg({'content-length':'sum'}).sort_values(by='content-length')/2**30
-    mdf.to_csv(Path(inputdir)/f'total-{t}',sep='\t')
-    print(mdf.tail(25))
     print('\nTotal size accounted for:', mdf.sum().iloc[0])
-    print((mdf/mdf.sum()).tail(25))
-
+    (mdf / mdf.sum()).to_csv(Path(inputdir)/f'props-{t}',sep='\t')
+    mdf.loc['TOTAL'] = mdf.sum()
+    mdf.to_csv(Path(inputdir)/f'total-{t}',sep='\t')
 
 def main(inputdir):
     for t in ['contenttypes', 'rectypes']:

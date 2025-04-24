@@ -21,7 +21,7 @@ process() {
 stage() {
     local x=$1
     local OUTDIR=$2
-    s3cmd get "$x" "$OUTDIR" --continue
+    rclone copy --multi-thread-streams=0 "$x" "$OUTDIR"
 }
 
 clean() {

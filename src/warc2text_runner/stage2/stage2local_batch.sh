@@ -26,11 +26,14 @@ process() {
 stage() {
     local x=$1
     local OUTDIR=$2
+    echo "$(date) stage2local_batch.sh: staging $x to $OUTDIR"
     rclone copy --multi-thread-streams=0 "$x" "$OUTDIR"
+    echo "$(date) stage2local_batch.sh: staging $x to $OUTDIR finished"
 }
 
 clean() {
     local OUTDIR=$1
+    echo "$(date) stage2local_batch.sh: cleaning $OUTDIR"
     rm -f "$OUTDIR"/html.zst
 }
 

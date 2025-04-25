@@ -24,11 +24,11 @@ process() {
 }
 
 stage() {
-    local x=$1
+    local S3FIN=s3://${x#lumio:}
     local OUTDIR=$2
     echo "$(date) stage2local_batch.sh: staging $x to $OUTDIR"
-    rclone copy --multi-thread-streams=0 "$x" "$OUTDIR" && \
-        rclone copy --multi-thread-streams=0 "${x%html.zst}"/metadata.zst "$OUTDIR" && \
+    s3cmd get "$S3FIN" "$OUTDIR" --continue && \
+        s3cmd get "${S3FIN%html.zst}"/metadata.zst "$OUTDIR" --continue && \
         echo "$(date) stage2local_batch.sh: staging $x to $OUTDIR finished" || \
         { echo "$(date) stage2local_batch.sh: ERROR while staging $x to $OUTDIR" && return 1; }
 }

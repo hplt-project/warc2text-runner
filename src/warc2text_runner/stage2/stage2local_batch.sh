@@ -30,7 +30,7 @@ stage() {
     rclone copy --multi-thread-streams=0 "$x" "$OUTDIR" && \
         rclone copy --multi-thread-streams=0 "${x%html.zst}"/metadata.zst "$OUTDIR" && \
         echo "$(date) stage2local_batch.sh: staging $x to $OUTDIR finished" || \
-        echo "$(date) stage2local_batch.sh: ERROR while staging $x to $OUTDIR" && return 1
+        { echo "$(date) stage2local_batch.sh: ERROR while staging $x to $OUTDIR" && return 1; }
 }
 
 clean() {
@@ -51,7 +51,7 @@ for next in "${@:3}"; do
     staging_job=$!
     process "$current" "$(getoutdir "$current")" && clean "$(getoutdir "$current")" || rc="$?"
     kill $staging_job # staging should have finished, otherwise don't waste expensive node-hours to wait for it
-    wait $staging_job && current="$(getoutdir "$next")/html.zst" || current=$next && clean "$(getoutdir "$current")"
+    wait $staging_job && current="$(getoutdir "$next")/html.zst" || { current=$next && clean "$(getoutdir "$current")"; }
 done
 process "$current" "$(getoutdir "$current")" && clean "$(getoutdir "$current")" || rc="$?"
 

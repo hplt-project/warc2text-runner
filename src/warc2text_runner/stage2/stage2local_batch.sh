@@ -24,11 +24,11 @@ process() {
 }
 
 stage() {
-    local S3FIN=s3://${x#lumio:}
+    local x="s3://${1#lumio:}"
     local OUTDIR=$2
     echo "$(date) stage2local_batch.sh: staging $x to $OUTDIR"
-    s3cmd get "$S3FIN" "$OUTDIR" --continue && \
-        s3cmd get "${S3FIN%html.zst}"/metadata.zst "$OUTDIR" --continue && \
+    s3cmd get "$x" "$OUTDIR" --continue && \
+        s3cmd get "${x%html.zst}"/metadata.zst "$OUTDIR" --continue && \
         echo "$(date) stage2local_batch.sh: staging $x to $OUTDIR finished" || \
         { echo "$(date) stage2local_batch.sh: ERROR while staging $x to $OUTDIR" && return 1; }
 }

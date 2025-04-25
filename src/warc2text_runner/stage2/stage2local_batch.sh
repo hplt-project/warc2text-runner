@@ -28,7 +28,7 @@ stage() {
     local OUTDIR=$2
     echo "$(date) stage2local_batch.sh: staging $x to $OUTDIR"
     s3cmd get "$x" "$OUTDIR" --continue && \
-        s3cmd get "${x%html.zst}"/metadata.zst "$OUTDIR" --continue && \
+        s3cmd get "${x%/html.zst}"/metadata.zst "$OUTDIR" --continue && \
         echo "$(date) stage2local_batch.sh: staging $x to $OUTDIR finished" || \
         { echo "$(date) stage2local_batch.sh: ERROR while staging $x to $OUTDIR" && return 1; }
 }

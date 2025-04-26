@@ -51,7 +51,8 @@ for next in "${@:3}"; do
     stage "$next" "$(getoutdir "$next")" &
     staging_job=$!
     process "$current" "$(getoutdir "$current")" && clean "$(getoutdir "$current")" || rc="$?"
-    kill $staging_job # staging should have finished, otherwise don't waste expensive node-hours to wait for it
+    # staging should have finished, otherwise don't waste expensive node-hours to wait for it
+    kill $staging_job && echo "WARNING: staging $next stopped because it has not finished in time"
     wait $staging_job && current="$(getoutdir "$next")/html.zst" || { current=$next && clean "$(getoutdir "$current")"; }
 done
 process "$current" "$(getoutdir "$current")" && clean "$(getoutdir "$current")" || rc="$?"

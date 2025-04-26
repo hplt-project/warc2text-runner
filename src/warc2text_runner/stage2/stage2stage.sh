@@ -7,4 +7,4 @@ echo "$(date) stage2stage.sh: staging $x to $OUTDIR"
 s3cmd get "$x" "$OUTDIR" --continue && \
     s3cmd get "${x%/html.zst}"/metadata.zst "$OUTDIR" --continue && \
     echo "$(date) stage2stage.sh: staging $x to $OUTDIR finished" || \
-    { echo "$(date) stage2stage.sh: ERROR while staging $x to $OUTDIR" && return 1; }
+    { echo "$(date) stage2stage.sh: ERROR while staging $x to $OUTDIR" && exit 1; }

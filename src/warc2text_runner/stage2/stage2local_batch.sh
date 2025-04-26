@@ -23,17 +23,6 @@ process() {
     return $c
 }
 
-stage() {
-    local x="s3://${1#lumio:}"
-    local OUTDIR=$2
-    mkdir -p $OUTDIR  # create directory, then s3cmd will download to this directory not to a file under its name
-    echo "$(date) stage2local_batch.sh: staging $x to $OUTDIR"
-    s3cmd get "$x" "$OUTDIR" --continue && \
-        s3cmd get "${x%/html.zst}"/metadata.zst "$OUTDIR" --continue && \
-        echo "$(date) stage2local_batch.sh: staging $x to $OUTDIR finished" || \
-        { echo "$(date) stage2local_batch.sh: ERROR while staging $x to $OUTDIR" && return 1; }
-}
-
 clean() {
     local OUTDIR=$1
     echo "$(date) stage2local_batch.sh: cleaning $OUTDIR"
@@ -52,11 +41,11 @@ current_dir="$(getoutdir "$current")"
 if [[ -f "${current_dir}/html.zst" ]]; then
     echo "Found html.zst in ${current_dir}, checking if it can be used for processing ..."
     # run stage with a timeout to check if staging of the first file was done successfully e.g. during previous runs
-    timeout 30 stage "$current" "$current_dir" && current="${current_dir}/html.zst" || clean "$current_dir"
+    timeout 30 stage2stage.sh "$current" "$current_dir" && current="${current_dir}/html.zst" || clean "$current_dir"
 fi
 
 for next in "${@:3}"; do
-    stage "$next" "$(getoutdir "$next")" &
+    stage2stage.sh "$next" "$(getoutdir "$next")" &
     staging_job=$!
     process "$current" "$(getoutdir "$current")" && clean "$(getoutdir "$current")" || rc="$?"
     # staging should have finished, otherwise don't waste expensive node-hours to wait for it

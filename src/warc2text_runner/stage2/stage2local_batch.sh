@@ -26,6 +26,7 @@ process() {
 stage() {
     local x="s3://${1#lumio:}"
     local OUTDIR=$2
+    mkdir -p $OUTDIR  # create directory, then s3cmd will download to this directory not to a file under its name
     echo "$(date) stage2local_batch.sh: staging $x to $OUTDIR"
     s3cmd get "$x" "$OUTDIR" --continue && \
         s3cmd get "${x%/html.zst}"/metadata.zst "$OUTDIR" --continue && \

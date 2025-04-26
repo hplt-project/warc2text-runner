@@ -47,6 +47,14 @@ echo "${@:2}"|tr ' ' '\n' | xargs -n1 rclone lsjson|jq -c '.[]|.Size' | awk '{su
 
 rc=0
 current="$2"
+
+current_dir="$(getoutdir "$current")"
+if [[ -f "${current_dir}/html.zst" ]]; then
+    echo "Found html.zst in ${current_dir}, checking if it can be used for processing ..."
+    # run stage with a timeout to check if staging of the first file was done successfully e.g. during previous runs
+    timeout 30 stage "$current" "$current_dir" && current="${current_dir}/html.zst" || clean "$current_dir"
+fi
+
 for next in "${@:3}"; do
     stage "$next" "$(getoutdir "$next")" &
     staging_job=$!

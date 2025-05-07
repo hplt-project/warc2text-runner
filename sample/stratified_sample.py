@@ -72,6 +72,7 @@ class Sampler:
         different number of examples in different files will not be taken into account!
         NB: tests have shown that processing speed is comparable to the speed of the UNIX ```wc``` utility when it calculates
         the number of words among other statistics (```wc -l``` which calculates only the number of lines is much faster).
+        NB: this sampling function requires pandas 2.2.0 at least!
         :param file: the first file or '-' for stdin
         :param files: other files
         :return: nothing
@@ -86,7 +87,7 @@ class Sampler:
             df.groupby(0).apply(lambda dfg : c2r[dfg.name].update(dfg), include_groups=False)
 
         for k, sdf in c2r.items():
-            sdf.dump(self.outdir / k)
+            sdf.dump(self.outdir / f'{k}.jsonl.zst')
         df = pd.DataFrame.from_records(((k,sdf.i) for k, sdf in c2r.items()),
                                        columns=['group','size'])
         df.to_csv(self.outdir / 'groupsizes.tsv', index=False, sep='\t')

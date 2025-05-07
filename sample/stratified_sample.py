@@ -48,7 +48,7 @@ class Reservoir:
 
 
 class Sampler:
-    def __init__(self, fcol2group, outdir, k=1000):
+    def __init__(self, fcol2group, outdir, fcollection='collection', k=1000):
         """
         :param fcol2group: a mapping from collections to groups
         :param outdir: a directory to dump samples
@@ -57,6 +57,7 @@ class Sampler:
         self.outdir = Path(outdir)
         self.outdir.mkdir(parents=True, exist_ok=False)
         self.k = k
+        self.fcollection = fcollection
         if fcol2group:
             mdf = pd.read_csv(fcol2group, sep='\t').set_index('collection').group.to_dict()
             self.col2group = mdf
@@ -79,7 +80,7 @@ class Sampler:
         files = [file] + list(files)
         inps = [sys.stdin if f=='-' else f for f in files]
         for df in self._batch_it(inps, batch_size=self.k):  # Reservoir currently doesn't work with batches >self.k
-            df[0] = df.collection
+            df[0] = df[self.fcollection]
             if self.col2group:
                 df[0] = df[0].replace(self.col2group)
             df.groupby(0).apply(lambda dfg : c2r[dfg.name].update(dfg), include_groups=False)

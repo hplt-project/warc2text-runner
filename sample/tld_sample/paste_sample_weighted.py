@@ -12,7 +12,10 @@ def write(json_bytestring_list):
     sys.stdout.buffer.write(b'}\n')
 
 
-def sample(size, fcollectionprobs, strat_field='tld', file='-', *files):
+def sample(size, fcollectionprobs, strat_field, file, *files):
+    """
+    To sample from s3 ~/.aws/config shall contain the section [default] with authentication info
+    """
     c2cnt = pd.read_csv(fcollectionprobs, sep='\t', header=None).set_index(1)[0]
     c2prob = size / c2cnt
     c2prob = c2prob.to_dict()

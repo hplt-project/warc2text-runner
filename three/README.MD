@@ -74,6 +74,9 @@ bucket on LUMIO is limited to 500K files, rclone uses multipart upload with max 
 rclone copy -P --s3-max-upload-parts 1000 --transfers 16 --s3-upload-concurrency 16 --s3-chunk-size 128M --checkers 1 --log-level DEBUG --log-file lumio-upload.log html_three_cc_nird_part1 lumio:threecc/html_three_cc_nird_part1
 ```
 
+NB! Make sure you have at least 32 GB of RAM (max memory consumption is --transfers * --s3-chunk-size * --s3-upload-concurrency). 
+If less, use  --max-buffer-memory (see rclone docs).
+
 ## Stage2 (a.k.a. html2text)
 Stage2 does text extraction with boilerplate removal (Trafilatura) and language identification (fasterText with the openLID model).
 It is executed on 100 LUMI compute nodes, in 250 parallel processes on each.
@@ -120,6 +123,10 @@ Prepare a list of HTML files to process from LUMIO:
 rclone ls --include="html.zst" lumio:htmlsample | sed -r 's!( *[0-9]+\s+)!\1 lumio:htmlsample/!' >lumio.paths
 ```
 
+NB! If you want to process local files, please create an rclone endpoint with the type 'alias' for the parent folder of
+all of these files and provide a list of files in the format endpoint:path. The code supports only paths in this format.
+It strips endpoint: and reconstructs path under the specified OUTPUT directory.
+
 Specify the account and the partition SLURM should use:
 ```commandline
 export SLURM_ACCOUNT=project_465001890
@@ -131,7 +138,7 @@ export SLURM_TIMELIMIT=0-48:00:00
 
 ```commandline
 export SLURM_ACCOUNT=project_465001890
-export SLURM_MEM_PER_CPU=1750  # same as --mem-per-cpu=1750, recommended for the small partition in the LUMI docs to avoid extra billing for larger memory nodes
+export SLURM_MEM_PER_CPU=1750M  # same as --mem-per-cpu=1750M, recommended for the small partition in the LUMI docs to avoid extra billing for larger memory nodes
 export SLURM_PARTITION=small
 export SLURM_TIMELIMIT=0-72:00:00
 ```

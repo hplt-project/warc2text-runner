@@ -4,6 +4,6 @@ GZ_DIR=$1
 STATS_DIR=$2
 NJOBS=$3
 
-mkdir $STATS_DIR
-find $GZ_DIR -name 'text.*'|parallel --joblog $STATS_DIR/text_stats.log --eta --jobs=$NJOBS 'python mrstats.py map {} {//}/lang.zst --collection="$(basename $(dirname {//}))" ' > $STATS_DIR/text_stats.csv
+mkdir -p $STATS_DIR
+find -L $GZ_DIR -name 'text.*'|parallel --resume-failed --joblog $STATS_DIR/text_stats.log --eta --jobs=$NJOBS 'python mrstats.py map {} {//}/lang.zst --collection="$(basename $(dirname {//}))" ' > $STATS_DIR/text_stats.csv
 python mrstats.py reduce $STATS_DIR

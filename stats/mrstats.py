@@ -44,7 +44,7 @@ class MRStats:
         adf = None
         files = [file] + list(files)
         inps = [sys.stdin if f=='-' else f for f in files]
-        for df in unifying_iterator.batch_iterator(self.data_version, inps, batch_size=10**5, encoding_errors='replace'):
+        for df in unifying_iterator.batch_iterator(self.data_version, inps, batch_size=10**3, encoding_errors='replace'):
             mdf = self._map(df, count_words=True)
             rdf = self._reduce(mdf)
             adf = rdf if adf is None else adf.add(rdf, fill_value=0)

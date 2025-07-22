@@ -40,7 +40,7 @@ mkdir -p $STATS_DIR
 
 sample(){
   set -euo pipefail
-  stream_tlds $2 | python paste_sample_weighted.py 1100000 $1 -strat_field tld - $2/metadata.zst $2/html.zst -- --separator='@' | zstd >$3
+  stream_tlds $2 | python paste_sample_weighted.py 15000000 $1 -strat_field tld - $2/metadata.zst $2/html.zst -- --separator='@' | zstd >$3
 }
 export -f sample
 
@@ -48,5 +48,5 @@ SAMPLE_DIR=$TASKDIR/sample
 TMPDIR=$TASKDIR/tmp
 mkdir -p $SAMPLE_DIR $TMPDIR
 
-time cat $TASKDIR/paths | parallel --line-buffer --joblog $SAMPLE_DIR/sample.joblog --eta --jobs=$NJOBS "sample $TASKDIR/tld_weights.tsv {//} $TMPDIR/sample_{#}.zst 2>$TMPDIR/{#}.err"
+time cat $TASKDIR/paths | parallel --resume-failed --line-buffer --joblog $SAMPLE_DIR/sample.joblog --eta --jobs=$NJOBS "sample $TASKDIR/tld_weights.tsv {//} $TMPDIR/sample_{#}.zst 2>$TMPDIR/{#}.err"
 

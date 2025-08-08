@@ -5,5 +5,5 @@ STATS_DIR=$2
 NJOBS=$3
 
 mkdir $STATS_DIR
-find $GZ_DIR -L -name '*.jsonl.zst'|parallel --joblog $STATS_DIR/text_stats.log --eta --jobs=$NJOBS 'python mrstats.py map {}' > $STATS_DIR/text_stats.csv
+find -L $GZ_DIR -name '*.jsonl.zst'|parallel --resume-failed --joblog $STATS_DIR/text_stats.log --eta --jobs=$NJOBS 'python mrstats.py map {}' >> $STATS_DIR/text_stats.csv
 python mrstats.py reduce $STATS_DIR

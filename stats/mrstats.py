@@ -77,6 +77,7 @@ class MRStats:
         for f in (0,1):
             adf = rdf.groupby(rdf.index.str.split(',').str[f]).agg('sum')
             adf.to_csv(Path(dir) / f'stats-{f}.tsv', sep='\t', index=True, header=None)
+            adf.astype('float').to_csv(Path(dir) / f'stats-{f}.exp.tsv', sep='\t', index=True, header=None, float_format='%.3e')
         adf = rdf.sum().to_frame('TOTAL').T
         adf.to_csv(Path(dir) / f'stats-TOTAL.tsv', sep='\t', index=True, header=None)
 

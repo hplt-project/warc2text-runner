@@ -1,0 +1,7 @@
+crawl	text_newlines	text_wcwords	text_chars	docs
+new_cleaned	7.50e+11	1.73e+13	1.12e+14	2.95e+10
+new_dedup	1.20e+12	1.99e+13	1.32e+14	4.81e+10
+new_html_stage2	4.83e+12	6.03e+13	4.10e+14	2.13e+11
+old_cleaned	3.00e+11	5.56e+12	3.74e+13	1.06e+10
+old_dedup	6.13e+11	7.58e+12	5.20e+13	2.06e+10
+old_html_stage2	2.22e+12	2.13e+13	1.46e+14	1.06e+11

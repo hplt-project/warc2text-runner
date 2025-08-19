@@ -1,0 +1,13 @@
+# sample 1000 random warc.gz from 500 TB random item-level sample of the ArchiveBot crawl
+find ~/hplt/three/warc/archivebot/archivebot_rest_shuf_01 -name "*warc*gz" | shuf -n 1000 | parallel --eta -n 10 "mkdir out_{#}; zcat {}|python warcio-split.py out_{#}"
+
+# repack files such that instead of out_<batchid>/<transfer-encoding>-<content-encoding>-<is-text-type>.warc.gz we have <transfer-encoding>-<content-encoding>-<is-text-type>.warc/out_<batch_id>_<transfer-encoding>-<content-encoding>-<is-text-type>.warc.warc.gz
+
+# Now extract text using warcio for html extraction and traf.py for text extraction; TODO: maybe separate this to get separate htmls in a compatible with warc2text format for a direct comparison of size, etc.
+#for x in None-None-True chunked-None-True None-gzip-True chunked-gzip-True; do ls */${x}.warc.gz |parallel --eta -n 10 "zcat {}|python warcio-warc2text.py|python -m warc2text_runner.two.trafilatura.traf|gzip >textcontent_warcio-traf/${x}_{#}.jsonl.gz" & done
+
+for x in None-None-True chunked-None-True None-gzip-True chunked-gzip-True; do find ${x}.warc -name "*.warc.gz"|parallel --eta -n 10 "mkdir -p warcio-warc2text_out/${x}.warc/{#}/; zcat {}|python warcio-warc2text.py |zstd -o warcio-warc2text_out/${x}.warc/{#}/all.zst"; done
+
+# warc2text: generate warc2text_crawls/crawls.paths
+generate_tasks.sh warc2text_crawls/ 1 `pwd`/warc2text_out
+run_warc2html_remote.sh warc2text_crawls/ 30 "--sshlogin 1/mon4,1/mon5,1/mon6,1/mon7,1/mon8"

@@ -1,0 +1,261 @@
+{
+    "languages": [
+        {
+            "name": "English",
+            "code": "eng_Latn",
+            "domains": [
+                ".uk",
+                ".us",
+                ".au",
+                ".nz"
+            ]
+        },
+        {
+            "name": "Spanish",
+            "code": "spa_Latn",
+            "domains": [
+                ".es"
+            ]
+        },
+        {
+            "name": "Russian",
+            "code": "rus_Cyrl",
+            "domains": [
+                ".ru"
+            ]
+        },
+        {
+            "name": "Mandarin Chinese (Simplified)",
+            "code": "cmn_Hans",
+            "domains": [
+                ".cn"
+            ]
+        },
+        {
+            "name": "Catalan",
+            "code": "cat_Latn",
+            "domains": [
+                ".cat"
+            ]
+        },
+        {
+            "name": "Finnish",
+            "code": "fin_Latn",
+            "domains": [
+                ".fi"
+            ]
+        },
+        {
+            "name": "Czech",
+            "code": "ces_Latn",
+            "domains": [
+                ".cz"
+            ]
+        },
+        {
+            "name": "Norwegian Bokm\u00e5l",
+            "code": "nob_Latn",
+            "domains": [
+                ".no"
+            ]
+        },
+        {
+            "name": "Hindi",
+            "code": "hin_Deva",
+            "domains": [
+                ".in"
+            ]
+        },
+        {
+            "name": "Basque",
+            "code": "eus_Latn",
+            "domains": [
+                ".eus"
+            ]
+        },
+        {
+            "name": "Norwegian Nynorsk",
+            "code": "nno_Latn",
+            "domains": [
+                ".no"
+            ]
+        },
+        {
+            "name": "German",
+            "code": "deu_Latn",
+            "domains": [
+                ".de"
+            ]
+        },
+        {
+            "name": "Japanese",
+            "code": "jpn_Jpan",
+            "domains": [
+                ".jp"
+            ]
+        },
+        {
+            "name": "Portuguese",
+            "code": "por_Latn",
+            "domains": [
+                ".pt"
+            ]
+        },
+        {
+            "name": "French",
+            "code": "fra_Latn",
+            "domains": [
+                ".fr"
+            ]
+        },
+        {
+            "name": "Mandarin Chinese (Traditional)",
+            "code": "cmn_Hant",
+            "domains": [
+                ".cn"
+            ]
+        },
+        {
+            "name": "Turkish",
+            "code": "tur_Latn",
+            "domains": [
+                ".tr"
+            ]
+        },
+        {
+            "name": "Italian",
+            "code": "ita_Latn",
+            "domains": [
+                ".it"
+            ]
+        },
+        {
+            "name": "Bengali",
+            "code": "ben_Beng",
+            "domains": [
+                ".bd"
+            ]
+        },
+        {
+            "name": "Slovak",
+            "code": "slk_Latn",
+            "domains": [
+                ".sk"
+            ]
+        },
+        {
+            "name": "Korean",
+            "code": "kor_Hang",
+            "domains": [
+                ".kr"
+            ]
+        },
+        {
+            "name": "Polish",
+            "code": "pol_Latn",
+            "domains": [
+                ".pl"
+            ]
+        },
+        {
+            "name": "Dutch",
+            "code": "nld_Latn",
+            "domains": [
+                ".nl"
+            ]
+        },
+        {
+            "name": "Slovenian",
+            "code": "slv_Latn",
+            "domains": [
+                ".si"
+            ]
+        },
+        {
+            "name": "Swedish",
+            "code": "swe_Latn",
+            "domains": [
+                ".se"
+            ]
+        },
+        {
+            "name": "Modern Standard Arabic",
+            "code": "arb_Arab",
+            "domains": [
+                ".eg",
+                ".dz",
+                ".iq"
+            ]
+        },
+        {
+            "name": "Hebrew",
+            "code": "heb_Hebr",
+            "domains": [
+                ".il"
+            ]
+        },
+        {
+            "name": "Serbian",
+            "code": "srp_Cyrl",
+            "domains": [
+                ".rs"
+            ]
+        },
+        {
+            "name": "Thai",
+            "code": "tha_Thai",
+            "domains": [
+                ".th"
+            ]
+        },
+        {
+            "name": "Modern Greek (1453-)",
+            "code": "ell_Grek",
+            "domains": [
+                ".gr"
+            ]
+        },
+        {
+            "name": "Yue Chinese",
+            "code": "yue_Hant",
+            "domains": [
+                ".cn"
+            ]
+        },
+        {
+            "name": "Belarusian",
+            "code": "bel_Cyrl",
+            "domains": [
+                ".by"
+            ]
+        },
+        {
+            "name": "Romanian",
+            "code": "ron_Latn",
+            "domains": [
+                ".ro"
+            ]
+        },
+        {
+            "name": "Vietnamese",
+            "code": "vie_Latn",
+            "domains": [
+                ".vn"
+            ]
+        },
+        {
+            "name": "Kazakh",
+            "code": "kaz_Cyrl",
+            "domains": [
+                ".kz"
+            ]
+        },
+        {
+            "name": "Egyptian Arabic",
+            "code": "arz_Arab",
+            "domains": [
+                ".eg"
+            ]
+        }
+    ]
+}

@@ -48,7 +48,7 @@ class Reservoir:
 
 
 class Sampler:
-    def __init__(self, fcol2group, outdir, k=1000):
+    def __init__(self, fcol2group, outdir, fcollection='collection', k=1000):
         """
         :param fcol2group: a mapping from collections to groups
         :param outdir: a directory to dump samples
@@ -57,6 +57,7 @@ class Sampler:
         self.outdir = Path(outdir)
         self.outdir.mkdir(parents=True, exist_ok=False)
         self.k = k
+        self.fcollection = fcollection
         if fcol2group:
             mdf = pd.read_csv(fcol2group, sep='\t').set_index('collection').group.to_dict()
             self.col2group = mdf
@@ -71,6 +72,7 @@ class Sampler:
         different number of examples in different files will not be taken into account!
         NB: tests have shown that processing speed is comparable to the speed of the UNIX ```wc``` utility when it calculates
         the number of words among other statistics (```wc -l``` which calculates only the number of lines is much faster).
+        NB: this sampling function requires pandas 2.2.0 at least!
         :param file: the first file or '-' for stdin
         :param files: other files
         :return: nothing
@@ -79,13 +81,13 @@ class Sampler:
         files = [file] + list(files)
         inps = [sys.stdin if f=='-' else f for f in files]
         for df in self._batch_it(inps, batch_size=self.k):  # Reservoir currently doesn't work with batches >self.k
-            df[0] = df.collection
+            df[0] = df[self.fcollection]
             if self.col2group:
                 df[0] = df[0].replace(self.col2group)
             df.groupby(0).apply(lambda dfg : c2r[dfg.name].update(dfg), include_groups=False)
 
         for k, sdf in c2r.items():
-            sdf.dump(self.outdir / k)
+            sdf.dump(self.outdir / f'{k}.jsonl.zst')
         df = pd.DataFrame.from_records(((k,sdf.i) for k, sdf in c2r.items()),
                                        columns=['group','size'])
         df.to_csv(self.outdir / 'groupsizes.tsv', index=False, sep='\t')

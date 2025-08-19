@@ -11,8 +11,11 @@ def _release2_iterator(inps, batch_size, encoding_errors):
         assert all(len(dfs[i]) == len(dfs[0]) for i in range(1, len(dfs)))
         df = pd.concat(dfs, axis=1)
         # text field is 't' for stage2out, no field 't' for later stages and rename() does nothing
-        df.rename(columns={'t': 'text'}, inplace=True)
-        df.lang, df.text = df.lang.astype(object), df.text.astype("string")  # astype(str) will replace null values with a string "None"
+        df.rename(columns={'t': 'text','crawl_id':'collection'}, inplace=True)
+        if 'lang' in df.columns:
+            df.lang = df.lang.astype(object)
+        if 'text' in df.columns:
+            df.text = df.text.astype("string")  # astype(str) will replace null values with a string "None"
         yield df
 
 

@@ -23,16 +23,6 @@ process() {
     return $c
 }
 
-stage() {
-    local x=$1
-    local OUTDIR=$2
-    echo "$(date) stage2local_batch.sh: staging $x to $OUTDIR"
-    rclone copy --multi-thread-streams=0 "$x" "$OUTDIR" && \
-        rclone copy --multi-thread-streams=0 "${x%html.zst}"/metadata.zst "$OUTDIR" && \
-        echo "$(date) stage2local_batch.sh: staging $x to $OUTDIR finished" || \
-        echo "$(date) stage2local_batch.sh: ERROR while staging $x to $OUTDIR"
-}
-
 clean() {
     local OUTDIR=$1
     echo "$(date) stage2local_batch.sh: cleaning $OUTDIR"
@@ -46,11 +36,21 @@ echo "${@:2}"|tr ' ' '\n' | xargs -n1 rclone lsjson|jq -c '.[]|.Size' | awk '{su
 
 rc=0
 current="$2"
+
+current_dir="$(getoutdir "$current")"
+if [[ -f "${current_dir}/html.zst" ]]; then
+    echo "Found html.zst in ${current_dir}, checking if it can be used for processing ..."
+    # run stage with a timeout to check if staging of the first file was done successfully e.g. during previous runs
+    timeout 30 stage2stage.sh "$current" "$current_dir" && current="${current_dir}/html.zst" || clean "$current_dir"
+fi
+
 for next in "${@:3}"; do
-    stage "$next" "$(getoutdir "$next")" &
+    stage2stage.sh "$next" "$(getoutdir "$next")" &
     staging_job=$!
     process "$current" "$(getoutdir "$current")" && clean "$(getoutdir "$current")" || rc="$?"
-    wait $staging_job && current="$(getoutdir "$next")/html.zst" || current=$next
+    # staging should have finished, otherwise don't waste expensive node-hours to wait for it
+    kill $staging_job && echo "WARNING: staging $next stopped because it has not finished in time"
+    wait $staging_job && current="$(getoutdir "$next")/html.zst" || { current=$next && clean "$(getoutdir "$current")"; }
 done
 process "$current" "$(getoutdir "$current")" && clean "$(getoutdir "$current")" || rc="$?"
 

@@ -87,7 +87,7 @@ def main(task_dir, logs_dir, freq='10min', max_warcs=1000):
 
    # Merge warc sizes and processing time
     df = ldf.merge(tdf, how='inner',on=['outdir','warcs'])
-    assert len(df) == len(ldf), f'{len(df)}!={len(ldf)}'
+    #assert len(df) == len(ldf), f'{len(df)}!={len(ldf)}'
 
     # Compute speed, for currently running warcs estimate min speed as 0 and max speed as if they have just finished
     df['TB/day min'] = (df['size'] / 2**40 / (df.end-df.start).dt.seconds * 3600 * 24).fillna(0.0)

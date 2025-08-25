@@ -11,7 +11,7 @@ if __name__ == "__main__":
         "--stats_file",
         "-s",
         help="Dataframe with statistics",
-        default="release2.0_cleaned_stats/stats.tsv",
+        default="hpltv3.tsv",
     )
     arg(
         "--lang_fam_file",
@@ -23,14 +23,20 @@ if __name__ == "__main__":
         "--data",
         "-d",
         help="What to count?",
-        choices=["text_chars", "docs"],
+        choices=["chars", "docs"],
         default="docs",
+    )
+    arg(
+        "--exclude",
+        "-e",
+        help="Languages to exclude",
+        nargs="+",
     )
     arg(
         "--output",
         "-o",
         help="Where to save?",
-        default="vis/2_families_cleaned_docs.html",
+        default="vis/3_families_cleaned_docs.html",
     )
 
     args = parser.parse_args()
@@ -44,18 +50,18 @@ if __name__ == "__main__":
     print(stats_df)
 
     lang_fam_df = lang_fam_df[
-        lang_fam_df["v2 Language Code (ISO 693-3+script)"].isin(stats_df["lang"].values)
+        lang_fam_df["v3 Language Code (ISO 693-3+script)"].isin(stats_df["lang"].values)
     ]
 
     assert (
-        lang_fam_df["v2 Language Code (ISO 693-3+script)"].values.all()
+        lang_fam_df["v3 Language Code (ISO 693-3+script)"].values.all()
         == stats_df["lang"].values.all()
     )
 
     print(lang_fam_df)
     language_families = pd.Series(
         lang_fam_df.Family.values,
-        index=lang_fam_df["v2 Language Code (ISO 693-3+script)"],
+        index=lang_fam_df["v3 Language Code (ISO 693-3+script)"],
     ).to_dict()
 
     stats_df["family"] = stats_df.lang.apply(
@@ -65,6 +71,12 @@ if __name__ == "__main__":
     )
 
     stats_df.lang = stats_df.lang.apply(lambda x: x.split("_")[0])
+
+    if args.exclude:
+        stats_df = stats_df.loc[~stats_df["lang"].isin(args.exclude)]
+        lang_fam_df = lang_fam_df.loc[
+            ~lang_fam_df["ISO693-3 code"].isin(args.exclude)
+        ]
 
     fig = px.treemap(
         stats_df,
@@ -80,6 +92,6 @@ if __name__ == "__main__":
     )
     fig.data[0].textinfo = "label+percent entry"  # percent {parent|root|entry}'
     # fig.data[0].textinfo = "label+text+value"  # if we want to show the real numbers instead of percentage
-    fig.show()
+    # fig.show()
 
-    fig.write_html(args.output)
+    fig.write_html(args.output, include_plotlyjs="directory", default_height="100%")

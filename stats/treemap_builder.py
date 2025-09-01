@@ -10,8 +10,8 @@ if __name__ == "__main__":
     arg(
         "--stats_file",
         "-s",
-        help="Dataframe with statistics",
-        default="hpltv3.tsv",
+        help="Dataframe with statistics (can be json or tsv file)",
+        default="manifest.json",
     )
     arg(
         "--lang_fam_file",
@@ -46,8 +46,13 @@ if __name__ == "__main__":
 
     lang_fam_df = pd.read_csv(lang_fam_file, sep="\t")
 
-    stats_df = pd.read_csv(stats_file, sep="\t")
-    print(stats_df)
+    if stats_file.endswith(".tsv"):
+        stats_df = pd.read_csv(stats_file, sep="\t")
+    else:
+        stats_df = pd.read_json(stats_file, lines=True)
+        stats_df["lang"] = stats_df["name"]
+        stats_df["chars"] = stats_df["characters"]
+        stats_df["docs"] = stats_df["documents"]
 
     lang_fam_df = lang_fam_df[
         lang_fam_df["v3 Language Code (ISO 693-3+script)"].isin(stats_df["lang"].values)
@@ -74,9 +79,7 @@ if __name__ == "__main__":
 
     if args.exclude:
         stats_df = stats_df.loc[~stats_df["lang"].isin(args.exclude)]
-        lang_fam_df = lang_fam_df.loc[
-            ~lang_fam_df["ISO693-3 code"].isin(args.exclude)
-        ]
+        lang_fam_df = lang_fam_df.loc[~lang_fam_df["ISO693-3 code"].isin(args.exclude)]
 
     fig = px.treemap(
         stats_df,

@@ -1,0 +1,2 @@
+ls per_lang_group_1K |parallel --eta "python prepare_annotation_round1.py annot_round1/{} 200 500 ./per_lang_group_1K/{}/*_[on].shuf.zst"
+

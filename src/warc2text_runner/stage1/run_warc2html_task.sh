@@ -14,4 +14,4 @@ LOGDIR=${OUTDIR%/}_logs
 mkdir -p $LOGDIR $OUTDIR || exit 1
 cd $INDIR
 echo "hostname:" `hostname` >${LOGDIR}/${ID}.stderr
-warc2text --encoding-errors replace --pdfpass ${OUTDIR}/${ID}/pdf --robotspass ${OUTDIR}/${ID}/robotstxt -f html,metadata --jsonl --compress zstd --compress-level 9 --skip-text-extraction --classifier skip --url-filters ${FILTERDIR}/url-filter-list.optimised -o ${OUTDIR}/${ID} "${@:4}" 2>>${LOGDIR}/${ID}.stderr >${LOGDIR}/${ID}.stdout
+warc2text --max-record-size 200 --encoding-errors replace --pdfpass ${OUTDIR}/${ID}/pdf --robotspass ${OUTDIR}/${ID}/robotstxt -f html,metadata --jsonl --compress zstd --compress-level 9 --skip-text-extraction --classifier skip --url-filters ${FILTERDIR}/url-filter-list.optimised -o ${OUTDIR}/${ID} "${@:4}" 2>>${LOGDIR}/${ID}.stderr >${LOGDIR}/${ID}.stdout

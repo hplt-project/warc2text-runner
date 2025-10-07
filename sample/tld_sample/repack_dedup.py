@@ -16,12 +16,13 @@ class DedupWriter:
         self.hashes = set()
 
 
-    def write(self, binary_data, dedup_key):
-        h = hash(dedup_key)
-        if h in self.hashes:
-            return
+    def write(self, binary_data, dedup_key=None):
+        if dedup_key:
+            h = hash(dedup_key)
+            if h in self.hashes:
+                return
+            self.hashes.add(h)
         self.outp.write(binary_data)
-        self.hashes.add(h)
 
 
 def get_dedup_writer(tld, tld2writer, outdir):
@@ -29,7 +30,7 @@ def get_dedup_writer(tld, tld2writer, outdir):
         tld2writer[tld] = DedupWriter(tld, outdir)
     return tld2writer[tld]
 
-def repack_dedup(outdir, file, *files):
+def repack_dedup(outdir, fstrat, fdedup, file, *files):
     """
     """
     outdir = Path(outdir)
@@ -41,8 +42,8 @@ def repack_dedup(outdir, file, *files):
         fin = sys.stdin.buffer if f=='-' else io.BufferedReader(open(f, 'rb'))
         for bl in fin:
             d = json.loads(bl.decode('utf-8', errors='replace').strip())
-            writer = get_dedup_writer(d['tld'], tld2writer, outdir)
-            writer.write(bl, d['h'])
+            writer = get_dedup_writer(d[fstrat], tld2writer, outdir)
+            writer.write(bl, d[fdedup] if fdedup else None)
 
 
 Fire(repack_dedup)

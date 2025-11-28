@@ -52,11 +52,13 @@ est_Latn	Estonian	est	et		Eurasia	59.0	26.0	Uralic	Finno-Ugric	Finnic
 eus_Latn	Basque	eus	eu		Eurasia	43.0	-3.83333333333	Basque		Basque
 ewe_Latn	Ewe	ewe	ee		Africa	6.0	1.0	Niger-Congo	Kwa	Gbe
 fao_Latn	Faroese	fao	fo		Eurasia	62.0	-7.0	Indo-European		Germanic
+fas_Arab	Persian	pes	fa	fas	Eurasia	32.0	54.0	Indo-European		Iranian
 fij_Latn	Fijian	fij	fj		Papunesia	-17.8333333333	178.0	Austronesian	Eastern Malayo-Polynesian	Oceanic
 fil_Latn	Filipino	fil	tl		Papunesia	15.0	121.0	Austronesian		Greater Central Philippine
 fin_Latn	Finnish	fin	fi		Eurasia	62.0	25.0	Uralic	Finno-Ugric	Finnic
 fon_Latn	Fon	fon			Africa	6.41666666667	2.16666666667	Niger-Congo	Kwa	Gbe
 fra_Latn	French	fra	fr		Eurasia	48.0	2.0	Indo-European		Romance
+frp_Latn	Arpitan	frp			Eurasia	48.0	2.0	Indo-European		Romance
 fur_Latn	Friulian	fur						Indo-European		Romance
 fuv_Latn	Nigerian Fulfulde	fuv		ful	Africa	10.25	11.25	Niger-Congo	North-Central Atlantic	Peul-Serer
 gaz_Latn	West Central Oromo	gaz	om	orm	Africa	9.0	37.0	Afro-Asiatic	Cushitic	Lowland East Cushitic
@@ -104,6 +106,7 @@ kon_Latn	Kongo	kon	kg		Africa	-5.0	15.0	Niger-Congo	Benue-Congo	Bantu
 kor_Hang	Korean	kor	ko		Eurasia	37.5	128.0	Korean		Korean
 ktu_Latn	Kituba	ktu	kg		Africa	-5.0	15.0	Niger-Congo	Benue-Congo	Bantu
 lao_Laoo	Lao	lao	lo		Eurasia	18.0	103.0	Tai-Kadai		Kam-Tai
+lat_Latn	Latin	lat	la		Eurasia			Indo-European		Italic
 lij_Latn	Ligurian	lij			Eurasia	44.4166666667	8.95	Indo-European		Romance
 lim_Latn	Limburgan	lim	li		Eurasia	51.0	5.5	Indo-European		Germanic
 lin_Latn	Lingala	lin	ln		Africa	2.0	18.5	Niger-Congo	Benue-Congo	Bantu
@@ -165,6 +168,7 @@ sot_Latn	Southern Sotho	sot	st		Africa	-28.0	27.0	Niger-Congo	Benue-Congo	Bantu
 spa_Latn	Spanish	spa	es		Eurasia	40.0	-4.0	Indo-European		Romance
 srd_Latn	Sardinian	srd	sc		Eurasia	40.0	9.0	Indo-European		Romance
 srp_Cyrl	Serbian	srp	sr	hbs	Eurasia	44.0	19.0	Indo-European		Slavic
+srp_Latn	Serbian	srp	sr	hbs	Eurasia	44.0	19.0	Indo-European		Slavic
 ssw_Latn	Swati	ssw	ss		Africa	-26.5	31.0	Niger-Congo	Benue-Congo	Bantu
 sun_Latn	Sundanese	sun	su		Papunesia	-7.0	107.0	Austronesian		Malayo-Sumbawan
 swe_Latn	Swedish	swe	sv		Eurasia	60.0	15.0	Indo-European		Germanic

@@ -14,6 +14,7 @@ import os
 
 from warc2text_runner.stage2.fastertext_lid.basic_log import langid_logger
 from warc2text_runner.stage2.fastertext_lid.patterns import NONWORD_REPLACE_PATTERN, SPACE_PATTERN
+from warc2text_runner.stage2.fastertext_lid.uncertainty import calculate_uncertainty
 
 
 class FastTextLangId:
@@ -25,6 +26,7 @@ class FastTextLangId:
         *,
         use_logging: bool = False,
         level_log: int | None = logging.INFO,
+        uncertainty: bool = False,
     ) -> None:
         """
         Init the FastText model.
@@ -44,6 +46,7 @@ class FastTextLangId:
 
         self.model = fasttext.load_model(model_path)
         self.logger.debug("FastTextLangId model loaded.")
+        self.uncertainty = uncertainty
 
     def _preproccess_text(self, text: str) -> str:
         """Preprocesses a single line of text for lang ID."""
@@ -106,23 +109,32 @@ class FastTextLangId:
 
                 else:
                     self.logger.debug("Case: text is ok.")
+                    preprocessed_text = self._preproccess_text(json_line["t"])
                     prediction = self.model.predict(
-                        text=self._preproccess_text(json_line["t"]),
-                        k=3,
+                        text=preprocessed_text,
+                        k=-1,  # Get full distribution
                         threshold=0.0,
                         on_unicode_error="strict",
                     )
 
-                    print(
-                        ujson.dumps(
-                            {
-                                "lang": self._postprocess_predicted_labels(prediction),
-                                "prob": self._postprocess_predicted_probabilities(
-                                    prediction
-                                ),
-                            }
+                    # We still want to show only top 3 in the main "lang" and "prob" fields
+                    top_k_prediction = (prediction[0][:3], prediction[1][:3])
+                    labels = self._postprocess_predicted_labels(top_k_prediction)
+                    probs = self._postprocess_predicted_probabilities(top_k_prediction)
+
+                    output = {
+                        "lang": labels,
+                        "prob": probs,
+                    }
+                    if self.uncertainty:
+                        output["uncertainty"] = calculate_uncertainty(
+                            probabilities=prediction[1].tolist(),  # Full distribution
+                            model=self.model,
+                            text=preprocessed_text,
+                            predicted_label=prediction[0][0],  # Top predicted label
                         )
-                    )
+
+                    print(ujson.dumps(output))
 
         return None
 
@@ -147,6 +159,13 @@ if __name__ == "__main__":
     )
 
     parser.add_argument(
+        "--uncertainty",
+        default=False,
+        action="store_true",
+        help="Calculate and include uncertainty in the output.",
+    )
+
+    parser.add_argument(
         "--log_level",
         type=str,
         default="DEBUG",
@@ -159,6 +178,7 @@ if __name__ == "__main__":
         model_path=args.model_path,
         use_logging=args.use_logging,
         level_log=logging.getLevelName(args.log_level),
+        uncertainty=args.uncertainty,
     )
 
     loaded_model.predict_language_from_stdin_jsonlines()

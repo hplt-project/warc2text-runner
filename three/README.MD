@@ -129,7 +129,7 @@ It strips endpoint: and reconstructs path under the specified OUTPUT directory.
 
 Specify the account and the partition SLURM should use:
 ```commandline
-export SLURM_ACCOUNT=project_465001890
+export SLURM_ACCOUNT=project_465002259
 export SLURM_MEM_PER_NODE=0  # same as --mem=0, requests all memory since standard nodes are allocated fully
 export SLURM_PARTITION=standard
 export SLURM_TIMELIMIT=0-48:00:00
@@ -137,7 +137,7 @@ export SLURM_TIMELIMIT=0-48:00:00
 
 
 ```commandline
-export SLURM_ACCOUNT=project_465001890
+export SLURM_ACCOUNT=project_465002259
 export SLURM_MEM_PER_CPU=1750M  # same as --mem-per-cpu=1750M, recommended for the small partition in the LUMI docs to avoid extra billing for larger memory nodes
 export SLURM_PARTITION=small
 export SLURM_TIMELIMIT=0-72:00:00
